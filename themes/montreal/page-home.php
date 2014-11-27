@@ -1,6 +1,6 @@
 <?php
 	/*
-	Template Name: TM Forum Malaysia Homepage
+	Template Name: Homepage
 	*/
 	get_header(); 
 	the_post();
@@ -17,26 +17,10 @@
 	$images = array_filter(array_map(NULL, $images)); 
 ?>
 
-<div class="container slideshow">
-		<section class="row largepadding">
-	<div class="eight columns intro" style="padding-top:10px">
-		<div class="whitetext">
-
-<div class="wpb_row vc_row-fluid">
-	<div class="vc_span12 home_slider wpb_column column_container">
-		<div class="wpb_wrapper">
-	<div class="wpb_text_column wpb_content_element ">
-		<div class="wpb_wrapper">
-			<?php the_field("home_page_intro_text"); ?>
-
-		</div> 
-	</div> 
-		</div> 
-	</div> 
-</div>
-
-
-		</div>
+<div class="container slideshow" style="background:url(<?php echo $option['background_image_faded']; ?>);">
+	<section class="row largepadding">
+	<div class="six columns bigpadding intro">
+		<div class="bigtoppadding whitetext"><?php the_content(); ?></div>
 	</div>
 	</section>
 </div>
@@ -92,12 +76,6 @@
 		
 	});
 </script>
-
-<div class="container white bigpadding">
-<section <?php post_class('row the-content'); ?>>
-		<?php the_content(); ?>
-</section>
-</div>
 
 <?php if(get_post_meta( $post->ID, '_cmb_the_portfolio_switch', true ) !='on') : ?>
 	<div class="smallpadding" style="background:url(<?php echo $option['background_image']; ?>);"></div>

@@ -14,233 +14,293 @@
 
 /* TMF Slider customize */
  body {
-    font-family: "Open Sans",sans-serif;
-    font-weight: normal;
-    text-align: left;
+    font-family:"Open Sans", Arial, sans-serif;
+    font-weight: 200;
 }
-p {
-    text-align: left;
-}
-.container {
-    padding:0;
-}
-.wpb_row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
+header { z-index: 998; }
 /* removes border, asign fixed height (the use of max-height is intentional here.) */
  .slideshow {
     border-bottom: 0;
-    height: 980px;
-    max-height: 980px;
+    max-height: 500px;
 }
 /* resize li height to fit the slideshow */
  #supersized li {
-    height: 980px; /*660*/
+    height: 660px;
 }
-/* corregir: esa url no esta bien */
- .home_slider .wpb_text_column p {
-    padding: 0 60px;
-    font-family:"Roboto",sans-serif;
-    font-weight: 300;
-    font-size: 24px !important;
+.home_slider .wpb_text_column { padding-top: 10%; }
+.home_slider .wpb_text_column p {
+    font-family:'Titillium Web', Arial, sans-serif;
+    font-size: 21px !important;
     color:#FFF;
 }
-.learn-more {
-    margin-top: 50px;
-}
-.learn-more a{
-    color: #FFFFFF;
-    font-size: 20px;
-    background-color: #505575;
-    padding: 15px 70px;
-    border-radius: 3px;   
-}
-
-/*General styles */
-.displayNone {display: none;}
-.text p {
-    font-family: "Open Sans",sans-serif;
-    font-size:17px;
-    color:#666666;
-    font-weight: normal;
-    line-height: 1.6em;
-    text-align: left;
-}
-.subtitle { margin-bottom: 10px; }
-.subtitle p {
-    font-family: "Roboto",sans-serif;
-    font-size:30px;
-    color:#202020;
-    font-weight: 300;
-    line-height:36px;
-    text-align: left;
-}
-.home-title p {
-    font-family: "Open Sans",sans-serif;
-    font-weight: 200;
-    font-size:60px;
-    color:#666666;
-    text-align: center;
-    line-height:70px;
-}
-.wpb_content_element.blocks-title { margin: 40px 0; }
-.first-section h1 {
-    font-family: 'Titillium Web',Arial,sans-serif;
-    text-align: center;
+ .home_slider .wpb_text_column h4 { color: #FFF; margin-bottom: 20px;}
+/*General styles*/
+.bigpadding { padding-top: 55px !important; }
+.bigtoppadding { padding-top: 0px; }
+ h3 {
     text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0em;
 }
-.home-title.color-title p {
-    font-family: "Roboto",sans-serif;
-    color:#D19E43;
-    font-weight: 700;
-}
-.home-slide-text p {
-    font-family: "Open Sans",sans-serif;
-    font-size:22px;
-    font-weight:300;
-    color:#FFFFFF;
-    text-align: left;
-}
-.home-slide-text.home-number p{
-    font-family: "Roboto",sans-serif;
-    font-size:55px;
-    font-weight:bold;
-    line-height:45px;
-}
-.home-slide-text.home-date p{
-    font-family: "Roboto",sans-serif;
-}
-.wpb_content_element.home-slide-title { margin-bottom: 0; }
-.home-slide-title p{
-    font-family: "Roboto",sans-serif;
-    color:#FFFFFF;
-    font-size:42px;
-    line-height: 43px;
-    font-weight:600;
-    text-align: left;
-}
-.wpb_button.home-slide-button{
-    font-family: "Open Sans",sans-serif;
-    color:#FFFFFF;
-    font-size:28px;
-    font-style: italic;
-    background-color:#505575;
-    padding: 25px 60px;
-}
-.wpb_button.home-slide-button:hover, .wpb_button.contact-button:hover, .learn-more a:hover{
-    color:#FFFFFF;
-    background-color:#2C3258;
-}
-.text-inform p{
-    font-family: "Open Sans",sans-serif;
-    font-size:23px;
-    font-weight: 300;
-    color:#666666;
-    text-align: left;
-    line-height:33px;
-}
-.text-inform.color-inform p{
-    color:#C39A51;
-    font-weight: 700;
-}
-.wpb_button.inform-button {
-    font-family: "Roboto",sans-serif;
-    color:#FFFFFF;
-    font-size:20px;
-    background-color:#D19E43;
-    padding: 18px 70px;
-}
-.wpb_button.inform-button:hover {
-    background-color:#B3770C;
-    color:#FFFFFF;
+.the-content h4 {font-family:"Open Sans", Arial, sans-serif;}
+
+.the-content ul li {
+    font-family: "Open Sans";
+    font-weight: normal;
+    font-size: 17px;
+    color: #222222;
 }
 
-.wpb_content_element.contact-text {margin-bottom: 0;}
-
-#call4speakers .contact-text p, .contact-text p {
-    font-family: "Roboto",sans-serif !important;
-    font-size:30px !important;
-    line-height:35px;
-    font-weight: 300;
-    color:#666666 !important;
-    text-align: left;
-}
-.wpb_button.contact-button {
-    font-family: "Roboto",sans-serif;
-    color:#FFFFFF;
-    font-size:20px;
-    background-color:#505575;
-    padding: 18px 90px;
-}
-.signup_button{
-	background: url(/wp-content/uploads/2014/07/logo-conected.png) no-repeat left center;
-	padding-left:480px !important;
-	height:192px;
-}
-
-.register.contact-button { background-color: rgba(216, 106, 46, 1); }
-.register.contact-button:hover { background-color:#666666; }
-
-.wpb_row.bkg-boxes {
-    background: url(/wp-content/uploads/2014/04/bkg-img-home.png) no-repeat center;
-    height: 259px;
-    margin-bottom: 0;
-    background-size: 100%;
-}
-
-/*bkg slider call for speakers*/
-.wpb_row.call4speakers-container {
-    background: url(/wp-content/uploads/2014/07/bkg-slide-homepage-3.png) no-repeat center;
-    background-color: #f0f0f0;
-    background-size: 100%;
-}
-.call4speakers-container .wpb_row.vc_row-fluid.rowfix { padding: 100px 0; }
-.visit-blog-separator { display: none !important;}
-
-/* Menu customize */
  header {
     background: white !important;
     box-shadow: 2px 0px 12px 0px black;
 }
-#homepagelanding header .row{
-    max-width: 940px !important;   
-}
-#navigationmain {
-    vertical-align: middle;
-    height: 90px;
-    display: table-cell;
-}
-#navigationmain ul {
-    text-transform: none;
-}
-#navigationmain ul.menu {
-    padding-top: 60px;
-}
-#navigationmain ul.menu li {
-    margin-right: 50px;
+.displayNone {display: none;}
+
+.btn-agility {cursor: pointer;}
+.btn-agility h4.text-agenda-green {min-height: 115px;
+padding-top: 24px;line-height: 34px;}
+
+/* LOGO */
+.logo 
+{
+    overflow: hidden;
     float: left;
-    display: inline-block;
-    margin: 0;
-    padding: 2px 0;
-    position: relative;
-    z-index: 3;
+    width: 160px;
+    margin-right: 30px;
+    margin-bottom: 0;
 }
-#navigationmain ul.menu li.sign-up {
-    margin-left: 5px;
+
+.logo-mobile
+{
+    display: none;
 }
-#navigationmain > ul > li > a {
-    letter-spacing: 0;
-    text-decoration: none;
-    padding: 12px 0;
-    margin: 0 10px;
-    white-space: nowrap;
-    background: transparent;
+
+.scale-with-grid-logo
+{
+    margin-top: 15px;    
+}
+
+.slogan {
+    height: 78px;
+    margin-top: 4px;
+    width: 222px;
+    float: left;
+    border-left: 2px solid #9d5ca5;
+    padding-left: 33px;
+    box-sizing: border-box;
+    padding-top: 15px;
+}
+
+.slogan .title
+{
+    color: #9d5ca5;    
+    font-weight: 600;
+}
+
+.slogan .date
+{
+    color: #b1b1b1;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.slogan-tablet
+{
+    height: 68px;
+    width: 182px;
+    float: left;
+    box-sizing: border-box;
+    padding-top: 10px;
+    clear: both;
+    display: none;     
+    text-align: left;
+    line-height: 20px;
+}
+
+.slogan-tablet .title-tablet
+{
+    color: #000;    
+    font-weight: 400;
     font-size: 16px;
-    color: #666666;
-    font-family:"Open Sans", Arial, sans-serif !important;
+}
+
+.slogan-tablet .date-tablet
+{
+    color: #000;
+    font-size: 16px;
     font-weight: 400;
 }
+/* Header call to action buttons */
+.call-to-action 
+{
+    float: right;
+    padding-top: 25px;
+}
+
+.call-to-action > a
+{
+    display: block;
+    height: 40px;
+    width: 180px;
+    box-sizing: border-box;
+    padding: 5px 9px 9px 9px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 19px;
+    float: left;
+}
+
+.call-to-action .keep-updated-btn
+{
+    background-color: #b1b1b1;
+    margin-right: 20px;
+}
+
+.keep-updated-btn:hover
+{
+    background-color: #8D8D8D !important;
+}
+
+.call-to-action .register-btn
+{
+    background-color: #ffaf00; 
+    margin-right: -20px;
+}
+
+.register-btn:hover
+{
+    background-color: #E2740B !important; 
+}
+
+.register-btn-mobile
+{
+    background-color: #ffaf00; 
+    height: 22px;
+    width: 136px;
+    box-sizing: border-box;
+    padding: 1px 9px 9px 9px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 13px;
+    color: #fff;   
+    float: left;
+}
+
+.register-btn-mobile:hover
+{
+    color: #fff;    
+}
+
+/* Menu customize */
+.nav-border
+{
+    border-top: 1px solid #d2d3d5;    
+}
+
+.mobile-navigation
+{
+    display: none;
+    position: relative;
+}
+
+.slogan-mobile
+{
+    position: absolute;
+    top: 42px;
+    font-size: 8px;
+    text-align: right;
+    width: 107px;
+    left: -2px;
+    font-weight: 400;
+}
+
+.divider
+{
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #cacaca;
+    margin-bottom: 6px;
+}
+
+.navbar-toggle
+{
+    width: 22px;
+    height: 22px;
+    background-color: transparent;
+    border: none;
+    padding-top: 3px;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+.navbar-toggle .icon-bar 
+{
+    display: block;
+    width: 22px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #5a5a5c;
+    margin-bottom: 4px;
+}
+
+.navbar-collapse
+{
+    display: none;
+    background-color: #fff;
+}
+
+.navbar-collapse ul
+{
+    margin-bottom: 0px;
+}
+
+.navbar-collapse li
+{
+    margin-bottom: 5px;
+}
+
+.social-icon{float: left;margin-left: 18px;}
+
+#navigationmain {
+    vertical-align: inherit;
+    height: auto;
+    margin: 0 auto;
+    display: table !important;
+}
+#navigationmain ul {padding:0}
+#navigationmain > ul > li {
+    float: left;
+    margin: 0px;
+    position: relative;
+}
+
+#navigationmain > ul > li > a {
+    letter-spacing: 0
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 300;
+    font-size: 11px;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    -webkit-transition-duration: .6s;
+    -moz-transition-duration: .6s;
+    -o-transition-duration: .6s;
+    -ms-transition-duration: .6s;
+    padding: 3px 20px;
+}
+
+#navigationmain > ul > li > a:hover, #navigationmain > ul > li.current-menu-item > a {
+    color: white;
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    -ms-transition-duration: .3s;
+    background: #9d5ca5;
+    padding: 3px 20px;
+}
+
 .dateAndLocation > ul > li > a {
     font-size: 1.2em;
     color: #793a89;
@@ -259,7 +319,11 @@ p {
     font-weight: 400;
 }
 .menu .icon-2x {
-    font-size: 24px;
+    font-size: 13px;
+}
+.icon-google-plus
+{
+    text-shadow: 1px 0px 0px #666;    
 }
 .four.columns.date {
     border: 1px solid #ddd;
@@ -281,10 +345,10 @@ p {
 #navigationmain .button a, footer .button a {
     display: block;
     padding-left:0;
-    color:#fff;
+    color:#B0B0B0;
     font-size:15px;
     font-weight: bold;
-    padding: 6px 12px;
+    padding: 6px 8px;
 }
 #navigationmain .button a:hover, footer .button a:hover {
     color: #fff;
@@ -318,7 +382,6 @@ footer .button.register {
 #nav_menu-3 li.button.register, #nav_menu-3 li.button.CFS {
     display:none;
 }
-
 /* get agile */
  #navigationmain .social-icon .social-title {
     font-family:'Open Sans', Arial, sans-serif;
@@ -341,12 +404,12 @@ footer .button.register {
     display: block;
     color: #793A89;
 }
-/*.first-section-box p {
-    font-family:'Open Sans', Arial, sans-serif;
+.first-section-box p {
+    font-family:'Open Sans', Arial, sans-serif;;
     line-height: 1.3em;
     font-size: 17px;
     text-align: left;
-}*/
+}
 .first-section-box p strong {
     display:inline-block;
     margin-bottom: 10px;
@@ -400,53 +463,6 @@ footer .button.register {
     font-size: 20px;
     font-weight: bold;
 }
-
-/****************/
-/*** SPONSORS ***/
-/****************/
-.rowfix.separator { margin-top: 70px !important; }
-.sponsor-golden, .sponsor-other { text-align: center; }
-.sponsor-img { margin-top: 80px; }
-.sponsor-ibm {
-    width: 15%;
-    margin-right: 190px;
-    padding-bottom: 25px;
-}
-.sponsor-toa { width: 12%; }
-.sponsor-hp {
-    width: 9%;
-    margin-right: 138px;
-    margin-left: 83px;
-}
-.sponsor-netscout {
-    width: 27%;
-    padding-bottom: 19px;
-}
-.sponsor-ericsson { width: 17%; }
-.sponsor-sigma { width: 18%; margin-top: 30px; }
-.sponsor-orga {
-    width: 27%;
-    margin-right: 90px;
-}
-.sponsor-CloudSense {
-    padding-bottom: 5px;
-    width: 22%;
-}
-.sponsor-comverse {
-    padding-bottom: 15px;
-    width: 20%;
-    margin-right: 115px;
-}
-.sponsor-esri { width: 17%; }
-.sponsor-text p {
-    text-align: center;
-    border-bottom: #f0f0f0 solid 2px;
-    font-size: 19px;
-    color: #666;
-    font-family: 'Open Sans' sans-serif;
-    margin: 0 25%;
-}
-
 /* Third Section*/
  .third-section .box {
     border-top: 6px solid #AFAFAF;
@@ -485,7 +501,7 @@ footer .button.register {
     border: 0!important;
     color: black!important;
 }
-.eModal-1 {
+/*.eModal-1 {
     cursor: pointer;
     padding: 10px 60px;
     display: inline-block;
@@ -495,9 +511,24 @@ footer .button.register {
     font-family:'Titillium Web', Arial, sans-serif;
     font-size: 22px;
     text-shadow: none;
-    font-weight: 700;
-    -webkit-box-shadow: 0 0 40px 2px #BBBBBB;
-    box-shadow: 0 0 40px 2px #BBBBBB;
+    font-weight: 700;*/
+/*    -webkit-box-shadow: 0 0 40px 2px #BBBBBB;
+    box-shadow: 0 0 40px 2px #BBBBBB;*/
+/*}*/
+/*MODAL*/
+.tiny.modal.active.theme-1 {
+    background-image: url('/wp-content/uploads/2014/07/logo-menu.png');
+    background-repeat: no-repeat;
+    background-size: 33%;
+    background-position: 217px 20px;
+    padding: 130px 40px 40px 40px !important;
+}
+.modal .title {
+    text-align: center;
+    font-size: 27px !important;
+    font-family: 'Titillium Web' sans-serif !important;
+    border-top: #e4e4e4 1px solid;
+    padding-top: 15px;
 }
 .call-for-speakers a {
     color:white;
@@ -511,69 +542,185 @@ footer .button.register {
     bottom: -7px;
     width: 100%;
 }
-.vc_responsive .wpb_row .vc_span4.box {
+ #call4speakers .vc_responsive .wpb_row .vc_span4.box {
     position: relative;
     padding-bottom: 200px;
 }
-/* footer */
- footer .menu li {
+
+/*-----------------------------*/
+/*--------- footer ------------*/
+/*-----------------------------*/
+
+footer.withe {
+    background-color: #fff;
+    border-top: none;
+}
+footer.withe .container .row { border-top: #D5D5D5 1px solid; }
+.footer-widgets-menu li {
+    float: left;
+    margin-bottom: 4px;
+}
+footer.withe .container .footer-widgets-menu li .menu-main-menu-container ul.menu,
+footer.withe .container .footer-widgets-menu li .menu-tmf-social-menu-container ul.menu { margin-top: 0; margin-right: 10px; }
+footer.withe .container .footer-widgets-menu li .menu-main-menu-container ul.menu li.menu-item,
+footer.withe .container .footer-widgets-menu li .menu-tmf-social-menu-container ul.menu li.menu-item { margin-right: 20px; }
+footer.withe .container .footer-widgets-menu li .menu-main-menu-container ul.menu li.menu-item a,
+footer.withe .container .footer-widgets-menu li .menu-tmf-social-menu-container ul.menu li.menu-item a { color: #444; }
+footer .menu li {
     float: left;
     margin-right: 10px;
 }
-footer .menu {
-    margin-top: 35px;
-}
+footer .menu { margin-top: 35px; }
 footer h5 {
     float: left;
     margin-right: 10px;
 }
-footer .three.columns.widget_nav_menu {
-    float: right;
-}
-footer .three h5 {
-    margin-bottom: 0;
-}
+footer .three.columns.widget_nav_menu { float: right; }
+footer .three h5 { margin-bottom: 0; }
 footer.black {
     background-color: #444;
     background-image: url('img/black-transparent-background.png');
     background-position: bottom;
-    background-repeat: repeat-x;
-    ;
+    /*background-repeat: repeat-x;*/
 }
-/*-----------REGISTER----------*/
-.wpb_row.RegisterHere { 
-    background-color: #f0f0f0 !important;
-    padding: 50px 0;
-    margin-bottom: 0;
+footer .container .footer-bottom { display: table; }
+footer .container .footer-bottom .footer-tmf-info {
+    display: table-cell; 
+    vertical-align: top;
+}
+footer .container .footer-bottom .footer-tmf-info img {
+    float: left;
+    margin-right: 10px;
+    margin-top: 14px;
+}
+footer .container .footer-bottom .footer-tmf-info p { margin-top: 20px; }
+
+footer .container .footer-bottom .footer-buttons-widgets {
+    display: table-cell; 
+    vertical-align: top; 
+    width: 280px;
+}
+.footer-buttons-widgets .columns.widget_text { width: 135px!important; }
+.footer-buttons-widgets #text-6 { float: right; }
+.footer-buttons-widgets #text-12 { float: left; }
+
+footer .footer-bottom .button.register.updated a { background-color: #B0B0B0; }
+footer .footer-bottom .button.register { background-color:rgb(254, 152, 2); width: 100%; }
+
+/*-------------------------------------------*/
+/*------------  HEADER-SLIDER  -------------*/
+/*-------------------------------------------*/
+.container.slideshow { position: relative; }
+.vc_responsive .wpb_row .vc_span12.page-slider.wpb_column.column_container { position: absolute; }
+
+/*-------------------------------------------*/
+/*------------  HOTEL & TRAVEL  -------------*/
+/*-------------------------------------------*/
+
+.hotel-header {
+    background-size: 100%;
+    width: 100%;
+    height: 295px;
+    position: absolute !important;
+    left: 0;
+    top: 102px;
+    border-bottom: grey 5px solid;
 }
 
- /*  margin: -100px -358px 0 -380px !important;*/
+.first-section-hotel img {margin-top: 5px;}
+
+.box-accommodation {
+    background-color: #F0F0F0;
+    border:#E3E3E3 1px solid ;
+    border-top:#89449A 4px solid;
+    border-bottom: none;
+    padding: 30px;
+    background-image: url('/wp-content/uploads/2014/07/acomodations-bkg.png');
+    background-repeat: no-repeat;
+    background-position: 100% 0%;
+}
+.box-accommodation .book-now {
+    background: purple; 
+    margin-right: 15px; 
+    width: 170px; 
+    float: left;
+}
+.box-accommodation img {
+    margin-right: 10px; 
+    background: purple; 
+    padding: 10px; 
+    display: table-cell; 
+    padding-bottom: 15px;
+}
+.box-accommodation .book-now a {
+    color: white; 
+    padding: 10px; 
+    text-transform: uppercase; 
+    text-align: center; 
+    display: block;
+    font-weight: bold; 
+    border-top: 3px solid white;
+}
+.box-accommodation .book-now a:hover { background-color: #D3D3D3; }
+.box-other-hotels {
+    padding: 20px 50px;
+    border: #E4E4E4 1px solid;
+    margin-top: -36px;
+}
+.wpb_content_element.travel-item { position: relative; margin-bottom: 20px;}
+.travel-item img { margin-right: 10px; }
+.travel-item strong {position: absolute;top: 5px;}
+
+.hotel-travel-items ul {
+    margin-left: 16px;
+}
+
+.hotel-travel-items ul li {
+    list-style-type: disc;
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: normal;
+    margin: 0px 0px 18px;
+}
+
+.wpb_content_element.hotel-travel-info-box { margin-bottom: 10px; }
+.hotel-travel-info-box p a {
+    display: block;
+    margin: -73px 0 0 60px;
+    background-color: #F2F2F2;
+    height: 67px;
+    line-height: 67px;
+    color: #444;
+    font-weight: bold;
+    text-align: left;
+    transition: color 0.5s ease 0s;
+    padding-left: 30px;
+}
 /*-------------------------------------------*/
 /*------------ CALL FOR SPEAKERS-------------*/
 /*-------------------------------------------*/
 
 /*Titulo*/
  #call4speakers > .container.white.bigpadding {
-    padding-top: 15px !important;
-    padding-bottom: 1px !important;
+    padding-top:15px !important;
 }
 #call4speakers > .container section.row:first-child {
-    position: relative;
-    margin-top: 35%;
+    position: absolute;
+    max-width: 100%;
+    width:100%;
+    margin-left:-20px;
+    background-image: url('http://www.getagilenow.org/wp-content/uploads/2014/05/CFS-title_background.jpg');
 }
 #call4speakers > .container section.row:first-child h3 {
+    font-size: 60px;
+    line-height: 1em;
+    font-weight: bold;
+    color:#FFF !important;
     max-width: 940px;
     margin: 0 auto;
     margin-bottom: 0 !important;
     margin-top: 40px;
     text-align: left !important;
-    font-family: "Open Sans",sans-serif;
-    font-weight: 200;
-    font-size: 40px;
-    color: #666666 !important;
-    line-height: 70px;
-    text-transform: none;    
-    padding-left: 15px;
 }
 #call4speakers > .container section.row:first-child .blackhorizontal {
     display: none;
@@ -584,28 +731,18 @@ footer.black {
     margin: 0 auto;
     text-align: left;
     float: none;
-    position: absolute;
-    top: 46px;
-    left: 103px;
 }
 #call4speakers > .container section.row div.midtopmargin p {
-    font-family:"Open Sans",sans-serif;
-    font-size: 40px !important;
-    font-weight: 200 !important;
-    color: #afafaf;
+    font-family:'Titillium Web', sans-serif;
+    font-size: 30px !important;
+    color: #e5e5e5;
     margin: auto;
     float: none;
     margin-bottom: 25px;
 }
-
-#call4speakers > .container section.row div.midtopmargin p span{
-border-left: 2px solid;
-padding-left: 9px;
-}
 /*Contenido*/
  #call4speakers > .container section.page {
-    padding-top: 15px !important;
-
+    padding-top: 195px !important;
 }
 section.post-370 .introduction p {
     font-family:'Open Sans', sans-serif;
@@ -620,32 +757,29 @@ section.post-370 .introduction p {
 .right {
     float: right!important;
 }
-
 #call4speakers h2 {
-    font-family: 'Open Sans', sans-serif;
+    color:#6d6d6d !important;
+    font-family:'Titillium Web', sans-serif;
     font-size: 30px;
-    font-weight: 200;
+    font-weight: bold;
 }
 #call4speakers p {
-    color:#666666;
-    font-family:'Open Sans', sans-serif !important;
+    color:black;
+    font-family:'Open Sans', sans-serif;
     font-size: 17px;
     font-weight: light;
 }
 #call4speakers section.page ul li {
-    color: #666;
+    color: black;
     list-style-position:inside;
     margin-bottom: 5px;
-    list-style-image: url('/wp-content/uploads/2014/07/bullet.png');
+    list-style-image: url('http://www.getagilenow.org/wp-content/uploads/2014/05/bullet.png');
 }
-#call4speakers .wpb_row.vc_row-fluid 
-{
-    margin-bottom: 0px !important;
+#call4speakers .wpb_row.vc_row-fluid {
+    border-top: 1px solid #e5e5e5;
 }
 #call4speakers .wpb_row.vc_row-fluid:first-child {
     border:none;
-    background: url(/wp-content/uploads/2014/06/bkg-slide-homepage-2.png) no-repeat;
-    background-position: -517px 4px;
 }
 .call4speakersform {
     position: absolute;
@@ -656,156 +790,184 @@ section.post-370 .introduction p {
 .call4speakersformviolet {
     display: block!important;
     margin-bottom: 20px!important;
-    width: 309px;
 }
 
-
-.vc_custom_1404380166147 .vc_span12 .wpb_wrapper .rowfix
-{
-    background-image: none !important;    
+/*---------------------------------*/
+/*------------ AGENDA -------------*/
+/*---------------------------------*/
+/* AGENDA */
+h4.text-agenda-gray {
+    color:#6D6366!important; /* hay un important que no deja que se vea los colore que agrego*/
 }
-
-.first-speakers-content
-{
-    border-bottom: 2px solid #f0f0f0 !important;
-    padding-bottom: 30px !important;
-    margin-top: 230px !important;    
+h4.text-agenda-orange {
+    background-color:#F18722; 
+    color:#FFF!important; /* hay un important que no deja que se vea los colore que agrego*/
+    margin-bottom: 0px;
+    padding-left: 5px;
 }
-
-.speakers-content
-{
-    border-bottom: 2px solid #f0f0f0 !important;
-    padding-bottom: 30px !important;    
+h4.text-agenda-green {
+    background-color:#B0CC4B; 
+    color:#FFF!important; /* hay un important que no deja que se vea los colore que agrego*/
+    margin-bottom: 0px;
+    padding-left: 5px;
 }
-
-.speakers-header
-{
-    border-bottom: 5px solid #e3e3e3;
-    background: url(/wp-content/uploads/2014/06/bkg-slide-homepage-2.png) no-repeat;
-    background-position: 85% 7px;
-    position: absolute !important;
-    width: 100% !important;
-    left: 0 !important;    
+p.text-agenda-small {
+    font-size: 13px;
+    color:#6D6366!important; /* hay un important que no deja que se vea los colore que agrego*/
+    font-family:'Open Sans', sans-serif;
+    text-align:left;
 }
-
-.speakers-header .wpb_wrapper
-{
-    width: 910px;        
-    margin: 0 auto;
+p.text-agenda-title-columns {
+    font-size:19px;
+    margin-bottom:0px;
 }
-
-.submit-proposal
-{
-    margin-bottom: 315px;    
+.the-content .text-agenda-title h4 {
+    margin-bottom: 0px!important; /*hay un important en Styles.php? que no me deja modificar*/
 }
-
-.speakers-img
-{
-    width: 100% !important;
-    height: 600px;
-    background: url(/wp-content/uploads/2014/07/speakers-img.jpg) no-repeat;
-    position: absolute !important;
-    top: 104px;
-    left: 0;    
-    background-position: 50% 0px;
-    background-size: 100%;
+.text-agenda-title {
+    text-align:center;
 }
-
-.vc_custom_1404380166147 {
-    position: absolute !important;
-    margin-top: -291px !important;
-    width: 100% !important;
-    left: 0 !important;
+.agenda-list ul {
+   margin-left: 20px;
+   padding: 0px 15px 0 0;
 }
-/************************/
-/**** INFORM SECTION ****/
-/************************/
-
-.inform img { border: #f0f0f0 solid 2px; }
-.inform img.logo-inform { border: none;}
-
-/********************/
-/****STAY CONECTED***/
-/********************/
-.stayConected a {
-    color: #505575;
+.agenda-list ul li{
+    list-style-type: disc;
+    font-size:17px;
+    font-weight:normal;
+    line-height: 1.6;
+    margin: 0px 0px 2px;
+    padding-right:5px;
 }
-#call4speakers .ContactUs .stayConected li.social-icon, .stayConected li {
+p.text-agenda-dot-orange:before   {
+    content: "\2022";
+    font-size: 30px;
+    line-height: 10px;
+    color: #F18722;
+    margin: 10px 5px 0 0;
     float: left;
-    margin-top: 20px;
-    margin-right: 20px;
-    list-style-image: none;
-    list-style-position: initial;
+} 
+p.text-agenda-dot-green:before  {
+     content: "\2022";
+     font-size: 30px;
+     line-height: 10px;
+     color: #B0CC4B;
+     margin: 10px 5px 0 0;
+     float: left;      
+}
+.wpb_content_element.button-agenda-download {
+     margin-bottom: 5px; 
+} 
+.wpb_button.button-agenda-download-green {
+     margin:auto;
+     text-align:center;
+     background-color:#B0CC4B;
+     color:#FFF;  
+     border-radius: 0px;       
+}
+.wpb_button.button-agenda-download-orange {
+     margin:auto;
+     text-align:center;
+     background-color:#F18722;
+     color:#FFF;
+     border-radius: 0px;   
+}
+/*---------------------------------*/
+/*------------ WORKSHOP -----------*/
+/*---------------------------------*/
+.box-digital {
+    background-color: #F0F0F0;
+    border: #E4E4E4 1px solid;
+    border-top: #89449A 4px solid;
+    padding-bottom: 25px;
 }
 
-/**************/
-/*** FOOTER ***/
-/**************/
-.rowfix .greytext { margin-top: 20px; }
-.footer-logo { 
-    float: left;
-    width: 100px;
-    margin-right: 10px;
-    margin-top: -5px; 
-}
-
-/*------------------ FIXES ----------------*/
-#homepagelanding .row{
-	width:100% !important;
-	max-width: 100% !important; 
-}
-.rowfix{
-    max-width: 940px;
-    min-width: 320px;
-	margin:0 auto !important;
-}
-div.vc_custom_1401125767021 {margin-right:0 !important;}
-
-.sign-up {
-    box-shadow: none !important;
-    height: 22px;
-    margin-right: 0 !important;
+.the-content .box-digital h4 {
     text-transform: uppercase;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 17px;
+    margin: 0 0 5px 0 !important;
 }
 
-.sign-up a {
-    color: #fff !important;
-    padding: 20px 10px !important;
-    text-shadow: none;
-    font-size: 16px !important;
-    line-height: 23px !important;
+.first-digital {
+    margin-top: 30px;
 }
 
-.sign-up a:hover {
-    color: #fff !important;
+.box-digital .vc_separator { background-color: #E4E4E4; }
+
+.box-digital-info { padding-right: 60px; }
+
+.workshop-summit img {
+    margin-right: 10px;
+    margin-top: -5px;
+    vertical-align: middle;
+}
+.text-introduction { 
+    text-align: center;
+    width: 70%;
+    margin: -40px auto 40px auto; 
+    padding-top: 35px;
+}
+.wpb_content_element.summit-title { margin-bottom: 25px; }
+
+.box-InFocus h4 {
+    font-family: 'Open Sans';
+    font-weight: bolder;
+    margin-bottom: 0px;
+    font-size: 34px;
 }
 
-#navigationmain > ul > li > a:hover {
-color: #505575;
+
+h4.text-agenda-orange a, h4.text-agenda-green a { color: #FFF; }
+h4.text-agenda-orange:hover{ background-color: #E2740B; }
+h4.text-agenda-green:hover { background-color: #91AF25; }
+
+
+
+/****** CERDADA A CORREGIR ********/
+/*#hotel-travel .container.white.bigpadding{
+    background-image: url(http://tmfmalaysia14.staging.wpengine.com/wp-content/uploads/2014/07/hotel-header-1680x295.jpg?id=423) !important;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
 }
 
-#nav_menu-3 .sign-up{display: none;}
+#hotel-travel h3.blacktext.bold.midbottommargin{color: white!important;font-size: 3.5em;text-align: left !important;margin-top: 90px;}
+
+#hotel-travel .five.columns.alpha.centered.blackhorizontal{display: none!important;}*/
+
+/*#hotel-travel .bigtoppadding {padding-top: 135px !important;}*/
+
+#workshops .the-content ul{
+    list-style: disc;
+    list-style-position: outside;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 13px;
+    font-family:'Ubuntu', sans-serif;
+}
+
+/****** FIN CERDADA A CORREGIR ********/
+
 
 /*----------------------------------------------------------------------------------------------*/
 /*---------------------------------------- RESPONSIVE ------------------------------------------*/
 /*----------------------------------------------------------------------------------------------*/
+ @media only screen and (max-width: 1280px) {
+    #hotel-travel .container.white.bigpadding { background-size: unset; }
+    #hotel-travel h3.blacktext.bold.midbottommargin { margin-top: 0; }
+ }
 
-@media only screen and (max-width: 1500px) {
-    .call4speakers-container { margin-bottom: 0; }
-}
-@media only screen and (max-width: 1250px) {
-    .call4speakers-container .wpb_row.vc_row-fluid.rowfix { padding: 60px 0;}
-}
+ @media only screen and (max-width: 978px) {
 
-@media only screen and (max-width: 978px) {
+    /*header-menu*/
+    .logo { margin-right: 10px; }
+    .slogan { padding-left: 14px; }
+
     .first-section h1 {
         font-size: 3em;
     }
     #navigationmain > ul > li > a {
         padding-left: 20px;
-    }
-    #navigationmain ul.menu {
-        padding-top: 0px;
     }
     .dateAndLocation > ul > li > a {
         font-size: 1em;
@@ -831,62 +993,7 @@ color: #505575;
     #call4speakers section.page ul li {
         text-align: left;
     }
-    .home-slide-text p { font-size: 1.3em; }
-    .home-slide-title p { font-size: 2.6em; }
-
-    /*CFS page*/
-    .speakers-img { height: 450px; }
 }
-
-@media only screen and (max-width: 937px) {
-
-    /*-- sign up footer --*/
-    .vc_custom_1402418203625 .contact-text p { font-size: 29px; }
-}
-
-@media only screen and (max-width: 926px) {
-
-    /*-- sign up footer --*/
-    .vc_custom_1402418203625 .contact-text p { font-size: 28px; }
-}
-
-@media only screen and (max-width: 914px) {
-
-    /*-- sign up footer --*/
-    .vc_custom_1402418203625 .contact-text p { font-size: 27px; }
-}
-
-@media only screen and (max-width: 896px) {
-
-    /*-- sign up footer --*/
-    .vc_custom_1402418203625 .contact-text p { font-size: 26px;  }
-    .call4speakers-container .wpb_row.vc_row-fluid.rowfix { padding: 60px 0; }
-}
-
-@media only screen and (max-width: 822px) {
-
-    /*-- sign up footer --*/
-    .vc_custom_1402418203625 .contact-text p { font-size: 25px; }
-}
-
-@media only screen and (max-width: 808px) {
-
-    /*-- sign up footer --*/
-    .vc_custom_1402418203625 .contact-text p
-    {
-        font-size: 24px;        
-    }
-}
-
-@media only screen and (max-width: 797px) {
-
-    /*-- sign up footer --*/
-    .vc_custom_1402418203625 .contact-text p
-    {
-        font-size: 23px;        
-    }
-}
-
 @media only screen and (max-width: 978px) and (min-width: 768px) {
     /*header*/
     .dateAndLocation > ul > li > a {
@@ -896,14 +1003,33 @@ color: #505575;
     #call4speakers > .container.white.bigpadding {
         margin-top: -20px;
     }
-    .wpb_button.inform-button { padding: 18px 60px; }
-    .signup_button p { font-size: 24px;}                
 }
 @media only screen and (max-width: 860px) {
 
-    .home_slider .wpb_text_column p {
-        font-size: 1.4em !important;
+    /*header-menu*/
+    .infocus-logo{ position: relative; }
+    .slogan {
+        padding-left: 8px;
+        position: absolute;
+        left: 205px;
+        height: 67px;
+        margin-top: 37px;
+        width: 196px;
+        float: none;
+        border-left: 2px solid #9d5ca5;
+        padding-left: 10px;
+        box-sizing: border-box;
+        padding-top: 6px;
     }
+    .row .six.columns.action-btns {
+        float: right;
+        width: 32%;
+    }
+    .call-to-action {
+        padding-top: 15px;
+    }
+    .call-to-action .keep-updated-btn { margin-bottom: 10px; }
+
     .first-section h1 {
         font-size: 2.6em;
     }
@@ -920,8 +1046,6 @@ color: #505575;
     .wpb_button.join-us.visit-blog {
         padding: 10px 20px;
     }
-    /**/
-
     /*Call-for-speakers*/
     .wpb_row.call-for-speakers > .wpb_column.vc_span12 {
         float:right;
@@ -938,65 +1062,58 @@ color: #505575;
     .call-for-speakers .wpb_wrapper p {
         font-size: 14px;
     }
-    .home-slide-text p { font-size: 1.1em; }
-    .home-slide-title p { font-size: 2.3em; }
+    .slogan{ margin-top:17px; width: 206px;}
 
-    .wpb_button.inform-button { padding: 18px 55px; }
-    .wpb_button.contact-button { padding: 18px 70px; }
-
-    .signup_button { padding-left: 420px !important; }
-    .signup_button p { font-size: 22px; }
-    /*1*/.wpb_button.contact-button.submit-btn-home {margin-top: -30px;}
 }
-
-@media only screen and (max-width: 978px){
-
-    #call4speakers > .container section.row:first-child h3 {
-        padding-bottom: 50px !important;    
-    }    
-    #call4speakers > .container section.row div.midtopmargin {
-        left: 0% !important;
-        top: 95px;
-    }
-    #call4speakers > .container section.row div.midtopmargin p span {
-    border-left: none !important;
-    }
+@media only screen and (max-width: 768px) {
+	
 }
 @media only screen and (max-width: 767px) {
-
-    /*header social icons fix*/
-    header .eight.columns {
-        float: left;
-    }
-    header .eight.columns #navigationmain{
-        height: 100px;
-        display: table-cell;
-    }
-    .home_slider .wpb_text_column p { font-size: 1.3em !important; }
-    .home-title p { font-size: 3em; line-height: 1em; }
-    .subtitle p { font-size: 1.7em; }
-
     /* menu */
-    .js .selectnav {display: none;}
-    .js #menu {display: block;}
-    #navigationmain ul {
-        padding-top: 40px;
+    .js .selectnav {display: block;max-width: 100% !important;}
+    .js #menu {display: none;}
+    #navigationmain ul {padding-top: 40px;}
+    #navigationmain .button.CFS{margin-left: 25px}
+    
+    #navigationmain 
+    {
+        margin-top: 123px;
+        display: block !important;
+    } 
+    
+    .head
+    {
+    margin: 0 auto;
+    width: 392px;
+    height: 179px;
+}    
+    
+    .nav-border 
+    {
+    border-top: none !important;
+    }        
+    
+    .slogan
+    {
+        display: none;
     }
-    #navigationmain .button.CFS {margin-left: 25px}
+    .row p  {
+       text-align:left;
+    }
+    /*call to action btns*/
     
-    #navigationmain ul.menu {
-    width: 372px !important;
-    }    
+    .keep-updated-btn{display: none !important;}   
     
-    #navigationmain ul.menu li {
-        margin-right: 8%;
-    }    
+    .call-to-action .register-btn 
+    {
+        margin-right: 0px !important;
+    }
     
-    .sign-up {
-        margin-left: 1% !important;
-        margin-right: 0 !important;
-    }    
-
+    .slogan-tablet
+    {
+        display: block;
+    }   
+    
     .dateAndLocation > ul > li:first-child {
         margin: 10px 0 0 0;
     }
@@ -1051,8 +1168,7 @@ color: #505575;
         margin-bottom: 15px;
         height: 30px;
     }
-    /*BEGIN YOUR JOURNEY Section*/
-    .home .journey-img {float: left;}
+    footer .container .footer-bottom .footer-tmf-info p { display: none; }
 
     /*-- CALL FOR SPEAKERS --*/
     #call4speakers > .container section.row div.midtopmargin {
@@ -1064,56 +1180,50 @@ color: #505575;
     #call4speakers > .container.white.bigpadding {
         margin-top: -60px;
     }
-    .call4speakers-content.call4speakers-img { display: none; }
-    .call4speakers-container .wpb_row.vc_row-fluid.rowfix { padding: 20px 0; }
-    .journey-img { margin-bottom: 0; }
+    
+    /*-- VENUE TRAVEL --*/
+    .first-section-hotel img {
+    display: block;
+    margin: auto;
+    }
+    
+    .wpb_content_element.travel-item img{
+    display: inline-block;
+    margin-left: -150px;
+}
+    
+    .wpb_content_element.travel-item strong{
+    display: inline-block;
+    margin-left: 7px;
+}  
 
-    .logo-inform { width: 50%; }
-    .media-img { display: none; }
+    .hotel-travel-items ul li {
+    text-align: left;
+    }  
+    
+    .travel-icons img {
+    margin-left: -90%;
+    }           
 
-    .contact-text p {
-        font-size: 1.1em;
-        line-height: 1.3em;
-        text-align: left;
+    .hotel-travel-info-box p a {
+    display: block;
+    margin: -73px 0 0 0px;
+    background-color: #F2F2F2;
+    height: 67px;
+    line-height: 67px;
+    color: #444;
+    font-weight: bold;
+    text-align: left;
+    transition: color 0.5s ease 0s;
+    padding-left: 21%;
     }
-    .wpb_button.contact-button { 
-        padding: 18px 70px;
-    }
-    .wpb_button.inform-button {
-        float: left;
-        margin-top: -35px;
-    }
-    div.vc_custom_1402415911832 { margin-bottom: -60px !important; }
-    .signup_button { padding-left: 390px !important; }
-    .wpb_button.contact-button {
-        padding: 18px 70px;
-        float: left;
-    }
-    .wpb_button.contact-button.register {float: none;}
-    /*SPONSORS*/
-    .sponsor-ericsson, .sponsor-sigma {
-        width: 150px;
-    }
-    .sponsor-toa, .sponsor-hp, .sponsor-netscout, .sponsor-orga, .sponsor-CloudSense, .sponsor-comverse, .sponsor-esri {
-        display: block;
-        margin: 80px auto;
-    }
-    .sponsor-ibm { width: 130px; display: block; margin: 40px auto;}
-    .sponsor-toa { width: 107px; }
-    .sponsor-hp { width: 85px; }
-    .sponsor-netscout, .sponsor-orga {width: 218px;}
-    .sponsor-CloudSense {width: 200px; }
-    .sponsor-comverse { width: 188px; }
-    .sponsor-esri { width: 130px; }
-
-    .sponsor-img { margin-top: 0; }
-
+    
+    .wpb_content_element.hotel-travel-info-box {
+    padding-left: 20px;
+    padding-right: 10px;
+    }    
     /*footer buttons*/
     footer .button.CFS { margin: 0 auto; }
-    
-    .sign-up a { padding: 10px !important; } 
-                
-    #call4speakers > .container section.row:first-child { margin-top: 40%; }                
 }
 @media only screen and (max-width: 680px) {
     /* menu */
@@ -1121,8 +1231,11 @@ color: #505575;
         font-size: 14px;
     }
     /* remove first section icons */
-    .first-section-box > .wpb_column .wpb_row .wpb_column:first-child {
+    .first-section-box > .wpb_column .wpb_row .wpb_column img {
         display: none;
+    }
+    .first-section-box > .wpb_column:last-child {
+        margin-bottom: 45px;
     }
     .first-section-box > .wpb_column .wpb_row .wpb_column:nth-child(2) {
         width:100%;
@@ -1130,8 +1243,6 @@ color: #505575;
     .wpb_row.first-section-box {
         margin:0;
     }
-    /*home slider*/
-    .home_slider .wpb_text_column p { font-size: 1.2em !important; }
     /*Call-for-speakers*/
     .call-for-speakers {
         background-position: right;
@@ -1139,40 +1250,78 @@ color: #505575;
     .wpb_row.call-for-speakers > .wpb_column.vc_span12 {
         width: 100%;
     }
-    /*sign-up button section*/
-    div.signup_button {
-        background-image:none;
-        padding-left: 0 !important
-    }
-    div.signup_button p{
-        font-size: 28px;
-        text-align: center;
-    }
-    div.signup_button .wpb_button.contact-button{
-        float: none;
-    }
-    /*call for speakers banner*/
-    .wpb_row.call4speakers-container { background-size: cover;}
-
-    #menu-tmf-social-menu
-    {
-        margin-left: 38%;        
-    }
-
-
+}
 @media only screen and (max-width: 640px) {
 
     /* menu */
-    .js #menu {display: none;}
-    .js .selectnav {display: block;}
+    .js #menu {display: block;}
+    #menu li a{color: #7f7f82;}
+    .js .selectnav {display: none;}
+    .call-to-action{display: none;}
+    
+    .mobile-navigation{display: block;}
+    
     header div.eight.columns {float: left !important; margin-left: 20px;}
-    #navigationmain {height: 50px; margin-top: 20px;}
-    header {height: 70px !important;}
+    
+    .head {
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+    }    
+    
+    .logo-mobile{ width: 170px;}
+    
+    .head .divider{ display: none;}
+    
+    #navigationmain 
+    {
+        display: none !important;
+    }
+    
+    .register-btn-mobile{ left: 100%; margin-left: -106px; position: absolute; top: 30px; width: 76px; }
+    .navbar-toggle { background-color: transparent; border: medium none; cursor: pointer; height: 22px; left: 100%; margin-left: -23px; padding-top: 3px; position: absolute; top: 28px; width: 22px; }
+    
+    header {height: auto !important;}
 
     header .container .four.columns:first-child a img {
         display: none;
     }
-    /*make the logo a square (for saving up sapce in cellphones) */
+    
+    /*Logo*/
+    
+    .logo 
+    {
+        display: none;
+    } 
+    
+    .logo-mobile
+    {
+        display: block;
+    
+        margin-top: -10px;
+}  
+    
+    
+    .slogan 
+    {
+    padding-left: 8px;
+    position: absolute;
+    left: 123px;
+    height: 55px;
+    margin-top: 8px;
+    width: 196px;
+    float: none;
+    border-left: 2px solid #9d5ca5;
+    padding-left: 10px;
+    box-sizing: border-box;
+    padding-top: 1px;
+    }     
+    
+    .call-to-action .register-btn {
+    margin-right: 0px !important;
+    width: 100px !important;
+    }    
+    
     header {
         height: 100px;
     }
@@ -1203,28 +1352,37 @@ color: #505575;
         padding-bottom: 0 !important;
     }
     header .container .four.columns:first-child a {
-        display: block;
-        width: 55px;
-        height: 55px;
-        background-image: url('/wp-content/uploads/2014/06/tmforumlive-icon.jpg');
-        background-position: 5px 4px;
-        background-repeat: no-repeat;
-        position: relative;
-        top: 5px;
         float: right;
+        display:block;
+        width:55px;
+        height:55px;
+        margin-top: 5px;
+        background-image:url('http://devmalaysia14.wpengine.com/wp-content/uploads/2014/04/TMFAsia-becomingAgileLogo.png');
+        background-size: 304px;
+        background-position: -27px -34px;
     }
+    
+    .social-icon 
+    {
+        margin-left: 27px;
+    }    
+    /*-- STRUCTURE --*/
+    .bigtoppadding {
+    padding-top: 3px !important;
+    }    
+        
     /*-- CALL FOR SPEAKERS --*/
     #call4speakers > .container.white.bigpadding {
-        margin-top: -60px;
-    }
-        
-        #menu-tmf-social-menu
-    {
-        margin-left: 38%;        
+        margin-top: -95px;
     }
     
-    
+    .bigpadding{ padding-top: 20px !important;}
+    .four.columns.alpha.centered.midtopmargin{ display: none;}
+    .wpb_wrapper > ul{ text-align: left !important;}
+    .wpb_row.vc_row-fluid{ padding: 0 20px;}
+    body{ overflow-x: hidden !important;}
 }
+
 @media only screen and (max-width: 600px) {
     /*-- CALL FOR SPEAKERS --*/
     #call4speakers > .container.white.bigpadding {
@@ -1242,47 +1400,34 @@ color: #505575;
     #call4speakers section.page ul li {
         font-size: 15px;
     }
-    .call4speakers-container .home-slide-title p {
-        font-size: 1.8em;
-    }
-        
-        #menu-tmf-social-menu
-    {
-        margin-left: 38%;        
-    }
+    .hotel-travel-items ul {
+    margin-left: 36px;
+    }    
 }
 @media only screen and (max-width: 540px) {
     /*home slider*/
     .home_slider .wpb_single_image {
         margin-bottom: 15px;
     }
-
-    #menu-tmf-social-menu {
-        margin-left: 34%;        
-    }
 }
-@media only screen and (max-width: 486px) {
-
-    /*center everything*/
-    .subtitle p {text-align: center;}
-    .text p {text-align: center;}
-    .text-inform p { text-align: center; }
-    .wpb_button.inform-button {float: none;}
-    footer div.textwidget {text-align: center;}
-    footer p.meta {text-align: center;}
+@media only screen and (max-width: 480px) {
 
     /* menu */
     header div.eight.columns { margin-left:10px; }
-    .js .selectnav { max-width: 160px; }
+    .js .selectnav {
+    max-width: 56% !important;
+    float: left;
+    }
 
     /*home slider*/
     .home_slider .wpb_text_column p {
         font-size: 20px !important;
-        padding: 0 10px;
-    }
+        padding: 10px;
+    }  
+       
     /*make the logo a square (for saving up sapce in cellphones) */
     .row .four.columns {
-        width:35% !important;
+        width:20% !important;
         margin:0;
         height:50px;
     }
@@ -1306,50 +1451,30 @@ color: #505575;
         padding: 0 20px;
     }
     /*-- CALL FOR SPEAKERS --*/
-    .home-slide-title p {
-    font-size: 1.5em;
-    line-height: 1em;
-    }
-    .wpb_row.call4speakers-container {
-    background-size: 200% auto;
-    }
     #call4speakers > .container section.row div.midtopmargin p {
         font-size: 18px !important;
     }
     #call4speakers p { font-size: 14px; }
-
-    .home-slide-text p {
-        font-size: 1em;
-        padding-top: 10px;
-    }
-    
-    #call4speakers > .container section.row div.midtopmargin {
-    left: 0% !important;
-    top: 193px !important;
-    }    
     /* submit your prposal */
     .vc_btn_purple.vc_btn_square_outlined { font-size:14px; }
-    .vc_responsive .wpb_row .vc_span12.signup_button {  
-        padding-left: 5px !important;
-        padding-right: 30px !important; 
+
+    #hotel-travel h3.blacktext.bold.midbottommargin {font-size: 2.5em;}
+
+    /*footer*/
+    footer .container .footer-bottom { margin: 0 auto; }
+
+    footer .container .footer-bottom .footer-tmf-info {
+        display: block;
+        margin: 0 auto;
     }
-    .home-title p { font-size: 2.1em; line-height: 1.1em; }
-    .signup_button { background: #f0f0f0; }
-    .visit-blog-separator { display: block !important; margin-bottom: -10px !important;}
-    /*sign-up section fix */
-    .vc_responsive .wpb_row .vc_span12. { padding-right: 0 !important; }
-    div.signup_button p { font-size: 24px; }
-    div.vc_custom_1402415911832 { margin-bottom: -49px !important; }
-
-    .call4speakers-container .home-slide-title p {font-size: 1.4em;}
-
-    /*tmforum inform center logo*/
-    .wpb_single_image.wpb_content_element.logo-inform {width: 100%; text-align:center;}
-    .wpb_single_image.logo-inform img {width: 50%;}
-
-    #menu-tmf-social-menu {
-        margin-left: 25%;        
+    footer .container .footer-bottom .footer-tmf-info img { 
+        max-width: 100px; 
+        float: none; 
     }
+    footer .container .footer-bottom .footer-buttons-widgets {
+        display: block;
+    }
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -1361,6 +1486,11 @@ color: #505575;
         float: left;
         width: 31.2%!important;
         margin-right: 3%;
+        padding-bottom: 10px;
+        min-height: 530px;
+    }
+
+    #call4speakers .vc_responsive .wpb_row .vc_span4.box {
         min-height: 530px;
     }
     .vc_responsive .wpb_row .vc_span4.box:last-child {
@@ -1378,36 +1508,4 @@ color: #505575;
     .call4speakersformviolet {
         display: none!important;
     }
-}
-
-@media only screen and (max-width: 468px) {
-    .call4speakers-content .wpb_button.contact-button {
-        font-size: 16px;
-        padding: 18px 23px;
-    }
-}
-
-@media only screen and (max-width: 380px) {
-    .call4speakers-container .wpb_row.vc_row-fluid.rowfix {padding: 17px 0;}
-}
-
-@media only screen and (max-width: 320px) {
-    .home_slider .wpb_text_column p {
-        padding-left: 0;
-        padding-right: 35px;
-    }
-    
-    .call4speakers-container .wpb_row.vc_row-fluid.rowfix { padding: 0;}  
-    .call4speakers-container .call4speakers-content { margin-top: 23px !important; } 
-
-    #menu-tmf-social-menu {
-        margin-left: 26%;        
-    }
-    
-    .call4speakers-content .wpb_button.contact-button {
-    font-size: 13px;
-    padding: 6px 23px;
-    height: 31px;
-    margin-top: -57px;
-    }    
 }

@@ -1,0 +1,1152 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid ""
+msgstr ""
+
+#. Text in function
+#: montreal/comments.php:4
+msgid " % COMMENTS"
+msgstr ""
+
+#. Text in function
+#: montreal/comments.php:4
+msgid " 0 COMMENTS"
+msgstr ""
+
+#. Text in function
+#: montreal/comments.php:4
+msgid " 1 COMMENT"
+msgstr ""
+
+#. Text in echo
+#: montreal/search.php:14
+msgid " Item"
+msgstr ""
+
+#. Text in echo
+#: montreal/search.php:14
+msgid " Items"
+msgstr ""
+
+#. Text in echo
+#: montreal/404.php:11
+msgid "404, Page Not Found"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_functions.php:1
+msgid "<b>Hey there! Thanks for installing montreal</b><br />
+        If you have just upgraded montreal, dismiss this message.<br />
+        As a new user here is a few things you need to do to get going with the theme;<br />
+        <ol>
+        	<li>Please visit the <a href=\"customize.php\">Theme Customizer</a> and make any small change to enable the \"Save Changes\" button, hit the button, this will write the theme styling to your database properly for the first time.</li>
+        	<li>Be sure to ready through the included documentation and watch the included set-up videos, they will help you out loads in getting going with montreal</li>
+        	<li>Above all, have fun and enjoy your new theme!</li>
+        </ol> | <a href=\"%1$s\">Hide Notice</a>"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "A header image for the 'full' portfolio display type"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "About Page Settings"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Add New"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Add New Client"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Add New Portfolio"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Add New Team Member"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Add New Testimonial"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Add a Link to this Client Logo?"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Additional Portfolio Item Details"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:160
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Any inspiration for your project"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:168
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Anything else you want us to know"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Background Image"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Bold intro for Blog Section"
+msgstr ""
+
+#. Text in echo
+#: montreal/footer-stripe.php:16
+msgid "CLICK AND DRAG PORTFOLIO TO LEFT OR RIGHT"
+msgstr ""
+
+#. Text in function
+#: montreal/comments.php:12
+msgid "Cancel"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:155
+msgid "Clean, Modern, Minimal, Fun etc"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Client"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Client Link"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Client entries for the montreal Theme."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Clients"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Colour A"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Colour B"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:83
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Company name"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Contact Page Additional Details"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/mandw.php:1
+msgid "Contact Page Sidebar"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Custom CSS"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Custom Favicon Upload"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Custom Logo Upload"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:149
+msgid "Design and feel"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Edit Client"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Edit Portfolio"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Edit Team Member"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Edit Testimonial"
+msgstr ""
+
+#. Text in function
+#: montreal/email_scripts/sendemail.php:1
+msgid "Email was not sent. Error!"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Enter a title for the Clients area."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Enter a title for the Testimonials area."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Enter a title for the team area."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Enter the Twitter id to be displayed on the homepage"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Enter the quote for the Home-Page"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Enter this employees Job Title"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Enter your address"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Example: envato"
+msgstr ""
+
+#. Text in echo
+#: montreal/footer.php:30
+#: montreal/footer-stripe.php:21
+msgid "Facebook"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Facebook Profile Link (Needs http://)"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Feel free to leave blank if you don't want a Subtitle"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/mandw.php:1
+msgid "Footer Navigation"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/mandw.php:1
+msgid "Footer Widget Area"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Full Portfolio Type Header Image"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Gallery Image 1"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Gallery Image 2"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Gallery Image 3"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Gallery Image 4"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Gallery Image 5"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Gallery Image 6"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Gallery Image 7"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Gallery Image 8"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Gallery Images"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Google Analytics Code - Include <script> tags!"
+msgstr ""
+
+#. Text in echo
+#: montreal/footer.php:32
+#: montreal/footer-stripe.php:23
+msgid "Google+"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Google+ Profile Link (Needs http://)"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:53
+msgid "Hello there"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Hide the Blog Section on the Home-Page? "
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Hide the Portfolio Section on the Home-Page? "
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Highlight Colour"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Home Gallery Image 1"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Home Gallery Image 2"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Home Gallery Image 3"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Home Gallery Image 4"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Home Gallery Image 5"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Home Gallery Image 6"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Homepage Options"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Insert your Link URL in here, e.g. http://www.google.com"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Insert your quote for it to appear as the post header!"
+msgstr ""
+
+#. Text in function
+#: montreal/comments.php:12
+msgid "LEAVE A COMMENT"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Leave blank if you don;t want a link; your links need http:// e.g http://www.madeinebor.com"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Low Opacity Image for Homepage Slideshow overlay"
+msgstr ""
+
+#. Text in function
+#: montreal/portfolio-navigation.php:11
+msgid "NEXT POST"
+msgstr ""
+
+#. Text in function
+#: montreal/portfolio-navigation.php:11
+msgid "NEXT PROJECT"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Needs http:// prefix"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "New Client"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "New Portfolio"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "New Team Member"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "New Testimonial"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "No Clients found"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "No Clients found in Trash"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "No Team Members found"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "No Team Members found in Trash"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "No Testimonials found"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "No Testimonials found in Trash"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "No portfolios found"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "No portfolios found in Trash"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-home.php:143
+msgid "OUR RECENT NOTES"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-home.php:85
+msgid "OUR RECENT WORK"
+msgstr ""
+
+#. Text in echo
+#: montreal/ebor_framework/widgets.php:96
+msgid "POPULAR"
+msgstr ""
+
+#. Text in function
+#: montreal/portfolio-navigation.php:11
+msgid "PREVIOUS POST"
+msgstr ""
+
+#. Text in function
+#: montreal/portfolio-navigation.php:11
+msgid "PREVIOUS PROJECT"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Parent Client:"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Parent Portfolio:"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Parent Team Member:"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Parent Testimonial:"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:35
+msgid "Please define value for Your E-mail field !!"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:29
+msgid "Please define value for Your name field !!"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:41
+msgid "Please define value for Your project budget field !!"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:152
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Please describe your desired look and feel"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:109
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Please describe your project concept or idea"
+msgstr ""
+
+#. Text in function
+#: montreal/email_scripts/sendemail.php:1
+msgid "Please enter a valid e-mail address."
+msgstr ""
+
+#. Text in function
+#: montreal/email_scripts/sendemail.php:1
+msgid "Please enter an e-mail address."
+msgstr ""
+
+#. Text in function
+#: montreal/email_scripts/sendemail.php:1
+msgid "Please enter your message."
+msgstr ""
+
+#. Text in function
+#: montreal/email_scripts/sendemail.php:1
+msgid "Please enter your name."
+msgstr ""
+
+#. Text in function
+#: montreal/email_scripts/sendemail.php:1
+msgid "Please leave all links as plain text."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Portfolio"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Portfolio Page Options"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Portfolio entries for the montreal Theme."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Portfolios"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/mandw.php:1
+msgid "Primary Navigation"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:177
+msgid "Privacy Policy:</span>&nbsp; We will never share your information with anyone. We will only contact you with regards to your enquiry."
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:106
+msgid "Project details"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:118
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Project requirements"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Put the Hosted .mp4 URL in here."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Put the Hosted .ogg URL in here."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Put the Hosted .webm URL in here."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Put the Quote Author in here"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Put the Video Url in here"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Put your Link in here"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Put your Quote in here"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-home.php:175
+msgid "READ POST"
+msgstr ""
+
+#. Text in echo
+#: montreal/ebor_framework/widgets.php:97
+msgid "RECENT"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Read Post Text"
+msgstr ""
+
+#. Text in echo
+#: montreal/searchform.php:2
+msgid "Search"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Search Clients"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Search Portfolios"
+msgstr ""
+
+#. Text in echo
+#: montreal/search.php:31
+msgid "Search Results For "
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Search Team Members"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Search Testimonials"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Show Sidebar on Single-Blog Posts?"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Show the \"Clients\" section on the About-Page? "
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Show the \"Quote\" section on the Home-Page? "
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Show the \"Team\" section on the About-Page? "
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Show the \"Testimonials\" section on the About-Page? "
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Show the \"Twitter\" section on the Home-Page?"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/mandw.php:1
+msgid "Sidebar"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Stripe Portfolio Type Image"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-contact.php:41
+msgid "Subject"
+msgstr ""
+
+#. Text in echo
+#: montreal/searchform.php:3
+#: montreal/page-planner.php:173
+#: montreal/comments.php:12
+#: montreal/page-contact.php:54
+msgid "Submit"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Subtitles for Default Page Template"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Team Member"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Team Member Details"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Team Member entries for the montreal Theme."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Team Members"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:76
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Telephone number"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Testimonial"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Testimonial entries for the montreal Theme."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "Testimonials"
+msgstr ""
+
+#. Text in function
+#: montreal/email_scripts/sendemail.php:1
+msgid "Thank you for you enquiry. We will be in touch shortly."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "The Job Title"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "The Link"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "The Quote"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "The Subtitle"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "The Video Link"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "This Employees First Social Profile Link"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "This Employees First Social Profile Name"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "This Employees Second Social Profile Link"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "This Employees Second Social Profile Name"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "This Employees Third Social Profile Link"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "This Employees Third Social Profile Name"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Tick this Checkbox to use self-hosted video"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Ticking this will HIDE the blog section on the home page"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Ticking this will HIDE the portfolio section on the home page"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Ticking this will disable the google map, and use 'The Featured Image' instead."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Ticking this will display the Clients section on the About Page"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Ticking this will display the Team section on the About Page"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Ticking this will display the Testimonials section on the About Page"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Ticking this will display the quote section on the homepage"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Ticking this will display the twitter section on the homepage - but only if you've installed and properly configured this plugin; http://wordpress.org/extend/plugins/oauth-twitter-feed-for-developers/"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Title for /portfolio"
+msgstr ""
+
+#. Text in echo
+#: montreal/footer.php:31
+#: montreal/footer-stripe.php:22
+msgid "Twitter"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "Twitter Profile Link (Needs http://)"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "URL of the Thanks Page"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Upload an image if you're using the 'Stripe' Portfolio Page; Dimensions 225x960px"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Upload an image or enter an URL."
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Use \"The Featured Image\" instead of a map?"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "Use Self-Hosted Video?"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-home.php:153
+msgid "VIEW ALL NOTES"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-home.php:91
+msgid "VIEW ALL PORTFOLIO"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "View Client"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "View Portfolio"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/theme_options.php:22
+msgid "View Project Text"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "View Team Member"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/cpt.php:1
+msgid "View Testimonial"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:92
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Website URL (if applicable)"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:163
+msgid "Website or design you like etc"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:120
+msgid "Website, Branding, Mobile App etc"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:134
+#: montreal/email_scripts/projectplanner.php:1
+msgid "When do you hope to launch"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:125
+#: montreal/email_scripts/projectplanner.php:1
+msgid "When do you hope to start"
+msgstr ""
+
+#. Text in echo
+#: montreal/search.php:22
+msgid "Whoops! It seems your search returned 0 results, try searching again for a different keyword."
+msgstr ""
+
+#. Text in function
+#: montreal/404.php:16
+msgid "Why not head back to our "
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "You don't have to give an Author if you don't want to!"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:145
+#: montreal/page-planner.php:102
+#: montreal/page-planner.php:113
+#: montreal/page-planner.php:137
+#: montreal/page-planner.php:172
+#: montreal/comments.php:12
+#: montreal/ebor_framework/widgets.php:35
+#: montreal/page-contact.php:44
+#: montreal/page-contact.php:51
+msgid "You filled this out wrong."
+msgstr ""
+
+#. Text in function
+#: montreal/comments.php:12
+msgid "Your Comment"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:66
+#: montreal/comments.php:12
+#: montreal/email_scripts/projectplanner.php:1
+#: montreal/page-contact.php:33
+msgid "Your E-mail*"
+msgstr ""
+
+#. Text in echo
+#: montreal/ebor_framework/widgets.php:34
+msgid "Your Email..."
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:57
+#: montreal/comments.php:12
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Your Name*"
+msgstr ""
+
+#. Text in echo
+#: montreal/search.php:14
+msgid "Your Search Found "
+msgstr ""
+
+#. Text in function
+#: montreal/comments.php:12
+msgid "Your Website"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:141
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Your budget*"
+msgstr ""
+
+#. Text in echo
+#: montreal/functions.php:63
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. Text in echo
+#: montreal/page-planner.php:99
+#: montreal/email_scripts/projectplanner.php:1
+msgid "Your location"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-contact.php:48
+msgid "Your message*"
+msgstr ""
+
+#. Text in echo
+#: montreal/page-contact.php:25
+msgid "Your name*"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "e.g Facebook"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "e.g MEET OUR TEAM"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "e.g SOME OF OUR CLIENTS"
+msgstr ""
+
+#. Text in function
+#: montreal/ebor_framework/metaboxes.php:1
+msgid "e.g and what they say..."
+msgstr ""
+
+#. Text in function
+#: montreal/404.php:16
+msgid "homepage"
+msgstr ""
