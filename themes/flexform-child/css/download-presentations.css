@@ -1,0 +1,82 @@
+.track-header .download-link {
+background-color: orange;
+right: 0;
+}
+
+
+.download-link {
+padding: 5px 10px;
+background-color: #999;
+margin-right: 20px;
+color: white;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+font-size: 12px;
+position: absolute;
+right: 0;
+float: none;
+}
+
+
+.track-header {
+background-color: #FFF;
+border-bottom: 2px solid grey;
+clear: both;
+margin-top: 10px;
+padding: 10px 5px;
+font-size: 20px;
+}
+
+.submission-title {
+clear: both;
+padding-left: 4px;
+margin-top: 10px;
+padding: 5px;
+}
+
+
+.submission-title div {
+padding: 5px 0;
+font-size: 14px;
+float: left;
+width: 80%;
+}
+
+#agenda-container {
+width: 100%;
+}
+
+#browse_maincontentmain .content {
+width: 100%;
+float: none;
+padding-left: 15px;
+}
+
+#browse_maincontentarea, #browse_maincontentmain {
+width: 100%;
+float: left;
+}
+
+#browse_main {
+width: 100%;
+background-color: #fff;
+float: left;
+text-align: left;
+}
+
+div#browse_container {
+margin: 0 auto;
+width: 100%;
+}
+
+
+@media screen and (max-width: 600px) {
+
+.track-header .download-link {margin-top: 10px;}
+.download-link {position: relative;display: inline-block;}
+
+
+
+}
+

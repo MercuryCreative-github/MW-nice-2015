@@ -1,0 +1,196 @@
+/*Put the cubes a little more on the top, to avoid overlaping the menu*/
+div.cub-top {
+    right: -85px;
+    top: -40px;
+}
+
+/*nav menu*/
+nav#platinum-programme {
+    width: 100%;
+    display: inline-block;
+    background: url(../images/ex-menu-shadow.png) center bottom no-repeat;
+    padding-bottom: 34px;
+    background-size: contain;
+}
+nav#platinum-programme .menu li {
+    border: solid 1px #F2F2F2;
+    width: 18%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #EBEBEB;
+}
+nav#platinum-programme .menu li a{color:#999999;}
+/*hover*/
+nav#platinum-programme .menu > li:hover {background-color: #DFDFDF;}
+nav#platinum-programme .menu > li:hover > a {color: #797979;}
+/*active*/
+nav#platinum-programme .menu li.current-menu-item{background-color: #44ABE1;}
+nav#platinum-programme .menu li.current-menu-item > a {color: #fff;}
+/*"Business Networking Activities li needs a little more width"*/
+nav#platinum-programme .menu li.bna {width: 25%;}
+/*and also "Executive Roundtables"*/
+nav#platinum-programme .menu li.executive-roundtables {width: 20%;}
+
+/*--------------------------------------------------------*/
+/*------------------   CONTENT(GENERAL)   ----------------*/
+/*--------------------------------------------------------*/
+/*fix */
+div.inner-page-wrap ul.platinum-programme li {
+    list-style-type: none;
+    border-left: 4px solid #0C95D3;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+span.highlight {color:#0C95D3;}
+
+/*authors*/
+div.author {
+    font-family: 'Titillium Web',sans-serif;
+    padding-top: 10px;
+}
+.page-content ul.blue-bullet li {
+    list-style-type: none !important;
+    background-image: url(http://devtmflive.wpengine.com/wp-content/uploads/2014/03/arrow-home.png);
+    background-repeat: no-repeat;
+    padding-left: 15px;
+}
+
+
+/*--------------------------------------------------------*/
+/*----------------------  SIDEBAR  -----------------------*/
+/*--------------------------------------------------------*/
+.right-sidebar span.download-app {
+    background-color:#29abe2;
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 19px;
+    text-align: center;
+    padding: 7px 45px;
+      /* Firefox */
+    -moz-transition: all 0.2s ease-in;
+    /* WebKit */
+    -webkit-transition: all 0.2s ease-in;
+    /* Opera */
+    -o-transition: all 0.2s ease-in;
+    /* Standard */
+    transition: all 0.2ss ease-in;
+}
+.right-sidebar span.download-app:hover {background-color:#58c7f6;}
+
+/*-------------------------------------------------------*/
+/*----------   PLATINUM PROGRAMME (MAIN PAGE)  ----------*/
+/*-------------------------------------------------------*/
+/*Welcome title*/
+h2#platinum-welcome {font-size: 2.3em;}
+
+/*-------------------------------------------------------*/
+/*------------------  PLATINUM LOUNGE  ------------------*/
+/*-------------------------------------------------------*/
+/*We need some left margin for the contents that have an icon image on the left*/
+.margin-left {padding-left:52px !important;       }
+/*lists are using a colored circle image as bullet-backgound, so no li is needed. therefore, ul needs little less margin*/
+ul.margin-left {padding-left:30px !important;}
+
+/*-------------------------------------------------------*/
+/*---------------  EXECUTIVE ROUNDTABLES  ---------------*/
+/*-------------------------------------------------------*/
+
+
+
+/*-------------------------------------------------------*/
+/*----------   BUSINESS NETWORKING ACTIVITIES   ---------*/
+/*-------------------------------------------------------*/
+
+/*.BNA class stand for: 'Business Networking Activities' It is applied to the main page*/
+.BNA div.border-bottom {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    min-height: 170px;
+}
+
+/*-------------------------------------------------------*/
+/*---------------   PLATINUM DELEGATES   ----------------*/
+/*-------------------------------------------------------*/
+
+.page-content ul.team-members li {list-style-type: none;}
+.team-member figure {width: 90%;}
+.team-member figure img {border-radius: 50%;}
+
+
+
+
+                                                                      
+                 /*  R E S P O N S I V E */                            
+                                                                            
+
+
+
+@media  (min-width:1200px) { 
+    body li.span3 { width:23%;}
+}
+
+@media screen and (min-width:980px) and (max-width:1199px) {
+/*--------------------------------------------------------*/
+/*------------------   CONTENT(GENERAL)   ----------------*/
+/*--------------------------------------------------------*/
+    nav#platinum-programme .menu li {width:18.5%;}
+    nav#platinum-programme {padding-bottom:27px;}
+
+    /*Get the free mobile app banner*/
+    .right-sidebar span.download-app {position:relative; top: 24px; left: 24px; padding: 2px 30px;}
+
+    ul.team-members li.team-member.span3  { width:31%; }
+
+/*-------------------------------------------------------*/
+/*----------------------  SIDEBAR  ----------------------*/
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+/*----------   PLATINUM PROGRAMME (MAIN PAGE)  ----------*/
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+/*---------------  EXECUTIVE ROUNDTABLES  ---------------*/
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+/*----------   BUSINESS NETWORKING ACTIVITIES   ---------*/
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+/*---------------   PLATINUM DELEGATES   ----------------*/
+/*-------------------------------------------------------*/
+}
+
+
+/* iPads (landscape) ----------- */
+@media only screen and (max-width : 1024px;) {
+/*--------------------------------------------------------*/
+/*------------------   CONTENT(GENERAL)   ----------------*/
+/*--------------------------------------------------------*/
+    nav#platinum-programme .menu li {width:33%;}
+    nav#platinum-programme .menu li:nth-child(4), nav#platinum-programme .menu li:nth-child(4) {width:49%;}
+
+/*-------------------------------------------------------*/
+/*----------------------  SIDEBAR  ----------------------*/
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+/*----------   PLATINUM PROGRAMME (MAIN PAGE)  ----------*/
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+/*---------------  EXECUTIVE ROUNDTABLES  ---------------*/
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+/*----------   BUSINESS NETWORKING ACTIVITIES   ---------*/
+/*-------------------------------------------------------*/
+
+/*-------------------------------------------------------*/
+/*---------------   PLATINUM DELEGATES   ----------------*/
+/*-------------------------------------------------------*/
+}
+

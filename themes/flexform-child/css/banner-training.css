@@ -1,0 +1,39 @@
+.banner-training{
+    background-image: url('http://tmflive.staging.wpengine.com/wp-content/uploads/2014/03/bkg-banner-training1.jpg');
+    background-repeat: no-repeat;
+    height: 171px;
+}
+.training-circle{
+    float: left;
+    background: #FA991E;
+    font-size: 26px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #fff;
+    height: 60px;
+    text-align: center;
+    width: 76px;
+    border-radius: 141px;
+    margin: 10px 10px 8px 10px;
+    padding-top: 16px; 
+    line-height: 25px;
+}
+.training-title{
+    position: relative;
+}
+.training-text{
+    color: #ffffff;
+    font-size:18px;
+    position: absolute;
+    left: 94px;
+    top: 32px;
+}
+.training-line{
+    border-bottom: rgba(255, 255, 255, 0.48) 1px solid;
+    clear: both;
+}
+.training-info{
+    color: #ffffff;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 16px;
+}

@@ -1,0 +1,648 @@
+/* TMF General Styles */
+ .exhibitors-list ul {
+    margin: 0;
+    list-style: none;
+}
+.exhibitors-list ul li {
+    float: left;
+    height: 185px;
+    margin-bottom: 50px;
+    width: 33%;
+    margin-left: 0;
+    position:static !important;
+    background:none !important;
+}
+.exhibitors-list ul li {
+    position: relative;
+    display: inline-table;
+}
+.exhibitors-list ul li img {
+    width: 50%;
+    margin-top: 50px;
+    max-height: 185px;
+}
+.exhibitors-list ul li a {
+    font-size: 15px;
+    color: #1D1D1B;
+    display: block;
+}
+.exh-panels .keynotes-panel {
+    background: #666;
+}
+.exh-panels {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+.keynotes-panel {
+    background: url(../images/bg-speakers.png) #007A8F no-repeat top;
+    padding: 2.5em;
+    color: #fff!important;
+    width: 70%;
+    top: 20%;
+    z-index: 99;
+    left: 50%;
+    margin-left: -35%;
+    display: none;
+    position:fixed;
+}
+.clear.line {
+    width: 100%;
+    height: 5px;
+    visibility: visible;
+}
+.divide {
+    margin: 5% 0;
+}
+.clear {
+    clear: both;
+}
+/*.span6.left {
+    margin-right: 2%;
+}
+.span6 {
+    width: 30%;
+}*/
+ .left {
+    float: left;
+}
+/*
+.width06 {
+    width: 65%;
+}
+*/
+ .right {
+    float: right;
+}
+.keynotes-panel img {
+    border: 10px solid #FFF;
+    float: left;
+    margin: 0 30px 15px 0;
+    background: #FFF;
+}
+.icon_close span {
+    background: transparent url("images/icon_close.png") no-repeat scroll center center;
+    display: block;
+    height: 36px;
+    width: 36px;
+    transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+.icon_close {
+    height: 36px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    vertical-align: top;
+    width: 36px;
+}
+.span6.left.speaker div {
+    float: left;
+    clear: none;
+    width: 32%;
+    height: 120px;
+}
+.fullName {
+    width: 98%;
+    margin-top: 5px;
+}
+h3.lastName, h3.name {
+    display: inline;
+    font-style: normal;
+    color:#44AADB;
+    font-weight: normal;
+    font-size: 21px;
+}
+.box-filter {
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.right:first-child {
+    margin-left: 0px;
+}
+.filter-letters {
+    margin-bottom: 30px;
+}
+.no-margin-right {
+    margin-right: 0!important;
+}
+.span6.left.speaker {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.feautered {
+    display:none;
+}
+.downloadsponsors {
+    background:#70B348;
+    color:#FFF;
+    font-weight:700;
+    display:inline-block;
+    padding:6px 30px;
+}
+.sponsor-bn {
+    border:solid 1px #70B348;
+    color:#70B348;
+    padding:6px 30px;
+    float:left;
+    margin-right: 10px;
+}
+.active-sp {
+    background: #70B348;
+    color:#fff !important;
+}
+.jobTitle {
+    font-size:13px;
+}
+.lastName {
+    font-size:14px;
+    font-weight: 500;
+}
+.company {
+    font-size:14px;
+}
+.name {
+    font-size:14px;
+    font-weight: 500;
+}
+.abc {
+    display:none;
+}
+.fullName hr {
+    margin: 5px 0;
+    border: 1px dashed #D9DADB;
+    height: 0;
+}
+#sspeakers {
+    background:url(../images/loop.png) no-repeat right #F2F2F3;
+    border-radius:0;
+}
+.exhibitors-list h1 {
+    font-size: 27px;
+    font-weight: bold;
+    color:#575757;
+}
+.img.left {
+    width: 150px;
+    height: 150px;
+    background: url('../images/default_speaker.png') no-repeat center center;
+    background-size: cover;
+    display: block;
+}
+.speakers-info {
+    margin-left:20px;
+}
+/********************/
+
+/*** TMF KEYNOTES ***/
+
+/********************/
+ .homespeakers h3 {
+    font-size:20px;
+    margin-bottom: 5px;
+}
+.homespeakers .position {
+    margin-bottom: 5px;
+}
+.homespeakers .modal-body {
+    max-height: 1200px;
+}
+#topics-container p {
+    margin:0;
+}
+.downloadsponsors {
+    background:#70B348;
+    color:#FFF;
+    font-weight:700;
+    display:inline-block;
+    padding:6px 30px;
+}
+.downloadsponsors a:hover {
+    color:#000 !important;
+}
+.sponsor-bn {
+    border:solid 1px #70B348;
+    color:#70B348;
+    padding:6px 30px;
+    float:left;
+    margin-right: 10px;
+}
+.active-sp {
+    background: #70B348;
+    color:#fff !important;
+}
+.portfolio-item figure img {
+    width: 60%;
+    margin: 0 auto;
+    height: auto;
+}
+.page-id-9459 figure .overlay {
+    display: none;
+}
+.portfolio-items:not(.single-column) > li figure:hover img {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+.width03.left.speaker div {
+    float: left;
+    clear: none;
+    width: 48%;
+    height: 120px;
+    margin-right: 20px;
+}
+.ChairPhoto {
+    float: left;
+    width: 80px;
+    height: 100%;
+    display: block;
+    background-size: cover;
+    background-image: url('../images/default_speaker.png');
+    background-repeat:no-repeat;
+    background-position:center center;
+    min-height:80px;
+    margin:10px 10px 10px 10px;
+}
+
+.speaker-box-grey:hover{background-color: #F6F7F7;}
+
+.filter-letters .box-filter {   
+    border: 1px solid #eee;
+    padding: 12px 30px;
+    margin-top: 0;
+    transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    text-transform: uppercase;
+    font-size: 16px;
+     color: #444444;
+    background: #fff;
+    float: left;
+    cursor: pointer;
+    
+}
+.box-filter.boton-green {
+    background: #44AADB;
+    color: white;
+}
+
+.right:first-child {
+    margin-left: 0px;
+}
+
+.no-margin-right {
+    margin-right: 0!important;
+}
+.width03.left.speaker {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.s-schedule {
+    font-size: 18px;
+    color: #575757;
+}
+.keynotes-panel img {
+    border: 10px solid #FFF;
+    float: left;
+    margin: 0 30px 15px 0;
+    background: #FFF;
+}
+.feautered {
+    display:none;
+}
+.feautered h1 {
+    font-size: 27px;
+    font-weight: bold;
+    color:#575757;
+}
+.speakers-track {
+    margin-right:10px;
+}
+.speakers-info h1 {
+    font-size:14px;
+    color: #44AADB;
+    line-height: 5px;
+}
+.speakerList h1 {
+    font-size:14px;
+    font-size: 15px;
+}
+.speaker-profil-title {
+    font-size: 17px;
+    color:black;
+    font-weight: 500;
+    border-bottom: solid 1px #ccc;
+    margin-top: 0;
+}
+.speaker-intro {
+    background-color: #FCFAFB;
+    border:solid 1px #eee;
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+}
+.speakerList .column01 .width03 {
+    width: 40%;
+}
+.speakerList .column01 .width06 {
+    width:60%;
+}
+.speakerInnerCont{margin-left: 0!important;}
+
+h1.bio { margin-bottom:-7px; }
+p.bio {margin-bottom: 25px;}
+p.subDescription{margin-bottom: 0;}
+div.speakerProfile #table0 ul li {list-style-type: disc; }
+div#table0 {margin-bottom: 40px;}
+
+/********************/
+/*** TMF KEYNOTES ***/
+/********************/
+ .homespeakers h3 {
+    font-size:20px;
+    margin-bottom: 5px;
+}
+.homespeakers .position {
+    margin-bottom: 5px;
+}
+.homespeakers .modal-body {
+    max-height: 1200px;
+}
+#topics-container p {
+    margin:0;
+}
+.downloadsponsors {
+    background:#70B348;
+    color:#FFF;
+    font-weight:700;
+    display:inline-block;
+    padding:6px 30px;
+}
+.downloadsponsors a:hover {
+    color:#000 !important;
+}
+.sponsor-bn {
+    border:solid 1px #70B348;
+    color:#70B348;
+    padding:6px 30px;
+    float:left;
+    margin-right: 10px;
+}
+.active-sp {
+    background: #70B348;
+    color:#fff !important;
+}
+.portfolio-item figure img {
+    width: 60%;
+    margin: 0 auto;
+    height: auto;
+}
+.page-id-9459 figure .overlay {
+    display: none;
+}
+.portfolio-items:not(.single-column) > li figure:hover img {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+.width03.left.speaker div {
+    float: left;
+    clear: none;
+     width: 48%;
+    height: 120px;
+    margin-right: 20px;
+
+}
+.speaker-box-grey {
+    cursor: pointer;
+    transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    border-bottom: solid 1px #eee;
+    margin: 0 5px !important;
+    min-height: 120px;
+}
+
+.left.filter-letters .box-filter {
+    border: 1px solid #eee;
+    padding: 12px 30px;
+    margin-top: 0;
+    transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.box-filter.boton-green {
+    background: #44AADB;
+}
+.box-filter {
+    color: #444444;;
+    background: #fff;
+    
+    float: left;
+    font-size: 9pt;
+    padding: 8px 15px;
+    /*border-radius: 4px;*/
+    cursor: pointer;
+    /*-webkit-box-shadow: 0px 2px 2px rgba(50, 50, 50, 0.4);
+    -moz-box-shadow: 0px 2px 2px rgba(50, 50, 50, 0.4);
+    box-shadow: 0px 2px 2px rgba(50, 50, 50, 0.4);*/
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.boton-green {
+    background: #39A835;
+    float: left;
+    color: #FFF;
+    padding: 10px 30px;
+    font-size: 12px;
+  
+}
+.page-content .text-green {
+    color:#70b54a;
+}
+.right:first-child {
+    margin-left: 0px;
+}
+.filter-letters {
+    position: relative;
+    z-index: 100;
+    background-image: url('http://tmflive.wpengine.com/wp-content/uploads/2014/01/shadow.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    padding-bottom: 0;
+}
+.no-margin-right {
+    margin-right: 0!important;
+}
+.width03.left.speaker {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.s-schedule {
+    font-size: 18px;
+    color: #575757;
+}
+.feautered {
+    display:none;
+}
+.feautered h1 {
+    font-size: 27px;
+    font-weight: bold;
+    color:#575757;
+}
+.speakers-home {
+    width:12.5%;
+    float:left;
+    margin-right: 5%;
+}
+
+/********************************************************/
+
+                /*RESPONSIVE STYLES*/
+
+/********************************************************/
+/*.left.filter-letters .box-filter:nth-child(1) {display: none;}*/
+div.s-speakers {float:right; margin-right:28px;}
+div.speaker-intro-shadow{
+    height: 30px;
+    background-image: url('http://tmflive.wpengine.com/wp-content/uploads/2014/01/shadow.png');
+    background-repeat: no-repeat;
+    margin-top: -10px;
+}
+
+/* iPads (landscape) ----------- */
+ @media only screen and (min-width : 980px) and (max-width : 1024px) {
+     .speaker-box-grey .company {
+        margin-left: 0;
+    }
+ 
+}
+
+@media screen and (min-width: 980px) and (max-width: 1199px) { 
+    input#sspeakers {
+        width: 215px;
+        float: right;
+    }
+    div.speakers-icon{
+        left: 320.255px !important;
+        top: 207.332px !important;
+    }
+    div.s-speakers {float:right; margin-right:3px;}
+
+    /*SPEAKERS PROFILE*/
+    div.speakers-info {width:73% !important;}
+    img.agendaLinks {width:95px;}
+
+}
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    div.s-speakers{
+        margin-right: 6px;
+    }
+    div.speakers-icon{
+        display: none;
+    }
+    div.speaker-box-grey div.fullName {
+        width: 97% !important;
+    }
+    div.speaker-box-grey{
+        min-height: 132px;
+    }
+    img.agendaLinks {width:70px;}
+    /*SPEAKERS PROFILE*/
+     div.speakers-info {
+        width:65% !important; 
+    }
+
+    .ChairPhoto {
+        margin-bottom:55px;     
+    }
+
+}    
+@media screen and (max-width: 767px) {
+    div.speakers-icon {
+        display: none;
+    }
+    div.s-speakers {
+        margin-right: 0;
+    }
+    .filter-letters {
+        margin-bottom: 0;
+    }
+    
+    /*SPEAKERS PROFILE*/
+     div.speakers-info {
+        float:left !important;
+        width:auto !important;
+        margin-left: 15px !important;
+    }
+    div.speaker-intro {
+        width:99%;
+        padding: 1%;
+    }
+    img.agendaLinks {width:15%;}
+}
+@media screen and (max-width: 680px) {
+    .filter-letters {
+        width:100%;
+    }
+    .left.filter-letters .box-filter {
+        padding: 12px 0px;
+        text-align: center;
+    }
+    div.speaker-box-grey div.fullName {
+        width: 97% !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    .ChairPhoto {
+        width:70px;     
+    }
+    .jobTitle {
+        font-size: 11px;
+        line-height: 18px;
+    }
+    .company {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 600px) {
+    img.agendaLinks {width:14.5%;}
+}    
+@media screen and (max-width: 480px) {
+    div.speaker-intro p{
+        font-size: 12px;
+    }
+    img.agendaLinks {
+        width: 13%;
+    }
+    div.speakers-info {
+        margin-left: 10px;
+    }
+    div.speaker-intro .img.left {
+        width:120px;
+    }
+}
+
+

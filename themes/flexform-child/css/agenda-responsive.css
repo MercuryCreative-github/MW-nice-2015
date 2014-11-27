@@ -1,0 +1,70 @@
+table th { font-weight: bold; }
+table td, table th { padding: 9px 10px; text-align: left; }
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    /* Calendar */
+    div.table-wrapper { overflow-x: scroll; }
+
+    #track_summit div.row {display: table;width: 100%;}
+
+    /*#track_summit div.row div.span12 { display: table-footer-group; }
+    #track_summit div.row div.span7 { display: table-header-group; }*/
+
+    div.summit_chairman .col2 { float: left; width: 49%; }
+
+    .summit_chairman {
+        padding-top: 0;
+        margin-top: 5px;
+        padding-left: 0px;
+
+    }
+
+    .summit_chairman .speaker_name {
+        float:left;
+        padding-left: 4px;
+    }
+
+    .summit_chairman .speaker_job:before {
+        content: "-";
+    }
+
+    .summit_chairman .speaker_job {
+        float:left;
+        width: auto;
+        padding-left: 4px;
+    }
+
+    .summit_chairman .speaker_company:before  {
+        content: "-";
+    }
+    .summit_chairman .speaker_company  {
+        float:left;
+        width: auto;
+        padding-left: 4px;
+        margin-bottom: 0;
+    }
+
+    .session_time {
+        text-decoration: underline;
+        margin-bottom: 15px;
+    }
+
+    .submission_name {
+        font-size: 20px;
+    }
+
+    #track_summit .module_session {
+        padding-bottom: 27px;
+    }
+
+    .row .agenda_search {
+        display:none;
+    }
+
+    .page-template-agenda-php .inner-page-wrap {
+        margin-bottom: 0;
+    }
+
+
+}

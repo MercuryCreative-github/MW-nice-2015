@@ -1,0 +1,55 @@
+@media only print{
+	body{ width: 100%; font-size: 12pt; }
+	
+	/* Typography */
+	p{ font-size: 10pt !important; line-height: 120% !important;}
+	h2{ font-size: 16pt !important; line-height: 120% !important;}
+	
+	.boxed-layout{ width: 100%;}
+	#container{ box-shadow: none;}
+	#fullwidthcontent{ width: 100%; padding: 0;}
+	.call-to-action{ display: none;}
+	
+	#logo{ overflow: hidden; }
+	#logo img.standard { display: block; visibility: visible; }
+	#nav-section{ display: none;}
+	header .divider{ display: none;}
+	
+	#main-navigation{ display: none;}
+	#mini-header{ display: none;}
+	ul.numbered-list{ margin-left: 0px; padding-left: 0px;}
+	
+	/* revSlider */
+	.rev_slider_wrapper img{ display: none;}
+	.tp-caption{ top: 0 !important; left: 0 !important;}
+	.home-slider-wrap{ margin-top:10px; height: 20px;}
+	
+	
+	/* Hide Sidebar */
+	aside.sidebar{ display: none;}
+	
+	/* Agenda Tabs */
+	.textTrack .body-text div {margin: -30px;}
+	.textTrack .body-text div.timeTrack{ font-size: 12pt; margin: 5px 0;}
+	.defTrack{ width: 100%; display: block; padding: 10px; /*border-bottom: 1px solid #999;*/}
+	.defTrack .before_hour_text { font-size: 17pt; margin: 0; border-top: 1px doble #999; padding-top: 20px;}
+	.textTrack .body-text{ border-bottom: none; padding: 0px; /*margin-bottom: 0.5cm;*/}
+	.ui-state-default{display: none;}
+	.ui-state-default.ui-state-active{ display: block;}
+	.wpb_accordion .wpb_accordion_section, .wpb_tabs .ui-tabs .ui-tabs-panel, .wpb_content_element .ui-tabs .ui-tabs-nav, .ui-tabs .ui-tabs-nav li{ margin: 0; padding-left: 0px;}
+	.page .ui-tabs .ui-tabs-nav li.ui-tabs-active a{ text-decoration: none; padding: 0px; font-size: 14pt; background: #FFF !important; margin-bottom: 10px; }
+	.textTrack{ padding: 10px;}
+	.textTrack h2{ margin: 0; font-size: 14pt; line-height: 18pt; border-bottom: 1px solid #999; margin-top: 30px;}
+	.textTrack h2 a{ color: #666; text-decoration: none; font-size: 14pt; line-height: 18pt;}
+	#all-events td{ margin-bottom: 0.5cm; overflow: hidden; display: block; /*border-bottom: 1px solid #999;*/ }
+	.textTrack .body-text .speakerSidebar { margin: 10px 0; }
+	
+	/* Hide Footer */
+	#footer{ display: none;}
+	/* Hide Modal */
+	#modal-1{ display: none;}
+	/* Hide Copyright */
+	#copyright{ display: none;}
+	/* Hide Netkcraker Banner*/
+	.netcrack-banner{ display: none; }
+}

@@ -1,0 +1,357 @@
+/**** Template Icons ****/
+
+.doc-icon,
+.ppt-icon {
+  background: url(http://tmflive.wpengine.com/wp-content/uploads/2014/01/doc-icon.png) no-repeat top left;
+  display: inline-block;
+  padding: 7px 20px 10px 55px;
+  color: #65cb00;
+  margin-top: 15px;
+  line-height: 19px;
+  font-size: 14px;
+}
+a.ppt-icon {
+  background: url(http://tmflive.wpengine.com/wp-content/uploads/2014/01/ppt-icon.png) no-repeat top left;
+}
+/**** Main Content Customizations ****/
+
+.page-content .green {
+  color: #fff;
+}
+.wpb_text_column .wpb_heading {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+.wpb_box_text.whitestroke .box-content-wrap {
+  position: relative;
+  border: 0 none;
+  box-shadow: none;
+}
+.box-content-wrap .wpb_text_column {
+  width: 97%;
+}
+.heading-wrap i {
+  margin-right: 8px;
+}
+.wpb_box_text.whitestroke .box-content-wrap:after {
+  content: url(../images/bg-mtools.png);
+  bottom: -29px;
+  position: absolute;
+  left: 2px;
+}
+/**** Contact Box Styles ****/
+
+.contact-box p {
+  padding: 0 0 0 23px;
+}
+.contact-box strong {
+  font-weight: bold;
+}
+.contact-ask {
+  background: url(http://tmflive.wpengine.com/wp-content/uploads/2014/01/profile-icon.png) no-repeat 7px center;
+  color: #009fe3!important;
+  padding: 10px 10px 10px 30px;
+  margin-bottom: 10px;
+  background-color: #FFF;
+}
+/**** Lists  ****/
+
+.page-content ul,
+.page-content ol {
+  margin: 0 0 20px 20px;
+}
+.page-content ul li,
+.page-content ol li {
+  line-height: 1.5em;
+  list-style-position: outside;
+}
+.page-content ul.check-list {
+  margin: 0 0 28px 20px;
+}
+.page-content ul.check-list li {
+  list-style: none;
+}
+#nav_menu-5 {
+  width: 290px;
+  float: left;
+}
+#nav_menu-5 ul {
+  background: url(http://tmflive.wpengine.com/wp-content/uploads/2014/01/bg-noise.jpg);
+}
+#nav_menu-5 ul li {
+  border-color: #d3d3d3;
+}
+#nav_menu-5 ul li a {
+  padding-left: 50px;
+  font-size: 14px;
+  color: #666;
+}
+#nav_menu-5 ul li a:before {
+  content: none;
+}
+/**** Box Newsletter Styles ****/
+
+#box-newsletter {
+  clear: both;
+  background: #F5F5F5;
+  border-radius: 0px;
+  padding: 1px 11px 11px;
+  border: 1px solid #E0E0E0;
+}
+#box-newsletter h3 {
+  font-size: 21px;
+  padding-top: 7px;
+  line-height: 27px;
+  background: url(../images/E-mail-icon.png) right top no-repeat;
+  padding-right: 80px;
+  height: 62px;
+}
+#box-newsletter .form-fields input[type="text"],
+#box-newsletter .form-fields input[type="email"] {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 0 transparent;
+  border-radius: 0;
+  font-family: "Titillium Web", sans-serif;
+  width: 88%;
+  display: block;
+  padding: 9px 9px;
+  background: #FCFCFC;
+  margin: 0 auto 8px;
+}
+#box-newsletter .form-fields input[type="submit"] {
+  background: #65cb00;
+  color: #fff;
+  display: block;
+  width: 168px;
+  padding: 6px 0;
+  border-radius: 0;
+  margin: 12px auto;
+  font-size: 16px;
+}
+.option-input {
+  margin: 0 0 1px 4px;
+}
+#box-newsletter .option-label {
+  font-size: 13px;
+  padding: inherit;
+  line-height: inherit;
+}
+#box-newsletter p {
+  font-size: 14px;
+  color: #7A7A7A;
+  line-height: 20px;
+  margin: 0 0 22px;
+}
+#box-newsletter input[type="checkbox"] {
+  margin: 0 4px 0 0;
+}
+#box-newsletter hr {
+  margin: 10px 0;
+}
+.option-check {
+  margin: 0 0 0 9px;
+}
+/**** END Marketing Tools Styles****/
+
+/**** EXHIBITORS RESOURCE CENTER SUBPAGES ****/
+
+.page-content .column-list ul {
+  display: block;
+  float: left;
+  margin: 0 102px 10px 0;
+  width: 291px;
+}
+.page-content .column-list ul.lastcol {
+  margin-right: 0;
+}
+.page-content .column-list ul li {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 12px;
+}
+.column-list ul li a {
+  background: url(/wp-content/uploads/2014/02/arrow-tick.png) no-repeat scroll 100% center rgba(0, 0, 0, 0);
+  display: inline-block;
+  padding: 0 15px 0 0;
+  color: #676767;
+}
+#box-info h3 {
+  letter-spacing: 0.065em;
+  margin: 30px 0 4px;
+}
+.page-content #box-info ol {
+  margin: 0 0 10px 20px;
+}
+.page-content #box-info ul li,
+.page-content ul li {
+  list-style-type: square;
+  color: #505050;
+  list-style-position: outside;
+}
+.note-box {
+  background: url(/wp-content/uploads/2014/01/green-bg1.png) no-repeat;
+  color: #fff;
+  font-size: 13px;
+}
+.note-box div {
+  padding: 20px;
+}
+.page-content .note-box h3 {
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  margin: 13px 0 13px;
+}
+.note-box ol {
+  margin: 0 0 0 20px;
+}
+.note-box ol li {
+  margin: 0 0 20px;
+}
+a.green-btn {
+  display: inline-block;
+  color: #fff;
+  background: #6ebd46;
+  padding: 10px 30px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 20px 0 20px;
+}
+.page-content h1 {
+  font-weight: normal;
+}
+.regular-style h3 {
+  margin: 25px 0;
+}
+.exhibitorsresourcecenter h3 {
+  color: #ffffff;
+  background-color: #28759a;
+  display: block;
+  padding: 10px 0;
+  margin-bottom: 0;
+}
+.exhibitorsresourcecenter .span5 {
+  margin-left: 20px;
+}
+.box-event {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.box-event h3 {
+  font-weight: normal;
+}
+.box-event h4 {
+  font-size: 14px;
+  clear: both;
+  background-color: #FFFFFF;
+  display: block;
+  padding: 10px 0;
+}
+.page-content .box-event ul {
+  margin: 0;
+  padding: 0;
+}
+.page-content .box-event li {
+  background: #f1f1f1;
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 0;
+  padding: 9px 0;
+  font-size: 14px;
+}
+.page-content .box-event li:nth-child(4n+2) {
+  background: #f1f1f1;
+}
+.page-content .box-event li:nth-child(4n+3) {
+  background: #FFFFFF;
+}
+.page-content .box-event li:nth-child(4n+4) {
+  background: #ffffff;
+}
+.col1,
+.col2 {
+  float: left;
+  width: 46%;
+  margin-right: 4%;
+}
+.green-heading {
+  color: #6cad45;
+  font-weight: bold;
+  margin: 20px 0;
+}
+img.top-margin {
+  margin-top: 103px;
+}
+img.top-margin2 {
+  margin-top: 13px;
+}
+.page-content .box-suppliers ul li {
+  width: 33%;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+.page-content .box-suppliers tr:nth-child(odd) td:nth-child(3n+1),
+.page-content .box-suppliers tr:nth-child(even) td:nth-child(3n+1).green1 {
+  background: #D9EFFD;
+}
+.page-content .box-suppliers tr:nth-child(odd) td:nth-child(3n+2),
+.page-content .box-suppliers tr:nth-child(even) td:nth-child(3n+2).green2 {
+  background: #CDE1EE;
+}
+.page-content .box-suppliers tr:nth-child(odd) td:nth-child(3n+3),
+.page-content .box-suppliers tr:nth-child(even) td:nth-child(3n+3).green3 {
+  text-align: left;
+  background: #B7D0E0;
+}
+.page-content .box-suppliers tr:nth-child(even) td:nth-child(3n+1),
+.page-content .box-suppliers tr:nth-child(odd) td.gray1 {
+  background: #F8F8E8;
+}
+.page-content .box-suppliers tr:nth-child(even) td:nth-child(3n+2),
+.page-content .box-suppliers tr:nth-child(odd) td.gray2 {
+  background: #E7E7E7;
+}
+.page-content .box-suppliers tr:nth-child(even) td:nth-child(3n+3),
+.page-content .box-suppliers tr:nth-child(odd) td.gray3 {
+  background: #CCCCCC;
+  text-align: left;
+}
+.page-content .box-suppliers td {
+  height: 96px;
+  border-bottom: 2px solid #fff;
+  padding: 0 32px;
+}
+.page-content .box-suppliers td a {
+  color: #fff;
+}
+.box-suppliers {
+  border: aliceblue;
+  text-align: center;
+  position: relative;
+}
+.box-suppliers table {
+  width: 100%;
+}
+a.sf-button.green {} #package-image {
+  padding: 20px 0 0;
+  clear: both;
+  text-align: center;
+}
+#package-image img {
+  width: 509px;
+  margin: 0 45px 0 0;
+  display: inline-block;
+  text-align: center;
+}
+/**** END EXHIBITORS RESOURCE CENTER SUBPAGES ****/
+
+/**** Sub Menu ****/
+
+#exhibitors-navigation ul.menu {
+  display: block;
+}
