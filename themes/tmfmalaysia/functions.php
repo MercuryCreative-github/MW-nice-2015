@@ -16,6 +16,23 @@ add_action( 'init', 'register_menu_location' );
 add_filter( 'storm_social_icons_type', create_function( '', 'return "icon-sign";' ) );
 
 
+/* TMF LOAD SCRIPTS
+	================================================== */
+
+	function tmf_enqueue_general_scripts() {
+
+		//TMF CUSTOM JS REGISTER
+		wp_register_script('jquery.nicescroll.js', get_stylesheet_directory_uri() . '/js/jquery.nicescroll.js', 'jquery', NULL, FALSE);
+		wp_register_script('tmfcustomjs', get_stylesheet_directory_uri() . '/js/tmfcustom.js?ver=5', 'jquery', NULL, FALSE);
+
+	    // TMF CUSTOM JS ENQUEUE
+		if (! is_page_template( 'pricingt.php' ) || ! is_page_template( 'agendag.php' )) {
+		wp_enqueue_script('jquery.nicescroll.js');
+		wp_enqueue_script('tmfcustomjs?ver=5');
+		}
+	}
+
+
 	//ENQUEUE JQUERY & CUSTOM SCRIPTS
 	function enqueue_tmf_scripts() {
 		wp_enqueue_script( 'tmf-main', get_stylesheet_directory_uri() . '/js/tmf-main.js', array('jquery'), false, true );
