@@ -1,0 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,300italic,300);
+
+/**HEADER STYLES**/
+.infocus-logo .slogan { margin-top: 14px; border-left: 2px solid #53aa2b; }
+.infocus-logo .slogan .title { color: #53aa2b; }
+
+/*AGENDA AT A GLANCE
+.getRidofClasses{opacity: 0;}*/
