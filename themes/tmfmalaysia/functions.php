@@ -45,15 +45,15 @@ add_filter( 'storm_social_icons_type', create_function( '', 'return "icon-sign";
          	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '7.7', 'all');
             wp_enqueue_style('main-css'); // Enqueue it!
 
-		// Pricing css
+		// TMF custom styles
+		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '7.7', 'all');
+    	wp_enqueue_style('tmf-custom-css'); // Enqueue it!
+
+    	// Pricing css
 		if ( is_page_template( 'pricing-tables.php' ) ) {
 		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '7.7', 'all');
     		wp_enqueue_style('pricing-tables-css'); // Enqueue it!
 		}
-
-		// TMF custom styles
-		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '7.7', 'all');
-    	wp_enqueue_style('tmf-custom-css'); // Enqueue it!
 
     	// Responsive fixes
 		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '7.7', 'all');

@@ -1,9 +1,30 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,300italic,300);
 
-/**HEADER STYLES**/
-.infocus-logo .slogan { margin-top: 14px; border-left: 2px solid #53aa2b; }
-.infocus-logo .slogan .title { color: #53aa2b; }
+/************/
+/**GENERALS**/
+/************/
 
-/*AGENDA AT A GLANCE
-.getRidofClasses{opacity: 0;}*/
+/* HEADER STYLES */
+.infocus-logo .slogan { margin-top: 14px; border-left: 2px solid #7BCA28; }
+.infocus-logo .slogan .title { color: #7BCA28; }
+
+/****************/
+/**LANDING PAGE**/
+/****************/
+
+/* title */
+.the-content .first-section h1 span { color: #7BCA28; }
+
+/* BOX: violet btns */
+.box .wpb_button.join-us.visit-blog { font-size: 17px; font-weight: 400; background-color: #7BCA28; }
+.box .wpb_button.join-us:hover { background-color: #5A9B16; color: #fff; }
+.third-section .box h3 { padding: 0 2px; }
+.the-content .wpb_row .box { min-height: 490px; width: 31%; margin: 0 10px; }
+.box .wpb_content_elemen .wpb_wrapper img { position: absolute; bottom: 0; left: 0; }
+
+/**************/
+/** SPONSORS **/
+/**************/
+
+.sponsor-category h4 { text-align: center; border-bottom: #BEBEBE 1px solid; }

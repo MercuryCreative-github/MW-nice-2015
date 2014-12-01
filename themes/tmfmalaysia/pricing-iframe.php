@@ -1,25 +1,13 @@
 <?php
-	/*
-	Template Name: TM Forum Pricing Iframe
-	*/
-	get_header(); 
-
-	
-
-?>
+	/*Template Name: TM Forum Pricing Iframe*/
+	get_header(); ?>
 
 <div class="span12" style="height: 100%;position: relative;overflow: hidden; background-color:white">
 	<iframe src="http://devsanjose2014.wpengine.com/pricing/" style="height:100%; width:100%; padding-top:105px;"></iframe>
 </div>
 
 
-<?php
-
-	get_footer();
-
-	
-
-?>
+<?php get_footer(); ?>
 
 
 <style>#pricing-iframe{overflow: hidden;}</style>

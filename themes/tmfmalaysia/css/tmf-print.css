@@ -1,0 +1,15 @@
+@media only print{
+	body{ width: 100%; font-size: 12pt; }
+	/* Typography */
+	p{ font-size: 10pt !important; line-height: 120% !important;}
+	h2{ font-size: 16pt !important; line-height: 120% !important;}
+		
+	/* Hide Footer */
+	#footer{ display: none;}
+	/* Hide Modal */
+	#modal-1{ display: none;}
+	/* Hide Copyright */
+	#copyright{ display: none;}
+	/* Hide Netkcraker Banner*/
+	.netcrack-banner{ display: none; }
+}

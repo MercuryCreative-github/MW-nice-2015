@@ -34,7 +34,7 @@ function agendaAtaGlance() {
             tab='#'+(jQuery(this).closest('div.wpb_tab').attr('id'));
             thisHref=jQuery(this).attr('href');
             jQuery(this).attr('href',thisHref+tab);
-            var eventIcon = '/wp-content/uploads/2014/08/' + eventLink[0].toLowerCase() + '.png';
+            //var eventIcon = '/wp-content/uploads/2014/08/' + eventLink[0].toLowerCase() + '.png';
             // Si el evento es alguno de los "breaks", no agregamos nada.
             if(eventLink[0].toLowerCase()=='afternoon' || eventLink[0].toLowerCase()=='morning' || eventLink[0].toLowerCase()=='lunch' || eventLink[0].toLowerCase()=='registration' || eventLink[0].toLowerCase()=='hub' || eventLink[0].toLowerCase()=='continuous' || eventLink[0].toLowerCase()=='catalyst' ){
             }else{jQuery(this).parent().prepend('<img class="aag-icon" id="imgId" src="' + eventIcon + '">');}
@@ -126,8 +126,6 @@ function agendaAtaGlance() {
       });
 
  
-
-/*
    // si me quedo una fila de 1 td y la fila siguiente tiene tmax-1 tds, copio el td solitario y lo agrego a la fila siguiente
     jQuery('.tt_timetable tr').each(function() {
         tmax= jQuery(this).attr('tmax');
@@ -152,7 +150,7 @@ function agendaAtaGlance() {
                 jQuery(this).remove();
             }
         }
-    });*/
+    });
 
     // luego de todo este borrado, puede que quede algun td solo en un tr.
     jQuery('.tt_timetable tr').each(function(){
@@ -303,7 +301,6 @@ function fullAgenda(){
 
 
      })
-
 
     } // end if
 }
