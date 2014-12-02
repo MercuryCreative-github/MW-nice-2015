@@ -8,13 +8,15 @@
 /* HEADER STYLES */
 .infocus-logo .slogan { margin-top: 14px; border-left: 2px solid #7BCA28; }
 .infocus-logo .slogan .title { color: #7BCA28; }
+.nav-border #navigationmain > ul > li > a:hover, 
+.nav-border #navigationmain > ul > li.current-menu-item > a { background: #7BCA28; }
 
 /****************/
 /**LANDING PAGE**/
 /****************/
 
 /* title */
-.the-content .first-section h1 span { color: #7BCA28; }
+.the-content .first-section h1 span { color: #B1B1B1; }
 
 /* BOX: violet btns */
 .box .wpb_button.join-us.visit-blog { font-size: 17px; font-weight: 400; background-color: #7BCA28; }

@@ -26,7 +26,7 @@
                     <a class="logo" href="<?php echo home_url(); ?>"><?php if ( $option['custom_logo'] !='' ) { echo '<img class="scale-with-grid-logo" src="' . $option['custom_logo'] . '" alt="Logo" />'; } else { echo bloginfo('name'); } ?></a>
     			                        
                     <div class="slogan">
-                        <span class="title">Nice, Francia</span><br/>
+                        <span class="title">Nice, France</span><br/>
                         <span class="date">June 1-4, 2015</span>
                     </div> 
                     
@@ -39,7 +39,7 @@
                 <?php wp_nav_menu( array('menu' => 'Call to Action', 'container' => 'false', 'items_wrap' => '%3$s' )); ?>           
                 
                 <div class="slogan-tablet">
-                    <span class="title-tablet">Nice, Francia</span><br/>
+                    <span class="title-tablet">Nice, France</span><br/>
                     <span class="date-tablet">June 1-4, 2015</span>
                 </div>                
                 
@@ -58,7 +58,7 @@
                 <a class="logo-mobile" href="<?php echo home_url(); ?>"><img class="scale-with-grid-logo" src="http://tmfmalaysia14.staging.wpengine.com/wp-content/uploads/2014/07/logo-mobile.png" alt="Logo" /></a>
                 
                 <div class="slogan-mobile">
-                    <span class="title">Nice, Francia</span><br/>
+                    <span class="title">Nice, France</span><br/>
                     <span class="date">June 1-4, 2015</span>             
                 </div>
                 
