@@ -24,6 +24,18 @@
 
 .the-content .hp-sponsor h3 { text-align: center; border-bottom: 1px solid #9B9999; padding: 10px; margin: 0 17%; }
 .the-content .hp-sponsor p { margin-top: -10px; }
+.wpb_button.join-us-blue { 
+	font-size: 22px; 
+	border: 0; 
+	box-shadow: none; 
+	padding: 10px 60px; 
+	background-color: #4BA7C3;
+	font-family: 'Titillium Web', Arial, sans-serif;
+	text-shadow: none;
+	font-weight: 700;
+}
+.wpb_button.join-us-blue:hover { background-color: #3789A1; }
+.wpb_button.join-us-blue a { color: #fff; }
 
 /* BOX: violet btns */
 .box .wpb_button.join-us.visit-blog { font-size: 17px; font-weight: 400; background-color: #7BCA28; }
