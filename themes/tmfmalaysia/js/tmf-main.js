@@ -39,6 +39,9 @@ function resizeBoxex(windowWidth) {
     boxHeight = 0;
 
 
+     jQuery('.third-section .box .wpb_single_image').removeAttr('style');
+
+
     jQuery('.third-section .box').each(function() {
 
         if (jQuery(this).outerHeight() > boxHeight) {
@@ -49,7 +52,7 @@ function resizeBoxex(windowWidth) {
 
     //alert(boxHeight)
     jQuery('.third-section .box').css('height', boxHeight);
-
+    jQuery('.third-section .box .wpb_single_image').css({'position':'absolute','bottom': '-8px','left': 0});
 
     //jQuery('style').append('.third-section .box{height:'+boxHeight+'px!important;}');
 
