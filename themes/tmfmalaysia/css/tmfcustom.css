@@ -10,6 +10,7 @@
 .infocus-logo .slogan .title { color: #7BCA28; }
 .nav-border #navigationmain > ul > li > a:hover, 
 .nav-border #navigationmain > ul > li.current-menu-item > a { background: #7BCA28; }
+.head #navigationmain > ul > li > a { font-weight: 700; }
 
 /*********************/
 /**HP - LANDING PAGE**/
