@@ -598,9 +598,9 @@ footer .container .footer-bottom .footer-tmf-info p { margin-top: 20px; }
 footer .container .footer-bottom .footer-buttons-widgets {
     display: table-cell; 
     vertical-align: top; 
-    width: 280px;
+    width: 320px;
 }
-.footer-buttons-widgets .columns.widget_text { width: 135px!important; }
+.footer-buttons-widgets .columns.widget_text { width: 150px!important; }
 .footer-buttons-widgets #text-6 { float: right; }
 .footer-buttons-widgets #text-12 { float: left; }
 
