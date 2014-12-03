@@ -18,7 +18,7 @@
 				<div class="footer-tmf-info">
 					<img src="/wp-content/uploads/2014/07/tmforum-logo.png"/>
 					<p class="greytext meta">
-						 © <?php echo date('Y'); ?> <a href="<?php echo home_url(); ?>" class="greytext meta"><?php echo bloginfo('name'); ?></a> <?php echo bloginfo('description'); ?>
+						 © 2015<!--<?php //echo date('Y'); ?>--> <a href="<?php echo home_url(); ?>" class="greytext meta"><?php echo bloginfo('name'); ?></a> <?php echo bloginfo('description'); ?>
 					</p>
 				</div>
                 <div class="footer-buttons-widgets">
