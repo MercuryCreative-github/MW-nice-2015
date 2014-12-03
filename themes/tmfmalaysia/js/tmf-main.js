@@ -72,7 +72,7 @@ function menuChanges(){
         if(jQuery(this).hasClass('social-icon')){jQuery(this).remove();}
     })
 
-    //jQuery('.secondNav select').remove();
+    jQuery('.secondNav select').remove();
 
     //change social icons
     jQuery('.icon-linkedin-sign').removeClass('icon-linkedin-sign').addClass('icon-linkedin');
