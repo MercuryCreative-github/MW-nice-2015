@@ -78,7 +78,6 @@ table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weig
 	background-color: #FE9802;
 	border: 0; 
 	box-shadow: none; 
-	color: #fff;
 	font-family: 'Titillium Web', Arial, sans-serif;
 	font-size: 18px; 
 	font-weight: 700;
@@ -86,6 +85,7 @@ table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weig
 	padding: 10px 30px;
 	text-shadow: none;
 }
+.wpb_button.btn-pricing-register a { color: #fff; }
 .wpb_button.btn-pricing-register:hover { background-color: #E2740B; }
 table.table-pricing-contaier tbody tr.platinum-price  { background-color: #6A9D36; }
 table.table-pricing-contaier tbody tr.monday-price    { background-color: #927E7E; }
