@@ -536,13 +536,13 @@ footer .button.register {
 .call-for-speakers a:hover {
     text-decoration: underline;
 }
-.vc_responsive .wpb_row .vc_span4.box .wpb_single_image {
+/*.third-section .box .wpb_single_image {
     position: absolute;
     left: 0;
     bottom: -7px;
     width: 100%;
-}
- #call4speakers .vc_responsive .wpb_row .vc_span4.box {
+}*/
+ #call4speakers .vc_responsive .wpb_row .box {
     position: relative;
     padding-bottom: 200px;
 }

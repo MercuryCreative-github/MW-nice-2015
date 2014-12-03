@@ -6,9 +6,6 @@ jQuery(document).ready(function($) {
         if (jQuery(this).attr('title')) jQuery(this).append('<span class="social-title">' + jQuery(this).attr('title') + '</span>');
     });
 
-
-    resizeBoxex(jQuery(window).width());
-
     //menu open/close
     var menu_flag = false; 
     
@@ -31,28 +28,34 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(window).resize(function() {
-    resizeBoxex(jQuery(window).width());
+    resizeBoxex();
+});
+
+jQuery(window).load(function() {
+    resizeBoxex();
+
 });
 
 
-function resizeBoxex(windowWidth) {
+function resizeBoxex() {
+
+
+
     boxHeight = 0;
-
-
-     jQuery('.third-section .box .wpb_single_image').removeAttr('style');
 
 
     jQuery('.third-section .box').each(function() {
 
-        if (jQuery(this).outerHeight() > boxHeight) {
-            boxHeight = jQuery(this).outerHeight();
-        }
+        jQuery(this).attr('img', jQuery('img',this).height())
+
+        if (jQuery(this).outerHeight() > boxHeight) {boxHeight = jQuery(this).outerHeight();}
 
     });
 
-    //alert(boxHeight)
-    jQuery('.third-section .box').css('height', boxHeight);
-    jQuery('.third-section .box .wpb_single_image').css({'position':'absolute','bottom': '-8px','left': 0});
+
+    //jQuery('.third-section .box').css('height', boxHeight);
+
+    //jQuery('.third-section .box .wpb_single_image').css({'position':'absolute','bottom': '-8px','left': 0});
 
     //jQuery('style').append('.third-section .box{height:'+boxHeight+'px!important;}');
 
