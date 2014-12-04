@@ -19,6 +19,17 @@
 /**HP - LANDING PAGE**/
 /*********************/
 
+/*SLIDER*/
+.container.slideshow {
+	background: url(/wp-content/uploads/2014/06/TMForumLive2015EyeCandy-2.jpg) no-repeat right 100px;
+	background-size: cover;
+	border: none;
+}
+.intro .home_slider .wpb_text_column { padding-top: 8%; }
+.home_slider .wpb_text_column.wpb_content_element { padding-right: 210px; }
+.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper { background-color: rgba(0, 34, 53, 0.55); padding: 40px; }
+.home_slider .wpb_wrapper .wpb_single_image.wpb_content_element.vc_align_center { display: none; }
+
 /* title */
 .the-content .first-section h1 span { color: #B1B1B1; }
 .the-content .first-section-box p { font-size: 18px; line-height: 155%; }
