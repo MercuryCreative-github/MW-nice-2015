@@ -71,14 +71,14 @@ function menuChanges(){
 
 
     jQuery('.secondNav ul').css({'position':'absolute', 'right':0});
+    
     jQuery('.secondNav ul li').each(function(){
-        if(!jQuery(this).hasClass('social-icon')){jQuery(this).remove();}
+        if(!jQuery(this).hasClass('social-icon')){jQuery(this).hide();}
     })
+
     jQuery('.originalNav ul li').each(function(){
         if(jQuery(this).hasClass('social-icon')){jQuery(this).remove();}
     })
-
-    jQuery('.secondNav select').remove();
 
     //change social icons
     jQuery('.icon-linkedin-sign').removeClass('icon-linkedin-sign').addClass('icon-linkedin');
