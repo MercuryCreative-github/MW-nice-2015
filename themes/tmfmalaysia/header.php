@@ -55,7 +55,7 @@
             
             <div class="mobile-navigation">
             
-                <a class="logo-mobile" href="<?php echo home_url(); ?>"><img class="scale-with-grid-logo" src="http://tmfmalaysia14.staging.wpengine.com/wp-content/uploads/2014/07/logo-mobile.png" alt="Logo" /></a>
+                <a class="logo-mobile" href="<?php echo home_url(); ?>"><img class="scale-with-grid-logo" src="/wp-content/uploads/2014/12/LogoDD14.png" alt="Logo" /></a>
                 
                 <div class="slogan-mobile">
                     <span class="title">Nice, France</span><br/>

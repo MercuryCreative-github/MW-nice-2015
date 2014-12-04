@@ -6,11 +6,14 @@
 /************/
 
 /* HEADER STYLES */
-.infocus-logo .slogan { margin-top: 14px; border-left: 2px solid #7BCA28; }
+.infocus-logo .logo { width: 140px; }
+.infocus-logo .slogan { margin-top: 12px; border-left: 2px solid #7BCA28; font-size: 19px; padding-top: 0px; height: 60px;}
+.infocus-logo .slogan .date { font-size: 17px; }
 .infocus-logo .slogan .title { color: #7BCA28; }
 .nav-border #navigationmain > ul > li > a:hover, 
 .nav-border #navigationmain > ul > li.current-menu-item > a { background: #7BCA28; }
 .head #navigationmain > ul > li > a { font-weight: 700; }
+.social-icon.twitter span.fa-hidden { position: static; overflow: visible; }
 
 /*********************/
 /**HP - LANDING PAGE**/
@@ -18,13 +21,12 @@
 
 /* title */
 .the-content .first-section h1 span { color: #B1B1B1; }
-
-.the-content .first-section-box h3 { margin-bottom: 5px !important; }
 .the-content .first-section-box p { font-size: 18px; line-height: 155%; }
 .the-content .first-section-box p strong { font-size: 18px; }
 
 .the-content .hp-sponsor h3 { text-align: center; border-bottom: 1px solid #9B9999; padding: 10px; margin: 0 17%; }
 .the-content .hp-sponsor p { margin-top: -10px; }
+.the-content .hp-sponsor .wpb_content_element { margin-bottom: 20px; }
 .wpb_button.join-us-blue { 
 	font-size: 22px; 
 	border: 0; 

@@ -1,1 +1,9 @@
 @charset"utf-8";
+
+@media only screen and (max-width: 860px) {
+
+	.head .row .six.columns.action-btns { float: right; width: 45%; margin-right: 20px; }
+	.head .row .six.columns.action-btns .call-to-action > a { width: 160px }
+	.six.columns.infocus-logo .slogan { left: 150px; }
+
+}
