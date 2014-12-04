@@ -17,7 +17,7 @@
 	$images = array_filter(array_map(NULL, $images)); 
 ?>
 
-<div class="container slideshow"> 
+<div class="container slideshow">
 		<section class="row largepadding">
 	<div class="eight columns intro" style="padding-top:10px">
 		<div class="whitetext">
