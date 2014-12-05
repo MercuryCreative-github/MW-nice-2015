@@ -95,7 +95,7 @@
 .the-content .tr-members .td-datos h5, .the-content .tr-non-members .td-datos h5 { text-align: center; padding-left: 0px; }
 table.table-pricing-contaier, table.table-pricing-contaier tbody tr {border: none;}
 table.table-pricing-contaier tbody tr td { text-align: center; color: #444; border:none; border-right: 1px solid #E0E0E0;}
-table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weight: bold; color: #444; font-size: 15px; line-height: 130%; text-align: left;}
+table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weight: bold; color: #444; font-size: 15px; line-height: 130%; text-align: left; vertical-align: middle}
 .tr-grey { background: #FAFAFA; }
 .wpb_button.btn-pricing-register { 
 	background-color: #FE9802;
