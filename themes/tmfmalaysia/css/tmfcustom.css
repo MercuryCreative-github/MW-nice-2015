@@ -38,18 +38,22 @@
 .the-content .hp-sponsor h3 { text-align: center; border-bottom: 1px solid #9B9999; padding: 10px; margin: 0 17%; }
 .the-content .hp-sponsor p { margin-top: -10px; }
 .the-content .hp-sponsor .wpb_content_element { margin-bottom: 20px; }
-.wpb_button.join-us-blue { 
+.wpb_button.button-hp { 
 	font-size: 22px; 
 	border: 0; 
 	box-shadow: none; 
 	padding: 10px 60px; 
-	background-color: #4BA7C3;
 	font-family: 'Titillium Web', Arial, sans-serif;
 	text-shadow: none;
 	font-weight: 700;
 }
-.wpb_button.join-us-blue:hover { background-color: #3789A1; }
-.wpb_button.join-us-blue a { color: #fff; }
+.wpb_button.btn-orange { background-color: #FE9802; }
+.wpb_button.btn-orange:hover { background-color: #E2740B; }
+.wpb_button.btn-orange a { color: #fff; }
+
+/* First boxes */
+.box-image .wpb_single_image.wpb_content_element { margin-bottom: 0px; }
+.box-image .wpb_text_column h3 { margin-top: 0 !important; }
 
 /* BOX: violet btns */
 .box .wpb_button.join-us.visit-blog { font-size: 17px; font-weight: 400; background-color: #7BCA28; }
@@ -74,7 +78,7 @@
 .pricing-table-title .td-blue  	 { border-top: 6px solid #61ABEB; }
 .pricing-table-title .td-orange  { border-top: 6px solid #D98852; }
 .pricing-table-title .td-grey    { border-top: 6px solid #927E7E; }
-.the-content .pricing-table-title td h3 { text-transform: none; }
+.the-content .pricing-table-title td h3 { text-transform: none; line-height: 35px; }
 .the-content .pricing-table-title .td-green h3   { color: #7BCA28 !important; }
 .the-content .pricing-table-title .td-blue h3    { color: #61ABEB !important; }
 .the-content .pricing-table-title .td-orange h3  { color: #D98852 !important; }

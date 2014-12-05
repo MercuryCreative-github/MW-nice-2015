@@ -104,7 +104,7 @@
 	
 		<div class="container white bigpadding">
 			<section class="row smallbottompadding">
-			<h3 class="blacktext bold midbottommargin center"><?php _e('OUR RECENT WORK','montreal'); ?></h3>
+			<h3 class="blacktext midbottommargin center"><?php _e('OUR RECENT WORK','montreal'); ?></h3>
 			<!-- BLACKHORIZONTAL -->
 			<div class="three columns alpha centered blackhorizontal">
 			</div>

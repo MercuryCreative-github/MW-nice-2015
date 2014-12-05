@@ -15,7 +15,7 @@
 
 	<!--section class="row">
 	
-		<?php the_title('<h3 class="blacktext bold midbottommargin center uppercase">', '</h3>'); ?>
+		<?php the_title('<h3 class="blacktext midbottommargin center uppercase">', '</h3>'); ?>
 		
 		<div class="five columns alpha centered blackhorizontal"></div>
 		
