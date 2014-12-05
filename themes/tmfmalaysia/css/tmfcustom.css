@@ -51,6 +51,10 @@
 .wpb_button.join-us-blue:hover { background-color: #3789A1; }
 .wpb_button.join-us-blue a { color: #fff; }
 
+/* First boxes */
+.box-image .wpb_single_image.wpb_content_element { margin-bottom: 0px; }
+.box-image .wpb_text_column h3 { margin-top: 0 !important; }
+
 /* BOX: violet btns */
 .box .wpb_button.join-us.visit-blog { font-size: 17px; font-weight: 400; background-color: #7BCA28; }
 .box .wpb_button.join-us:hover { background-color: #5A9B16; color: #fff; }
