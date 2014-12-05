@@ -1,0 +1,44 @@
+@charset"utf-8";
+
+@media only screen and (max-width: 978px) {
+
+ 	.home_slider .wpb_text_column.wpb_content_element { padding-right: 0px; }
+ 	.vc_row .third-section .box { min-height: 490px; }
+}
+
+@media only screen and (max-width: 860px) {
+
+	.head .row .six.columns.action-btns { float: right; width: 45%; margin-right: 20px; }
+	.head .row .six.columns.action-btns .call-to-action > a { width: 160px }
+	.six.columns.infocus-logo .slogan { left: 150px; }
+}
+
+@media only screen and (max-width: 767px) {
+
+	.first-section-box .wpb_single_image.vc_align_left { text-align: center; margin-bottom: 0; }
+	.row .sign-up-section p {text-align: center;}
+	/*header*/
+	.call-to-action .slogan-tablet { display: none; }
+	.six.columns.infocus-logo .slogan { display: block; width: 165px; left: 200px; }
+	.head .row .six.columns.action-btns .call-to-action > a { width: 350px; }
+	.action-btns .call-to-action { padding-top: 0px; }
+	.infocus-logo .logo { width: 130px; margin-left: 40px; }
+	.vc_row .third-section .box { min-height: 0px; }
+}
+
+@media only screen and (max-width: 640px) {
+
+	.container.slideshow {background-position: right 40px;}
+	/*header*/
+	.mobile-navigation .slogan-mobile { display: none; }
+	.six.columns.infocus-logo .slogan { width: 130px; left: 180px; }
+}
+
+@media only screen and (max-width: 480px) {
+
+	.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper { padding: 0; }
+	.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper h2 { font-size: 2.1em; }
+	/*header*/
+	.mobile-navigation .slogan-mobile { display: block; top: 55px; left: 180px; font-size: 12px; text-align: left;}
+	.six.columns.infocus-logo .slogan { display: none; }
+}

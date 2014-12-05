@@ -1,0 +1,115 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,300italic,300);
+
+/************/
+/**GENERALS**/
+/************/
+
+/* HEADER STYLES */
+.infocus-logo .logo { width: 140px; }
+.infocus-logo .slogan { margin-top: 12px; border-left: 2px solid #7BCA28; font-size: 19px; padding-top: 0px; height: 60px;}
+.infocus-logo .slogan .date { font-size: 17px; }
+.infocus-logo .slogan .title { color: #7BCA28; }
+.nav-border #navigationmain > ul > li > a:hover, 
+.nav-border #navigationmain > ul > li.current-menu-item > a { background: #7BCA28; }
+.head #navigationmain > ul > li > a { font-weight: 700; }
+.social-icon.twitter span.fa-hidden { position: static; overflow: visible; }
+
+/*********************/
+/**HP - LANDING PAGE**/
+/*********************/
+
+/*SLIDER*/
+.container.slideshow {
+	background: url(/wp-content/uploads/2014/06/TMForumLive2015EyeCandy-2.jpg) no-repeat right 100px;
+	background-size: cover;
+	border: none;
+}
+.intro .home_slider .wpb_text_column { padding-top: 8%; }
+.home_slider .wpb_text_column.wpb_content_element { padding-right: 210px; }
+.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper { background-color: rgba(0, 34, 53, 0.55); padding: 40px; }
+.home_slider .wpb_wrapper .wpb_single_image.wpb_content_element.vc_align_center { display: none; }
+
+/* title */
+.the-content .first-section h1 span { color: #B1B1B1; }
+.the-content .first-section-box p { font-size: 18px; line-height: 155%; }
+.the-content .first-section-box p strong { font-size: 18px; }
+
+.the-content .hp-sponsor h3 { text-align: center; border-bottom: 1px solid #9B9999; padding: 10px; margin: 0 17%; }
+.the-content .hp-sponsor p { margin-top: -10px; }
+.the-content .hp-sponsor .wpb_content_element { margin-bottom: 20px; }
+.wpb_button.join-us-blue { 
+	font-size: 22px; 
+	border: 0; 
+	box-shadow: none; 
+	padding: 10px 60px; 
+	background-color: #4BA7C3;
+	font-family: 'Titillium Web', Arial, sans-serif;
+	text-shadow: none;
+	font-weight: 700;
+}
+.wpb_button.join-us-blue:hover { background-color: #3789A1; }
+.wpb_button.join-us-blue a { color: #fff; }
+
+/* BOX: violet btns */
+.box .wpb_button.join-us.visit-blog { font-size: 17px; font-weight: 400; background-color: #7BCA28; }
+.box .wpb_button.join-us:hover { background-color: #5A9B16; color: #fff; }
+.third-section .box h3 { padding: 0 2px; }
+.box .wpb_content_elemen .wpb_wrapper img { position: absolute; bottom: 0; left: 0; }
+
+/**************/
+/** SPONSORS **/
+/**************/
+
+.sponsor-category h4 { text-align: center; border-bottom: #BEBEBE 1px solid; }
+.sponsors img { vertical-align: middle; }
+.sponsors .vc_column_container .wpb_wrapper { margin-bottom: 20px; min-height: 80px; }
+
+/*************/
+/** PRICING **/
+/*************/
+
+.pricing-table-title td { vertical-align: middle; padding: 20px 25px; text-align: center;}
+.pricing-table-title .td-green   { border-top: 6px solid #7BCA28; }
+.pricing-table-title .td-blue  	 { border-top: 6px solid #61ABEB; }
+.pricing-table-title .td-orange  { border-top: 6px solid #D98852; }
+.pricing-table-title .td-grey    { border-top: 6px solid #927E7E; }
+.the-content .pricing-table-title td h3 { text-transform: none; }
+.the-content .pricing-table-title .td-green h3   { color: #7BCA28 !important; }
+.the-content .pricing-table-title .td-blue h3    { color: #61ABEB !important; }
+.the-content .pricing-table-title .td-orange h3  { color: #D98852 !important; }
+.the-content .pricing-table-title .td-grey h3    { color: #927E7E !important; }
+.tr-members 	{ background: #ABAAAA; }
+.tr-non-members { background: #BDBDBD; }
+.the-content .tr-members h5, .the-content .tr-non-members h5 { color: #fff !important; margin: 0 !important; text-align: left; padding-left: 20px; }
+.the-content .tr-members .td-datos h5, .the-content .tr-non-members .td-datos h5 { text-align: center; padding-left: 0px; }
+table.table-pricing-contaier, table.table-pricing-contaier tbody tr {border: none;}
+table.table-pricing-contaier tbody tr td { text-align: center; color: #444; border:none; border-right: 1px solid #E0E0E0;}
+table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weight: bold; color: #444; font-size: 15px; line-height: 130%; text-align: left;}
+.tr-grey { background: #FAFAFA; }
+.wpb_button.btn-pricing-register { 
+	background-color: #FE9802;
+	border: 0; 
+	box-shadow: none; 
+	font-family: 'Titillium Web', Arial, sans-serif;
+	font-size: 18px; 
+	font-weight: 700;
+	margin: 5px auto!important; 
+	padding: 10px 30px;
+	text-shadow: none;
+}
+.wpb_button.btn-pricing-register a { color: #fff; }
+.wpb_button.btn-pricing-register:hover { background-color: #E2740B; }
+table.table-pricing-contaier tbody tr.platinum-price  { background-color: #6A9D36; }
+table.table-pricing-contaier tbody tr.monday-price    { background-color: #927E7E; }
+table.table-pricing-contaier tbody tr.exhibitor-price { background-color: #D98852; }
+table.table-pricing-contaier tbody tr.platinum-price td,
+table.table-pricing-contaier tbody tr.monday-price td,
+table.table-pricing-contaier tbody tr.exhibitor-price td {
+	border: none;
+	text-align: left;
+	padding: 10px 27px;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 700;
+}
