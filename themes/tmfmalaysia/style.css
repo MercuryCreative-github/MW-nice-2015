@@ -1475,7 +1475,11 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     footer .container .footer-bottom .footer-buttons-widgets {
         display: block;
     }
-
+    
+    .footer-buttons-widgets #text-6 {
+        float: none;
+        margin: 0 auto;
+    }
 }
 
 @media only screen and (min-width: 768px) {
