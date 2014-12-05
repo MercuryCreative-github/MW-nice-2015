@@ -10,6 +10,7 @@
  Text Domain:  tmfmalaysia
 */
  @import url("../montreal/style.css");
+ @import url("css/responsive-tables.css");
  @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,300,700);
 
 /* TMF Slider customize */
@@ -536,13 +537,13 @@ footer .button.register {
 .call-for-speakers a:hover {
     text-decoration: underline;
 }
-.vc_responsive .wpb_row .vc_span4.box .wpb_single_image {
+/*.third-section .box .wpb_single_image {
     position: absolute;
     left: 0;
     bottom: -7px;
     width: 100%;
-}
- #call4speakers .vc_responsive .wpb_row .vc_span4.box {
+}*/
+ #call4speakers .vc_responsive .wpb_row .box {
     position: relative;
     padding-bottom: 200px;
 }
@@ -598,9 +599,9 @@ footer .container .footer-bottom .footer-tmf-info p { margin-top: 20px; }
 footer .container .footer-bottom .footer-buttons-widgets {
     display: table-cell; 
     vertical-align: top; 
-    width: 280px;
+    width: 320px;
 }
-.footer-buttons-widgets .columns.widget_text { width: 135px!important; }
+.footer-buttons-widgets .columns.widget_text { width: 150px!important; }
 .footer-buttons-widgets #text-6 { float: right; }
 .footer-buttons-widgets #text-12 { float: left; }
 
@@ -1509,3 +1510,4 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
         display: none!important;
     }
 }
+
