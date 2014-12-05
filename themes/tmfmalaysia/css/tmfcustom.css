@@ -50,13 +50,15 @@
 .wpb_button.btn-orange { background-color: #FE9802; }
 .wpb_button.btn-orange:hover { background-color: #E2740B; }
 .wpb_button.btn-orange a { color: #fff; }
+.wpb_button.join-us.visit-blog.btn-blue { background-color: #164C8E; }
+.wpb_button.join-us.visit-blog.btn-blue:hover { background-color: #10335F; }
 
 /* First boxes */
 .box-image .wpb_single_image.wpb_content_element { margin-bottom: 0px; }
 .box-image .wpb_text_column h3 { margin-top: 0 !important; }
 
 /* BOX: violet btns */
-.box .wpb_button.join-us.visit-blog { font-size: 17px; font-weight: 400; background-color: #7BCA28; }
+.box .wpb_button.join-us.visit-blog { font-size: 17px; font-weight: 400; }
 .box .wpb_button.join-us:hover { background-color: #5A9B16; color: #fff; }
 .third-section .box h3 { padding: 0 2px; }
 .box .wpb_content_elemen .wpb_wrapper img { position: absolute; bottom: 0; left: 0; }
