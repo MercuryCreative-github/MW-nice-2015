@@ -35,10 +35,14 @@
 }
 
 @media only screen and (max-width: 480px) {
-
 	.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper { padding: 0; }
 	.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper h2 { font-size: 2.1em; }
 	/*header*/
-	.mobile-navigation .slogan-mobile { display: block; top: 55px; left: 180px; font-size: 12px; text-align: left;}
+	.mobile-navigation .slogan-mobile { display: block; top: 25px; left: 180px; font-size: 12px; text-align: left;}
 	.six.columns.infocus-logo .slogan { display: none; }
+	.logo-mobile {width: 120px}
+	.footer-buttons-widgets #text-6 {
+        float: none;
+        margin: 0 auto;
+    }
 }
