@@ -116,9 +116,7 @@ function menuChanges(){
 
 
 /* Responsive Table */
-/* This fixes the left col and scroll the others in smaller resolutions */
 jQuery(document).ready(function() {
-   
   var switched = false;
   var updateTables = function() {
     if ((jQuery(window).width() < 767) && !switched ){
@@ -183,5 +181,4 @@ jQuery(document).ready(function() {
       jQuery(this).height(heights[index]);
     });
   }
-
 });
