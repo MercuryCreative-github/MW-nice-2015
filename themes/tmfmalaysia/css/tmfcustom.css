@@ -31,7 +31,7 @@
 }
 .intro .home_slider .wpb_text_column { padding-top: 8%; }
 .home_slider .wpb_text_column.wpb_content_element { padding-right: 210px; }
-.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper { background-color: rgba(0, 34, 53, 0.55); padding: 40px; }
+.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper { background-color: rgba(0, 34, 53, 0.55); padding: 10px; width: 520px;}
 .home_slider .wpb_wrapper .wpb_single_image.wpb_content_element.vc_align_center { display: none; }
 
 /* title */
