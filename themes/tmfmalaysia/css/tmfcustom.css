@@ -137,4 +137,4 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 }
 .the-content  .color-box h5 span.green-text {color: rgb(123, 202, 40);}
 
-::-webkit-scrollbar {border-left: none}
+::-webkit-scrollbar {border-left: none !important}
