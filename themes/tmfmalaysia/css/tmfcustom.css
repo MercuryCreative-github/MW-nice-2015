@@ -73,7 +73,8 @@
 
 .sponsor-category h4 { text-align: center; border-bottom: #BEBEBE 1px solid; }
 .sponsors img { vertical-align: middle; }
-.sponsors .vc_column_container .wpb_wrapper { margin-bottom: 20px; min-height: 80px; }
+.sponsors .vc_column_container .wpb_wrapper { margin-bottom: 0; min-height: 20px;}
+.sponsors .vc_column_container .wpb_wrapper p { vertical-align:top; margin-bottom: 50px; }
 
 /*************/
 /** PRICING **/
