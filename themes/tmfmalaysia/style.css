@@ -262,7 +262,10 @@ padding-top: 24px;line-height: 34px;}
     margin-bottom: 5px;
 }
 
-.social-icon{float: left;margin-left: 18px;}
+.social-icon{
+	float: left;
+	margin-left: 18px;
+}
 
 #navigationmain {
     vertical-align: inherit;
@@ -319,8 +322,10 @@ padding-top: 24px;line-height: 34px;}
     color: #666;
     font-weight: 400;
 }
+
 .menu .icon-2x {
     font-size: 13px;
+	text-align:center;
 }
 .icon-google-plus
 {
@@ -357,6 +362,7 @@ padding-top: 24px;line-height: 34px;}
 #navigationmain > ul > li.current-menu-item.button.CFS a {
     color: #FFF;
 }
+
 #navigationmain .button.register {
     padding: 0;
 }
@@ -516,6 +522,16 @@ footer .button.register {
 /*    -webkit-box-shadow: 0 0 40px 2px #BBBBBB;
     box-shadow: 0 0 40px 2px #BBBBBB;*/
 /*}*/
+
+.emodal.fixed {
+	position: relative;
+	width:290px;
+	margin:auto 0;
+}
+
+.emodal.fixed input { width: 80%;}
+
+
 /*MODAL*/
 .tiny.modal.active.theme-1 {
     background-image: url('/wp-content/uploads/2014/07/logo-menu.png');
@@ -956,6 +972,15 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
  @media only screen and (max-width: 1280px) {
     #hotel-travel .container.white.bigpadding { background-size: unset; }
     #hotel-travel h3.blacktext.bold.midbottommargin { margin-top: 0; }
+	
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}	
  }
 
  @media only screen and (max-width: 978px) {
@@ -994,6 +1019,14 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     #call4speakers section.page ul li {
         text-align: left;
     }
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
 }
 @media only screen and (max-width: 978px) and (min-width: 768px) {
     /*header*/
@@ -1004,6 +1037,20 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     #call4speakers > .container.white.bigpadding {
         margin-top: -20px;
     }
+	
+	/*Third-section*/
+    .the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
 }
 @media only screen and (max-width: 860px) {
 
@@ -1064,49 +1111,69 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
         font-size: 14px;
     }
     .slogan{ margin-top:17px; width: 206px;}
+	
+	.the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
 
 }
 @media only screen and (max-width: 768px) {
+	
+	.the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
 	
 }
 @media only screen and (max-width: 767px) {
     /* menu */
     .js .selectnav {display: block;max-width: 100% !important;}
     .js #menu {display: none;}
-    #navigationmain ul {padding-top: 40px;}
-    #navigationmain .button.CFS{margin-left: 25px}
-    
-    #navigationmain 
-    {
+	#navigationmain {
         margin-top: 123px;
         display: block !important;
     } 
+    #navigationmain ul {padding-top: 40px;}
+    #navigationmain .button.CFS{margin-left: 25px}
     
-    .head
-    {
+    .head {
     margin: 0 auto;
     width: 392px;
     height: 179px;
-}    
+	}    
     
-    .nav-border 
-    {
+    .nav-border {
     border-top: none !important;
     }        
     
-    .slogan
-    {
+    .slogan {
         display: none;
     }
-    .row p  {
+    .row p {
        text-align:left;
     }
     /*call to action btns*/
     
     .keep-updated-btn{display: none !important;}   
     
-    .call-to-action .register-btn 
-    {
+    .call-to-action .register-btn {
         margin-right: 0px !important;
     }
     
@@ -1225,6 +1292,19 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     }    
     /*footer buttons*/
     footer .button.CFS { margin: 0 auto; }
+	
+	.the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
 }
 @media only screen and (max-width: 680px) {
     /* menu */
@@ -1251,6 +1331,20 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .wpb_row.call-for-speakers > .wpb_column.vc_span12 {
         width: 100%;
     }
+	
+	.the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
+	
 }
 @media only screen and (max-width: 640px) {
 
@@ -1363,10 +1457,10 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
         background-position: -27px -34px;
     }
     
-    .social-icon 
-    {
+    .social-icon {
         margin-left: 27px;
-    }    
+    }  
+ 
     /*-- STRUCTURE --*/
     .bigtoppadding {
     padding-top: 3px !important;
@@ -1382,6 +1476,19 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .wpb_wrapper > ul{ text-align: left !important;}
     .wpb_row.vc_row-fluid{ padding: 0 20px;}
     body{ overflow-x: hidden !important;}
+	
+	.the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
 }
 
 @media only screen and (max-width: 600px) {
@@ -1404,12 +1511,37 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .hotel-travel-items ul {
     margin-left: 36px;
     }    
+	
+	.the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
 }
 @media only screen and (max-width: 540px) {
     /*home slider*/
     .home_slider .wpb_single_image {
         margin-bottom: 15px;
     }
+	.the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
 }
 @media only screen and (max-width: 480px) {
 
@@ -1480,6 +1612,18 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
         float: none;
         margin: 0 auto;
     }
+	.the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	
+	.emodal.fixed {
+		position: relative;
+		width:240px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 90%;}
 }
 
 @media only screen and (min-width: 768px) {
@@ -1501,6 +1645,18 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .vc_responsive .wpb_row .vc_span4.box:last-child {
         margin-right: 0;
     }
+	.the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
 }
 @media only screen and (min-width: 979px) {
     #call4speakers > .container section.row div.midtopmargin p {
@@ -1513,5 +1669,16 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .call4speakersformviolet {
         display: none!important;
     }
+	.the-content h3 {
+		padding-top:20px;
+		text-align:center;
+    }
+	.emodal.fixed {
+		position: relative;
+		width:290px;
+		margin:auto 0;
+	}
+	
+	.emodal.fixed input { width: 80%;}
 }
 
