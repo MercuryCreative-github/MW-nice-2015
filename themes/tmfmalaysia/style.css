@@ -263,7 +263,7 @@ padding-top: 24px;line-height: 34px;}
 }
 
 .social-icon{
-	float: left;
+	float: right;
 	margin-left: 18px;
 }
 
@@ -1349,7 +1349,10 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 @media only screen and (max-width: 640px) {
 
     /* menu */
-    .js #menu {display: block;}
+    .js #menu {
+		/*display: block;*/
+		display:inline-block;
+	}
     #menu li a{color: #7f7f82;}
     .js .selectnav {display: none;}
     .call-to-action{display: none;}
