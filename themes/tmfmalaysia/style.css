@@ -411,6 +411,10 @@ footer .button.register {
     display: block;
     color: #793A89;
 }
+ .first-section-box > .the-content h3 {
+    text-align: left;
+	margin-bottom:100px;
+}
 .first-section-box p {
     font-family:'Open Sans', Arial, sans-serif;;
     line-height: 1.3em;
@@ -1038,11 +1042,9 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
         margin-top: -20px;
     }
 	
+	
 	/*Third-section*/
-    .the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+     
 	
 	.emodal.fixed {
 		position: relative;
@@ -1112,10 +1114,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     }
     .slogan{ margin-top:17px; width: 206px;}
 	
-	.the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+	 
 	
 	.emodal.fixed {
 		position: relative;
@@ -1128,10 +1127,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 }
 @media only screen and (max-width: 768px) {
 	
-	.the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+	 
 	
 	.emodal.fixed {
 		position: relative;
@@ -1293,10 +1289,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     /*footer buttons*/
     footer .button.CFS { margin: 0 auto; }
 	
-	.the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+	 
 	
 	.emodal.fixed {
 		position: relative;
@@ -1332,10 +1325,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
         width: 100%;
     }
 	
-	.the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+	 
 	
 	.emodal.fixed {
 		position: relative;
@@ -1480,10 +1470,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .wpb_row.vc_row-fluid{ padding: 0 20px;}
     body{ overflow-x: hidden !important;}
 	
-	.the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+	 
 	
 	.emodal.fixed {
 		position: relative;
@@ -1515,10 +1502,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     margin-left: 36px;
     }    
 	
-	.the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+	 
 	
 	.emodal.fixed {
 		position: relative;
@@ -1533,10 +1517,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .home_slider .wpb_single_image {
         margin-bottom: 15px;
     }
-	.the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+	 
 	
 	.emodal.fixed {
 		position: relative;
@@ -1615,10 +1596,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
         float: none;
         margin: 0 auto;
     }
-	.the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+	 
 	
 	.emodal.fixed {
 		position: relative;
@@ -1648,10 +1626,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .vc_responsive .wpb_row .vc_span4.box:last-child {
         margin-right: 0;
     }
-	.the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+	 
 	
 	.emodal.fixed {
 		position: relative;
@@ -1672,10 +1647,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .call4speakersformviolet {
         display: none!important;
     }
-	.the-content h3 {
-		padding-top:20px;
-		text-align:center;
-    }
+	 
 	.emodal.fixed {
 		position: relative;
 		width:290px;

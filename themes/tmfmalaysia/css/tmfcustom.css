@@ -36,7 +36,8 @@
 
 /* title */
 .the-content .first-section h1 span { color: #B1B1B1; }
-.the-content .first-section-box p { font-size: 18px; line-height: 155%; }
+.the-content .first-section-box p { font-size: 18px; line-height: 155%; padding-bottom:50px; }
+.the-content .first-section-box h3 { text-align:left; }
 .the-content .first-section-box p strong { font-size: 18px; }
 
 .the-content .hp-sponsor h3 { text-align: center; border-bottom: 1px solid #9B9999; padding: 10px; margin: 0 17%; }
