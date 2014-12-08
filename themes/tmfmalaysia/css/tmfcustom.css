@@ -105,9 +105,10 @@ table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weig
 	font-size: 18px; 
 	font-weight: 700;
 	margin: 5px auto!important; 
-	padding: 10px 30px;
+	padding: 10px 60px;
 	text-shadow: none;
 }
+.btn-register-pandp-table { text-align: center; }
 .wpb_button.btn-pricing-register a { color: #fff; }
 .wpb_button.btn-pricing-register:hover { background-color: #E2740B; }
 table.table-pricing-contaier tbody tr.platinum-price  { background-color: #6A9D36; }
@@ -123,3 +124,13 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	font-size: 17px;
 	font-weight: 700;
 }
+.the-content .color-box h5 {
+	text-align: center;
+	margin-top: 0px !important;
+	color: #ABAAAA !important;
+	font-size: 1.6em;
+	border: #e4e4e4 2px solid;
+	padding: 20px 0px;
+	background: #FAFAFA;
+}
+.the-content  .color-box h5 span.green-text {color: rgb(123, 202, 40);}
