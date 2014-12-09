@@ -131,11 +131,11 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	text-align: center;
 	margin-top: 0px !important;
 	color: #ABAAAA !important;
-	font-size: 1.6em;
 	border: #e4e4e4 2px solid;
 	padding: 20px 0px;
 	background: #FAFAFA;
 }
+.the-content .color-box h5 { font-size: 1.6em; }
 .the-content  .color-box h5 span.green-text {color: rgb(123, 202, 40);}
 
 ::-webkit-scrollbar {border-left: none !important}
