@@ -31,6 +31,8 @@
 	.action-btns .call-to-action { padding-top: 0px; }
 	.infocus-logo .logo { width: 130px; margin-left: 40px; }
 	.vc_row .third-section .box { min-height: 0px; }
+	/*footer*/
+	.container .row .footer-bottom.twelve.columns { width: 90% !important; }
 }
 
 @media only screen and (max-width: 640px) {
@@ -39,21 +41,57 @@
 	/*header*/
 	.mobile-navigation .slogan-mobile { display: none; }
 	.six.columns.infocus-logo .slogan { width: 130px; left: 180px; }
+<<<<<<< HEAD
 	
 	.the-content .first-section-box h3 { text-align:left; }
+=======
+	.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper { width: 100%; padding: 0; }
+>>>>>>> origin/developers
 }
 
 @media only screen and (max-width: 480px) {
+	
 	.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper { padding: 0; }
 	.home_slider .wpb_text_column.wpb_content_element .wpb_wrapper h2 { font-size: 2.1em; }
 	/*header*/
-	.mobile-navigation .slogan-mobile { display: block; top: 25px; left: 180px; font-size: 12px; text-align: left;}
+	.mobile-navigation .slogan-mobile { 
+		border-left: #B1B1B1 2px solid;
+		color: #B1B1B1;
+		display: block;
+		font-size: 12px;
+		font-weight: 800;
+		left: 133px; 
+		padding: 10px 0 0 13px;
+		top: 12px;
+		text-align: left; 
+  		height: 47px; 
+  	}
 	.six.columns.infocus-logo .slogan { display: none; }
 	.logo-mobile {width: 120px}
+<<<<<<< HEAD
 	.footer-buttons-widgets #text-6 {
         float: none;
         margin: 0 auto;
     }
 	
 	.the-content .first-section-box h3 { text-align:left; }
+=======
+	.footer-buttons-widgets #text-6 { float: none; margin: 0 auto; }
+    /*footer*/
+	.container .row .footer-bottom.twelve.columns { width: auto !important; }
+}
+
+@media only screen and (max-width: 400px) {
+
+	.mobile-navigation .slogan-mobile{
+		border-left: none;
+		left: 61%;
+		padding: 0;
+		top: 37px;
+		text-align: center;
+		height: auto;
+	}
+	.mobile-navigation .register-btn-mobile, .mobile-navigation .navbar-toggle { top: 14px; }
+
+>>>>>>> origin/developers
 }
