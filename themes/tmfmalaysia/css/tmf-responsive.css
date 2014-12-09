@@ -4,6 +4,9 @@
 
  	.home_slider .wpb_text_column.wpb_content_element { padding-right: 0px; }
  	.vc_row .third-section .box { min-height: 490px; }
+	.the-content .first-section-box h3 { text-align:left; }
+	
+	.the-content .first-section-box h3 { text-align:left; }
 }
 
 @media only screen and (max-width: 860px) {
@@ -11,11 +14,15 @@
 	.head .row .six.columns.action-btns { float: right; width: 45%; margin-right: 20px; }
 	.head .row .six.columns.action-btns .call-to-action > a { width: 160px }
 	.six.columns.infocus-logo .slogan { left: 150px; }
+	
+	.the-content .first-section-box h3 { text-align:left; }
 }
 
 @media only screen and (max-width: 767px) {
 
-	.first-section-box .wpb_single_image.vc_align_left { text-align: left; margin-bottom: 0; }
+	.first-section-box .wpb_single_image.vc_align_left { text-align: center; margin-bottom: 0; }
+	.the-content .first-section-box h3 { text-align:center; }
+	
 	.row .sign-up-section p {text-align: center;}
 	/*header*/
 	.call-to-action .slogan-tablet { display: none; }
@@ -32,6 +39,8 @@
 	/*header*/
 	.mobile-navigation .slogan-mobile { display: none; }
 	.six.columns.infocus-logo .slogan { width: 130px; left: 180px; }
+	
+	.the-content .first-section-box h3 { text-align:left; }
 }
 
 @media only screen and (max-width: 480px) {
@@ -45,4 +54,6 @@
         float: none;
         margin: 0 auto;
     }
+	
+	.the-content .first-section-box h3 { text-align:left; }
 }
