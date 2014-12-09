@@ -1497,6 +1497,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .four.columns.alpha.centered.midtopmargin{ display: none;}
     .wpb_wrapper > ul{ text-align: left !important;}
     .wpb_row.vc_row-fluid{ padding: 0 20px; margin:0;}
+	.intro .wpb_row.vc_row-fluid{ padding: 0; }
     body{ overflow-x: hidden !important;}
 	
 	 
