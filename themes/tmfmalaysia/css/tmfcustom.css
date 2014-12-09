@@ -41,7 +41,7 @@
 .the-content .first-section-box h3 { text-align:left; }
 .the-content .first-section-box p strong { font-size: 18px; }
 
-.the-content .hp-sponsor h3 { text-align: center; border-bottom: 1px solid #9B9999; padding: 10px; margin: 0 17%; }
+.the-content .hp-sponsor h3 { text-align: center; border-bottom: 1px solid #9B9999; padding: 10px 0; margin: 0 2%; }
 .the-content .hp-sponsor p { margin-top: -10px; }
 .the-content .hp-sponsor .wpb_content_element { margin-bottom: 20px; }
 .wpb_button.button-hp { 
