@@ -24,7 +24,7 @@ header { z-index: 998; }
     border-bottom: 0;
     max-height: 500px;
 }
-.container { padding:0; }
+
 /* resize li height to fit the slideshow */
  #supersized li {
     height: 660px;
