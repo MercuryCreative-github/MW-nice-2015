@@ -24,6 +24,7 @@ header { z-index: 998; }
     border-bottom: 0;
     max-height: 500px;
 }
+.container { padding:0; }
 /* resize li height to fit the slideshow */
  #supersized li {
     height: 660px;
@@ -1218,7 +1219,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     }
     .wpb_row.third-section > div {
         margin-bottom:20px;
-        width: 335px;
+        /*width: 335px;*/
         margin: 0 auto;
         margin-bottom: 50px;
     }
@@ -1562,7 +1563,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     }
     /*third-section*/
     .wpb_row.third-section > div {
-        width: 285px;
+        /*width: 285px;*/
     }
     .tmf-social-icons {
         padding: 0 20px;
