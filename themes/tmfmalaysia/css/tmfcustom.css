@@ -18,6 +18,7 @@
 .nav-border #navigationmain > ul > li.current-menu-item > a { padding: 10px 20px; }
 .nav-border #navigationmain > ul > li > a { padding: 10px 20px; }
 .nav-border #navigationmain > ul > li > a:hover { padding: 10px 20px; }
+.the-content ul { list-style: disc; padding-left: 20px; }
 
 /*********************/
 /**HP - LANDING PAGE**/
@@ -126,7 +127,7 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	font-size: 17px;
 	font-weight: 700;
 }
-.the-content .color-box h5 {
+.the-content .color-box h5, .the-content .color-box p {
 	text-align: center;
 	margin-top: 0px !important;
 	color: #ABAAAA !important;
