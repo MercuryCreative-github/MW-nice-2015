@@ -1247,7 +1247,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     }
     .wpb_row.third-section > div {
         margin-bottom:20px;
-        /*width: 335px;*/
+        width: 335px;
         margin: 0 auto;
         margin-bottom: 50px;
     }
@@ -1280,15 +1280,15 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     margin: auto;
     }
     
-    .wpb_content_element.travel-item img{
+    .wpb_content_element.travel-item img {
     display: inline-block;
     margin-left: -150px;
-}
+    }
     
-    .wpb_content_element.travel-item strong{
+    .wpb_content_element.travel-item strong {
     display: inline-block;
     margin-left: 7px;
-}  
+    }  
 
     .hotel-travel-items ul li {
     text-align: left;
@@ -1592,7 +1592,7 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     }
     /*third-section*/
     .wpb_row.third-section > div {
-        /*width: 285px;*/
+        width: 285px;
     }
     .tmf-social-icons {
         padding: 0 20px;
