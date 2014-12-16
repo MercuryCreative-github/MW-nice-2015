@@ -14,6 +14,7 @@
      * @type {*}
      */
     vc.shortcode = Backbone.Model.extend({
+        settings: false,
         defaults:function () {
             var id = window.vc_guid();
             return {
@@ -63,6 +64,9 @@
                 options.error("Record not found");
             }
         },
+        getParam: function(key) {
+          return _.isObject(this.get('params')) && !_.isUndefined(this.get('params')[key]) ? this.get('params')[key] : '';
+        },
         /**
          * Remove all children of model from storage.
          * Will remove children of children models too.
@@ -76,6 +80,10 @@
                 this.removeChildren(model);
             }, this);
             if (models.length) vc.storage.save();
+        },
+        setting: function(name) {
+          if(this.settings === false) this.settings = vc.getMapped(this.get('shortcode')) || {};
+          return this.settings[name];
         }
     });
     /**
@@ -158,17 +166,19 @@
         var defaults = {},
             params = _.isObject(vc.map[tag]) && _.isArray(vc.map[tag].params) ? vc.map[tag].params : [];
         _.each(params, function (param) {
-            if(!_.isUndefined(param.std)) {
-                defaults[param.param_name] = param.std;
-            } else if (!_.isUndefined(param.value)) {
-                if (_.isObject(param.value) && param.type != 'checkbox') {
-                    defaults[param.param_name] = _.values(param.value)[0];
-                } else if (_.isArray(param.value)) {
-                    defaults[param.param_name] = param.value[0];
-                } else if (!_.isObject(param.value)) {
-                    defaults[param.param_name] = param.value;
-                } else {
-                    defaults[param.param_name] = '';
+            if(_.isObject(param)) {
+                if(!_.isUndefined(param.std)) {
+                    defaults[param.param_name] = param.std;
+                } else if (!_.isUndefined(param.value)) {
+                    if (_.isObject(param.value) && param.type != 'checkbox') {
+                        defaults[param.param_name] = _.values(param.value)[0];
+                    } else if (_.isArray(param.value)) {
+                        defaults[param.param_name] = param.value[0];
+                    } else if (!_.isObject(param.value)) {
+                        defaults[param.param_name] = param.value;
+                    } else {
+                        defaults[param.param_name] = '';
+                    }
                 }
             }
         });

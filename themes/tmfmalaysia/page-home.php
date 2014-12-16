@@ -17,23 +17,14 @@
 	$images = array_filter(array_map(NULL, $images)); 
 ?>
 
-<div class="container slideshow" style="background-position: right 120px;background-image: url(http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/06/TMForumLive2015EyeCandy-2.jpg);
-background-size: contain;border: none;background-repeat: no-repeat;">
+<div class="container slideshow">
 		<section class="row largepadding">
-	<div class="twelve columns intro">
+	<div class="eight columns intro" style="padding-top:10px">
 		<div class="whitetext">
 
 <div class="wpb_row vc_row-fluid">
 	<div class="vc_span12 home_slider wpb_column column_container">
 		<div class="wpb_wrapper">
-			
-	<div class="wpb_single_image wpb_content_element vc_align_center">
-		<div class="wpb_wrapper">
-		<img width="593" height="375" src="<?php the_field("home_page_intro_logo"); ?>" class="vc_box_border_grey attachment-full" alt="TM Forum Live!&nbsp;Becoming an Agile, Super-Effective Business&nbsp;brings together all the critical elements of&nbsp;managing&nbsp;and&nbsp;delivering an agile, customer-centric&nbsp;business.">	
-					
-
-</div> 
-	</div> 
 	<div class="wpb_text_column wpb_content_element ">
 		<div class="wpb_wrapper">
 			<?php the_field("home_page_intro_text"); ?>
@@ -113,7 +104,7 @@ background-size: contain;border: none;background-repeat: no-repeat;">
 	
 		<div class="container white bigpadding">
 			<section class="row smallbottompadding">
-			<h3 class="blacktext bold midbottommargin center"><?php _e('OUR RECENT WORK','montreal'); ?></h3>
+			<h3 class="blacktext midbottommargin center"><?php _e('OUR RECENT WORK','montreal'); ?></h3>
 			<!-- BLACKHORIZONTAL -->
 			<div class="three columns alpha centered blackhorizontal">
 			</div>

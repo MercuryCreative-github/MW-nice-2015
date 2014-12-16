@@ -36,6 +36,7 @@ jQuery(window).load(function() {
 
 });
 
+function resizeBoxex() {
 
 function resizeBoxex() {
 
@@ -116,7 +117,9 @@ function menuChanges(){
 
 
 /* Responsive Table */
+/* This fixes the left col and scroll the others in smaller resolutions */
 jQuery(document).ready(function() {
+   
   var switched = false;
   var updateTables = function() {
     if ((jQuery(window).width() < 767) && !switched ){
@@ -177,8 +180,18 @@ jQuery(document).ready(function() {
 
     });
 
-    tr_copy.each(function (index) {
-      jQuery(this).height(heights[index]);
-    });
+   jQuery('table.responsive tr').each(function (index) {
+      jQuery(this).css('height',Math.max(55,jQuery('.pinned table tr:eq('+index+')').height()));
+      jQuery('.pinned table tr:eq('+index+')').css('height',Math.max(55,jQuery('.pinned table tr:eq('+index+')').height()));
+   });
+   
+   jQuery('.pinned table tr:eq(0)').each(function (index) {
+      jQuery(this).css('height',Math.max(55,jQuery('table.responsive tr:eq('+index+')').height()));
+   });
+	
+	
+	
+	
   }
+
 });

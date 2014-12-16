@@ -1,4 +1,148 @@
-07.03.2014 - ver 4.0.2
+10.09.2014 - ver 4.3.4
+   - WP 4.0 improvements
+   - Cloning row with tabs fixed
+   - Cloning single tab in frontend editor fixed
+   - Untranslated strings found and now outputed with __() and _e()
+   - Custom CSS in Settings page converted > to special char fixed
+   - IE8 compatibility improved. vc-ie8.css added. Thanks to AJ Clarke
+   - Using front-end editor turns off the comments fixed
+   - Persian translation added. Thanks to: Muhammad Ali - http://bestit.org
+
+19.08.2014 - ver 4.3.3
+   - Edit elements in Accordion fixed
+   - Design Options: border params are not saved if you don't enter all 4 border widths
+   - Inner row margins updated for better UI
+   - Fixed layout highlighting setting with the same mask (case 1/3 + 2/3 and 2/3 + 1/3)
+   - Advanced Custom Fields + VC now can work together (without js error)
+   - ACE Editor and Option tree now work together (without js error)
+   - pt_BR locale updated
+   - de_DE locale file updated
+
+04.08.2014 - ver 4.3.2
+   - Force custom css regeneration upon plugin update. This will fix problem for users who used custom Design options and experienced "broken layout"
+
+31.07.2014 - ver 4.3.1
+   - Obsolete vc_spanX classes removed (caused problems for some users)
+   - Fixed: "llegal offset type in ... shortcodes.php"
+   - French translation updated
+
+29.07.2014 - ver 4.3
+   - UX improvements in Backend editor
+   - New: Offset option is added for columns
+   - New: Now you can add any number of columns inside row (it will be placed to the next line if there is not enough of space)
+   - New: Clone for columns
+   - New: Control your layout accross multiple devices. Now you can set different column width for mobile and desktop layouts
+   - New: Hide Columns on particular device
+   - New: Added support for mqTranslate (qTranslate fork which works with WP 3.9+)
+   - New: Row can be minimized in backend (to save space)
+   - New: Empty space content element
+   - New: Custom Heading content element
+   - New: Predefined layouts
+   - New: CSS syntax highlight added for Custom CSS option
+   - Fully reworked css for frontend and backend editor. Modular and divided across multiple less files
+   - CSS loading is moved to the wp_head();
+   - Other small fixes and improvements
+
+
+12.06.2014 - ver 4.2.3
+   - Isotope library updated
+   - Flexslider next/prev arrows fixed (font added)
+   - Single image now can accept relative urls
+   - Improvements with third party plugins
+
+
+03.06.2014 - ver 4.2.2
+   - Tabs: Auto generated IDs are back
+   - Localizations are loaded correctly now
+   - Pie chart element js error fixed
+   - Notifier about unsaved changes added to the Custom CSS box
+   - Custom CSS in Settings->Visual Composer->Custom CSS fixed
+   - CSS editor accept css3 units
+   - Removed "Activation notice" if vc_set_as_theme() called
+   - front_enqueue_css and front_enqueue_js added in vc_map() http://kb.wpbakery.com/index.php?title=Vc_map
+   - edit_post_link() caused problems in some themes - fixed
+   - Template has the html tags for rich text formatting double encoded fixed
+   - std param in maps improved logic
+   - Single image: reveal target if link is set
+
+27.05.2014 - ver 4.2.1
+   - vc_map() preloader fix. Thanks to Chris R for help in debugging
+
+21.05.2014 - ver 4.2
+   - Performance improvements
+   - Code structure changed, now everything is organized in folders
+   - Code revised and phpdoc comments added (soon generated documentation will be available)
+   - CSS icon will be shown at the "Gear" icon if there's custom css code
+   - WP autoupdater now works in WP Dashboard->Updates section too
+   - Default image changed for single image and image galleries
+   - New Tour slide now title changed from "Tab" to "Slide"
+   - Small fixes and improvements
+
+12.05.2014 - ver 4.1.3.1
+   - Typo in js code fixed, which prevented rows from cloning in backend editor
+
+09.05.2014 - ver 4.1.3
+   - Checkbox dependencies works now
+   - Dependencies logic is executed upon edit screen opening
+   - Textarea HTML is added in th shortcode mapper for use with content attribute
+   - z-index for modals is lowered
+   - Post grid: link to post works by default
+   - Auto suggestion in query builder now gives hint after 2 chars
+   - Message box and Warning box correctly displayed in the backend editor
+   - vc_add_param()/vc_remove_element() works again
+
+22.04.2014 - ver 4.1.2
+   WP 3.9 compatibilty update
+   - php warning/notices in mapper.php
+   - Read more text in post grid is now translable
+   - Autocomplete z-index in loop param increased
+   - Tiny MCE get active editor logic improved
+   - vc_add_param() and other helpers api functions are back to normal
+   - WP 3.9 select link in WYSIWYG editor works now
+   - When default text is removed from wysiwyg editor it will not be back on next edit
+
+17.04.2014 - ver 4.1.1
+   - z-index value for add element modal box increased
+   - Improved element stacking on mopbile devices
+   - Links now work in WP Text element
+   - WP Menus element is populated on init event now
+   - Removed console.log in js file
+   - IE10 fix for TinyMCE
+
+16.04.2014 - ver 4.1
+   - New: Shortcode Mapper, map any third party shortcode to Visual Composer with an easy to use interface
+   - New: Design options for Row, Columns, Text block, Single image and Video block elements. Add baackground color/image, paddings, border and margins. Tons of variations. You are a designer now!
+   - New: Now you can group your params in tabs
+   - White color for button added
+   - Colors are now visible as actual colors in the dropdowns instead of "plain names"
+   - Color picker have alpha chanel now
+   - .po/.mo files updated
+
+09.04.2014 - ver 4.0.5
+   - Compatibility with new TinyMCE version in WordPress 3.9 added
+   - Logic behind license activation button changed. Clicking activate button will save all fields
+   - Image carousel popup next/prev links show correct images
+   - Mobile screen width setting in design options updated to new less/css
+   - "Show only Visual Composer" in "User groups access rules" fixed
+   - Extra CSS class appended to the separator element
+
+27.03.2014 - ver 4.0.4
+   Bug fix round
+   - Post grid categories: z-index fixed so autosuggestions now visible
+   - Custom row layout input field in frontend mode works now
+
+20.03.2014 - ver 4.0.3
+   Bug fix round
+   - Cloning elements in frontend is handled better
+   - Enable/Disable Respinsivness in the backend from settings page
+   - "Edit with Visual Composer" button in the admin bar now shows for correct user roles (who have access rights)
+   - vc_disable_frontend() function enhanced
+   - "TypeError: $(...).wpColorPicker" error illuminated
+   - VC button in the backend reeived a facelift
+   - Visual Composer suppor for child themes improved
+   - Element dependencies tweaked to work with multiple values
+
+11.03.2014 - ver 4.0.2
    - Google maps element updated to support new google maps version
    - Child theme support added
    - Disable responsivness is back
@@ -9,7 +153,7 @@
    - CSS code added in front end is mirrored in backend interface
    - Sprite for predefined row laoyouts added
    - "Close" modal button in backend position tweak added
-   - Update .po/.mo files
+   - Updated .po/.mo files
 
 03.03.2014 - ver 4.0.1
    - Optimizations for WPEngine
@@ -294,7 +438,7 @@
    
 27.07.2012 - ver 3.2.2
    - jQuery UI CSS facelifted, now should look great in every design.
-   - LESS files for jQuery UI now available in assets/ui-custom-theme/less
+   - LESS files for jQuery UI now available in assets/css/ui-custom-theme/less
    
 24.07.2012 - ver 3.2.1
    - jQuery Tabs switching fixed

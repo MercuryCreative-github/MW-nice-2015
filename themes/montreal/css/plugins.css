@@ -311,7 +311,7 @@
 	
 	.row .row { min-width: 0px; }
 	
-	.column, .columns { margin-left: 2.127663%; float: left; min-height: 1px; position: relative;
+	.column, .columns { float: left; min-height: 1px; position: relative;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
