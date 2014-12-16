@@ -1,6 +1,9 @@
 document.documentElement.className += ' js_active ';
 document.documentElement.className += 'ontouchstart' in document.documentElement ? ' vc_mobile ' : ' vc_desktop ';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 (function () {
   var prefix = ['-webkit-', '-o-', '-moz-', '-ms-', ""];
   for (var i in prefix) {
@@ -18,6 +21,7 @@ jQuery(window).load(function () {
 
 });
 var vc_js = function () {
+<<<<<<< HEAD
 =======
 (function(){
     var prefix = ['-webkit-','-o-','-moz-','-ms-',""];
@@ -35,6 +39,8 @@ jQuery(window).load(function() {
 });
 var vc_js = function() {
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   vc_twitterBehaviour();
   vc_toggleBehaviour();
   vc_tabsBehaviour();
@@ -47,6 +53,9 @@ var vc_js = function() {
   vc_pinterest();
   vc_progress_bar();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   vc_plugin_flexslider();
   vc_google_fonts();
   window.setTimeout(vc_waypoints, 1500);
@@ -155,6 +164,7 @@ if (typeof window['vc_progress_bar'] !== 'function') {
           }, index * 200);
         });
       }, { offset:'85%' });
+<<<<<<< HEAD
 =======
   vc_waypoints();
   vc_plugin_flexslider();
@@ -255,12 +265,17 @@ if ( typeof window['vc_progress_bar'] !== 'function' ) {
 	    	});
 		}, { offset: '85%' });
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     }
   }
 }
 
 /* Waypoints magic
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
  ---------------------------------------------------------- */
 if (typeof window['vc_waypoints'] !== 'function') {
   function vc_waypoints() {
@@ -269,6 +284,7 @@ if (typeof window['vc_waypoints'] !== 'function') {
         jQuery(this).addClass('wpb_start_animation');
       }, { offset:'85%' });
     }
+<<<<<<< HEAD
 =======
 ---------------------------------------------------------- */
 if ( typeof window['vc_waypoints'] !== 'function' ) {
@@ -279,11 +295,16 @@ if ( typeof window['vc_waypoints'] !== 'function' ) {
 		}, { offset: '85%' });
 	}
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   }
 }
 
 /* Toggle
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
  ---------------------------------------------------------- */
 if (typeof window['vc_toggleBehaviour'] !== 'function') {
   function vc_toggleBehaviour() {
@@ -295,6 +316,7 @@ if (typeof window['vc_toggleBehaviour'] !== 'function') {
         jQuery(this).removeClass('wpb_toggle_title_active').next().slideUp(500);
       } else {
         jQuery(this).addClass('wpb_toggle_title_active').next().slideDown(500);
+<<<<<<< HEAD
       }
     });
     jQuery('.wpb_toggle_content').each(function (index) {
@@ -681,6 +703,8 @@ if (typeof window['vc_slidersBehaviour'] !== 'function') {
          }
          }, 5000);
          */
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
       }
       else if (this_element.hasClass('wpb_image_grid')) {
         var isotope = this_element.find('.wpb_image_grid_ul');
@@ -1166,6 +1190,7 @@ function getColumnsCount(el) {
 	var find = false,
 		i = 1;
 
+<<<<<<< HEAD
 	while ( find == false ) {
 		if ( el.hasClass('columns_count_'+i) ) {
 			find = true;
@@ -1174,11 +1199,23 @@ function getColumnsCount(el) {
 		i++;
 	}
 >>>>>>> master
+=======
+  while (find == false) {
+    if (el.hasClass('columns_count_' + i)) {
+      find = true;
+      return i;
+    }
+    i++;
+  }
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 
 var screen_size = getSizeName();
 function getSizeName() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   var screen_size = '',
     screen_w = jQuery(window).width();
 
@@ -1225,6 +1262,7 @@ function loadScript(url, $obj, callback) {
 
   script.src = url;
   $obj.get(0).appendChild(script);
+<<<<<<< HEAD
 =======
 	var screen_size = '',
 		screen_w = jQuery(window).width();
@@ -1273,6 +1311,8 @@ function loadScript(url, $obj, callback){
     script.src = url;
     $obj.get(0).appendChild(script);
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 
 /**
@@ -1284,6 +1324,9 @@ function loadScript(url, $obj, callback){
 
 function wpb_prepare_tab_content(event, ui) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   var panel = ui.panel || ui.newPanel,
       $pie_charts = panel.find('.vc_pie_chart:not(.vc_ready)'),
       $carousel = panel.find('[data-ride="vc_carousel"]'),
@@ -1323,6 +1366,7 @@ var vc_accordionActivate = function(event, ui) {
       jQuery(this).isotope("layout");
     });
   }
+<<<<<<< HEAD
 =======
     var panel = ui.panel || ui.newPanel;
     vc_carouselBehaviour();
@@ -1338,5 +1382,7 @@ var vc_accordionActivate = function(event, ui) {
         $google_maps.addClass('map_ready');
     }
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 

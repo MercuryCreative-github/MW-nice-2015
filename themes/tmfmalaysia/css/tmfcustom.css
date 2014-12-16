@@ -142,4 +142,8 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 .the-content .color-box h5 { font-size: 1.6em; }
 .the-content  .color-box h5 span.green-text {color: rgb(123, 202, 40);}
 
+<<<<<<< HEAD
 ::-webkit-scrollbar {border-left: none !important}
+=======
+::-webkit-scrollbar {border-left: none !important}
+>>>>>>> 3444288e90b247662206560f83abce370fc36145

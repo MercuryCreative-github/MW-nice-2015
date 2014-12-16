@@ -23,6 +23,7 @@ table td, table th { padding: 9px 10px; text-align: left; }
 	table.responsive { margin-bottom: 0; }
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	.pinned { position: absolute; left: 0; top: 0; background: #fff; width:150px; overflow: hidden; overflow-x: scroll; }
 	.pinned table { border-right: none; border-left: none; width: 100%; margin-top:4px; }
 	.pinned table th, .pinned table td { line-height:35px; }
@@ -40,6 +41,11 @@ table td, table th { padding: 9px 10px; text-align: left; }
 	.pinned { position: absolute; left: 0; top: 0; background: #fff; width: 35%; overflow: hidden; overflow-x: scroll; border-right: 1px solid #ccc; border-left: 1px solid #ccc; }
 	.pinned table { border-right: none; border-left: none; width: 100%; }
 	.pinned table th, .pinned table td { white-space: nowrap; }
+=======
+	.pinned { position: absolute; left: 0; top: 0; background: #fff; width:150px; overflow: hidden; overflow-x: scroll; }
+	.pinned table { border-right: none; border-left: none; width: 100%; margin-top:4px; }
+	.pinned table th, .pinned table td { line-height:35px; }
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	.pinned td:last-child { border-bottom: 0; }
 	
 	div.table-wrapper { position: relative; margin-bottom: 20px; overflow: hidden; border-right: 1px solid #ccc; }
@@ -49,6 +55,10 @@ table td, table th { padding: 9px 10px; text-align: left; }
 	table.responsive td, table.responsive th { position: relative; white-space: nowrap; overflow: hidden; }
 	table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { display: none; }
 	
+<<<<<<< HEAD
 	
 >>>>>>> master
+=======
+	.blackhorizontal { display:none; }	
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }

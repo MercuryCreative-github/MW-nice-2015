@@ -45,9 +45,13 @@ class GFEntryList{
         $read = $filter == "unread" ? 0 : null;
         $status = in_array($filter, array("trash", "spam")) ? $filter : "active";
 <<<<<<< HEAD
+<<<<<<< HEAD
 	    $form = RGFormsModel::get_form_meta( $form_id );
 =======
 >>>>>>> master
+=======
+	    $form = RGFormsModel::get_form_meta( $form_id );
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
         $search_criteria["status"] = $status;
 
@@ -72,6 +76,9 @@ class GFEntryList{
                 $key = "id";
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 	        $filter_operator = empty( $search_operator ) ? 'is' : $search_operator;
 
@@ -86,11 +93,14 @@ class GFEntryList{
             $search_criteria["field_filters"][] = array(
                 "key" => $key,
                 "operator" => $filter_operator,
+<<<<<<< HEAD
 =======
             $search_criteria["field_filters"][] = array(
                 "key" => $key,
                 "operator" => rgempty("operator", $_GET) ? "is" : rgget("operator"),
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 "value" => $val
             );
         }
@@ -758,10 +768,14 @@ class GFEntryList{
                     <li><a class="<?php echo $star !== null ? "current" : ""?>" href="?page=gf_entries&view=entries&id=<?php echo $form_id ?>&filter=star"><?php _e("Starred", "gravityforms"); ?> <span class="count">(<span id="star_count"><?php echo $starred_count ?></span>)</span></a> | </li>
                     <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if(GFCommon::spam_enabled($form_id)){
 =======
                     if(GFCommon::akismet_enabled($form_id)){
 >>>>>>> master
+=======
+                    if(GFCommon::spam_enabled($form_id)){
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                         ?>
                         <li><a class="<?php echo $filter == "spam" ? "current" : ""?>" href="?page=gf_entries&view=entries&id=<?php echo $form_id ?>&filter=spam"><?php _e("Spam", "gravityforms"); ?> <span class="count">(<span id="spam_count"><?php echo $spam_count ?></span>)</span></a> | </li>
                         <?php
@@ -813,10 +827,14 @@ class GFEntryList{
 
                                     <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     if(GFCommon::spam_enabled($form_id)){
 =======
                                     if(GFCommon::akismet_enabled($form_id)){
 >>>>>>> master
+=======
+                                    if(GFCommon::spam_enabled($form_id)){
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                                         ?>
                                         <option value='spam'><?php _e("Spam", "gravityforms") ?></option>
                                         <?php
@@ -1216,10 +1234,14 @@ class GFEntryList{
                                                         </span>
                                                         <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                         if(GFCommon::spam_enabled($form_id)){
 =======
                                                         if(GFCommon::akismet_enabled($form_id)){
 >>>>>>> master
+=======
+                                                        if(GFCommon::spam_enabled($form_id)){
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                                                             ?>
                                                             <span class="spam">
                                                                 <a data-wp-lists='delete:gf_entry_list:lead_row_<?php echo $lead["id"] ?>::status=spam&entry=<?php echo $lead["id"] ?>' title="<?php _e("Mark this entry as spam", "gravityforms") ?>" href="<?php echo wp_nonce_url("?page=gf_entries", "gf_delete_entry") ?>"><?php _e("Spam", "gravityforms"); ?></a>
@@ -1344,10 +1366,14 @@ class GFEntryList{
                                 <option value='print'><?php _e("Print Entries", "gravityforms") ?></option>
                                 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 if(GFCommon::spam_enabled($form_id)){
 =======
                                 if(GFCommon::akismet_enabled($form_id)){
 >>>>>>> master
+=======
+                                if(GFCommon::spam_enabled($form_id)){
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                                     ?>
                                     <option value='spam'><?php _e("Spam", "gravityforms") ?></option>
                                     <?php

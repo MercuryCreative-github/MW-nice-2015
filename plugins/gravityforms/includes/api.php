@@ -508,15 +508,21 @@ class GFAPI {
         global $wpdb;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         if (empty($entry_id)) {
             $entry_id = $entry['id'];
         } else {
             $entry["id"] = $entry_id;
         }
+<<<<<<< HEAD
 =======
         if (empty($entry_id))
             $entry_id = $entry["id"];
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
         if (empty($entry_id))
             return new WP_Error("missing_entry_id", __("Missing entry id", "gravityforms"));

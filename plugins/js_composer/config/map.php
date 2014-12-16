@@ -6,6 +6,9 @@
  *
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 $vc_is_wp_version_3_6_more = version_compare( preg_replace( '/^([\d\.]+)(\-.*$)/', '$1', get_bloginfo( 'version' ) ), '3.6' ) >= 0;
 
@@ -292,6 +295,7 @@ vc_map( array(
 			'group' => __( 'Design options', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
 $vc_is_wp_version_3_6_more = version_compare(preg_replace('/^([\d\.]+)(\-.*$)/', '$1', get_bloginfo('version')), '3.6') >= 0;
 // Used in "Button", "Call to Action", "Pie chart" blocks
@@ -409,10 +413,52 @@ vc_map( array(
   ),
   "js_view" => 'VcColumnView'
 ) );
+=======
+) );
+
+/* Latest tweets
+---------------------------------------------------------- */
+/*vc_map( array(
+    'name' => __( 'Twitter Widget', 'js_composer' ),
+    'base' => 'vc_twitter',
+    'icon' => 'icon-wpb-balloon-twitter-left',
+    'category' => __( 'Social', 'js_composer' ),
+    'params' => array(
+  array(
+        'type' => 'textfield',
+        'heading' => __( 'Widget title', 'js_composer' ),
+        'param_name' => 'title',
+        'description' => __( 'Enter text which will be used as widget title. Leave blank if no title is needed.', 'js_composer' )
+  ),
+  array(
+        'type' => 'textfield',
+        'heading' => __( 'Twitter username', 'js_composer' ),
+        'param_name' => 'twitter_name',
+        'admin_label' => true,
+        'description' => __( 'Type in twitter profile name from which load tweets.', 'js_composer' )
+  ),
+  array(
+        'type' => 'dropdown',
+        'heading' => __( 'Tweets count', 'js_composer' ),
+        'param_name' => 'tweets_count',
+        'admin_label' => true,
+        'value' => array( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+        'description' => __( 'How many recent tweets to load.', 'js_composer' )
+  ),
+  array(
+        'type' => 'textfield',
+        'heading' => __( 'Extra class name', 'js_composer' ),
+        'param_name' => 'el_class',
+        'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
+  )
+)
+) );*/
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 /* Text Block
 ---------------------------------------------------------- */
 vc_map( array(
+<<<<<<< HEAD
   "name" => __("Text Block", "js_composer"),
   "base" => "vc_column_text",
   "icon" => "icon-wpb-layer-shape-text",
@@ -516,6 +562,8 @@ vc_map( array(
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Separator', 'js_composer' ),
 	'base' => 'vc_separator',
 	'icon' => 'icon-wpb-ui-separator',
@@ -564,6 +612,7 @@ vc_map( array(
 			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name"		=> __("Separator", "js_composer"),
   "base"		=> "vc_separator",
@@ -609,12 +658,17 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Textual block
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Separator with Text', 'js_composer' ),
 	'base' => 'vc_text_separator',
 	'icon' => 'icon-wpb-ui-separator-label',
@@ -681,6 +735,7 @@ vc_map( array(
 		)
 	),
 	'js_view' => 'VcTextSeparatorView'
+<<<<<<< HEAD
 =======
   "name" => __("Separator with Text", "js_composer"),
   "base" => "vc_text_separator",
@@ -740,12 +795,17 @@ vc_map( array(
   ),
   "js_view" => 'VcTextSeparatorView'
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Message box
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Message Box', 'js_composer' ),
 	'base' => 'vc_message',
 	'icon' => 'icon-wpb-information-white',
@@ -790,6 +850,7 @@ vc_map( array(
 		)
 	),
 	'js_view' => 'VcMessageView'
+<<<<<<< HEAD
 =======
   "name" => __("Message Box", "js_composer"),
   "base" => "vc_message",
@@ -830,12 +891,17 @@ vc_map( array(
   ),
   "js_view" => 'VcMessageView'
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Facebook like button
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Facebook Like', 'js_composer' ),
 	'base' => 'vc_facebook',
 	'icon' => 'icon-wpb-balloon-facebook-left',
@@ -855,6 +921,7 @@ vc_map( array(
 			'description' => __( 'Select button type.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => __("Facebook Like", "js_composer"),
   "base" => "vc_facebook",
@@ -872,12 +939,17 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Tweetmeme button
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Tweetmeme Button', 'js_composer' ),
 	'base' => 'vc_tweetmeme',
 	'icon' => 'icon-wpb-tweetme',
@@ -897,6 +969,7 @@ vc_map( array(
 			'description' => __( 'Select button type.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => __("Tweetmeme Button", "js_composer"),
   "base" => "vc_tweetmeme",
@@ -914,12 +987,17 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Google+ button
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Google+ Button', 'js_composer' ),
 	'base' => 'vc_googleplus',
 	'icon' => 'icon-wpb-application-plus',
@@ -952,6 +1030,7 @@ vc_map( array(
 			'description' => __( 'Select type of annotation', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => __("Google+ Button", "js_composer"),
   "base" => "vc_googleplus",
@@ -977,12 +1056,17 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Pinterest button
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Pinterest', 'js_composer' ),
 	'base' => 'vc_pinterest',
 	'icon' => 'icon-wpb-pinterest',
@@ -1001,6 +1085,7 @@ vc_map( array(
 			'description' => __( 'Select button layout.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => __("Pinterest", "js_composer"),
   "base" => "vc_pinterest",
@@ -1018,12 +1103,17 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Toggle (FAQ)
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'FAQ', 'js_composer' ),
 	'base' => 'vc_toggle',
 	'icon' => 'icon-wpb-toggle-small-expand',
@@ -1067,6 +1157,7 @@ vc_map( array(
 		)
 	),
 	'js_view' => 'VcToggleView'
+<<<<<<< HEAD
 =======
   "name" => __("FAQ", "js_composer"),
   "base" => "vc_toggle",
@@ -1109,11 +1200,16 @@ vc_map( array(
   ),
   "js_view" => 'VcToggleView'
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Single image */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Single Image', 'js_composer' ),
 	'base' => 'vc_single_image',
 	'icon' => 'icon-wpb-single-image',
@@ -1213,6 +1309,7 @@ vc_map( array(
 		)
 	)
 ) );
+<<<<<<< HEAD
 =======
   "name" => __("Single Image", "js_composer"),
   "base" => "vc_single_image",
@@ -1292,10 +1389,13 @@ vc_map( array(
   )
 ));
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 /* Gallery/Slideshow
 ---------------------------------------------------------- */
 vc_map( array(
+<<<<<<< HEAD
 <<<<<<< HEAD
 	'name' => __( 'Image Gallery', 'js_composer' ),
 	'base' => 'vc_gallery',
@@ -1464,6 +1564,11 @@ vc_map( array(
 	'name' => __( 'Image Carousel', 'js_composer' ),
 	'base' => 'vc_images_carousel',
 	'icon' => 'icon-wpb-images-carousel',
+=======
+	'name' => __( 'Image Gallery', 'js_composer' ),
+	'base' => 'vc_gallery',
+	'icon' => 'icon-wpb-images-stack',
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'category' => __( 'Content', 'js_composer' ),
 	'description' => __( 'Animated carousel with images', 'js_composer' ),
 	'params' => array(
@@ -1685,6 +1790,7 @@ WPBMap::map( 'vc_tour', array(
 ) );
 
 vc_map( array(
+<<<<<<< HEAD
 	'name' => __( 'Tab', 'js_composer' ),
 	'base' => 'vc_tab',
 	'allowed_container_element' => 'vc_row',
@@ -1947,6 +2053,11 @@ vc_map( array(
 	'show_settings_on_create' => false,
 	'is_container' => true,
 	'icon' => 'icon-wpb-ui-accordion',
+=======
+	'name' => __( 'Image Carousel', 'js_composer' ),
+	'base' => 'vc_images_carousel',
+	'icon' => 'icon-wpb-images-carousel',
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'category' => __( 'Content', 'js_composer' ),
 	'description' => __( 'Collapsible content panels', 'js_composer' ),
 	'params' => array(
@@ -2600,6 +2711,7 @@ vc_map( array(
 		)
 	)
 ) );
+<<<<<<< HEAD
 =======
     array('link_post', __("Link to post", "js_composer")),
     array("no_link", __("No link", "js_composer")),
@@ -2809,12 +2921,234 @@ vc_map( array(
     )
 ));
 >>>>>>> master
+=======
+
+/* Posts Grid
+---------------------------------------------------------- */
+$vc_layout_sub_controls = array(
+	array( 'link_post', __( 'Link to post', 'js_composer' ) ),
+	array( 'no_link', __( 'No link', 'js_composer' ) ),
+	array( 'link_image', __( 'Link to bigger image', 'js_composer' ) )
+);
+vc_map( array(
+	'name' => __( 'Posts Grid', 'js_composer' ),
+	'base' => 'vc_posts_grid',
+	'icon' => 'icon-wpb-application-icon-large',
+	'description' => __( 'Posts in grid view', 'js_composer' ),
+	'params' => array(
+		array(
+			'type' => 'textfield',
+			'heading' => __( 'Widget title', 'js_composer' ),
+			'param_name' => 'title',
+			'description' => __( 'Enter text which will be used as widget title. Leave blank if no title is needed.', 'js_composer' )
+		),
+		array(
+			'type' => 'loop',
+			'heading' => __( 'Grids content', 'js_composer' ),
+			'param_name' => 'loop',
+			'settings' => array(
+				'size' => array( 'hidden' => false, 'value' => 10 ),
+				'order_by' => array( 'value' => 'date' ),
+			),
+			'description' => __( 'Create WordPress loop, to populate content from your site.', 'js_composer' )
+		),
+		array(
+			'type' => 'dropdown',
+			'heading' => __( 'Columns count', 'js_composer' ),
+			'param_name' => 'grid_columns_count',
+			'value' => array( 6, 4, 3, 2, 1 ),
+			'std' => 3,
+			'admin_label' => true,
+			'description' => __( 'Select columns count.', 'js_composer' )
+		),
+		array(
+			'type' => 'sorted_list',
+			'heading' => __( 'Teaser layout', 'js_composer' ),
+			'param_name' => 'grid_layout',
+			'description' => __( 'Control teasers look. Enable blocks and place them in desired order. Note: This setting can be overrriden on post to post basis.', 'js_composer' ),
+			'value' => 'title,image,text',
+			'options' => array(
+				array( 'image', __( 'Thumbnail', 'js_composer' ), $vc_layout_sub_controls ),
+				array( 'title', __( 'Title', 'js_composer' ), $vc_layout_sub_controls ),
+				array( 'text', __( 'Text', 'js_composer' ), array(
+					array( 'excerpt', __( 'Teaser/Excerpt', 'js_composer' ) ),
+					array( 'text', __( 'Full content', 'js_composer' ) )
+				) ),
+				array( 'link', __( 'Read more link', 'js_composer' ) )
+			)
+		),
+		array(
+			'type' => 'dropdown',
+			'heading' => __( 'Link target', 'js_composer' ),
+			'param_name' => 'grid_link_target',
+			'value' => $target_arr,
+			// 'dependency' => array(
+			//     'element' => 'grid_link',
+			//     'value' => array( 'link_post', 'link_image_post' )
+			// )
+		),
+		array(
+			'type' => 'checkbox',
+			'heading' => __( 'Show filter', 'js_composer' ),
+			'param_name' => 'filter',
+			'value' => array( __( 'Yes, please', 'js_composer' ) => 'yes' ),
+			'description' => __( 'Select to add animated category filter to your posts grid.', 'js_composer' )
+		),
+		array(
+			'type' => 'dropdown',
+			'heading' => __( 'Layout mode', 'js_composer' ),
+			'param_name' => 'grid_layout_mode',
+			'value' => array(
+				__( 'Fit rows', 'js_composer' ) => 'fitRows',
+				__( 'Masonry', 'js_composer' ) => 'masonry'
+			),
+			'description' => __( 'Teaser layout template.', 'js_composer' )
+		),
+		array(
+			'type' => 'textfield',
+			'heading' => __( 'Thumbnail size', 'js_composer' ),
+			'param_name' => 'grid_thumb_size',
+			'description' => __( 'Enter thumbnail size. Example: thumbnail, medium, large, full or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height) . ', 'js_composer' )
+		),
+		array(
+			'type' => 'textfield',
+			'heading' => __( 'Extra class name', 'js_composer' ),
+			'param_name' => 'el_class',
+			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
+		)
+	)
+// 'html_template' => dirname(__DIR__).'/composer/shortcodes_templates/vc_posts_grid.php'
+) );
+
+/* Post Carousel
+---------------------------------------------------------- */
+vc_map( array(
+	'name' => __( 'Post Carousel', 'vc_extend' ),
+	'base' => 'vc_carousel',
+	'class' => '',
+	'icon' => 'icon-wpb-vc_carousel',
+	'category' => __( 'Content', 'js_composer' ),
+	'description' => __( 'Animated carousel with posts', 'js_composer' ),
+	'params' => array(
+		array(
+			'type' => 'textfield',
+			'heading' => __( 'Widget title', 'js_composer' ),
+			'param_name' => 'title',
+			'description' => __( 'Enter text which will be used as widget title. Leave blank if no title is needed.', 'js_composer' )
+		),
+		array(
+			'type' => 'loop',
+			'heading' => __( 'Carousel content', 'js_composer' ),
+			'param_name' => 'posts_query',
+			'settings' => array(
+				'size' => array( 'hidden' => false, 'value' => 10 ),
+				'order_by' => array( 'value' => 'date' )
+			),
+			'description' => __( 'Create WordPress loop, to populate content from your site.', 'js_composer' )
+		),
+		array(
+			'type' => 'sorted_list',
+			'heading' => __( 'Teaser layout', 'js_composer' ),
+			'param_name' => 'layout',
+			'description' => __( 'Control teasers look. Enable blocks and place them in desired order. Note: This setting can be overrriden on post to post basis.', 'js_composer' ),
+			'value' => 'title,image,text',
+			'options' => array(
+				array( 'image', __( 'Thumbnail', 'js_composer' ), $vc_layout_sub_controls ),
+				array( 'title', __( 'Title', 'js_composer' ), $vc_layout_sub_controls ),
+				array( 'text', __( 'Text', 'js_composer' ), array(
+					array( 'excerpt', __( 'Teaser/Excerpt', 'js_composer' ) ),
+					array( 'text', __( 'Full content', 'js_composer' ) )
+				) ),
+				array( 'link', __( 'Read more link', 'js_composer' ) )
+			)
+		),
+		array(
+			'type' => 'dropdown',
+			'heading' => __( 'Link target', 'js_composer' ),
+			'param_name' => 'link_target',
+			'value' => $target_arr,
+			// 'dependency' => array( 'element' => 'link', 'value' => array( 'link_post', 'link_image_post', 'link_image' ) )
+		),
+		array(
+			'type' => 'textfield',
+			'heading' => __( 'Thumbnail size', 'js_composer' ),
+			'param_name' => 'thumb_size',
+			'description' => __( 'Enter thumbnail size. Example: thumbnail, medium, large, full or other sizes defined by current theme. Alternatively enter image size in pixels: 200x100 (Width x Height) . ', 'js_composer' )
+		),
+		array(
+			'type' => 'textfield',
+			'heading' => __( 'Slider speed', 'js_composer' ),
+			'param_name' => 'speed',
+			'value' => '5000',
+			'description' => __( 'Duration of animation between slides (in ms)', 'js_composer' )
+		),
+		array(
+			'type' => 'dropdown',
+			'heading' => __( 'Slider mode', 'js_composer' ),
+			'param_name' => 'mode',
+			'value' => array( __( 'Horizontal', 'js_composer' ) => 'horizontal', __( 'Vertical', 'js_composer' ) => 'vertical' ),
+			'description' => __( 'Slides will be positioned horizontally (for horizontal swipes) or vertically (for vertical swipes)', 'js_composer' )
+		),
+		array(
+			'type' => 'textfield',
+			'heading' => __( 'Slides per view', 'js_composer' ),
+			'param_name' => 'slides_per_view',
+			'value' => '1',
+			'description' => __( 'Set numbers of slides you want to display at the same time on slider\'s container for carousel mode. Also supports for "auto" value, in this case it will fit slides depending on container\'s width. "auto" mode doesn\'t compatible with loop mode.', 'js_composer' )
+		),
+		array(
+			'type' => 'checkbox',
+			'heading' => __( 'Slider autoplay', 'js_composer' ),
+			'param_name' => 'autoplay',
+			'description' => __( 'Enables autoplay mode.', 'js_composer' ),
+			'value' => array( __( 'Yes, please', 'js_composer' ) => 'yes' )
+		),
+		array(
+			'type' => 'checkbox',
+			'heading' => __( 'Hide pagination control', 'js_composer' ),
+			'param_name' => 'hide_pagination_control',
+			'description' => __( 'If "YES" pagination control will be removed', 'js_composer' ),
+			'value' => array( __( 'Yes, please', 'js_composer' ) => 'yes' )
+		),
+		array(
+			'type' => 'checkbox',
+			'heading' => __( 'Hide prev/next buttons', 'js_composer' ),
+			'param_name' => 'hide_prev_next_buttons',
+			'description' => __( 'If "YES" prev/next control will be removed', 'js_composer' ),
+			'value' => array( __( 'Yes, please', 'js_composer' ) => 'yes' )
+		),
+		array(
+			'type' => 'checkbox',
+			'heading' => __( 'Partial view', 'js_composer' ),
+			'param_name' => 'partial_view',
+			'description' => __( 'If "YES" part of the next slide will be visible on the right side', 'js_composer' ),
+			'value' => array( __( 'Yes, please', 'js_composer' ) => 'yes' )
+		),
+		array(
+			'type' => 'checkbox',
+			'heading' => __( 'Slider loop', 'js_composer' ),
+			'param_name' => 'wrap',
+			'description' => __( 'Enables loop mode.', 'js_composer' ),
+			'value' => array( __( 'Yes, please', 'js_composer' ) => 'yes' )
+		),
+		array(
+			'type' => 'textfield',
+			'heading' => __( 'Extra class name', 'js_composer' ),
+			'param_name' => 'el_class',
+			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
+		)
+	)
+) );
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 
 /* Posts slider
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Posts Slider', 'js_composer' ),
 	'base' => 'vc_posts_slider',
 	'icon' => 'icon-wpb-slideshow',
@@ -2954,6 +3288,7 @@ vc_map( array(
 			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => __("Posts Slider", "js_composer"),
   "base" => "vc_posts_slider",
@@ -3064,12 +3399,17 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Widgetised sidebar
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Widgetised Sidebar', 'js_composer' ),
 	'base' => 'vc_widget_sidebar',
 	'class' => 'wpb_widget_sidebar_widget',
@@ -3096,6 +3436,7 @@ vc_map( array(
 			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => __("Widgetised Sidebar", "js_composer"),
   "base" => "vc_widget_sidebar",
@@ -3124,12 +3465,17 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Button
 ---------------------------------------------------------- */
 $icons_arr = array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	__( 'None', 'js_composer' ) => 'none',
 	__( 'Address book icon', 'js_composer' ) => 'wpb_address_book',
 	__( 'Alarm clock icon', 'js_composer' ) => 'wpb_alarm_clock',
@@ -3287,6 +3633,7 @@ vc_map( array(
 		)
 	),
 	'js_view' => 'VcButton2View'
+<<<<<<< HEAD
 =======
     __("None", "js_composer") => "none",
     __("Address book icon", "js_composer") => "wpb_address_book",
@@ -3322,8 +3669,12 @@ vc_map( array(
     __("Shield icon", "js_composer") => "wpb_shield",
     __("Video icon", "js_composer") => "wpb_video"
 );
+=======
+) );
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 vc_map( array(
+<<<<<<< HEAD
   "name" => __("Button", "js_composer"),
   "base" => "vc_button",
   "icon" => "icon-wpb-ui-button",
@@ -3448,6 +3799,8 @@ vc_map( array(
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Call to Action Button', 'js_composer' ),
 	'base' => 'vc_cta_button',
 	'icon' => 'icon-wpb-call-to-action',
@@ -3650,6 +4003,7 @@ vc_map( array(
 			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => __("Call to Action Button", "js_composer"),
   "base" => "vc_cta_button",
@@ -3722,9 +4076,12 @@ vc_map( array(
     )
   ),
   "js_view" => 'VcCallToActionView'
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 vc_map( array(
+<<<<<<< HEAD
   "name" => __("Call to Action Button", "js_composer") . " 2",
   "base" => "vc_cta_button2",
   "icon" => "icon-wpb-call-to-action",
@@ -3847,6 +4204,8 @@ vc_map( array(
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Video Player', 'js_composer' ),
 	'base' => 'vc_video',
 	'icon' => 'icon-wpb-film-youtube',
@@ -3880,6 +4239,7 @@ vc_map( array(
 			'group' => __( 'Design options', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => __("Video Player", "js_composer"),
   "base" => "vc_video",
@@ -3908,12 +4268,17 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Google maps element
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Google Maps', 'js_composer' ),
 	'base' => 'vc_gmaps',
 	'icon' => 'icon-wpb-map-pin',
@@ -3966,6 +4331,7 @@ vc_map( array(
 			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => __("Google Maps", "js_composer"),
   "base" => "vc_gmaps",
@@ -4019,12 +4385,17 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /* Raw HTML
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Raw HTML', 'js_composer' ),
 	'base' => 'vc_raw_html',
 	'icon' => 'icon-wpb-raw-html',
@@ -4039,6 +4410,7 @@ vc_map( array(
 			'param_name' => 'content',
 			'value' => base64_encode( '<p>I am raw html block.<br/>Click edit button to change this html</p>' ),
 			'description' => __( 'Enter your HTML content.', 'js_composer' )
+<<<<<<< HEAD
 =======
   "name" => __("Raw HTML", "js_composer"),
 	"base" => "vc_raw_html",
@@ -4055,6 +4427,8 @@ vc_map( array(
 			"value" => base64_encode("<p>I am raw html block.<br/>Click edit button to change this html</p>"),
 			"description" => __("Enter your HTML content.", "js_composer")
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 		),
 	)
 ) );
@@ -4063,6 +4437,9 @@ vc_map( array(
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Raw JS', 'js_composer' ),
 	'base' => 'vc_raw_js',
 	'icon' => 'icon-wpb-raw-javascript',
@@ -4077,6 +4454,7 @@ vc_map( array(
 			'param_name' => 'content',
 			'value' => __( base64_encode( '<script type="text/javascript"> alert("Enter your js here!" ); </script>' ), 'js_composer' ),
 			'description' => __( 'Enter your JS code.', 'js_composer' )
+<<<<<<< HEAD
 =======
 	"name" => __("Raw JS", "js_composer"),
 	"base" => "vc_raw_js",
@@ -4093,6 +4471,8 @@ vc_map( array(
 			"value" => __(base64_encode("<script type='text/javascript'> alert('Enter your js here!'); </script>"), "js_composer"),
 			"description" => __("Enter your JS code.", "js_composer")
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 		),
 	)
 ) );
@@ -4101,6 +4481,9 @@ vc_map( array(
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'base' => 'vc_flickr',
 	'name' => __( 'Flickr Widget', 'js_composer' ),
 	'icon' => 'icon-wpb-flickr',
@@ -4154,6 +4537,7 @@ vc_map( array(
 			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "base" => "vc_flickr",
   "name" => __("Flickr Widget", "js_composer"),
@@ -4203,6 +4587,8 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 
@@ -4210,6 +4596,9 @@ vc_map( array(
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Progress Bar', 'js_composer' ),
 	'base' => 'vc_progress_bar',
 	'icon' => 'icon-wpb-graph',
@@ -4275,6 +4664,7 @@ vc_map( array(
 			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => __("Progress Bar", "js_composer"),
   "base" => "vc_progress_bar",
@@ -4330,6 +4720,8 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 /**
@@ -4337,6 +4729,9 @@ vc_map( array(
  */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => __( 'Pie chart', 'vc_extend' ),
 	'base' => 'vc_pie',
 	'class' => '',
@@ -4389,6 +4784,7 @@ vc_map( array(
 		),
 
 	)
+<<<<<<< HEAD
 =======
     "name" => __("Pie chart", 'vc_extend'),
     "base" => "vc_pie",
@@ -4442,6 +4838,8 @@ vc_map( array(
 
     )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 
@@ -4449,6 +4847,9 @@ vc_map( array(
 ---------------------------------------------------------- */
 // Contact form 7 plugin
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); // Require plugin.php to use is_plugin_active() below
 if ( is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) {
 	global $wpdb;
@@ -4560,6 +4961,7 @@ if ( is_plugin_active( 'gravityforms/gravityforms.php' ) ) {
 			)
 		)
 	) );
+<<<<<<< HEAD
 =======
 include_once(ABSPATH . 'wp-admin/includes/plugin.php'); // Require plugin.php to use is_plugin_active() below
 if (is_plugin_active('contact-form-7/wp-contact-form-7.php')) {
@@ -4761,12 +5163,17 @@ if (is_plugin_active('gravityforms/gravityforms.php')) {
     )
   ) );
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 } // if gravityforms active
 
 /* WordPress default Widgets (Appearance->Widgets)
 ---------------------------------------------------------- */
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => 'WP ' . __( "Search" ),
 	'base' => 'vc_wp_search',
 	'icon' => 'icon-wpb-wp',
@@ -4947,6 +5354,7 @@ vc_map( array(
 			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => 'WP ' . __("Search"),
   "base" => "vc_wp_search",
@@ -5129,6 +5537,12 @@ vc_map( array(
 $custom_menus = array();
 $menus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
 <<<<<<< HEAD
+=======
+) );
+
+$custom_menus = array();
+$menus = get_terms( 'nav_menu', array( 'hide_empty' => false ) );
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 if ( is_array( $menus ) ) {
 	foreach ( $menus as $single_menu ) {
 		$custom_menus[$single_menu->name] = $single_menu->term_id;
@@ -5199,6 +5613,7 @@ vc_map( array(
 			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
 if ( is_array($menus) ) {
   foreach ( $menus as $single_menu ) {
@@ -5235,9 +5650,12 @@ vc_map( array(
     "description" => __("If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.", "js_composer")
   )
 )
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 vc_map( array(
+<<<<<<< HEAD
   "name" => 'WP ' . __("Text"),
   "base" => "vc_wp_text",
   "icon" => "icon-wpb-wp",
@@ -5276,6 +5694,8 @@ vc_map( array(
 
 vc_map( array(
 <<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => 'WP ' . __( 'Recent Posts' ),
 	'base' => 'vc_wp_posts',
 	'icon' => 'icon-wpb-wp',
@@ -5404,6 +5824,7 @@ vc_map( array(
 			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
 		)
 	)
+<<<<<<< HEAD
 =======
   "name" => 'WP ' . __("Recent Posts"),
   "base" => "vc_wp_posts",
@@ -5519,11 +5940,16 @@ vc_map( array(
     )
   )
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 ) );
 
 
 vc_map( array(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	'name' => 'WP ' . __( 'Archives' ),
 	'base' => 'vc_wp_archives',
 	'icon' => 'icon-wpb-wp',
@@ -5881,6 +6307,7 @@ function getVcShared( $asset = '' ) {
 			# code...
 			break;
 	}
+<<<<<<< HEAD
 =======
   "name" => 'WP ' . __("Archives"),
   "base" => "vc_wp_archives",
@@ -6132,4 +6559,6 @@ function getVcShared($asset = "") {
       break;
   }
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }

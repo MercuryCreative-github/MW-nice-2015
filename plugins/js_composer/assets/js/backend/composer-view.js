@@ -6,6 +6,9 @@
  * Visual composer backbone/underscore version
  * ========================================================= */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
  (function ($) {
     var i18n = window.i18nLocale,
@@ -23,21 +26,28 @@
            });
        }
    };
+<<<<<<< HEAD
 =======
 (function ($) {
     var i18n = window.i18nLocale,
         store = vc.storage,
         Shortcodes = vc.shortcodes;
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     /**
      * Default view for shortcode as block inside Visual composer design mode.
      * @type {*}
      */
     vc.clone_index = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
     vc.saved_custom_css = false;
 =======
 >>>>>>> master
+=======
+    vc.saved_custom_css = false;
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     var ShortcodeView = vc.shortcode_view = Backbone.View.extend({
         tagName:'div',
         $content:'',
@@ -45,6 +55,9 @@
         params:{},
         events:{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             'click .column_delete,.vc_control-btn-delete':'deleteShortcode',
             'click .column_add,.vc_control-btn-prepend':'addElement',
             'click .column_edit,.vc_control-btn-edit, .column_edit_trigger':'editElement',
@@ -75,6 +88,7 @@
                 }
             }
         },
+<<<<<<< HEAD
 =======
             'click .column_delete':'deleteShortcode',
             'click .column_add':'addElement',
@@ -85,6 +99,8 @@
             this.remove();
         },
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         initialize:function () {
             this.model.bind('destroy', this.removeView, this);
             this.model.bind('change:params', this.changeShortcodeParams, this);
@@ -95,9 +111,13 @@
             var tag = this.model.get('shortcode'),
                 params = _.isObject(vc.map[tag]) && _.isArray(vc.map[tag].params) ? vc.map[tag].params : [];
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.params = {};
 =======
 >>>>>>> master
+=======
+            this.params = {};
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             _.each(params, function (param) {
                 this.params[param.param_name] = param;
             }, this);
@@ -139,12 +159,17 @@
         },
         render:function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
             if ($('#vc_shortcode-template-' + this.model.get('shortcode')).is('script')) {
                 this.html2element(_.template($('#vc_shortcode-template-' + this.model.get('shortcode')).html(), this.model.toJSON()));
 =======
             if ($('#vc-shortcode-template-' + this.model.get('shortcode')).is('script')) {
                 this.html2element(_.template($('#vc-shortcode-template-' + this.model.get('shortcode')).html(), this.model.toJSON()));
 >>>>>>> master
+=======
+            if ($('#vc_shortcode-template-' + this.model.get('shortcode')).is('script')) {
+                this.html2element(_.template($('#vc_shortcode-template-' + this.model.get('shortcode')).html(), this.model.toJSON()));
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             } else {
                 var params = this.model.get('params');
                 $.ajax({
@@ -162,10 +187,15 @@
                     });
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.model.view = this;
             this.$controls_buttons = this.$el.find('.vc_controls > :first');
 =======
 >>>>>>> master
+=======
+            this.model.view = this;
+            this.$controls_buttons = this.$el.find('.vc_controls > :first');
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             return this;
         },
         renderContent:function () {
@@ -219,12 +249,17 @@
                         value = vc.atts[p.type].render.call(this, p, value);
                     }
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if ($wrapper.children('.' + p.param_name).is('input,textarea,select')) {
                       $wrapper.children('[name=' + p.param_name + ']').val(value);
 =======
                     if ($wrapper.children('.' + p.param_name).is('div, h1,h2,h3,h4,h5,h6, span, i, b, strong, button')) {
                         $wrapper.children('[name=' + p.param_name + ']').html(value);
 >>>>>>> master
+=======
+                    if ($wrapper.children('.' + p.param_name).is('input,textarea,select')) {
+                      $wrapper.children('[name=' + p.param_name + ']').val(value);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                     } else if ($wrapper.children('.' + p.param_name).is('iframe')) {
                         $wrapper.children('[name=' + p.param_name + ']').attr('src', value);
                     } else if ($wrapper.children('.' + p.param_name).is('img')) {
@@ -248,6 +283,9 @@
                       }
                     } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                       $wrapper.children('[name=' + p.param_name + ']').html(value ? value : '');
                     }
                     if ($admin_label.length) {
@@ -266,6 +304,7 @@
                           $admin_label.html('<label>' + $admin_label.find('label').text() + '</label>: ' + label_value);
                           $admin_label.show().removeClass('hidden-label');
                         }
+<<<<<<< HEAD
 =======
                         $wrapper.children('[name=' + p.param_name + ']').val(value);
                     }
@@ -285,6 +324,8 @@
                         else
                             $admin_label.hide().addClass('hidden-label');
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                     }
                 }, this);
             }
@@ -309,6 +350,9 @@
 
         addElement:function (e) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             _.isObject(e) && e.preventDefault();
             // new ElementBlockView({model:{position_to_add:!_.isObject(e) || !$(e.currentTarget).closest('.bottom-controls').hasClass('bottom-controls') ? 'start' : 'end'}}).show(this);
           vc.add_element_block_view.render(this.model, !_.isObject(e) || !$(e.currentTarget).closest('.bottom-controls').hasClass('bottom-controls'));
@@ -316,6 +360,7 @@
         editElement:function (e) {
             if (_.isObject(e)) e.preventDefault();
           vc.edit_element_block_view.render(this.model);
+<<<<<<< HEAD
 =======
             if (_.isObject(e)) e.preventDefault();
             new ElementBlockView({model:{position_to_add:!_.isObject(e) || !$(e.currentTarget).closest('.bottom-controls').hasClass('bottom-controls') ? 'start' : 'end'}}).show(this);
@@ -325,6 +370,8 @@
             var settings_view = new SettingsView({model:this.model});
             settings_view.show();
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         clone:function (e) {
             if (_.isObject(e)) e.preventDefault();
@@ -335,10 +382,14 @@
             var shortcodes_to_resort = [],
                 new_order = _.isBoolean(save_order) && save_order === true ? model.get('order') : parseFloat(model.get('order')) + vc.clone_index,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 model_clone = Shortcodes.create({shortcode:model.get('shortcode'), id: window.vc_guid(), parent_id:parent_id, order:new_order, cloned:true, cloned_from:model.toJSON(), params:_.extend({}, model.get('params'))});
 =======
                 model_clone = Shortcodes.create({shortcode:model.get('shortcode'), id:vc_guid(), parent_id:parent_id, order:new_order, cloned:true, cloned_from:model.toJSON(), params:_.extend({}, model.get('params'))});
 >>>>>>> master
+=======
+                model_clone = Shortcodes.create({shortcode:model.get('shortcode'), id: window.vc_guid(), parent_id:parent_id, order:new_order, cloned:true, cloned_from:model.toJSON(), params:_.extend({}, model.get('params'))});
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             _.each(Shortcodes.where({parent_id:model.id}), function (shortcode) {
                 this.cloneModel(shortcode, model_clone.get('id'), true);
             }, this);
@@ -346,6 +397,7 @@
         }
         // }}
     });
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     /**
@@ -738,6 +790,8 @@
         }
     });
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
     var VisualComposer = Backbone.View.extend({
         el:$('#wpb_visual_composer'),
@@ -745,6 +799,9 @@
         events:{
             "click #wpb-add-new-row":'createRow',
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             'click #vc_post-settings-button': 'editSettings',
             'click #vc_add-new-element, .vc_add-element-button, .vc_add-element-not-empty-button':'addElement',
             'click .vc_add-text-block-button':'addTextBlock',
@@ -756,6 +813,7 @@
         },
         initialize:function () {
             this.accessPolicy = $('.vc_js_composer_group_access_show_rule').val();
+<<<<<<< HEAD
 =======
             "click #wpb-custom-post-css":'showPostCustomCss',
             'click #wpb-add-new-element, .add-element-to-layout':'addElement',
@@ -770,6 +828,8 @@
         initialize:function () {
             this.accessPolicy = $('.wpb_js_composer_group_access_show_rule').val();
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             if (this.accessPolicy == 'no') return false;
             this.buildRelevance();
             _.bindAll(this, 'switchComposer', 'dropButton', 'processScroll', 'updateRowsSorting', 'updateElementsSorting');
@@ -780,14 +840,20 @@
         },
         render:function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             var front = '';
             if (this.accessPolicy !== 'only') {
                 if(vc_frontend_enabled) front = '<span class="vc_spacer"></span><a class="wpb_switch-to-front-composer" href="' + $('#wpb-edit-inline').attr('href') +'">' + window.i18nLocale.main_button_title_frontend_editor + '</a>';
                 this.$buttonsContainer = $('<div class="composer-switch"><span class="logo-icon"></span><span class="vc_spacer"></span><a class="wpb_switch-to-composer" href="#">' + window.i18nLocale.main_button_title_backend_editor + '</a>' + front + '</div>').insertAfter('div#titlediv');
+<<<<<<< HEAD
 =======
             if (this.accessPolicy !== 'only') {
                 this.$buttonsContainer = $('<div class="button-primary composer-switch"><span class="icon"></span><span class="vc-spacer"></span><a class="wpb_switch-to-front-composer" href="' + $('#wpb-edit-inline').attr('href') +'">' + window.i18nLocale.main_button_title_frontend_editor + '</a><span class="vc-spacer"></span><a class="wpb_switch-to-composer" href="#">' + window.i18nLocale.main_button_title_backend_editor + '</a></div>').insertAfter('div#titlediv');
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 // this.$switchButton = $('<a class="wpb_switch-to-composer button-primary" href="#">' + window.i18nLocale.main_button_title + '</a>').insertAfter('div#titlediv').wrap('<p class="composer-switch" />');
                 this.$switchButton = this.$buttonsContainer.find('.wpb_switch-to-composer');
                 this.$switchButton.click(this.switchComposer);
@@ -797,6 +863,9 @@
             this.$post = $('#postdivrich');
             this.$vcStatus = $('#wpb_vc_js_status');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.$loading_block = $('#vc_logo');
             vc.add_element_block_view = new vc.AddElementBlockViewBackendEditor({el: '#vc_add-element-dialog'});
             vc.edit_element_block_view = new vc.EditElementPanelView({el: '#vc_properties-panel'});
@@ -807,18 +876,24 @@
             vc.is_mobile = $('body.mobile').length > 0;
             vc.saved_custom_css = $('#wpb_custom_post_css_field').val();
             vc.updateSettingsBadge();
+<<<<<<< HEAD
 =======
             this.$loading_block = $('.vc_loading_block');
             this.setSortable();
             this.setDraggable();
             vc.is_mobile = $('body.mobile').length > 0
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             return this;
         },
         addAll:function () {
             this.views = {};
             this.$content.removeClass('loading').html('');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.addChild(false);
             this.checkEmpty();
             this.$loading_block.removeClass('vc_ajax-loading');
@@ -830,6 +905,7 @@
                 this.setSortable();
                 this.addChild(shortcode.get('id'));
             }, this);
+<<<<<<< HEAD
 =======
             Shortcodes.each(function (shortcode) {
                 this.appendShortcode(shortcode);
@@ -845,6 +921,8 @@
             this.checkEmpty();
             this.$loading_block.hide();
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         getView:function (model) {
             var view;
@@ -930,6 +1008,7 @@
             this.setSortable();
             this.setNotEmpty();
         },
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
         /**
@@ -1018,6 +1097,8 @@
             });
         },
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         addTextBlock:function (e) {
             e.preventDefault();
             var row = Shortcodes.create({shortcode:'vc_row'}),
@@ -1038,6 +1119,9 @@
          */
         addElement:function (e) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
           _.isObject(e) && e.preventDefault();
           vc.add_element_block_view.render(false);
         },
@@ -1059,6 +1143,7 @@
         },
         sortingStopped:function (event, ui) {
             $('#visual_composer_content').removeClass('vc_sorting-started');
+<<<<<<< HEAD
 =======
             if (_.isObject(e)) e.preventDefault();
             new ElementBlockView({model:{position_to_add:'end'}}).show(this);
@@ -1074,6 +1159,8 @@
         sortingStopped:function (event, ui) {
             $('#visual_composer_content').removeClass('sorting-started');
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         updateElementsSorting:function (event, ui) {
             _.defer(function (app, event, ui) {
@@ -1110,6 +1197,9 @@
             }, this);
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         renderPlaceholder: function(event, element) {
           var tag = $(element).data('element_type'),
             $helper = $('<div class="vc_helper vc_helper-' + tag + '"><i class="vc_element-icon'
@@ -1117,8 +1207,11 @@
               + '"></i> ' + vc.map[tag].name + '</div>').prependTo('body');
           return $helper;
         },
+<<<<<<< HEAD
 =======
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         setSortable:function () {
             var that = this;
             $('.wpb_main_sortable').sortable({
@@ -1138,6 +1231,9 @@
             });
             $('.wpb_column_container').sortable({
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 forcePlaceholderSize: true,
                 forceHelperSize: false,
                 connectWith:".wpb_column_container",
@@ -1170,6 +1266,7 @@
                 },
                 update:this.updateElementsSorting,
                 over:function (event, ui) {
+<<<<<<< HEAD
 =======
                 forcePlaceholderSize:true,
                 connectWith:".wpb_column_container",
@@ -1189,10 +1286,13 @@
                 },
                 update:this.updateElementsSorting,
                 over:function (event, ui) {
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                     var tag = ui.item.data('element_type'),
                         parent_tag = ui.placeholder.closest('[data-element_type]').data('element_type'),
                         allowed_container_element = !_.isUndefined(vc.map[parent_tag].allowed_container_element) ? vc.map[parent_tag].allowed_container_element : true;
                     if (!vc.check_relevance(parent_tag, tag)) {
+<<<<<<< HEAD
                         ui.placeholder.addClass('hidden-placeholder');
                         return false;
                     }
@@ -1210,6 +1310,8 @@
                         allowed_container_element = !_.isUndefined(vc.map[parent_tag].allowed_container_element) ? vc.map[parent_tag].allowed_container_element : true;
                     if (!vc.check_relevance(parent_tag, tag)) {
 <<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                         ui.placeholder.addClass('vc_hidden-placeholder');
                         return false;
                     }
@@ -1222,6 +1324,7 @@
                     }
                     ui.placeholder.removeClass('vc_hidden-placeholder'); // .parent().removeClass('vc_empty-container');
                     ui.placeholder.css({maxWidth:ui.placeholder.parent().width()});
+<<<<<<< HEAD
 =======
                         $('#visual_composer_content').removeClass('sorting-started');
                         return false;
@@ -1231,24 +1334,32 @@
                         return false;
                     }
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 }
             });
             return this;
         },
         setNotEmpty:function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             // this.$metablock_content.removeClass('empty-composer');
             $('#vc_no-content-helper').addClass('vc_not-empty');
         },
         setIsEmpty:function () {
             // this.$metablock_content.addClass('empty-composer');
             $('#vc_no-content-helper').removeClass('vc_not-empty')
+<<<<<<< HEAD
 =======
             this.$metablock_content.removeClass('empty-composer');
         },
         setIsEmpty:function () {
             this.$metablock_content.addClass('empty-composer');
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         checkEmpty:function (model) {
             if (_.isObject(model) && model.get('parent_id') !== false && model.get('parent_id') != model.id) {
@@ -1265,6 +1376,9 @@
             if (_.isObject(e)) e.preventDefault();
             if (this.status == 'shown') {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
               if (this.accessPolicy !== 'only') {
                 !_.isUndefined(this.$switchButton) && this.$switchButton.text(window.i18nLocale.main_button_title_backend_editor);
                 !_.isUndefined(this.$buttonsContainer) && this.$buttonsContainer.removeClass('vc_backend-status');
@@ -1277,6 +1391,7 @@
                 !_.isUndefined(this.$buttonsContainer) && this.$buttonsContainer.addClass('vc_backend-status');
               }
               this.show();
+<<<<<<< HEAD
 =======
                 if (!_.isUndefined(this.$switchButton)) this.$switchButton.text(window.i18nLocale.main_button_title);
                 this.close();
@@ -1285,6 +1400,8 @@
                 if (!_.isUndefined(this.$switchButton)) this.$switchButton.text(window.i18nLocale.main_button_title_revert);
                 this.show();
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 this.status = 'shown';
 
             }
@@ -1306,6 +1423,7 @@
         setLoading:function () {
             this.setNotEmpty();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.$loading_block.addClass('vc_ajax-loading');
             this.$metablock_content.addClass('vc_loading-shortcodes');
         },
@@ -1320,6 +1438,14 @@
             this.$vcStatus.val("false");
             if (this.$switchButton !== undefined) this.$switchButton.html(window.i18nLocale.main_button_title);
 >>>>>>> master
+=======
+            this.$loading_block.addClass('vc_ajax-loading');
+            this.$metablock_content.addClass('vc_loading-shortcodes');
+        },
+        close:function () {
+            this.$vcStatus.val("false");
+            // if (this.$switchButton !== undefined) this.$switchButton.html(window.i18nLocale.main_button_title);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.$el.hide();
             this.$post.show();
         },
@@ -1330,17 +1456,24 @@
         },
         setNavTop:function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
           this.navTop = this.$nav.length && this.$nav.offset().top - 28;
 =======
             this.navTop = $('#wpb_visual_composer-elements').length && $('#wpb_visual_composer-elements').offset().top - 28;
 
 >>>>>>> master
+=======
+          this.navTop = this.$nav.length && this.$nav.offset().top - 28;
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         save:function () {
             $('#wpb-save-post').text(window.i18nLocale.loading);
             $('#publish').click();
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         preview:function() {
             $('#post-preview').click();
         },
@@ -1348,17 +1481,23 @@
             var $win = $(window);
             this.$nav = $('#vc_navbar'); // $('#wpb_visual_composer-elements');
             this.setNavTop();
+<<<<<<< HEAD
 =======
         navOnScroll:function () {
             var $win = $(window);
             this.setNavTop();
             this.$nav = $('#wpb_visual_composer-elements');
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.processScroll();
             $win.unbind('scroll.composer').on('scroll.composer', this.processScroll);
         },
         processScroll:function (e) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             if( !this.navTop || this.navTop < 0) {
                 this.setNavTop();
             }
@@ -1369,6 +1508,7 @@
             } else if ( this.scrollTop <= this.navTop && this.isFixed) {
                 this.isFixed = 0;
                 this.$nav.removeClass('vc_subnav-fixed');
+<<<<<<< HEAD
 =======
             this.scrollTop = $(window).scrollTop();
             if (this.scrollTop >= this.navTop && !this.isFixed) {
@@ -1378,6 +1518,8 @@
                 this.isFixed = 0;
                 this.$nav.removeClass('subnav-fixed');
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             }
         },
         buildRelevance:function () {

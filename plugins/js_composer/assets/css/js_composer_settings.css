@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 /*!
  * Visual Composer v4.3.4 (http://vc.wpbakery.com)
  * Copyright 2011-2014 Michael M - WPBakery.com
@@ -443,6 +446,7 @@
 .vc_settings #vc_settings-automapper .widget.vc_opened .widget-top a.widget-action:after {
   content: '\f142';
   cursor: pointer;
+<<<<<<< HEAD
 =======
 .clearfix {
   *zoom: 1;
@@ -578,4 +582,6 @@
 #wpb-js-composer-settings .form-table th {
   font-weight: bold;
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }

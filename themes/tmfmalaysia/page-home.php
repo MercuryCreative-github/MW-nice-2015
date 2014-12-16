@@ -18,6 +18,7 @@
 ?>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="container slideshow">
 		<section class="row largepadding">
 	<div class="eight columns intro" style="padding-top:10px">
@@ -27,6 +28,11 @@ background-size: contain;border: none;background-repeat: no-repeat;">
 		<section class="row largepadding">
 	<div class="twelve columns intro">
 >>>>>>> master
+=======
+<div class="container slideshow">
+		<section class="row largepadding">
+	<div class="eight columns intro" style="padding-top:10px">
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 		<div class="whitetext">
 
 <div class="wpb_row vc_row-fluid">

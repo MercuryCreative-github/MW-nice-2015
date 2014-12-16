@@ -16,10 +16,14 @@
      * @constructor
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     vc.Storage = function () {
 =======
     var Storage = function () {
 >>>>>>> master
+=======
+    vc.Storage = function () {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         this.data = {};
     };
     /**
@@ -27,10 +31,14 @@
      * @type {Object}
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     vc.Storage.prototype = {
 =======
     Storage.prototype = {
 >>>>>>> master
+=======
+    vc.Storage.prototype = {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         url:window.ajaxurl,
         checksum:false,
         locked:false,
@@ -74,9 +82,12 @@
         update:function (model) {
             this.data[model.id] = model.toJSON();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.setModelRoot(model.id);
             this.save();
             return model;
@@ -382,10 +393,14 @@
         })
     };
 <<<<<<< HEAD
+<<<<<<< HEAD
     vc.storage = new vc.Storage();
 =======
     vc.storage = new Storage();
 >>>>>>> master
+=======
+    vc.storage = new vc.Storage();
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
     vc.test = {
         a:_.memoize(function (a) {

@@ -9,11 +9,16 @@ jQuery(document).ready(function ($) {
             else
                 setCookie('wpb_js_composer_settings_group_tab', '', 365 * 24 * 60 * 60);
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         heightStyle: 'content'
 =======
         }
 >>>>>>> master
+=======
+        },
+        heightStyle: 'content'
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     });
     $('.wpb-settings-select-all-shortcodes').click(function (e) {
         e.preventDefault();
@@ -23,6 +28,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         $(this).parent().parent().find('[type=checkbox]').removeAttr('checked');
     });
+<<<<<<< HEAD
 <<<<<<< HEAD
     $('.vc_settings-tab-control').click(function (e) {
         e.preventDefault();
@@ -46,6 +52,9 @@ jQuery(document).ready(function ($) {
     $('#vc_settings-disable-notification-button').click(function (e) {
 =======
     $('.vc-settings-tab-control').click(function (e) {
+=======
+    $('.vc_settings-tab-control').click(function (e) {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         e.preventDefault();
         if ($(this).hasClass('nav-tab-active')) return false;
         var tab_id = $(this).attr('href');
@@ -61,8 +70,12 @@ jQuery(document).ready(function ($) {
         return true;
     });
 
+<<<<<<< HEAD
     $('#vc-settings-disable-notification-button').click(function (e) {
 >>>>>>> master
+=======
+    $('#vc_settings-disable-notification-button').click(function (e) {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         e.preventDefault();
         $.ajax({
             type:'POST',
@@ -79,6 +92,7 @@ jQuery(document).ready(function ($) {
     });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     $('#vc_settings-custom-css-reset-data').click(function (e) {
         e.preventDefault();
         if (confirm(window.i18nLocaleSettings.are_you_sure_reset_css_classes)) {
@@ -94,6 +108,9 @@ jQuery(document).ready(function ($) {
             $('#vc_settings-color').attr('action', window.location.href).find('[type=submit]').click();
 =======
     $('#vc-settings-custom-css-reset-data').click(function (e) {
+=======
+    $('#vc_settings-custom-css-reset-data').click(function (e) {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         e.preventDefault();
         if (confirm(window.i18nLocaleSettings.are_you_sure_reset_css_classes)) {
             $('#vc-settings-element_css-action').val('remove_all_css_classes');
@@ -104,13 +121,19 @@ jQuery(document).ready(function ($) {
     $('#vc-settings-color-restore-default').click(function (e) {
         e.preventDefault();
         if (confirm(window.i18nLocaleSettings.are_you_sure_reset_color)) {
+<<<<<<< HEAD
             $('#vc-settings-color-action').val('restore_color');
             $('#vc-settings-color').attr('action', window.location.href).find('[type=submit]').click();
 >>>>>>> master
+=======
+            $('#vc_settings-color-action').val('restore_color');
+            $('#vc_settings-color').attr('action', window.location.href).find('[type=submit]').click();
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         }
     });
     $('#wpb_js_use_custom').change(function () {
         if ($(this).is(':checked')) {
+<<<<<<< HEAD
 <<<<<<< HEAD
             $('#vc_settings-color').addClass('color_enabled');
         } else {
@@ -120,10 +143,16 @@ jQuery(document).ready(function ($) {
         } else {
             $('#vc-settings-color').removeClass('color_enabled');
 >>>>>>> master
+=======
+            $('#vc_settings-color').addClass('color_enabled');
+        } else {
+            $('#vc_settings-color').removeClass('color_enabled');
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
         }
     });
   var showUpdaterSubmitButton = function() {
+<<<<<<< HEAD
 <<<<<<< HEAD
           $('#vc_settings-updater [type=submit]').attr('disabled', false);
       },
@@ -146,6 +175,9 @@ jQuery(document).ready(function ($) {
     $('#vc_updater-spinner').show();
 =======
           $('#vc-settings-updater [type=submit]').attr('disabled', false);
+=======
+          $('#vc_settings-updater [type=submit]').attr('disabled', false);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
       },
       hideUpdaterSubmitButton = function() {
         $('#vc-settings-updater [type=submit]').attr('disabled', true);
@@ -163,8 +195,12 @@ jQuery(document).ready(function ($) {
     $button.attr('disabled', true);
     $('#vc-license-activation-message').remove();
     e.preventDefault();
+<<<<<<< HEAD
     $('#vc-updater-spinner').show();
 >>>>>>> master
+=======
+    $('#vc_updater-spinner').show();
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     $.ajax({
       type: 'POST',
       url: window.ajaxurl,
@@ -173,16 +209,24 @@ jQuery(document).ready(function ($) {
           action: status=== 'activated' ? 'wpb_deactivate_license' : 'wpb_activate_license',
           username: $username.val(),
 <<<<<<< HEAD
+<<<<<<< HEAD
           key: $key.val(),
           api_key: $api_key.val()
 =======
           key: $key.val()
 >>>>>>> master
+=======
+          key: $key.val(),
+          api_key: $api_key.val()
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
       }
     }).done(function(data){
         var code;
         if(data.result && status !== 'activated') {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
           $('#vc_settings-license-status').val('activated');
           $key.addClass('vc_updater-passive').attr('disabled', true);
           $username.addClass('vc_updater-passive').attr('disabled', true);
@@ -196,6 +240,7 @@ jQuery(document).ready(function ($) {
           $username.removeClass('vc_updater-passive').attr('disabled', false);
           $api_key.removeClass('vc_updater-passive').attr('disabled', false);
           $('#vc_settings-activate-license').html(i18nLocaleSettings.vc_updater_activate_license);
+<<<<<<< HEAD
 =======
           $('#vc-settings-license-status').val('activated');
           $key.addClass('vc-updater-passive').attr('disabled', true);
@@ -211,6 +256,8 @@ jQuery(document).ready(function ($) {
           $api_key.removeClass('vc-updater-passive').attr('disabled', false);
           $('#vc-settings-activate-license').html(i18nLocaleSettings.vc_updater_activate_license);
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
           message_html = message_html.replace('{message}', i18nLocaleSettings.vc_updater_license_deactivation_success);
           showUpdaterSubmitButton();
         } else {
@@ -238,6 +285,9 @@ jQuery(document).ready(function ($) {
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         $(message_html).insertAfter('#vc_settings-activate-license').fadeIn(100);
         $button.attr('disabled', false);
         $('#vc_updater-spinner').hide();
@@ -257,6 +307,7 @@ jQuery(document).ready(function ($) {
 	        $css_editor_input.val(window.css_editor.getValue());
         });
     }
+<<<<<<< HEAD
 =======
         $(message_html).insertAfter('#vc-settings-activate-license').fadeIn(100);
         $button.attr('disabled', false);
@@ -268,5 +319,7 @@ jQuery(document).ready(function ($) {
       });
   });
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 });
 

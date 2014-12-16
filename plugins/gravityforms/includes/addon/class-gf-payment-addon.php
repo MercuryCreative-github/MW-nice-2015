@@ -620,10 +620,14 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 
         if ($trial_field == "enter_amount"){
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$trial_amount = rgar($feed["meta"], "trial_amount") ? GFCommon::to_number(rgar($feed["meta"], "trial_amount")) : 0;
 =======
 			$trial_amount = rgar($feed["meta"], "trial_amount") ? rgar($feed["meta"], "trial_amount") : 0;
 >>>>>>> master
+=======
+			$trial_amount = rgar($feed["meta"], "trial_amount") ? GFCommon::to_number(rgar($feed["meta"], "trial_amount")) : 0;
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         }
 
         if(!empty($products["shipping"]["name"]) && !is_numeric($payment_field)){
@@ -833,10 +837,14 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function complete_payment( &$entry, $action ) {
 =======
     public function complete_payment( $entry, $action ) {
 >>>>>>> master
+=======
+    public function complete_payment( &$entry, $action ) {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 		if ( ! rgar($action, 'payment_status') ) {
             $action['payment_status'] = 'Paid';
@@ -1159,10 +1167,14 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
                             array("label" => __("Subscription", "gravityforms"), "value" => "subscription")
                         ),
 <<<<<<< HEAD
+<<<<<<< HEAD
                         'tooltip'  => '<h6>' . __( 'Transaction Type', 'gravityforms' ) . '</h6>' . __( 'Select a transaction type', 'gravityforms' )
 =======
                         "tooltip" => "<h6>" . __("Transaction Type", "gravityforms") . "</h6>" . __("Select a transaction type")
 >>>>>>> master
+=======
+                        'tooltip'  => '<h6>' . __( 'Transaction Type', 'gravityforms' ) . '</h6>' . __( 'Select a transaction type', 'gravityforms' )
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                     )
                 )
             ),
@@ -1206,10 +1218,14 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
                         "type" => "trial",
                         "hidden" => $this->get_setting("setupFee_enabled"),
 <<<<<<< HEAD
+<<<<<<< HEAD
                         "tooltip" => "<h6>" . __("Trial Period", "gravityforms") . "</h6>" . __("Enable a trial period.  The users recurring payment will not begin until after this trial period.", "gravityforms")
 =======
                         "tooltip" => "<h6>" . __("Trial Period", "gravityformspaypal") . "</h6>" . __("Enable a trial period.  The users recurring payment will not begin until after this trial period.", "gravityforms")
 >>>>>>> master
+=======
+                        "tooltip" => "<h6>" . __("Trial Period", "gravityforms") . "</h6>" . __("Enable a trial period.  The users recurring payment will not begin until after this trial period.", "gravityforms")
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                     )
                 )
             ),
@@ -1483,12 +1499,17 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
 
         return array(
 <<<<<<< HEAD
+<<<<<<< HEAD
             "title"         => _x( 'Sales', 'toolbar label', 'gravityforms' ),
             "search_title"  => _x( 'Filter', 'metabox title', 'gravityforms' ),
 =======
             "title"         => "Sales",
             "search_title"  => "Filter",
 >>>>>>> master
+=======
+            "title"         => _x( 'Sales', 'toolbar label', 'gravityforms' ),
+            "search_title"  => _x( 'Filter', 'metabox title', 'gravityforms' ),
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             "capabilities"  => array("gravityforms_view_entries"),
             "callbacks"     => array(
 				"fields"    => array($this, "results_fields"),
@@ -1889,10 +1910,14 @@ abstract class GFPaymentAddOn extends GFFeedAddOn {
                 <div>
                     <select id='gaddon-sales-group' name='payment_method'>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <option value=''>" . _x( "Any", "regarding a payment method", "gravityforms" ) . "</option>";
 =======
                         <option value=''>" . __("Any", "gravityforms") . "</option>";
 >>>>>>> master
+=======
+                        <option value=''>" . _x( "Any", "regarding a payment method", "gravityforms" ) . "</option>";
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
                     foreach($payment_methods as $payment_method){
                         $payment_method_markup .= "<option value='" . esc_attr($payment_method) . "' " . selected($payment_method, rgget('payment_method'), false) . ">" . $payment_method . "</option>";
@@ -2146,12 +2171,18 @@ class GFPaymentStatsTable extends WP_List_Table {
             return;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$total_items = $this->_pagination_args['total_items'];
 		$total_pages = $this->_pagination_args['total_pages'];
 		$per_page = $this->_pagination_args['per_page'];
 =======
         extract( $this->_pagination_args, EXTR_SKIP );
 >>>>>>> master
+=======
+		$total_items = $this->_pagination_args['total_items'];
+		$total_pages = $this->_pagination_args['total_pages'];
+		$per_page = $this->_pagination_args['per_page'];
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
         $output = '<span class="displaying-num">' . sprintf( _n( '1 item', '%s items', $total_items, 'gravityforms' ), number_format_i18n( $total_items ) ) . '</span>';
 

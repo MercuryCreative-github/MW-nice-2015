@@ -4,16 +4,23 @@ Plugin Name: WPBakery Visual Composer
 Plugin URI: http://vc.wpbakery.com
 Description: Drag and drop page builder for WordPress. Take full control over your WordPress site, build any layout you can imagine – no programming knowledge required.
 <<<<<<< HEAD
+<<<<<<< HEAD
 Version: 4.3.4
 =======
 Version: 4.0.2
 >>>>>>> master
+=======
+Version: 4.3.4
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 Author: Michael M - WPBakery.com
 Author URI: http://wpbakery.com
 */
 
 // don't load directly
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 if ( ! defined( 'ABSPATH' ) ) die( '-1' );
 /**
  * Current visual composer version
@@ -622,6 +629,7 @@ class Vc_Manager {
  */
 global $vc_manager;
 $vc_manager = new Vc_Manager();
+<<<<<<< HEAD
 =======
 
 if (!defined('ABSPATH')) die('-1');
@@ -727,3 +735,5 @@ if( !$vc_as_theme && is_file(get_template_directory() . '/wpbakery/js_composer/j
 }
 ?>
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145

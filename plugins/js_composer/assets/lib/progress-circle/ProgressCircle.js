@@ -96,6 +96,9 @@
             return this;
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         
         /**
          * @method Manually update all circles
@@ -103,8 +106,11 @@
         update: function(value) {
             this._update(value);
         },
+<<<<<<< HEAD
 =======
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
         /**
          * @method Stop the animation.
@@ -117,6 +123,7 @@
          * @private
          * @method Call update on each circle and redraw them.
 <<<<<<< HEAD
+<<<<<<< HEAD
          * @param value Value to be passed to circle update method (in case of manual update)
          * @returns this
          */
@@ -125,13 +132,20 @@
             this.circles.forEach(function(circle, idx, array) {
                 circle.update(value);
 =======
+=======
+         * @param value Value to be passed to circle update method (in case of manual update)
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
          * @returns this
          */
         _update: function() {
             this._clear();
             this.circles.forEach(function(circle, idx, array) {
+<<<<<<< HEAD
                 circle.update();
 >>>>>>> master
+=======
+                circle.update(value);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             });
 
             return this;
@@ -224,12 +238,17 @@
         constructor: Circle,
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         update: function(value) {
             this.progress = value || this.progressListener();
 =======
         update: function() {
             this.progress = this.progressListener();
 >>>>>>> master
+=======
+        update: function(value) {
+            this.progress = value || this.progressListener();
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             this._draw();
 
             if (this.infoListener) {

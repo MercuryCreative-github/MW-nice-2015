@@ -324,10 +324,14 @@ if (!class_exists("GFResults")) {
                              src="<?php echo GFCommon::get_base_url() ?>/images/spinner.gif"
                              alt="loading..."/>&nbsp;
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <a href="javascript:void(0);" onclick="javascript:gresultsAjaxRequest.abort()"><?php _e( 'Cancel', 'gravityforms' ); ?></a>
 =======
                         <a href="javascript:void(0);" onclick="javascript:gresultsAjaxRequest.abort()">Cancel</a>
 >>>>>>> master
+=======
+                        <a href="javascript:void(0);" onclick="javascript:gresultsAjaxRequest.abort()"><?php _e( 'Cancel', 'gravityforms' ); ?></a>
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                     </div>
 
                     <div id="gresults-results-wrapper">
@@ -369,10 +373,14 @@ if (!class_exists("GFResults")) {
             } else {
                 $search_criteria                  = array();
 <<<<<<< HEAD
+<<<<<<< HEAD
                 $search_criteria["field_filters"] = GFCommon::get_field_filters_from_post($form);
 =======
                 $search_criteria["field_filters"] = GFCommon::get_field_filters_from_post();
 >>>>>>> master
+=======
+                $search_criteria["field_filters"] = GFCommon::get_field_filters_from_post($form);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
                 $start_date = rgpost("start");
                 $end_date   = rgpost("end");

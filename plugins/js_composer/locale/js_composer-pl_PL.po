@@ -3,22 +3,31 @@ msgstr ""
 "Project-Id-Version: Visual Composer\n"
 "Report-Msgid-Bugs-To: \n"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "POT-Creation-Date: 2014-08-14 14:46+0200\n"
 "PO-Revision-Date: 2014-08-14 14:46+0200\n"
 "Last-Translator: Michael M <hello@wpbakery.com>\n"
 "Language-Team: Digital Factory <info@digitalfactory.pl>\n"
 "Language: pl_PL\n"
+<<<<<<< HEAD
 =======
 "POT-Creation-Date: 2012-07-26 10:28+0100\n"
 "PO-Revision-Date: 2012-07-27 14:38+0300\n"
 "Last-Translator: Michael <mixey.fd@gmail.com>\n"
 "Language-Team: Digital Factory <info@digitalfactory.pl>\n"
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2\n"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -2721,6 +2730,7 @@ msgstr "Ustawienia Edytora wizualnego"
 #: include/./classes/core/class-wpb-map.php:292
 #: include/./classes/core/class-wpb-map.php:329
 #: include/./classes/core/class-wpb-map.php:394
+<<<<<<< HEAD
 =======
 "X-Poedit-Basepath: /Users/mmihey/Sites/framework/wp-content/plugins/js_composer\n"
 "X-Poedit-Language: Polish\n"
@@ -4553,6 +4563,177 @@ msgstr ""
 
 #~ msgid "Select gallery type. Note: Nivo slider is not fully responsive."
 #~ msgstr "Wybierz rodzaj galerii."
+=======
+#, php-format
+msgid "Wrong name for shortcode:%s. Name required"
+msgstr "Nieprawidłowa nazwa dla skrótu:%s. Nazwa jest wymagana"
+
+#: include/./classes/core/class-wpb-map.php:106
+#, php-format
+msgid "Wrong base for shortcode:%s. Base required"
+msgstr "Nieprawidłowy alias dla skrótu:%s. Alias jest wymagany"
+
+#: include/./classes/core/class-wpb-map.php:294
+#: include/./classes/core/class-wpb-map.php:331
+#, php-format
+msgid "Wrong attribute for '%s' shortcode. Attribute 'param_name' required"
+msgstr ""
+"Nieprawidłowy atrybut dla skrótu '%s'. Wymagany jest atrybut 'param_name'"
+
+#: include/./classes/core/class-wpb-map.php:396
+#, fuzzy, php-format
+msgid "Wrong setting_name for shortcode:%s. Base can't be modified."
+msgstr "Nieprawidłowy alias dla skrótu:%s. Alias jest wymagany"
+
+#: include/./classes/editors/class-vc-frontend-editor.php:222
+#, fuzzy, php-format
+msgid "Edit %s with Visual Composer"
+msgstr "Edytor wizualny"
+
+#: include/./classes/editors/class-vc-frontend-editor.php:231
+#: include/./classes/editors/class-vc-frontend-editor.php:241
+#: include/./classes/editors/class-vc-frontend-editor.php:272
+#, fuzzy
+msgid "Edit with Visual Composer"
+msgstr "Edytor wizualny"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:31
+msgid "Desktop"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:37
+msgid "Tablet landscape mode"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:42
+msgid "Tablet portrait mode"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:47
+msgid "Smartphone landscape mode"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:52
+msgid "Smartphone portrait mode"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:60
+msgid "Responsive preview"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:84
+msgid "Cancel all changes and return to WP dashboard"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:84
+#, fuzzy
+msgid "Backend editor"
+msgstr "Edytor klasyczny"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:89
+msgid "Save draft"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:93
+#, fuzzy
+msgid "Save as Pending"
+msgstr "Malejąco"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:98
+msgid "Publish"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:102
+msgid "Submit for Review"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:106
+#: include/./classes/editors/navbar/class-vc-navbar.php:96
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:28
+msgid "Update"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:68
+msgid "CSS"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:74
+msgid "Add new element"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:80
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:8
+msgid "Templates"
+msgstr "Szablony"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:85
+#, fuzzy
+msgid "Frontend"
+msgstr "Treść"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:95
+msgid "Preview"
+msgstr ""
+
+#: include/./classes/editors/popups/class-vc-add-element-box.php:70
+msgid "Show all"
+msgstr ""
+
+#: include/./classes/editors/popups/class-vc-add-element-box.php:82
+msgid "Other"
+msgstr ""
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:222
+#, fuzzy
+msgid "Delete template"
+msgstr "Skasuj %element%"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:231
+msgid "Save current page as a Template"
+msgstr "Zapisz obecną stronę jako szablon"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:233
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:34
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:46
+msgid "Load Template"
+msgstr "Wczytaj szablon"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:239
+msgid "No custom templates yet."
+msgstr "Brak własnych szablonów."
+
+#: include/./classes/settings/class-vc-automapper.php:110
+#: include/./classes/settings/class-vc-automapper.php:123
+#, fuzzy
+msgid "My shortcodes"
+msgstr "Dozwolone skróty"
+
+#: include/./classes/settings/class-vc-automapper.php:121
+msgid "Are you sure you want to delete this shortcode?"
+msgstr ""
+
+#: include/./classes/settings/class-vc-automapper.php:122
+msgid "Are you sure you want to delete the shortcode's param?"
+msgstr ""
+
+#: include/./classes/settings/class-vc-automapper.php:124
+#, fuzzy
+msgid "Shortcode name is required."
+msgstr "Nieprawidłowa nazwa dla skrótu:%s. Nazwa jest wymagana"
+
+#: include/./classes/settings/class-vc-automapper.php:125
+#, fuzzy
+msgid "Please enter valid shortcode tag."
+msgstr "Proszę wpisać nazwę sekcji"
+
+#: include/./classes/settings/class-vc-automapper.php:126
+msgid "Please enter all required fields for params."
+msgstr ""
+
+#: include/./classes/settings/class-vc-automapper.php:127
+msgid "New shortcode mapped from string!"
+msgstr ""
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #~ msgid ""
 #~ "Select \"Open custom link\" in \"On click\" parameter and then enter "
@@ -6068,6 +6249,7 @@ msgstr "Rodzaj źródła zdjęć"
 msgid "Display"
 msgstr "Wyświetlanie"
 
+<<<<<<< HEAD
 #: ../config/map.php:1200
 msgid "Latest"
 msgstr "Najnowsze"
@@ -6076,6 +6258,14 @@ msgstr "Najnowsze"
 msgid "Photo order"
 msgstr "Kolejność zdjęć"
 >>>>>>> master
+=======
+#~ msgid ""
+#~ "To find your flickID visit <a href=\"http://idgettr.com/\" target=\"_blank"
+#~ "\">idGettr</a>"
+#~ msgstr ""
+#~ "Aby znaleźć swoje ID Flickra odwiedź <a href=\"http://idgettr.com/\" "
+#~ "target=\"_blank\">idGettr</a>"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #~ msgid "Wrong attribute for '"
 #~ msgstr "Nieprawidłowy atrybut dla"
@@ -6087,6 +6277,7 @@ msgstr "Kolejność zdjęć"
 #~ msgstr "&raquo;"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #~ msgid "No Featured image set."
 #~ msgstr "Ikona wpisu nie została wybrana."
@@ -6095,6 +6286,8 @@ msgstr "Kolejność zdjęć"
 #~ msgstr "Skasuj %element%"
 
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #~ msgid "Upload/Insert"
 #~ msgstr "Wgraj/Wstaw"
 
@@ -6143,8 +6336,11 @@ msgstr "Kolejność zdjęć"
 #~ "Jeśli chcesz aby ten szablon wyglądał inaczej niż inne, użyj tego pola "
 #~ "aby nadać mu klasę CSS i móc z niej skorzystać w pliku .css"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 #~ msgid "Yellow"
 #~ msgstr "Żółty"
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145

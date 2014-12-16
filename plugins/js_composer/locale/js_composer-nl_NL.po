@@ -3,6 +3,7 @@ msgstr ""
 "Project-Id-Version: WPBakery Visual Composer v3.6.14.1\n"
 "Report-Msgid-Bugs-To: \n"
 <<<<<<< HEAD
+<<<<<<< HEAD
 "POT-Creation-Date: 2014-08-14 14:46+0200\n"
 "PO-Revision-Date: 2014-08-14 14:46+0200\n"
 "Last-Translator: Michael M <hello@wpbakery.com>\n"
@@ -11,6 +12,11 @@ msgstr ""
 "PO-Revision-Date: 2013-12-23 15:39+0100\n"
 "Last-Translator: admin <rick@tussendoor.nl>\n"
 >>>>>>> master
+=======
+"POT-Creation-Date: 2014-08-14 14:46+0200\n"
+"PO-Revision-Date: 2014-08-14 14:46+0200\n"
+"Last-Translator: Michael M <hello@wpbakery.com>\n"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -18,17 +24,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 <<<<<<< HEAD
+<<<<<<< HEAD
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 =======
 "X-Generator: Poedit 1.5.3\n"
 "X-Poedit-SourceCharset: utf-8\n"
 >>>>>>> master
+=======
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: ../\n"
 "X-Textdomain-Support: yes\n"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "X-Poedit-SearchPath-0: ./config/.\n"
 "X-Poedit-SearchPath-1: ./include/.\n"
 
@@ -227,6 +241,7 @@ msgid ""
 msgstr ""
 "Wilt u bepaalde elementen anders opmaken, gebruik dan dit veld om een aparte "
 "class toe te voegen en verwijs hierna in een aangepast css bestand."
+<<<<<<< HEAD
 
 #: config/./map.php:117 config/./map.php:150 config/./map.php:193
 #: config/./map.php:245 config/./map.php:288 config/./map.php:757
@@ -4514,6 +4529,559 @@ msgstr ""
 #: include/./classes/settings/class-vc-settings.php:214
 msgid "Use custom design options"
 msgstr "Gebruik aangepaste design opties"
+=======
+
+#: config/./map.php:117 config/./map.php:150 config/./map.php:193
+#: config/./map.php:245 config/./map.php:288 config/./map.php:757
+#: config/./map.php:2143 config/./map.php:3123
+msgid "Css"
+msgstr ""
+
+# @ js_composer
+#: config/./map.php:120 config/./map.php:153 config/./map.php:196
+#: config/./map.php:248 config/./map.php:291 config/./map.php:760
+#: config/./map.php:2146 config/./map.php:3126
+#, fuzzy
+msgid "Design options"
+msgstr "Design opties"
+
+#: config/./map.php:159 include/./params/column_offset/column_offset.php:22
+msgid "1 column - 1/12"
+msgstr ""
+
+#: config/./map.php:160 include/./params/column_offset/column_offset.php:23
+msgid "2 columns - 1/6"
+msgstr ""
+
+#: config/./map.php:161 include/./params/column_offset/column_offset.php:24
+msgid "3 columns - 1/4"
+msgstr ""
+
+#: config/./map.php:162 include/./params/column_offset/column_offset.php:25
+msgid "4 columns - 1/3"
+msgstr ""
+
+#: config/./map.php:163 include/./params/column_offset/column_offset.php:26
+msgid "5 columns - 5/12"
+msgstr ""
+
+#: config/./map.php:164 include/./params/column_offset/column_offset.php:27
+msgid "6 columns - 1/2"
+msgstr ""
+
+#: config/./map.php:165 include/./params/column_offset/column_offset.php:28
+msgid "7 columns - 7/12"
+msgstr ""
+
+#: config/./map.php:166 include/./params/column_offset/column_offset.php:29
+msgid "8 columns - 2/3"
+msgstr ""
+
+#: config/./map.php:167 include/./params/column_offset/column_offset.php:30
+msgid "9 columns - 3/4"
+msgstr ""
+
+#: config/./map.php:168 include/./params/column_offset/column_offset.php:31
+msgid "10 columns - 5/6"
+msgstr ""
+
+#: config/./map.php:169 include/./params/column_offset/column_offset.php:32
+msgid "11 columns - 11/12"
+msgstr ""
+
+#: config/./map.php:170 include/./params/column_offset/column_offset.php:33
+msgid "12 columns - 1/1"
+msgstr ""
+
+# @ js_composer
+#: config/./map.php:173 config/./map.php:219
+msgid "Column"
+msgstr "Kolom"
+
+#: config/./map.php:200 config/./map.php:252
+#: include/./templates/params/column_offset/template.tpl.php:20
+msgid "Width"
+msgstr ""
+
+#: config/./map.php:203 config/./map.php:211 config/./map.php:255
+msgid "Width & Responsiveness"
+msgstr ""
+
+# @ js_composer
+#: config/./map.php:204 config/./map.php:256
+#, fuzzy
+msgid "Select column width."
+msgstr "Selecteer kolommen telling"
+
+# @ js_composer
+#: config/./map.php:209
+#, fuzzy
+msgid "Responsiveness"
+msgstr "Responsive afbeeldingen galerij"
+
+#: config/./map.php:212
+msgid ""
+"Adjust column for different screen sizes. Control width, offset and "
+"visibility settings."
+msgstr ""
+
+# @ js_composer
+#: config/./map.php:265
+msgid "Text Block"
+msgstr "Tekst blok"
+
+#: config/./map.php:270
+msgid "A block of text with WYSIWYG editor"
+msgstr "Een tekstblok met WYSIWYG bewerker"
+
+# @ js_composer
+# @ default
+#: config/./map.php:275 config/./map.php:1398 config/./map.php:1483
+#: config/./map.php:1918 config/./map.php:2779 config/./map.php:2795
+#: config/./map.php:3067 include/./classes/shortcodes/example.php:111
+#: include/./params/sorted_list/sorted_list.php:57
+#: include/./params/sorted_list/sorted_list.php:61
+#: include/./templates/teaser.html.php:52
+msgid "Text"
+msgstr "Tekst"
+
+#: config/./map.php:277
+msgid ""
+"<p>I am text block. Click edit button to change this text. Lorem ipsum dolor "
+"sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec "
+"ullamcorper mattis, pulvinar dapibus leo.</p>"
+msgstr ""
+
+# @ js_composer
+#: config/./map.php:337
+msgid "Separator"
+msgstr "Separator"
+
+#: config/./map.php:343
+msgid "Horizontal separator line"
+msgstr "Horizontale scheidingslijn"
+
+# @ js_composer
+#: config/./map.php:347 config/./map.php:417 config/./map.php:1813
+#: config/./map.php:1875 config/./map.php:1945 config/./map.php:2071
+msgid "Color"
+msgstr "Kleur"
+
+# @ js_composer
+#: config/./map.php:349 config/./map.php:419
+#, fuzzy
+msgid "Custom color"
+msgstr "Aangepaste kleur"
+
+# @ js_composer
+#: config/./map.php:351 config/./map.php:421
+#, fuzzy
+msgid "Separator color."
+msgstr "Divider border kleur"
+
+# @ js_composer
+#: config/./map.php:356
+#, fuzzy
+msgid "Custom Border Color"
+msgstr "Aangepaste kleur"
+
+# @ js_composer
+#: config/./map.php:358
+#, fuzzy
+msgid "Select border color for your element."
+msgstr "Selecteer een achtergrond kleur voor uw rij"
+
+#: config/./map.php:366 config/./map.php:436 config/./map.php:483
+#: config/./map.php:1868
+msgid "Style"
+msgstr ""
+
+# @ js_composer
+#: config/./map.php:369 config/./map.php:439
+#, fuzzy
+msgid "Separator style."
+msgstr "Separator titel"
+
+# @ js_composer
+#: config/./map.php:373 config/./map.php:443 config/./map.php:2021
+#, fuzzy
+msgid "Element width"
+msgstr "Mobiele schermen breedte"
+
+# @ js_composer
+#: config/./map.php:376 config/./map.php:446
+#, fuzzy
+msgid "Separator element width in percents."
+msgstr "Separator met tekst"
+
+# @ js_composer
+#: config/./map.php:390
+msgid "Separator with Text"
+msgstr "Separator met tekst"
+
+#: config/./map.php:394
+msgid "Horizontal separator line with heading"
+msgstr "Horizontale scheidingslijn met titel"
+
+# @ js_composer
+#: config/./map.php:398 config/./map.php:401 config/./map.php:1092
+#: config/./map.php:1165 config/./map.php:1324 config/./map.php:1397
+#: config/./map.php:1482 config/./map.php:1686
+#: include/./params/loop/loop.php:248
+#: include/./params/sorted_list/sorted_list.php:59
+#: include/./params/vc_link/vc_link.php:6
+msgid "Title"
+msgstr "Titel"
+
+# @ js_composer
+#: config/./map.php:402
+msgid "Separator title."
+msgstr "Separator titel"
+
+# @ js_composer
+#: config/./map.php:406
+msgid "Title position"
+msgstr "titel positie"
+
+# @ js_composer
+#: config/./map.php:409 config/./map.php:698
+msgid "Align center"
+msgstr "centraal uitlijnen"
+
+# @ js_composer
+#: config/./map.php:410 config/./map.php:696 config/./map.php:1971
+#: config/./map.php:2098
+msgid "Align left"
+msgstr "links uitlijnen"
+
+# @ js_composer
+#: config/./map.php:411 config/./map.php:697 config/./map.php:1970
+#: config/./map.php:2097
+msgid "Align right"
+msgstr "rechts uitlijnen"
+
+# @ js_composer
+#: config/./map.php:413
+msgid "Select title location."
+msgstr "selecteer titel locatie"
+
+# @ js_composer
+#: config/./map.php:426 config/./map.php:2349
+msgid "Custom Color"
+msgstr "Aangepaste kleur"
+
+# @ js_composer
+#: config/./map.php:428
+#, fuzzy
+msgid "Custom separator color for your element."
+msgstr "Selecteer een achtergrond kleur voor uw rij"
+
+# @ js_composer
+#: config/./map.php:461
+msgid "Message Box"
+msgstr "Bericht kader"
+
+#: config/./map.php:466
+msgid "Notification box"
+msgstr "Meldingskader"
+
+# @ js_composer
+#: config/./map.php:470
+msgid "Message box type"
+msgstr "bericht kader type"
+
+# @ js_composer
+#: config/./map.php:473
+msgid "Informational"
+msgstr "Informatief"
+
+# @ js_composer
+#: config/./map.php:474
+msgid "Warning"
+msgstr "Waarschuwing"
+
+# @ js_composer
+#: config/./map.php:475
+msgid "Success"
+msgstr "Succes"
+
+# @ js_composer
+#: config/./map.php:476
+msgid "Error"
+msgstr "Fout"
+
+# @ js_composer
+#: config/./map.php:478
+msgid "Select message type."
+msgstr "Selecteer bericht type"
+
+#: config/./map.php:486
+msgid "Alert style."
+msgstr ""
+
+# @ js_composer
+#: config/./map.php:492
+msgid "Message text"
+msgstr "Bericht tekst"
+
+# @ js_composer
+#: config/./map.php:494
+msgid "<p>I am message box. Click edit button to change this text.</p>"
+msgstr ""
+"<p> Ik ben een bericht kader. Klik op de knop Bewerken om deze tekst te "
+"veranderen. </p>"
+
+# @ js_composer
+#: config/./map.php:510
+msgid "Facebook Like"
+msgstr "Facebook Like"
+
+# @ js_composer
+#: config/./map.php:513 config/./map.php:537 config/./map.php:561
+#: config/./map.php:598
+msgid "Social"
+msgstr "Sociaal"
+
+# @ js_composer
+#: config/./map.php:514
+msgid "Facebook like button"
+msgstr "Facebook Like knop"
+
+# @ js_composer
+#: config/./map.php:518 config/./map.php:542
+msgid "Button type"
+msgstr "Knop type"
+
+# @ js_composer
+#: config/./map.php:522 config/./map.php:570
+msgid "Standard"
+msgstr "Standaard"
+
+# @ js_composer
+#: config/./map.php:523
+msgid "Button count"
+msgstr "Knop telling"
+
+# @ js_composer
+#: config/./map.php:524
+msgid "Box count"
+msgstr "Kader telling"
+
+# @ js_composer
+#: config/./map.php:526 config/./map.php:550
+msgid "Select button type."
+msgstr "Selecteer knop type"
+
+# @ js_composer
+#: config/./map.php:534
+msgid "Tweetmeme Button"
+msgstr "Tweetmeme knop"
+
+# @ js_composer
+#: config/./map.php:538
+msgid "Share on twitter button"
+msgstr "Deel op twitter knop"
+
+# @ js_composer
+#: config/./map.php:546 config/./map.php:607 config/./map.php:922
+#: config/./map.php:1514
+msgid "Horizontal"
+msgstr "Horizontaal"
+
+# @ js_composer
+#: config/./map.php:547 config/./map.php:608 config/./map.php:923
+#: config/./map.php:1514
+msgid "Vertical"
+msgstr "Verticaal"
+
+# @ js_composer
+#: config/./map.php:548 config/./map.php:585 config/./map.php:1747
+msgid "None"
+msgstr "Geen"
+
+# @ js_composer
+#: config/./map.php:558
+msgid "Google+ Button"
+msgstr "Google+ knop"
+
+#: config/./map.php:562
+msgid "Recommend on Google"
+msgstr "Aangeraden door Google"
+
+# @ js_composer
+#: config/./map.php:566
+msgid "Button size"
+msgstr "Knop formaat"
+
+# @ js_composer
+#: config/./map.php:572
+msgid "Medium"
+msgstr "Medium"
+
+# @ js_composer
+#: config/./map.php:573
+msgid "Tall"
+msgstr "Lang"
+
+# @ js_composer
+#: config/./map.php:575
+msgid "Select button size."
+msgstr "Selecteer knop formaat"
+
+# @ js_composer
+#: config/./map.php:579
+msgid "Annotation"
+msgstr "Aantekening"
+
+# @ js_composer
+#: config/./map.php:583
+msgid "Inline"
+msgstr "Inline"
+
+# @ js_composer
+#: config/./map.php:584
+msgid "Bubble"
+msgstr "Ballon"
+
+# @ js_composer
+#: config/./map.php:587
+#, fuzzy
+msgid "Select type of annotation"
+msgstr "Selecteer aantekeningstype"
+
+# @ js_composer
+#: config/./map.php:595
+msgid "Pinterest"
+msgstr "Pinterest"
+
+# @ js_composer
+#: config/./map.php:599
+msgid "Pinterest button"
+msgstr "Pinterest knop"
+
+# @ js_composer
+#: config/./map.php:603
+msgid "Button layout"
+msgstr "Knop layout"
+
+# @ js_composer
+#: config/./map.php:609
+msgid "No count"
+msgstr "Geen telling"
+
+# @ js_composer
+#: config/./map.php:610
+msgid "Select button layout."
+msgstr "Selecteer knop layout"
+
+# @ js_composer
+#: config/./map.php:618
+msgid "FAQ"
+msgstr "FAQ"
+
+#: config/./map.php:622
+msgid "Toggle element for Q&A block"
+msgstr "Schakel element voor Q&A blok"
+
+# @ js_composer
+#: config/./map.php:628 config/./map.php:630
+msgid "Toggle title"
+msgstr "Schakel titel"
+
+# @ js_composer
+#: config/./map.php:631
+msgid "Toggle block title."
+msgstr "Schakel blok titel"
+
+# @ js_composer
+#: config/./map.php:637
+msgid "Toggle content"
+msgstr "Schakel inhoud"
+
+# @ js_composer
+#: config/./map.php:639
+msgid "<p>Toggle content goes here, click edit button to change this text.</p>"
+msgstr ""
+"<p> Toggle inhoud hoort hier, klikt u op de knop Bewerken om deze tekst te "
+"veranderen. </ p>"
+
+# @ js_composer
+#: config/./map.php:640
+msgid "Toggle block content."
+msgstr "Schakel blok inhoud"
+
+# @ js_composer
+#: config/./map.php:644
+msgid "Default state"
+msgstr "Standaard stand"
+
+# @ js_composer
+#: config/./map.php:647
+msgid "Closed"
+msgstr "Gesloten"
+
+# @ js_composer
+#: config/./map.php:648
+msgid "Open"
+msgstr "Geopend"
+
+# @ js_composer
+#: config/./map.php:650
+msgid "Select \"Open\" if you want toggle to be open by default."
+msgstr "Selecteer \"Open\" als u wilt schakelen naar standaard open zijn."
+
+# @ js_composer
+#: config/./map.php:665
+msgid "Single Image"
+msgstr "Enkele afbeelding"
+
+#: config/./map.php:669
+msgid "Simple image with CSS animation"
+msgstr "Simpele afbeelding met CSS animatie"
+
+# @ js_composer
+#: config/./map.php:673 config/./map.php:776 config/./map.php:868
+#: config/./map.php:1000 config/./map.php:1050 config/./map.php:1118
+#: config/./map.php:1185 config/./map.php:1366 config/./map.php:1460
+#: config/./map.php:1580 config/./map.php:1725 config/./map.php:2124
+#: config/./map.php:2162 config/./map.php:2261 config/./map.php:2320
+#: config/./map.php:2392 config/./map.php:2567 config/./map.php:2591
+#: config/./map.php:2615 config/./map.php:2645 config/./map.php:2669
+#: config/./map.php:2719 config/./map.php:2757 config/./map.php:2789
+#: config/./map.php:2825 config/./map.php:2922 config/./map.php:2957
+#: config/./map.php:2990
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:40
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:39
+msgid "Widget title"
+msgstr "Widget titel"
+
+# @ js_composer
+#: config/./map.php:675 config/./map.php:778 config/./map.php:870
+#: config/./map.php:1002 config/./map.php:1052 config/./map.php:1120
+#: config/./map.php:1187 config/./map.php:1368 config/./map.php:1462
+#: config/./map.php:1582 config/./map.php:1727 config/./map.php:2126
+#: config/./map.php:2164 config/./map.php:2263 config/./map.php:2322
+#: config/./map.php:2394
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:42
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:41
+#, fuzzy
+msgid ""
+"Enter text which will be used as widget title. Leave blank if no title is "
+"needed."
+msgstr ""
+"Welke tekst er gebruikt moet worden als widget titel, laat leeg indien er "
+"geen titel gebruikt hoeft te worden"
+
+# @ js_composer
+#: config/./map.php:679 include/./params/sorted_list/sorted_list.php:58
+msgid "Image"
+msgstr "Afbeelding"
+
+# @ js_composer
+#: config/./map.php:682
+msgid "Select image from media library."
+msgstr "Selecteer afbeelding van media bibliotheek"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 # @ js_composer
 #: include/./classes/settings/class-vc-settings.php:239
@@ -9237,7 +9805,13 @@ msgid "Display item author if available?"
 msgstr "Toon artikel auteur indien beschikbaar?"
 
 # @ js_composer
+<<<<<<< HEAD
 #: JS_Composer/js_composer/config/map.php:2442
 msgid "Display item date?"
 msgstr "Toon artikel datum?"
 >>>>>>> master
+=======
+#, fuzzy
+#~ msgid "You Have No Content Yet! Add Some..."
+#~ msgstr "Er is nog geen inhoud! Start met het plaatsen hiervan.. "
+>>>>>>> 3444288e90b247662206560f83abce370fc36145

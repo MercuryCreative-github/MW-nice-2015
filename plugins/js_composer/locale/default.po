@@ -3,12 +3,17 @@ msgstr ""
 "Project-Id-Version: Visual Composer\n"
 "Report-Msgid-Bugs-To: \n"
 <<<<<<< HEAD
+<<<<<<< HEAD
 "POT-Creation-Date: 2014-08-14 14:43+0200\n"
 "PO-Revision-Date: 2014-08-14 14:43+0200\n"
 =======
 "POT-Creation-Date: 2014-03-06 21:50+0200\n"
 "PO-Revision-Date: 2014-03-06 21:51+0200\n"
 >>>>>>> master
+=======
+"POT-Creation-Date: 2014-08-14 14:43+0200\n"
+"PO-Revision-Date: 2014-08-14 14:43+0200\n"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "Last-Translator: Michael M <hello@wpbakery.com>\n"
 "Language-Team: WPBakery\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +22,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_attr__\n"
 "X-Poedit-Basepath: ../\n"
 "X-Generator: Poedit 1.5.4\n"
+<<<<<<< HEAD
 <<<<<<< HEAD
 "X-Poedit-SearchPath-0: ./config/.\n"
 "X-Poedit-SearchPath-1: ./include/.\n"
@@ -3436,6 +3442,10 @@ msgstr ""
 #, php-format
 msgid "View all posts filed under %s"
 msgstr ""
+=======
+"X-Poedit-SearchPath-0: ./config/.\n"
+"X-Poedit-SearchPath-1: ./include/.\n"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #: include/./classes/shortcodes/vc-teaser-grid.php:31
 #, php-format
@@ -7492,6 +7502,7 @@ msgstr ""
 msgid "Append previosly saved template to the current layout"
 msgstr ""
 
+<<<<<<< HEAD
 #: inline/templates/editor.tpl.php:388
 msgid "Welcome to Blank Page"
 msgstr ""
@@ -7503,4 +7514,8 @@ msgstr ""
 #: inline/templates/editor.tpl.php:393
 msgid "Add text block"
 >>>>>>> master
+=======
+#: include/./templates/shortcodes/vc_twitter.php:20
+msgid "Follow us on twitter"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgstr ""

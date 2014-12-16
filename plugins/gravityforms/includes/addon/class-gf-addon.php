@@ -1650,6 +1650,9 @@ abstract class GFAddOn {
         if( is_array( $form["fields"] ) ) {
             foreach( $form["fields"] as $field ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 				if( is_array( rgar( $field, "inputs") ) ) {
 
 					//If this is an address field, add full name to the list
@@ -1680,6 +1683,7 @@ abstract class GFAddOn {
 					$fields[] =  array( 'value' => $field["id"], 'label' => GFCommon::get_label($field));
 				}
 			}
+<<<<<<< HEAD
 =======
                 if( is_array( rgar( $field, "inputs") ) ) {
 
@@ -1703,6 +1707,8 @@ abstract class GFAddOn {
                 }
             }
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         }
 
         return $fields;
@@ -2853,10 +2859,14 @@ abstract class GFAddOn {
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         array_unshift($links, '<a href="' . admin_url("admin.php") . '?page=gf_settings&subview=' . $this->_slug . '">' . __( 'Settings', 'gravityforms' ) . '</a>');
 =======
         array_unshift($links, '<a href="' . admin_url("admin.php") . '?page=gf_settings&subview=' . $this->get_short_title() . '">' . __( 'Settings', 'gravityforms' ) . '</a>');
 >>>>>>> master
+=======
+        array_unshift($links, '<a href="' . admin_url("admin.php") . '?page=gf_settings&subview=' . $this->_slug . '">' . __( 'Settings', 'gravityforms' ) . '</a>');
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
         return $links;
     }
@@ -2911,10 +2921,14 @@ abstract class GFAddOn {
 
     public function plugin_settings_title(){
 <<<<<<< HEAD
+<<<<<<< HEAD
         return sprintf( __( "%s Settings", "gravityforms" ), $this->get_short_title() );
 =======
         return $this->get_short_title() . ' ' . __( "Settings", "gravityforms" );
 >>>>>>> master
+=======
+        return sprintf( __( "%s Settings", "gravityforms" ), $this->get_short_title() );
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     }
 
     protected function plugin_settings_icon(){
@@ -3704,10 +3718,14 @@ abstract class GFAddOn {
     */
     protected function get_plugin_settings_url() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         return add_query_arg( array( 'page' => 'gf_settings', 'subview' => $this->_slug ), admin_url('admin.php') );
 =======
         return add_query_arg( array( 'page' => 'gf_settings', 'subview' => $this->get_short_title() ), admin_url('admin.php') );
 >>>>>>> master
+=======
+        return add_query_arg( array( 'page' => 'gf_settings', 'subview' => $this->_slug ), admin_url('admin.php') );
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     }
 
     /**

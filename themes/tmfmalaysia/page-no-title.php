@@ -16,10 +16,14 @@
 	<!--section class="row">
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<?php the_title('<h3 class="blacktext midbottommargin center uppercase">', '</h3>'); ?>
 =======
 		<?php the_title('<h3 class="blacktext bold midbottommargin center uppercase">', '</h3>'); ?>
 >>>>>>> master
+=======
+		<?php the_title('<h3 class="blacktext midbottommargin center uppercase">', '</h3>'); ?>
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 		
 		<div class="five columns alpha centered blackhorizontal"></div>
 		

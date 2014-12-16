@@ -8,11 +8,15 @@ msgstr ""
 "Project-Id-Version: Gravity Forms\n"
 "Report-Msgid-Bugs-To: \n"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "POT-Creation-Date: 2014-10-24 16:42-0500\n"
 "PO-Revision-Date: 2014-10-24 16:42-0500\n"
 "Last-Translator: Dana Cobb <dana@rocketgenius.com>\n"
 "Language-Team: Rocketgenius <customerservice@rocketgenius.com>\n"
 "Language: en_EN\n"
+<<<<<<< HEAD
 =======
 "POT-Creation-Date: 2014-09-15 15:22+0100\n"
 "PO-Revision-Date: 2014-09-15 15:23+0100\n"
@@ -20,17 +24,24 @@ msgstr ""
 "Language-Team: Rocketgenius <customerservice@rocketgenius.com>\n"
 "Language: en_US\n"
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__;_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 <<<<<<< HEAD
+<<<<<<< HEAD
 "X-Generator: Poedit 1.6.10\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 =======
 "X-Generator: Poedit 1.5.7\n"
 >>>>>>> master
+=======
+"X-Generator: Poedit 1.6.10\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../common.php:274 ../common.php:550 ../form_detail.php:2222
@@ -51,15 +62,21 @@ msgstr ""
 
 #: ../common.php:406 ../common.php:407 ../common.php:2306
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../entry_detail.php:985 ../form_detail.php:701 ../form_detail.php:1580
 #: ../form_detail.php:2225 ../form_detail.php:2226
 #: ../includes/addon/class-gf-payment-addon.php:1686 ../js.php:510
 #: ../js.php:900
+<<<<<<< HEAD
 =======
 #: ../entry_detail.php:981 ../form_detail.php:701 ../form_detail.php:1580
 #: ../form_detail.php:2225 ../form_detail.php:2226 ../js.php:510 ../js.php:900
 #: ../includes/addon/class-gf-payment-addon.php:1686
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Date"
 msgstr ""
 
@@ -89,12 +106,17 @@ msgid "Form Id"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:414 ../form_list.php:241
 #: ../includes/addon/class-gf-addon.php:1641 ../js.php:900 ../tooltips.php:33
 =======
 #: ../common.php:414 ../form_list.php:241 ../js.php:900 ../tooltips.php:33
 #: ../includes/addon/class-gf-addon.php:1641
 >>>>>>> master
+=======
+#: ../common.php:414 ../form_list.php:241
+#: ../includes/addon/class-gf-addon.php:1641 ../js.php:900 ../tooltips.php:33
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Form Title"
 msgstr ""
 
@@ -139,10 +161,14 @@ msgid "Pricing form fields"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:447 ../common.php:5026 ../form_detail.php:1346
 =======
 #: ../common.php:447 ../common.php:5016 ../form_detail.php:1346
 >>>>>>> master
+=======
+#: ../common.php:447 ../common.php:5026 ../form_detail.php:1346
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../form_detail.php:1348
 msgid "Other"
 msgstr ""
@@ -227,6 +253,7 @@ msgid "Allowable form fields"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:1167 ../entry_detail.php:851
 msgid "Order"
 msgstr ""
@@ -252,6 +279,9 @@ msgstr ""
 #: ../common.php:1218 ../common.php:3014 ../entry_detail.php:866
 =======
 #: ../common.php:1167 ../entry_detail.php:848
+=======
+#: ../common.php:1167 ../entry_detail.php:851
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Order"
 msgstr ""
 
@@ -273,8 +303,12 @@ msgstr ""
 msgid "Unit Price"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../common.php:1218 ../common.php:3014 ../entry_detail.php:863
 >>>>>>> master
+=======
+#: ../common.php:1218 ../common.php:3014 ../entry_detail.php:866
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../form_detail.php:527 ../form_detail.php:1325 ../js.php:589 ../js.php:648
 msgid "Price"
 msgstr ""
@@ -354,6 +388,7 @@ msgid "Section Break"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:2302 ../form_display.php:2567
 msgid "Page Break"
 msgstr ""
@@ -365,6 +400,9 @@ msgstr ""
 #: ../js.php:589 ../notification.php:509 ../notification.php:1033
 =======
 #: ../common.php:2302 ../form_display.php:2552
+=======
+#: ../common.php:2302 ../form_display.php:2567
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Page Break"
 msgstr ""
 
@@ -372,8 +410,13 @@ msgstr ""
 #: ../notification.php:509 ../notification.php:1033
 #: ../includes/addon/class-gf-payment-addon.php:1076
 #: ../includes/addon/class-gf-payment-addon.php:1137
+<<<<<<< HEAD
 #: ../includes/addon/class-gf-payment-addon.php:1141
 >>>>>>> master
+=======
+#: ../includes/addon/class-gf-payment-addon.php:1141 ../js.php:414
+#: ../js.php:589 ../notification.php:509 ../notification.php:1033
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Name"
 msgstr ""
 
@@ -386,12 +429,17 @@ msgid "Phone"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:2312 ../includes/addon/class-gf-payment-addon.php:1419
 #: ../js.php:469
 =======
 #: ../common.php:2312 ../js.php:469
 #: ../includes/addon/class-gf-payment-addon.php:1419
 >>>>>>> master
+=======
+#: ../common.php:2312 ../includes/addon/class-gf-payment-addon.php:1419
+#: ../js.php:469
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Address"
 msgstr ""
 
@@ -400,12 +448,17 @@ msgid "Website"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:2316 ../form_detail.php:705
 #: ../includes/addon/class-gf-payment-addon.php:1418 ../js.php:488
 =======
 #: ../common.php:2316 ../form_detail.php:705 ../js.php:488
 #: ../includes/addon/class-gf-payment-addon.php:1418
 >>>>>>> master
+=======
+#: ../common.php:2316 ../form_detail.php:705
+#: ../includes/addon/class-gf-payment-addon.php:1418 ../js.php:488
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Email"
 msgstr ""
 
@@ -430,10 +483,14 @@ msgid "Credit Card"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:2328 ../common.php:3289 ../common.php:4545
 =======
 #: ../common.php:2328 ../common.php:3289 ../common.php:4541
 >>>>>>> master
+=======
+#: ../common.php:2328 ../common.php:3289 ../common.php:4545
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../form_detail.php:1026 ../form_list.php:409 ../form_list.php:427
 #: ../gravityforms.php:1316 ../widget.php:75
 msgid "Title"
@@ -1262,10 +1319,14 @@ msgid "United Kingdom"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:2465 ../common.php:4343
 =======
 #: ../common.php:2465 ../common.php:4339
 >>>>>>> master
+=======
+#: ../common.php:2465 ../common.php:4343
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "United States"
 msgstr ""
 
@@ -2431,10 +2492,14 @@ msgid "Please enter a valid number"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:2872 ../common.php:4070
 =======
 #: ../common.php:2872 ../common.php:4066
 >>>>>>> master
+=======
+#: ../common.php:2872 ../common.php:4070
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../includes/addon/class-gf-payment-addon.php:1672
 #: ../includes/addon/class-gf-payment-addon.php:1673
 msgid "Month"
@@ -2446,10 +2511,14 @@ msgid "Day"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:2882 ../common.php:4080
 =======
 #: ../common.php:2882 ../common.php:4076
 >>>>>>> master
+=======
+#: ../common.php:2882 ../common.php:4080
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Year"
 msgstr ""
 
@@ -2496,6 +2565,7 @@ msgid "File"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:3292 ../common.php:4546 ../form_detail.php:1031
 msgid "Caption"
 msgstr ""
@@ -2508,6 +2578,13 @@ msgstr ""
 
 #: ../common.php:3295 ../common.php:4543 ../form_detail.php:1036
 >>>>>>> master
+=======
+#: ../common.php:3292 ../common.php:4546 ../form_detail.php:1031
+msgid "Caption"
+msgstr ""
+
+#: ../common.php:3295 ../common.php:4547 ../form_detail.php:1036
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../form_detail.php:1493
 msgid "Description"
 msgstr ""
@@ -2517,10 +2594,14 @@ msgid "Click to select..."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:3344 ../form_display.php:2194
 =======
 #: ../common.php:3344 ../form_display.php:2179
 >>>>>>> master
+=======
+#: ../common.php:3344 ../form_display.php:2194
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Strength indicator"
 msgstr ""
 
@@ -2549,10 +2630,14 @@ msgid "Suffix"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:3404 ../common.php:4343 ../form_detail.php:1073
 =======
 #: ../common.php:3404 ../common.php:4339 ../form_detail.php:1073
 >>>>>>> master
+=======
+#: ../common.php:3404 ../common.php:4343 ../form_detail.php:1073
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../includes/addon/class-gf-payment-addon.php:1422
 msgid "State"
 msgstr ""
@@ -2570,6 +2655,9 @@ msgid "Address Line 2"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../common.php:3442 ../common.php:3458
 #: ../includes/addon/class-gf-payment-addon.php:1421 ../js.php:470
 msgid "City"
@@ -2577,6 +2665,7 @@ msgstr ""
 
 #: ../common.php:3479 ../includes/addon/class-gf-payment-addon.php:1424
 #: ../js.php:471
+<<<<<<< HEAD
 =======
 #: ../common.php:3442 ../common.php:3458 ../js.php:470
 #: ../includes/addon/class-gf-payment-addon.php:1421
@@ -2586,6 +2675,8 @@ msgstr ""
 #: ../common.php:3479 ../js.php:471
 #: ../includes/addon/class-gf-payment-addon.php:1424
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Country"
 msgstr ""
 
@@ -2627,6 +2718,7 @@ msgid "Select files"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:3723
 msgid "Download file"
 msgstr ""
@@ -2642,6 +2734,9 @@ msgstr ""
 #: ../common.php:3789
 =======
 #: ../common.php:3719
+=======
+#: ../common.php:3723
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Download file"
 msgstr ""
 
@@ -2653,21 +2748,30 @@ msgstr ""
 msgid "To use the reCaptcha field you must first do the following:"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../common.php:3785
 >>>>>>> master
+=======
+#: ../common.php:3789
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "Sign up%s for a free reCAPTCHA account"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:3789
 =======
 #: ../common.php:3785
 >>>>>>> master
+=======
+#: ../common.php:3789
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "Enter your reCAPTCHA keys in the %ssettings page%s"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../common.php:3879 ../common.php:3903
 msgid "Only digits are allowed"
@@ -2759,6 +2863,9 @@ msgstr ""
 #: ../common.php:5469 ../common.php:5498 ../form_detail.php:1393
 =======
 #: ../common.php:3875 ../common.php:3899
+=======
+#: ../common.php:3879 ../common.php:3903
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Only digits are allowed"
 msgstr ""
 
@@ -2845,12 +2952,17 @@ msgstr ""
 msgid "Inactive"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../common.php:5459 ../common.php:5488 ../form_detail.php:1393
 >>>>>>> master
+=======
+#: ../common.php:5469 ../common.php:5498 ../form_detail.php:1393
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../select_columns.php:153
 msgid "Save"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../common.php:5470 ../entry_detail.php:451
 msgid "Update"
@@ -2864,10 +2976,18 @@ msgstr ""
 
 #: ../common.php:5461 ../form_display.php:598 ../form_display.php:2420
 >>>>>>> master
+=======
+#: ../common.php:5470 ../entry_detail.php:451
+msgid "Update"
+msgstr ""
+
+#: ../common.php:5471 ../form_display.php:609 ../form_display.php:2435
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../js.php:395
 msgid "Previous"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../common.php:5472
 msgid "Select a format"
@@ -2881,10 +3001,18 @@ msgstr ""
 
 #: ../common.php:5463
 >>>>>>> master
+=======
+#: ../common.php:5472
+msgid "Select a format"
+msgstr ""
+
+#: ../common.php:5473
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "5 of %d items shown. Edit field to view all"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../common.php:5474
 msgid "Enter a value"
@@ -2897,6 +3025,9 @@ msgstr ""
 #: ../common.php:5476
 =======
 #: ../common.php:5464
+=======
+#: ../common.php:5474
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Enter a value"
 msgstr ""
 
@@ -2904,13 +3035,18 @@ msgstr ""
 msgid "Untitled Form"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../common.php:5466
 >>>>>>> master
+=======
+#: ../common.php:5476
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "We would love to hear from you! Please fill out this form and we will get in "
 "touch with you shortly."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../common.php:5477 ../common.php:5506 ../form_detail.php:2375
 msgid "Thanks for contacting us! We will get in touch with you shortly."
@@ -3022,6 +3158,9 @@ msgstr ""
 #: ../common.php:5504
 =======
 #: ../common.php:5467 ../common.php:5496 ../form_detail.php:2375
+=======
+#: ../common.php:5477 ../common.php:5506 ../form_detail.php:2375
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Thanks for contacting us! We will get in touch with you shortly."
 msgstr ""
 
@@ -3128,13 +3267,18 @@ msgstr ""
 msgid "There was an issue deleting this confirmation."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../common.php:5494
 >>>>>>> master
+=======
+#: ../common.php:5504
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "There are unsaved changes to the current confirmation. Would you like to "
 "discard these changes?"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../common.php:5505
 msgid "Untitled Confirmation"
@@ -3155,6 +3299,9 @@ msgstr ""
 #: ../common.php:5511
 =======
 #: ../common.php:5495
+=======
+#: ../common.php:5505
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Untitled Confirmation"
 msgstr ""
 
@@ -3170,43 +3317,60 @@ msgstr ""
 msgid "Please enter a confirmation name."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../common.php:5501
 >>>>>>> master
+=======
+#: ../common.php:5511
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "This form contains conditional logic dependent upon this field. Are you sure "
 "you want to delete this field? 'OK' to delete, 'Cancel' to abort."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:5512
 =======
 #: ../common.php:5502
 >>>>>>> master
+=======
+#: ../common.php:5512
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "This form contains conditional logic dependent upon this choice. Are you "
 "sure you want to delete this choice? 'OK' to delete, 'Cancel' to abort."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:5513
 =======
 #: ../common.php:5503
 >>>>>>> master
+=======
+#: ../common.php:5513
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "This form contains conditional logic dependent upon this choice. Are you "
 "sure you want to modify this choice? 'OK' to delete, 'Cancel' to abort."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:5515
 =======
 #: ../common.php:5505
 >>>>>>> master
+=======
+#: ../common.php:5515
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "<h6>Merge Tags</h6>Merge tags allow you to dynamically populate submitted "
 "field values in your form content wherever this merge tag icon is present."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../common.php:5523
 msgid "Add a condition"
@@ -3252,6 +3416,9 @@ msgstr ""
 #: ../common.php:5779 ../entry_detail.php:373 ../export.php:767
 =======
 #: ../common.php:5513
+=======
+#: ../common.php:5523
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Add a condition"
 msgstr ""
 
@@ -3292,22 +3459,33 @@ msgstr ""
 msgid "Source URL"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../common.php:5763 ../entry_detail.php:373 ../export.php:767
 >>>>>>> master
+=======
+#: ../common.php:5779 ../entry_detail.php:373 ../export.php:767
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../select_columns.php:96
 msgid "Payment Status"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../common.php:5801 ../entry_detail.php:377 ../export.php:766
 =======
 #: ../common.php:5785 ../entry_detail.php:377 ../export.php:766
 >>>>>>> master
+=======
+#: ../common.php:5801 ../entry_detail.php:377 ../export.php:766
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../select_columns.php:99
 msgid "Payment Date"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../common.php:5805 ../entry_detail.php:389 ../export.php:765
 #: ../includes/addon/class-gf-payment-addon.php:1210
 #: ../includes/addon/class-gf-payment-addon.php:1215 ../select_columns.php:98
@@ -3351,6 +3529,7 @@ msgid "There was a problem while saving the file on the server"
 msgstr ""
 
 #: ../common.php:5904
+<<<<<<< HEAD
 msgid "Please wait for the uploading to complete"
 msgstr ""
 
@@ -3410,6 +3589,8 @@ msgid "There was a problem while saving the file on the server"
 msgstr ""
 
 #: ../common.php:5879
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Please wait for the uploading to complete"
 msgstr ""
 
@@ -3423,8 +3604,12 @@ msgstr ""
 msgid "Cancel this upload"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../common.php:5882
 >>>>>>> master
+=======
+#: ../common.php:5907
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Cancelled"
 msgstr ""
 
@@ -3525,10 +3710,14 @@ msgid "Oops! We couldn't find your entry. Please try again"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_detail.php:172 ../entry_list.php:98 ../entry_list.php:118
 =======
 #: ../entry_detail.php:172 ../entry_list.php:86 ../entry_list.php:106
 >>>>>>> master
+=======
+#: ../entry_detail.php:172 ../entry_list.php:98 ../entry_list.php:118
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../form_list.php:89
 msgid "You don't have adequate permissions to delete entries."
 msgstr ""
@@ -3544,10 +3733,14 @@ msgid "Ajax error while deleting field."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_detail.php:258 ../entry_list.php:425
 =======
 #: ../entry_detail.php:258 ../entry_list.php:413
 >>>>>>> master
+=======
+#: ../entry_detail.php:258 ../entry_list.php:425
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "You must select at least one type of notification to resend."
 msgstr ""
 
@@ -3568,12 +3761,17 @@ msgid "Submitted on"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_detail.php:348 ../export.php:771
 #: ../includes/addon/class-gf-addon.php:1639 ../select_columns.php:94
 =======
 #: ../entry_detail.php:348 ../export.php:771 ../select_columns.php:94
 #: ../includes/addon/class-gf-addon.php:1639
 >>>>>>> master
+=======
+#: ../entry_detail.php:348 ../export.php:771
+#: ../includes/addon/class-gf-addon.php:1639 ../select_columns.php:94
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "User IP"
 msgstr ""
 
@@ -3598,10 +3796,14 @@ msgid "Subscription Status"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_detail.php:377 ../entry_detail.php:985
 =======
 #: ../entry_detail.php:377 ../entry_detail.php:981
 >>>>>>> master
+=======
+#: ../entry_detail.php:377 ../entry_detail.php:985
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Start Date"
 msgstr ""
 
@@ -3610,10 +3812,14 @@ msgid "Subscriber Id"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_detail.php:383 ../entry_detail.php:995 ../export.php:764
 =======
 #: ../entry_detail.php:383 ../entry_detail.php:991 ../export.php:764
 >>>>>>> master
+=======
+#: ../entry_detail.php:383 ../entry_detail.php:995 ../export.php:764
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../select_columns.php:97
 msgid "Transaction Id"
 msgstr ""
@@ -3623,12 +3829,17 @@ msgid "Subscription Amount"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_detail.php:406 ../entry_list.php:783 ../entry_list.php:1171
 #: ../entry_list.php:1307
 =======
 #: ../entry_detail.php:406 ../entry_list.php:771 ../entry_list.php:1159
 #: ../entry_list.php:1295
 >>>>>>> master
+=======
+#: ../entry_detail.php:406 ../entry_list.php:783 ../entry_list.php:1171
+#: ../entry_list.php:1307
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Not Spam"
 msgstr ""
 
@@ -3638,6 +3849,9 @@ msgid ""
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../entry_detail.php:412 ../entry_detail.php:425 ../entry_list.php:777
 #: ../entry_list.php:787 ../entry_list.php:1155 ../entry_list.php:1181
 #: ../entry_list.php:1301 ../entry_list.php:1311
@@ -3646,6 +3860,7 @@ msgstr ""
 
 #: ../entry_detail.php:420 ../entry_list.php:773 ../entry_list.php:1145
 #: ../entry_list.php:1297 ../form_list.php:364 ../form_list.php:478
+<<<<<<< HEAD
 =======
 #: ../entry_detail.php:412 ../entry_detail.php:425 ../entry_list.php:765
 #: ../entry_list.php:775 ../entry_list.php:1143 ../entry_list.php:1169
@@ -3656,15 +3871,21 @@ msgstr ""
 #: ../entry_detail.php:420 ../entry_list.php:761 ../entry_list.php:1133
 #: ../entry_list.php:1285 ../form_list.php:364 ../form_list.php:478
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../form_list.php:479 ../form_list.php:567
 msgid "Restore"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_detail.php:434 ../entry_list.php:1333 ../form_detail.php:2039
 =======
 #: ../entry_detail.php:434 ../entry_list.php:1321 ../form_detail.php:2039
 >>>>>>> master
+=======
+#: ../entry_detail.php:434 ../entry_list.php:1333 ../form_detail.php:2039
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Move to Trash"
 msgstr ""
 
@@ -3674,12 +3895,17 @@ msgstr ""
 
 #: ../entry_detail.php:451 ../form_list.php:468 ../form_settings.php:1497
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../gravityforms.php:2293 ../includes/addon/class-gf-feed-addon.php:621
 #: ../notification.php:1102
 =======
 #: ../gravityforms.php:2291 ../notification.php:1102
 #: ../includes/addon/class-gf-feed-addon.php:564
 >>>>>>> master
+=======
+#: ../gravityforms.php:2293 ../includes/addon/class-gf-feed-addon.php:621
+#: ../notification.php:1102
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Edit"
 msgstr ""
 
@@ -3694,6 +3920,7 @@ msgid ""
 "currently have any notifications configured."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_detail.php:487 ../entry_list.php:839
 msgid "Configure Notifications"
@@ -3715,6 +3942,9 @@ msgstr ""
 #: ../entry_detail.php:525 ../entry_list.php:799 ../entry_list.php:900
 =======
 #: ../entry_detail.php:487 ../entry_list.php:827
+=======
+#: ../entry_detail.php:487 ../entry_list.php:839
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Configure Notifications"
 msgstr ""
 
@@ -3731,8 +3961,12 @@ msgstr ""
 msgid "Resending..."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_detail.php:525 ../entry_list.php:787 ../entry_list.php:888
 >>>>>>> master
+=======
+#: ../entry_detail.php:525 ../entry_list.php:799 ../entry_list.php:900
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Print"
 msgstr ""
 
@@ -3757,14 +3991,19 @@ msgid " Bulk action"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_detail.php:658 ../entry_list.php:768 ../entry_list.php:1292
 =======
 #: ../entry_detail.php:658 ../entry_list.php:756 ../entry_list.php:1280
 >>>>>>> master
+=======
+#: ../entry_detail.php:658 ../entry_list.php:768 ../entry_list.php:1292
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid " Bulk action "
 msgstr ""
 
 #: ../entry_detail.php:659 ../form_detail.php:1395 ../form_settings.php:1499
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../includes/addon/class-gf-feed-addon.php:590
 #: ../includes/addon/class-gf-feed-addon.php:622 ../notification.php:1104
@@ -3780,6 +4019,14 @@ msgstr ""
 
 #: ../entry_detail.php:662 ../entry_list.php:804 ../entry_list.php:1327
 >>>>>>> master
+=======
+#: ../includes/addon/class-gf-feed-addon.php:590
+#: ../includes/addon/class-gf-feed-addon.php:622 ../notification.php:1104
+msgid "Delete"
+msgstr ""
+
+#: ../entry_detail.php:662 ../entry_list.php:816 ../entry_list.php:1339
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../form_list.php:375 ../form_list.php:578
 msgid "Apply"
 msgstr ""
@@ -3800,6 +4047,7 @@ msgstr ""
 msgid "Subject:"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_detail.php:769 ../print-entry.php:87
 msgid "Entry # "
@@ -3828,6 +4076,9 @@ msgstr ""
 #: ../entry_detail.php:1005 ../includes/addon/class-gf-payment-addon.php:1167
 =======
 #: ../entry_detail.php:766 ../print-entry.php:87
+=======
+#: ../entry_detail.php:769 ../print-entry.php:87
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Entry # "
 msgstr ""
 
@@ -3851,17 +4102,25 @@ msgstr ""
 msgid "Subscription Id"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_detail.php:1000 ../includes/addon/class-gf-payment-addon.php:1167
 >>>>>>> master
+=======
+#: ../entry_detail.php:1005 ../includes/addon/class-gf-payment-addon.php:1167
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../includes/addon/class-gf-payment-addon.php:1171
 msgid "Recurring Amount"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_detail.php:1005 ../includes/addon/class-gf-payment-addon.php:1078
 =======
 #: ../entry_detail.php:1000 ../includes/addon/class-gf-payment-addon.php:1078
 >>>>>>> master
+=======
+#: ../entry_detail.php:1005 ../includes/addon/class-gf-payment-addon.php:1078
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Amount"
 msgstr ""
 
@@ -3870,6 +4129,7 @@ msgstr ""
 msgid "You don't have any active forms. Let's go %screate one%s"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:96
 msgid "Entry deleted."
@@ -3883,10 +4143,18 @@ msgstr ""
 
 #: ../entry_list.php:98
 >>>>>>> master
+=======
+#: ../entry_list.php:96
+msgid "Entry deleted."
+msgstr ""
+
+#: ../entry_list.php:110
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%d entries"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:110
 msgid "1 entry"
@@ -3900,82 +4168,122 @@ msgstr ""
 
 #: ../entry_list.php:104
 >>>>>>> master
+=======
+#: ../entry_list.php:110
+msgid "1 entry"
+msgstr ""
+
+#: ../entry_list.php:116
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%s deleted."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:124
 =======
 #: ../entry_list.php:112
 >>>>>>> master
+=======
+#: ../entry_list.php:124
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%s moved to Trash."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:129
 =======
 #: ../entry_list.php:117
 >>>>>>> master
+=======
+#: ../entry_list.php:129
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%s restored from the Trash."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:134
 =======
 #: ../entry_list.php:122
 >>>>>>> master
+=======
+#: ../entry_list.php:134
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%s restored from the spam."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:139
 =======
 #: ../entry_list.php:127
 >>>>>>> master
+=======
+#: ../entry_list.php:139
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%s marked as spam."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:144
 =======
 #: ../entry_list.php:132
 >>>>>>> master
+=======
+#: ../entry_list.php:144
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%s marked as read."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:149
 =======
 #: ../entry_list.php:137
 >>>>>>> master
+=======
+#: ../entry_list.php:149
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%s marked as unread."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:154
 =======
 #: ../entry_list.php:142
 >>>>>>> master
+=======
+#: ../entry_list.php:154
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%s starred."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:159
 =======
 #: ../entry_list.php:147
 >>>>>>> master
+=======
+#: ../entry_list.php:159
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%s unstarred."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:219
 msgid "&laquo;"
@@ -4000,6 +4308,9 @@ msgstr ""
 #: ../entry_list.php:450
 =======
 #: ../entry_list.php:207
+=======
+#: ../entry_list.php:219
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "&laquo;"
 msgstr ""
 
@@ -4019,12 +4330,17 @@ msgstr ""
 msgid "Print Entries"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_list.php:438
 >>>>>>> master
+=======
+#: ../entry_list.php:450
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "Notifications for %s were resent successfully."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:452
 msgid "entry"
@@ -4037,6 +4353,9 @@ msgstr ""
 #: ../entry_list.php:551
 =======
 #: ../entry_list.php:440
+=======
+#: ../entry_list.php:452
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "entry"
 msgstr ""
 
@@ -4044,30 +4363,43 @@ msgstr ""
 msgid "entries"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_list.php:539
 >>>>>>> master
+=======
+#: ../entry_list.php:551
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "All %s{0}%s entries on this page are selected."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:552
 =======
 #: ../entry_list.php:540
 >>>>>>> master
+=======
+#: ../entry_list.php:552
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "Select all %s{0}%s entries."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:553
 =======
 #: ../entry_list.php:541
 >>>>>>> master
+=======
+#: ../entry_list.php:553
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "All %s{0}%s entries have been selected."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:554
 msgid "Clear selection"
@@ -4098,6 +4430,9 @@ msgstr ""
 #: ../entry_list.php:757 ../entry_list.php:810 ../entry_list.php:1214
 =======
 #: ../entry_list.php:542
+=======
+#: ../entry_list.php:554
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Clear selection"
 msgstr ""
 
@@ -4123,12 +4458,17 @@ msgstr ""
 msgid "Spam"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_list.php:745 ../entry_list.php:798 ../entry_list.php:1202
 >>>>>>> master
+=======
+#: ../entry_list.php:757 ../entry_list.php:810 ../entry_list.php:1214
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../form_list.php:351 ../form_list.php:507
 msgid "Trash"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:760
 msgid "Search"
@@ -4142,10 +4482,18 @@ msgstr ""
 
 #: ../entry_list.php:754 ../entry_list.php:1278 ../form_list.php:360
 >>>>>>> master
+=======
+#: ../entry_list.php:760
+msgid "Search"
+msgstr ""
+
+#: ../entry_list.php:766 ../entry_list.php:1290 ../form_list.php:360
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../form_list.php:362 ../form_list.php:563 ../form_list.php:565
 msgid "Bulk action"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:794 ../entry_list.php:1318
 msgid "Mark as Read"
@@ -4166,6 +4514,9 @@ msgstr ""
 #: ../entry_list.php:820
 =======
 #: ../entry_list.php:782 ../entry_list.php:1306
+=======
+#: ../entry_list.php:794 ../entry_list.php:1318
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Mark as Read"
 msgstr ""
 
@@ -4181,23 +4532,32 @@ msgstr ""
 msgid "Remove Star"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_list.php:808
 >>>>>>> master
+=======
+#: ../entry_list.php:820
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "WARNING! This operation cannot be undone. Empty trash? \\'Ok\\' to empty "
 "trash. \\'Cancel\\' to abort."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:820
 =======
 #: ../entry_list.php:808
 >>>>>>> master
+=======
+#: ../entry_list.php:820
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "WARNING! This operation cannot be undone. Permanently delete all spam? \\'Ok"
 "\\' to delete. \\'Cancel\\' to abort."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:821
 msgid "Empty Trash"
@@ -4210,6 +4570,9 @@ msgstr ""
 #: ../entry_list.php:837
 =======
 #: ../entry_list.php:809
+=======
+#: ../entry_list.php:821
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Empty Trash"
 msgstr ""
 
@@ -4217,23 +4580,32 @@ msgstr ""
 msgid "Delete All Spam"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_list.php:825
 >>>>>>> master
+=======
+#: ../entry_list.php:837
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "You cannot resend notifications for these entries because this form does not "
 "currently have any notifications configured."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:844
 =======
 #: ../entry_list.php:832
 >>>>>>> master
+=======
+#: ../entry_list.php:844
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "Specify which notifications you would like to resend for the selected "
 "entries."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:874
 msgid "Close Window"
@@ -4258,6 +4630,9 @@ msgstr ""
 #: ../entry_list.php:1050
 =======
 #: ../entry_list.php:862
+=======
+#: ../entry_list.php:874
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Close Window"
 msgstr ""
 
@@ -4277,29 +4652,41 @@ msgstr ""
 msgid "click to select columns to display"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_list.php:1038
 >>>>>>> master
+=======
+#: ../entry_list.php:1050
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "%d files"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../entry_list.php:1140 ../entry_list.php:1166 ../entry_list.php:1193
 msgid "View this entry"
 msgstr ""
 
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../entry_list.php:1140 ../entry_list.php:1166 ../entry_list.php:1193
 =======
 #: ../entry_list.php:1128 ../entry_list.php:1154 ../entry_list.php:1181
 msgid "View this entry"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_list.php:1128 ../entry_list.php:1154 ../entry_list.php:1181
 >>>>>>> master
+=======
+#: ../entry_list.php:1140 ../entry_list.php:1166 ../entry_list.php:1193
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../includes/addon/class-gf-payment-addon.php:1863
 msgid "View"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:1145
 msgid "Restore this entry"
@@ -4336,6 +4723,9 @@ msgstr ""
 #: ../entry_list.php:1254
 =======
 #: ../entry_list.php:1133
+=======
+#: ../entry_list.php:1145
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Restore this entry"
 msgstr ""
 
@@ -4367,12 +4757,17 @@ msgstr ""
 msgid "Move this entry to the trash"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_list.php:1242
 >>>>>>> master
+=======
+#: ../entry_list.php:1254
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "This form does not have any unread entries matching the search criteria."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:1254
 msgid "This form does not have any unread entries."
@@ -4386,10 +4781,18 @@ msgstr ""
 
 #: ../entry_list.php:1246
 >>>>>>> master
+=======
+#: ../entry_list.php:1254
+msgid "This form does not have any unread entries."
+msgstr ""
+
+#: ../entry_list.php:1258
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "This form does not have any starred entries matching the search criteria."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:1258
 msgid "This form does not have any starred entries."
@@ -4402,6 +4805,9 @@ msgstr ""
 #: ../entry_list.php:1267
 =======
 #: ../entry_list.php:1246
+=======
+#: ../entry_list.php:1258
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "This form does not have any starred entries."
 msgstr ""
 
@@ -4409,13 +4815,18 @@ msgstr ""
 msgid "This form does not have any spam."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_list.php:1255
 >>>>>>> master
+=======
+#: ../entry_list.php:1267
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "This form does not have any entries in the trash matching the search "
 "criteria."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../entry_list.php:1267
 msgid "This form does not have any entries in the trash."
@@ -4432,6 +4843,9 @@ msgstr ""
 #: ../entry_list.php:1487
 =======
 #: ../entry_list.php:1255
+=======
+#: ../entry_list.php:1267
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "This form does not have any entries in the trash."
 msgstr ""
 
@@ -4443,8 +4857,12 @@ msgstr ""
 msgid "This form does not have any entries yet."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../entry_list.php:1475
 >>>>>>> master
+=======
+#: ../entry_list.php:1487
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "Displaying %s - %s of %s"
 msgstr ""
@@ -4548,10 +4966,14 @@ msgid ""
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../export.php:478 ../gravityforms.php:2190
 =======
 #: ../export.php:478 ../gravityforms.php:2188
 >>>>>>> master
+=======
+#: ../export.php:478 ../gravityforms.php:2190
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Select A Form"
 msgstr ""
 
@@ -4564,16 +4986,22 @@ msgid "Select Fields"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../export.php:503 ../form_settings.php:1167
 #: ../includes/addon/class-gf-payment-addon.php:1255
 #: ../includes/addon/class-gf-payment-addon.php:1257 ../notification.php:814
 #: ../tooltips.php:93 ../tooltips.php:107 ../tooltips.php:130
+<<<<<<< HEAD
 =======
 #: ../export.php:503 ../form_settings.php:1167 ../notification.php:814
 #: ../tooltips.php:93 ../tooltips.php:107 ../tooltips.php:130
 #: ../includes/addon/class-gf-payment-addon.php:1255
 #: ../includes/addon/class-gf-payment-addon.php:1257
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Conditional Logic"
 msgstr ""
 
@@ -4604,12 +5032,17 @@ msgid "Created By (User Id)"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../export.php:763 ../includes/addon/class-gf-addon.php:1640
 #: ../select_columns.php:95
 =======
 #: ../export.php:763 ../select_columns.php:95
 #: ../includes/addon/class-gf-addon.php:1640
 >>>>>>> master
+=======
+#: ../export.php:763 ../includes/addon/class-gf-addon.php:1640
+#: ../select_columns.php:95
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Source Url"
 msgstr ""
 
@@ -4622,10 +5055,14 @@ msgid "New Form"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../form_detail.php:141 ../gravityforms.php:2293
 =======
 #: ../form_detail.php:141 ../gravityforms.php:2291
 >>>>>>> master
+=======
+#: ../form_detail.php:141 ../gravityforms.php:2293
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Form Editor"
 msgstr ""
 
@@ -4868,10 +5305,14 @@ msgid "What would you like to do next?"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../form_detail.php:450 ../form_detail.php:2055 ../gravityforms.php:2342
 =======
 #: ../form_detail.php:450 ../form_detail.php:2055 ../gravityforms.php:2340
 >>>>>>> master
+=======
+#: ../form_detail.php:450 ../form_detail.php:2055 ../gravityforms.php:2342
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Preview this form"
 msgstr ""
 
@@ -5932,6 +6373,7 @@ msgid "Minimum Strength"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../form_detail.php:1465 ../form_display.php:2194
 msgid "Short"
 msgstr ""
@@ -5947,6 +6389,9 @@ msgstr ""
 #: ../form_detail.php:1468 ../form_display.php:2194
 =======
 #: ../form_detail.php:1465 ../form_display.php:2179
+=======
+#: ../form_detail.php:1465 ../form_display.php:2194
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Short"
 msgstr ""
 
@@ -5958,8 +6403,12 @@ msgstr ""
 msgid "Good"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../form_detail.php:1468 ../form_display.php:2179
 >>>>>>> master
+=======
+#: ../form_detail.php:1468 ../form_display.php:2194
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Strong"
 msgstr ""
 
@@ -6243,6 +6692,7 @@ msgid "Save Form"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../form_detail.php:2055 ../gravityforms.php:2340
 msgid "Preview"
 msgstr ""
@@ -6255,6 +6705,13 @@ msgstr ""
 
 #: ../form_detail.php:2355 ../forms_model.php:408
 >>>>>>> master
+=======
+#: ../form_detail.php:2055 ../gravityforms.php:2340
+msgid "Preview"
+msgstr ""
+
+#: ../form_detail.php:2355 ../forms_model.php:410
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Admin Notification"
 msgstr ""
 
@@ -6262,6 +6719,7 @@ msgstr ""
 msgid "New submission from"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../form_detail.php:2372 ../forms_model.php:3678
 msgid "Default Confirmation"
@@ -6303,6 +6761,9 @@ msgstr ""
 #: ../form_display.php:1179
 =======
 #: ../form_detail.php:2372 ../forms_model.php:3667
+=======
+#: ../form_detail.php:2372 ../forms_model.php:3678
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Default Confirmation"
 msgstr ""
 
@@ -6339,22 +6800,31 @@ msgstr ""
 msgid "This date has already been taken. Please select a new date."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../form_display.php:1164
 >>>>>>> master
+=======
+#: ../form_display.php:1179
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "This field requires a unique entry and the values you entered have been "
 "already been used."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../form_display.php:1180
 =======
 #: ../form_display.php:1165
 >>>>>>> master
+=======
+#: ../form_display.php:1180
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "This field requires a unique entry and '%s' has already been used"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../form_display.php:1190
 msgid "Please enter a valid value."
@@ -6371,6 +6841,9 @@ msgstr ""
 #: ../form_display.php:1207
 =======
 #: ../form_display.php:1175
+=======
+#: ../form_display.php:1190
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Please enter a valid value."
 msgstr ""
 
@@ -6382,14 +6855,19 @@ msgstr ""
 msgid "Your passwords do not match."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../form_display.php:1192
 >>>>>>> master
+=======
+#: ../form_display.php:1207
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "Your password does not meet the required strength. <br/>Hint: To make it "
 "stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
 "$ % ^ & )."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../form_display.php:1219
 msgid "This field is required. Please enter the first and last name."
@@ -6438,6 +6916,9 @@ msgstr ""
 #: ../form_display.php:1367
 =======
 #: ../form_display.php:1204
+=======
+#: ../form_display.php:1219
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "This field is required. Please enter the first and last name."
 msgstr ""
 
@@ -6481,12 +6962,17 @@ msgstr ""
 msgid "Please enter a valid quantity"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../form_display.php:1352
 >>>>>>> master
+=======
+#: ../form_display.php:1367
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "Please enter a valid date in the format (%s)."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../form_display.php:1367
 msgid "Please enter a valid date."
@@ -6511,6 +6997,9 @@ msgstr ""
 #: ../form_display.php:1502 ../form_display.php:1513 ../includes/upload.php:72
 =======
 #: ../form_display.php:1352
+=======
+#: ../form_display.php:1367
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Please enter a valid date."
 msgstr ""
 
@@ -6530,21 +7019,30 @@ msgstr ""
 msgid "The reCAPTCHA wasn't entered correctly. Go back and try it again."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../form_display.php:1487 ../form_display.php:1498 ../includes/upload.php:72
 >>>>>>> master
+=======
+#: ../form_display.php:1502 ../form_display.php:1513 ../includes/upload.php:72
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "File exceeds size limit. Maximum file size: %dMB"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../form_display.php:1505
 =======
 #: ../form_display.php:1490
 >>>>>>> master
+=======
+#: ../form_display.php:1505
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "There was an error while uploading the file. Error code: %d"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../form_display.php:1526 ../includes/upload.php:77
 msgid "The uploaded file type is not allowed."
@@ -6558,10 +7056,18 @@ msgstr ""
 
 #: ../form_display.php:1515 ../includes/upload.php:80
 >>>>>>> master
+=======
+#: ../form_display.php:1526 ../includes/upload.php:77
+msgid "The uploaded file type is not allowed."
+msgstr ""
+
+#: ../form_display.php:1530 ../includes/upload.php:80
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #, php-format
 msgid "The uploaded file type is not allowed. Must be one of the following: %s"
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../form_display.php:2125
 msgid "No results matched"
@@ -6618,6 +7124,9 @@ msgstr ""
 #: ../form_display.php:2622
 =======
 #: ../form_display.php:2110
+=======
+#: ../form_display.php:2125
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "No results matched"
 msgstr ""
 
@@ -6669,13 +7178,18 @@ msgstr ""
 msgid "top of new page"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../form_display.php:2607
 >>>>>>> master
+=======
+#: ../form_display.php:2622
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "This page is unsecured. Do not enter a real credit card number. Use this "
 "field only for testing purposes. "
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../form_display.php:2708
 msgid "Step"
@@ -6692,6 +7206,9 @@ msgstr ""
 #: ../form_display.php:2753
 =======
 #: ../form_display.php:2693
+=======
+#: ../form_display.php:2708
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Step"
 msgstr ""
 
@@ -6703,8 +7220,12 @@ msgstr ""
 msgid "This form is not yet available."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../form_display.php:2738
 >>>>>>> master
+=======
+#: ../form_display.php:2753
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Sorry. This form is no longer available."
 msgstr ""
 
@@ -6760,10 +7281,14 @@ msgstr ""
 
 #: ../form_list.php:320 ../form_list.php:324 ../form_settings.php:1499
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../includes/addon/class-gf-feed-addon.php:622 ../notification.php:1104
 =======
 #: ../notification.php:1104 ../includes/addon/class-gf-feed-addon.php:565
 >>>>>>> master
+=======
+#: ../includes/addon/class-gf-feed-addon.php:622 ../notification.php:1104
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "\\'Cancel\\' to stop, \\'OK\\' to delete."
 msgstr ""
 
@@ -6787,6 +7312,7 @@ msgid "Forms"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../form_list.php:335 ../form_settings.php:882
 #: ../includes/addon/class-gf-feed-addon.php:394
 #: ../includes/addon/class-gf-feed-addon.php:484 ../notification.php:405
@@ -6795,6 +7321,11 @@ msgstr ""
 #: ../includes/addon/class-gf-feed-addon.php:337
 #: ../includes/addon/class-gf-feed-addon.php:424
 >>>>>>> master
+=======
+#: ../form_list.php:335 ../form_settings.php:882
+#: ../includes/addon/class-gf-feed-addon.php:394
+#: ../includes/addon/class-gf-feed-addon.php:484 ../notification.php:405
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Add New"
 msgstr ""
 
@@ -6876,10 +7407,14 @@ msgstr ""
 
 #: ../form_settings.php:97 ../form_settings.php:800 ../form_settings.php:1264
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../gravityforms.php:2308
 =======
 #: ../gravityforms.php:2306
 >>>>>>> master
+=======
+#: ../gravityforms.php:2308
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Form Settings"
 msgstr ""
 
@@ -7161,6 +7696,7 @@ msgid "<em>This page does not exist.</em>"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../forms_model.php:435
 msgid "User Notification"
 msgstr ""
@@ -7180,6 +7716,9 @@ msgstr ""
 #: ../forms_model.php:1148
 =======
 #: ../forms_model.php:433
+=======
+#: ../forms_model.php:435
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "User Notification"
 msgstr ""
 
@@ -7195,8 +7734,12 @@ msgstr ""
 msgid "You don't have adequate permission to delete notes."
 msgstr ""
 
+<<<<<<< HEAD
 #: ../forms_model.php:1146
 >>>>>>> master
+=======
+#: ../forms_model.php:1148
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "You don't have adequate permission to edit entries."
 msgstr ""
 
@@ -7205,11 +7748,15 @@ msgid "Update Available"
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #: ../gravityforms.php:978 ../gravityforms.php:1243 ../gravityforms.php:2308
 #: ../includes/addon/class-gf-addon.php:2616
 #: ../includes/addon/class-gf-addon.php:2822
 #: ../includes/addon/class-gf-addon.php:2975
 #: ../includes/addon/class-gf-addon.php:3146 ../settings.php:423
+<<<<<<< HEAD
 =======
 #: ../gravityforms.php:978 ../gravityforms.php:1243 ../gravityforms.php:2306
 #: ../settings.php:423 ../includes/addon/class-gf-addon.php:2616
@@ -7218,6 +7765,8 @@ msgstr ""
 #: ../includes/addon/class-gf-addon.php:2975
 #: ../includes/addon/class-gf-addon.php:3146
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "Settings"
 msgstr ""
 
@@ -7352,6 +7901,7 @@ msgid "Add-On browser is currently unavailable. Please try again later."
 msgstr ""
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #: ../gravityforms.php:1896
 msgid "There was an error while resending the notifications."
 msgstr ""
@@ -7364,10 +7914,18 @@ msgstr ""
 
 #: ../gravityforms.php:1900
 >>>>>>> master
+=======
+#: ../gravityforms.php:1896
+msgid "There was an error while resending the notifications."
+msgstr ""
+
+#: ../gravityforms.php:1902
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid ""
 "No notifications have been selected. Please select a notification to be sent."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../gravityforms.php:1905
 msgid "The <strong>Send To</strong> email address provided is not valid."
@@ -7388,6 +7946,9 @@ msgstr ""
 #: ../gravityforms.php:2327
 =======
 #: ../gravityforms.php:1903
+=======
+#: ../gravityforms.php:1905
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "The <strong>Send To</strong> email address provided is not valid."
 msgstr ""
 
@@ -7403,8 +7964,12 @@ msgstr ""
 msgid "Edit settings for this form"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../gravityforms.php:2325
 >>>>>>> master
+=======
+#: ../gravityforms.php:2327
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgid "View entries generated by this form"
 msgstr ""
 
@@ -7519,6 +8084,7 @@ msgid ""
 "provide support for third party scripts, widgets, etc."
 msgstr ""
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #: ../includes/addon/class-gf-addon.php:996
 #, php-format
@@ -10218,6 +10784,11 @@ msgstr ""
 msgid ""
 "Check this box if you would like the progress bar to display with the "
 "confirmation text."
+=======
+#: ../includes/addon/class-gf-addon.php:996
+#, php-format
+msgid "Field type '%s' has not been implemented"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgstr ""
 
 #: ../tooltips.php:146
@@ -13010,7 +13581,12 @@ msgstr ""
 msgid "Not implemented"
 msgstr ""
 
+<<<<<<< HEAD
 #: ../includes/webapi/webapi.php:1445
 msgid "Internal Error"
 >>>>>>> master
+=======
+#: ../widget.php:102
+msgid "Tab Index Start"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 msgstr ""

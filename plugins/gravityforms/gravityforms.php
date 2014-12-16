@@ -4,10 +4,14 @@ Plugin Name: Gravity Forms
 Plugin URI: http://www.gravityforms.com
 Description: Easily create web forms and manage form entries within the WordPress admin.
 <<<<<<< HEAD
+<<<<<<< HEAD
 Version: 1.8.20
 =======
 Version: 1.8.16
 >>>>>>> master
+=======
+Version: 1.8.20
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 Author: rocketgenius
 Author URI: http://www.rocketgenius.com
 Text Domain: gravityforms
@@ -112,10 +116,14 @@ add_action( 'plugins_loaded', array( 'GFForms', 'loaded' ) );
 class GFForms {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public static $version = '1.8.20';
 =======
     public static $version = '1.8.16';
 >>>>>>> master
+=======
+	public static $version = '1.8.20';
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 	public static function loaded(){
 		do_action( 'gform_loaded' );
@@ -1736,6 +1744,7 @@ class GFForms {
 
     public static function get_addon_info($api, $action, $args){
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		if($action == "plugin_information" && empty($api) && ( !rgempty("rg", $_GET) || $args->slug == 'gravityforms')){
 			$raw_response = GFCommon::post_to_manager("api.php", "op=get_plugin&slug={$args->slug}", array());
@@ -1743,6 +1752,11 @@ class GFForms {
         if($action == "plugin_information" && empty($api) && $args->slug == 'gravityforms'){
             $raw_response = GFCommon::post_to_manager("api.php", "op=get_plugin&slug=gravityforms", array());
 >>>>>>> master
+=======
+
+		if($action == "plugin_information" && empty($api) && ( !rgempty("rg", $_GET) || $args->slug == 'gravityforms')){
+			$raw_response = GFCommon::post_to_manager("api.php", "op=get_plugin&slug={$args->slug}", array());
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
             if ( is_wp_error( $raw_response ) || $raw_response['response']['code'] != 200)
                 return false;
@@ -1754,9 +1768,13 @@ class GFForms {
             $api->version = $plugin["version"];
             $api->download_link = $plugin["download_url"];
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$api->tested = '10.0';
 =======
 >>>>>>> master
+=======
+			$api->tested = '10.0';
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         }
         return $api;
     }

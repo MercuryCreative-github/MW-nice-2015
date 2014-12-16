@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 # Isotope
 
 _Filter & sort magical layouts_
@@ -76,6 +79,7 @@ Add a class of `js-isotope` to your element. Options can be set in JSON in `data
 * * *
 
 By [Metafizzy](http://metafizzy.co)
+<<<<<<< HEAD
 =======
 Isotope
 ========
@@ -142,3 +146,5 @@ View the [commit history](https://github.com/desandro/isotope/commits/master/jqu
 
 Copyright (c) 2011-2012 David DeSandro / Metafizzy LLC
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145

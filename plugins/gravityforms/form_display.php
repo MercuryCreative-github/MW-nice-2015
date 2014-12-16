@@ -112,9 +112,13 @@ class GFFormDisplay{
                 do_action("gform_after_submission", $lead, $form);
                 do_action("gform_after_submission_{$form["id"]}", $lead, $form);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> master
+=======
+
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             }
 
             if(is_array($confirmation) && isset($confirmation["redirect"])){
@@ -123,6 +127,9 @@ class GFFormDisplay{
                 do_action("gform_post_submission_{$form["id"]}", $lead, $form);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 				GFFormsModel::delete_password( $lead, $form );
 
 				exit;
@@ -134,11 +141,14 @@ class GFFormDisplay{
 			}
         }
 
+<<<<<<< HEAD
 =======
                 exit;
             }
         }
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         if(!isset(self::$submission[$form_id]))
             self::$submission[$form_id] = array();
 
@@ -426,11 +436,17 @@ class GFFormDisplay{
         $page_number = 1;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	    $view_counter_disabled = apply_filters( 'gform_disable_view_counter', false );
 	    $view_counter_disabled = apply_filters( "gform_disable_view_counter_{$form_id}", $view_counter_disabled );
 
 =======
 >>>>>>> master
+=======
+	    $view_counter_disabled = apply_filters( 'gform_disable_view_counter', false );
+	    $view_counter_disabled = apply_filters( "gform_disable_view_counter_{$form_id}", $view_counter_disabled );
+
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         //If form was submitted, read variables set during form submission procedure
         $submission_info = isset(self::$submission[$form_id]) ? self::$submission[$form_id] : false;
         if($submission_info){
@@ -455,10 +471,14 @@ class GFFormDisplay{
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         else if(!current_user_can("administrator") && !$view_counter_disabled){
 =======
         else if(!current_user_can("administrator")){
 >>>>>>> master
+=======
+        else if(!current_user_can("administrator") && !$view_counter_disabled){
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             RGFormsModel::insert_form_view($form_id, $_SERVER['REMOTE_ADDR']);
         }
 
@@ -539,10 +559,14 @@ class GFFormDisplay{
             $form_css_class = !empty($form["cssClass"]) ? "class='{$form["cssClass"]}'": "";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             $action = esc_url($action);
 =======
             $action = esc_attr($action);
 >>>>>>> master
+=======
+            $action = esc_url($action);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             $form_string .= apply_filters("gform_form_tag_{$form_id}", apply_filters("gform_form_tag", "<form method='post' enctype='multipart/form-data' {$target} id='gform_{$form_id}' {$form_css_class} action='{$action}'>", $form), $form);
 
             if($display_title || $display_description){
@@ -730,6 +754,7 @@ class GFFormDisplay{
 			//check admin setting for whether the progress bar should start at zero
         	$start_at_zero = rgars($form, "pagination/display_progressbar_on_confirmation");
 <<<<<<< HEAD
+<<<<<<< HEAD
             $start_at_zero = apply_filters("gform_progressbar_start_at_zero", $start_at_zero, $form);
 
             //show progress bar on confirmation
@@ -741,6 +766,12 @@ class GFFormDisplay{
             //show progress bar on confirmation
             if($start_at_zero && $has_pages && !IS_ADMIN && ($form["confirmation"]["type"] == "message" && $form["pagination"]["type"] == "percentage") && $form["pagination"]["display_progressbar_on_confirmation"])
 >>>>>>> master
+=======
+            $start_at_zero = apply_filters("gform_progressbar_start_at_zero", $start_at_zero, $form);
+
+            //show progress bar on confirmation
+            if( $start_at_zero && $has_pages && ! IS_ADMIN && ( $form["confirmation"]["type"] == "message" && $form["pagination"]["type"] == "percentage" ) )
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             {
                 $progress_confirmation = self::get_progress_bar($form, $form_id,$confirmation_message);
                 if($ajax)
@@ -757,10 +788,14 @@ class GFFormDisplay{
                 else
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     $progress_confirmation = $confirmation_message;
 =======
                  $progress_confirmation = $confirmation_message;
 >>>>>>> master
+=======
+                    $progress_confirmation = $confirmation_message;
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 }
             }
 
@@ -995,6 +1030,9 @@ class GFFormDisplay{
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	public static function handle_submission($form, &$lead, $ajax=false){
 
 		$lead_id = apply_filters("gform_entry_id_pre_save_lead{$form["id"]}", apply_filters("gform_entry_id_pre_save_lead", null, $form), $form);
@@ -1048,6 +1086,7 @@ class GFFormDisplay{
 	}
 
 	public static function clean_up_files($form){
+<<<<<<< HEAD
 =======
     public static function handle_submission($form, &$lead, $ajax=false){
 
@@ -1097,6 +1136,8 @@ class GFFormDisplay{
 
     public static function clean_up_files($form){
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         $unique_form_id = rgpost("gform_unique_id");
         if(!ctype_alnum($unique_form_id))
             return false;
@@ -1742,6 +1783,9 @@ class GFFormDisplay{
                 //parsing shortcode attributes
                 $attr = shortcode_parse_atts($match[1]);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 $form_id = rgar($attr, "id");
                 if(!is_numeric($form_id)){
                     $form_id = RGFormsModel::get_form_id( rgar($attr, "name") );
@@ -1751,6 +1795,7 @@ class GFFormDisplay{
 					$forms[] = RGFormsModel::get_form_meta($form_id);
 					$ajax = isset($attr["ajax"]) && strtolower(substr($attr["ajax"],0, 4)) == "true";
 				}
+<<<<<<< HEAD
 =======
                 $form_id = $attr["id"];
                 if(!is_numeric($form_id))
@@ -1759,6 +1804,8 @@ class GFFormDisplay{
                 $forms[] = RGFormsModel::get_form_meta($form_id);
                 $ajax = isset($attr["ajax"]) && strtolower(substr($attr["ajax"],0, 4)) == "true";
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             }
         }
         return $forms;
@@ -2023,10 +2070,14 @@ class GFFormDisplay{
 
                     if(rgar($choice,"isSelected") && $input_type == "select"){
 <<<<<<< HEAD
+<<<<<<< HEAD
                         $val = $is_pricing_field && $field['type'] != 'quantity' ? $choice["value"] . "|" . GFCommon::to_number($choice["price"]) :  $choice["value"];
 =======
                         $val = $is_pricing_field ? $choice["value"] . "|" . GFCommon::to_number($choice["price"]) :  $choice["value"];
 >>>>>>> master
+=======
+                        $val = $is_pricing_field && $field['type'] != 'quantity' ? $choice["value"] . "|" . GFCommon::to_number($choice["price"]) :  $choice["value"];
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                         $default_values[$field["id"]] = $val;
                     }
                     else if(rgar($choice,"isSelected")){
@@ -2047,6 +2098,7 @@ class GFFormDisplay{
                     switch($format){
                         case "mdy":
 <<<<<<< HEAD
+<<<<<<< HEAD
                             $field_val = rgar($date_info, "month") . "/" . rgar($date_info, "day") . "/" . rgar($date_info, "year");
                             break;
                         case "dmy":
@@ -2056,13 +2108,20 @@ class GFFormDisplay{
                             $field_val = rgar($date_info, "year") . "/" . rgar($date_info, "month" ) . "/" . rgar($date_info, "day" );
 =======
                             $field_val = $date_info["month"] . "/" . $date_info["day"] . "/" . $date_info["year"];
+=======
+                            $field_val = rgar($date_info, "month") . "/" . rgar($date_info, "day") . "/" . rgar($date_info, "year");
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                             break;
                         case "dmy":
                             $field_val = $date_info["day"] . "/" . $date_info["month"] . "/" . $date_info["year"];
                             break;
                         case "ymd":
+<<<<<<< HEAD
                             $field_val = $date_info["year"] . "/" . $date_info["month"] . "/" . $date_info["day"];
 >>>>>>> master
+=======
+                            $field_val = rgar($date_info, "year") . "/" . rgar($date_info, "month" ) . "/" . rgar($date_info, "day" );
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                             break;
                     }
                 }

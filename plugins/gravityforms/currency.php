@@ -115,21 +115,31 @@ class RGCurrency{
         "GBP" => array("name" => __("Pound Sterling", "gravityforms"), "symbol_left" => '&#163;', "symbol_right" => "", "symbol_padding" => " ", "thousand_separator" => ',', "decimal_separator" => '.', "decimals" => 2),
         "SGD" => array("name" => __("Singapore Dollar", "gravityforms"), "symbol_left" => '$', "symbol_right" => "", "symbol_padding" => " ", "thousand_separator" => ',', "decimal_separator" => '.', "decimals" => 2),
 <<<<<<< HEAD
+<<<<<<< HEAD
 		"ZAR" => array("name" => __("South African Rand", "gravityforms"), "symbol_left" => 'R', "symbol_right" => "", "symbol_padding" => "", "thousand_separator" => ',', "decimal_separator" => '.', "decimals" => 2),
 		"SEK" => array("name" => __("Swedish Krona", "gravityforms"), "symbol_left" => '', "symbol_right" => "Kr", "symbol_padding" => " ", "thousand_separator" => ' ', "decimal_separator" => ',', "decimals" => 2),
 =======
         "SEK" => array("name" => __("Swedish Krona", "gravityforms"), "symbol_left" => '', "symbol_right" => "Kr", "symbol_padding" => " ", "thousand_separator" => ' ', "decimal_separator" => ',', "decimals" => 2),
 >>>>>>> master
+=======
+		"ZAR" => array("name" => __("South African Rand", "gravityforms"), "symbol_left" => 'R', "symbol_right" => "", "symbol_padding" => "", "thousand_separator" => ',', "decimal_separator" => '.', "decimals" => 2),
+		"SEK" => array("name" => __("Swedish Krona", "gravityforms"), "symbol_left" => '', "symbol_right" => "Kr", "symbol_padding" => " ", "thousand_separator" => ' ', "decimal_separator" => ',', "decimals" => 2),
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         "CHF" => array("name" => __("Swiss Franc", "gravityforms"), "symbol_left" => 'Fr.', "symbol_right" => "", "symbol_padding" => " ", "thousand_separator" => "'", "decimal_separator" => '.', "decimals" => 2),
         "TWD" => array("name" => __("Taiwan New Dollar", "gravityforms"), "symbol_left" => '$', "symbol_right" => "", "symbol_padding" => " ", "thousand_separator" => ',', "decimal_separator" => '.', "decimals" => 2),
         "THB" => array("name" => __("Thai Baht", "gravityforms"), "symbol_left" => '&#3647;', "symbol_right" => "", "symbol_padding" => " ", "thousand_separator" => ',', "decimal_separator" => '.', "decimals" => 2),
         "USD" => array("name" => __("U.S. Dollar", "gravityforms"), "symbol_left" => '$', "symbol_right" => "", "symbol_padding" =>  "", "thousand_separator" => ',', "decimal_separator" => '.', "decimals" => 2)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 		);
 =======
         );
 >>>>>>> master
+=======
+
+		);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
         return apply_filters("gform_currencies", $currencies);
     }

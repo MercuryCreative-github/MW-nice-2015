@@ -402,10 +402,14 @@ class GFEntryDetail{
                                         switch($lead["status"]){
                                             case "spam" :
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                 if(GFCommon::spam_enabled($form['id'])){
 =======
                                                 if(GFCommon::akismet_enabled($form['id'])){
 >>>>>>> master
+=======
+                                                if(GFCommon::spam_enabled($form['id'])){
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                                                     ?>
                                                     <a onclick="jQuery('#action').val('unspam'); jQuery('#entry_form').submit()" href="#"><?php _e("Not Spam", "gravityforms") ?></a>
                                                     <?php
@@ -438,6 +442,7 @@ class GFEntryDetail{
                                                     <a class="submitdelete deletion" onclick="jQuery('#action').val('trash'); jQuery('#entry_form').submit()" href="#"><?php _e("Move to Trash", "gravityforms") ?></a>
                                                     <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                     echo GFCommon::spam_enabled($form['id']) ? "|" : "";
                                                 }
                                                 if(GFCommon::spam_enabled($form['id'])){
@@ -446,6 +451,11 @@ class GFEntryDetail{
                                                 }
                                                 if(GFCommon::akismet_enabled($form['id'])){
 >>>>>>> master
+=======
+                                                    echo GFCommon::spam_enabled($form['id']) ? "|" : "";
+                                                }
+                                                if(GFCommon::spam_enabled($form['id'])){
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                                                 ?>
                                                     <a class="submitdelete deletion" onclick="jQuery('#action').val('spam'); jQuery('#entry_form').submit()" href="#"><?php _e("Mark as Spam", "gravityforms") ?></a>
                                                 <?php
@@ -764,6 +774,9 @@ class GFEntryDetail{
     public static function lead_detail_grid($form, $lead, $allow_display_empty_fields=false){
         $form_id = $form["id"];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
         $display_empty_fields = false;
         if( $allow_display_empty_fields ) {
@@ -772,6 +785,7 @@ class GFEntryDetail{
 
         $display_empty_fields = apply_filters( 'gform_entry_detail_grid_display_empty_fields', $display_empty_fields, $form, $lead );
 
+<<<<<<< HEAD
 =======
         $display_empty_fields = false;
         if($allow_display_empty_fields){
@@ -779,6 +793,8 @@ class GFEntryDetail{
         }
 
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         ?>
         <table cellspacing="0" class="widefat fixed entry-detail-view">
             <thead>
@@ -987,6 +1003,9 @@ class GFEntryDetail{
                     <div id="minor-publishing" style="padding:10px;">
                         <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 							$payment_status = apply_filters("gform_payment_status", $lead["payment_status"], $form, $lead);
 							if ( ! empty( $payment_status ) ){
 							?>
@@ -1003,6 +1022,7 @@ class GFEntryDetail{
 								<div id="gf_payment_date" class="gf_payment_detail">
 									<?php echo $lead["transaction_type"] == 2 ? __("Start Date", "gravityforms") : __("Date", "gravityforms") ?>:
 									<span id='gform_payment_date'><?php echo $payment_date?></span>
+<<<<<<< HEAD
 =======
 							if (!empty($lead["payment_status"])) {
 							?>
@@ -1020,17 +1040,23 @@ class GFEntryDetail{
                                 	echo $lead["transaction_type"] == 2 ? __("Start Date", "gravityforms") : __("Date", "gravityforms") ?>: <?php echo GFCommon::format_date($lead["payment_date"], false, "Y/m/d", $lead["transaction_type"] != 2)
                                 	?>
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 								</div>
                             <?php
                             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 							$transaction_id = apply_filters( 'gform_payment_transaction_id', $lead["transaction_id"], $form, $lead );
                             if ( ! empty( $transaction_id ) ) {
 								?>
 								<div id="gf_payment_transaction_id" class="gf_payment_detail">
 									<?php echo $lead["transaction_type"] == 2 ? __("Subscription Id", "gravityforms") : __("Transaction Id", "gravityforms"); ?>:
 									<span id='gform_payment_transaction_id'><?php echo $transaction_id?></span>
+<<<<<<< HEAD
 =======
                             if (!empty($lead["transaction_id"])) {
 								?>
@@ -1038,17 +1064,23 @@ class GFEntryDetail{
 								<?php
                                 echo $lead["transaction_type"] == 2 ? __("Subscription Id", "gravityforms") : __("Transaction Id", "gravityforms"); ?>: <?php echo $lead["transaction_id"] ?>
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                                 </div>
                             <?php
                             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 							$payment_amount = apply_filters( 'gform_payment_amount', GFCommon::to_money( $lead["payment_amount"], $lead["currency"] ), $form, $lead );
                             if ( ! rgblank( $payment_amount ) ) {
 								?>
 								<div id="gf_payment_amount" class="gf_payment_detail">
 									<?php echo $lead["transaction_type"] == 2 ? __("Recurring Amount", "gravityforms") : __("Amount", "gravityforms"); ?>:
 									<span id='gform_payment_amount'><?php echo  $payment_amount?></span>
+<<<<<<< HEAD
 =======
                             if (!rgblank($lead["payment_amount"])) {
 								?>
@@ -1056,6 +1088,8 @@ class GFEntryDetail{
 									<?php
                                 echo $lead["transaction_type"] == 2 ? __("Recurring Amount", "gravityforms") : __("Amount", "gravityforms"); ?>: <?php echo GFCommon::to_money($lead["payment_amount"], $lead["currency"]) ?>
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                                 </div>
                             <?php
                             }

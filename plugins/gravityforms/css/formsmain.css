@@ -1479,6 +1479,7 @@ body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html dl dd {
     padding: 0;
     width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
     height: auto!important;
     height: 1%;
     border: 1px solid #aaa;
@@ -1488,6 +1489,11 @@ body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html dl dd {
     height: 40px;
     border: 1px solid #e6e6e6;
 >>>>>>> master
+=======
+    height: auto!important;
+    height: 1%;
+    border: 1px solid #aaa;
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     background-color: #fff;
     background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(1%, #eee), color-stop(15%, #fff));
     background-image: -webkit-linear-gradient(#eee 1%, #fff 15%);
@@ -1948,6 +1954,7 @@ body #content .entry-content .gform_wrapper form .gform_body .gform_fields .gfie
 body .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container #recaptcha_widget_div #recaptcha_area .recaptchatable tbody tr td .recaptcha_input_area {
 	line-height: 1em !important;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -1957,3 +1964,6 @@ body .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container #re
     height: 36px;
 }
 >>>>>>> master
+=======
+}
+>>>>>>> 3444288e90b247662206560f83abce370fc36145

@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-indicators {
 =======
 .vc-carousel-indicators {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-indicators {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -14,10 +18,14 @@
   text-align: center;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-indicators li {
 =======
 .vc-carousel-indicators li {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-indicators li {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -29,10 +37,14 @@
   background-color: #808080;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 .vc_images_carousel .vc_carousel-indicators .vc_active {
   margin: 1px;
   width: 10px;
   height: 10px;
+<<<<<<< HEAD
   background-color: transparent;
   border: 1px solid #808080;
 }
@@ -48,6 +60,8 @@
   margin: 0;
   width: 12px;
   height: 12px;
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   background-color: transparent;
   border: 1px solid #808080;
 }
@@ -57,12 +71,17 @@
 .vc-carousel {
   position: relative;
 }
+<<<<<<< HEAD
 .vc-carousel .vc-carousel-inner {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-inner {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   position: relative;
   overflow: hidden;
   width: 100%;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 .vc_images_carousel .vc_carousel-inner .vc_carousel-slideline {
   position: relative;
@@ -76,10 +95,18 @@
 }
 .vc-carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-inner .vc_carousel-slideline {
+  position: relative;
+  overflow: hidden;
+}
+.vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   left: 0;
   position: relative;
   width: 100%;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 .vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner.vc_transition {
   -webkit-transition: 0.5s ease left;
@@ -97,6 +124,9 @@
 .vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > a > img {
 =======
 .vc-carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner.vc-transition {
+=======
+.vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner.vc_transition {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   -webkit-transition: 0.5s ease left;
   transition: 0.5s ease left;
 }
@@ -108,14 +138,20 @@
   float: left;
   visibility: hidden;
 }
+<<<<<<< HEAD
 .vc-carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner > .vc-item > img,
 .vc-carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner > .vc-item > a > img {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > img,
+.vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > a > img {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   display: block;
   max-width: 100%;
   height: auto;
   line-height: 1;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 .vc_images_carousel.vc_per-view-more .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > .vc_inner {
   margin: 0 10px;
@@ -137,6 +173,10 @@
 =======
 .vc-carousel.vc-per-view-more .vc-carousel-slideline .vc-carousel-slideline-inner > .vc-item > .vc-inner {
   margin: 10px;
+=======
+.vc_images_carousel.vc_per-view-more .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > .vc_inner {
+  margin: 0 10px;
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 .vc-carousel.vc_carousel_vertical .vc-carousel-slideline {
   overflow: hidden;
@@ -151,8 +191,12 @@
 .vc-carousel.vc_carousel_vertical .vc-carousel-slideline .vc-carousel-slideline-inner .vc-item {
   float: none;
 }
+<<<<<<< HEAD
 .vc-carousel.vc_carousel_vertical .vc-carousel-indicators {
 >>>>>>> master
+=======
+.vc_images_carousel.vc_carousel_vertical .vc_carousel-indicators {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   position: absolute;
   top: 2%;
   right: 3%;
@@ -160,24 +204,33 @@
   width: 10px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vc_images_carousel.vc_carousel_vertical .vc_carousel-indicators li {
 =======
 .vc-carousel.vc_carousel_vertical .vc-carousel-indicators li {
 >>>>>>> master
+=======
+.vc_images_carousel.vc_carousel_vertical .vc_carousel-indicators li {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   display: block;
   margin: 0 auto 3px;
   width: 6px;
   height: 6px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vc_images_carousel.vc_carousel_vertical .vc_carousel-indicators li.vc_active {
 =======
 .vc-carousel.vc_carousel_vertical .vc-carousel-indicators li.vc-active {
 >>>>>>> master
+=======
+.vc_images_carousel.vc_carousel_vertical .vc_carousel-indicators li.vc_active {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   width: 8px;
   height: 8px;
   margin: 0 auto 1px;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 .vc_images_carousel.vc_build .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item {
   visibility: visible;
@@ -189,6 +242,12 @@
 }
 .vc-carousel-control {
 >>>>>>> master
+=======
+.vc_images_carousel.vc_build .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item {
+  visibility: visible;
+}
+.vc_images_carousel .vc_carousel-control {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   position: absolute;
   padding: 0;
   top: 50%;
@@ -205,17 +264,25 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-control:hover,
 .vc_images_carousel .vc_carousel-control:focus {
 =======
 .vc-carousel-control:hover,
 .vc-carousel-control:focus {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-control:hover,
+.vc_images_carousel .vc_carousel-control:focus {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   text-decoration: none;
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 .vc_images_carousel .vc_carousel-control.vc_left {
   /*
       background-image: -webkit-gradient(linear, 0% top, 100% top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
@@ -242,6 +309,7 @@
 .vc_images_carousel .vc_carousel-control .icon-next,
 .vc_images_carousel .vc_carousel-control .glyphicon-chevron-left,
 .vc_images_carousel .vc_carousel-control .glyphicon-chevron-right {
+<<<<<<< HEAD
 =======
 .vc-carousel-control.vc-left {
   /*
@@ -272,6 +340,8 @@
 .vc-carousel-control .glyphicon-chevron-left,
 .vc-carousel-control .glyphicon-chevron-right {
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   position: absolute;
   top: 50%;
   left: 50%;
@@ -279,12 +349,17 @@
   display: inline-block;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-control .icon-prev,
 .vc_images_carousel .vc_carousel-control .icon-next {
 =======
 .vc-carousel-control .icon-prev,
 .vc-carousel-control .icon-next {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-control .icon-prev,
+.vc_images_carousel .vc_carousel-control .icon-next {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   width: 20px;
   height: 20px;
   margin-top: -10px;
@@ -292,28 +367,40 @@
   font-family: serif;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-control .icon-prev:before {
 =======
 .vc-carousel-control .icon-prev:before {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-control .icon-prev:before {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   content: '\2039';
   position: relative;
   top: -10px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-control .icon-next:before {
 =======
 .vc-carousel-control .icon-next:before {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-control .icon-next:before {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   content: '\203a';
   position: relative;
   top: -10px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-caption {
 =======
 .vc-carousel-caption {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-caption {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   position: absolute;
   left: 15%;
   right: 15%;
@@ -325,6 +412,7 @@
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 .vc_images_carousel .vc_carousel-caption .btn {
   text-shadow: none;
@@ -340,6 +428,14 @@
   .vc-carousel-control .icon-prev,
   .vc-carousel-control .icon-next {
 >>>>>>> master
+=======
+.vc_images_carousel .vc_carousel-caption .btn {
+  text-shadow: none;
+}
+@media screen and (min-width: 768px) {
+  .vc_images_carousel .vc_carousel-control .icon-prev,
+  .vc_images_carousel .vc_carousel-control .icon-next {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     width: 30px;
     height: 30px;
     margin-top: -15px;
@@ -349,15 +445,22 @@
     padding: 0;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   .vc_images_carousel .vc_carousel-caption {
 =======
   .vc-carousel-caption {
 >>>>>>> master
+=======
+  .vc_images_carousel .vc_carousel-caption {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     left: 20%;
     right: 20%;
     padding-bottom: 30px;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   .vc_images_carousel .vc_carousel-indicators {
     bottom: 20px;
   }
@@ -651,6 +754,7 @@
   visibility: hidden;
 }
 .vc_carousel .text-hide {
+<<<<<<< HEAD
 =======
   .vc-carousel-indicators {
     bottom: 20px;
@@ -685,12 +789,15 @@
 }
 .text-hide {
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
   border: 0;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 .vc_carousel ol.vc_carousel-indicators {
   margin: 0 0 0 -30%;
@@ -706,6 +813,9 @@
 =======
 /* Wordpress fix. */
 .entry-content ol.vc-carousel-indicators {
+=======
+.vc_carousel ol.vc_carousel-indicators {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   margin: 0 0 0 -30%;
 }
 .entry-content .vc_carousel_vertical ol.vc-carousel-indicators {
@@ -715,7 +825,11 @@
 .wpb_images_carousel.carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner > .item > a {
   display: block;
 }
+<<<<<<< HEAD
 .wpb_images_carousel.carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner > .item > a > img {
 >>>>>>> master
+=======
+.vc_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner > .item > a > img {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   margin: auto;
 }

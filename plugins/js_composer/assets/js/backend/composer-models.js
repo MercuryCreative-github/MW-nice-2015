@@ -15,9 +15,13 @@
      */
     vc.shortcode = Backbone.Model.extend({
 <<<<<<< HEAD
+<<<<<<< HEAD
         settings: false,
 =======
 >>>>>>> master
+=======
+        settings: false,
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         defaults:function () {
             var id = window.vc_guid();
             return {
@@ -68,11 +72,17 @@
             }
         },
 <<<<<<< HEAD
+<<<<<<< HEAD
         getParam: function(key) {
           return _.isObject(this.get('params')) && !_.isUndefined(this.get('params')[key]) ? this.get('params')[key] : '';
         },
 =======
 >>>>>>> master
+=======
+        getParam: function(key) {
+          return _.isObject(this.get('params')) && !_.isUndefined(this.get('params')[key]) ? this.get('params')[key] : '';
+        },
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         /**
          * Remove all children of model from storage.
          * Will remove children of children models too.
@@ -87,12 +97,18 @@
             }, this);
             if (models.length) vc.storage.save();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         setting: function(name) {
           if(this.settings === false) this.settings = vc.getMapped(this.get('shortcode')) || {};
           return this.settings[name];
+<<<<<<< HEAD
 =======
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         }
     });
     /**
@@ -176,6 +192,9 @@
             params = _.isObject(vc.map[tag]) && _.isArray(vc.map[tag].params) ? vc.map[tag].params : [];
         _.each(params, function (param) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             if(_.isObject(param)) {
                 if(!_.isUndefined(param.std)) {
                     defaults[param.param_name] = param.std;
@@ -189,6 +208,7 @@
                     } else {
                         defaults[param.param_name] = '';
                     }
+<<<<<<< HEAD
 =======
             if(!_.isUndefined(param.std)) {
                 defaults[param.param_name] = param.std;
@@ -202,6 +222,8 @@
                 } else {
                     defaults[param.param_name] = '';
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 }
             }
         });

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 /*!
  * Visual Composer v4.3.4 (http://vc.wpbakery.com)
  * Copyright 2011-2014 Michael M - WPBakery.com
@@ -11,6 +14,7 @@
   display: block;
   max-width: 100%;
   height: auto;
+<<<<<<< HEAD
 }
 .btn-group-lg > .btn {
   padding: 10px 16px;
@@ -1796,6 +1800,8 @@ option.wpb_video {
   color: #31708f;
   border-color: #bce8f1;
   background-color: #d9edf7;
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 .wpb_alert-info.vc_alert_outlined,
 .wpb_alert-info.vc_alert_square_outlined {
@@ -6220,9 +6226,20 @@ body.mobile .controls_row .vc_row_layouts.vc_visible a {
     padding-left: 0px;
   }
 }
+<<<<<<< HEAD
 @media (max-width: 600px) {
   .version-3-8 .vc_navbar.subnav-fixed {
     top: 0;
 >>>>>>> master
+=======
+@keyframes wpb_appear {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   }
 }

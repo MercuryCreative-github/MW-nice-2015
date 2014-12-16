@@ -1,6 +1,9 @@
 msgid ""
 msgstr ""
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "Project-Id-Version: WPBakery Visual Composer v4.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-08-14 14:45+0200\n"
@@ -8,6 +11,7 @@ msgstr ""
 "Last-Translator: Michael M <hello@wpbakery.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
+<<<<<<< HEAD
 =======
 "Project-Id-Version: WPBakery Visual Composer v4.0\n"
 "Report-Msgid-Bugs-To: \n"
@@ -16,11 +20,16 @@ msgstr ""
 "Last-Translator: batichauffe <s.landrieu@neuf.fr>\n"
 "Language-Team: \n"
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
@@ -29,6 +38,7 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: ./include/.\n"
 "X-Poedit-SearchPath-1: ./config/.\n"
+<<<<<<< HEAD
 
 # @ js_composer
 #: include/./classes/core/class-vc-base.php:515
@@ -4426,6 +4436,8 @@ msgstr "Nombre de photos"
 #: config/./map.php:2281
 msgid "Type"
 msgstr "Type"
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 # @ js_composer
 #: config/./map.php:2284
@@ -9597,9 +9609,16 @@ msgstr "Bienvenue sur la page blanche !"
 msgid "You Have No Content Yet! Add Some..."
 msgstr "Vous n'avez aucun contenu actuellement, pourquoi ne pas en ajouter?..."
 
+<<<<<<< HEAD
 #: inline/templates/editor.tpl.php:372
 #@ js_composer
 msgid "Add text block"
 msgstr "Ajouter un bloc de texte"
 
 >>>>>>> master
+=======
+# @ js_composer
+#: config/./templates.php:56
+msgid "Product Page"
+msgstr "Page de produits"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145

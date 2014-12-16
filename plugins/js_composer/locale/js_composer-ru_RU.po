@@ -3,23 +3,30 @@ msgstr ""
 "Project-Id-Version: Visual Composer\n"
 "Report-Msgid-Bugs-To: \n"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "POT-Creation-Date: 2014-08-14 14:48+0200\n"
 "PO-Revision-Date: 2014-08-14 14:48+0200\n"
 "Last-Translator: Michael M <hello@wpbakery.com>\n"
 "Language-Team: WPBakery\n"
 "Language: ru_RU\n"
+<<<<<<< HEAD
 =======
 "POT-Creation-Date: 2014-02-21 17:25+0200\n"
 "PO-Revision-Date: 2014-02-21 17:25+0200\n"
 "Last-Translator: Michael M <hello@wpbakery.com>\n"
 "Language-Team: WPBakery\n"
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr__\n"
 "X-Poedit-Basepath: ../\n"
 "X-Generator: Poedit 1.5.4\n"
+<<<<<<< HEAD
 <<<<<<< HEAD
 "X-Poedit-SearchPath-0: ./config/.\n"
 "X-Poedit-SearchPath-1: ./include/.\n"
@@ -3694,6 +3701,10 @@ msgstr "Layer Slider"
 =======
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ./composer/.\n"
+=======
+"X-Poedit-SearchPath-0: ./config/.\n"
+"X-Poedit-SearchPath-1: ./include/.\n"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #: composer/build.php:48 composer/./build.php:48
 #, fuzzy
@@ -7705,6 +7716,7 @@ msgstr "Приоритет сортировки"
 msgid "Page title"
 msgstr "Заголовок страницы"
 
+<<<<<<< HEAD
 #: config/map.php:2210
 msgid "Page order"
 msgstr "Порядок страницы"
@@ -7736,6 +7748,49 @@ msgstr "Таксономия"
 #: config/map.php:2275
 msgid "Custom Menu"
 msgstr "Произвольное меню"
+=======
+#: include/./templates/editors/partials/backend_controls.tpl.php:5
+#: include/./templates/editors/partials/frontend_controls.tpl.php:7
+#: include/./templates/editors/partials/frontend_controls.tpl.php:26
+#: include/./templates/editors/partials/frontend_controls.tpl.php:55
+#: include/./templates/editors/partials/frontend_controls.tpl.php:77
+#: include/./templates/editors/partials/frontend_controls.tpl.php:105
+#: include/./templates/editors/partials/frontend_controls.tpl.php:130
+#: include/./templates/editors/partials/frontend_controls.tpl.php:161
+#: include/./templates/editors/partials/frontend_controls.tpl.php:183
+#, php-format
+msgid "Drag to move %s"
+msgstr ""
+
+#: include/./templates/editors/partials/backend_controls.tpl.php:10
+#: include/./templates/editors/partials/backend_controls_tab.tpl.php:9
+#: include/./templates/editors/partials/frontend_controls.tpl.php:32
+#: include/./templates/editors/partials/frontend_controls.tpl.php:62
+#: include/./templates/editors/partials/frontend_controls.tpl.php:84
+#: include/./templates/editors/partials/frontend_controls.tpl.php:137
+#: include/./templates/editors/partials/frontend_controls.tpl.php:190
+#, fuzzy, php-format
+msgid "Prepend to %s"
+msgstr "Добавить в начало %s"
+
+#: include/./templates/editors/partials/frontend_controls.tpl.php:44
+#: include/./templates/editors/partials/frontend_controls.tpl.php:94
+#: include/./templates/editors/partials/frontend_controls.tpl.php:150
+#: include/./templates/editors/partials/frontend_controls.tpl.php:206
+#, fuzzy, php-format
+msgid "Append to %s"
+msgstr " Добавить в конец %s"
+
+#: include/./templates/editors/partials/frontend_controls.tpl.php:72
+#: include/./templates/editors/partials/frontend_controls.tpl.php:88
+#: include/./templates/editors/partials/frontend_controls.tpl.php:125
+#: include/./templates/editors/partials/frontend_controls.tpl.php:144
+#: include/./templates/editors/partials/frontend_controls.tpl.php:178
+#: include/./templates/editors/partials/frontend_controls.tpl.php:200
+#, fuzzy, php-format
+msgid "Show %s controls"
+msgstr "Отображать число записей"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #: config/map.php:2281
 msgid "Use this widget to add one of your custom menus as a widget"
@@ -7767,6 +7822,7 @@ msgstr "Количество записей"
 msgid "Display post date?"
 msgstr "Отображать дату записи?"
 
+<<<<<<< HEAD
 #: config/map.php:2379
 msgid "All Links"
 msgstr "Все ссылки"
@@ -7794,11 +7850,40 @@ msgstr "Рэйтинг ссылки"
 #: config/map.php:2406
 msgid "Link ID"
 msgstr "ID ссылки"
+=======
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:3
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:3
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:3
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:3
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:3
+#, fuzzy
+msgid "Close panel"
+msgstr "Закрыть"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:5
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:5
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:5
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:5
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:5
+msgid "Hide panel"
+msgstr ""
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:8
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:13
+#, fuzzy
+msgid "Row layout"
+msgstr "Тип кнопки"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:21
+msgid "Choose row layout from predefined options."
+msgstr ""
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #: config/map.php:2412
 msgid "Show Link Image"
 msgstr "Показывать изображения"
 
+<<<<<<< HEAD
 #: config/map.php:2412
 msgid "Show Link Name"
 msgstr "Показывать названия ссылок"
@@ -7806,11 +7891,24 @@ msgstr "Показывать названия ссылок"
 #: config/map.php:2412
 msgid "Show Link Description"
 msgstr "Показывать описания ссылок"
+=======
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:30
+msgid ""
+"Change particular row layout manually by specifying number of columns and "
+"their size value."
+msgstr ""
+
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:7
+#, fuzzy
+msgid "Edit elements"
+msgstr "Добавить блок"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #: config/map.php:2412
 msgid "Show Link Rating"
 msgstr "Показывать рейтинг ссылок"
 
+<<<<<<< HEAD
 #: config/map.php:2416
 msgid "Number of links to show"
 msgstr "Количество ссылок"
@@ -7830,6 +7928,17 @@ msgstr "Отображать число записей"
 #: config/map.php:2447
 msgid "Show hierarchy"
 msgstr "Отображать иерархию"
+=======
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:19
+#, fuzzy
+msgid "Please enter page title"
+msgstr "Введите новый заголовок"
+
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:23
+#, fuzzy
+msgid "Custom CSS settings"
+msgstr "Переназначить ссылки"
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #: config/map.php:2466
 msgid "A monthly archive of your sites posts"
@@ -7847,6 +7956,7 @@ msgstr ""
 msgid "RSS feed URL"
 msgstr "Адрес RSS ленты"
 
+<<<<<<< HEAD
 #: config/map.php:2508
 msgid "Enter the RSS feed URL."
 msgstr "Введите адрес RSS-ленты."
@@ -7879,6 +7989,26 @@ msgstr "Отображать дату элемента?"
 #, fuzzy
 msgid "Button style."
 msgstr "Тип кнопки"
+=======
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:23
+#, fuzzy
+msgid "Save current layout as a template"
+msgstr "Сохранить страницу как шаблон"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:26
+#, fuzzy
+msgid "Template name"
+msgstr "Шаблоны"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:28
+#, fuzzy
+msgid "Save template"
+msgstr "Вставить шаблон"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:31
+msgid "Save your layout and reuse it on different sections of your website"
+msgstr ""
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #: config/map.php:2775
 msgid "Heading first line"
@@ -8142,9 +8272,14 @@ msgstr "Нет содержимого! Добавьте - это просто...
 
 #: inline/templates/editor.tpl.php:355
 #, fuzzy
+<<<<<<< HEAD
 msgid "Add text block"
 msgstr "Текстовый блок"
 >>>>>>> master
+=======
+#~ msgid "Click here to change title"
+#~ msgstr "Нажмите кнопку редактирования чтобы изменить этот текст."
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #~ msgid "WPBakery Visual Composer Settings"
 #~ msgstr "Настройки Visual Composer от WPBakery"
@@ -8154,11 +8289,14 @@ msgstr "Текстовый блок"
 #~ "<p>Текстовый блок. Нажмите редактирование чтобы изменить этот текст.</p>"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #~ msgid "Select menu"
 #~ msgstr "Выберите меню"
 
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 #~ msgid "Twitter Widget"
 #~ msgstr "Твиттер виджет"
 

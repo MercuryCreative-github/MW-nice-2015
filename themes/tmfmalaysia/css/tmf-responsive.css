@@ -5,11 +5,17 @@
  	.home_slider .wpb_text_column.wpb_content_element { padding-right: 0px; }
  	.vc_row .third-section .box { min-height: 490px; }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	.the-content .first-section-box h3 { text-align:left; }
 	
 	.the-content .first-section-box h3 { text-align:left; }
 =======
 >>>>>>> master
+=======
+	.the-content .first-section-box h3 { text-align:left; }
+	
+	.the-content .first-section-box h3 { text-align:left; }
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 
 @media only screen and (max-width: 860px) {
@@ -18,16 +24,24 @@
 	.head .row .six.columns.action-btns .call-to-action > a { width: 160px }
 	.six.columns.infocus-logo .slogan { left: 150px; }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	.the-content .first-section-box h3 { text-align:left; }
 =======
 >>>>>>> master
+=======
+	
+	.the-content .first-section-box h3 { text-align:left; }
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 
 @media only screen and (max-width: 767px) {
 
 	.first-section-box .wpb_single_image.vc_align_left { text-align: center; margin-bottom: 0; }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	.the-content .first-section-box h3 { text-align:center; }
 	.row .sign-up-section p {text-align: center;}
 	/*Menu*/
@@ -41,9 +55,12 @@
 		line-height: 20px;
 		font-weight: 600;
 	}
+<<<<<<< HEAD
 =======
 	.row .sign-up-section p {text-align: center;}
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	/*header*/
 	.call-to-action .slogan-tablet { display: none; }
 	.six.columns.infocus-logo .slogan { display: block; width: 165px; left: 200px; }
@@ -52,15 +69,23 @@
 	.infocus-logo .logo { width: 130px; margin-left: 40px; }
 	.vc_row .third-section .box { min-height: 0px; }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/*footer*/
 	.container .row .footer-bottom.twelve.columns { width: 90% !important; padding:0; }
 =======
 >>>>>>> master
+=======
+	/*footer*/
+	.container .row .footer-bottom.twelve.columns { width: 90% !important; padding:0; }
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 
 @media only screen and (max-width: 640px) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	.container.slideshow {background-position: right 28px;}
 	/*header*/
 	.mobile-navigation .slogan-mobile { display: none; }
@@ -124,6 +149,7 @@
 	.intro .wpb_single_image img { opacity:0.5; }
 	*/
 	
+<<<<<<< HEAD
 =======
 	.container.slideshow {background-position: right 40px;}
 	/*header*/
@@ -139,4 +165,6 @@
 	.mobile-navigation .slogan-mobile { display: block; top: 55px; left: 180px; font-size: 12px; text-align: left;}
 	.six.columns.infocus-logo .slogan { display: none; }
 >>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
