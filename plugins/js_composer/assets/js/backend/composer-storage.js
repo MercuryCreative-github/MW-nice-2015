@@ -15,14 +15,22 @@
     /**
      * @constructor
      */
+<<<<<<< HEAD
     vc.Storage = function () {
+=======
+    var Storage = function () {
+>>>>>>> master
         this.data = {};
     };
     /**
      * CRUD methods for content management.
      * @type {Object}
      */
+<<<<<<< HEAD
     vc.Storage.prototype = {
+=======
+    Storage.prototype = {
+>>>>>>> master
         url:window.ajaxurl,
         checksum:false,
         locked:false,
@@ -65,6 +73,10 @@
          */
         update:function (model) {
             this.data[model.id] = model.toJSON();
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
             this.setModelRoot(model.id);
             this.save();
             return model;
@@ -369,7 +381,11 @@
 
         })
     };
+<<<<<<< HEAD
     vc.storage = new vc.Storage();
+=======
+    vc.storage = new Storage();
+>>>>>>> master
 
     vc.test = {
         a:_.memoize(function (a) {

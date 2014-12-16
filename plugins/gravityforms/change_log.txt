@@ -1,4 +1,5 @@
 -------------------------------------------------------------------------------------------------------------------
+<<<<<<< HEAD
 Version 1.8.20
 	- Added extra logging statements.
 	- Added South African Rand currency.
@@ -86,6 +87,9 @@ Version 1.8.17
 -------------------------------------------------------------------------------------------------------------------
 Version 1.8.16
 
+=======
+Version 1.8.16
+>>>>>>> master
 	- Fixed some strings that weren't localized and added localization context to others
 	- Fixed issue with datepicker to prevent user being returned to start of form when tabbing after selecting a date.
 	- Fixed a notice on the WordPress updates page
@@ -95,13 +99,19 @@ Version 1.8.16
 
 -------------------------------------------------------------------------------------------------------------------
 Version 1.8.15
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 	- Fixed an issue with the multi-file upload field while uploading multiple files all selected at the same time in the file dialog. If one of the uploads fails due to an HTTP error then the next file in the list will appear as 100% complete but it will be removed from the form submission.
 	- AF: Fixed issue with checkboxes no retaining their values
 
 -------------------------------------------------------------------------------------------------------------------
 Version 1.8.14
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 	- Fixed a potential security vulnerability for some servers which could allow code to be parsed via the file upload field.
 	- Fixed a security issue to prevent code injection
 	- Fixed an issue with the file upload field that allows malicious form submissions to bypass the validation for the maximum file size setting.
@@ -111,7 +121,10 @@ Version 1.8.14
 
 -------------------------------------------------------------------------------------------------------------------
 Version 1.8.13
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 	- Added additional check plus user feedback for failed multi-file uploads.
 	- Fixed a potential security vulnerability for some server configurations which could allow code to be executed via the file upload field.
 	- Fixed issue with form export/import setting inactive notifications to active.
@@ -126,7 +139,10 @@ Version 1.8.13
 
 -------------------------------------------------------------------------------------------------------------------
 Version 1.8.12
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     - Added PHP version of the "gform_calculation_result" filter.
         add_filter( 'gform_calculation_result', 'my_calc_result', 10, 5 );
         function my_calc_result( $result, $formula, $field, $form, $entry ) {
@@ -229,7 +245,10 @@ Version 1.8.10
 
 -------------------------------------------------------------------------------------------------------------------
 Version 1.8.9
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     - Added "password" to the list of fields which allow HTML input.
     - Added 'gform_field_container' filter to allow modifying the field container markup.
         add_action( 'gform_field_container', 'my_field_container', 10, 6 );
@@ -487,7 +506,10 @@ Version 1.8.5
 
 -------------------------------------------------------------------------------------------------------------------
 Version 1.8.4.1
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     - Fixed issue with tooltips not working on Add On pages. Included font-awesome.css to Add On pages to fix the issue.
     - Fixed issue where old inputs were not removed when adding new choices via bulk add functionality for Post Custom Fields with a "checkbox" field type
     - Fixed an issue with entry export which may result in an empty export file for forms with a large number of entries
@@ -562,7 +584,10 @@ Version 1.8.4
 
 -------------------------------------------------------------------------------------------------------------------
 Version 1.8.3
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 	- Added new filter "gform_post_category_choices" to alter post category choices sort order. Both globally and form id + field id specific.
         add_filter("gform_post_category_choices", "set_sort", 10, 3);
         function set_sort($choices, $field, $form_id){

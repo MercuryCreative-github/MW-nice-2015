@@ -8,7 +8,12 @@
 	
 ?>
 
+<<<<<<< HEAD
 <div class="container slideshow">
+=======
+<div class="container slideshow" style="background-position: right 120px;background-image: url(http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/06/TMForumLive2015EyeCandy-2.jpg);
+background-size: cover;border: none;background-repeat: no-repeat; background-color: #012332;">
+>>>>>>> master
 		<section class="row largepadding">
 	<div class="twelve columns intro">
 		<div class="whitetext">

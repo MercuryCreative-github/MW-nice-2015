@@ -8,10 +8,17 @@
 (function ($) {
     wp.media.controller.VcTeaserCustomImage = wp.media.controller.FeaturedImage.extend({
         defaults:_.defaults({
+<<<<<<< HEAD
             id:'vc_teaser-custom-image',
             filterable:'uploaded',
             multiple:false,
             toolbar:'vc_single-image',
+=======
+            id:'vc-teaser-custom-image',
+            filterable:'uploaded',
+            multiple:false,
+            toolbar:'vc-single-image',
+>>>>>>> master
             title:i18nLocale.set_image,
             priority:60,
             syncSelection:false
@@ -39,16 +46,27 @@
             if (this._frame)
                 return this._frame;
             this._frame = wp.media({
+<<<<<<< HEAD
                 state:'vc_teaser-custom-image',
                 states:[ new wp.media.controller.VcTeaserCustomImage() ]
             });
             this._frame.on('toolbar:create:vc_single-image', function (toolbar) {
+=======
+                state:'vc-teaser-custom-image',
+                states:[ new wp.media.controller.VcTeaserCustomImage() ]
+            });
+            this._frame.on('toolbar:create:vc-single-image', function (toolbar) {
+>>>>>>> master
                 this.createSelectToolbar(toolbar, {
                     text:window.i18nLocale.set_image
                 });
             }, this._frame);
 
+<<<<<<< HEAD
             this._frame.state('vc_teaser-custom-image').on('select', this.select);
+=======
+            this._frame.state('vc-teaser-custom-image').on('select', this.select);
+>>>>>>> master
             return this._frame;
         },
         select:function () {
@@ -64,6 +82,7 @@
     var VCTeaser = Backbone.View.extend({
         el:$('#vc_teaser'),
         events: {
+<<<<<<< HEAD
             'click #vc_teaser-checkbox': 'toggle',
             'change .vc_teaser-button': 'updateList',
             'click .vc_teaser-image-custom': 'setImageMode',
@@ -72,6 +91,16 @@
             'click .vc_teaser-text-control': 'setTextMode',
             'click .vc_link-control': 'setLinkControl',
             'keyup #vc_teaser-text-custom': 'setCustomText'
+=======
+            'click #vc-teaser-checkbox': 'toggle',
+            'change .vc-teaser-button': 'updateList',
+            'click .vc-teaser-image-custom': 'setImageMode',
+            'click .vc-teaser-image-featured': 'setImageMode',
+            'click .vc_teaser_add_custom_image': 'showMediaEditor',
+            'click .vc-teaser-text-control': 'setTextMode',
+            'click .vc-link-control': 'setLinkControl',
+            'keyup #vc-teaser-text-custom': 'setCustomText'
+>>>>>>> master
         },
         controls: [
             'title', 'image', 'text', 'link'
@@ -96,6 +125,7 @@
             this.render();
         },
         render: function(){
+<<<<<<< HEAD
             this.$contructor_container = this.$el.find('.vc_teaser-constructor');
             this.$data_field = this.$el.find('.vc_teaser-data-field');
             this.$bgcolor = this.$el.find('.vc_teaser-bgcolor');
@@ -106,24 +136,48 @@
             this.$list.sortable({
                 update: this.save,
                 handle: '.vc_move',
+=======
+            this.$contructor_container = this.$el.find('.vc-teaser-constructor');
+            this.$data_field = this.$el.find('.vc-teaser-data-field');
+            this.$bgcolor = this.$el.find('.vc-teaser-bgcolor');
+            this.$toolbar = this.$contructor_container.find('.vc-toolbar');
+            this.$spinner = this.$contructor_container.find('.vc_teaser_loading_block')
+            this.renderButtons(this.controls);
+            this.$list = this.$contructor_container.find('.vc-teaser-list');
+            this.$list.sortable({
+                update: this.save,
+                handle: '.vc-move',
+>>>>>>> master
                 forcePlaceholderSize:true,
                 placeholder:"widgets-placeholder",
                 over:function (event, ui) {
                   ui.placeholder.css({maxWidth:ui.placeholder.parent().width()});
                 }
             });
+<<<<<<< HEAD
             this.$contructor_container.find('.vc_teaser-bgcolor').wpColorPicker({
+=======
+            this.$contructor_container.find('.vc-teaser-bgcolor').wpColorPicker({
+>>>>>>> master
                 change:this.updateColorPicker,
                 clear: this.clearColorPicker
             });
             if(!_.isEmpty(this.$bgcolor.val())) this.$list.css('backgroundColor', this.$bgcolor.val());
             this.$spinner.show();
             _.delay(this.parse, 200);
+<<<<<<< HEAD
             this.toggle({currentTarget: '#vc_teaser-checkbox'});
         },
         renderButtons: function(controls) {
             _.each(controls, function(button){
                 var html = _.template($('#vc_teaser-button').html(), {label: window.i18nVcTeaser[button + '_label'], value: button}, template_options);
+=======
+            this.toggle({currentTarget: '#vc-teaser-checkbox'});
+        },
+        renderButtons: function(controls) {
+            _.each(controls, function(button){
+                var html = _.template($('#vc-teaser-button').html(), {label: window.i18nVcTeaser[button + '_label'], value: button}, template_options);
+>>>>>>> master
                 this.$toolbar.append(html);
             }, this);
         },
@@ -164,10 +218,17 @@
         setLinkControl: function(e) {
             e.preventDefault();
             var $button = $(e.currentTarget),
+<<<<<<< HEAD
                 $control = $button.closest('.vc_link-controls'),
                 link_type = $button.data('link');
             $control.find('.vc_active-link').removeClass('vc_active-link');
             $button.addClass('vc_active-link');
+=======
+                $control = $button.closest('.vc-link-controls'),
+                link_type = $button.data('link');
+            $control.find('.vc-active-link').removeClass('vc-active-link');
+            $button.addClass('vc-active-link');
+>>>>>>> master
             this.save();
         },
         createControl: function(data) {
@@ -175,7 +236,11 @@
               name: '',
               link: 'none'
             };
+<<<<<<< HEAD
             var html = _.template($('#vc_teaser-' + data.name).html(), _.extend(default_data, data), template_options);
+=======
+            var html = _.template($('#vc-teaser-' + data.name).html(), _.extend(default_data, data), template_options);
+>>>>>>> master
             this.$list.append(html);
             this.updateContent(data);
         },
@@ -207,6 +272,7 @@
                     new_mode = $control.data('mode');
             } else {
                 var new_mode = e || 'excerpt',
+<<<<<<< HEAD
                     $control = $('.vc_teaser-text-' + new_mode, this.$el);
             }
             var $vc_text = $('.vc_text', this.$el);
@@ -221,12 +287,32 @@
                     $vc_text.html('<div class="vc_teaser-text-text"></div>').find('.vc_teaser-text-text').html($('#content').val());
                 } else if(new_mode === 'custom') {
                     $vc_text.html('<textarea name="vc_teaser_text_custom" id="vc_teaser-text-custom"></textarea>').find('textarea').val(this.custom_text);
+=======
+                    $control = $('.vc-teaser-text-' + new_mode, this.$el);
+            }
+            var $vc_text = $('.vc-text', this.$el);
+            $control.siblings('.vc-active').removeClass('vc-active');
+            $control.addClass('vc-active');
+            if(new_mode !== this.current_text_mode) {
+                $vc_text.removeClass('vc-text-' + this.current_image_mode).addClass('vc-text-' + new_mode);
+                this.current_text_mode = new_mode;
+                if(new_mode === 'excerpt') {
+                    $vc_text.html('<div class="vc-teaser-text-excerpt">' + this.getExcerpt() + '</div>');
+                } else if(new_mode === 'text') {
+                    $vc_text.html('<div class="vc-teaser-text-text"></div>').find('.vc-teaser-text-text').html($('#content').val());
+                } else if(new_mode === 'custom') {
+                    $vc_text.html('<textarea name="vc_teaser_text_custom" id="vc-teaser-text-custom"></textarea>').find('textarea').val(this.custom_text);
+>>>>>>> master
                 }
             }
             this.save();
         },
         setCustomText: function(e) {
+<<<<<<< HEAD
             this.custom_text  = $('#vc_teaser-text-custom').val();
+=======
+            this.custom_text  = $('#vc-teaser-text-custom').val();
+>>>>>>> master
             this.save();
         },
         getExcerpt: function() {
@@ -243,12 +329,21 @@
                     new_mode = $control.data('mode');
             } else {
                 var new_mode = e || 'featured',
+<<<<<<< HEAD
                     $control = $('.vc_teaser-image-' + new_mode, this.$el);
             }
             $control.siblings('.vc_active').removeClass('vc_active');
             $control.addClass('vc_active');
             if(new_mode !== this.current_image_mode) {
                 $('.vc_image', this.$el).removeClass('vc_image-' + this.current_image_mode).addClass('vc_image-' + new_mode);
+=======
+                    $control = $('.vc-teaser-image-' + new_mode, this.$el);
+            }
+            $control.siblings('.vc-active').removeClass('vc-active');
+            $control.addClass('vc-active');
+            if(new_mode !== this.current_image_mode) {
+                $('.vc-image', this.$el).removeClass('vc-image-' + this.current_image_mode).addClass('vc-image-' + new_mode);
+>>>>>>> master
                 this.current_image_mode = new_mode;
                 if(new_mode === 'featured') {
                     if(this.featured_image_trigger === false) {
@@ -264,7 +359,11 @@
         },
         showMediaEditor: function(e) {
             e.preventDefault();
+<<<<<<< HEAD
             window.wp.media.VcTeaserCustomImage.frame($('.vc_teaser_add_custom_image', this.$el).get(0)).open('vc_editor');
+=======
+            window.wp.media.VcTeaserCustomImage.frame($('.vc_teaser_add_custom_image', this.$el).get(0)).open('vc-editor');
+>>>>>>> master
         },
         getCustomTeaserImage: function() {
             return _.isObject(this.custom_image_attributes) && !_.isUndefined(this.custom_image_attributes.id) ? this.custom_image_attributes.id : '';
@@ -296,11 +395,19 @@
         },
         appendCustomImageHtml: function() {
             this.$spinner.hide();
+<<<<<<< HEAD
           $('.vc_teaser-custom-image-view', this.$el).html(_.template($('#vc_teaser-custom-image').html(), this.custom_image_attributes));
         },
         setCustomImageBlock: function() {
             var $vc_image = $('.vc_image', this.$el);
             $vc_image.html(_.template($('#vc_teaser-custom-image-block').html(), {}, template_options));
+=======
+          $('.vc-teaser-custom-image-view', this.$el).html(_.template($('#vc-teaser-custom-image').html(), this.custom_image_attributes));
+        },
+        setCustomImageBlock: function() {
+            var $vc_image = $('.vc-image', this.$el);
+            $vc_image.html(_.template($('#vc-teaser-custom-image-block').html(), {}, template_options));
+>>>>>>> master
             if(_.isObject(this.custom_image_attributes) && !_.isUndefined(this.custom_image_attributes.id)) {
                 this.setCustomTeaserImage();
             } else {
@@ -313,22 +420,39 @@
             }
         },
         setFeaturedImageBlock: function(data){
+<<<<<<< HEAD
             var $vc_image = $('.vc_image', this.$el),
                 $image = '';
             if($vc_image.hasClass('vc_image-featured')) {
                 $image = $(data).find('img').length ? $(data).find('img') : $('<div>Featured image not set</div>');
                 $('.vc_image', this.$el).html('').append($image);
+=======
+            var $vc_image = $('.vc-image', this.$el),
+                $image = '';
+            if($vc_image.hasClass('vc-image-featured')) {
+                $image = $(data).find('img').length ? $(data).find('img') : $('<div>Featured image not set</div>');
+                $('.vc-image', this.$el).html('').append($image);
+>>>>>>> master
             }
         },
         updateTitle: function(e) {
             var title = $(e.currentTarget).val();
+<<<<<<< HEAD
             if(_.isEmpty(title)) title = '<span class="vc_empty">' + window.i18nVcTeaser.empty_title + '</span>';
             $('#vc_teaser-title-control > span').html(title);
+=======
+            if(_.isEmpty(title)) title = '<span class="vc-empty">' + window.i18nVcTeaser.empty_title + '</span>';
+            $('#vc-teaser-title-control > span').html(title);
+>>>>>>> master
         },
         save: function() {
             var data = [],
                 that = this;
+<<<<<<< HEAD
             $('.vc_teaser-control', this.$el).each(function(){
+=======
+            $('.vc-teaser-control', this.$el).each(function(){
+>>>>>>> master
                 var $block = $(this),
                     block_data = {name: $block.data('control')};
                 if(block_data.name === 'image') {
@@ -339,8 +463,13 @@
                         block_data.text = that.custom_text;
                     }
                 }
+<<<<<<< HEAD
                 if($block.find('.vc_link-controls').length) {
                     var $active = $('.vc_active-link', $block);
+=======
+                if($block.find('.vc-link-controls').length) {
+                    var $active = $('.vc-active-link', $block);
+>>>>>>> master
                     if($active.length) block_data.link = $active.data('link');
                 }
                 data.push(block_data);
@@ -356,7 +485,11 @@
             }
             _.each(data, function(block_data){
                 if(_.isString(block_data.name)) {
+<<<<<<< HEAD
                     var $control = $('.vc_teaser-btn-' + block_data.name, this.$toolbar).prop('checked', true);
+=======
+                    var $control = $('.vc-teaser-btn-' + block_data.name, this.$toolbar).prop('checked', true);
+>>>>>>> master
                     if(block_data.name == 'image' && !_.isUndefined(block_data.image)) {
                         if(block_data.image !== 'featured') {
                             this.custom_image_attributes = {id: block_data.image};

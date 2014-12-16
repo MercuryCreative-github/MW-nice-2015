@@ -11,12 +11,19 @@ var vc = {filters:{templates:[]}, addTemplateFilter:function (callback) {
 }};
 (function ($) {
     var i18n = window.i18nLocale;
+<<<<<<< HEAD
     vc.edit_form_callbacks = [];
+=======
+>>>>>>> master
     vc.atts = {
         parse:function (param) {
             var value;
             var $field = this.content().find('.wpb_vc_param_value[name=' + param.param_name + ']');
+<<<<<<< HEAD
           if (!_.isUndefined(vc.atts[param.type]) && !_.isUndefined(vc.atts[param.type].parse)) {
+=======
+            if (!_.isUndefined(vc.atts[param.type]) && !_.isUndefined(vc.atts[param.type].parse)) {
+>>>>>>> master
                 value = vc.atts[param.type].parse.call(this, param);
             } else {
                 value = $field.length ? $field.val() : null;
@@ -47,11 +54,21 @@ var vc = {filters:{templates:[]}, addTemplateFilter:function (callback) {
     _.extend(vc.atts, {
         textarea_html:{
             parse:function (param) {
+<<<<<<< HEAD
                 var $field = this.content().find('.textarea_html.' + param.param_name + ''),
                     mce_id = $field.attr('id');
                 return this.window().tinyMCE && this.window().tinyMCE.activeEditor
                        ? this.window().tinyMCE.activeEditor.save()
                        : $field.val();
+=======
+                var $field = this.content().find('textarea.wpb_vc_param_value.' + param.param_name + ''),
+                    mce_id = $field.attr('id');
+                // try {
+                return this.window().tinyMCE.activeEditor.save();
+                // } catch (err) {
+                // }
+                return vc_wpnop($field.val()); // !_.isUndefined(window.switchEditors) ? window.switchEditors._wp_Nop($field.val()) : $field.val();
+>>>>>>> master
             },
             render:function (param, value) {
                 return _.isUndefined(value) ? value : vc_wpautop(value);
@@ -152,7 +169,11 @@ var vc = {filters:{templates:[]}, addTemplateFilter:function (callback) {
             render:function (param, value) {
                 var $thumbnails = this.$el.find('.attachment-thumbnails[data-name=' + param.param_name + ']'),
                     thumbnails_html = this.$el.data('field-' + param.param_name + '-attach-images');
+<<<<<<< HEAD
                 if (_.isUndefined(thumbnails_html) && !_.isEmpty(value)) {
+=======
+                if (_.isUndefined(thumbnails_html)) {
+>>>>>>> master
                     $.ajax({
                         type:'POST',
                         url:window.ajaxurl,
@@ -165,7 +186,11 @@ var vc = {filters:{templates:[]}, addTemplateFilter:function (callback) {
                     }).done(function (html) {
                             vc.atts.attach_images.updateImages($thumbnails, html);
                         });
+<<<<<<< HEAD
                 } else if(!_.isUndefined(thumbnails_html)) {
+=======
+                } else {
+>>>>>>> master
                     this.$el.removeData('field-' + param.param_name + '-attach-images');
                     vc.atts.attach_images.updateImages($thumbnails, thumbnails_html);
                 }
@@ -180,6 +205,7 @@ var vc = {filters:{templates:[]}, addTemplateFilter:function (callback) {
                 }
             }
         },
+<<<<<<< HEAD
         href: {
             parse: function(param) {
                 var $field = this.content().find('.wpb_vc_param_value[name=' + param.param_name + ']'),
@@ -188,6 +214,8 @@ var vc = {filters:{templates:[]}, addTemplateFilter:function (callback) {
                 return val;
             }
         },
+=======
+>>>>>>> master
         attach_image:{
             parse:function (param) {
                 var $field = this.content().find('.wpb_vc_param_value[name=' + param.param_name + ']'),
@@ -201,8 +229,13 @@ var vc = {filters:{templates:[]}, addTemplateFilter:function (callback) {
             render:function (param, value) {
                 var image_src = $('[data-model-id=' + this.model.id + ']').data('field-' + param.param_name + '-attach-image');
                 var $thumbnail = this.$el.find('.attachment-thumbnail[data-name=' + param.param_name + ']');
+<<<<<<< HEAD
                 if (_.isUndefined(image_src) && !_.isEmpty(value)) {
                   $.ajax({
+=======
+                if (_.isUndefined(image_src)) {
+                    $.ajax({
+>>>>>>> master
                         type:'POST',
                         url:window.ajaxurl,
                         data:{
@@ -214,7 +247,11 @@ var vc = {filters:{templates:[]}, addTemplateFilter:function (callback) {
                     }).done(function (src) {
                             vc.atts['attach_image'].updateImage($thumbnail, src);
                         });
+<<<<<<< HEAD
                 } else if(!_.isUndefined(image_src)) {
+=======
+                } else {
+>>>>>>> master
                     $('[data-model-id=' + this.model.id + ']').removeData('field-' + param.param_name + '-attach-image');
                     vc.atts['attach_image'].updateImage($thumbnail, image_src);
                 }
@@ -230,6 +267,7 @@ var vc = {filters:{templates:[]}, addTemplateFilter:function (callback) {
                     $thumbnail.next().addClass('image-exists').next().addClass('image-exists');
                 }
             }
+<<<<<<< HEAD
         },
         google_fonts:{
             parse:function(param) {
@@ -281,4 +319,9 @@ var vc = {filters:{templates:[]}, addTemplateFilter:function (callback) {
     vc.getMapped = function(tag) {
       return vc.map[tag] || {};
     }
+=======
+        }
+    });
+
+>>>>>>> master
 })(window.jQuery);

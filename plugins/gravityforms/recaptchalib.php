@@ -45,6 +45,7 @@ define("RECAPTCHA_VERIFY_SERVER", "www.google.com");
  * @return string - encoded request
  */
 function _recaptcha_qsencode ($data) {
+<<<<<<< HEAD
 	$req = "";
 	foreach ( $data as $key => $value )
 		$req .= $key . '=' . urlencode( stripslashes($value) ) . '&';
@@ -52,6 +53,15 @@ function _recaptcha_qsencode ($data) {
 	// Cut the last '&'
 	$req=substr($req,0,strlen($req)-1);
 	return $req;
+=======
+        $req = "";
+        foreach ( $data as $key => $value )
+                $req .= $key . '=' . urlencode( stripslashes($value) ) . '&';
+
+        // Cut the last '&'
+        $req=substr($req,0,strlen($req)-1);
+        return $req;
+>>>>>>> master
 }
 
 
@@ -66,6 +76,7 @@ function _recaptcha_qsencode ($data) {
  */
 function _recaptcha_http_post($host, $path, $data, $port = 80) {
 
+<<<<<<< HEAD
 	$req = _recaptcha_qsencode ($data);
 
 	$http_request  = "POST $path HTTP/1.0\r\n";
@@ -89,6 +100,31 @@ function _recaptcha_http_post($host, $path, $data, $port = 80) {
 	$response = explode("\r\n\r\n", $response, 2);
 
 	return $response;
+=======
+        $req = _recaptcha_qsencode ($data);
+
+        $http_request  = "POST $path HTTP/1.0\r\n";
+        $http_request .= "Host: $host\r\n";
+        $http_request .= "Content-Type: application/x-www-form-urlencoded;\r\n";
+        $http_request .= "Content-Length: " . strlen($req) . "\r\n";
+        $http_request .= "User-Agent: reCAPTCHA/PHP\r\n";
+        $http_request .= "\r\n";
+        $http_request .= $req;
+
+        $response = '';
+        if( false == ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) {
+                die ('Could not open socket');
+        }
+
+        fwrite($fs, $http_request);
+
+        while ( !feof($fs) )
+                $response .= fgets($fs, 1160); // One TCP-IP packet
+        fclose($fs);
+        $response = explode("\r\n\r\n", $response, 2);
+
+        return $response;
+>>>>>>> master
 }
 
 
@@ -110,6 +146,7 @@ function recaptcha_get_html ($pubkey, $error = null, $use_ssl = false, $lang='en
 	}
 
 	if ($use_ssl) {
+<<<<<<< HEAD
 		$server = RECAPTCHA_API_SECURE_SERVER;
 	} else {
 		$server = RECAPTCHA_API_SERVER;
@@ -120,6 +157,18 @@ function recaptcha_get_html ($pubkey, $error = null, $use_ssl = false, $lang='en
 		$errorpart = "&amp;error=" . $error;
 	}
 	return '<script type="text/javascript" src="'. $server . '/challenge?k=' . $pubkey . $errorpart . '&hl=' . $lang .'"></script>
+=======
+                $server = RECAPTCHA_API_SECURE_SERVER;
+        } else {
+                $server = RECAPTCHA_API_SERVER;
+        }
+
+        $errorpart = "";
+        if ($error) {
+           $errorpart = "&amp;error=" . $error;
+        }
+        return '<script type="text/javascript" src="'. $server . '/challenge?k=' . $pubkey . $errorpart . '&hl=' . $lang .'"></script>
+>>>>>>> master
 
 	<noscript>
   		<iframe src="'. $server . '/noscript?k=' . $pubkey . $errorpart . '" height="300" width="500" frameborder="0"></iframe><br/>
@@ -134,6 +183,7 @@ function recaptcha_get_html ($pubkey, $error = null, $use_ssl = false, $lang='en
 /**
  * A ReCaptchaResponse is returned from recaptcha_check_answer()
  */
+<<<<<<< HEAD
 if( ! class_exists( 'ReCaptchaResponse' )){
 
 class ReCaptchaResponse {
@@ -141,10 +191,16 @@ class ReCaptchaResponse {
 	var $error;
 }
 
+=======
+class ReCaptchaResponse {
+        var $is_valid;
+        var $error;
+>>>>>>> master
 }
 
 
 /**
+<<<<<<< HEAD
  * Calls an HTTP POST function to verify if the user's guess was correct
  * @param string $privkey
  * @param string $remoteip
@@ -153,6 +209,16 @@ class ReCaptchaResponse {
  * @param array $extra_params an array of extra variables to post to the server
  * @return ReCaptchaResponse
  */
+=======
+  * Calls an HTTP POST function to verify if the user's guess was correct
+  * @param string $privkey
+  * @param string $remoteip
+  * @param string $challenge
+  * @param string $response
+  * @param array $extra_params an array of extra variables to post to the server
+  * @return ReCaptchaResponse
+  */
+>>>>>>> master
 function recaptcha_check_answer ($privkey, $remoteip, $challenge, $response, $extra_params = array())
 {
 	if ($privkey == null || $privkey == '') {
@@ -165,6 +231,7 @@ function recaptcha_check_answer ($privkey, $remoteip, $challenge, $response, $ex
 
 
 
+<<<<<<< HEAD
 	//discard spam submissions
 	if ($challenge == null || strlen($challenge) == 0 || $response == null || strlen($response) == 0) {
 		$recaptcha_response = new ReCaptchaResponse();
@@ -193,6 +260,36 @@ function recaptcha_check_answer ($privkey, $remoteip, $challenge, $response, $ex
 		$recaptcha_response->error = $answers [1];
 	}
 	return $recaptcha_response;
+=======
+        //discard spam submissions
+        if ($challenge == null || strlen($challenge) == 0 || $response == null || strlen($response) == 0) {
+                $recaptcha_response = new ReCaptchaResponse();
+                $recaptcha_response->is_valid = false;
+                $recaptcha_response->error = 'incorrect-captcha-sol';
+                return $recaptcha_response;
+        }
+
+        $response = _recaptcha_http_post (RECAPTCHA_VERIFY_SERVER, "/recaptcha/api/verify",
+                                          array (
+                                                 'privatekey' => $privkey,
+                                                 'remoteip' => $remoteip,
+                                                 'challenge' => $challenge,
+                                                 'response' => $response
+                                                 ) + $extra_params
+                                          );
+
+        $answers = explode ("\n", $response [1]);
+        $recaptcha_response = new ReCaptchaResponse();
+
+        if (trim ($answers [0]) == 'true') {
+                $recaptcha_response->is_valid = true;
+        }
+        else {
+                $recaptcha_response->is_valid = false;
+                $recaptcha_response->error = $answers [1];
+        }
+        return $recaptcha_response;
+>>>>>>> master
 
 }
 
@@ -234,7 +331,11 @@ function _recaptcha_mailhide_urlbase64 ($x) {
 function recaptcha_mailhide_url($pubkey, $privkey, $email) {
 	if ($pubkey == '' || $pubkey == null || $privkey == "" || $privkey == null) {
 		die ("To use reCAPTCHA Mailhide, you have to sign up for a public and private key, " .
+<<<<<<< HEAD
 			"you can do so at <a href='http://www.google.com/recaptcha/mailhide/apikey'>http://www.google.com/recaptcha/mailhide/apikey</a>");
+=======
+		     "you can do so at <a href='http://www.google.com/recaptcha/mailhide/apikey'>http://www.google.com/recaptcha/mailhide/apikey</a>");
+>>>>>>> master
 	}
 
 
@@ -273,7 +374,11 @@ function recaptcha_mailhide_html($pubkey, $privkey, $email) {
 	$url = recaptcha_mailhide_url ($pubkey, $privkey, $email);
 
 	return htmlentities($emailparts[0]) . "<a href='" . htmlentities ($url) .
+<<<<<<< HEAD
 	"' onclick=\"window.open('" . htmlentities ($url) . "', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;\" title=\"Reveal this e-mail address\">...</a>@" . htmlentities ($emailparts [1]);
+=======
+		"' onclick=\"window.open('" . htmlentities ($url) . "', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;\" title=\"Reveal this e-mail address\">...</a>@" . htmlentities ($emailparts [1]);
+>>>>>>> master
 
 }
 

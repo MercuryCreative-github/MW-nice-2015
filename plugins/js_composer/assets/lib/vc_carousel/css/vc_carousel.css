@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-indicators {
+=======
+.vc-carousel-indicators {
+>>>>>>> master
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -9,7 +13,11 @@
   list-style: none;
   text-align: center;
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-indicators li {
+=======
+.vc-carousel-indicators li {
+>>>>>>> master
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -20,6 +28,7 @@
   border: 1px solid #808080;
   background-color: #808080;
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-indicators .vc_active {
   margin: 1px;
   width: 10px;
@@ -34,19 +43,44 @@
   position: relative;
 }
 .vc_images_carousel .vc_carousel-inner {
+=======
+.vc-carousel-indicators .vc-active {
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  border: 1px solid #808080;
+}
+.vc-carousel-indicators .vc-partial {
+  opacity: 0.5;
+}
+.vc-carousel {
+  position: relative;
+}
+.vc-carousel .vc-carousel-inner {
+>>>>>>> master
   position: relative;
   overflow: hidden;
   width: 100%;
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-inner .vc_carousel-slideline {
   position: relative;
   overflow: hidden;
 }
 .vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner {
+=======
+.vc-carousel .vc-carousel-inner .vc-carousel-slideline {
+  position: relative;
+  overflow: hidden;
+}
+.vc-carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner {
+>>>>>>> master
   left: 0;
   position: relative;
   width: 100%;
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner.vc_transition {
   -webkit-transition: 0.5s ease left;
   transition: 0.5s ease left;
@@ -61,11 +95,28 @@
 }
 .vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > img,
 .vc_images_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > a > img {
+=======
+.vc-carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner.vc-transition {
+  -webkit-transition: 0.5s ease left;
+  transition: 0.5s ease left;
+}
+.vc-carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner.vc-transition.vc-swipe-transition {
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.vc-carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner > .vc-item {
+  float: left;
+  visibility: hidden;
+}
+.vc-carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner > .vc-item > img,
+.vc-carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner > .vc-item > a > img {
+>>>>>>> master
   display: block;
   max-width: 100%;
   height: auto;
   line-height: 1;
 }
+<<<<<<< HEAD
 .vc_images_carousel.vc_per-view-more .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item > .vc_inner {
   margin: 0 10px;
 }
@@ -83,27 +134,61 @@
   float: none;
 }
 .vc_images_carousel.vc_carousel_vertical .vc_carousel-indicators {
+=======
+.vc-carousel.vc-per-view-more .vc-carousel-slideline .vc-carousel-slideline-inner > .vc-item > .vc-inner {
+  margin: 10px;
+}
+.vc-carousel.vc_carousel_vertical .vc-carousel-slideline {
+  overflow: hidden;
+}
+.vc-carousel.vc_carousel_vertical .vc-carousel-slideline .vc-carousel-slideline-inner {
+  width: 100%;
+}
+.vc-carousel.vc_carousel_vertical .vc-carousel-slideline .vc-carousel-slideline-inner.vc-transition {
+  -webkit-transition-property: top;
+  transition-property: top;
+}
+.vc-carousel.vc_carousel_vertical .vc-carousel-slideline .vc-carousel-slideline-inner .vc-item {
+  float: none;
+}
+.vc-carousel.vc_carousel_vertical .vc-carousel-indicators {
+>>>>>>> master
   position: absolute;
   top: 2%;
   right: 3%;
   left: auto;
   width: 10px;
 }
+<<<<<<< HEAD
 .vc_images_carousel.vc_carousel_vertical .vc_carousel-indicators li {
+=======
+.vc-carousel.vc_carousel_vertical .vc-carousel-indicators li {
+>>>>>>> master
   display: block;
   margin: 0 auto 3px;
   width: 6px;
   height: 6px;
 }
+<<<<<<< HEAD
 .vc_images_carousel.vc_carousel_vertical .vc_carousel-indicators li.vc_active {
+=======
+.vc-carousel.vc_carousel_vertical .vc-carousel-indicators li.vc-active {
+>>>>>>> master
   width: 8px;
   height: 8px;
   margin: 0 auto 1px;
 }
+<<<<<<< HEAD
 .vc_images_carousel.vc_build .vc_carousel-slideline .vc_carousel-slideline-inner > .vc_item {
   visibility: visible;
 }
 .vc_images_carousel .vc_carousel-control {
+=======
+.vc-carousel.vc-build .vc-carousel-slideline .vc-carousel-slideline-inner > .vc-item {
+  visibility: visible;
+}
+.vc-carousel-control {
+>>>>>>> master
   position: absolute;
   padding: 0;
   top: 50%;
@@ -119,12 +204,18 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-control:hover,
 .vc_images_carousel .vc_carousel-control:focus {
+=======
+.vc-carousel-control:hover,
+.vc-carousel-control:focus {
+>>>>>>> master
   text-decoration: none;
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-control.vc_left {
   /*
       background-image: -webkit-gradient(linear, 0% top, 100% top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
@@ -151,31 +242,78 @@
 .vc_images_carousel .vc_carousel-control .icon-next,
 .vc_images_carousel .vc_carousel-control .glyphicon-chevron-left,
 .vc_images_carousel .vc_carousel-control .glyphicon-chevron-right {
+=======
+.vc-carousel-control.vc-left {
+  /*
+        background-image: -webkit-gradient(linear, 0% top, 100% top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
+        background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.5) 0%), color-stop(rgba(0, 0, 0, 0.0001) 100%));
+        background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+        */
+
+}
+.vc-carousel-control.vc-right {
+  left: auto;
+  right: 0;
+  /*
+        background-image: -webkit-gradient(linear, 0% top, 100% top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
+        background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0.0001) 0%), color-stop(rgba(0, 0, 0, 0.5) 100%));
+        background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+        */
+
+}
+.vc-carousel-control .icon-prev,
+.vc-carousel-control .icon-next,
+.vc-carousel-control .glyphicon-chevron-left,
+.vc-carousel-control .glyphicon-chevron-right {
+>>>>>>> master
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 5;
   display: inline-block;
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-control .icon-prev,
 .vc_images_carousel .vc_carousel-control .icon-next {
+=======
+.vc-carousel-control .icon-prev,
+.vc-carousel-control .icon-next {
+>>>>>>> master
   width: 20px;
   height: 20px;
   margin-top: -10px;
   margin-left: -10px;
   font-family: serif;
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-control .icon-prev:before {
+=======
+.vc-carousel-control .icon-prev:before {
+>>>>>>> master
   content: '\2039';
   position: relative;
   top: -10px;
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-control .icon-next:before {
+=======
+.vc-carousel-control .icon-next:before {
+>>>>>>> master
   content: '\203a';
   position: relative;
   top: -10px;
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-caption {
+=======
+.vc-carousel-caption {
+>>>>>>> master
   position: absolute;
   left: 15%;
   right: 15%;
@@ -187,12 +325,21 @@
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
+<<<<<<< HEAD
 .vc_images_carousel .vc_carousel-caption .btn {
   text-shadow: none;
 }
 @media screen and (min-width: 768px) {
   .vc_images_carousel .vc_carousel-control .icon-prev,
   .vc_images_carousel .vc_carousel-control .icon-next {
+=======
+.vc-carousel-caption .btn {
+  text-shadow: none;
+}
+@media screen and (min-width: 768px) {
+  .vc-carousel-control .icon-prev,
+  .vc-carousel-control .icon-next {
+>>>>>>> master
     width: 30px;
     height: 30px;
     margin-top: -15px;
@@ -201,11 +348,16 @@
     display: block;
     padding: 0;
   }
+<<<<<<< HEAD
   .vc_images_carousel .vc_carousel-caption {
+=======
+  .vc-carousel-caption {
+>>>>>>> master
     left: 20%;
     right: 20%;
     padding-bottom: 30px;
   }
+<<<<<<< HEAD
   .vc_images_carousel .vc_carousel-indicators {
     bottom: 20px;
   }
@@ -499,12 +651,47 @@
   visibility: hidden;
 }
 .vc_carousel .text-hide {
+=======
+  .vc-carousel-indicators {
+    bottom: 20px;
+  }
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+.clearfix:after {
+  clear: both;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+>>>>>>> master
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
   border: 0;
 }
+<<<<<<< HEAD
 .vc_carousel ol.vc_carousel-indicators {
   margin: 0 0 0 -30%;
 }
@@ -516,5 +703,19 @@
   display: block;
 }
 .vc_carousel .vc_carousel-inner .vc_carousel-slideline .vc_carousel-slideline-inner > .item > a > img {
+=======
+/* Wordpress fix. */
+.entry-content ol.vc-carousel-indicators {
+  margin: 0 0 0 -30%;
+}
+.entry-content .vc_carousel_vertical ol.vc-carousel-indicators {
+  margin: 1px 0 0 0;
+  bottom: auto;
+}
+.wpb_images_carousel.carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner > .item > a {
+  display: block;
+}
+.wpb_images_carousel.carousel .vc-carousel-inner .vc-carousel-slideline .vc-carousel-slideline-inner > .item > a > img {
+>>>>>>> master
   margin: auto;
 }

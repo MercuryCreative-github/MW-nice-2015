@@ -8,8 +8,12 @@ jQuery(document).ready(function ($) {
                 setCookie('wpb_js_composer_settings_group_tab', '#' + ui.newHeader.attr('id'), 365 * 24 * 60 * 60);
             else
                 setCookie('wpb_js_composer_settings_group_tab', '', 365 * 24 * 60 * 60);
+<<<<<<< HEAD
         },
         heightStyle: 'content'
+=======
+        }
+>>>>>>> master
     });
     $('.wpb-settings-select-all-shortcodes').click(function (e) {
         e.preventDefault();
@@ -19,6 +23,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         $(this).parent().parent().find('[type=checkbox]').removeAttr('checked');
     });
+<<<<<<< HEAD
     $('.vc_settings-tab-control').click(function (e) {
         e.preventDefault();
         if ($(this).hasClass('nav-tab-active')) return false;
@@ -39,6 +44,25 @@ jQuery(document).ready(function ($) {
     });
 
     $('#vc_settings-disable-notification-button').click(function (e) {
+=======
+    $('.vc-settings-tab-control').click(function (e) {
+        e.preventDefault();
+        if ($(this).hasClass('nav-tab-active')) return false;
+        var tab_id = $(this).attr('href');
+        $('.vc-settings-tabs > .nav-tab-active').removeClass('nav-tab-active');
+        $(this).addClass('nav-tab-active');
+        $('.vc-settings-tab-content').hide().removeClass('vc-settings-tab-content-active');
+        $(tab_id).fadeIn(400, function () {
+            $(this).addClass('vc-settings-tab-content-active');
+        });
+    });
+    $('.vc-settings-tab-content').submit(function () {
+        setCookie('wpb_js_composer_settings_active_tab', $('.vc-settings-tab-control.nav-tab-active').attr('href'), 365 * 24 * 60 * 60);
+        return true;
+    });
+
+    $('#vc-settings-disable-notification-button').click(function (e) {
+>>>>>>> master
         e.preventDefault();
         $.ajax({
             type:'POST',
@@ -54,6 +78,7 @@ jQuery(document).ready(function ($) {
         $helper.toggle(100);
     });
 
+<<<<<<< HEAD
     $('#vc_settings-custom-css-reset-data').click(function (e) {
         e.preventDefault();
         if (confirm(window.i18nLocaleSettings.are_you_sure_reset_css_classes)) {
@@ -67,17 +92,39 @@ jQuery(document).ready(function ($) {
         if (confirm(window.i18nLocaleSettings.are_you_sure_reset_color)) {
             $('#vc_settings-color-action').val('restore_color');
             $('#vc_settings-color').attr('action', window.location.href).find('[type=submit]').click();
+=======
+    $('#vc-settings-custom-css-reset-data').click(function (e) {
+        e.preventDefault();
+        if (confirm(window.i18nLocaleSettings.are_you_sure_reset_css_classes)) {
+            $('#vc-settings-element_css-action').val('remove_all_css_classes');
+            $('#vc-settings-element_css').attr('action', window.location.href).trigger('submit');
+        }
+    });
+    $('.color-control').wpColorPicker();
+    $('#vc-settings-color-restore-default').click(function (e) {
+        e.preventDefault();
+        if (confirm(window.i18nLocaleSettings.are_you_sure_reset_color)) {
+            $('#vc-settings-color-action').val('restore_color');
+            $('#vc-settings-color').attr('action', window.location.href).find('[type=submit]').click();
+>>>>>>> master
         }
     });
     $('#wpb_js_use_custom').change(function () {
         if ($(this).is(':checked')) {
+<<<<<<< HEAD
             $('#vc_settings-color').addClass('color_enabled');
         } else {
             $('#vc_settings-color').removeClass('color_enabled');
+=======
+            $('#vc-settings-color').addClass('color_enabled');
+        } else {
+            $('#vc-settings-color').removeClass('color_enabled');
+>>>>>>> master
 
         }
     });
   var showUpdaterSubmitButton = function() {
+<<<<<<< HEAD
           $('#vc_settings-updater [type=submit]').attr('disabled', false);
       },
       hideUpdaterSubmitButton = function() {
@@ -97,6 +144,27 @@ jQuery(document).ready(function ($) {
     $('#vc_license-activation-message').remove();
     e.preventDefault();
     $('#vc_updater-spinner').show();
+=======
+          $('#vc-settings-updater [type=submit]').attr('disabled', false);
+      },
+      hideUpdaterSubmitButton = function() {
+        $('#vc-settings-updater [type=submit]').attr('disabled', true);
+
+      };
+
+  $('#vc-settings-activate-license').click(function(e){
+    var $button = $(this),
+        $username = $('[name=wpb_js_envato_username]'),
+        $key = $('[name=wpb_js_js_composer_purchase_code]'),
+        status = $('#vc-settings-license-status').val(),
+        $api_key = $('[name=wpb_js_envato_api_key]'),
+        message_html = '<div id="vc-license-activation-message" class="updated vc-updater-result-message hidden"><p><strong>{message}</strong></p></div>';
+    if( $button.attr('disabled')===true ) return false;
+    $button.attr('disabled', true);
+    $('#vc-license-activation-message').remove();
+    e.preventDefault();
+    $('#vc-updater-spinner').show();
+>>>>>>> master
     $.ajax({
       type: 'POST',
       url: window.ajaxurl,
@@ -104,12 +172,17 @@ jQuery(document).ready(function ($) {
       data: {
           action: status=== 'activated' ? 'wpb_deactivate_license' : 'wpb_activate_license',
           username: $username.val(),
+<<<<<<< HEAD
           key: $key.val(),
           api_key: $api_key.val()
+=======
+          key: $key.val()
+>>>>>>> master
       }
     }).done(function(data){
         var code;
         if(data.result && status !== 'activated') {
+<<<<<<< HEAD
           $('#vc_settings-license-status').val('activated');
           $key.addClass('vc_updater-passive').attr('disabled', true);
           $username.addClass('vc_updater-passive').attr('disabled', true);
@@ -123,6 +196,21 @@ jQuery(document).ready(function ($) {
           $username.removeClass('vc_updater-passive').attr('disabled', false);
           $api_key.removeClass('vc_updater-passive').attr('disabled', false);
           $('#vc_settings-activate-license').html(i18nLocaleSettings.vc_updater_activate_license);
+=======
+          $('#vc-settings-license-status').val('activated');
+          $key.addClass('vc-updater-passive').attr('disabled', true);
+          $username.addClass('vc-updater-passive').attr('disabled', true);
+          $api_key.addClass('vc-updater-passive').attr('disabled', true);
+          $('#vc-settings-activate-license').html(i18nLocaleSettings.vc_updater_deactivate_license);
+          message_html = message_html.replace('{message}', i18nLocaleSettings.vc_updater_license_activation_success);
+          hideUpdaterSubmitButton();
+        } else if(data.result && status === 'activated') {
+          $('#vc-settings-license-status').val('not_activated');
+          $key.removeClass('vc-updater-passive').attr('disabled', false);
+          $username.removeClass('vc-updater-passive').attr('disabled', false);
+          $api_key.removeClass('vc-updater-passive').attr('disabled', false);
+          $('#vc-settings-activate-license').html(i18nLocaleSettings.vc_updater_activate_license);
+>>>>>>> master
           message_html = message_html.replace('{message}', i18nLocaleSettings.vc_updater_license_deactivation_success);
           showUpdaterSubmitButton();
         } else {
@@ -149,6 +237,7 @@ jQuery(document).ready(function ($) {
           }
 
         }
+<<<<<<< HEAD
         $(message_html).insertAfter('#vc_settings-activate-license').fadeIn(100);
         $button.attr('disabled', false);
         $('#vc_updater-spinner').hide();
@@ -168,5 +257,16 @@ jQuery(document).ready(function ($) {
 	        $css_editor_input.val(window.css_editor.getValue());
         });
     }
+=======
+        $(message_html).insertAfter('#vc-settings-activate-license').fadeIn(100);
+        $button.attr('disabled', false);
+        $('#vc-updater-spinner').hide();
+      }).error(function(data){
+        $(message_html.replace('{message}', i18nLocaleSettings.vc_updater_error)).insertAfter('#vc-settings-activate-license').show(100);
+        $('#vc-updater-spinner').hide();
+        $button.attr('disabled', false);
+      });
+  });
+>>>>>>> master
 });
 

@@ -95,6 +95,7 @@
 
             return this;
         },
+<<<<<<< HEAD
         
         /**
          * @method Manually update all circles
@@ -102,6 +103,8 @@
         update: function(value) {
             this._update(value);
         },
+=======
+>>>>>>> master
 
         /**
          * @method Stop the animation.
@@ -113,6 +116,7 @@
         /**
          * @private
          * @method Call update on each circle and redraw them.
+<<<<<<< HEAD
          * @param value Value to be passed to circle update method (in case of manual update)
          * @returns this
          */
@@ -120,6 +124,14 @@
             this._clear();
             this.circles.forEach(function(circle, idx, array) {
                 circle.update(value);
+=======
+         * @returns this
+         */
+        _update: function() {
+            this._clear();
+            this.circles.forEach(function(circle, idx, array) {
+                circle.update();
+>>>>>>> master
             });
 
             return this;
@@ -211,8 +223,13 @@
     Circle.prototype = {
         constructor: Circle,
 
+<<<<<<< HEAD
         update: function(value) {
             this.progress = value || this.progressListener();
+=======
+        update: function() {
+            this.progress = this.progressListener();
+>>>>>>> master
             this._draw();
 
             if (this.infoListener) {

@@ -14,7 +14,10 @@
      * @type {*}
      */
     vc.shortcode = Backbone.Model.extend({
+<<<<<<< HEAD
         settings: false,
+=======
+>>>>>>> master
         defaults:function () {
             var id = window.vc_guid();
             return {
@@ -64,9 +67,12 @@
                 options.error("Record not found");
             }
         },
+<<<<<<< HEAD
         getParam: function(key) {
           return _.isObject(this.get('params')) && !_.isUndefined(this.get('params')[key]) ? this.get('params')[key] : '';
         },
+=======
+>>>>>>> master
         /**
          * Remove all children of model from storage.
          * Will remove children of children models too.
@@ -80,10 +86,13 @@
                 this.removeChildren(model);
             }, this);
             if (models.length) vc.storage.save();
+<<<<<<< HEAD
         },
         setting: function(name) {
           if(this.settings === false) this.settings = vc.getMapped(this.get('shortcode')) || {};
           return this.settings[name];
+=======
+>>>>>>> master
         }
     });
     /**
@@ -166,6 +175,7 @@
         var defaults = {},
             params = _.isObject(vc.map[tag]) && _.isArray(vc.map[tag].params) ? vc.map[tag].params : [];
         _.each(params, function (param) {
+<<<<<<< HEAD
             if(_.isObject(param)) {
                 if(!_.isUndefined(param.std)) {
                     defaults[param.param_name] = param.std;
@@ -179,6 +189,19 @@
                     } else {
                         defaults[param.param_name] = '';
                     }
+=======
+            if(!_.isUndefined(param.std)) {
+                defaults[param.param_name] = param.std;
+            } else if (!_.isUndefined(param.value)) {
+                if (_.isObject(param.value) && param.type != 'checkbox') {
+                    defaults[param.param_name] = _.values(param.value)[0];
+                } else if (_.isArray(param.value)) {
+                    defaults[param.param_name] = param.value[0];
+                } else if (!_.isObject(param.value)) {
+                    defaults[param.param_name] = param.value;
+                } else {
+                    defaults[param.param_name] = '';
+>>>>>>> master
                 }
             }
         });

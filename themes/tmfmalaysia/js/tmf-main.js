@@ -30,17 +30,31 @@ jQuery(document).ready(function($) {
 jQuery(window).resize(function() {
     resizeBoxex();
 });
+<<<<<<< HEAD
+
+jQuery(window).load(function() {
+    resizeBoxex();
+=======
 
 jQuery(window).load(function() {
     resizeBoxex();
 
 });
+>>>>>>> master
 
+});
 
+function resizeBoxex() {
+
+<<<<<<< HEAD
 function resizeBoxex() {
 
 
 
+=======
+
+
+>>>>>>> master
     boxHeight = 0;
 
 
@@ -54,9 +68,15 @@ function resizeBoxex() {
 
 
     //jQuery('.third-section .box').css('height', boxHeight);
+<<<<<<< HEAD
 
     //jQuery('.third-section .box .wpb_single_image').css({'position':'absolute','bottom': '-8px','left': 0});
 
+=======
+
+    //jQuery('.third-section .box .wpb_single_image').css({'position':'absolute','bottom': '-8px','left': 0});
+
+>>>>>>> master
     //jQuery('style').append('.third-section .box{height:'+boxHeight+'px!important;}');
 
 
@@ -179,6 +199,7 @@ jQuery(document).ready(function() {
 
     });
 
+<<<<<<< HEAD
    jQuery('table.responsive tr').each(function (index) {
       jQuery(this).css('height',Math.max(55,jQuery('.pinned table tr:eq('+index+')').height()));
       jQuery('.pinned table tr:eq('+index+')').css('height',Math.max(55,jQuery('.pinned table tr:eq('+index+')').height()));
@@ -191,6 +212,11 @@ jQuery(document).ready(function() {
 	
 	
 	
+=======
+    tr_copy.each(function (index) {
+      jQuery(this).height(heights[index]);
+    });
+>>>>>>> master
   }
 
 });

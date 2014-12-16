@@ -111,7 +111,10 @@ class GFFormDisplay{
                 //after submission hook
                 do_action("gform_after_submission", $lead, $form);
                 do_action("gform_after_submission_{$form["id"]}", $lead, $form);
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
             }
 
             if(is_array($confirmation) && isset($confirmation["redirect"])){
@@ -119,6 +122,7 @@ class GFFormDisplay{
                 do_action("gform_post_submission", $lead, $form);
                 do_action("gform_post_submission_{$form["id"]}", $lead, $form);
 
+<<<<<<< HEAD
 				GFFormsModel::delete_password( $lead, $form );
 
 				exit;
@@ -130,6 +134,11 @@ class GFFormDisplay{
 			}
         }
 
+=======
+                exit;
+            }
+        }
+>>>>>>> master
         if(!isset(self::$submission[$form_id]))
             self::$submission[$form_id] = array();
 
@@ -416,9 +425,12 @@ class GFFormDisplay{
         $confirmation_message = "";
         $page_number = 1;
 
+<<<<<<< HEAD
 	    $view_counter_disabled = apply_filters( 'gform_disable_view_counter', false );
 	    $view_counter_disabled = apply_filters( "gform_disable_view_counter_{$form_id}", $view_counter_disabled );
 
+=======
+>>>>>>> master
         //If form was submitted, read variables set during form submission procedure
         $submission_info = isset(self::$submission[$form_id]) ? self::$submission[$form_id] : false;
         if($submission_info){
@@ -442,7 +454,11 @@ class GFFormDisplay{
                 }
             }
         }
+<<<<<<< HEAD
         else if(!current_user_can("administrator") && !$view_counter_disabled){
+=======
+        else if(!current_user_can("administrator")){
+>>>>>>> master
             RGFormsModel::insert_form_view($form_id, $_SERVER['REMOTE_ADDR']);
         }
 
@@ -522,7 +538,11 @@ class GFFormDisplay{
 
             $form_css_class = !empty($form["cssClass"]) ? "class='{$form["cssClass"]}'": "";
 
+<<<<<<< HEAD
             $action = esc_url($action);
+=======
+            $action = esc_attr($action);
+>>>>>>> master
             $form_string .= apply_filters("gform_form_tag_{$form_id}", apply_filters("gform_form_tag", "<form method='post' enctype='multipart/form-data' {$target} id='gform_{$form_id}' {$form_css_class} action='{$action}'>", $form), $form);
 
             if($display_title || $display_description){
@@ -709,10 +729,18 @@ class GFFormDisplay{
 
 			//check admin setting for whether the progress bar should start at zero
         	$start_at_zero = rgars($form, "pagination/display_progressbar_on_confirmation");
+<<<<<<< HEAD
             $start_at_zero = apply_filters("gform_progressbar_start_at_zero", $start_at_zero, $form);
 
             //show progress bar on confirmation
             if( $start_at_zero && $has_pages && ! IS_ADMIN && ( $form["confirmation"]["type"] == "message" && $form["pagination"]["type"] == "percentage" ) )
+=======
+			//check for filter
+            $start_at_zero = apply_filters("gform_progressbar_start_at_zero", $start_at_zero, $form);
+
+            //show progress bar on confirmation
+            if($start_at_zero && $has_pages && !IS_ADMIN && ($form["confirmation"]["type"] == "message" && $form["pagination"]["type"] == "percentage") && $form["pagination"]["display_progressbar_on_confirmation"])
+>>>>>>> master
             {
                 $progress_confirmation = self::get_progress_bar($form, $form_id,$confirmation_message);
                 if($ajax)
@@ -728,7 +756,11 @@ class GFFormDisplay{
                 }
                 else
                 {
+<<<<<<< HEAD
                     $progress_confirmation = $confirmation_message;
+=======
+                 $progress_confirmation = $confirmation_message;
+>>>>>>> master
                 }
             }
 
@@ -962,6 +994,7 @@ class GFFormDisplay{
         return rgempty("input_{$honeypot_id}");
     }
 
+<<<<<<< HEAD
 	public static function handle_submission($form, &$lead, $ajax=false){
 
 		$lead_id = apply_filters("gform_entry_id_pre_save_lead{$form["id"]}", apply_filters("gform_entry_id_pre_save_lead", null, $form), $form);
@@ -1015,6 +1048,55 @@ class GFFormDisplay{
 	}
 
 	public static function clean_up_files($form){
+=======
+    public static function handle_submission($form, &$lead, $ajax=false){
+
+        $lead_id = apply_filters("gform_entry_id_pre_save_lead{$form["id"]}", apply_filters("gform_entry_id_pre_save_lead", null, $form), $form);
+
+        if(!empty($lead_id)){
+            if(empty($lead))
+                $lead = array();
+            $lead["id"] = $lead_id;
+        }
+
+        //creating entry in DB
+        RGFormsModel::save_lead($form, $lead);
+
+        //reading entry that was just saved
+        $lead = RGFormsModel::get_lead($lead["id"]);
+
+		$lead = GFFormsModel::set_entry_meta($lead, $form);
+
+        do_action('gform_entry_created', $lead, $form);
+        $lead = apply_filters('gform_entry_post_save', $lead, $form);
+
+        RGFormsModel::set_current_lead($lead);
+
+        //if Akismet plugin is installed, run lead through Akismet and mark it as Spam when appropriate
+        $is_spam = GFCommon::akismet_enabled($form['id']) && GFCommon::is_akismet_spam($form, $lead);
+
+        GFCommon::log_debug("Checking for spam...");
+        GFCommon::log_debug("Is entry considered spam? {$is_spam}.");
+
+        if(!$is_spam){
+            GFCommon::create_post($form, $lead);
+            //send notifications
+            GFCommon::send_form_submission_notifications($form, $lead);
+        }
+        else {
+            //marking entry as spam
+            RGFormsModel::update_lead_property($lead["id"], "status", "spam", false, true);
+            $lead["status"] = "spam";
+        }
+
+        self::clean_up_files($form);
+
+        //display confirmation message or redirect to confirmation page
+        return self::handle_confirmation($form, $lead, $ajax);
+    }
+
+    public static function clean_up_files($form){
+>>>>>>> master
         $unique_form_id = rgpost("gform_unique_id");
         if(!ctype_alnum($unique_form_id))
             return false;
@@ -1659,6 +1741,7 @@ class GFFormDisplay{
             foreach($matches as $match){
                 //parsing shortcode attributes
                 $attr = shortcode_parse_atts($match[1]);
+<<<<<<< HEAD
                 $form_id = rgar($attr, "id");
                 if(!is_numeric($form_id)){
                     $form_id = RGFormsModel::get_form_id( rgar($attr, "name") );
@@ -1668,6 +1751,14 @@ class GFFormDisplay{
 					$forms[] = RGFormsModel::get_form_meta($form_id);
 					$ajax = isset($attr["ajax"]) && strtolower(substr($attr["ajax"],0, 4)) == "true";
 				}
+=======
+                $form_id = $attr["id"];
+                if(!is_numeric($form_id))
+                    $form_id = RGFormsModel::get_form_id($attr["name"]);
+
+                $forms[] = RGFormsModel::get_form_meta($form_id);
+                $ajax = isset($attr["ajax"]) && strtolower(substr($attr["ajax"],0, 4)) == "true";
+>>>>>>> master
             }
         }
         return $forms;
@@ -1931,7 +2022,11 @@ class GFFormDisplay{
 					}
 
                     if(rgar($choice,"isSelected") && $input_type == "select"){
+<<<<<<< HEAD
                         $val = $is_pricing_field && $field['type'] != 'quantity' ? $choice["value"] . "|" . GFCommon::to_number($choice["price"]) :  $choice["value"];
+=======
+                        $val = $is_pricing_field ? $choice["value"] . "|" . GFCommon::to_number($choice["price"]) :  $choice["value"];
+>>>>>>> master
                         $default_values[$field["id"]] = $val;
                     }
                     else if(rgar($choice,"isSelected")){
@@ -1951,6 +2046,7 @@ class GFFormDisplay{
                     $date_info = GFcommon::parse_date($field_val, $format);
                     switch($format){
                         case "mdy":
+<<<<<<< HEAD
                             $field_val = rgar($date_info, "month") . "/" . rgar($date_info, "day") . "/" . rgar($date_info, "year");
                             break;
                         case "dmy":
@@ -1958,6 +2054,15 @@ class GFFormDisplay{
                             break;
                         case "ymd":
                             $field_val = rgar($date_info, "year") . "/" . rgar($date_info, "month" ) . "/" . rgar($date_info, "day" );
+=======
+                            $field_val = $date_info["month"] . "/" . $date_info["day"] . "/" . $date_info["year"];
+                            break;
+                        case "dmy":
+                            $field_val = $date_info["day"] . "/" . $date_info["month"] . "/" . $date_info["year"];
+                            break;
+                        case "ymd":
+                            $field_val = $date_info["year"] . "/" . $date_info["month"] . "/" . $date_info["day"];
+>>>>>>> master
                             break;
                     }
                 }

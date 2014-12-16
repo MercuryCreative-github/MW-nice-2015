@@ -323,7 +323,11 @@ if (!class_exists("GFResults")) {
                         <img style="vertical-align:middle;"
                              src="<?php echo GFCommon::get_base_url() ?>/images/spinner.gif"
                              alt="loading..."/>&nbsp;
+<<<<<<< HEAD
                         <a href="javascript:void(0);" onclick="javascript:gresultsAjaxRequest.abort()"><?php _e( 'Cancel', 'gravityforms' ); ?></a>
+=======
+                        <a href="javascript:void(0);" onclick="javascript:gresultsAjaxRequest.abort()">Cancel</a>
+>>>>>>> master
                     </div>
 
                     <div id="gresults-results-wrapper">
@@ -364,7 +368,11 @@ if (!class_exists("GFResults")) {
                 $html = __("No results.", "gravityforms");
             } else {
                 $search_criteria                  = array();
+<<<<<<< HEAD
                 $search_criteria["field_filters"] = GFCommon::get_field_filters_from_post($form);
+=======
+                $search_criteria["field_filters"] = GFCommon::get_field_filters_from_post();
+>>>>>>> master
 
                 $start_date = rgpost("start");
                 $end_date   = rgpost("end");
