@@ -36,6 +36,7 @@ jQuery(window).load(function() {
 
 });
 
+function resizeBoxex() {
 
 function resizeBoxex() {
 

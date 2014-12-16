@@ -704,6 +704,12 @@ footer .footer-bottom .button.register { background-color:rgb(254, 152, 2); widt
     font-weight: normal;
     margin: 0px 0px 18px;
 }
+footer .container .footer-bottom .footer-tmf-info img {
+    float: left;
+    margin-right: 10px;
+    margin-top: 14px;
+}
+footer .container .footer-bottom .footer-tmf-info p { margin-top: 20px; }
 
 .wpb_content_element.hotel-travel-info-box { margin-bottom: 10px; }
 .hotel-travel-info-box p a {
