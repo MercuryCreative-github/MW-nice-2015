@@ -36,7 +36,7 @@
 .home_slider .wpb_wrapper .wpb_single_image.wpb_content_element.vc_align_center { display: none; }
 
 /* title */
-.the-content .first-section h1 span { color: #229995; }/*#B1B1B1*/
+.the-content .first-section h1 span { color: #B1B1B1; }
 .the-content .first-section-box p { font-size: 18px; line-height: 155%; padding-bottom:50px; }
 .the-content .first-section-box h3 { text-align:left; }
 .the-content .first-section-box p strong { font-size: 18px; }
@@ -142,4 +142,8 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 .the-content .color-box h5 { font-size: 1.6em; }
 .the-content  .color-box h5 span.green-text {color: rgb(123, 202, 40);}
 
+<<<<<<< HEAD
 ::-webkit-scrollbar {border-left: none !important}
+=======
+::-webkit-scrollbar {border-left: none !important}
+>>>>>>> 3444288e90b247662206560f83abce370fc36145

@@ -7,7 +7,15 @@
  * This script loads with settings form.
  * ========================================================= */
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
+=======
+var wpb_change_tab_title, wpb_change_accordion_tab_title;
+>>>>>>> master
+=======
+var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 !function($) {
     wpb_change_tab_title = function($element, field) {
@@ -18,8 +26,17 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
          $section_title.find('a').text($(field).val());
     };
 
+<<<<<<< HEAD
+<<<<<<< HEAD
     window.init_textarea_html = function($element) {
 
+=======
+    function init_textarea_html($element) {
+>>>>>>> master
+=======
+    window.init_textarea_html = function($element) {
+
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         /*
          Simple version without all this buttons from Wordpress
          tinyMCE.init({
@@ -33,6 +50,10 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
             $form_line = $element.closest('.edit_form_line'),
             $content_holder = $form_line.find('.vc_textarea_html_content'),
             content = $content_holder.val();
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         // Init Quicktag
         if(_.isUndefined(tinyMCEPreInit.qtInit[textfield_id])) {
             window.tinyMCEPreInit.qtInit[textfield_id] = _.extend({}, window.tinyMCEPreInit.qtInit[wpActiveEditor], {id: textfield_id})
@@ -58,10 +79,24 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
 		        }
 	        });
             window.tinyMCEPreInit.mceInit[textfield_id].plugins =  window.tinyMCEPreInit.mceInit[textfield_id].plugins.replace(/,?wpfullscreen/, '');
+<<<<<<< HEAD
+=======
+
+        window.tinyMCEPreInit.mceInit[textfield_id] = _.extend({}, tinyMCEPreInit.mceInit['content']);
+
+        if(_.isUndefined(tinyMCEPreInit.qtInit[textfield_id])) {
+            window.tinyMCEPreInit.qtInit[textfield_id] = _.extend({}, tinyMCEPreInit.qtInit['replycontent'], {id: textfield_id})
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         }
         $element.val($content_holder.val());
         qt = quicktags( window.tinyMCEPreInit.qtInit[textfield_id] );
         QTags._buttonsInit();
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         if(window.tinymce) {
             window.switchEditors && window.switchEditors.go(textfield_id, 'tmce');
             if(tinymce.majorVersion === "4") tinymce.execCommand( 'mceAddEditor', true, textfield_id );
@@ -69,6 +104,14 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
         vc_activeMce = textfield_id;
 	    wpActiveEditor = textfield_id;
     };
+<<<<<<< HEAD
+=======
+        window.switchEditors.go(textfield_id, 'tmce');
+        /// window.tinyMCE.get(textfield_id).focus();
+    }
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     function init_textarea_html_old($element) {
         var textfield_id = $element.attr("id"),
             $form_line = $element.closest('.edit_form_line'),
@@ -93,6 +136,10 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
          $('#wpb_tinymce_content-html').trigger('click');
          $('#wpb_tinymce_content-tmce').trigger('click'); // Fix hidden toolbar
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     // TODO: unsecure. Think about it
     Color.prototype.toString = function() {
       if(this._alpha < 1) {
@@ -139,6 +186,14 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
         color_picker.toggler.css( { backgroundColor: $control.val() });
       }).val(alpha_val).trigger('change');
     });
+<<<<<<< HEAD
+=======
+
+    $('.vc-color-control').wpColorPicker();
+
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     var InitGalleries = function() {
         var that = this;
         // TODO: Backbone style for view binding
@@ -202,7 +257,15 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
         this.selected_items = [];
         this.options = _.isObject(options) ? options : {};
         _.defaults(this.options, {
+<<<<<<< HEAD
+<<<<<<< HEAD
             css_class: 'vc_suggester',
+=======
+            css_class: 'vc-suggester',
+>>>>>>> master
+=======
+            css_class: 'vc_suggester',
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             limit: false,
             source: {},
             predefined: [],
@@ -233,14 +296,30 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
             this.$el.autocomplete({
                 source: this.buildSource,
                 select: this.itemSelected,
+<<<<<<< HEAD
+<<<<<<< HEAD
                 minLength: 2,
+=======
+                minLength: 3,
+>>>>>>> master
+=======
+                minLength: 2,
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 focus: function( event, ui ) {return false;}
             }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
                 return $( '<li data-value="' + item.value + '">' )
                     .append( "<a>" + item.name + "</a>" )
                     .appendTo( ul );
             };
+<<<<<<< HEAD
+<<<<<<< HEAD
             this.$el.autocomplete( "widget" ).addClass('vc_ui-front')
+=======
+            this.$el.autocomplete( "widget" ).addClass('vc-ui-front')
+>>>>>>> master
+=======
+            this.$el.autocomplete( "widget" ).addClass('vc_ui-front')
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             if(_.isArray(this.options.predefined)) {
                 _.each(this.options.predefined, function(item){
                     this.create(item);
@@ -272,7 +351,15 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
                 exclude_css = '';
             if(_.isUndefined(this.selected_items[index].action)) this.selected_items[index].action = '+';
             exclude_css = this.selected_items[index].action === '-' ? ' exclude' : ' include';
+<<<<<<< HEAD
+<<<<<<< HEAD
             $label = $('<li class="vc_suggest-label' + exclude_css +'" data-index="' + index + '" data-value="' + item.value + '"><span class="label">' + item.name + '</span>' + remove + '</li>');
+=======
+            $label = $('<li class="vc-suggest-label' + exclude_css +'" data-index="' + index + '" data-value="' + item.value + '"><span class="label">' + item.name + '</span>' + remove + '</li>');
+>>>>>>> master
+=======
+            $label = $('<li class="vc_suggest-label' + exclude_css +'" data-index="' + index + '" data-value="' + item.value + '"><span class="label">' + item.name + '</span>' + remove + '</li>');
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             $label.insertBefore(this.$el_wrap);
             if(!_.isEmpty(remove)) $label.click(this.labelClick);
             this.options.select_callback($label, this.selected_items);
@@ -412,12 +499,28 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
     });
     var VcLoop = Backbone.View.extend({
         events: {
+<<<<<<< HEAD
+<<<<<<< HEAD
             'click .vc_loop-build': 'showEditor'
+=======
+            'click .vc-loop-build': 'showEditor'
+>>>>>>> master
+=======
+            'click .vc_loop-build': 'showEditor'
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         initialize: function() {
             _.bindAll(this, 'createEditor');
             this.$input = $('.wpb_vc_param_value', this.$el);
+<<<<<<< HEAD
+<<<<<<< HEAD
             this.$button = this.$el.find('.vc_loop-build');
+=======
+            this.$button = this.$el.find('.vc-loop-build');
+>>>>>>> master
+=======
+            this.$button = this.$el.find('.vc_loop-build');
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.data = this.$input.val();
             this.settings = $.parseJSON(window.decodeURIComponent(this.$button.data('settings')));
         },
@@ -437,8 +540,17 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
                 data: {
                     action:'wpb_get_loop_settings',
                     value: this.data,
+<<<<<<< HEAD
+<<<<<<< HEAD
                     settings: this.settings,
                     post_id: vc.post_id
+=======
+                    settings: this.settings
+>>>>>>> master
+=======
+                    settings: this.settings,
+                    post_id: vc.post_id
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 }
             }).done(this.createEditor);
         },
@@ -454,8 +566,18 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
     });
     var VcOptionsField = Backbone.View.extend({
         events: {
+<<<<<<< HEAD
+<<<<<<< HEAD
             'click .vc_options-edit': 'showEditor',
             'click .vc_close-button': 'showEditor',
+=======
+            'click .vc-options-edit': 'showEditor',
+            'click .vc-close-button': 'showEditor',
+>>>>>>> master
+=======
+            'click .vc_options-edit': 'showEditor',
+            'click .vc_close-button': 'showEditor',
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             'click input, select': 'save',
             'change input, select': 'save',
             'keyup input': 'save'
@@ -463,8 +585,18 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
         data: {},
         fields: {},
         initialize: function() {
+<<<<<<< HEAD
+<<<<<<< HEAD
             this.$button = this.$el.find('.vc_options-edit');
             this.$form = this.$el.find('.vc_options-fields');
+=======
+            this.$button = this.$el.find('.vc-options-edit');
+            this.$form = this.$el.find('.vc-options-fields');
+>>>>>>> master
+=======
+            this.$button = this.$el.find('.vc_options-edit');
+            this.$form = this.$el.find('.vc_options-fields');
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.$input = this.$el.find('.wpb_vc_param_value');
             this.settings = this.$form.data('settings');
             this.parseData();
@@ -540,15 +672,33 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
     /**
      * VC_link power code.
      */
+<<<<<<< HEAD
+<<<<<<< HEAD
     $('.vc_link-build').click(function(e){
         e.preventDefault();
         var $self = $(this),
             $block = $(this).closest('.vc_link'),
+=======
+    $('.vc-link-build').click(function(e){
+        e.preventDefault();
+        var $self = $(this),
+            $block = $(this).closest('.vc-link'),
+>>>>>>> master
+=======
+    $('.vc_link-build').click(function(e){
+        e.preventDefault();
+        var $self = $(this),
+            $block = $(this).closest('.vc_link'),
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             $input = $block.find('.wpb_vc_param_value'),
             $url_label = $block.find('.url-label'),
             $title_label = $block.find('.title-label'),
             value_object = $input.data('json'),
             $link_submit = $('#wp-link-submit'),
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             $vc_link_submit = $('<input type="submit" name="vc_link-submit" id="vc_link-submit" class="button-primary" value="Set Link">'),
             dialog;
         $link_submit.hide();
@@ -575,6 +725,16 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
           dialog = window.wpLink;
         }
       /*
+<<<<<<< HEAD
+=======
+            $vc_link_submit = $('<input type="submit" name="vc-link-submit" id="vc-link-submit" class="button-primary" value="Set Link">'),
+            $dialog;
+        $link_submit.hide();
+        $("#vc-link-submit").remove();
+        $vc_link_submit.insertBefore($link_submit);
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         $dialog = $('#wp-link').wpdialog({
                        title: wpLinkL10n.title,
                        width: 480,
@@ -583,8 +743,16 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
                        dialogClass: 'wp-dialog',
                        zIndex: 300000
                    });
+<<<<<<< HEAD
+<<<<<<< HEAD
        */
         dialog.open(vc_activeMce);
+=======
+>>>>>>> master
+=======
+       */
+        dialog.open(vc_activeMce);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         window.wpLink.textarea = $self;
         if(_.isString(value_object.url)) $('#url-field').val(value_object.url);
         if(_.isString(value_object.title)) $('#link-title-field').val(value_object.title);
@@ -599,7 +767,15 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
             options.title = $('#link-title-field').val();
             options.target = $('#link-target-checkbox').is(':checked') ? ' _blank' : '';
             string = _.map(options, function(value, key){
+<<<<<<< HEAD
+<<<<<<< HEAD
                 if(_.isString(value) && value.length > 0) {
+=======
+                if(_.isString(value) && value.length >0) {
+>>>>>>> master
+=======
+                if(_.isString(value) && value.length > 0) {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                     return key + ':' + encodeURIComponent(value);
                 }
             }).join('|');
@@ -608,20 +784,44 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
             $url_label.html(options.url + options.target );
             $title_label.html(options.title);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
             // $dialog.wpdialog('close');
             dialog.close();
+=======
+            $dialog.wpdialog('close');
+>>>>>>> master
+=======
+            // $dialog.wpdialog('close');
+            dialog.close();
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             $link_submit.show();
             $vc_link_submit.unbind('click.vcLink');
             $vc_link_submit.remove();
             // remove vc_link hooks for wpLink
             $('#wp-link-cancel').unbind('click.vcLink');
             window.wpLink.textarea = '';
+<<<<<<< HEAD
+<<<<<<< HEAD
             $('#link-target-checkbox').attr('checked', false);
+=======
+>>>>>>> master
+=======
+            $('#link-target-checkbox').attr('checked', false);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             return false;
         });
         $('#wp-link-cancel').unbind('click.vcLink').bind('click.vcLink', function(e){
             e.preventDefault();
+<<<<<<< HEAD
+<<<<<<< HEAD
             dialog.close();
+=======
+            $dialog.wpdialog('close');
+>>>>>>> master
+=======
+            dialog.close();
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             // remove vc_link hooks for wpLink
             $vc_link_submit.unbind('click.vcLink');
             $vc_link_submit.remove();
@@ -634,8 +834,18 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
         this.el = element;
         this.$el = $(this.el);
         this.$data_field = this.$el.find('.wpb_vc_param_value');
+<<<<<<< HEAD
+<<<<<<< HEAD
         this.$toolbar = this.$el.find('.vc_sorted-list-toolbar');
         this.$current_control = this.$el.find('.vc_sorted-list-container');
+=======
+        this.$toolbar = this.$el.find('.vc-sorted-list-toolbar');
+        this.$current_control = this.$el.find('.vc-sorted-list-container');
+>>>>>>> master
+=======
+        this.$toolbar = this.$el.find('.vc_sorted-list-toolbar');
+        this.$current_control = this.$el.find('.vc_sorted-list-container');
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         _.defaults(this.options, {});
         this.init();
     };
@@ -676,7 +886,15 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
                 }, this);
 
             }
+<<<<<<< HEAD
+<<<<<<< HEAD
             this.$current_control.append('<li class="vc_control-' + data.value + '" data-name="' + data.value + '">' + data.label + sub_control + '</li>');
+=======
+            this.$current_control.append('<li class="vc-control-' + data.value + '" data-name="' + data.value + '">' + data.label + sub_control + '</li>');
+>>>>>>> master
+=======
+            this.$current_control.append('<li class="vc_control-' + data.value + '" data-name="' + data.value + '">' + data.label + sub_control + '</li>');
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
         },
         controlEvent: function(e) {
@@ -689,7 +907,15 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
                 });
 
             } else {
+<<<<<<< HEAD
+<<<<<<< HEAD
                 this.$current_control.find('.vc_control-' + $control.val()).remove();
+=======
+                this.$current_control.find('.vc-control-' + $control.val()).remove();
+>>>>>>> master
+=======
+                this.$current_control.find('.vc_control-' + $control.val()).remove();
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             }
             this.save();
         },
@@ -702,6 +928,13 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
                         return_string += '|' + encodeURIComponent($sub_control.val());
                     }
                 });
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 return return_string;
             }).join(',');
             this.$data_field.val(value);
@@ -716,6 +949,10 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
             if (typeof option == 'string') data[option]();
         });
     };
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     $('.vc_sorted-list').VcSortedList();
     $('.wpb_vc_param_value.dropdown').change(function(){
       var $this = $(this),
@@ -829,4 +1066,13 @@ var wpb_change_tab_title, wpb_change_accordion_tab_title, vc_activeMce;
             $('.wpb_el_type_google_fonts > .edit_form_line').html(window.i18nLocale.gfonts_unable_to_load_google_fonts||"Unable to load Google Fonts");
         }
     }
+<<<<<<< HEAD
+=======
+    $('.vc-sorted-list').VcSortedList();
+    $('.wpb-edit-form .textarea_html').each(function(){
+      init_textarea_html($(this));
+    });
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 }(window.jQuery);

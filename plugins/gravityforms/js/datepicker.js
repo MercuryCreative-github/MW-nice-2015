@@ -28,6 +28,10 @@ function gformInitDatepicker(){
                 image = jQuery('#gforms_calendar_icon_' + this.id).val();
             }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             element.datepicker( {
                 yearRange:       '-100:+20',
                 showOn:          showOn,
@@ -40,6 +44,12 @@ function gformInitDatepicker(){
                     element.closest('li').nextAll('li:visible:first').find(':input:first').focus();
                 }
             } );
+<<<<<<< HEAD
+=======
+            element.datepicker({ yearRange: '-100:+20', showOn: showOn, buttonImage: image, buttonImageOnly: true, dateFormat: format, changeMonth: true, changeYear: true, onSelect: function (){ element.focus(); } });
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         }
     );
 }

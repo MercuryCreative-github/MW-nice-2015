@@ -248,6 +248,10 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
 			}
 		}
 		else{
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 			//$target.show();
 			//Getting around an issue with Chrome on Android. Does not like jQuery('xx').show() ...
             if ($target.hasClass('gf_inline')) {
@@ -256,6 +260,12 @@ function gf_do_action(action, targetId, useAnimation, defaultValues, isInit, cal
                 $target.css('display', 'block');
             }
 
+<<<<<<< HEAD
+=======
+			$target.show();
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 			if(callback){
 				callback();
 			}

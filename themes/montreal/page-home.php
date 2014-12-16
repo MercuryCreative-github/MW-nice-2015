@@ -1,6 +1,14 @@
 <?php
 	/*
+<<<<<<< HEAD
+<<<<<<< HEAD
 	Template Name: Homepage
+=======
+	Template Name: TM Forum Malaysia Homepage
+>>>>>>> master
+=======
+	Template Name: Homepage
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	*/
 	get_header(); 
 	the_post();
@@ -18,9 +26,45 @@
 ?>
 
 <div class="container slideshow" style="background:url(<?php echo $option['background_image_faded']; ?>);">
+<<<<<<< HEAD
+<<<<<<< HEAD
 	<section class="row largepadding">
 	<div class="six columns bigpadding intro">
 		<div class="bigtoppadding whitetext"><?php the_content(); ?></div>
+=======
+		<section class="row largepadding">
+	<div class="eight columns bigpadding intro">
+		<div class="bigtoppadding whitetext">
+
+<div class="wpb_row vc_row-fluid">
+	<div class="vc_span12 home_slider wpb_column column_container">
+		<div class="wpb_wrapper">
+			
+	<div class="wpb_single_image wpb_content_element vc_align_left">
+		<div class="wpb_wrapper">
+		<img width="765" height="240" src="<?php the_field("home_page_intro_logo"); ?>" class="vc_box_border_grey attachment-full" alt="TM Forum Live!&nbsp;Becoming an Agile, Super-Effective Business&nbsp;brings together all the critical elements of&nbsp;managing&nbsp;and&nbsp;delivering an agile, customer-centric&nbsp;business.">	
+					
+
+</div> 
+	</div> 
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+			<?php the_field("home_page_intro_text"); ?>
+
+		</div> 
+	</div> 
+		</div> 
+	</div> 
+</div>
+
+
+		</div>
+>>>>>>> master
+=======
+	<section class="row largepadding">
+	<div class="six columns bigpadding intro">
+		<div class="bigtoppadding whitetext"><?php the_content(); ?></div>
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 	</div>
 	</section>
 </div>
@@ -77,6 +121,18 @@
 	});
 </script>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<div class="container white">
+<section <?php post_class('row the-content'); ?>>
+		<?php the_content(); ?>
+</section>
+</div>
+
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 <?php if(get_post_meta( $post->ID, '_cmb_the_portfolio_switch', true ) !='on') : ?>
 	<div class="smallpadding" style="background:url(<?php echo $option['background_image']; ?>);"></div>
 	

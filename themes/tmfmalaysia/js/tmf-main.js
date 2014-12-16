@@ -30,18 +30,44 @@ jQuery(document).ready(function($) {
 jQuery(window).resize(function() {
     resizeBoxex();
 });
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+jQuery(window).load(function() {
+    resizeBoxex();
+=======
 
 jQuery(window).load(function() {
     resizeBoxex();
 
 });
+>>>>>>> master
+=======
+
+jQuery(window).load(function() {
+    resizeBoxex();
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
+
+});
 
 function resizeBoxex() {
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 function resizeBoxex() {
 
 
+=======
+function resizeBoxex() {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
+=======
+
+
+<<<<<<< HEAD
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     boxHeight = 0;
 
 
@@ -55,9 +81,21 @@ function resizeBoxex() {
 
 
     //jQuery('.third-section .box').css('height', boxHeight);
+<<<<<<< HEAD
+<<<<<<< HEAD
 
     //jQuery('.third-section .box .wpb_single_image').css({'position':'absolute','bottom': '-8px','left': 0});
 
+=======
+
+    //jQuery('.third-section .box .wpb_single_image').css({'position':'absolute','bottom': '-8px','left': 0});
+
+>>>>>>> master
+=======
+
+    //jQuery('.third-section .box .wpb_single_image').css({'position':'absolute','bottom': '-8px','left': 0});
+
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     //jQuery('style').append('.third-section .box{height:'+boxHeight+'px!important;}');
 
 
@@ -180,6 +218,10 @@ jQuery(document).ready(function() {
 
     });
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
    jQuery('table.responsive tr').each(function (index) {
       jQuery(this).css('height',Math.max(55,jQuery('.pinned table tr:eq('+index+')').height()));
       jQuery('.pinned table tr:eq('+index+')').css('height',Math.max(55,jQuery('.pinned table tr:eq('+index+')').height()));
@@ -192,6 +234,14 @@ jQuery(document).ready(function() {
 	
 	
 	
+<<<<<<< HEAD
+=======
+    tr_copy.each(function (index) {
+      jQuery(this).height(heights[index]);
+    });
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
   }
 
 });

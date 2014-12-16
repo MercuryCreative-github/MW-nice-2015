@@ -22,6 +22,10 @@ function getCookie(c_name) {
         return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0;
     };
     window.vc_get_column_size = function ($column) {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         if ($column.hasClass("vc_col-sm-12")) //full-width
             return "1/1";
         else if ($column.hasClass("vc_col-sm-11")) //three-fourth
@@ -47,17 +51,59 @@ function getCookie(c_name) {
         else if ($column.hasClass("vc_col-sm-2")) // one-fourth
             return "1/6";
         else if ($column.hasClass("vc_col-sm-1")) // one-fourth
+<<<<<<< HEAD
+=======
+        if ($column.hasClass("vc_span12")) //full-width
+            return "1/1";
+        else if ($column.hasClass("vc_span11")) //three-fourth
+            return "11/12";
+        else if ($column.hasClass("vc_span10")) //three-fourth
+            return "4/6";
+        else if ($column.hasClass("vc_span9")) //three-fourth
+            return "3/4";
+        else if ($column.hasClass("vc_span8")) //three-fourth
+            return "5/6";
+        else if ($column.hasClass("vc_span8")) //two-third
+            return "2/3";
+        else if ($column.hasClass("vc_span7")) // 7/12
+            return "7/12";
+        else if ($column.hasClass("vc_span6")) //one-half
+            return "1/2";
+        else if ($column.hasClass("vc_span5")) //one-half
+            return "5/12";
+        else if ($column.hasClass("vc_span4")) // one-third
+            return "1/3";
+        else if ($column.hasClass("vc_span3")) // one-fourth
+            return "1/4";
+        else if ($column.hasClass("vc_span2")) // one-fourth
+            return "1/6";
+        else if ($column.hasClass("vc_span1")) // one-fourth
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             return "1/12";
         else
             return false;
     };
+<<<<<<< HEAD
+<<<<<<< HEAD
     $('#vc_license-activation-close').click(function(e){
+=======
+    $('#vc-license-activation-close').click(function(e){
+>>>>>>> master
+=======
+    $('#vc_license-activation-close').click(function(e){
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
       e.preventDefault();
       window.setCookie('vchideactivationmsg', 1, 14);
       $(this).parent().slideUp();
     });
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     /** Custom Css EDITOR
      *
      */
@@ -139,11 +185,24 @@ function getCookie(c_name) {
             }
         }
     });
+<<<<<<< HEAD
+=======
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 })(window.jQuery);
 
 
 function vc_convert_column_size(width) {
+<<<<<<< HEAD
+<<<<<<< HEAD
     var prefix = 'vc_col-sm-',
+=======
+    var prefix = 'vc_span',
+>>>>>>> master
+=======
+    var prefix = 'vc_col-sm-',
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         numbers = width ? width.split('/') : [1,1],
         range = _.range(1,13),
         num = !_.isUndefined(numbers[0]) && _.indexOf(range, parseInt(numbers[0], 10)) >=0 ? parseInt(numbers[0], 10) : false,
@@ -247,22 +306,44 @@ var wpb_grid_post_types_for_taxonomies_handler = function () {
 var wpb_single_image_img_link_dependency_callback = function () {
     var $img_link_large = this.$content.find('#img_link_large-yes'),
         $ = jQuery,
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
         $img_link_target = this.$content.find('[name=img_link_target]').parents('.vc_shortcode-param:first'),
         params = this.model.get('params'),
         old_param_value = '',
         $link_field = $('.wpb-edit-form [name=link]');
+<<<<<<< HEAD
+=======
+        $img_link_target = this.$content.find('[name=img_link_target]').closest('.vc_row-fluid');
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     this.$content.find('#img_link_large-yes').change(function () {
         var checked = $(this).is(':checked');
         if (checked) {
             $img_link_target.show();
         } else {
+<<<<<<< HEAD
+<<<<<<< HEAD
             if ( $link_field.val().length > 0 &&  $link_field.val() !== 'http://') {
+=======
+            if ($('.wpb-edit-form [name=img_link]').val().length > 0) {
+>>>>>>> master
+=======
+            if ( $link_field.val().length > 0 &&  $link_field.val() !== 'http://') {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 $img_link_target.show();
             } else {
                 $img_link_target.hide();
             }
         }
     });
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     var key_up_callback =  _.debounce(function () {
         var val = $(this).val();
         if (val.length > 0 &&  val !== 'http://' && val !== 'https://') {
@@ -276,11 +357,24 @@ var wpb_single_image_img_link_dependency_callback = function () {
         $img_link_target.show();
     } else {
         if ($('.wpb-edit-form [name=link]').length && $('.wpb-edit-form [name=link]').val().length > 0) {
+<<<<<<< HEAD
+=======
+    if (this.$content.find('#img_link_large-yes').is(':checked')) {
+        $img_link_target.show();
+    } else {
+        if ($('.wpb-edit-form [name=img_link]').length && $('.wpb-edit-form [name=img_link]').val().length > 0) {
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             $img_link_target.show();
         } else {
             $img_link_target.hide();
         }
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
     if( params.img_link && params.img_link.length && !params.link ) {
       old_param_value = params.img_link;
       if(!old_param_value.match(/^https?\:\/\//)) old_param_value = 'http://' + old_param_value;
@@ -320,6 +414,13 @@ var vc_cta_button_param_target_callback = function () {
     }, 300);
     $link_field.keyup(key_up_callback).trigger('keyup');
 };
+<<<<<<< HEAD
+=======
+};
+
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 var vc_wpnop = function(content) {
     var blocklist1, blocklist2, preserve_linebreaks = false, preserve_br = false;
@@ -469,4 +570,12 @@ var vc_wpautop = function(pee) {
     if ( preserve_br )
         pee = pee.replace(/<wp-temp-br([^>]*)>/g, '<br$1>');
     return pee;
+<<<<<<< HEAD
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> master
+=======
+};
+>>>>>>> 3444288e90b247662206560f83abce370fc36145

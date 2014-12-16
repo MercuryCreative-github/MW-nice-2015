@@ -16,10 +16,24 @@
     // ---------------------------------
     media.controller.VcSingleImage = media.controller.FeaturedImage.extend({
         defaults:_.defaults({
+<<<<<<< HEAD
+<<<<<<< HEAD
             id:'vc_single-image',
             filterable:'uploaded',
             multiple:false,
             toolbar:'vc_single-image',
+=======
+            id:'vc-single-image',
+            filterable:'uploaded',
+            multiple:false,
+            toolbar:'vc-single-image',
+>>>>>>> master
+=======
+            id:'vc_single-image',
+            filterable:'uploaded',
+            multiple:false,
+            toolbar:'vc_single-image',
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             title:l10n.set_image,
             priority:60,
             syncSelection:false
@@ -37,7 +51,15 @@
     });
     media.controller.VcGallery = media.controller.VcSingleImage.extend({
         defaults:_.defaults({
+<<<<<<< HEAD
+<<<<<<< HEAD
             id:'vc_gallery',
+=======
+            id:'vc-gallery',
+>>>>>>> master
+=======
+            id:'vc_gallery',
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             title:l10n.add_images,
             toolbar:'main-insert',
             filterable:'uploaded',
@@ -66,7 +88,15 @@
         },
         set:function (selection) {
 
+<<<<<<< HEAD
+<<<<<<< HEAD
             this.$img_ul.html(_.template($('#vc_settings-image-block').html(), selection.attributes));
+=======
+            this.$img_ul.html(_.template($('#vc-settings-image-block').html(), selection.attributes));
+>>>>>>> master
+=======
+            this.$img_ul.html(_.template($('#vc_settings-image-block').html(), selection.attributes));
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 
             this.$clear_button.show();
 
@@ -87,16 +117,38 @@
             if (this._frame)
                 return this._frame;
             this._frame = wp.media({
+<<<<<<< HEAD
+<<<<<<< HEAD
                 state:'vc_single-image',
                 states:[ new wp.media.controller.VcSingleImage() ]
             });
             this._frame.on('toolbar:create:vc_single-image', function (toolbar) {
+=======
+                state:'vc-single-image',
+                states:[ new wp.media.controller.VcSingleImage() ]
+            });
+            this._frame.on('toolbar:create:vc-single-image', function (toolbar) {
+>>>>>>> master
+=======
+                state:'vc_single-image',
+                states:[ new wp.media.controller.VcSingleImage() ]
+            });
+            this._frame.on('toolbar:create:vc_single-image', function (toolbar) {
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 this.createSelectToolbar(toolbar, {
                     text:l10n.set_image
                 });
             }, this._frame);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
             this._frame.state('vc_single-image').on('select', this.select);
+=======
+            this._frame.state('vc-single-image').on('select', this.select);
+>>>>>>> master
+=======
+            this._frame.state('vc_single-image').on('select', this.select);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             return this._frame;
         },
         select:function () {
@@ -177,7 +229,15 @@
                 $thumbnails_string = '';
 
             _.each(images, function (image) {
+<<<<<<< HEAD
+<<<<<<< HEAD
                 $thumbnails_string += _.template($('#vc_settings-image-block').html(), image);
+=======
+                $thumbnails_string += _.template($('#vc-settings-image-block').html(), image);
+>>>>>>> master
+=======
+                $thumbnails_string += _.template($('#vc_settings-image-block').html(), image);
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
             });
             $hidden_ids.val(_.map(images,function (image) {
                 return image.id;
@@ -203,7 +263,15 @@
                 return workflow;
 
             workflow = workflows[ id ] = new media.view.MediaFrame.VcGallery(_.defaults(options || {}, {
+<<<<<<< HEAD
+<<<<<<< HEAD
                 state:'vc_gallery',
+=======
+                state:'vc-gallery',
+>>>>>>> master
+=======
+                state:'vc_gallery',
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                 title:l10n.add_images,
                 library:{ type:'image' },
                 multiple:true
@@ -228,7 +296,15 @@
                     editor = 'visual-composer';
                 wp.media.vc_editor.$vc_editor_element = $(this);
                 if ($this.attr('use-single') === 'true') {
+<<<<<<< HEAD
+<<<<<<< HEAD
                     wp.media.VcSingleImage.frame(this).open('vc_editor');
+=======
+                    wp.media.VcSingleImage.frame(this).open('vc-editor');
+>>>>>>> master
+=======
+                    wp.media.VcSingleImage.frame(this).open('vc_editor');
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
                     return;
                 }
                 event.preventDefault();

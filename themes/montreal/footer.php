@@ -13,6 +13,10 @@
 		
 		<div class="row">
 		
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 			<div class="four columns">
 				<p class="greytext meta">
 					 © <?php echo date('Y'); ?> <a href="<?php echo home_url(); ?>" class="greytext meta"><?php echo bloginfo('name'); ?></a> <?php echo bloginfo('description'); ?>
@@ -33,6 +37,16 @@
 				</p>
 			</div>
 			
+<<<<<<< HEAD
+=======
+			<div class="six columns">
+				<p class="greytext meta">
+					 © <?php echo date('Y'); ?> <a href="<?php echo home_url(); ?>" class="greytext meta"><?php echo bloginfo('name'); ?></a> <?php echo bloginfo('description'); ?>
+				</p>
+			</div>	
+>>>>>>> master
+=======
+>>>>>>> 3444288e90b247662206560f83abce370fc36145
 		</div>
 		
 	</div>
