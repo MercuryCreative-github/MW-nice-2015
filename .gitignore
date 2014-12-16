@@ -2,6 +2,8 @@
 .htaccess
 sitemap.xml
 sitemap.xml.gz
+wp-admin
+wp-includes
 wp-config.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
@@ -13,3 +15,10 @@ wp-content/uploads/
 wp-content/mu-plugins/
 wp-content/mu-plugins/*
 wp-content/wp-cache-config.php
+**/cache/
+readme.html
+license.txt
+*.txt
+wp-content/themes/twentytwelve
+wp-content/themes/twentythirteen
+wp-content/themes/twentyfourteen
