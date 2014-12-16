@@ -155,7 +155,7 @@ class acf_field_user extends acf_field
 		
 		
 		// vars
-		$args = array('orderby' 	=> 'display_name',);
+		$args = array();
 		
 		
 		// editable roles

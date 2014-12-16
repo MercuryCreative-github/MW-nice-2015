@@ -18,10 +18,6 @@
             'click > .controls .column_add':'addElement',
             'click > .controls .column_edit':'editElement',
             'click > .controls .column_clone':'clone',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             'click > .controls .column_move':'moveElement',
             'click > .controls .column_toggle': 'toggleElement',
             'click > .wpb_element_wrapper .vc_controls': 'openClosedRow'
@@ -31,17 +27,6 @@
                 columns = Shortcodes.where({parent_id:this.model.id}),
                 new_columns = [],
                 new_layout = [],
-<<<<<<< HEAD
-=======
-            'click > .controls .column_move':'moveElement'
-        },
-        _convertRowColumns:function (layout) {
-            var layout_split = layout.toString().split(/\_/),
-                columns = Shortcodes.where({parent_id:this.model.id}),
-                new_columns = [],
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
                 new_width = '';
             _.each(layout_split, function (value, i) {
                 var column_data = _.map(value.toString().split(''), function (v, i) {
@@ -54,14 +39,7 @@
                     new_width = column_data[0] + '/' + column_data[1] + '' + column_data[2];
                 else
                     new_width = column_data[0] + '/' + column_data[1];
-<<<<<<< HEAD
-<<<<<<< HEAD
                 new_layout.push(new_width);
-=======
->>>>>>> master
-=======
-                new_layout.push(new_width);
->>>>>>> 3444288e90b247662206560f83abce370fc36145
                 new_column_params = _.extend(!_.isUndefined(columns[i]) ? columns[i].get('params') : {}, {width: new_width}),
                 vc.storage.lock();
                 new_column = Shortcodes.create({shortcode:(this.model.get('shortcode') === 'vc_row_inner' ? 'vc_column_inner' : 'vc_column'), params:new_column_params, parent_id:this.model.id});
@@ -90,10 +68,6 @@
                 shortcode.destroy();
             }, this);
             this.model.save();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.setActiveLayoutButton('' + layout);
             // this.sizeRows();
             return new_layout;
@@ -136,56 +110,12 @@
           var new_column = Shortcodes.create({shortcode:(this.model.get('shortcode') === 'vc_row_inner' ? 'vc_column_inner' : 'vc_column'), params:{}, parent_id:this.model.id});
           this.setActiveLayoutButton();
           this.$el.removeClass('vc_collapsed-row');
-<<<<<<< HEAD
-=======
-            // this.sizeRows();
-            return false;
-        },
-        changeShortcodeParams:function (model) {
-          var image, params = model.get('params'),
-              $column_edit = this.$el.find('> .controls .column_edit');
-          window.VcRowView.__super__.changeShortcodeParams.call(this, model);
-          this.$el.find('> .controls .vc_row_color').remove();
-          this.$el.find('> .controls .vc_row_image').remove();
-          if(!_.isEmpty(params.bg_color)) {
-              $('<span class="vc_row_color" style="background-color: ' + params.bg_color + '" title="' + i18nLocale.row_background_color + '"></span>').insertAfter($column_edit);
-          }
-          if(!_.isEmpty(params.bg_image)) {
-            image = $('<span class="vc_row_image" style="background-image: url(' + $('.vc_loading_block > img').attr('src') + ');" title="' + i18nLocale.row_background_image + '"></span>')
-            image.insertAfter($column_edit);
-            $.ajax({
-              type:'POST',
-              url:window.ajaxurl,
-              data:{
-                action:'wpb_single_image_src',
-                content: params.bg_image,
-                size: 'thumbnail'
-              },
-              dataType:'html'
-            }).done(function (url) {
-                image.css({backgroundImage: 'url(' + url + ')'});
-              });
-          } else {
-
-          }
-
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         _getCurrentLayoutString: function() {
             var layouts = [];
             $('> .wpb_vc_column, > .wpb_vc_column_inner', this.$content).each(function () {
                 var width = $(this).data('width');
-<<<<<<< HEAD
-<<<<<<< HEAD
                 layouts.push(!width ? '1/1' : width);
-=======
-                layouts.push(_.isUndefined(width) ? '1/1' : width);
->>>>>>> master
-=======
-                layouts.push(!width ? '1/1' : width);
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             });
             return layouts.join(' + ');
         },
@@ -202,27 +132,11 @@
                     items:"> [data-element_type=vc_column], > [data-element_type=vc_column_inner]", //wpb_sortablee
                     distance:0.5,
                     start:function (event, ui) {
-<<<<<<< HEAD
-<<<<<<< HEAD
                         $('#visual_composer_content').addClass('vc_sorting-started');
                         ui.placeholder.width(ui.item.width());
                     },
                     stop:function (event, ui) {
                         $('#visual_composer_content').removeClass('vc_sorting-started');
-=======
-                        $('#visual_composer_content').addClass('sorting-started');
-                        ui.placeholder.width(ui.item.width());
-                    },
-                    stop:function (event, ui) {
-                        $('#visual_composer_content').removeClass('sorting-started');
->>>>>>> master
-=======
-                        $('#visual_composer_content').addClass('vc_sorting-started');
-                        ui.placeholder.width(ui.item.width());
-                    },
-                    stop:function (event, ui) {
-                        $('#visual_composer_content').removeClass('vc_sorting-started');
->>>>>>> 3444288e90b247662206560f83abce370fc36145
                     },
                     update:function () {
                         var $columns = $("> [data-element_type=vc_column], > [data-element_type=vc_column_inner]", that.$content);
@@ -236,15 +150,7 @@
                     },
                     over:function (event, ui) {
                         ui.placeholder.css({maxWidth:ui.placeholder.parent().width()});
-<<<<<<< HEAD
-<<<<<<< HEAD
                         ui.placeholder.removeClass('vc_hidden-placeholder');
-=======
-                        ui.placeholder.removeClass('hidden-placeholder');
->>>>>>> master
-=======
-                        ui.placeholder.removeClass('vc_hidden-placeholder');
->>>>>>> 3444288e90b247662206560f83abce370fc36145
                         // if (ui.item.hasClass('not-column-inherit') && ui.placeholder.parent().hasClass('not-column-inherit')) {
                         //     ui.placeholder.addClass('hidden-placeholder');
                         // }
@@ -285,10 +191,6 @@
             if(sum!==12) return false;
             return return_cells.join('_');
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         setActiveLayoutButton: function(column_layout) {
           if( !column_layout ) {
             var layout = [];
@@ -310,38 +212,12 @@
           if(_.isUndefined(vc.row_layout_editor)) vc.row_layout_editor = new vc.RowLayoutEditorPanelViewBackend({el: $('#vc_row-layout-panel')});
           return vc.row_layout_editor;
         },
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         setColumns:function (e) {
             if (_.isObject(e)) e.preventDefault();
             var $button = $(e.currentTarget);
             if($button.data('cells')==='custom') {
-<<<<<<< HEAD
-<<<<<<< HEAD
                 this.layoutEditor().render(this.model).show();
                     } else {
-=======
-                var cells = window.prompt(window.i18nLocale.enter_custom_layout, this._getCurrentLayoutString());
-                if(_.isString(cells)) {
-                    if((cells = this.validateCellsList(cells))!==false) {
-                        this.change_columns_layout = true;
-                        this._convertRowColumns(cells);
-                        this.$el.find('> .controls .vc_active').removeClass('vc_active');
-                        $button.addClass('vc_active');
-                    } else {
-                        window.alert(window.i18nLocale.wrong_cells_layout);
-                    }
-                }
-                return;
-            }
->>>>>>> master
-=======
-                this.layoutEditor().render(this.model).show();
-                    } else {
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             if(vc.is_mobile) {
               var $parent = $button.parent();
               if(!$parent.hasClass('vc_visible')) {
@@ -352,10 +228,6 @@
                 });
               }
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
                 if (!$button.is('.vc_active')) {
             this.change_columns_layout = true;
                 _.defer(function (view, cells) {
@@ -367,24 +239,6 @@
         },
         sizeRows: function () {
             var max_height = 45;
-<<<<<<< HEAD
-=======
-            if ($button.is('.vc_active')) {
-              return false;
-            }
-
-            this.$el.find('> .controls .vc_active').removeClass('vc_active');
-            $button.addClass('vc_active');
-            this.change_columns_layout = true;
-                _.defer(function (view, cells) {
-                    view._convertRowColumns(cells);
-                }, this, $button.data('cells'));
-        },
-        sizeRows:function () {
-            var max_height = 35;
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             $('> .wpb_vc_column, > .wpb_vc_column_inner', this.$content).each(function () {
                 var content_height = $(this).find('> .wpb_element_wrapper > .wpb_column_container').css({minHeight:0}).height();
                 if (content_height > max_height) max_height = content_height;
@@ -401,10 +255,6 @@
             this.setSorting();
         },
         changedContent:function (view) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             // this.sizeRows();
             if (this.change_columns_layout) return this;
             this.setActiveLayoutButton();
@@ -433,29 +283,6 @@
                 parent_id && vc.app.views[parent_id].sizeRows();
               }
           }
-<<<<<<< HEAD
-=======
-            this.sizeRows();
-            if (this.change_columns_layout) return this;
-            var column_layout = [];
-            $('> .wpb_vc_column, > .wpb_vc_column_inner', this.$content).each(function () {
-                var width = $(this).data('width');
-                column_layout.push(_.isUndefined(width) ? '11' : width.replace('/', ''));
-            });
-            this.$el.find('> .controls .vc_active').removeClass('vc_active');
-            var $button = this.$el.find('> .controls [data-cells-mask=' + vc_get_column_mask(column_layout.join('_')) + ']');
-            if($button.length) {
-               $button.addClass('vc_active');
-            } else {
-                this.$el.find('> .controls [data-cells-mask=custom]').addClass('vc_active');
-            }
-            this.sizeRows();
-        },
-        moveElement:function (e) {
-            e.preventDefault();
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         }
     });
 
@@ -465,20 +292,9 @@
             'click > .controls .column_add':'addElement',
             'click > .controls .column_edit':'editElement',
             'click > .controls .column_clone':'clone',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'click > .wpb_element_wrapper > .vc_empty-container':'addToEmpty'
         },
         current_column_width: false,
-=======
-            'click > .wpb_element_wrapper > .empty_container':'addToEmpty'
-        },
->>>>>>> master
-=======
-            'click > .wpb_element_wrapper > .vc_empty-container':'addToEmpty'
-        },
-        current_column_width: false,
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         initialize:function (options) {
             window.VcColumnView.__super__.initialize.call(this, options);
             _.bindAll(this, 'setDropable', 'dropButton');
@@ -490,10 +306,6 @@
         },
         render:function () {
             window.VcColumnView.__super__.render.call(this);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.current_column_width = this.model.get('params').width || '1/1';
             this.$el.attr('data-width', this.current_column_width);
             this.setEmpty();
@@ -556,18 +368,6 @@
         addToEmpty:function (e) {
             e.preventDefault();
             if ($(e.target).hasClass('vc_empty-container')) this.addElement(e);
-<<<<<<< HEAD
-=======
-            this.$el.attr('data-width', this.model.get('params').width);
-            this.setEmpty();
-            return this;
-        },
-        addToEmpty:function (e) {
-            e.preventDefault();
-            if ($(e.target).hasClass('empty_container')) this.addElement(e);
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         setDropable:function () {
             this.$content.droppable({
@@ -586,27 +386,12 @@
             }
         },
         setEmpty:function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.$el.addClass('vc_empty-column');
             this.$content.addClass('vc_empty-container');
         },
         unsetEmpty:function () {
             this.$el.removeClass('vc_empty-column');
             this.$content.removeClass('vc_empty-container');
-<<<<<<< HEAD
-=======
-            this.$el.addClass('empty_column');
-            this.$content.addClass('empty_container');
-        },
-        unsetEmpty:function () {
-            this.$el.removeClass('empty_column');
-            this.$content.removeClass('empty_container');
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         checkIsEmpty:function () {
             if (Shortcodes.where({parent_id:this.model.id}).length) {
@@ -614,28 +399,14 @@
             } else {
                 this.setEmpty();
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
           /*
-=======
->>>>>>> master
-=======
-          /*
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             if (this.model.get('parent_id')) {
                 var row_view = vc.app.views[this.model.get('parent_id')];
                 if (row_view.model.get('shortcode').match(/^vc\_row/)) {
                     row_view.sizeRows();
                 }
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
             */
-=======
->>>>>>> master
-=======
-            */
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             window.VcColumnView.__super__.checkIsEmpty.call(this);
         },
         /**
@@ -645,10 +416,6 @@
             var row = Shortcodes.create({shortcode:'vc_row_inner', parent_id:this.model.id});
             Shortcodes.create({shortcode:'vc_column_inner', params:{width:'1/1'}, parent_id:row.id });
             return row;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         convertSize: function(width) {
             var prefix = 'vc_col-sm-',
@@ -679,11 +446,6 @@
               parent.view.setActiveLayoutButton();
             }
           }
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         }
     });
 
@@ -691,21 +453,9 @@
         adding_new_tab:false,
         events:{
             'click .add_tab':'addTab',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'click > .vc_controls .column_delete, > .vc_controls .vc_control-btn-delete':'deleteShortcode',
             'click > .vc_controls .column_edit, > .vc_controls .vc_control-btn-edit':'editElement',
             'click > .vc_controls .column_clone,> .vc_controls .vc_control-btn-clone':'clone'
-=======
-            'click > .controls .column_delete':'deleteShortcode',
-            'click > .controls .column_edit':'editElement',
-            'click > .controls .column_clone':'clone'
->>>>>>> master
-=======
-            'click > .vc_controls .column_delete, > .vc_controls .vc_control-btn-delete':'deleteShortcode',
-            'click > .vc_controls .column_edit, > .vc_controls .vc_control-btn-edit':'editElement',
-            'click > .vc_controls .column_clone,> .vc_controls .vc_control-btn-clone':'clone'
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         render:function () {
             window.VcAccordionView.__super__.render.call(this);
@@ -756,25 +506,11 @@
 
     window.VcAccordionTabView = window.VcColumnView.extend({
         events:{
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             'click > .vc_controls .column_delete,.wpb_vc_accordion_tab > .vc_controls .vc_control-btn-delete':'deleteShortcode',
             'click > .vc_controls .column_add,.wpb_vc_accordion_tab >  .vc_controls .vc_control-btn-prepend':'addElement',
             'click > .vc_controls .column_edit,.wpb_vc_accordion_tab >  .vc_controls .vc_control-btn-edit':'editElement',
             'click > .vc_controls .column_clone,.wpb_vc_accordion_tab > .vc_controls .vc_control-btn-clone':'clone',
             'click > [data-element_type] > .wpb_element_wrapper > .vc_empty-container':'addToEmpty'
-<<<<<<< HEAD
-=======
-            'click > [data-element_type] > .controls .column_delete':'deleteShortcode',
-            'click > [data-element_type] > .controls .column_add':'addElement',
-            'click > [data-element_type] > .controls .column_edit':'editElement',
-            'click > [data-element_type] > .controls .column_clone':'clone',
-            'click > [data-element_type] > .wpb_element_wrapper > .empty_container':'addToEmpty'
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         setContent:function () {
             this.$content = this.$el.find('> [data-element_type] > .wpb_element_wrapper > .vc_container_for_children');
@@ -787,49 +523,21 @@
             }
         },
         setEmpty:function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             $('> [data-element_type]', this.$el).addClass('vc_empty-column');
             this.$content.addClass('vc_empty-container');
         },
         unsetEmpty:function () {
             $('> [data-element_type]', this.$el).removeClass('vc_empty-column');
             this.$content.removeClass('vc_empty-container');
-<<<<<<< HEAD
-=======
-            $('> [data-element_type]', this.$el).addClass('empty_column');
-            this.$content.addClass('empty_container');
-        },
-        unsetEmpty:function () {
-            $('> [data-element_type]', this.$el).removeClass('empty_column');
-            this.$content.removeClass('empty_container');
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         }
     });
     window.VcMessageView = vc.shortcode_view.extend({
         changeShortcodeParams:function (model) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
           var params = this.model.get('params'), $wrapper;
           window.VcMessageView.__super__.changeShortcodeParams.call(this, model);
           $wrapper = this.$el.find('> .wpb_element_wrapper').removeClass(_.values(this.params.color.value).join(' '));
             if (_.isObject(params) && _.isString(params.color)) {
                 $wrapper.addClass(params.color);
-<<<<<<< HEAD
-=======
-            var params = model.get('params');
-            window.VcMessageView.__super__.changeShortcodeParams.call(this, model);
-            if (_.isObject(params) && _.isString(params.color)) {
-                this.$el.find('> .wpb_element_wrapper').removeClass(_.values(this.params.color.value).join(' ')).addClass(params.color);
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             }
         }
     });
@@ -892,10 +600,6 @@
             }
         }
     });
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     window.VcButton2View = vc.shortcode_view.extend({events:function () {
         return _.extend({'click button':'buttonClick'
         }, window.VcToggleView.__super__.events);
@@ -913,30 +617,13 @@
             }
         }
     });
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     window.VcTabsView = vc.shortcode_view.extend({
         new_tab_adding:false,
         events:{
             'click .add_tab':'addTab',
-<<<<<<< HEAD
-<<<<<<< HEAD
             'click > .vc_controls .vc_control-btn-delete':'deleteShortcode',
             'click > .vc_controls .vc_control-btn-edit':'editElement',
             'click > .vc_controls .vc_control-btn-clone':'clone'
-=======
-            'click > .controls .column_delete':'deleteShortcode',
-            'click > .controls .column_edit':'editElement',
-            'click > .controls .column_clone':'clone'
->>>>>>> master
-=======
-            'click > .vc_controls .vc_control-btn-delete':'deleteShortcode',
-            'click > .vc_controls .vc_control-btn-edit':'editElement',
-            'click > .vc_controls .vc_control-btn-clone':'clone'
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         initialize:function (params) {
             window.VcTabsView.__super__.initialize.call(this, params);
@@ -959,15 +646,7 @@
         addTab:function (e) {
             e.preventDefault();
             this.new_tab_adding = true;
-<<<<<<< HEAD
-<<<<<<< HEAD
             var tab_title = window.i18nLocale.tab,
-=======
-            var tab_title = this.model.get('shortcode') === 'vc_tour' ? window.i18nLocale.slide : window.i18nLocale.tab,
->>>>>>> master
-=======
-            var tab_title = window.i18nLocale.tab,
->>>>>>> 3444288e90b247662206560f83abce370fc36145
                 tabs_count = this.$tabs.find('[data-element_type=vc_tab]').length,
                 tab_id = (+new Date() + '-' + tabs_count + '-' + Math.floor(Math.random() * 11));
             vc.shortcodes.create({shortcode:'vc_tab', params:{title:tab_title, tab_id:tab_id}, parent_id:this.model.id});
@@ -1004,18 +683,8 @@
             }
             if (view.model.get('cloned') === true) {
                 var cloned_from = view.model.get('cloned_from'),
-<<<<<<< HEAD
-<<<<<<< HEAD
                     $tab_controls = $('.tabs_controls > .add_tab_block', this.$content),
 	                $new_tab = $("<li><a href='#tab-" + params.tab_id + "'>" + params.title + "</a></li>").insertBefore($tab_controls);
-=======
-                    $after_tab = $('[href=#tab-' + cloned_from.params.tab_id + ']', this.$content).parent(),
-                    $new_tab = $("<li><a href='#tab-" + params.tab_id + "'>" + params.title + "</a></li>").insertAfter($after_tab);
->>>>>>> master
-=======
-                    $tab_controls = $('.tabs_controls > .add_tab_block', this.$content),
-	                $new_tab = $("<li><a href='#tab-" + params.tab_id + "'>" + params.title + "</a></li>").insertBefore($tab_controls);
->>>>>>> 3444288e90b247662206560f83abce370fc36145
                 this.$tabs.tabs('refresh');
                 this.$tabs.tabs("option", 'active', $new_tab.index());
             } else {
@@ -1040,10 +709,6 @@
             return model_clone;
         }
     });
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     // TODO: window.VcColumnView
     window.VcTabView = window.VcColumnView.extend({
         events:{
@@ -1060,16 +725,6 @@
               params.tab_id = (+new Date() + '-' + Math.floor(Math.random() * 11));
               this.model.save('params', params);
             }
-<<<<<<< HEAD
-=======
-
-    window.VcTabView = window.VcColumnView.extend({
-        render:function () {
-            var params = this.model.get('params');
-            window.VcTabView.__super__.render.call(this);
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             this.id = 'tab-' + params.tab_id;
             this.$el.attr('id', this.id);
             return this;
@@ -1082,24 +737,12 @@
         },
         changeShortcodeParams:function (model) {
             var params = model.get('params');
-<<<<<<< HEAD
-<<<<<<< HEAD
             window.VcTabView.__super__.changeShortcodeParams.call(this, model);
-=======
-            window.VcAccordionTabView.__super__.changeShortcodeParams.call(this, model);
->>>>>>> master
-=======
-            window.VcTabView.__super__.changeShortcodeParams.call(this, model);
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             if (_.isObject(params) && _.isString(params.title) && _.isString(params.tab_id)) {
                 $('.ui-tabs-nav [href=#tab-' + params.tab_id + ']').text(params.title);
             }
         },
         deleteShortcode:function (e) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             _.isObject(e) && e.preventDefault();
             var answer = confirm(window.i18nLocale.press_ok_to_delete_section),
                 parent_id = this.model.get('parent_id');
@@ -1122,25 +765,6 @@
                 this.$tabs.tabs("option", "active", tab_length - 1);
             }
 
-<<<<<<< HEAD
-=======
-            if (_.isObject(e)) e.preventDefault();
-            var answer = confirm(window.i18nLocale.press_ok_to_delete_section);
-            if (answer !== true) return false;
-            this.model.destroy();
-            var params = this.model.get('params'),
-                current_tab_index = $('[href=#tab-' + params.tab_id + ']', this.$tabs).parent().index();
-            $('[href=#tab-' + params.tab_id + ']').parent().remove();
-            this.$tabs.tabs('refresh');
-            var tab_length = this.$tabs.find('.ui-tabs-nav li:not(.add_tab_block)').length;
-            if (current_tab_index < tab_length) {
-                this.$tabs.tabs("option", "active", current_tab_index);
-            } else if(tab_length>0) {
-                this.$tabs.tabs("option", "active", tab_length-1);
-            }
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         },
         cloneModel:function (model, parent_id, save_order) {
             var shortcodes_to_resort = [],

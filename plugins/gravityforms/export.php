@@ -23,15 +23,7 @@ class GFExport{
             $charset = get_option('blog_charset');
             header('Content-Description: File Transfer');
             header("Content-Disposition: attachment; filename=$filename");
-<<<<<<< HEAD
-<<<<<<< HEAD
             header('Content-Type: text/csv; charset=' . $charset, true);
-=======
-            header('Content-Type: text/plain; charset=' . $charset, true);
->>>>>>> master
-=======
-            header('Content-Type: text/csv; charset=' . $charset, true);
->>>>>>> 3444288e90b247662206560f83abce370fc36145
             $buffer_length = ob_get_length(); //length or false if no buffer
             if ($buffer_length > 1){
             	ob_clean();
@@ -624,15 +616,7 @@ class GFExport{
         $end_date = empty($_POST["export_date_end"]) ? "" : self::get_gmt_date($_POST["export_date_end"] . " 23:59:59");
 
         $search_criteria["status"] = "active";
-<<<<<<< HEAD
-<<<<<<< HEAD
         $search_criteria["field_filters"] = GFCommon::get_field_filters_from_post($form);
-=======
-        $search_criteria["field_filters"] = GFCommon::get_field_filters_from_post();
->>>>>>> master
-=======
-        $search_criteria["field_filters"] = GFCommon::get_field_filters_from_post($form);
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         if(!empty($start_date))
             $search_criteria["start_date"] = $start_date;
 

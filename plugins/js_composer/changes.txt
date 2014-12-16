@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 10.09.2014 - ver 4.3.4
    - WP 4.0 improvements
    - Cloning row with tabs fixed
@@ -147,12 +143,6 @@
    - Element dependencies tweaked to work with multiple values
 
 11.03.2014 - ver 4.0.2
-<<<<<<< HEAD
-=======
-07.03.2014 - ver 4.0.2
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
    - Google maps element updated to support new google maps version
    - Child theme support added
    - Disable responsivness is back
@@ -163,15 +153,7 @@
    - CSS code added in front end is mirrored in backend interface
    - Sprite for predefined row laoyouts added
    - "Close" modal button in backend position tweak added
-<<<<<<< HEAD
-<<<<<<< HEAD
    - Updated .po/.mo files
-=======
-   - Update .po/.mo files
->>>>>>> master
-=======
-   - Updated .po/.mo files
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 03.03.2014 - ver 4.0.1
    - Optimizations for WPEngine
@@ -456,15 +438,7 @@
    
 27.07.2012 - ver 3.2.2
    - jQuery UI CSS facelifted, now should look great in every design.
-<<<<<<< HEAD
-<<<<<<< HEAD
    - LESS files for jQuery UI now available in assets/css/ui-custom-theme/less
-=======
-   - LESS files for jQuery UI now available in assets/ui-custom-theme/less
->>>>>>> master
-=======
-   - LESS files for jQuery UI now available in assets/css/ui-custom-theme/less
->>>>>>> 3444288e90b247662206560f83abce370fc36145
    
 24.07.2012 - ver 3.2.1
    - jQuery Tabs switching fixed
