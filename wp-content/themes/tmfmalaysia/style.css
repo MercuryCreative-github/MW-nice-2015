@@ -235,8 +235,6 @@ padding-top: 24px;line-height: 34px;}
     padding-top: 3px;
     cursor: pointer;
     margin-left: 12px;
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
 
 .navbar-toggle .icon-bar 
@@ -269,46 +267,6 @@ padding-top: 24px;line-height: 34px;}
 	float: left;
 	margin-left: 18px;
 }
-=======
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
-}
-
-.navbar-toggle .icon-bar 
-{
-    display: block;
-    width: 22px;
-    height: 3px;
-    border-radius: 1px;
-    background-color: #5a5a5c;
-    margin-bottom: 4px;
-}
-
-.navbar-collapse
-{
-    display: none;
-    background-color: #fff;
-}
-
-.navbar-collapse ul
-{
-    margin-bottom: 0px;
-}
-
-.navbar-collapse li
-{
-    margin-bottom: 5px;
-}
-
-<<<<<<< HEAD
-.social-icon{float: left;margin-left: 18px;}
->>>>>>> master
-=======
-.social-icon{
-	float: left;
-	margin-left: 18px;
-}
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 #navigationmain {
     vertical-align: inherit;
@@ -368,14 +326,7 @@ padding-top: 24px;line-height: 34px;}
 
 .menu .icon-2x {
     font-size: 13px;
-<<<<<<< HEAD
-<<<<<<< HEAD
 	text-align:center;
-=======
->>>>>>> master
-=======
-	text-align:center;
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 .icon-google-plus
 {
@@ -461,19 +412,10 @@ footer .button.register {
     display: block;
     color: #793A89;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
  .first-section-box > .the-content h3 {
     text-align: left;
 	margin-bottom:100px;
 }
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 .first-section-box p {
     font-family:'Open Sans', Arial, sans-serif;;
     line-height: 1.3em;
@@ -585,10 +527,6 @@ footer .button.register {
 /*    -webkit-box-shadow: 0 0 40px 2px #BBBBBB;
     box-shadow: 0 0 40px 2px #BBBBBB;*/
 /*}*/
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 .emodal.fixed {
 	position: relative;
@@ -599,11 +537,6 @@ footer .button.register {
 .emodal.fixed input { width: 80%;}
 
 
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 /*MODAL*/
 .tiny.modal.active.theme-1 {
     background-image: url('/wp-content/uploads/2014/07/logo-menu.png');
@@ -676,10 +609,6 @@ footer .container .footer-bottom { display: table; }
 footer .container .footer-bottom .footer-tmf-info {
     display: table-cell; 
     vertical-align: top;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 footer .container .footer-bottom .footer-tmf-info img {
     float: left;
@@ -774,113 +703,8 @@ footer .footer-bottom .button.register { background-color:rgb(254, 152, 2); widt
     line-height: 1.6;
     font-weight: normal;
     margin: 0px 0px 18px;
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
-}
-footer .container .footer-bottom .footer-tmf-info img {
-    float: left;
-    margin-right: 10px;
-    margin-top: 14px;
-}
-footer .container .footer-bottom .footer-tmf-info p { margin-top: 20px; }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-footer .container .footer-bottom .footer-buttons-widgets {
-    display: table-cell; 
-    vertical-align: top; 
-    width: 320px;
-}
-.footer-buttons-widgets .columns.widget_text { width: 150px!important; }
-.footer-buttons-widgets #text-6 { float: right; }
-.footer-buttons-widgets #text-12 { float: left; }
-
-footer .footer-bottom .button.register.updated a { background-color: #B0B0B0; }
-footer .footer-bottom .button.register { background-color:rgb(254, 152, 2); width: 100%; }
-
-/*-------------------------------------------*/
-/*------------  HEADER-SLIDER  -------------*/
-/*-------------------------------------------*/
-.container.slideshow { position: relative; }
-.vc_responsive .wpb_row .vc_span12.page-slider.wpb_column.column_container { position: absolute; }
-
-/*-------------------------------------------*/
-/*------------  HOTEL & TRAVEL  -------------*/
-/*-------------------------------------------*/
-
-.hotel-header {
-    background-size: 100%;
-    width: 100%;
-    height: 295px;
-    position: absolute !important;
-    left: 0;
-    top: 102px;
-    border-bottom: grey 5px solid;
 }
 
-.first-section-hotel img {margin-top: 5px;}
-
-.box-accommodation {
-    background-color: #F0F0F0;
-    border:#E3E3E3 1px solid ;
-    border-top:#89449A 4px solid;
-    border-bottom: none;
-    padding: 30px;
-    background-image: url('/wp-content/uploads/2014/07/acomodations-bkg.png');
-    background-repeat: no-repeat;
-    background-position: 100% 0%;
-}
-.box-accommodation .book-now {
-    background: purple; 
-    margin-right: 15px; 
-    width: 170px; 
-    float: left;
-}
-.box-accommodation img {
-    margin-right: 10px; 
-    background: purple; 
-    padding: 10px; 
-    display: table-cell; 
-    padding-bottom: 15px;
-}
-.box-accommodation .book-now a {
-    color: white; 
-    padding: 10px; 
-    text-transform: uppercase; 
-    text-align: center; 
-    display: block;
-    font-weight: bold; 
-    border-top: 3px solid white;
-}
-.box-accommodation .book-now a:hover { background-color: #D3D3D3; }
-.box-other-hotels {
-    padding: 20px 50px;
-    border: #E4E4E4 1px solid;
-    margin-top: -36px;
-}
-.wpb_content_element.travel-item { position: relative; margin-bottom: 20px;}
-.travel-item img { margin-right: 10px; }
-.travel-item strong {position: absolute;top: 5px;}
-
-.hotel-travel-items ul {
-    margin-left: 16px;
-}
-
-.hotel-travel-items ul li {
-    list-style-type: disc;
-    font-size: 17px;
-    line-height: 1.6;
-    font-weight: normal;
-    margin: 0px 0px 18px;
-}
-
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 .wpb_content_element.hotel-travel-info-box { margin-bottom: 10px; }
 .hotel-travel-info-box p a {
     display: block;
@@ -1153,10 +977,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
  @media only screen and (max-width: 1280px) {
     #hotel-travel .container.white.bigpadding { background-size: unset; }
     #hotel-travel h3.blacktext.bold.midbottommargin { margin-top: 0; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	
 	
 	.emodal.fixed {
@@ -1174,19 +994,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .logo { margin-right: 10px; }
     .slogan { padding-left: 14px; }
 
-<<<<<<< HEAD
-=======
- }
-
- @media only screen and (max-width: 978px) {
-
-    /*header-menu*/
-    .logo { margin-right: 10px; }
-    .slogan { padding-left: 14px; }
-
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     .first-section h1 {
         font-size: 3em;
     }
@@ -1217,10 +1024,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     #call4speakers section.page ul li {
         text-align: left;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	
 	.emodal.fixed {
 		position: relative;
@@ -1229,11 +1032,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 	}
 	
 	.emodal.fixed input { width: 80%;}
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 @media only screen and (max-width: 978px) and (min-width: 768px) {
     /*header*/
@@ -1244,10 +1042,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     #call4speakers > .container.white.bigpadding {
         margin-top: -20px;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	
 	
 	/*Third-section*/
@@ -1260,11 +1054,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 	}
 	
 	.emodal.fixed input { width: 80%;}
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 @media only screen and (max-width: 860px) {
 
@@ -1286,23 +1075,10 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .row .six.columns.action-btns {
         float: right;
         width: 32%;
-<<<<<<< HEAD
-<<<<<<< HEAD
     }
     .call-to-action {
         padding-top: 15px;
     }
-=======
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
-    }
-    .call-to-action {
-        padding-top: 15px;
-    }
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     .call-to-action .keep-updated-btn { margin-bottom: 10px; }
 
     .first-section h1 {
@@ -1338,10 +1114,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
         font-size: 14px;
     }
     .slogan{ margin-top:17px; width: 206px;}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	
 	 
 	
@@ -1352,19 +1124,10 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 	}
 	
 	.emodal.fixed input { width: 80%;}
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 
 }
 @media only screen and (max-width: 768px) {
 	
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	 
 	
 	.emodal.fixed {
@@ -1394,29 +1157,10 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .js #menu {display: none;}
 	
 	#navigationmain {
-<<<<<<< HEAD
-=======
-}
-@media only screen and (max-width: 767px) {
-    /* menu */
-    .js .selectnav {display: block;max-width: 100% !important;}
-    .js #menu {display: none;}
-    #navigationmain ul {padding-top: 40px;}
-    #navigationmain .button.CFS{margin-left: 25px}
-    
-    #navigationmain 
-    {
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         margin-top: 123px;
         display: block !important;
     } 
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	#navigationmain ul {
 		padding-top: 40px;
 	}
@@ -1448,44 +1192,13 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
         display: none;
     }
     .row p {
-<<<<<<< HEAD
-=======
-    .head
-    {
-    margin: 0 auto;
-    width: 392px;
-    height: 179px;
-}    
-    
-    .nav-border 
-    {
-    border-top: none !important;
-    }        
-    
-    .slogan
-    {
-        display: none;
-    }
-    .row p  {
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
        text-align:left;
     }
     /*call to action btns*/
     
     .keep-updated-btn{display: none !important;}   
     
-<<<<<<< HEAD
-<<<<<<< HEAD
     .call-to-action .register-btn {
-=======
-    .call-to-action .register-btn 
-    {
->>>>>>> master
-=======
-    .call-to-action .register-btn {
->>>>>>> 3444288e90b247662206560f83abce370fc36145
         margin-right: 0px !important;
     }
     
@@ -1565,8 +1278,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .first-section-hotel img {
     display: block;
     margin: auto;
-<<<<<<< HEAD
-<<<<<<< HEAD
     }
     
     .wpb_content_element.travel-item img {
@@ -1578,25 +1289,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     display: inline-block;
     margin-left: 7px;
     }  
-=======
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
-    }
-    
-    .wpb_content_element.travel-item img{
-    display: inline-block;
-    margin-left: -150px;
-}
-    
-    .wpb_content_element.travel-item strong{
-    display: inline-block;
-    margin-left: 7px;
-<<<<<<< HEAD
-}  
->>>>>>> master
-=======
-    }  
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 
     .hotel-travel-items ul li {
     text-align: left;
@@ -1625,10 +1317,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     }    
     /*footer buttons*/
     footer .button.CFS { margin: 0 auto; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	
 	 
 	
@@ -1639,11 +1327,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 	}
 	
 	.emodal.fixed input { width: 80%;}
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 @media only screen and (max-width: 680px) {
     /* menu */
@@ -1670,10 +1353,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .wpb_row.call-for-speakers > .wpb_column.vc_span12 {
         width: 100%;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	
 	 
 	
@@ -1685,29 +1364,14 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 	
 	.emodal.fixed input { width: 80%;}
 	
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 @media only screen and (max-width: 640px) {
 
     /* menu */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     .js #menu {
 		/*display: block;*/
 		display:inline-block;
 	}
-<<<<<<< HEAD
-=======
-    .js #menu {display: block;}
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     #menu li a{color: #7f7f82;}
     .js .selectnav {display: none;}
     .call-to-action{display: none;}
@@ -1815,23 +1479,10 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
         background-position: -27px -34px;
     }
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     .social-icon {
         margin-left: 27px;
     }  
  
-<<<<<<< HEAD
-=======
-    .social-icon 
-    {
-        margin-left: 27px;
-    }    
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     /*-- STRUCTURE --*/
     .bigtoppadding {
     padding-top: 3px !important;
@@ -1845,10 +1496,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .bigpadding{ padding-top: 20px !important;}
     .four.columns.alpha.centered.midtopmargin{ display: none;}
     .wpb_wrapper > ul{ text-align: left !important;}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     .wpb_row.vc_row-fluid{ padding: 0 20px; margin:0;}
 	.intro .wpb_row.vc_row-fluid{ padding: 0; }
     body{ overflow-x: hidden !important;}
@@ -1862,13 +1509,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 	}
 	
 	.emodal.fixed input { width: 80%;}
-<<<<<<< HEAD
-=======
-    .wpb_row.vc_row-fluid{ padding: 0 20px;}
-    body{ overflow-x: hidden !important;}
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 
 @media only screen and (max-width: 600px) {
@@ -1891,10 +1531,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     .hotel-travel-items ul {
     margin-left: 36px;
     }    
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	
 	 
 	
@@ -1905,21 +1541,12 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 	}
 	
 	.emodal.fixed input { width: 80%;}
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 @media only screen and (max-width: 540px) {
     /*home slider*/
     .home_slider .wpb_single_image {
         margin-bottom: 15px;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	 
 	
 	.emodal.fixed {
@@ -1929,11 +1556,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 	}
 	
 	.emodal.fixed input { width: 80%;}
-<<<<<<< HEAD
-=======
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 @media only screen and (max-width: 480px) {
 
@@ -1991,10 +1613,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
     footer .container .footer-bottom .footer-tmf-info {
         display: block;
         margin: 0 auto;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
     }
     footer .container .footer-bottom .footer-tmf-info img { 
         max-width: 100px; 
@@ -2017,20 +1635,6 @@ h4.text-agenda-green:hover { background-color: #91AF25; }
 	}
 	
 	.emodal.fixed input { width: 90%;}
-<<<<<<< HEAD
-=======
-    }
-    footer .container .footer-bottom .footer-tmf-info img { 
-        max-width: 100px; 
-        float: none; 
-    }
-    footer .container .footer-bottom .footer-buttons-widgets {
-        display: block;
-    }
-
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 }
 
 @media only screen and (min-width: 768px) {
