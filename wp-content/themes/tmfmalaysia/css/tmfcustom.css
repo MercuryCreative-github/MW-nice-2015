@@ -72,6 +72,11 @@
 .box-image .wpb_single_image.wpb_content_element { margin-bottom: 0px; }
 .box-image .wpb_text_column h3 { margin-top: 0 !important; }
 
+/*Sponsor*/
+.home .the-content .wpb_row.hp-sponsor { margin-bottom: 0 !important; }
+.home .the-content .wpb_row.hp-sponsor h3 { margin-top: 0 !important; padding: 0; }
+.home .the-content .hp-sponsor .wpb_content_element { margin-bottom: 10px; }
+
 /* BOX: violet btns */
 .box .wpb_button.join-us.visit-blog { font-size: 17px; font-weight: 400; }
 .box .wpb_button.join-us:hover { background-color: #5A9B16; color: #fff; }
