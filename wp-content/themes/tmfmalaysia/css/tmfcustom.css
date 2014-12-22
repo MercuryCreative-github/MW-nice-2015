@@ -22,6 +22,8 @@
 .float-left { float: left; }
 .float-right { float: right; }
 
+.the-content .wpb_row { margin-bottom: 20px; }
+
 /*********************/
 /**HP - LANDING PAGE**/
 /*********************/
