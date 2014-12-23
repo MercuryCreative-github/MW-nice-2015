@@ -42,25 +42,25 @@ add_filter( 'storm_social_icons_type', create_function( '', 'return "icon-sign";
 
 		function sfs_enqueue_styles() {
 		wp_dequeue_style('main-css');
-         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '8.1', 'all');
+         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '8.2', 'all');
             wp_enqueue_style('main-css'); // Enqueue it!
 
 		// TMF custom styles
-		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '8.1', 'all');
+		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '8.2', 'all');
     	wp_enqueue_style('tmf-custom-css'); // Enqueue it!
 
     	// Pricing css
 		if ( is_page_template( 'pricing-tables.php' ) ) {
-		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '8.1', 'all');
+		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '8.2', 'all');
     		wp_enqueue_style('pricing-tables-css'); // Enqueue it!
 		}
 
     	// Responsive fixes
-		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '8.1', 'all');
+		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '8.2', 'all');
     	wp_enqueue_style('tmf-responsive-css'); // Enqueue it!
     	
     	// Print Styles
-		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '8.1', 'all');
+		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '8.2', 'all');
     	wp_enqueue_style('tmf-print-css'); // Enqueue it!
 
 	}

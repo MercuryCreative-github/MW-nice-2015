@@ -57,8 +57,8 @@
 	text-shadow: none;
 	font-weight: 700;
 }
-.wpb_button.btn-orange { background-color: #FE9802; }
-.wpb_button.btn-orange:hover { background-color: #E2740B; }
+.wpb_button.btn-orange { background-color: #FE9802; color: #fff; }
+.wpb_button.btn-orange:hover { background-color: #E2740B; color: #fff; }
 .wpb_button.btn-orange a { color: #fff; }
 .wpb_button.join-us.visit-blog.btn-blue { background-color: #164C8E; }
 .wpb_button.join-us.visit-blog.btn-blue:hover { background-color: #10335F; }
