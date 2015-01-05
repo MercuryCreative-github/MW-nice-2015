@@ -19,6 +19,10 @@
 .nav-border #navigationmain > ul > li > a { padding: 10px 20px; }
 .nav-border #navigationmain > ul > li > a:hover { padding: 10px 20px; }
 .the-content ul { list-style: disc; padding-left: 20px; }
+.float-left { float: left; }
+.float-right { float: right; }
+
+.the-content .wpb_row { margin-bottom: 20px; }
 
 /*********************/
 /**HP - LANDING PAGE**/
@@ -36,7 +40,7 @@
 .home_slider .wpb_wrapper .wpb_single_image.wpb_content_element.vc_align_center { display: none; }
 
 /* title */
-.the-content .first-section h1 span { color: #B1B1B1; }
+.the-content .first-section h1 span { color: #B2B2B2; }
 .the-content .first-section-box p { font-size: 18px; line-height: 155%; padding-bottom:50px; }
 .the-content .first-section-box h3 { text-align:left; }
 .the-content .first-section-box p strong { font-size: 18px; }
@@ -53,15 +57,25 @@
 	text-shadow: none;
 	font-weight: 700;
 }
-.wpb_button.btn-orange { background-color: #FE9802; }
-.wpb_button.btn-orange:hover { background-color: #E2740B; }
+.wpb_button.btn-orange { background-color: #FE9802; color: #fff; }
+.wpb_button.btn-orange:hover { background-color: #E2740B; color: #fff; }
 .wpb_button.btn-orange a { color: #fff; }
 .wpb_button.join-us.visit-blog.btn-blue { background-color: #164C8E; }
 .wpb_button.join-us.visit-blog.btn-blue:hover { background-color: #10335F; }
 
+.wpb_content_element.homepage-icons { margin-bottom: 20px; }
+.wpb_content_element.homepage-icons .wpb_wrapper { display: table; }
+.wpb_content_element.homepage-icons img { display: table-cell; width: 45px; margin-right: 10px; }
+.wpb_content_element.homepage-icons h3 { display: table-cell; vertical-align: middle; }
+
 /* First boxes */
 .box-image .wpb_single_image.wpb_content_element { margin-bottom: 0px; }
 .box-image .wpb_text_column h3 { margin-top: 0 !important; }
+
+/*Sponsor*/
+.home .the-content .wpb_row.hp-sponsor { margin-bottom: 0 !important; }
+.home .the-content .wpb_row.hp-sponsor h3 { margin-top: 0 !important; padding: 0; }
+.home .the-content .hp-sponsor .wpb_content_element { margin-bottom: 10px; }
 
 /* BOX: violet btns */
 .box .wpb_button.join-us.visit-blog { font-size: 17px; font-weight: 400; }
@@ -115,9 +129,14 @@ table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weig
 	padding: 10px 30%;
 	text-shadow: none;
 }
+@-moz-document url-prefix() { 
+.wpb_button.btn-pricing-register { 
+	padding: 10px 32.5%;
+}
+}
 .btn-register-pandp-table { text-align: right; }
-.wpb_button.btn-pricing-register a { color: #fff; }
-.wpb_button.btn-pricing-register:hover { background-color: #E2740B; }
+.wpb_button.btn-pricing-register { color: #fff; }
+.wpb_button.btn-pricing-register:hover { background-color: #E2740B; color: #fff; }
 table.table-pricing-contaier tbody tr.platinum-price  { background-color: #6A9D36; }
 table.table-pricing-contaier tbody tr.monday-price    { background-color: #927E7E; }
 table.table-pricing-contaier tbody tr.exhibitor-price { background-color: #D98852; }
@@ -131,16 +150,57 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	font-size: 17px;
 	font-weight: 700;
 }
-.the-content .color-box h5, .the-content .color-box p {
-	text-align: center;
-	margin-top: 0px !important;
+.the-content .color-box {
 	color: #ABAAAA !important;
 	border: #e4e4e4 2px solid;
-	padding: 20px 0px;
+	padding: 15px 15px;
 	background: #FAFAFA;
 }
-.the-content .color-box h5 { font-size: 1.6em; }
-.the-content  .color-box h5 span.green-text {color: rgb(123, 202, 40);}
+.the-content td.call-to-action { padding: 20px 5px; }
+.the-content td.call-to-action h3 {
+	margin: 0 !important;
+	color: #ABAAAA !important;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+.the-content td.call-to-action h3.call-to-action-1 {
+	color: #8E8E8E !important;
+	font-weight: bold;
+	font-size: 3.5em;
+	margin-bottom: 5px !important;
+}
+.the-content td.call-to-action h3.call-to-action-2 { line-height: 150%; }
+.the-content span.cal-to-action-date { color: #4EB748; font-size: 1.4em; }
+
+.the-content .section-apply-keynote .wpb_column .float-left {
+	font-weight: bold;
+	color: #ABAAAA;
+}
+.the-content .section-apply-keynote h4, .the-content .section-groups-discounts h4, .the-content .section-cancellation h4 {
+	border-bottom: 1px #BDBDBD solid;
+	padding-bottom: 5px;
+	margin: 0px 0px 10px !important;
+	text-align: left;
+}
+.wpb_button.btn-pricing-register.btn-apply {
+	background-color: #EB824C;
+	padding: 10px 40px;
+}
+.discount-circle {
+	background-color: #84D4EB;
+	border: 2px solid #E6E5E4;
+	border-radius: 50px;
+	height: 83px;
+	width: 90px;
+	margin: 0 auto;
+	padding-top: 5px;
+}
+.discount-circle .wpb_wrapper p {
+	color: #fff;
+	text-align: center;
+	font-size: 44px;
+}
+.discount-circle .wpb_wrapper p span.circle-simbol { font-size: 30px; }
 
 <<<<<<< HEAD
 ::-webkit-scrollbar {border-left: none !important}

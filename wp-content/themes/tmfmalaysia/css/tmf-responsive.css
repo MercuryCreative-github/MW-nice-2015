@@ -7,6 +7,8 @@
 	.the-content .first-section-box h3 { text-align:left; }
 	
 	.the-content .first-section-box h3 { text-align:left; }
+	.the-content td.call-to-action h3 { font-size: 1.4em !important; }
+	.the-content td.call-to-action h3.call-to-action-1 { font-size: 3.0em !important; }
 }
 
 @media only screen and (max-width: 860px) {
@@ -16,6 +18,12 @@
 	.six.columns.infocus-logo .slogan { left: 150px; }
 	
 	.the-content .first-section-box h3 { text-align:left; }
+
+	.the-content span.cal-to-action-date { font-size: 1.2em; }
+}
+
+@media only screen and (max-width: 781px) and (min-width: 768px) {
+	.pinned { display: none; }
 }
 
 @media only screen and (max-width: 767px) {
@@ -43,6 +51,12 @@
 	.vc_row .third-section .box { min-height: 0px; }
 	/*footer*/
 	.container .row .footer-bottom.twelve.columns { width: 90% !important; padding:0; }
+
+	.the-content .section-apply-keynote .wpb_column .float-left,
+	.the-content .section-apply-keynote .wpb_column .float-right { float: none;}
+	.the-content .section-apply-keynote h4, 
+	.the-content .section-groups-discounts h4, 
+	.the-content .section-cancellation h4 { text-align: center; }
 }
 
 @media only screen and (max-width: 640px) {
