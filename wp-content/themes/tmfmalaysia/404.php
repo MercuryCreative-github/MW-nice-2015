@@ -15,14 +15,14 @@
 	    </div>
     </div>
     <div class="page-404-buttons">
-    	<div class="page-404-btn-home">
+    	<a href="http://tmforumlive15.wpengine.com/"><div class="page-404-btn-home">
     		<img src="/wp-content/uploads/2015/01/404-hp-icon.png">
     		<p>Check out <img src="/wp-content/uploads/2015/01/404-logo.png">Nice 2015<br/><small>Learn more about the 2015 conference!</small></p>
-    	</div>
-    	<div class="page-404-btn-video">
+    	</div><a>
+    	<a href="http://vimeo.com/tmforumorg/channels" target="_blank"><div class="page-404-btn-video">
     		<img src="/wp-content/uploads/2015/01/404-video-icon.png">
     		<p>Wach videos of<br/><img src="/wp-content/uploads/2015/01/404-logo.png">Nice 2014</p>
-    	</div>
+    	</div><a>
     </div>
 	</section>
 
