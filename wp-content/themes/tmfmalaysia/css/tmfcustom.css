@@ -202,30 +202,27 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 }
 .discount-circle .wpb_wrapper p span.circle-simbol { font-size: 30px; }
 
-<<<<<<< HEAD
-::-webkit-scrollbar {border-left: none !important}
-=======
-::-webkit-scrollbar {border-left: none !important}
->>>>>>> 3444288e90b247662206560f83abce370fc36145
-
 /**************/
 /** PAGE 404 **/
 /**************/
 
-.page-404-box { 
+.error404 .page-404-box { 
 	background: #fbfbfb;
 	padding: 10px 20px; 
 }
-.404-image {
+.error404 .page-404-image {
 	display: table-cell;
 }
-.404-text {
+.error404 .page-404-text {
 	display: table-cell;
 	vertical-align: middle;
 	padding-left: 40px;
 }
-.404-text p { font-size: 20px; }
-.404-text p strong {
+.error404 .page-404-text p { font-size: 20px; }
+.error404 .page-404-text p strong {
 	font-size: 24px;
 	color: #434343;
 }
+
+::-webkit-scrollbar {border-left: none !important}
+::-webkit-scrollbar {border-left: none !important}
