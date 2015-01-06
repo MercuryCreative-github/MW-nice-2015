@@ -211,6 +211,7 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	background: #fbfbfb;
 	padding: 10px 20px; 
 	margin-bottom: 50px;
+	border-bottom: #b1b1b1 1px solid;
 }
 .error404 .page-404-image {
 	display: table-cell;
@@ -255,6 +256,9 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	background: #807f82;
 	padding: 10px 130px 10px 20px;
 }
+
+.page-404-buttons a:hover .page-404-btn-home{background: #41933C;}
+.page-404-buttons a:hover .page-404-btn-video{background: #707071;}
 
 ::-webkit-scrollbar {border-left: none !important}
 ::-webkit-scrollbar {border-left: none !important}
