@@ -19,12 +19,24 @@
 <div class="inner-page-wrap row has-right-sidebar has-one-sidebar clearfix">
 
 	<article class="help-text span8 page-404">
-    <h2 class="page-404">Page not found</h2>
-		<?php _e("Sorry but we couldn't find the page you are looking for. Please check to make sure you've typed the URL correctly. You may also want to search for what you are looking for.", "swiftframework"); ?> 
-		<form method="get" class="search-form" action="http://tmflive.staging.wpengine.com/">
-			<input class="adminbar-input page-404" name="s" type="text">
-		</form>
-		<a class="sf-button small accent page-404" href="javascript:history.go(-1)" target="_self"><span><?php _e("Return to the previous page", "swiftframework"); ?></span><span class="arrow"></span></a>
+    <div class="page-404-box">
+	    <div class="404-image"><img src="/wp-content/uploads/2015/01/n404.png" /></div>
+	    <div class="404-text">
+		    <p><strong>This page have been moved or deleted.</strong></p>
+		    <p>From here you can go back to where you were, head straight to our home page or watch videos from our last conference.</p>
+	    </div>
+    </div>
+    <div class="page-404-buttons">
+    	<div class="404-btn-home">
+    		<img src="/wp-content/uploads/2015/01/404-hp-icon.png">
+    		<p>Check out <img src="/wp-content/uploads/2015/01/404-logo.png">Nice 2015<br/><small>Learn more about the 2015 conference!</small></p>
+    	</div>
+    	<div class="404-btn-video">
+    		<img src="/wp-content/uploads/2015/01/404-video-icon.png">
+    		<p>Wach videos of<br/><img src="/wp-content/uploads/2015/01/404-logo.png">Nice 2014</p>
+    	</div>
+    </div>
+	
 	</article>
 	
 	<aside class="sidebar right-sidebar span4">
