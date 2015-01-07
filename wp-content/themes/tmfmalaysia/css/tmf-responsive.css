@@ -1,5 +1,15 @@
 @charset"utf-8";
 
+@media only screen and (max-width: 987px) {
+	/*404*/
+	.page-404-btn-home {
+		float: none;
+		margin-right: 0;
+		margin: 0 auto 30px;
+	}
+	.page-404-btn-video {float: none; margin: 0 auto;}
+}
+
 @media only screen and (max-width: 978px) {
 
  	.home_slider .wpb_text_column.wpb_content_element { padding-right: 0px; }
@@ -57,6 +67,15 @@
 	.the-content .section-apply-keynote h4, 
 	.the-content .section-groups-discounts h4, 
 	.the-content .section-cancellation h4 { text-align: center; }
+
+	/*404*/
+	.error404 .page-404-box{display: block;}
+	.error404 .page-404-image {
+		display: block;
+		width: 100%;
+	}
+	.error404 .page-404-text {display: block;margin-top: 20px;}
+	.error404 .page-404-text p {text-align: center;}
 }
 
 @media only screen and (max-width: 640px) {
@@ -101,6 +120,9 @@
 	.container .row .footer-bottom.twelve.columns { width: auto !important; }
 	.container.slideshow {background-position: right 17px;}
 	.container { padding:0; }
+
+	/*404*/
+	.page-404-btn-home img.page-404-icon, .page-404-btn-video img.page-404-icon {display: none;}
 }
 
 @media only screen and (max-width: 400px) {
