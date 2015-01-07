@@ -11,7 +11,7 @@
 		    <div class="page-404-box">
 	    <div class="page-404-image"><img src="/wp-content/uploads/2015/01/n404.png" /></div>
 	    <div class="page-404-text">
-		    <p><strong>This page have been moved or deleted.</strong><br/> From here you can go back to where you were, head straight to our home page or watch videos from our last conference.</p>
+		    <p><strong>This page have been moved or deleted.</strong><br/>From here you can go back to the previous page, head straight to our home page to learn about TM Forum Live 2015 or watch videos from our last conference.</p>
 	    </div>
     </div>
     <div class="page-404-buttons">
@@ -25,8 +25,10 @@
     		<img class="page-404-icon" src="/wp-content/uploads/2015/01/404-video-icon.png">
     		<p>Wach videos of<br/><img src="/wp-content/uploads/2015/01/404-logo.png">Nice 2014</p>
     	</div><a>
+        <div class="clear"></div>
     </div>
 	</section>
+
 
 </div>
 

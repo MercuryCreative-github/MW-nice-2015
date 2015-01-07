@@ -260,5 +260,8 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 .page-404-buttons a:hover .page-404-btn-home{background: #41933C;}
 .page-404-buttons a:hover .page-404-btn-video{background: #707071;}
 
+body.error404 { background-color: #FFF;}
+.error404 footer { display: none;}
+
 ::-webkit-scrollbar {border-left: none !important}
 ::-webkit-scrollbar {border-left: none !important}
