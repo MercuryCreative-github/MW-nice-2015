@@ -260,18 +260,8 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 .page-404-buttons a:hover .page-404-btn-home{background: #41933C;}
 .page-404-buttons a:hover .page-404-btn-video{background: #707071;}
 
-/*sticky footer only for 404*/
-.error404 .container.white.bigpadding {
-	min-height: 100%;
-	margin-bottom: -65px;
-}
-.error404 .container.white.bigpadding:after {
-	content: "";
-  	display: block;
-}
-.error404 footer,.error404 .container.white.bigpadding:after {
-	height: 65px;
-}
+body.error404 { background-color: #FFF;}
+.error404 footer { display: none;}
 
 ::-webkit-scrollbar {border-left: none !important}
 ::-webkit-scrollbar {border-left: none !important}

@@ -25,8 +25,10 @@
     		<img class="page-404-icon" src="/wp-content/uploads/2015/01/404-video-icon.png">
     		<p>Wach videos of<br/><img src="/wp-content/uploads/2015/01/404-logo.png">Nice 2014</p>
     	</div><a>
+        <div class="clear"></div>
     </div>
 	</section>
+
 
 </div>
 
