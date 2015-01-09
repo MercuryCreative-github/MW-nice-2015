@@ -170,7 +170,8 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	margin-bottom: 5px !important;
 }
 .the-content td.call-to-action h3.call-to-action-2 { line-height: 150%; }
-.the-content span.cal-to-action-date { color: #4EB748; font-size: 1.4em; }
+.the-content span.cal-to-action-date { color: #4EB748; font-size: 1.8em; }
+.the-content span.call-to-action-register { font-size: 1.4em; }
 
 .the-content .section-apply-keynote .wpb_column .float-left {
 	font-weight: bold;
