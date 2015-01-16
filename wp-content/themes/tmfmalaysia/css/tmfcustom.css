@@ -312,3 +312,4 @@ body.error404 { background-color: #FFF;}
 #callforspeakers .gform_fields #field_2_11 { width: 48%; float: right; margin-top: -196px; margin-right: 1.5%; }
 
 #callforspeakers .gform_confirmation_message_2 {text-align: center;margin: 70px 0;font-size: 22px;}
+#callforspeakers .gform_confirmation_message_2 span.thanks-for-submit {font-weight: bold;font-size: 30px;color: #A09F9F;}
