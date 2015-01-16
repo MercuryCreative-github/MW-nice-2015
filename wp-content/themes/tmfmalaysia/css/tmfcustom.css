@@ -282,7 +282,7 @@ body.error404 { background-color: #FFF;}
 .summit-list ul li:hover {background: #FAFAFA;}
 .summit-list ul li img { vertical-align: middle; margin-right: 10px; }
 .summit-list ul li a {color: #222222;}
-.deadline-tex {margin-top: 17px;}
+.deadline-text {margin-top: 17px;}
 
 #callforspeakers .color-box p { font-weight: bold; font-size: 19px; text-align: center; color: #989898; line-height: 1.4em; }
 #callforspeakers .color-box span.deadline {font-size: 22px;}

@@ -112,7 +112,8 @@ if (!function_exists('send_to_acton')) {
 	function send_to_acton($entry,$form) 
 	{
 		//include ActonConnection class
-		require_once (get_stylesheet_directory() .'class.Acton-WordPress-Connection.php');
+		//require_once (get_stylesheet_directory() .'class.Acton-WordPress-Connection.php');
+        require_once (get_stylesheet_directory() .'/class.Acton-WordPress-Connection.php');
 		// declare new ActonWordPressConnection object
 		$ao_gf1 = new ActonConnection;
 
@@ -138,7 +139,11 @@ if (!function_exists('send_to_acton')) {
 		$ao_gf1->setPostItems('Why are you right for this presentation?',$entry['13']);
 
 		// processConnection method, with your external post URL passed as the argument
-		$ao_gf1->processConnection('http://marketing.tmforum.org/acton/form/1332/00ed:d-0001/0/index.htm');
+		
+        //$ao_gf1->processConnection('http://marketing.tmforum.org/acton/form/1332/00ed:d-0001/0/index.htm');
+        $ao_gf1->processConnection('http://marketing.tmforum.org/acton/eform/1332/00ed/d-ext-0001');
+        
+        
 	}
 }
 ?>
