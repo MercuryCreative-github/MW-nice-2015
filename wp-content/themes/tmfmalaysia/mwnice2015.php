@@ -23,7 +23,7 @@ background-size: cover;border: none;background-repeat: no-repeat; background-col
 			
 	<div class="wpb_single_image wpb_content_element vc_align_center">
 		<div class="wpb_wrapper">
-		<img width="593" height="375" src="<?php the_field("home_page_intro_logo"); ?>" class="vc_box_border_grey attachment-full" alt="TM Forum Live!&nbsp;Becoming an Agile, Super-Effective Business&nbsp;brings together all the critical elements of&nbsp;managing&nbsp;and&nbsp;delivering an agile, customer-centric&nbsp;business.">	
+		<img width="593" height="375" src="<?php the_field("home_page_intro_logo"); ?>" class="vc_box_border_grey attachment-full" alt="Hola">	
 					
 
 </div> 

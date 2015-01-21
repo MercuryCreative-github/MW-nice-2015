@@ -26,12 +26,10 @@
 ?>
 
 <div class="container slideshow" style="background:url(<?php echo $option['background_image_faded']; ?>);">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	<section class="row largepadding">
 	<div class="six columns bigpadding intro">
 		<div class="bigtoppadding whitetext"><?php the_content(); ?></div>
-=======
 		<section class="row largepadding">
 	<div class="eight columns bigpadding intro">
 		<div class="bigtoppadding whitetext">
@@ -59,12 +57,9 @@
 
 
 		</div>
->>>>>>> master
-=======
 	<section class="row largepadding">
 	<div class="six columns bigpadding intro">
 		<div class="bigtoppadding whitetext"><?php the_content(); ?></div>
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 	</div>
 	</section>
 </div>
@@ -121,18 +116,13 @@
 	});
 </script>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 <div class="container white">
 <section <?php post_class('row the-content'); ?>>
 		<?php the_content(); ?>
 </section>
 </div>
 
->>>>>>> master
-=======
->>>>>>> 3444288e90b247662206560f83abce370fc36145
 <?php if(get_post_meta( $post->ID, '_cmb_the_portfolio_switch', true ) !='on') : ?>
 	<div class="smallpadding" style="background:url(<?php echo $option['background_image']; ?>);"></div>
 	
