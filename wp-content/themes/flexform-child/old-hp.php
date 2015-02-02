@@ -619,46 +619,7 @@ var _wpcf7 = {"loaderUrl":"http:\/\/tmforumlive15.staging.wpengine.com\/wp-conte
 			b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
 		}());
 	</script>
-			<div id="wpadminbar" class="nojq nojs" role="navigation">
-			<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
-			<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Top navigation toolbar." tabindex="0">
-				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
-		<li id="wp-admin-bar-wp-logo" class="menupop"><a class="ab-item"  aria-haspopup="true" href="http://tmforumlive15.staging.wpengine.com/wp-admin/about.php" title="About WordPress"><span class="ab-icon"></span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-default" class="ab-submenu">
-		<li id="wp-admin-bar-about"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/about.php">About WordPress</a>		</li></ul><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
-		<li id="wp-admin-bar-wporg"><a class="ab-item"  href="https://wordpress.org/">WordPress.org</a>		</li>
-		<li id="wp-admin-bar-documentation"><a class="ab-item"  href="http://codex.wordpress.org/">Documentation</a>		</li>
-		<li id="wp-admin-bar-support-forums"><a class="ab-item"  href="https://wordpress.org/support/">Support Forums</a>		</li>
-		<li id="wp-admin-bar-feedback"><a class="ab-item"  href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a>		</li></ul></div>		</li>
-		<li id="wp-admin-bar-site-name" class="menupop"><a class="ab-item"  aria-haspopup="true" href="http://tmforumlive15.staging.wpengine.com/wp-admin/">TM Forum Live! 2015</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-site-name-default" class="ab-submenu">
-		<li id="wp-admin-bar-dashboard"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/">Dashboard</a>		</li></ul><ul id="wp-admin-bar-appearance" class="ab-submenu">
-		<li id="wp-admin-bar-themes"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/themes.php">Themes</a>		</li>
-		<li id="wp-admin-bar-customize" class="hide-if-no-customize"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/customize.php?url=http%3A%2F%2Ftmforumlive15.staging.wpengine.com%2F%3Fpreview%3Dtrue%26preview_id%3D408%26preview_nonce%3D6c4a6c8a47">Customize</a>		</li>
-		<li id="wp-admin-bar-widgets"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/widgets.php">Widgets</a>		</li>
-		<li id="wp-admin-bar-menus"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/nav-menus.php">Menus</a>		</li></ul></div>		</li>
-		<li id="wp-admin-bar-updates"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/update-core.php" title="2 Plugin Updates"><span class="ab-icon"></span><span class="ab-label">2</span><span class="screen-reader-text">2 Plugin Updates</span></a>		</li>
-		<li id="wp-admin-bar-comments"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/edit-comments.php" title="0 comments awaiting moderation"><span class="ab-icon"></span><span id="ab-awaiting-mod" class="ab-label awaiting-mod pending-count count-0">0</span></a>		</li>
-		<li id="wp-admin-bar-new-content" class="menupop"><a class="ab-item"  aria-haspopup="true" href="http://tmforumlive15.staging.wpengine.com/wp-admin/post-new.php" title="Add New"><span class="ab-icon"></span><span class="ab-label">New</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-new-content-default" class="ab-submenu">
-		<li id="wp-admin-bar-new-post"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/post-new.php">Post</a>		</li>
-		<li id="wp-admin-bar-new-media"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/media-new.php">Media</a>		</li>
-		<li id="wp-admin-bar-new-page"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/post-new.php?post_type=page">Page</a>		</li>
-		<li id="wp-admin-bar-new-timetable_weekdays"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/post-new.php?post_type=timetable_weekdays">Timetable Column</a>		</li>
-		<li id="wp-admin-bar-new-events"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/post-new.php?post_type=events">Forum</a>		</li>
-		<li id="wp-admin-bar-new-presentations"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/post-new.php?post_type=presentations">Presentation</a>		</li>
-		<li id="wp-admin-bar-new-portfolio"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/post-new.php?post_type=portfolio">Portfolio</a>		</li>
-		<li id="wp-admin-bar-new-team"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/post-new.php?post_type=team">Team Member</a>		</li>
-		<li id="wp-admin-bar-new-clients"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/post-new.php?post_type=clients">Client</a>		</li>
-		<li id="wp-admin-bar-new-testimonial"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/post-new.php?post_type=testimonial">Testimonial</a>		</li>
-		<li id="wp-admin-bar-new-user"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/user-new.php">User</a>		</li></ul></div>		</li>
-		<li id="wp-admin-bar-edit"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/post.php?post=408&#038;action=edit">Edit Page</a>		</li>
-		<li id="wp-admin-bar-vc_inline-admin-bar-link" class="vc_inline-link"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/edit.php?vc_action=vc_inline&#038;post_id=408&#038;post_type=page">Edit with Visual Composer</a>		</li></ul><ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
-		<li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="http://tmforumlive15.staging.wpengine.com/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150" /><input type="submit" class="adminbar-button" value="Search"/></form></div>		</li>
-		<li id="wp-admin-bar-my-account" class="menupop with-avatar"><a class="ab-item"  aria-haspopup="true" href="http://tmforumlive15.staging.wpengine.com/wp-admin/profile.php" title="My Account">Howdy, devmalaysia14<img alt='' src='http://0.gravatar.com/avatar/824105dbaab7ea0612c64985391fd074?s=26&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D26&amp;r=G' class='avatar avatar-26 photo' height='26' width='26' /></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-user-actions" class="ab-submenu">
-		<li id="wp-admin-bar-user-info"><a class="ab-item" tabindex="-1" href="http://tmforumlive15.staging.wpengine.com/wp-admin/profile.php"><img alt='' src='http://0.gravatar.com/avatar/824105dbaab7ea0612c64985391fd074?s=64&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D64&amp;r=G' class='avatar avatar-64 photo' height='64' width='64' /><span class='display-name'>devmalaysia14</span><span class='username'>mvallve</span></a>		</li>
-		<li id="wp-admin-bar-edit-profile"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-admin/profile.php">Edit My Profile</a>		</li>
-		<li id="wp-admin-bar-logout"><a class="ab-item"  href="http://tmforumlive15.staging.wpengine.com/wp-login.php?action=logout&#038;_wpnonce=9afa288581">Log Out</a>		</li></ul></div>		</li></ul>			</div>
-						<a class="screen-reader-shortcut" href="http://tmforumlive15.staging.wpengine.com/wp-login.php?action=logout&#038;_wpnonce=9afa288581">Log Out</a>
-					</div>
-
+	
 		
 </body>
 </html>
