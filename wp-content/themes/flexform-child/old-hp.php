@@ -19,9 +19,6 @@ Template Name: Old-HP
 	<meta name='robots' content='noindex,follow' />
 <link rel="alternate" type="application/rss+xml" title="TM Forum Live! 2015 &raquo; Feed" href="http://tmforumlive15.staging.wpengine.com/feed/" />
 <link rel="alternate" type="application/rss+xml" title="TM Forum Live! 2015 &raquo; Comments Feed" href="http://tmforumlive15.staging.wpengine.com/comments/feed/" />
-<link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1' type='text/css' media='all' />
-<link rel='stylesheet' id='dashicons-css'  href='http://tmforumlive15.staging.wpengine.com/wp-includes/css/dashicons.min.css?ver=4.1' type='text/css' media='all' />
-<link rel='stylesheet' id='admin-bar-css'  href='http://tmforumlive15.staging.wpengine.com/wp-includes/css/admin-bar.min.css?ver=4.1' type='text/css' media='all' />
 <link rel='stylesheet' id='easy-modal-site-css'  href='http://tmforumlive15.staging.wpengine.com/wp-content/plugins/easy-modal/assets/styles/easy-modal-site.css?ver=0.1' type='text/css' media='all' />
 <link rel='stylesheet' id='contact-form-7-css'  href='http://tmforumlive15.staging.wpengine.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.0.3' type='text/css' media='all' />
 <link rel='stylesheet' id='google-typography-font-css'  href='//fonts.googleapis.com/css?family=Titillium+Web:600|Open+Sans:normal|Titillium+Web:300|Open+Sans:300|Titillium+Web:200|:|Titillium+Web:normal' type='text/css' media='all' />
@@ -77,22 +74,13 @@ h3{ font-family: "Open Sans"; font-weight: 300; font-size: 45px; color: #222222;
 </style>
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
 <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
-<!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://tmforumlive15.staging.wpengine.com/wp-content/plugins/js_composer/assets/css/vc-ie8.css" media="screen"><![endif]--><style type="text/css" media="print">#wpadminbar { display:none; }</style>
-<style type="text/css" media="screen">
-	html { margin-top: 32px !important; }
-	* html body { margin-top: 32px !important; }
-	@media screen and ( max-width: 782px ) {
-		html { margin-top: 46px !important; }
-		* html body { margin-top: 46px !important; }
-	}
-</style>
-<style type="text/css" data-type="vc_custom-css">#menu-item-390 {
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://tmforumlive15.staging.wpengine.com/wp-content/plugins/js_composer/assets/css/vc-ie8.css" media="screen"><![endif]--><style type="text/css" data-type="vc_custom-css">#menu-item-390 {
 display: none !important;
 }
 .CFS {
 display: none !important;
 }</style><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1417443838731{background-color: #ffffff !important;border-color: #ffffff !important;}.vc_custom_1417443838731{background-color: #ffffff !important;border-color: #ffffff !important;}.vc_custom_1417443838731{background-color: #ffffff !important;border-color: #ffffff !important;}.vc_custom_1417443986305{padding-top: 5px !important;padding-bottom: 5px !important;}.vc_custom_1417443986305{padding-top: 5px !important;padding-bottom: 5px !important;}.vc_custom_1417443986305{padding-top: 5px !important;padding-bottom: 5px !important;}</style></head>
-<body class="home page page-id-408 page-template page-template-mwnice2015 page-template-mwnice2015-php logged-in admin-bar no-customize-support wpb-js-composer js-comp-ver-4.3.4 vc_responsive" id="">
+<body class="home page page-id-408 page-template page-template-mwnice2015 page-template-mwnice2015-php wpb-js-composer js-comp-ver-4.3.4 vc_responsive" id="">
 
 <header>
 	<div class="container">
@@ -551,7 +539,7 @@ Nice, France 06300</p>
 
 <div id="eModal-1" class="emodal theme-1" data-emodal="{&quot;id&quot;:&quot;1&quot;,&quot;theme_id&quot;:&quot;1&quot;,&quot;meta&quot;:{&quot;id&quot;:&quot;1&quot;,&quot;modal_id&quot;:&quot;1&quot;,&quot;display&quot;:{&quot;overlay_disabled&quot;:0,&quot;size&quot;:&quot;&quot;,&quot;custom_width&quot;:0,&quot;custom_width_unit&quot;:&quot;rem&quot;,&quot;custom_height&quot;:0,&quot;custom_height_unit&quot;:&quot;rem&quot;,&quot;custom_height_auto&quot;:1,&quot;location&quot;:&quot;center top&quot;,&quot;position&quot;:{&quot;top&quot;:53,&quot;left&quot;:0,&quot;bottom&quot;:0,&quot;right&quot;:0,&quot;fixed&quot;:1},&quot;animation&quot;:{&quot;type&quot;:&quot;fadeAndSlide&quot;,&quot;speed&quot;:&quot;470&quot;,&quot;origin&quot;:&quot;top&quot;}},&quot;close&quot;:{&quot;overlay_click&quot;:1,&quot;esc_press&quot;:1,&quot;disabled&quot;:0}}}"><div class="emodal-content"><p style="text-align: center;"><img class="scale-with-grid-logo aligncenter" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/12/LogoDD141.png" alt="Logo" /> <div class="wpcf7" id="wpcf7-f18871-p408-o1" lang="en-US" dir="ltr">
 <div class="screen-reader-response"></div>
-<form name="" action="/?preview=true&amp;preview_id=408&amp;preview_nonce=6c4a6c8a47#wpcf7-f18871-p408-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+<form name="" action="/#wpcf7-f18871-p408-o1" method="post" class="wpcf7-form" novalidate="novalidate">
 <div style="display: none;">
 <input type="hidden" name="_wpcf7" value="18871" />
 <input type="hidden" name="_wpcf7_version" value="4.0.3" />
@@ -577,7 +565,15 @@ color: white;
 width: 100px;
 text-transform: uppercase;}
 </style>
-</div><a class="emodal-close">&#215;</a></div><script type='text/javascript' src='http://tmforumlive15.staging.wpengine.com/wp-includes/js/admin-bar.min.js?ver=4.1'></script>
+</div><a class="emodal-close">&#215;</a></div><!-- Tracking code easily added by NK Google Analytics -->
+<script type="text/javascript"> 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ 
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), 
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) 
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); 
+ga('create', 'UA-3242766-12', 'tmforumlive.org'); 
+ga('send', 'pageview'); 
+</script> 
 <script type='text/javascript' src='http://tmforumlive15.staging.wpengine.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.2'></script>
 <script type='text/javascript' src='http://tmforumlive15.staging.wpengine.com/wp-includes/js/jquery/ui/position.min.js?ver=1.11.2'></script>
 <script type='text/javascript' src='http://tmforumlive15.staging.wpengine.com/wp-content/plugins/easy-modal/assets/scripts/jquery.transit.min.js?ver=0.9.11'></script>
@@ -609,17 +605,6 @@ var _wpcf7 = {"loaderUrl":"http:\/\/tmforumlive15.staging.wpengine.com\/wp-conte
 <script type='text/javascript' src='http://tmforumlive15.staging.wpengine.com/wp-content/themes/montreal/js/main.js?ver=4.1'></script>
 <script type='text/javascript' src='http://tmforumlive15.staging.wpengine.com/wp-content/plugins/js_composer/assets/js/js_composer_front.js?ver=4.3.4'></script>
 <script type='text/javascript' src='http://tmforumlive15.staging.wpengine.com/wp-content/plugins/js_composer/assets/lib/jquery-waypoints/waypoints.min.js?ver=4.3.4'></script>
-	<script type="text/javascript">
-		(function() {
-			var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
 
-			request = true;
-
-			b[c] = b[c].replace( rcs, ' ' );
-			b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
-		}());
-	</script>
-	
-		
 </body>
 </html>
