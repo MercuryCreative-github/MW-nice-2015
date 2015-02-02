@@ -3,91 +3,20 @@
 Template Name: Old-HP
 */
 ?>
-<?php get_header(); ?>
-
-<?php
-	$options = get_option('sf_flexform_options');
-
-	$default_show_page_heading = $options['default_show_page_heading'];
-	$default_page_heading_bg_alt = $options['default_page_heading_bg_alt'];
-	$default_sidebar_config = $options['default_sidebar_config'];
-	$default_left_sidebar = $options['default_left_sidebar'];
-	$default_right_sidebar = $options['default_right_sidebar'];
-
-	$show_page_title = get_post_meta($post->ID, 'sf_page_title', true);
-	$page_title_one = get_post_meta($post->ID, 'sf_page_title_one', true);
-	$page_title_two = get_post_meta($post->ID, 'sf_page_title_two', true);
-	$page_title_bg = get_post_meta($post->ID, 'sf_page_title_bg', true);
-
-	if ($show_page_title == "") {
-		$show_page_title = $default_show_page_heading;
-	}
-	if ($page_title_bg == "") {
-		$page_title_bg = $default_page_heading_bg_alt;
-	}
-
-	$sidebar_config = get_post_meta($post->ID, 'sf_sidebar_config', true);
-	$left_sidebar = get_post_meta($post->ID, 'sf_left_sidebar', true);
-	$right_sidebar = get_post_meta($post->ID, 'sf_right_sidebar', true);
-
-	if ($sidebar_config == "") {
-		$sidebar_config = $default_sidebar_config;
-	}
-	if ($left_sidebar == "") {
-		$left_sidebar = $default_left_sidebar;
-	}
-	if ($right_sidebar == "") {
-		$right_sidebar = $default_right_sidebar;
-	}
-
-	$page_wrap_class = '';
-	if ($sidebar_config == "left-sidebar") {
-	$page_wrap_class = 'has-left-sidebar has-one-sidebar row';
-	} else if ($sidebar_config == "right-sidebar") {
-	$page_wrap_class = 'has-right-sidebar has-one-sidebar row';
-	} else if ($sidebar_config == "both-sidebars") {
-	$page_wrap_class = 'has-both-sidebars';
-	} else {
-	$page_wrap_class = 'has-no-sidebar';
-	}
-
-	$remove_breadcrumbs = get_post_meta($post->ID, 'sf_no_breadcrumbs', true);
-	$remove_bottom_spacing = get_post_meta($post->ID, 'sf_no_bottom_spacing', true);
-	$remove_top_spacing = get_post_meta($post->ID, 'sf_no_top_spacing', true);
-
-	if ($remove_bottom_spacing) {
-	$page_wrap_class .= ' no-bottom-spacing';
-	}
-	if ($remove_top_spacing) {
-	$page_wrap_class .= ' no-top-spacing';
-	}
-?>
-
-<?php if (have_posts()) : the_post(); ?>
-
-<?php if ($show_page_title) { ?>
-	<div class="row">
-		<div class="page-heading span12 clearfix alt-bg <?php echo $page_title_bg; ?>">
-			<?php if ($page_title_one) { ?>
-			<h1><?php echo $page_title_one; ?></h1>
-			<?php } else { ?>
-			<h1><?php the_title(); ?></h1>
-			<?php } ?>
-			<?php if ($page_title_one) { ?>
-			<h3><?php echo $page_title_two; ?></h3>
-			<?php } ?>
-		</div>
-	</div>
-<?php } ?>
-
-<?php
-	// BREADCRUMBS
-	if(!$remove_breadcrumbs) {
-		echo sf_breadcrumbs();
-} ?>
 
 
-<link rel="shortcut icon" href="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/11/favicon.png">
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+<head>
+		<meta charset="UTF-8">
+	<title>TM Forum Live! 2015</title>	
+	<meta name="description" content=""/>
+			<link rel="shortcut icon" href="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/11/favicon.png">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name='robots' content='noindex,follow' />
 <link rel="alternate" type="application/rss+xml" title="TM Forum Live! 2015 &raquo; Feed" href="http://tmforumlive15.staging.wpengine.com/feed/" />
 <link rel="alternate" type="application/rss+xml" title="TM Forum Live! 2015 &raquo; Comments Feed" href="http://tmforumlive15.staging.wpengine.com/comments/feed/" />
 <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1' type='text/css' media='all' />
@@ -162,8 +91,8 @@ display: none !important;
 }
 .CFS {
 display: none !important;
-}</style><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1417443838731{background-color: #ffffff !important;border-color: #ffffff !important;}.vc_custom_1417443838731{background-color: #ffffff !important;border-color: #ffffff !important;}.vc_custom_1417443838731{background-color: #ffffff !important;border-color: #ffffff !important;}.vc_custom_1417443986305{padding-top: 5px !important;padding-bottom: 5px !important;}.vc_custom_1417443986305{padding-top: 5px !important;padding-bottom: 5px !important;}.vc_custom_1417443986305{padding-top: 5px !important;padding-bottom: 5px !important;}</style>
-
+}</style><style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1417443838731{background-color: #ffffff !important;border-color: #ffffff !important;}.vc_custom_1417443838731{background-color: #ffffff !important;border-color: #ffffff !important;}.vc_custom_1417443838731{background-color: #ffffff !important;border-color: #ffffff !important;}.vc_custom_1417443986305{padding-top: 5px !important;padding-bottom: 5px !important;}.vc_custom_1417443986305{padding-top: 5px !important;padding-bottom: 5px !important;}.vc_custom_1417443986305{padding-top: 5px !important;padding-bottom: 5px !important;}</style></head>
+<body class="home page page-id-408 page-template page-template-mwnice2015 page-template-mwnice2015-php logged-in admin-bar no-customize-support wpb-js-composer js-comp-ver-4.3.4 vc_responsive" id="">
 
 <header>
 	<div class="container">
@@ -730,7 +659,6 @@ var _wpcf7 = {"loaderUrl":"http:\/\/tmforumlive15.staging.wpengine.com\/wp-conte
 						<a class="screen-reader-shortcut" href="http://tmforumlive15.staging.wpengine.com/wp-login.php?action=logout&#038;_wpnonce=9afa288581">Log Out</a>
 					</div>
 
-
-
-<!--// WordPress Hook //-->
-<?php get_footer(); ?>
+		
+</body>
+</html>
