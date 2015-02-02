@@ -2290,3 +2290,7 @@ div.wpcf7 br {display: none}
 /*feed*/
 .feed-content-text p {color: #444;}
 article.feed-item:nth-child(2n) {clear: both;}
+
+/* to be remved after switching template */
+.summit body{background:#FFF!important;}
+.summit #container{box-shadow:none!important;}
