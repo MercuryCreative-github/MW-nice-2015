@@ -349,3 +349,9 @@ body.error404 { background-color: #FFF;}
 .download-summit a:hover:after{
 	color: rgb(255, 175, 0);
 }
+
+
+/***********************/
+/***** SUMMIT PAGE *****/
+/***********************/
+#summit .row.bigtoppadding.the-content {max-width: 1200px;}
