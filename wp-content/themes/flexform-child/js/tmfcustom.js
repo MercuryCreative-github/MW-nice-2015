@@ -36,7 +36,6 @@ function getParameterByName(name) {
 }
 
 function reRowIotTabs() {
-                        jQuery('#tab-internet-of-things .row:nth-child(3) > div').append('<p>test</p>');
         var newSpan4 =  jQuery('#tab-internet-of-things .row:nth-child(3) > div').removeClass( "span12" ).addClass( "span4" );
                         jQuery('#tab-internet-of-things .row:nth-child(3) > div').remove();
                         //rename second row to row-fluid and span12 to span8
