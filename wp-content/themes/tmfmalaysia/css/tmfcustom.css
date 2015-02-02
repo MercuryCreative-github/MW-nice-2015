@@ -61,7 +61,7 @@
 .wpb_button.btn-orange:hover { background-color: #E2740B; color: #fff; }
 .wpb_button.btn-orange a { color: #fff; }
 .wpb_button.join-us.visit-blog.btn-blue { background-color: #164C8E; }
-.wpb_button.join-us.visit-blog.btn-blue:hover { background-color: #10335F; }
+.wpb_button.join-us.visit-blog.btn-blue:hover { background-color: #10335F; color: #fff;}
 
 .wpb_content_element.homepage-icons { margin-bottom: 20px; }
 .wpb_content_element.homepage-icons .wpb_wrapper { display: table; }
@@ -82,6 +82,11 @@
 .box .wpb_button.join-us:hover { background-color: #5A9B16; color: #fff; }
 .third-section .box h3 { padding: 0 2px; }
 .box .wpb_content_elemen .wpb_wrapper img { position: absolute; bottom: 0; left: 0; }
+
+/*Location*/
+.location .join-us.visit-blog.btn-blue {margin-top: 14px!important;font-size: 17px;font-weight: 400;}
+.location .join-us.visit-blog.btn-blue 
+img.location-img {border: #B3B3B3 1px solid;}
 
 /**************/
 /** SPONSORS **/
@@ -170,7 +175,8 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	margin-bottom: 5px !important;
 }
 .the-content td.call-to-action h3.call-to-action-2 { line-height: 150%; }
-.the-content span.cal-to-action-date { color: #4EB748; font-size: 1.4em; }
+.the-content span.cal-to-action-date { color: #4EB748; font-size: 1.8em; }
+.the-content span.call-to-action-register { font-size: 1.4em; }
 
 .the-content .section-apply-keynote .wpb_column .float-left {
 	font-weight: bold;
@@ -201,6 +207,28 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	font-size: 44px;
 }
 .discount-circle .wpb_wrapper p span.circle-simbol { font-size: 30px; }
+
+.saving { font-family:"Titillium Web"; }
+.tr-members.saving {	
+	border-top: #999898 1px solid;
+    background: rgba(98, 184, 93, 0.94);
+}
+.no-members.saving {
+	background: #7EC579;
+    border-top: #ABAAAA 1px solid;
+}
+.tr-members.saving td {
+	padding: 8px 8px;
+    color: #fff;
+    text-align: left;
+    padding-left: 26px;
+    vertical-align: middle;
+    font-size: 14px;
+}
+.tr-members.saving td.td-datos {
+	text-align: center;
+	padding-left: 8px;
+}
 
 /**************/
 /** PAGE 404 **/
@@ -265,3 +293,65 @@ body.error404 { background-color: #FFF;}
 
 ::-webkit-scrollbar {border-left: none !important}
 ::-webkit-scrollbar {border-left: none !important}
+
+
+/***********************/
+/***CALL FOR SPEAKERS***/
+/***********************/
+
+.summit-list ul { list-style: none; padding-right: 20px; padding-left: 0;}
+.summit-list ul li {border-bottom: #e4e4e4 1px solid;padding: 10px 0;cursor: pointer; margin-bottom: 0;}
+.summit-list ul li:hover {background: #FAFAFA;}
+.summit-list ul li img { vertical-align: middle; margin-right: 10px; }
+.summit-list ul li a {color: #222222;}
+.deadline-text {margin-top: 17px;}
+
+#callforspeakers .color-box p { font-weight: bold; font-size: 19px; text-align: center; color: #989898; line-height: 1.4em; }
+#callforspeakers .color-box span.deadline {font-size: 22px;}
+
+.form-subtitile { margin-top: 60px; }
+.form-subtitile h4 { text-align: left; }
+#callforspeakers input, #callforspeakers textarea, #callforspeakers select { border: #B1B1B1 1px solid; margin: 0px; padding: 10px; }
+#callforspeakers textarea { width: 47%; }
+#callforspeakers .gform_wrapper .top_label input.medium, #callforspeakers .gform_wrapper textarea.small { width: 98%; }
+#callforspeakers .gform_wrapper .top_label select.medium {width: 100%;} 
+#callforspeakers label.gfield_label { font-size: 17px; font-weight: 400; text-transform: capitalize; }
+#callforspeakers select {font-size: 16px;}
+#callforspeakers .ginput_container .charleft {display: none;}
+#callforspeakers .gform_wrapper .gfield_description {padding: 0;}
+#callforspeakers ul.gform_fields li { margin-bottom: 30px; }
+.gform_footer .gform_button.button { border: none; background: #FE9802; width: 200px; cursor: pointer;}
+.gform_footer .gform_button.button:hover { background: #E2740B; }
+#callforspeakers .gform_fields #field_2_2,
+#callforspeakers .gform_fields #field_2_4, 
+#callforspeakers .gform_fields #field_2_6,
+#callforspeakers .gform_fields #field_2_10,
+#callforspeakers .gform_fields #field_2_22 { width: 48%; float: left; }
+#callforspeakers .gform_fields #field_2_3,
+#callforspeakers .gform_fields #field_2_5,
+#callforspeakers .gform_fields #field_2_7,
+#callforspeakers .gform_fields #field_2_23 { width: 48%; float: right; margin-top: -103px; margin-right: 1.5%; }
+#callforspeakers .gform_fields #field_2_11 { width: 48%; float: right; margin-top: -196px; margin-right: 1.5%; }
+
+#callforspeakers .gform_confirmation_message_2 {text-align: center;margin: 70px 0;font-size: 22px;}
+#callforspeakers .gform_confirmation_message_2 span.thanks-for-submit {font-weight: bold;font-size: 30px;color: #A09F9F;}
+
+.download-summit a:after {
+	content: "\f019";
+	font-family: FontAwesome;
+	font-size: 20px;
+	vertical-align: middle;
+	color: rgb(205, 205, 205);
+	float: right;
+	margin-top: 3px;
+	margin-right: 5px;
+}
+.download-summit a:hover:after{
+	color: rgb(255, 175, 0);
+}
+
+
+/***********************/
+/***** SUMMIT PAGE *****/
+/***********************/
+#summit .row.bigtoppadding.the-content {max-width: 1200px;}

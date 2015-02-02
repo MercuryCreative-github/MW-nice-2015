@@ -27,7 +27,7 @@
     			                        
                     <div class="slogan">
                         <span class="title">Nice, France</span><br/>
-                        <span class="date">June 1-3, 2015</span>
+                        <span class="date">June 1-4, 2015</span>
                     </div> 
                     
                 </div>
@@ -40,7 +40,7 @@
                 
                 <div class="slogan-tablet">
                     <span class="title-tablet">Nice, France</span><br/>
-                    <span class="date-tablet">June 1-3, 2015</span>
+                    <span class="date-tablet">June 1-4, 2015</span>
                 </div>                
                 
 			</nav>
@@ -59,7 +59,7 @@
                 
                 <div class="slogan-mobile">
                     <span class="title">Nice, France</span><br/>
-                    <span class="date">June 1-3, 2015</span>             
+                    <span class="date">June 1-4, 2015</span>             
                 </div>
                 
                 <span class="divider"></span>

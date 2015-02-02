@@ -42,25 +42,25 @@ add_filter( 'storm_social_icons_type', create_function( '', 'return "icon-sign";
 
 		function sfs_enqueue_styles() {
 		wp_dequeue_style('main-css');
-         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '8.4', 'all');
+         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '8.7', 'all');
             wp_enqueue_style('main-css'); // Enqueue it!
 
 		// TMF custom styles
-		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '8.4', 'all');
+		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '8.7', 'all');
     	wp_enqueue_style('tmf-custom-css'); // Enqueue it!
 
     	// Pricing css
 		if ( is_page_template( 'pricing-tables.php' ) ) {
-		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '8.4', 'all');
+		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '8.7', 'all');
     		wp_enqueue_style('pricing-tables-css'); // Enqueue it!
 		}
 
     	// Responsive fixes
-		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '8.4', 'all');
+		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '8.7', 'all');
     	wp_enqueue_style('tmf-responsive-css'); // Enqueue it!
     	
     	// Print Styles
-		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '8.4', 'all');
+		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '8.7', 'all');
     	wp_enqueue_style('tmf-print-css'); // Enqueue it!
 
 	}
@@ -103,6 +103,47 @@ register_post_type('Presentations', array(
 		'parent' => 'Parent Presentation',
 )
 ) ); }
+?>
+<?php 
 
+add_action('gform_after_submission_2', 'send_to_acton', 10, 2);
 
- ?>
+if (!function_exists('send_to_acton')) {
+	function send_to_acton($entry,$form) 
+	{
+		//include ActonConnection class
+		//require_once (get_stylesheet_directory() .'class.Acton-WordPress-Connection.php');
+        require_once (get_stylesheet_directory() .'/class.Acton-WordPress-Connection.php');
+		// declare new ActonWordPressConnection object
+		$ao_gf1 = new ActonConnection;
+
+		// format: setPostItems('your Act-On data field name','your custom form html input name')
+		$ao_gf1->setPostItems('First Name Submitters',$entry['21.3']); // HTML input name attribute is "First Name", Act-On data field name should match that
+		$ao_gf1->setPostItems('Last Name Submitters',$entry['21.6']); // please note that Act-On does not accept filed names with punctuation marks in them, so rename as necessary
+		$ao_gf1->setPostItems('Job title Submitters',$entry['22']);
+		$ao_gf1->setPostItems('Company Submitters',$entry['23']);
+		$ao_gf1->setPostItems('Email Submitters',$entry['24']);
+		$ao_gf1->setPostItems('First Name',$entry['1.3']);
+		$ao_gf1->setPostItems('Last Name',$entry['1.6']);
+		$ao_gf1->setPostItems('Job title',$entry['2']);
+		$ao_gf1->setPostItems('Company',$entry['3']);
+		$ao_gf1->setPostItems('Email',$entry['4']);
+		$ao_gf1->setPostItems('Twitter',$entry['5']);
+		$ao_gf1->setPostItems('Phone',$entry['6']);
+		$ao_gf1->setPostItems('Mobile',$entry['7']);
+		$ao_gf1->setPostItems('Blogs',$entry['8']);
+		$ao_gf1->setPostItems('Bio',$entry['10']);
+		$ao_gf1->setPostItems('Company Description',$entry['11']);
+		$ao_gf1->setPostItems('Summit',$entry['9']);
+		$ao_gf1->setPostItems('Session title',$entry['17']);
+		$ao_gf1->setPostItems('Why are you right for this presentation?',$entry['13']);
+
+		// processConnection method, with your external post URL passed as the argument
+		
+        //$ao_gf1->processConnection('http://marketing.tmforum.org/acton/form/1332/00ed:d-0001/0/index.htm');
+        $ao_gf1->processConnection('http://marketing.tmforum.org/acton/eform/1332/00ed/d-ext-0001');
+        
+        
+	}
+}
+?>
