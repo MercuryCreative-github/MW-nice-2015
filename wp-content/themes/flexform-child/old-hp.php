@@ -139,7 +139,7 @@ display: none !important;
             
             <div class="mobile-navigation">
             
-                <a class="logo-mobile" href="http://tmforumlive15.staging.wpengine.com"><img class="scale-with-grid-logo" src="/wp-content/uploads/2014/12/LogoDD14.png" alt="Logo"></a>
+                <a class="logo-mobile" href="http://tmforumlive15.staging.wpengine.com"><img class="scale-with-grid-logo" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/12/LogoDD14.png" alt="Logo"></a>
                 
                 <div class="slogan-mobile">
                     <span class="title">Nice, France</span><br>
@@ -230,7 +230,7 @@ display: none !important;
 			
 	<div class="wpb_text_column wpb_content_element  homepage-icons">
 		<div class="wpb_wrapper">
-			<div><img src="/wp-content/uploads/2014/12/the-impacts-of-virtualization.png" alt="Relevant"></div>
+			<div><img src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/12/the-impacts-of-virtualization.png" alt="Relevant"></div>
 <h3>Relevant</h3>
 
 		</div> 
@@ -255,7 +255,7 @@ display: none !important;
 			
 	<div class="wpb_text_column wpb_content_element  homepage-icons">
 		<div class="wpb_wrapper">
-			<div><img src="/wp-content/uploads/2014/12/the-enhacement.png" alt="Practical"></div>
+			<div><img src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/12/the-enhacement.png" alt="Practical"></div>
 <h3>Practical</h3>
 
 		</div> 
@@ -280,7 +280,7 @@ display: none !important;
 			
 	<div class="wpb_text_column wpb_content_element  homepage-icons">
 		<div class="wpb_wrapper">
-			<div><img src="/wp-content/uploads/2014/12/networking.png" alt="Essential"></div>
+			<div><img src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/12/networking.png" alt="Essential"></div>
 <h3>Essential</h3>
 
 		</div> 
@@ -510,7 +510,7 @@ Nice, France 06300</p>
 		<div class="row">
 			<div class="footer-bottom twelve columns">
 				<div class="footer-tmf-info">
-					<img src="/wp-content/uploads/2014/07/tmforum-logo.png">
+					<img src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/07/tmforum-logo.png">
 					<p class="greytext meta">
 						 © 2015<!----> <a href="http://tmforumlive15.staging.wpengine.com" class="greytext meta">TM Forum Live! 2015</a> 					</p>
 				</div>
