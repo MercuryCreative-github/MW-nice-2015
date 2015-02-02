@@ -41,8 +41,6 @@ function getParameterByName(name) {
 
 function reRowIotTabs() {
 
-      
-
    jQuery('.summit-tabs div[id|="tab"]').each(function(){
 
     // save div content from last row
@@ -54,11 +52,10 @@ function reRowIotTabs() {
     //rename second row to row-fluid and span12 to span8
     jQuery('.row:eq(1) .span12', this).removeClass( "span12" ).addClass( "span8" );
     jQuery('.row:eq(1)', this).removeClass( "row" ).addClass( "row-fluid tabs-summits-content");
+
     //append newSpan4 to Rowfluid
     jQuery('.row-fluid', this).append(newSpan4);
     jQuery('.row-fluid .span12', this).removeClass( "span12" ).addClass( "span4" );
-
-
 
     }) 
 }       
