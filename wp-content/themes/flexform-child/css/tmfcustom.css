@@ -57,7 +57,7 @@
 .summit-main-title.executive {background: #201e20;}
 
 .page-content .summit-inner-tabs ul li, .page-content .summit-sidebar-tabs ul li {line-height: 2.0em;}
-p.list-title {font-weight: bold;font-size: 20px;border-width: 2px; border-style: solid;border-left: none;border-right: none;padding: 13px 0;margin-bottom: 30px;}
+p.list-title {font-weight: bold;font-size: 20px;border-width: 2px; border-style: solid;border-left: none;border-right: none;padding: 13px 0;margin-bottom: 30px;margin-top: 40px;}
 
 .cca p.list-title{ border-color:#f3a626; }
 .iot p.list-title{ border-color:#8b1e88; }
@@ -115,7 +115,7 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 	background-repeat: no-repeat;
 	background-position-x: right;
 	background-position-y: bottom;
-	padding: 19px 16px 13px;
+	padding: 19px 50px 13px;
 }
 
 .tabs-summits-content{width: 90%!important;margin-left: 4%;}
