@@ -355,3 +355,4 @@ body.error404 { background-color: #FFF;}
 /***** SUMMIT PAGE *****/
 /***********************/
 #summit .row.bigtoppadding.the-content {max-width: 1200px;}
+#summit iframe {overflow: scroll;}
