@@ -60,7 +60,7 @@ function reRowIotTabs() {
     }) 
 
   jQuery('#tab-customer-centricity-analytics').click(function(){
-    alert(jQuery(this).attr('id'));
+    alert(1);
   })
 }       
 
