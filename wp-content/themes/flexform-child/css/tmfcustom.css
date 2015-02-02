@@ -103,11 +103,12 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .summit-sidebar-tabs a.download-agenda span.text-btn, .summit-sidebar-tabs.cca a.download-agenda span.small-text-btn,
 .summit-sidebar-tabs a.sf-button.standard.register-agenda span.register-text {
 	font-weight: bold;
-	font-size: 30px;
 	padding-right: 15px;
 	margin-right: 68px;
 	padding-top: 0;
 }
+.summit-sidebar-tabs a.download-agenda span.text-btn {font-size: 30px;}
+.summit-sidebar-tabs a.sf-button.standard.register-agenda span.register-text {font-size: 25px;}
 .summit-sidebar-tabs a.download-agenda span.small-text-btn{font-size: 20px;}
 .summit-sidebar-tabs a.sf-button.standard.register-agenda {
 	background-image: url('/wp-content/uploads/2015/02/icon-register.png');
