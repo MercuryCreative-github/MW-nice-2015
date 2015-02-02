@@ -58,10 +58,6 @@ function reRowIotTabs() {
     jQuery('.row-fluid .span12', this).removeClass( "span12" ).addClass( "span4" );
 
     }) 
-
-  jQuery('#tab-customer-centricity-analytics').click(function(){
-    alert(1);
-  })
 }       
 
 

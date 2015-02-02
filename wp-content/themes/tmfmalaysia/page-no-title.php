@@ -13,27 +13,7 @@
 
 <div class="container white">
 
-	<!--section class="row">
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
-		<?php the_title('<h3 class="blacktext midbottommargin center uppercase">', '</h3>'); ?>
-=======
-		<?php the_title('<h3 class="blacktext bold midbottommargin center uppercase">', '</h3>'); ?>
->>>>>>> master
-=======
-		<?php the_title('<h3 class="blacktext midbottommargin center uppercase">', '</h3>'); ?>
->>>>>>> 3444288e90b247662206560f83abce370fc36145
-		
-		<div class="five columns alpha centered blackhorizontal"></div>
-		
-		<div class="four columns alpha centered midtopmargin">
-			<p class="center meta">
-				<?php echo get_post_meta( $post->ID, '_cmb_the_subtitle', true ); ?>
-			</p>
-		</div>
-		
-	</section-->
+
 	
 	<section <?php post_class('row bigtoppadding the-content'); ?>>
 		<?php the_content(); ?>
@@ -43,3 +23,6 @@
 
 <?php 
 	get_footer();
+
+
+
