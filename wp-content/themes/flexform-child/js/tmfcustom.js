@@ -33,18 +33,24 @@ function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); 
+
 }
 
 function reRowIotTabs() {
 
    jQuery('.summit-tabs .ui-tabs-panel').each(function(){
 
-    var newSpan4 =  jQuery('.row:nth-child(3) > div', this).removeClass( "span12" ).addClass( "span4" );
-    jQuery('.row:nth-child(3) > div', this).remove();
+
+
+    var newSpan4 =  jQuery('.row:eq(2) > div', this).removeClass( "span12" ).addClass( "span4" );
+
+    alert(newSpan4);
+    
+    jQuery('.row::eq(2) > div', this).remove();
     //rename second row to row-fluid and span12 to span8
-    jQuery('.row:nth-child(2) > div', this).removeClass( "span12" ).addClass( "span8" );
-    jQuery('.row:nth-child(2)', this).removeClass( "row" ).addClass( "row-fluid tabs-summits-content");
+    jQuery('.row:eq(1) > div', this).removeClass( "span12" ).addClass( "span8" );
+    jQuery('.row::eq(1)', this).removeClass( "row" ).addClass( "row-fluid tabs-summits-content");
     //append newSpan4 to Rowfluid
     jQuery('.row-fluid', this).prepend(newSpan4);
 
