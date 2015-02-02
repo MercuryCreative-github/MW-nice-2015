@@ -1,12 +1,123 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,300italic,300);
 
+/*NICE 15*/
+/**************************/
+/*** TMF GENERAL STYLES ***/
+/**************************/
+.ui-tabs-panel p {padding: 0;}
+
+/**************************/
+/********* BUTTONS ********/
+/**************************/
+.sf-button.green.standard {color: #FFF}
+.sf-button.standard {text-transform: uppercase;}
+
+/**************************/
+/******** HOME PAGE *******/
+/**************************/
+
+/**************************/
+/******* SUBMIT PAGE ******/
+/**************************/
+.summit .wpb_tabs .ui-tabs .ui-tabs-panel {border:none;}
+
+/*full-with*/
+.summit .inner-page-wrap {margin-top: 0px;}
+.span12.summit-tabs {margin-left: 0px;}
+.summit .container {width: 1105px;}
+
+/*navegation-tabs*/
+.page-content .ui-widget-header li:hover a, .page-content .ui-widget-header li.ui-tabs-active:hover a, .page .page-content .ui-tabs .ui-tabs-nav li.ui-tabs-active a {color: #fff;}
+.page-content .ui-widget-header li:hover a#ui-id-1, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-1, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1 {background: #f3a626 !important;}
+.page-content .ui-widget-header li:hover a#ui-id-2, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-2, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2 {background: #8b1e88 !important;}
+.page-content .ui-widget-header li:hover a#ui-id-3, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-3, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #7db342 !important;}
+.page-content .ui-widget-header li:hover a#ui-id-4, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-4, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-4 {background: #225f91 !important;}
+.page-content .ui-widget-header li:hover a#ui-id-5, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-5, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-5 {background: #27abb2 !important;}
+.page-content .ui-widget-header li:hover a#ui-id-6, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-6, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-6 {background: #201e20 !important;}
+
+/*tabs-content*/
+.wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].summit-inner-tabs {margin: 0 0 20px 0;padding: 0 40px;}
+.summit h1 {
+	font-family:"Open Sans", Arial, sans-serif;
+	font-weight:100;
+	font-size: 40px;
+}
+.summit-main-title h1 {margin-bottom: 0;color: #fff;}
+.wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].summit-main-title {color: #fff;margin-bottom: 30px; position: relative;}
+.summit-main-title p {font-size: 20px;}
+.summit-main-title-text { padding: 10px 0; margin-left: 110px;}
+.summit-main-title img {position: absolute;bottom: 0;left: -1px;}
+
+.summit-main-title.cca {background: #f3a626;}
+.summit-main-title.iot {background: #8b1e88;}
+.summit-main-title.nfv {background: #7db342;}
+.summit-main-title.business-innovation {background: #225f91;}
+.summit-main-title.digital-operations {background: #27abb2;}
+.summit-main-title.executive {background: #201e20;}
+
+.page-content .summit-inner-tabs ul li, .page-content .summit-sidebar-tabs ul li {line-height: 2.0em;}
+p.list-title {font-weight: bold;font-size: 20px;border-width: 2px; border-style: solid;border-left: none;border-right: none;padding: 13px 0;margin-bottom: 30px;}
+
+.cca p.list-title{ border-color:#f3a626; }
+.iot p.list-title{ border-color:#8b1e88; }
+.nfv p.list-title{ border-color:#7db342; }
+.business-innovation p.list-title{ border-color:#225f91; }
+.digital-operations p.list-title{ border-color:#27abb2; }
+.executive p.list-title{ border-color:#201e20; }
+
+/*sidebar*/
+p.summit-sidebar-title {border: none;margin-bottom: 0px;}
+.page-content .summit-sidebar-tabs ul li {list-style-type: none;border-bottom: #E4E4E4 1px solid;padding: 15px 0;}
+.page-content .summit-sidebar-tabs ul li:last-child {border:none;}
+.page-content .summit-sidebar-tabs ul li:before {content:"\f00c";font-family:FontAwesome;font-size:14px;padding-right:10px;}
+.page-content .summit-sidebar-tabs.cca ul li:before {color: #f3a626;}
+.page-content .summit-sidebar-tabs.iot ul li:before {color: #8b1e88;}
+.page-content .summit-sidebar-tabs.nfv ul li:before {color: #7db342;}
+.page-content .summit-sidebar-tabs.business-innovation ul li:before {color: #225f91;}
+.page-content .summit-sidebar-tabs.digital-operations ul li:before {color: #27abb2;}
+.page-content .summit-sidebar-tabs.executive ul li:before {color: #201e20;}
+
+/*buttons*/
+.summit-sidebar-tabs.cca a.summit-color {background-color: #f3a626; color: #FFF;}
+.summit-sidebar-tabs.iot a.summit-color {background-color: #8b1e88; color: #FFF;}
+.summit-sidebar-tabs.nfv a.summit-color {background-color: #7db342; color: #FFF;}
+.summit-sidebar-tabs.business-innovation a.summit-color {background-color: #225f91; color: #FFF;}
+.summit-sidebar-tabs.digital-operations a.summit-color {background-color: #27abb2; color: #FFF;}
+.summit-sidebar-tabs.executive a.summit-color {background-color: #201e20; color: #FFF;}
+
+.summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{
+	background-image: url('/wp-content/uploads/2015/02/icon-download-agenda.png');
+	background-repeat: no-repeat;
+	background-position-x: right;
+	background-position-y: bottom;
+	padding: 19px 16px 13px;
+}
+.summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
+.summit-sidebar-tabs.iot a.sf-button.standard.download-agenda{}
+.summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
+.summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
+.summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
+.summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
+.summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
+
+.summit-sidebar-tabs.cca a.download-agenda span.text-btn, .summit-sidebar-tabs.cca a.download-agenda span.small-text-btn{
+	font-weight: bold;
+	font-size: 30px;
+	padding-right: 15px;
+	margin-right: 68px;
+	padding-top: 0;
+}
+.summit-sidebar-tabs.cca a.download-agenda span.small-text-btn{font-size: 20px;}
+
+
+
+/*NICE 14* - borrar cosas viajas de aca a medida que se arma el sitio nuevo para mantener ordenado/
 /**************************/
 /*** TMF GENERAL STYLES ***/
 /**************************/
 *{-webkit-text-stroke:0.01em;}
 body{overflow-x:hidden;font-family:"Open Sans", Arial, sans-serif;}
-h1, h2{font-weight:normal !important;}
 h3{margin:25px 0 10px 0;}
 div.alert-info{display:none;} /* <--do not remove! */
 .tp-bullets.simplebullets.round{height:10px !important;}
@@ -1652,10 +1763,10 @@ div.wpcf7 br {display: none}
 .textTrack .body-text div.speakerTrack { margin-top: 10px; }
 .textTrack .body-text { margin:0;}
 .y{padding-left:0;margin-left: 0;}
-.ui-tabs .ui-tabs-nav li:first-child{margin-left: 1px!important;}
-.wpb_content_element .ui-widget-header .ui-state-default{background-color: #FFF!important;z-index:10;}
-.page .ui-tabs .ui-tabs-nav li.ui-tabs-active a{background-color: #efefef!important;color:black;}
-.ui-tabs .ui-tabs-nav li {top: 2px!important;border-left-width: 0;}
+.ui-tabs .ui-tabs-nav li:first-child{margin-left: 1px;}
+.wpb_content_element .ui-widget-header .ui-state-default{background-color: #FFF;z-index:10;}
+.page .ui-tabs .ui-tabs-nav li.ui-tabs-active a{background-color: #efefef;color:black;}
+.ui-tabs .ui-tabs-nav li {top: 2px;border-left-width: 0;}
 .ui-tabs .ui-tabs-nav li:first-child{border-left-width: 1px;}
 
 .event_container{ margin: 20px 0 40px 0;}
