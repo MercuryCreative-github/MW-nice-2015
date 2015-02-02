@@ -21,18 +21,7 @@ function getParameterByName(name) {
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
-
-function reRowIotTabs() {
-                        jQuery('#tab-internet-of-things .row:nth-child(3) > div').append('<p>test</p>');
-        var newSpan4 =  jQuery('#tab-internet-of-things .row:nth-child(3) > div').removeClass( "span12" ).addClass( "span4" );
-                        jQuery('#tab-internet-of-things .row:nth-child(3) > div').remove();
-                        //rename second row to row-fluid and span12 to span8
-                        jQuery('#tab-internet-of-things .row:nth-child(2) > div').removeClass( "span12" ).addClass( "span8" );
-                        jQuery('#tab-internet-of-things .row:nth-child(2)').removeClass( "row" ).addClass( "row-fluid tabs-summits-content");
-                        //append newSpan4 to Rowfluid
-                        jQuery('#tab-internet-of-things .row-fluid').prepend(newSpan4);
-}                       
+}                
 
 function agendaAtaGlance() {
     // chequeo que sea solo las paginas que tienen un .tt_timetable
