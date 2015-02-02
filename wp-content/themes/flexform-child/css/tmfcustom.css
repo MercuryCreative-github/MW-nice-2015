@@ -24,8 +24,8 @@
 
 /*full-with*/
 .summit .inner-page-wrap {margin-top: 0px;}
-.span12.summit-tabs {margin-left: 0px;}
-.summit .container {width: 1105px;}
+.span12.summit-tabs {width: 100%;}
+.summit .container {width: 100%;}
 
 /*navegation-tabs*/
 .page-content .ui-widget-header li:hover a, .page-content .ui-widget-header li.ui-tabs-active:hover a, .page .page-content .ui-tabs .ui-tabs-nav li.ui-tabs-active a {color: #fff;}
@@ -93,6 +93,7 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 	background-position-y: bottom;
 	padding: 19px 16px 13px;
 }
+/*
 .summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
 .summit-sidebar-tabs.iot a.sf-button.standard.download-agenda{}
 .summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
@@ -100,7 +101,7 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
 .summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
 .summit-sidebar-tabs.cca a.sf-button.standard.download-agenda{}
-
+*/
 .summit-sidebar-tabs.cca a.download-agenda span.text-btn, .summit-sidebar-tabs.cca a.download-agenda span.small-text-btn{
 	font-weight: bold;
 	font-size: 30px;
