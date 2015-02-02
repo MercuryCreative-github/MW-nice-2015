@@ -610,16 +610,3 @@ var _wpcf7 = {"loaderUrl":"http:\/\/tmforumlive15.staging.wpengine.com\/wp-conte
 </html>
 
 
-<script>
-	
-jQuery('document').ready(function(){
-
-
-	$('img')each(functiohttp://tmforumlive15.wpengine.com/wp-content/uploads/2014/07/tmforum-logo.png Failed to load resource: the server responded with a status of 404 (Not Found)
-
-	})	
-
-
-})
-
-</script>
