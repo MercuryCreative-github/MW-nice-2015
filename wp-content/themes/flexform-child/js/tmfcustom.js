@@ -46,15 +46,12 @@ function reRowIotTabs() {
    jQuery('.summit-tabs div[id|="tab"]').each(function(){
 
 
-    alert(1);
     var newSpan4 =  jQuery('.row:eq(2) .span12', this);    
 
-    alert(newSpan4);
-
-    jQuery('.row::eq(2) .span12', this).remove();
+    jQuery('.row:eq(2) .span12', this).remove();
     //rename second row to row-fluid and span12 to span8
     jQuery('.row:eq(1) .span12', this).removeClass( "span12" ).addClass( "span8" );
-    jQuery('.row::eq(1)', this).removeClass( "row" ).addClass( "row-fluid tabs-summits-content");
+    jQuery('.row:eq(1)', this).removeClass( "row" ).addClass( "row-fluid tabs-summits-content");
     //append newSpan4 to Rowfluid
     jQuery('.row-fluid', this).prepend(newSpan4);
 
