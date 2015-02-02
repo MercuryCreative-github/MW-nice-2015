@@ -15,6 +15,7 @@ function ini() {
     moveSponsors();
     //addNetcrackBanner();
     resizeNetcrackBanner();
+    reRowIotTabs() 
 
 //<iframe src=http://banners.tmforum.org/abmw.aspx?z=67&isframe=true width=120 height=600 frameborder=0 scrolling=no marginheight=0 marginwidth=0></iframe>
 
@@ -34,6 +35,21 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
+function reRowIotTabs() {
+
+   jQuery('.summit-tabs .ui-tabs-panel').each(function(){
+
+    var newSpan4 =  jQuery('.row:nth-child(3) > div', this).removeClass( "span12" ).addClass( "span4" );
+    jQuery('.row:nth-child(3) > div', this).remove();
+    //rename second row to row-fluid and span12 to span8
+    jQuery('.row:nth-child(2) > div', this).removeClass( "span12" ).addClass( "span8" );
+    jQuery('.row:nth-child(2)', this).removeClass( "row" ).addClass( "row-fluid tabs-summits-content");
+    //append newSpan4 to Rowfluid
+    jQuery('.row-fluid', this).prepend(newSpan4);
+
+    }) 
+}       
 
 
 function agendaAtaGlance() {
