@@ -14,7 +14,7 @@ Template Name: Old-HP
 		<meta charset="UTF-8">
 	<title>TM Forum Live! 2015</title>	
 	<meta name="description" content=""/>
-			<link rel="shortcut icon" href="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/11/favicon.png">
+			<link rel="shortcut icon" href="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/11/favicon.png">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name='robots' content='noindex,follow' />
 <link rel="alternate" type="application/rss+xml" title="TM Forum Live! 2015 &raquo; Feed" href="http://tmforumlive15.staging.wpengine.com/feed/" />
@@ -43,8 +43,8 @@ Template Name: Old-HP
 <!--[if IE 7]>
 <link rel='stylesheet' id='fontawesome-ie-css'  href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css?ver=1.3.9' type='text/css' media='all' />
 <![endif]-->
-<link rel='stylesheet' id='js_composer_front-css'  href='http://tmforumlive15.staging.wpengine.com/wp-content/uploads/js_composer/js_composer_front_custom.css?ver=4.3.4' type='text/css' media='all' />
-<link rel='stylesheet' id='js_composer_custom_css-css'  href='http://tmforumlive15.staging.wpengine.com/wp-content/uploads/js_composer/custom.css?ver=4.3.4' type='text/css' media='screen' />
+<link rel='stylesheet' id='js_composer_front-css'  href='http://tmforumlive15.wpengine.com/wp-content/uploads/js_composer/js_composer_front_custom.css?ver=4.3.4' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_custom_css-css'  href='http://tmforumlive15.wpengine.com/wp-content/uploads/js_composer/custom.css?ver=4.3.4' type='text/css' media='screen' />
 		<style>
 			/* Accessible for screen readers but hidden from view */
 			.fa-hidden { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
@@ -89,7 +89,7 @@ display: none !important;
     	
     			<div class="six columns infocus-logo">
     				
-                    <a class="logo" href="http://tmforumlive15.staging.wpengine.com"><img class="scale-with-grid-logo" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/12/LogoDD141.png" alt="Logo" /></a>
+                    <a class="logo" href="http://tmforumlive15.staging.wpengine.com"><img class="scale-with-grid-logo" src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/12/LogoDD141.png" alt="Logo" /></a>
     			                        
                     <div class="slogan">
                         <span class="title">Nice, France</span><br/>
@@ -129,7 +129,7 @@ display: none !important;
             
             <div class="mobile-navigation">
             
-                <a class="logo-mobile" href="http://tmforumlive15.staging.wpengine.com"><img class="scale-with-grid-logo" src="/wp-content/uploads/2014/12/LogoDD14.png" alt="Logo" /></a>
+                <a class="logo-mobile" href="http://tmforumlive15.staging.wpengine.com"><img class="scale-with-grid-logo" src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/12/LogoDD14.png" alt="Logo" /></a>
                 
                 <div class="slogan-mobile">
                     <span class="title">Nice, France</span><br/>
@@ -220,7 +220,7 @@ display: none !important;
 			
 	<div class="wpb_text_column wpb_content_element  homepage-icons">
 		<div class="wpb_wrapper">
-			<div><img src="/wp-content/uploads/2014/12/the-impacts-of-virtualization.png" alt="Relevant" /></div>
+			<div><img src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/12/the-impacts-of-virtualization.png" alt="Relevant" /></div>
 <h3>Relevant</h3>
 
 		</div> 
@@ -245,7 +245,7 @@ display: none !important;
 			
 	<div class="wpb_text_column wpb_content_element  homepage-icons">
 		<div class="wpb_wrapper">
-			<div><img src="/wp-content/uploads/2014/12/the-enhacement.png" alt="Practical" /></div>
+			<div><img src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/12/the-enhacement.png" alt="Practical" /></div>
 <h3>Practical</h3>
 
 		</div> 
@@ -270,7 +270,7 @@ display: none !important;
 			
 	<div class="wpb_text_column wpb_content_element  homepage-icons">
 		<div class="wpb_wrapper">
-			<div><img src="/wp-content/uploads/2014/12/networking.png" alt="Essential" /></div>
+			<div><img src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/12/networking.png" alt="Essential" /></div>
 <h3>Essential</h3>
 
 		</div> 
@@ -299,7 +299,7 @@ display: none !important;
 	<div class="wpb_single_image wpb_content_element vc_align_center">
 		<div class="wpb_wrapper">
 			
-			<img width="300" height="60" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/12/netcraker-300x60.png" class=" vc_box_border_grey attachment-medium" alt="netcraker" />
+			<img width="300" height="60" src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/12/netcraker-300x60.png" class=" vc_box_border_grey attachment-medium" alt="netcraker" />
 		</div> 
 	</div> 
 	<div class="wpb_text_column wpb_content_element ">
@@ -337,7 +337,7 @@ display: none !important;
 	<div class="wpb_single_image wpb_content_element wpb_animate_when_almost_visible wpb_bottom-to-top vc_align_center">
 		<div class="wpb_wrapper">
 			
-			<img width="350" height="200" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/04/01.jpg" class=" vc_box_border_grey attachment-full" alt="01" />
+			<img width="350" height="200" src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/04/01.jpg" class=" vc_box_border_grey attachment-full" alt="01" />
 		</div> 
 	</div> 
 		</div> 
@@ -361,7 +361,7 @@ display: none !important;
 	<div class="wpb_single_image wpb_content_element wpb_animate_when_almost_visible wpb_bottom-to-top vc_align_center">
 		<div class="wpb_wrapper">
 			
-			<img width="350" height="200" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/04/02.jpg" class=" vc_box_border_grey attachment-full" alt="02" />
+			<img width="350" height="200" src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/04/02.jpg" class=" vc_box_border_grey attachment-full" alt="02" />
 		</div> 
 	</div> 
 		</div> 
@@ -385,7 +385,7 @@ display: none !important;
 	<div class="wpb_single_image wpb_content_element wpb_animate_when_almost_visible wpb_bottom-to-top vc_align_center">
 		<div class="wpb_wrapper">
 			
-			<img width="350" height="200" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/04/03.jpg" class=" vc_box_border_grey attachment-full" alt="03" />
+			<img width="350" height="200" src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/04/03.jpg" class=" vc_box_border_grey attachment-full" alt="03" />
 		</div> 
 	</div> 
 		</div> 
@@ -414,7 +414,7 @@ display: none !important;
 	<div class="wpb_single_image wpb_content_element vc_align_center">
 		<div class="wpb_wrapper">
 			
-			<img width="55" height="55" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/06/location-icon.png" class=" vc_box_border_grey attachment-thumbnail" alt="location-icon" />
+			<img width="55" height="55" src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/06/location-icon.png" class=" vc_box_border_grey attachment-thumbnail" alt="location-icon" />
 		</div> 
 	</div> 
 	<div class="wpb_text_column wpb_content_element ">
@@ -435,7 +435,7 @@ Nice, France 06300</p>
 	<div class="wpb_single_image wpb_content_element location-img vc_align_center">
 		<div class="wpb_wrapper">
 			
-			<img width="613" height="194" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/06/location2.jpg" class=" vc_box_border_grey attachment-full" alt="location2" />
+			<img width="613" height="194" src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/06/location2.jpg" class=" vc_box_border_grey attachment-full" alt="location2" />
 		</div> 
 	</div> 
 		</div> 
@@ -458,7 +458,7 @@ Nice, France 06300</p>
 	<div class="wpb_single_image wpb_content_element tmf-social-icons vc_align_center">
 		<div class="wpb_wrapper">
 			
-			<img width="178" height="148" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/06/logoBottom2.png" class=" vc_box_border_grey attachment-full" alt="logoBottom2" />
+			<img width="178" height="148" src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/06/logoBottom2.png" class=" vc_box_border_grey attachment-full" alt="logoBottom2" />
 		</div> 
 	</div> 
 		</div> 
@@ -500,7 +500,7 @@ Nice, France 06300</p>
 		<div class="row">
 			<div class="footer-bottom twelve columns">
 				<div class="footer-tmf-info">
-					<img src="/wp-content/uploads/2014/07/tmforum-logo.png"/>
+					<img src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/07/tmforum-logo.png"/>
 					<p class="greytext meta">
 						 © 2015<!----> <a href="http://tmforumlive15.staging.wpengine.com" class="greytext meta">TM Forum Live! 2015</a> 					</p>
 				</div>
@@ -537,7 +537,7 @@ Nice, France 06300</p>
 	</div>
 </footer>
 
-<div id="eModal-1" class="emodal theme-1" data-emodal="{&quot;id&quot;:&quot;1&quot;,&quot;theme_id&quot;:&quot;1&quot;,&quot;meta&quot;:{&quot;id&quot;:&quot;1&quot;,&quot;modal_id&quot;:&quot;1&quot;,&quot;display&quot;:{&quot;overlay_disabled&quot;:0,&quot;size&quot;:&quot;&quot;,&quot;custom_width&quot;:0,&quot;custom_width_unit&quot;:&quot;rem&quot;,&quot;custom_height&quot;:0,&quot;custom_height_unit&quot;:&quot;rem&quot;,&quot;custom_height_auto&quot;:1,&quot;location&quot;:&quot;center top&quot;,&quot;position&quot;:{&quot;top&quot;:53,&quot;left&quot;:0,&quot;bottom&quot;:0,&quot;right&quot;:0,&quot;fixed&quot;:1},&quot;animation&quot;:{&quot;type&quot;:&quot;fadeAndSlide&quot;,&quot;speed&quot;:&quot;470&quot;,&quot;origin&quot;:&quot;top&quot;}},&quot;close&quot;:{&quot;overlay_click&quot;:1,&quot;esc_press&quot;:1,&quot;disabled&quot;:0}}}"><div class="emodal-content"><p style="text-align: center;"><img class="scale-with-grid-logo aligncenter" src="http://tmforumlive15.staging.wpengine.com/wp-content/uploads/2014/12/LogoDD141.png" alt="Logo" /> <div class="wpcf7" id="wpcf7-f18871-p408-o1" lang="en-US" dir="ltr">
+<div id="eModal-1" class="emodal theme-1" data-emodal="{&quot;id&quot;:&quot;1&quot;,&quot;theme_id&quot;:&quot;1&quot;,&quot;meta&quot;:{&quot;id&quot;:&quot;1&quot;,&quot;modal_id&quot;:&quot;1&quot;,&quot;display&quot;:{&quot;overlay_disabled&quot;:0,&quot;size&quot;:&quot;&quot;,&quot;custom_width&quot;:0,&quot;custom_width_unit&quot;:&quot;rem&quot;,&quot;custom_height&quot;:0,&quot;custom_height_unit&quot;:&quot;rem&quot;,&quot;custom_height_auto&quot;:1,&quot;location&quot;:&quot;center top&quot;,&quot;position&quot;:{&quot;top&quot;:53,&quot;left&quot;:0,&quot;bottom&quot;:0,&quot;right&quot;:0,&quot;fixed&quot;:1},&quot;animation&quot;:{&quot;type&quot;:&quot;fadeAndSlide&quot;,&quot;speed&quot;:&quot;470&quot;,&quot;origin&quot;:&quot;top&quot;}},&quot;close&quot;:{&quot;overlay_click&quot;:1,&quot;esc_press&quot;:1,&quot;disabled&quot;:0}}}"><div class="emodal-content"><p style="text-align: center;"><img class="scale-with-grid-logo aligncenter" src="http://tmforumlive15.wpengine.com/wp-content/uploads/2014/12/LogoDD141.png" alt="Logo" /> <div class="wpcf7" id="wpcf7-f18871-p408-o1" lang="en-US" dir="ltr">
 <div class="screen-reader-response"></div>
 <form name="" action="/#wpcf7-f18871-p408-o1" method="post" class="wpcf7-form" novalidate="novalidate">
 <div style="display: none;">
@@ -608,3 +608,18 @@ var _wpcf7 = {"loaderUrl":"http:\/\/tmforumlive15.staging.wpengine.com\/wp-conte
 
 </body>
 </html>
+
+
+<script>
+	
+jQuery('document').ready(function(){
+
+
+	$('img')each(functiohttp://tmforumlive15.wpengine.com/wp-content/uploads/2014/07/tmforum-logo.png Failed to load resource: the server responded with a status of 404 (Not Found)
+
+	})	
+
+
+})
+
+</script>
