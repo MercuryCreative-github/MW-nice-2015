@@ -42,8 +42,8 @@ function reRowIotTabs() {
    jQuery('.summit-tabs .ui-tabs-panel').each(function(){
 
 
-
-    var newSpan4 =  jQuery('.row:eq(2) .span12', this).removeClass( "span12" ).addClass( "span4" );
+     alert(jQuery(this).html());
+    var newSpan4 =  jQuery('.row:eq(2) .span12', this);    
 
     alert(newSpan4);
 
