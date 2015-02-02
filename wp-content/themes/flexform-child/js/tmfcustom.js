@@ -15,7 +15,9 @@ function ini() {
     moveSponsors();
     //addNetcrackBanner();
     resizeNetcrackBanner();
-    reRowIotTabs() 
+     alert(-1);
+    reRowIotTabs();
+     alert(3);
 
 //<iframe src=http://banners.tmforum.org/abmw.aspx?z=67&isframe=true width=120 height=600 frameborder=0 scrolling=no marginheight=0 marginwidth=0></iframe>
 
@@ -39,11 +41,13 @@ function getParameterByName(name) {
 
 function reRowIotTabs() {
 
+        alert(0);
+
    jQuery('.summit-tabs .ui-tabs-panel').each(function(){
 
 
-
-    var newSpan4 =  jQuery('.row:eq(2) .span12', this).removeClass( "span12" ).addClass( "span4" );
+    alert(1);
+    var newSpan4 =  jQuery('.row:eq(2) .span12', this);    
 
     alert(newSpan4);
 
