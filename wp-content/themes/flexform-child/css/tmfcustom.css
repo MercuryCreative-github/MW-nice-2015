@@ -2333,7 +2333,7 @@ article.feed-item:nth-child(2n) {clear: both;}
 .pricing-table-title .td-blue  	 { border-top: 6px solid #61ABEB; }
 .pricing-table-title .td-orange  { border-top: 6px solid #D98852; }
 .pricing-table-title .td-grey    { border-top: 6px solid #927E7E; }
-.the-content .pricing-table-title td h3 { text-transform: none; line-height: 35px; font-family: Open Sans; }
+.the-content .pricing-table-title td h3 { text-transform: none; line-height: 35px; font-family: Open Sans; font-weight:300; font-size:32px; }
 .the-content .pricing-table-title .td-green h3   { color: #7BCA28 !important; }
 .the-content .pricing-table-title .td-blue h3    { color: #61ABEB !important; }
 .the-content .pricing-table-title .td-orange h3  { color: #D98852 !important; }
@@ -2342,7 +2342,7 @@ article.feed-item:nth-child(2n) {clear: both;}
 .tr-non-members { background: #BDBDBD; }
 .the-content .tr-members h5, .the-content .tr-non-members h5 { color: #fff !important; margin: 0 !important; text-align: left; padding-left: 20px; font-family: Open Sans; }
 .the-content .tr-members .td-datos h5, .the-content .tr-non-members .td-datos h5 { text-align: center; padding-left: 0px; }
-table.table-pricing-contaier { font-size:12px; font-family: Open Sans;}
+table.table-pricing-contaier { font-size:12px; font-family: Open Sans; margin:0 0 18px 0;}
 table.table-pricing-contaier, table.table-pricing-contaier tbody tr {border: none;}
 table.table-pricing-contaier tbody tr td { text-align: center; color: #444; border:none; border-right: 1px solid #E0E0E0;}
 table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weight: bold; color: #444; font-size: 15px; line-height: 130%; text-align: left; vertical-align: middle}
