@@ -7,7 +7,7 @@
 /**************************/
 .ui-tabs-panel p {padding: 0;}
 .white-background { background:#FFF;}
-.no-shadow #container { box-shadow:0;}
+.no-shadow #container { box-shadow:none;}
 
 /**************************/
 /********* BUTTONS ********/
