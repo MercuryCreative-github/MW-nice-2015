@@ -201,8 +201,8 @@
 	
 	<!--// CLOSE HEAD //-->
 	<meta property="og:url" content="http://www.dd14.org/">
-	<meta property="og:title" content="San Jose 2014">
-	<meta property="og:description" content="Digital Disruption 2014, San Jose, California Dec 8 - 11 Join fellow CxOs and senior-level executives to learn how to transform your business into a digital powerhouse.">
+	<meta property="og:title" content="Nice 2014">
+	<meta property="og:description" content="Digital Disruption 2014, Nice, France Dec 8 - 11 Join fellow CxOs and senior-level executives to learn how to transform your business into a digital powerhouse.">
 	<meta property="og:image" content="http://devsanjose2014.wpengine.com/wp-content/uploads/2014/09/tmforum200x200.png">
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="200">
@@ -348,8 +348,8 @@
 							</a>
                             
                         <div class="slogan">
-                            <span class="title">San Jose, <span>California</span></span>
-                            <span class="date">December 8-11, 2014</span>
+                            <span class="title">Nice, <span>France</span></span>
+                            <span class="date">June 1-4, 2015</span>
                         </div> 
                                                    
 						</div>
@@ -361,8 +361,8 @@
                                 <?php wp_nav_menu( array('menu' => 'Call to Action', 'container' => 'false', 'items_wrap' => '%3$s' )); ?>           
                                 
                                 <div class="slogan-tablet">
-                                    <span class="title-tablet">San Jose, California</span>
-                                    <span class="date-tablet">December 8-11, 2014</span>
+                                    <span class="title-tablet">Nice, France</span>
+                                    <span class="date-tablet">June 1-4, 2015</span>
                                 </div>                
                                 
                 			</nav>
@@ -409,8 +409,8 @@
                                 </a>
                                 
                                 <div class="slogan-mobile">
-                                    <span class="title">San Jose, California</span>
-                                    <span class="date">December 8-11, 2014</span>            
+                                    <span class="title">Nice, France</span>
+                                    <span class="date">June 1-4, 2015</span>            
                                 </div>
                                 
                                 <a target="_blank" class="register-btn-mobile">REGISTER</a>
