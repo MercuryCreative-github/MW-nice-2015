@@ -1334,7 +1334,6 @@ table.tt_timetable{text-decoration: none;margin-top: 0;}
 #agenda-info > li:nth-child(3) span { font-size: 25px; font-weight:600; }
 #agenda-info > li:nth-child(4) { font-size:22px; }
 
-a.sf-button.ml40 { margin-left:40px;}
 .ored { background-color:#d5410c;}
 .ored:hover { background-color:#bb3817;}
 
@@ -1351,6 +1350,8 @@ a.download-agenda.a-glance span.text-btn,  a.download-agenda.a-glance span.small
 }
 a.download-agenda.a-glance span.text-btn {font-size: 24px; font-weight:600; }
 a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;}
+
+.fix-row .row { margin-left:-20px;}
 
 /************************/
 /** AAG - SUMMITS LIST **/
