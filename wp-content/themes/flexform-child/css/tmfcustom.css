@@ -2342,7 +2342,7 @@ article.feed-item:nth-child(2n) {clear: both;}
 .tr-non-members { background: #BDBDBD; }
 .the-content .tr-members h5, .the-content .tr-non-members h5 { color: #fff !important; margin: 0 !important; text-align: left; padding-left: 20px; }
 .the-content .tr-members .td-datos h5, .the-content .tr-non-members .td-datos h5 { text-align: center; padding-left: 0px; }
-table.table-pricing-contaier { font-size:12px;}
+table.table-pricing-contaier { font-size:12px; font-family: Open Sans;}
 table.table-pricing-contaier, table.table-pricing-contaier tbody tr {border: none;}
 table.table-pricing-contaier tbody tr td { text-align: center; color: #444; border:none; border-right: 1px solid #E0E0E0;}
 table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weight: bold; color: #444; font-size: 15px; line-height: 130%; text-align: left; vertical-align: middle}
@@ -2351,7 +2351,7 @@ table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weig
 	background-color: #FE9802;
 	border: 0;
 	box-shadow: none;
-	font-family: 'Titillium Web', Arial, sans-serif;
+	font-family: Open Sans;
 	font-size: 18px;
 	font-weight: 700;
 	margin: 5px auto!important;
@@ -2432,7 +2432,7 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 }
 .discount-circle .wpb_wrapper p span.circle-simbol { font-size: 30px; }
 
-.saving { font-family:"Titillium Web"; }
+.saving { font-family: Open Sans; }
 .tr-members.saving {
 	border-top: #999898 1px solid;
 		background: rgba(98, 184, 93, 0.94);
