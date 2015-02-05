@@ -2182,15 +2182,15 @@ div.wpcf7 br {display: none}
 
 .btn-register-pandp-table a{
    width:90px;
-   padding:2px 15px;
-   /*background-color:#ffaf00;*/
+	/*padding:2px 15px;
+   background-color:#ffaf00;*/
    text-decoration:none;
    font-size:14px;
    color:#fff;
 }
 
 .btn-register-pandp-table a:hover{
-   background-color:#E2740B !important;
+   /*background-color:#E2740B !important;*/
    text-decoration:none;
    color:#fff;
 }
