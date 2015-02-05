@@ -112,8 +112,7 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .summit-sidebar-tabs a.sf-button.standard.register-agenda {
 	background-image: url('/wp-content/uploads/2015/02/icon-register.png');
 	background-repeat: no-repeat;
-	background-position-x: right;
-	background-position-y: bottom;
+	background-position: right bottom;
 	padding: 19px 50px 13px;
 }
 
