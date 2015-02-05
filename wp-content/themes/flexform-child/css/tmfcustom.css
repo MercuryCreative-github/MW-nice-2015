@@ -1577,6 +1577,13 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 .sponsor.sponsor-corporate .sponsor-item:first-child a img { max-width: 90%; }
 .sponsor.sponsor-corporate .sponsor-item { width: 30%; }
 
+.sponsors h4 {
+		border-bottom: 1px solid #bdbdbd;
+		font-size: 24px;
+		padding-bottom: 10px;
+		text-align: center;
+}
+
 /*******************/
 /*** CONCTACT US ***/
 /*******************/
