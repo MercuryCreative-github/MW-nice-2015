@@ -10,6 +10,7 @@
 .no-shadow #container { box-shadow:none;}
 .float-left { float: left; }
 .float-right { float: right; }
+.mt60 { margin-top:60px; }
 .mt30 { margin-top:30px; }
 .mb30 { margin-bottom:30px; }
 .ml30 { margin-left:30px; }
@@ -2491,4 +2492,12 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 		margin: 0 auto;
 		padding-top: 5px;
 		width: 90px;
+}
+.discount-circle p {
+		color: #fff;
+		font-size: 44px;
+		text-align: center;
+}
+.discount-circle p span.circle-simbol {
+		font-size: 30px;
 }
