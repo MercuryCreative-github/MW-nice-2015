@@ -96,8 +96,7 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .summit-sidebar-tabs a.sf-button.standard.download-agenda{
 	background-image: url('/wp-content/uploads/2015/02/icon-download-agenda.png');
 	background-repeat: no-repeat;
-	background-position-x: right;
-	background-position-y: bottom;
+	background-position: right bottom;
 	padding: 19px 16px 13px;
 }
 .summit-sidebar-tabs a.download-agenda span.text-btn, .summit-sidebar-tabs.cca a.download-agenda span.small-text-btn,
@@ -1337,6 +1336,7 @@ table.tt_timetable{text-decoration: none;margin-top: 0;}
 
 a.sf-button.ml20 { margin-left:20px;}
 .ored { background-color:#d5410c;}
+.ored:hover { background-color:#bb3817;}
 
 a.sf-button.standard.download-agenda.a-glance{
 	background-image: url('/wp-content/uploads/2015/02/icon-download-agenda.png');
