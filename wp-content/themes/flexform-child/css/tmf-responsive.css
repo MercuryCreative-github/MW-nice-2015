@@ -7,7 +7,7 @@
         margin-left: 20px;
     }
     .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-        width: 1108px;
+        width: 1108px!important;
     }
     body .span12 {
         width: 1128px;

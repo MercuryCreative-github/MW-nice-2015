@@ -25,7 +25,7 @@
 /*full-with*/
 .summit .inner-page-wrap {margin-top: 0px;}
 .span12.summit-tabs {width: 100%;}
-.summit .container {width: 100%;}
+.summit .container {width: 100%!important;}
 
 /*navegation-tabs*/
 .page-content .ui-widget-header li:hover a, .page-content .ui-widget-header li.ui-tabs-active:hover a, .page .page-content .ui-tabs .ui-tabs-nav li.ui-tabs-active a {color: #fff;}
