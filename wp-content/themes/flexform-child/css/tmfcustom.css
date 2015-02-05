@@ -2183,7 +2183,7 @@ div.wpcf7 br {display: none}
 .btn-register-pandp-table a{
    width:90px;
    padding:2px 15px;
-   background-color:#ffaf00;
+   /*background-color:#ffaf00;*/
    text-decoration:none;
    font-size:14px;
    color:#fff;
@@ -2357,12 +2357,13 @@ table.table-pricing-contaier tbody tr td.td-info { padding-left: 25px; font-weig
 	margin: 5px auto!important;
 	padding: 10px 30%;
 	text-shadow: none;
+	border-radius:2px;
 }
-@-moz-document url-prefix() {
+/*@-moz-document url-prefix() {
 .wpb_button.btn-pricing-register {
 	padding: 10px 32.5%;
 }
-}
+}*/
 .btn-register-pandp-table { text-align: right; }
 .wpb_button.btn-pricing-register { color: #fff; }
 .wpb_button.btn-pricing-register:hover { background-color: #E2740B; color: #fff; }
