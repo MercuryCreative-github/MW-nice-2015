@@ -2355,7 +2355,7 @@ table.table-pricing-contaier tbody tr td.td-info { padding: 10px 0px 10px 25px; 
 	font-size: 18px;
 	font-weight: 700;
 	margin: 5px auto!important;
-	padding: 10px 30%;
+	padding: 10px 27.5%;
 	text-shadow: none;
 	border-radius:2px;
 }
@@ -2455,4 +2455,22 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 .tr-members.saving td.td-datos {
 	text-align: center;
 	padding-left: 8px;
+}
+
+.the-content .page-content h4 {
+		font-size:24px;
+		font-family: Open Sans;
+		border-bottom: 1px solid #bdbdbd:
+		padding-bottom:5px;
+}
+
+.the-content .span10 .float-left {
+		color: #abaaaa;
+		font-weight: bold;
+}
+.float-left {
+		float: left;
+}
+.float-right {
+		float: right;
 }
