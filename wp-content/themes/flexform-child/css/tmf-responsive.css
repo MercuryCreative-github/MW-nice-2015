@@ -191,10 +191,10 @@
 
     /*HP - White Papers Boxes*/
     .homePageClass .case-study-box p { min-height: 220px; }
-    
+
     /*HP - list of traks*/
     .hp-journey-box a { font-size: 15px; }
-    .hp-journey-box img { 
+    .hp-journey-box img {
         margin-right: 5px;
         width: 45px; }
 
@@ -514,7 +514,7 @@
         margin-top: -20px;
     }
     /*HOME*/
-    
+
     /*top sopnsors*/
     .homePageClass .span3.sponsors_title { width: 100%; }
 
@@ -1002,7 +1002,7 @@
     }
     /*custom main menu*/
 
-    .call-to-action {
+    nav.call-to-action {
         width: 380px !important;
     }
     .flare-horizontal.flare-position-bottom {
@@ -1341,7 +1341,7 @@
         margin: 0;
         float: left;
     }
-    .call-to-action {
+    nav.call-to-action {
         padding-top: 0;
         height: 65px;
         width: 130px !important;
@@ -1801,7 +1801,7 @@
     .streaming-blank-space {
         display: none;
     }
-    
+
     /*footer*/
 
     ul.social-footer li {
@@ -2340,7 +2340,7 @@
     }
     /*Mobile Menu*/
 
-    .call-to-action {
+    nav.call-to-action {
         display: none;
     }
     #header-section .container .head header > div.span6:nth-child(2) {
