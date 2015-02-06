@@ -32,7 +32,7 @@
 	#Team
 	#Sidebar
 	#Comments
-	#Contact 
+	#Contact
 	#Shortcodes
 	#WooCommerce
 	#Retina Styles
@@ -40,6 +40,7 @@
 
    ==================================================
 */
+@import url("css/responsive-tables.css");
 
 /* #Custom Bootstrap Classes
 ==================================================
@@ -75,22 +76,22 @@
 }
 
 @media only screen and (max-width: 979px) and (min-width: 768px) {
-	
+
 	.span-third {
 		width: 145px;
 	}
 	.span-twothirds {
 		width: 310px;
 	}
-	
+
 	.span-bs-quarter, .span-bs-threequarter {
 		width: 342px;
 	}
-	
+
 }
 
 @media only screen and (max-width: 979px) {
-	
+
 	.span-third {
 		width: 100%;
 	}
@@ -103,7 +104,7 @@
 	.span-bs-threequarter {
 		width: 100%;
 	}
-		
+
 }
 
 /* #Page Builder Override Classes
@@ -227,7 +228,7 @@ p:empty {
 }
 .wf-active p, .wf-active a, .wf-active h1, .wf-active h2, .wf-active h3, .wf-active h4, .wf-active h5, .wf-active h6 {
 	visibility: visible;
-}  
+}
 ul ul, ul ol, ol ol, ol ul {
 	margin-left: 0;
 }
@@ -375,18 +376,18 @@ figure:hover .overlay .thumb-info {
 .wooslider a:focus  {outline: none;}
 .slides,
 .wooslider-control-nav,
-.wooslider-direction-nav {margin: 0; padding: 0; list-style: none;} 
+.wooslider-direction-nav {margin: 0; padding: 0; list-style: none;}
 
 /* wooslider Necessary Styles
-*********************************/ 
+*********************************/
 .wooslider {margin: 0; padding: 0;}
 .wooslider .slides > li { display: none; -webkit-backface-visibility: hidden; width: 100%; } /* Hide the slides before the JS is loaded. Avoids image jumping */
 .wooslider .slides img {width: 100%; display: block;}
 .wooslider-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
-.wooslider .slides:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; } 
-html[xmlns] .wooslider .slides { display: block; } 
+.wooslider .slides:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+html[xmlns] .wooslider .slides { display: block; }
 * html .wooslider .slides { height: 1%; }
 
 /* No JavaScript Fallback */
@@ -473,7 +474,7 @@ body .wooslider .overlay-full.layout-text-bottom .slide-excerpt { left: 0; right
 
 body .wooslider .overlay-natural.layout-text-left .slide-excerpt { left: 0; top: 10%; overflow: hidden; }
 body .wooslider .overlay-natural.layout-text-right .slide-excerpt { float: right; right: 0; top: 10%; overflow: hidden; }
-body .wooslider .overlay-natural.layout-text-right .slide-excerpt .slide-title, 
+body .wooslider .overlay-natural.layout-text-right .slide-excerpt .slide-title,
 body .wooslider .overlay-natural.layout-text-right .slide-excerpt p { float: right; }
 body .wooslider .overlay-natural.layout-text-top .slide-excerpt { left: 0; top: 0; overflow: hidden; }
 body .wooslider .overlay-natural.layout-text-bottom .slide-excerpt { left: 0; bottom: 0; overflow: hidden; }
@@ -948,7 +949,7 @@ a img.aligncenter {
 .img-link {
 	display: block;
 }
-.wp-caption-text, .gallery-caption {	
+.wp-caption-text, .gallery-caption {
 	font-size: 1.2em;
 	padding: 10px 0;
 }
@@ -1252,10 +1253,10 @@ div.dark_rounded #pp_full_res .pp_inline,div.dark_square #pp_full_res .pp_inline
 	margin-bottom: 30px;
 }
 .pb-border-bottom {
-	border-bottom: 1px solid transparent; 
+	border-bottom: 1px solid transparent;
 }
 .pb-border-top {
-	border-top: 1px solid transparent; 
+	border-top: 1px solid transparent;
 }
 .wpb_wrapper .row-fluid {
 	border-bottom: 0;
@@ -1703,8 +1704,8 @@ nav#mobile-top-bar-menu {
 	position: absolute;
 	bottom: 3px;
 	left: 0;
-	width: 0; 
-	height: 2px; 
+	width: 0;
+	height: 2px;
 	display: none;
 	z-index: 2;
 }
@@ -1868,7 +1869,7 @@ nav .menu li:hover ul li a {
 	height: 21px;
 	margin-top: 10px;
 	margin-left: 10px;
-} 
+}
 .logo-right #nav-search {
 	margin-left: 5px;
 	margin-right: 0;
@@ -1904,7 +1905,7 @@ nav .menu li:hover ul li a {
 	outline: none;
 	border: 0;
 	padding: 2px 5px 0!important;
-	box-shadow: none;	
+	box-shadow: none;
 }
 #header-shadow {
 	background: transparent url('images/header-shadow.png') no-repeat center top;
@@ -1956,7 +1957,7 @@ nav .menu li:hover ul li a {
 	height: 21px;
 	margin-top: 10px;
 	margin-left: 10px;
-} 
+}
 .logo-right #mini-search {
 	margin-left: 5px;
 	margin-right: 0;
@@ -1993,7 +1994,7 @@ nav .menu li:hover ul li a {
 	outline: none;
 	border: 0;
 	padding: 2px 5px 0!important;
-	box-shadow: none;	
+	box-shadow: none;
 }
 
 /* #Widgets
@@ -2039,7 +2040,7 @@ nav .menu li:hover ul li a {
 	border-top: 1px solid transparent;
 }
 .widget_categories ul > li:first-child, .widget_archive ul > li:first-child, .widget_nav_menu ul > li:first-child, .widget_recent_comments ul > li:first-child, .widget_meta ul > li:first-child, .widget_recent_entries ul > li:first-child, .widget_product_categories ul > li:first-child {
-	border-top: 0;	
+	border-top: 0;
 }
 .widget_categories ul > li a, .widget_archive ul > li a, .widget_nav_menu ul > li a, .widget_meta ul > li a, .widget_recent_entries ul > li a, .widget_product_categories ul > li a {
 	padding: 10px 15px;
@@ -2090,7 +2091,7 @@ nav .menu li:hover ul li a {
 	font-size: 14px!important;
 }
 .widget .wp-tag-cloud li > a:hover {
-	border-color: transparent; 
+	border-color: transparent;
 }
 .widget-video iframe {
 	width: 100%;
@@ -2198,7 +2199,7 @@ ul.recent-posts {
 }
 .wpb_recent_posts_widget .recent-post .post-item-details, .wpb_posts_carousel_widget .recent-post .post-item-details {
 	padding: 15px 0;
-} 
+}
 .recent-post h4 {
 	margin-top: 0;
 	margin-bottom: 6px;
@@ -2310,7 +2311,7 @@ ul.recent-posts {
 	margin: 15px 0 0 0;
 }
 .wpb_latest_tweet_bar_widget {
-	padding: 25px 0;	
+	padding: 25px 0;
 }
 .wpb_latest_tweet_bar_widget .twitter-bird {
 	font-size: 14px;
@@ -2378,7 +2379,7 @@ ul.recent-posts {
 	text-decoration: none;
 }
 .carousel-wrap > a > i {
-	font-size: 16px;	
+	font-size: 16px;
 }
 .wpb_single_image .wpb_wrapper.shadow {
 	padding: 0 0 1.8%;
@@ -2529,7 +2530,7 @@ figure.lightbox {
 	height: 77px;
 	width: auto;
 	min-height: 77px;
-	min-width: 77px;	
+	min-width: 77px;
 	display: block;
 	transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -3075,7 +3076,7 @@ figure.lightbox {
 	width: 100%;
 }
 #swift-slider .flex-caption h4 span {
-	text-decoration: none;	
+	text-decoration: none;
 	display: block;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -3192,7 +3193,7 @@ figure.lightbox {
 	margin-left: 5px;
 }
 .filter-wrap .filter-slide-wrap {
-	display: none;	
+	display: none;
 	margin-top: 0;
 	padding-bottom: 12px;
 }
@@ -3442,7 +3443,7 @@ article.type-team .body-text > p {
 ================================================== */
 
 ul.blog-items {
-	list-style: none;	
+	list-style: none;
 }
 .blog-wrap .heading-wrap {
 	margin-bottom: 5px;
@@ -4637,7 +4638,7 @@ ul.clients-items {
 	height: auto;
 	overflow: hidden;
 	margin-bottom: 0;
-} 
+}
 span.wpcf7-form-control-wrap {
 	display: block;
 }
@@ -4690,7 +4691,7 @@ span.wpcf7-form-control-wrap {
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
-	
+
 }
 .wpcf7 input.wpcf7-submit[type="submit"]:hover {
 	-webkit-border-radius: 0;
@@ -4831,7 +4832,7 @@ table.standard_bordered th, table.standard_bordered td, table.striped_bordered t
 }
 .pricing-table-column .button {
 	margin-top: 10px;
-	margin-bottom: 0;	
+	margin-bottom: 0;
 }
 .pricing-table-wrap.bordered, .pricing-table-wrap.bordered_alt {
 	margin: 0 -10px;
@@ -5798,7 +5799,7 @@ blockquote.blockquote2, blockquote.blockquote1 p {
 }
 blockquote.pullquote {
 	border-left: 1px dotted transparent;
-	padding: 0 0 0 20px;	
+	padding: 0 0 0 20px;
 }
 .decorative-ampersand {
 	font-family: 'Vidaloka', serif;
@@ -6344,7 +6345,7 @@ ul.social-icons.small li.skype a {
 	margin-top: 0;
 }
 .ui-accordion-content .wpb_wrapper p:last-child {
-	margin-bottom: 0;	
+	margin-bottom: 0;
 }
 .ui-accordion-content .wpb_wrapper .box-content-wrap p:last-child {
 	margin-bottom:20px;
@@ -6586,7 +6587,7 @@ ul.social-icons.small li.skype a {
 .woocommerce-account .page-content h2 {
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 10px;
-	margin-top: 40px;	
+	margin-top: 40px;
 }
 .woocommerce-account p.myaccount_address {
 	border-bottom: 1px solid #ccc;
@@ -6927,7 +6928,7 @@ form .form-row .input-checkbox {
 	background-color: #333;
 }
 .options li.selected a {
-	background-color: #8dc63f;	
+	background-color: #8dc63f;
 }
 .options select {
 	width: 100%;
@@ -7136,9 +7137,9 @@ form .form-row .input-checkbox {
 			background-image: url('images/scanlines_dark@2x.png');
 			background-size: 4px 4px;
 		}
-}  
+}
 
-/* #Mobile Styles  
+/* #Mobile Styles
 ================================================== */
 
 .mobile-browser figure:hover .overlay .thumb-info, .wpb_single_image.span12 figure:hover .overlay .thumb-info {
