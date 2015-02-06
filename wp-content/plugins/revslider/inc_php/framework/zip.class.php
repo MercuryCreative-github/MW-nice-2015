@@ -42,8 +42,8 @@
 	    		
 	    		$this->zip->addFile($path,$rel_path);
 	    	}
-	    }	    	    
-
+	    }	   
+		
 	    /**
 	     * 
 	     * make zip archive

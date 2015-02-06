@@ -283,6 +283,12 @@
 		//------------------------------------------------------------
 		//save some file to the filesystem with some text
 		public static function writeFile($str,$filepath){
+			if(is_writable(dirname($filepath)) == false){
+				@chmod(dirname($filepath),0755);		//try to change the permissions
+			}
+			
+			if(!is_writable(dirname($filepath))) UniteFunctionsRev::throwError("Can't write file \"".$filepath."\", please change the permissions!");
+			
 			$fp = fopen($filepath,"w+");
 			fwrite($fp,$str);
 			fclose($fp);
@@ -349,6 +355,8 @@
 		//------------------------------------------------------------
 		//save some file to the filesystem with some text
 		public static function addToFile($str,$filepath){
+			if(!is_writable(dirname($filepath))) UniteFunctionsRev::throwError("Can't write file \"".$filepath."\", please change the permissions!");
+			
 			$fp = fopen($filepath,"a+");
 			fwrite($fp,"---------------------\n");
 			fwrite($fp,$str."\n");
@@ -516,8 +524,15 @@
 			if(gettype($arr) != "array")
 				UniteFunctionsRev::throwError("trimArrayItems error: The type must be array");
 			
-			foreach ($arr as $key=>$item)
-				$arr[$key] = trim($item);
+			foreach ($arr as $key=>$item){
+				if(is_array($item)){
+					foreach($item as $key => $value){
+						$arr[$key][$key] = trim($value);
+					}
+				}else{
+					$arr[$key] = trim($item);
+				}
+			}
 			
 			return($arr);
 		}
@@ -768,6 +783,29 @@
 					self::copyDir($source,$dest,$rel_path_new,$blackList);
 				}
 			}
+		}
+		
+		
+		/**
+		 * 
+		 * get text intro, limit by number of words
+		 */
+		public static function getTextIntro($text, $limit){
+			 
+			 $arrIntro = explode(' ', $text, $limit);
+			 
+			 if (count($arrIntro)>=$limit) {
+			 	 array_pop($arrIntro);
+			  	$intro = implode(" ",$arrIntro);
+			  	$intro = trim($intro);
+			  	if(!empty($intro))
+			  		$intro .= '...';
+			 } else {
+			  	$intro = implode(" ",$arrIntro);
+			 }
+			  
+			 $intro = preg_replace('`\[[^\]]*\]`','',$intro);
+			 return($intro);
 		}
 		
 	

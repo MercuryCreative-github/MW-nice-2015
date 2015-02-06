@@ -6,4 +6,5 @@
 	<form id="form_preview_slide" name="form_preview_slide" action="" target="frame_preview" method="post">
 		<input type="hidden" name="client_action" value="preview_slide">
 		<input type="hidden" name="data" value="" id="preview_slide_data">
+		<input type="hidden" id="preview_slide_nonce" name="nonce" value="">
 	</form>

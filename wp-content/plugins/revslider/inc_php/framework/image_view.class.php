@@ -143,7 +143,7 @@
 						
 			$info = UniteFunctionsRev::getPathInfo($filepath);
 			$ext = $info["extension"];				
-			$filetime = filemtime($filepath);
+			//$filetime = filemtime($filepath);
 			
 			$ext = strtolower($ext);
 			if($ext == "jpg")
@@ -151,11 +151,11 @@
 			
 			$numExpires = 31536000;	//one year
 			$strExpires = @date('D, d M Y H:i:s',time()+$numExpires);
-			$strModified = @date('D, d M Y H:i:s',$filetime);
+			//$strModified = @date('D, d M Y H:i:s',$filetime);
 			
 			$contents = file_get_contents($filepath);
 			$filesize = strlen($contents);
-			header("Last-Modified: $strModified GMT");
+			/*header("Last-Modified: $strModified GMT");*/
 			header("Expires: $strExpires GMT");
 			header("Cache-Control: public");
 			header("Content-Type: image/$ext");
@@ -357,7 +357,7 @@
 					$this->effect_Blur($imgHandle,5);
 				break;
 				default:
-					$this->throwError("Effect not supported: <b>{$this->effect}</b>");
+					$this->throwError("Effect not supported: <b>".$this->effect."</b>");
 				break;
 			}
 			
@@ -463,6 +463,22 @@
 		}
 		
 		
+		private function showImageByID($fileID, $maxWidth=-1, $maxHeight=-1, $type=""){
+			$fileID = intval($fileID);
+			
+			if($fileID == 0) $this->throwError("image not found");
+			
+			$img = wp_get_attachment_image_src( $fileID, 'thumb' );
+			
+			if(empty($img)) $this->throwError("image not found");
+			
+			
+			$this->outputImage($img[0]);
+			
+			
+			exit();
+		}
+		
 		//------------------------------------------------------------------------------------------
 		//return image
 		private function showImage($filename,$maxWidth=-1,$maxHeight=-1,$type=""){
@@ -541,7 +557,8 @@
 		 */
 		public function showImageFromGet(){
 			
-			$imageFilename = UniteFunctionsRev::getGetVar("img");
+			//$imageFilename = UniteFunctionsRev::getGetVar("img");
+			$imageID = intval(UniteFunctionsRev::getGetVar("img"));
 			$maxWidth = UniteFunctionsRev::getGetVar("w",-1);
 			$maxHeight = UniteFunctionsRev::getGetVar("h",-1);
 			$type = UniteFunctionsRev::getGetVar("t","");
@@ -553,7 +570,9 @@
 			if(!empty($effect))
 				$this->setEffect($effect,$effectArgument1);
 			
-			$this->showImage($imageFilename,$maxWidth,$maxHeight,$type);
+			$this->showImageByID($imageID);
+			echo 'sechs<br>';
+			//$this->showImage($imageFilename,$maxWidth,$maxHeight,$type);
 		}
 		
 		

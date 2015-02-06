@@ -1,7 +1,5 @@
 <?php
-
 	class UniteWpmlRev{
-		
 		
 		/**
 		 * 
@@ -28,14 +26,17 @@
 		 * 
 		 * get languages array
 		 */
-		public static function getArrLanguages(){
+		public static function getArrLanguages($getAllCode = true){
 			
 			self::validateWpmlExists();
 			$wpml = new SitePress();
 			$arrLangs = $wpml->get_active_languages();
 			
 			$response = array();
-			$response["all"] = __("All Languages",REVSLIDER_TEXTDOMAIN);
+			
+			if($getAllCode == true)
+				$response["all"] = __("All Languages",REVSLIDER_TEXTDOMAIN);
+			
 			foreach($arrLangs as $code=>$arrLang){
 				$name = $arrLang["native_name"];
 				$response[$code] = $name;
@@ -44,31 +45,66 @@
 			return($response);
 		}
 		
+		/**
+		 * 
+		 * get assoc array of lang codes
+		 */
+		public static function getArrLangCodes($getAllCode = true){
+			
+			$arrCodes = array();
+			
+			if($getAllCode == true)
+				$arrCodes["all"] = "all";
+				
+			self::validateWpmlExists();
+			$wpml = new SitePress();
+			$arrLangs = $wpml->get_active_languages();
+			foreach($arrLangs as $code=>$arr){
+				$arrCodes[$code] = $code;
+			}
+			
+			return($arrCodes);
+		}
+		
+		
+		/**
+		 * 
+		 * check if all languages exists in the given langs array
+		 */
+		public static function isAllLangsInArray($arrCodes){
+			$arrAllCodes = self::getArrLangCodes();
+			$diff = array_diff($arrAllCodes, $arrCodes);
+			return(empty($diff));
+		}
+		
 		
 		/**
 		 * 
 		 * get langs with flags menu list
 		 * @param $props
 		 */
-		public static function getLangsWithFlagsHtmlList($props = ""){
+		public static function getLangsWithFlagsHtmlList($props = "",$htmlBefore = ""){
 			$arrLangs = self::getArrLanguages();
 			if(!empty($props))
 				$props = " ".$props;
 			
-			$html = "<ul{$props}>"."\n";
+			$html = "<ul".$props.">"."\n";
+			$html .= $htmlBefore;
+		
 			foreach($arrLangs as $code=>$title){
 				$urlIcon = self::getFlagUrl($code);
 				
-				$html .= "<li><a data-lang='{$code}' href='javascript:void(0)'>"."\n";
-				$html .= "<img src='{$urlIcon}'/> $title"."\n";				
+				$html .= "<li data-lang='".$code."' class='item_lang'><a data-lang='".$code."' href='javascript:void(0)'>"."\n";
+				$html .= "<img src='".$urlIcon."'/> $title"."\n";				
 				$html .= "</a></li>"."\n";
 			}
-			
+
 			$html .= "</ul>";
+			
 			
 			return($html);
 		}
-		
+	
 		
 		/**
 		 * get flag url
@@ -97,7 +133,7 @@
 		private function getLangDetails($code){
 	        global $wpdb;
 			
-	        $details = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}icl_languages WHERE code='$code'");
+	        $details = $wpdb->get_row("SELECT * FROM ".$wpdb->prefix."icl_languages WHERE code='$code'");
 	        
 	        if(!empty($details))
 	        	$details = (array)$details;
@@ -115,7 +151,7 @@
 			$langs = self::getArrLanguages();
 			
 			if($code == "all")
-				return(__("All Languages"));
+				return(__("All Languages", REVSLIDER_TEXTDOMAIN));
 			
 			if(array_key_exists($code, $langs))
 				return($langs[$code]);
@@ -135,10 +171,12 @@
 		public static function getCurrentLang(){
 			self::validateWpmlExists();
 			$wpml = new SitePress();
+
+			if(is_admin())
+				$lang = $wpml->get_default_language();
+			else
+				$lang = UniteFunctionsWPRev::getCurrentLangCode();
 			
+			return($lang);
 		}
-		
 	}
-	
-	
-	

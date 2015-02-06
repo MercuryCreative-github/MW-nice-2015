@@ -152,9 +152,6 @@
 			$arrOnReady = array();
 			$arrJs = array();
 			
-			//put json string types
-			$jsonString = $this->settings->getJsonClientString();
-			
 			//$arrJs[] = "obj.jsonSettingTypes = '$jsonString'";
 			//$arrJs[] = "obj.objSettingTypes = JSON.parse(obj.jsonSettingTypes);";
 			
