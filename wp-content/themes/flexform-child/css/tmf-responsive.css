@@ -2340,7 +2340,7 @@
     }
     /*Mobile Menu*/
 
-    nav.call-to-action {
+    call-to-action {
         display: none;
     }
     #header-section .container .head header > div.span6:nth-child(2) {
