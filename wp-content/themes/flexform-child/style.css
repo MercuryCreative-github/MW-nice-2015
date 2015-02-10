@@ -1679,6 +1679,7 @@ nav#mobile-top-bar-menu {
 #nav-section {
 	position: relative;
 	z-index: 30;
+	padding-bottom:14px;
 }
 #nav-section.nav-shadow {
 	-moz-box-shadow: 0 2px 4px -2px rgba(0,0,0,.1);
@@ -1688,6 +1689,7 @@ nav#mobile-top-bar-menu {
 #main-navigation {
 	position: relative;
 	width: 100%;
+	margin-top:8px;
 }
 .logo-right #main-navigation, .logo-right #mini-navigation {
 	margin-left: -10px;
