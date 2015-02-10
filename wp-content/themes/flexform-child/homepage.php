@@ -85,7 +85,7 @@ Template Name: Home Page
 	<div class="cell">
 	<div class="sec-main-content">
 		<div class="section01-info">
-			<div class="section01-logo"><img src="/wp-content/uploads/2015/02/Slider01-logo1.png"></div>
+			<div class="section01-logo"><img src="/wp-content/uploads/2015/02/Slider01-logo.png"></div>
 			<div class="section01-slogan">DIGITAL BUSINESS:<br/><span>MAKING IT REAL</span></div>
 			<div class="section01-date">JUNE 1 - 4, 2015<br/><span>NICE - FRANCE</span></div>
 			<div class="section01-buttons">
@@ -94,7 +94,7 @@ Template Name: Home Page
 				<div class="clear"></div>
 			</div>
 		</div>
-	
+
 	</div>
 	</div>
 	<div class="section01-sponsors">
@@ -108,7 +108,7 @@ Template Name: Home Page
 </section>
 
 <section id="hp-section">
-	<div class="cell">	
+	<div class="cell">
 	<div class="sec-main-content">
 	<div class="section02">
 		<div class="title-green"><h1>The Event</h1></div>
@@ -123,7 +123,7 @@ Template Name: Home Page
 				</ul>
 			</div>
 			<div class="clear"></div>
-		</div>	
+		</div>
 	</div>
 		<div class="section02-companies">
 			<ul>
@@ -139,7 +139,7 @@ Template Name: Home Page
 </section>
 
 <section id="hp-section" class="section03">
-	<div class="cell">	
+	<div class="cell">
 	<div class="sec-main-content">
 		<div class="section03-infobox01">
 			<h1>NETWORK AT <br/>TM FORUM <br/>LIVE!</h1>
@@ -171,7 +171,7 @@ Template Name: Home Page
 </section>
 
 <section id="hp-section" class="section04">
-	<div class="cell">	
+	<div class="cell">
 	<div class="sec-main-content">
 	<div class="section04-title"><h1>THE ANALYSIS</h1></div>
 	<div class="section04-info">
@@ -194,7 +194,7 @@ Template Name: Home Page
 									$item['image'] = null;
 									$DOM = new DOMDocument();
 									@$DOM->loadHTML($rss_item->get_description());
-		
+
 
 									$imagenes = $DOM->getElementsByTagName('img');
 									$parrafos = $DOM->getElementsByTagName('p');
@@ -262,7 +262,7 @@ Template Name: Home Page
 										</a>
 									</div>
 									</div>
-									
+
 								</article>
 								<?php } ?>
 						</section>
@@ -273,7 +273,7 @@ Template Name: Home Page
 		</div>
 	</div>
 	</div>		<div class="twitter-feed">
-			
+
 <div id='twitter_widget' class='widget twitter_widget'>
             <div class="widget-heading clearfix">
                         <h2 class="tw-title">Latest on Twitter</h2>
