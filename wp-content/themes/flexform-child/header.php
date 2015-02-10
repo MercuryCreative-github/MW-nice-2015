@@ -342,31 +342,17 @@
 										<div class="head">
 					<header class="row-fluid">
 
-						<div id="logo" class="span6 clearfix">
-							<a href="<?php echo home_url(); ?>">
-								<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
-							</a>
-
-						</div>
-
-
-												<div class="span6">
-											<nav class="call-to-action">
-
-																<?php wp_nav_menu( array('menu' => 'Call to Action', 'container' => 'false', 'items_wrap' => '%3$s' )); ?>
-
-																<div class="slogan-tablet">
-																		<span class="title-tablet">San Jose, California</span>
-																		<span class="date-tablet">December 8-11, 2014</span>
-																</div>
-
-											</nav>
-												</div>
 
 												<div class="divider"></div>
 
 						<!--// OPEN NAV SECTION //-->
 						<div id="nav-section" class="<?php echo $nav_class; ?> span12 clearfix">
+							<div id="logo">
+								<a href="<?php echo home_url(); ?>">
+									<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
+								</a>
+
+							</div>
 							<div class="nav-wrap clearfix">
 
 								<!--// OPEN MAIN NAV //-->
