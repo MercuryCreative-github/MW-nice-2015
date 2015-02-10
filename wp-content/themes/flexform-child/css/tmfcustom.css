@@ -2694,3 +2694,8 @@ margin:auto 0;
 		border-top: #e4e4e4 1px solid;
 		padding-top: 15px;
 }
+input[type="submit"] {
+		background: none repeat scroll 0 0 darkorange;
+		color: white;
+		text-transform: uppercase;
+}
