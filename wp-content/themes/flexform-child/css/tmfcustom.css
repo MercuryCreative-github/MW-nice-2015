@@ -138,6 +138,7 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 /******* HOME PAGE ********/
 /**************************/
 
+#hp-section {padding: 30px 0;}
 .sec-main-content {width: 1230px;margin: 0 auto;}
 
 /*.section02-companies ul*/
@@ -291,8 +292,20 @@ p.list-text, .section02-companies li {
 
 /*section04*/
 .section04 {background-color: #e7e8e9;}
-.section04-info {width: 65%}
-.section04-title {margin: 60px 0 30px 0;}
+.section04-info {width: 52%;float: left;}
+.section04-title {margin: 30px 0;}
+
+.twitter-feed {float: left;width: 30%;background: #fff;padding: 0 15px 10px;border-top: #76a9db 4px solid;}
+.container h2.tw-title{
+	font-family: 'Open Sans' sans-serif;
+	font-weight: 600;
+	font-size: 21px;
+	text-transform: uppercase;
+	color: #444;
+	margin: 30px 0 10px 0;
+	max-width: 100%;
+}
+.container h2.tw-title:before{content: url('/wp-content/uploads/2015/02/icon-twitter.png');left: -4px;top: -12px;position: relative;margin-right: 10px;}
 
 /*section05*/
 .section05 {
@@ -341,10 +354,8 @@ div.alert-info{display:none;} /* <--do not remove! */
 .tp-bullets.simplebullets.round{height:10px !important;}
 li{list-style-type:none;font-weight:normal;}
 p{font-family:"Open Sans", Arial, sans-serif;font-weight:normal;}
-.container h2, h3.faq-section-title{margin:40px 0 20px 0;}
+.container h2, h3.faq-section-title{margin:40px 0 20px 0; font-family: 'Open Sans' sans-serif;}
 h2:before, h3.faq-section-title:before{content:url('../../../uploads/2014/08/subtitle-e1407968140613.png');position:absolute;left:-46px;}
-h2.tw-title{margin:10px 0;}
-h2.tw-title:before{content:'';}
 h3.faq-section-title{font-size:30px;line-height:40px;font-weight:normal !important;}
 .wpb_wrapper.clearfix{position:relative;}
 
@@ -754,7 +765,7 @@ ul.list-within-list{font-size:14px;margin-left:57px;}
 /********************/
 /***HOTEL & TRAVEL***/
 /********************/
-.red-subtitle h2 { border-top: 2px solid #d5410c; border-bottom: 2px solid #d5410c; font-size: 24px; font-weight: 400; padding: 8px 0px;}
+.red-subtitle h2 { border-bottom: 1px solid #d5410c; font-size: 24px; font-weight: 400; padding: 8px 0px;}
 .red-subtitle h2:before { display:none;}
 .hyt-ico{float:left;width:70px;text-align:center;font-size:12px;color:#999;}
 .hyt-ico img{-webkit-transition:transform 0.5s;-moz-transition:transform 0.5s;-o-transition:transform 0.5s;-ms-transition:transform 0.5s;transition:transform 0.5s;}
@@ -918,7 +929,6 @@ article.page-404{font-size:14px;}
 .twitter_widget a.twfollow img {margin-left: 10px; }
 #twitter_widget img:hover{opacity:0.6;}
 iframe#twitter-widget-0{width:100% !important;}
-.home h2.tw-title{border-bottom:none;color:#666;}
 .twfollow img{margin-right:5px;}
 
 /******************/
@@ -1582,7 +1592,6 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 .streaming-keynotes-live p a img{opacity:0.7}
 .streaming-keynotes-live p a:hover > img{opacity:1}
 .streaming-keynotes-live .fday{float:left;font-size:24px;margin-left:18px;padding:24px 0px 11px 25px;line-height:18px;}
-.logo-left.clearfix nav .menu li{font-size:14px;background-color:#fff ;/*Added only for non Uber menu version*/}
 /*Register for menu*/
 .logo-left.clearfix nav .menu li.registerOnMenu {background-color:#ffaf00;margin-left: 15px;}
 .logo-left.clearfix nav .menu li.registerOnMenu:hover{background-color: #E2740B;}
@@ -1623,20 +1632,12 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 .social-contact > div{padding:40px;}
 .social-contact > div:last-child{padding-left:0; padding-right: 0;}
 .social-contact .span8 h3{padding:0 60px;}
-#menu-social li.social-icon{margin:0 20px 0 0;cursor:pointer !important; float: left;/*for ie9*/}
-#menu-social li.social-icon:first-child{margin-left:0px;}
-#menu-social li.social-icon:last-child{margin-right:0px;}
-#menu-social li a{display:block;cursor:pointer;}
-#menu-social li a:hover{cursor:pointer;}
-#menu-social li a i{color:#999;font-size:32px;}
-.textwidget a i.icon-2x.icon-twitter {color: #999;font-size: 15px;margin-right: 4px;}
-#menu-social li a:hover i, .textwidget a:hover i.icon-2x.icon-twitter{color:#333;cursor:pointer;}
-.social-contact .social-icon-list ul li{display:table-cell;width:25%;}
-.social-contact .social-icon-list ul{display:table;margin:auto;min-width:250px;width:100%;}
-.social-contact h3{font-weight:normal;}
+.social-contact h3{font-weight:normal;width: 70%;margin-top: 54px;}
 .social-contact a#updated{color:#FFF !important;display:inline-block;margin-top:10px !important;}
 #footer-widgets{padding-top:20px;}
 .textwidget .tmforum-footer {width: 100%; text-align: center; margin-top: 10px;}
+#footer-widgets, .social-contact .span12.textwidget {width: 1230px;margin: 0 auto;}
+
 /***********************/
 /*** MEDIA CENTER *****/
 /*********************/
