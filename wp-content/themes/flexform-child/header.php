@@ -386,11 +386,6 @@
 																	<img class="retina" src="<?php echo $retina_logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
 																</a>
 
-																<div class="slogan-mobile">
-																		<span class="title">San Jose, California</span>
-																		<span class="date">December 8-11, 2014</span>
-																</div>
-
 																<button type="button" class="navbar-toggle">
 																				<span class="icon-bar"></span>
 																				<span class="icon-bar"></span>
