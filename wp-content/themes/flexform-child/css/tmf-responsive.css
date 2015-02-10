@@ -1480,6 +1480,8 @@
     }
     div#nav-section {
         width: 100%;
+        padding-bottom: 0;
+        margin-bottom: 0;
 }
     div#nav-section .visible-phone.show-menu {
         width: 100%;
@@ -2392,7 +2394,7 @@
     #nav-section {
       padding-bottom:0px;
     
-      margin-bottom: 20px;
+      margin-bottom: 20px!important;
 }
     .call-to-action {
         display: none;
