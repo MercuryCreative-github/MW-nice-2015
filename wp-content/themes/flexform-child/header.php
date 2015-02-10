@@ -87,8 +87,13 @@
 		<!--// SITE META //-->
 		<meta http-equiv="Content-Type" content="text/html" charset="<?php bloginfo( 'charset' ); ?>" />
 
-        <!--// SITE TITLE //-->
+
+
+
+				<!--// SITE TITLE //-->
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
+
+
 
 		<?php if ($enable_responsive) { ?><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"><?php } ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -97,7 +102,7 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<?php if (isset($options['custom_favicon'])) { ?><link rel="shortcut icon" href="<?php echo $options['custom_favicon']; ?>" /><?php } ?>
 
-                 <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,400italic,200italic,200,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+								<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,400italic,200italic,200,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
 		<?php
 			$options = get_option('sf_flexform_options');
 
@@ -139,11 +144,11 @@
 			var html = document.getElementsByTagName('html')[0];
 			html.className += '  wf-loading';
 			setTimeout(function() {
-			  html.className = html.className.replace(' wf-loading', '');
+				html.className = html.className.replace(' wf-loading', '');
 			}, 3000);
 
 			WebFontConfig = {
-			    google: { families: [<?php echo $custom_fonts; ?> 'Vidaloka'] }
+					google: { families: [<?php echo $custom_fonts; ?> 'Vidaloka'] }
 			};
 
 			(function() {
@@ -154,7 +159,7 @@
 
 			var wf = document.createElement('script');
 				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-				 '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
 				wf.type = 'text/javascript';
 				wf.async = 'false';
 				var s = document.getElementsByTagName('script')[0];
@@ -176,28 +181,28 @@
 		<!--// WORDPRESS HEAD HOOK //-->
 		<?php wp_head(); ?>
 
-       <script>
+			<script>
 		adroll_adv_id = "PXFEQ6QHCFGPVIB5AJTC6L";
 		adroll_pix_id = "KNZBVVNN3NCQVM5IPGQGEN";
 		(function () {
 		var oldonload = window.onload;
 		window.onload = function(){
-		   __adroll_loaded=true;
-		   var scr = document.createElement("script");
-		   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
-		   scr.setAttribute('async', 'true');
-		   scr.type = "text/javascript";
-		   scr.src = host + "/j/roundtrip.js";
-		   ((document.getElementsByTagName('head') || [null])[0] ||
-		    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
-		   if(oldonload){oldonload()}};
+			__adroll_loaded=true;
+			var scr = document.createElement("script");
+			var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+			scr.setAttribute('async', 'true');
+			scr.type = "text/javascript";
+			scr.src = host + "/j/roundtrip.js";
+			((document.getElementsByTagName('head') || [null])[0] ||
+				document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+			if(oldonload){oldonload()}};
 		}());
 		</script>
 
 	<!--// CLOSE HEAD //-->
-	<meta property="og:url" content="http://www.tmforumlive.org/">
-	<meta property="og:title" content="Nice 2014">
-	<meta property="og:description" content="TM Forum Live 2015, Nice, France Jun 1 - 4 Join fellow CxOs and senior-level executives to learn how to transform your business into a digital powerhouse.">
+	<meta property="og:url" content="http://www.dd14.org/">
+	<meta property="og:title" content="San Jose 2014">
+	<meta property="og:description" content="Digital Disruption 2014, San Jose, California Dec 8 - 11 Join fellow CxOs and senior-level executives to learn how to transform your business into a digital powerhouse.">
 	<meta property="og:image" content="http://devsanjose2014.wpengine.com/wp-content/uploads/2014/09/tmforum200x200.png">
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="200">
@@ -207,7 +212,7 @@
 	<!--// OPEN BODY //-->
 	<body <?php body_class($page_class . ' ' . $is_responsive . ' ' . $extra_page_class. ' ' . get_field('custom_page_class')); ?>>
 
-	<img style="display:none;" src="/wp-content/uploads/2014/09/logo-dd14.png" alt="TM Forum Live 2015">
+	<img style="display:none;" src="/wp-content/uploads/2014/09/logo-dd14.png" alt="Digital Disruption 2014">
 
 		<?php if (is_single()) { ?>
 		<!--// SOCIAL SCRIPTS //-->
@@ -330,69 +335,46 @@
 			</div>
 			<?php } ?>
 
-
-			<div id="header-section" class="<?php echo $header_layout; ?> <?php echo $logo_class; ?> clearfix">
-				<div class="container">
-                    <div class="head">
-						<header class="row-fluid" style="margin-top: 10px;">
-							<div id="logo" class="clearfix" style="float:left;padding-bottom:20px;margin-right: 20px;">
-								<a href="<?php echo home_url(); ?>" style="margin-top: 0;">
-									<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" style="width: 180px;">
-								</a>
-							</div>
-							<nav id="main-navigation">
-								<?php
-								if(function_exists('wp_nav_menu')) {
-								wp_nav_menu(array(
-								'theme_location' => 'main_navigation',
-								'fallback_cb' => ''
-								)); }
-								?>
-							</nav>
-							<div class="mobile-navigation">
-
-									<a class="logo-mobile" href="<?php echo home_url(); ?>">
-										<img class="retina" src="<?php echo $retina_logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
-									</a>
-
-									<button type="button" class="navbar-toggle">
-													<span class="icon-bar"></span>
-													<span class="icon-bar"></span>
-													<span class="icon-bar"></span>
-									</button>
-
-									<div class="navbar-collapse">
-		<?php
-		if(function_exists('wp_nav_menu')) {
-		wp_nav_menu(array(
-		'theme_location' => 'main_navigation',
-		'container' => 'false'
-		)); }
-		?>
-									</div>
-
-							</div>
-						</header>
-					</div>
-				</div>
-			</div>
-
-			<!--// OPEN #header-section
+			<!--// OPEN #header-section //-->
 			<div id="header-section" class="<?php echo $header_layout; ?> <?php echo $logo_class; ?> clearfix">
 
 				<div class="container">
-                    <div class="head">
+										<div class="head">
 					<header class="row-fluid">
+
 						<div id="logo" class="span6 clearfix">
 							<a href="<?php echo home_url(); ?>">
 								<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
 							</a>
-						</div>             //-->
-						<!--// OPEN NAV SECTION
-						<div id="nav-section" class="<?php echo $nav_class; ?> span12 clearfix">
-							<div class="nav-wrap clearfix">//-->
 
-								<!--// OPEN MAIN NAV
+												<div class="slogan">
+														<span class="title">San Jose, <span>California</span></span>
+														<span class="date">December 8-11, 2014</span>
+												</div>
+
+						</div>
+
+
+												<div class="span6">
+											<nav class="call-to-action">
+
+																<?php wp_nav_menu( array('menu' => 'Call to Action', 'container' => 'false', 'items_wrap' => '%3$s' )); ?>
+
+																<div class="slogan-tablet">
+																		<span class="title-tablet">San Jose, California</span>
+																		<span class="date-tablet">December 8-11, 2014</span>
+																</div>
+
+											</nav>
+												</div>
+
+												<div class="divider"></div>
+
+						<!--// OPEN NAV SECTION //-->
+						<div id="nav-section" class="<?php echo $nav_class; ?> span12 clearfix">
+							<div class="nav-wrap clearfix">
+
+								<!--// OPEN MAIN NAV //-->
 								<a href="#" class="visible-phone show-menu"><?php _e("Select a page", "swiftframework"); ?><i class="icon-angle-down"></i></a>
 								<nav id="main-navigation">
 
@@ -402,9 +384,9 @@
 									'theme_location' => 'main_navigation',
 									'fallback_cb' => ''
 									)); }
-									?> //-->
+									?>
 
-								<!--// CLOSE MAIN NAV
+								<!--// CLOSE MAIN NAV //-->
 								</nav>
 
 								<?php if ($enable_nav_search) { ?>
@@ -420,9 +402,36 @@
 
 							</div>
 
-                               //-->
-						<!--// CLOSE NAV SECTION
-						</div>//-->
+														<div class="mobile-navigation">
+
+																<a class="logo-mobile" href="<?php echo home_url(); ?>">
+																	<img class="retina" src="<?php echo $retina_logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
+																</a>
+
+																<div class="slogan-mobile">
+																		<span class="title">San Jose, California</span>
+																		<span class="date">December 8-11, 2014</span>
+																</div>
+
+																<button type="button" class="navbar-toggle">
+																				<span class="icon-bar"></span>
+																				<span class="icon-bar"></span>
+																				<span class="icon-bar"></span>
+																</button>
+
+																<div class="navbar-collapse">
+									<?php
+									if(function_exists('wp_nav_menu')) {
+									wp_nav_menu(array(
+									'theme_location' => 'main_navigation',
+									'container' => 'false'
+									)); }
+									?>
+																</div>
+
+														</div>
+						<!--// CLOSE NAV SECTION //-->
+						</div>
 
 						<!-- google-analytics -->
 						<script type="text/javascript">
@@ -437,7 +446,7 @@
 						</script>
 
 					</header>
-                    </div>
+										</div>
 				</div>
 			</div>
 
@@ -461,7 +470,7 @@
 
 								<!--// OPEN #main-navigation //-->
 								<nav id="mini-navigation">
-                                    <?php
+																		<?php
 									if(function_exists('wp_nav_menu')) {
 									wp_nav_menu(array(
 									'theme_location' => 'main_navigation',
@@ -507,15 +516,15 @@
 
 					if ( is_singular( 'agenda_tracks' ) ) {
 						$rev_slider_alias =  get_field('revolution_slider');
-						 if ($rev_slider_alias != ""){
-						 ?>
+						if ($rev_slider_alias != ""){
+						?>
 							<div class="home-slider-wrap">
 								<?php echo do_shortcode('[rev_slider '.$rev_slider_alias.']'); ?>
 							</div>
 						<?php }
 					}
 				?>
-
+				
 				<!--// OPEN .container //-->
 				<div class="container">
 
