@@ -1690,7 +1690,7 @@ nav#mobile-top-bar-menu {
 #main-navigation {
 	position: relative;
 	width: 100%;
-	margin-top:8px;
+	margin-top: 0;
 }
 .logo-right #main-navigation, .logo-right #mini-navigation {
 	margin-left: -10px;
@@ -1728,7 +1728,6 @@ nav .menu {
 	display: block;
 }
 nav .menu li {
-	float: left;
 	display: inline-block;
 	margin: 0;
 	font-size: 14px;
