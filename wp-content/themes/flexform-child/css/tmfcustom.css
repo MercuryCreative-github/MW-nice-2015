@@ -451,7 +451,12 @@ code p{margin:0px;color:#000;font-size:28px;}
 #main-navigation .menu .registerOnMenu, #mini-navigation .menu .social-icon, #mini-navigation .menu .menuItemHideOnTablet {display: none;}
 
 #nav-section #logo a, #nav-section #mini-logo a {float: none;}
-#nav-section #logo {float: left;}
+
+#nav-section {display: table;}
+
+#nav-section #logo {display: table-cell;}
+
+#nav-section .logo-left .nav-wrap {display: table-cell;}
 
 
 /*UBER MENU
