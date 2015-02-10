@@ -45,7 +45,7 @@
 
 			$page_class = $logo_class = $nav_class = "";
 
-			if ($enable_page_shadow) { 
+			if ($enable_page_shadow) {
 			$page_class = "page-shadow ";
 			}
 
@@ -85,18 +85,18 @@
 		?>
 
 		<!--// SITE META //-->
-		<meta http-equiv="Content-Type" content="text/html" charset="<?php bloginfo( 'charset' ); ?>" />		
-                
+		<meta http-equiv="Content-Type" content="text/html" charset="<?php bloginfo( 'charset' ); ?>" />
+
         <!--// SITE TITLE //-->
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		
+
 		<?php if ($enable_responsive) { ?><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"><?php } ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-		
+
 		<!--// PINGBACK & FAVICON //-->
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<?php if (isset($options['custom_favicon'])) { ?><link rel="shortcut icon" href="<?php echo $options['custom_favicon']; ?>" /><?php } ?>
-				
+
                  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,400italic,200italic,200,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
 		<?php
 			$options = get_option('sf_flexform_options');
@@ -141,17 +141,17 @@
 			setTimeout(function() {
 			  html.className = html.className.replace(' wf-loading', '');
 			}, 3000);
-			
+
 			WebFontConfig = {
 			    google: { families: [<?php echo $custom_fonts; ?> 'Vidaloka'] }
 			};
-			
+
 			(function() {
 				document.getElementsByTagName("html")[0].setAttribute("class","wf-loading")
 				//  NEEDED to push the wf-loading class to your head
 				document.getElementsByTagName("html")[0].setAttribute("className","wf-loading")
 				// for IE…
-			
+
 			var wf = document.createElement('script');
 				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
 				 '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
@@ -166,16 +166,16 @@
 		<!--// FONTDECK LOADER //-->
 		<?php echo $fontdeck_js; ?>
 		<?php } ?>
-		
+
 			<!--// LEGACY HTML5 SUPPORT //-->
-			<!--[if lt IE 10]> 
+			<!--[if lt IE 10]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/excanvas.compiled.js"></script>
 		<![endif]-->
-		
+
 		<!--// WORDPRESS HEAD HOOK //-->
 		<?php wp_head(); ?>
-       
+
        <script>
 		adroll_adv_id = "PXFEQ6QHCFGPVIB5AJTC6L";
 		adroll_pix_id = "KNZBVVNN3NCQVM5IPGQGEN";
@@ -193,7 +193,7 @@
 		   if(oldonload){oldonload()}};
 		}());
 		</script>
-	
+
 	<!--// CLOSE HEAD //-->
 	<meta property="og:url" content="http://www.tmforumlive.org/">
 	<meta property="og:title" content="Nice 2014">
@@ -203,32 +203,32 @@
 	<meta property="og:image:width" content="200">
 	<meta property="og:image:height" content="200">
 	</head>
-	
+
 	<!--// OPEN BODY //-->
 	<body <?php body_class($page_class . ' ' . $is_responsive . ' ' . $extra_page_class. ' ' . get_field('custom_page_class')); ?>>
 
 	<img style="display:none;" src="/wp-content/uploads/2014/09/logo-dd14.png" alt="TM Forum Live 2015">
-	
+
 		<?php if (is_single()) { ?>
 		<!--// SOCIAL SCRIPTS //-->
 		<script src="http://w.sharethis.com/button/buttons.js"></script>
 		<script >stLight.options({publisher: "ur-72c8cf80-2647-2464-a894-abc33849d467", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
 		<?php } ?>
-		
+
 		<!--// NO JS ALERT //-->
 		<noscript>
 			<div class="no-js-alert"><?php _e("Please enable JavaScript to view this website.", "swiftframework"); ?></div>
 		</noscript>
-				
+
 		<!--// OPEN #container //-->
 		<?php if ($page_layout == "fullwidth") { ?>
 		<div id="container">
 		<?php } else { ?>
 		<div id="container" class="boxed-layout">
 		<?php } ?>
-			
+
 			<?php if ($enable_top_bar) { ?>
-			
+
 			<!--// OPEN TOP BAR //-->
 			<?php if ($top_bar_menu) { ?>
 			<div id="top-bar" class="top-bar-menu-left">
@@ -238,7 +238,7 @@
 				<div class="container">
 					<div class="row">
 						<a href="#" class="visible-phone show-menu"><?php _e("Select a page", "swiftframework"); ?><i class="icon-angle-down"></i></a>
-						<nav id="top-bar-menu" class="top-menu span8 clearfix">						
+						<nav id="top-bar-menu" class="top-menu span8 clearfix">
 							<div id="aux-nav">
 								<ul class="menu">
 									<?php if ($show_cart) { ?>
@@ -315,7 +315,7 @@
 									</li>
 									<?php } ?>
 								</ul>
-							</div>	
+							</div>
 							<?php
 								if(function_exists('wp_nav_menu')) {
 								wp_nav_menu(array(
@@ -329,8 +329,8 @@
 			<!--// CLOSE TOP BAR //-->
 			</div>
 			<?php } ?>
-			
-			
+
+
 			<div id="header-section" class="<?php echo $header_layout; ?> <?php echo $logo_class; ?> clearfix">
 				<div class="container">
                     <div class="head">
@@ -338,7 +338,7 @@
 							<div id="logo" class="clearfix" style="float:left;padding-bottom:20px;margin-right: 20px;">
 								<a href="<?php echo home_url(); ?>" style="margin-top: 0;">
 									<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" style="width: 180px;">
-								</a>                   
+								</a>
 							</div>
 							<nav id="main-navigation">
 								<?php
@@ -349,30 +349,53 @@
 								)); }
 								?>
 							</nav>
+							<div class="mobile-navigation">
+
+									<a class="logo-mobile" href="<?php echo home_url(); ?>">
+										<img class="retina" src="<?php echo $retina_logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
+									</a>
+
+									<button type="button" class="navbar-toggle">
+													<span class="icon-bar"></span>
+													<span class="icon-bar"></span>
+													<span class="icon-bar"></span>
+									</button>
+
+									<div class="navbar-collapse">
+		<?php
+		if(function_exists('wp_nav_menu')) {
+		wp_nav_menu(array(
+		'theme_location' => 'main_navigation',
+		'container' => 'false'
+		)); }
+		?>
+									</div>
+
+							</div>
 						</header>
 					</div>
 				</div>
 			</div>
 
-			<!--// OPEN #header-section 
+			<!--// OPEN #header-section
 			<div id="header-section" class="<?php echo $header_layout; ?> <?php echo $logo_class; ?> clearfix">
-			
+
 				<div class="container">
                     <div class="head">
 					<header class="row-fluid">
 						<div id="logo" class="span6 clearfix">
 							<a href="<?php echo home_url(); ?>">
 								<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
-							</a>                   
-						</div>             //-->                                 
-						<!--// OPEN NAV SECTION 
+							</a>
+						</div>             //-->
+						<!--// OPEN NAV SECTION
 						<div id="nav-section" class="<?php echo $nav_class; ?> span12 clearfix">
 							<div class="nav-wrap clearfix">//-->
-								
+
 								<!--// OPEN MAIN NAV
 								<a href="#" class="visible-phone show-menu"><?php _e("Select a page", "swiftframework"); ?><i class="icon-angle-down"></i></a>
 								<nav id="main-navigation">
-									
+
 									<?php
 									if(function_exists('wp_nav_menu')) {
 									wp_nav_menu(array(
@@ -380,47 +403,25 @@
 									'fallback_cb' => ''
 									)); }
 									?> //-->
-			
-								<!--// CLOSE MAIN NAV 
+
+								<!--// CLOSE MAIN NAV
 								</nav>
-								
+
 								<?php if ($enable_nav_search) { ?>
-								
+
 								<div id="nav-search">
 									<a href="#" class="nav-search-link"><i class="icon-search"></i></a>
 									<form method="get" action="<?php echo home_url(); ?>/">
 										<input type="text" name="s" autocomplete="off" />
 									</form>
 								</div>
-								
-								<?php } ?>
-											
-							</div> 
-                            
-                            <div class="mobile-navigation">
-                            
-                                <a class="logo-mobile" href="<?php echo home_url(); ?>">
-                                	<img class="retina" src="<?php echo $retina_logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
-                                </a>
 
-                                <button type="button" class="navbar-toggle">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                </button>
-                                
-                                <div class="navbar-collapse">               
-									<?php
-									if(function_exists('wp_nav_menu')) {
-									wp_nav_menu(array(
-									'theme_location' => 'main_navigation',
-									'container' => 'false'
-									)); }
-									?>                               
-                                </div>
-                                
-                            </div>    //-->                        
-						<!--// CLOSE NAV SECTION 
+								<?php } ?>
+
+							</div>
+
+                               //-->
+						<!--// CLOSE NAV SECTION
 						</div>//-->
 
 						<!-- google-analytics -->
@@ -434,30 +435,30 @@
 						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 						})();
 						</script>
-	
+
 					</header>
                     </div>
 				</div>
 			</div>
-			
+
 			<?php if ($enable_mini_header) { ?>
-			
+
 			<!--// OPEN #mini-header //-->
 			<div id="mini-header" class="<?php echo $header_layout; ?> clearfix">
 				<div class="container">
-					<div class="nav-wrap row-fluid clearfix">	
-						
+					<div class="nav-wrap row-fluid clearfix">
+
 						<div id="mini-logo" class="span3 clearfix">
 							<a href="<?php echo home_url(); ?>">
 								<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
 								<img class="retina" src="<?php echo $retina_logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
 							</a>
 						</div>
-						
+
 						<div class="mini-nav-wrap span9 clearfix">
-						
+
 							<div class="nav-wrap clearfix">
-								
+
 								<!--// OPEN #main-navigation //-->
 								<nav id="mini-navigation">
                                     <?php
@@ -466,29 +467,29 @@
 									'theme_location' => 'main_navigation',
 									'fallback_cb' => ''
 									)); }
-									?>			
-		
+									?>
+
 								<!--// OPEN #main-navigation //-->
 								</nav>
-								
+
 							</div>
-						
+
 						</div>
-						
+
 					</div>
 				</div>
 			<!--// CLOSE #mini-header //-->
 			</div>
-			
+
 			<?php } ?>
-				
+
 			<!--// OPEN #main-container //-->
 			<div id="main-container" class="clearfix">
-				
+
 				<?php if ($enable_header_shadow) { ?>
 				<div id="header-shadow"></div>
 				<?php } ?>
-				
+
 				<?php
 					if (is_page()) {
 						$show_posts_slider = get_post_meta($post->ID, 'sf_posts_slider', true);
@@ -514,9 +515,9 @@
 						<?php }
 					}
 				?>
-				
+
 				<!--// OPEN .container //-->
 				<div class="container">
-				
+
 					<!--// OPEN #page-wrap //-->
 					<div id="page-wrap">
