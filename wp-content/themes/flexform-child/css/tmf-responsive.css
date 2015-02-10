@@ -793,6 +793,13 @@
     }
 }
 @media screen and (max-width: 767px) {
+    /*erase !!! */
+    #menu-item-18996 {
+      display: block !important;
+      margin-left: 0 !important;
+      width: 100% !important;
+    }
+
     nav#exhibitors-navigation .menu li {
         width: 100%;
         display: block;
@@ -1406,11 +1413,11 @@
         position: static !important;
     }
     .navbar-collapse .social-icon {
-        max-width: 30px;
+        /*max-width: 30px;
         display: inline-block;
         border: none!important;
         padding-top: 10px;
-        text-align: center;
+        text-align: center; temporarily erased */
     }
     .navbar-collapse .social-icon a {
         padding: 0px;
