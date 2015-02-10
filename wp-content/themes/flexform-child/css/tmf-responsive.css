@@ -1361,8 +1361,8 @@
         height: 110px;
     }
     #logo {
-        width: 160px !important;
-        float: left !important;
+        /*width: 160px !important;
+        float: left !important;*/
         margin-left: 0px;
     }
     #logo a {
