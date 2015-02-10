@@ -281,7 +281,7 @@ jQuery(window).resize(function() {
     resizeSponsors();
     scrollListener();
     moveSponsors();
-    resizeNetcrackBanner();
+    //resizeNetcrackBanner();
     homepageSectionsResize();
 });
 
