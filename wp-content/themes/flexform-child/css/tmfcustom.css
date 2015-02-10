@@ -21,7 +21,6 @@ h1 {
 .mb30 { margin-bottom:30px; }
 .ml30 { margin-left:30px; }
 .mt20 { margin-top:20px; }
-.red-subtitle { border-top: 2px solid #d5410c; border-bottom: 2px solid #d5410c; font-size: 24px; font-weight: 400; padding: 8px 0px;}
 
 
 /**************************/
@@ -755,6 +754,8 @@ ul.list-within-list{font-size:14px;margin-left:57px;}
 /********************/
 /***HOTEL & TRAVEL***/
 /********************/
+.red-subtitle h2 { border-top: 2px solid #d5410c; border-bottom: 2px solid #d5410c; font-size: 24px; font-weight: 400; padding: 8px 0px;}
+.red-subtitle h2:before { display:none;}
 .hyt-ico{float:left;width:70px;text-align:center;font-size:12px;color:#999;}
 .hyt-ico img{-webkit-transition:transform 0.5s;-moz-transition:transform 0.5s;-o-transition:transform 0.5s;-ms-transition:transform 0.5s;transition:transform 0.5s;}
 .hyt-ico:hover img{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}
