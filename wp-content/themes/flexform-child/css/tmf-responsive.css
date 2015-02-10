@@ -1498,7 +1498,7 @@
     }
     #header-section {
         padding: 15px 0 0 0;
-        height: 110px;
+        /* height: 110px; */
     }
     #top-bar nav .menu>li {
         width: auto;
@@ -3367,9 +3367,6 @@
 }
 @media screen and (min-width: 641px) and (max-width: 840px) {
     .head .social-icon {
-        margin-left: 15% !important;
-        width: 25px !important;
-        border-top: none !important;
     }
     .head .span6:nth-child(2) {
         width: auto !important;
