@@ -342,9 +342,6 @@
 										<div class="head">
 					<header class="row-fluid">
 
-
-												<div class="divider"></div>
-
 						<!--// OPEN NAV SECTION //-->
 						<div id="nav-section" class="<?php echo $nav_class; ?> span12 clearfix">
 							<div id="logo">
