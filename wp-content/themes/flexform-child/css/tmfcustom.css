@@ -451,11 +451,9 @@ code p{margin:0px;color:#000;font-size:28px;}
 #main-navigation .menu .registerOnMenu, #mini-navigation .menu .social-icon, #mini-navigation .menu .menuItemHideOnTablet {display: none;}
 
 #nav-section #logo a, #nav-section #mini-logo a {float: none;margin: 0;}
-
 #nav-section {display: table;}
-
 #nav-section #logo {display: table-cell;vertical-align: middle;}
-
+#nav-section #logo img, #nav-section #mini-logo img {margin: auto;}
 #nav-section .logo-left .nav-wrap {display: table-cell;}
 
 
