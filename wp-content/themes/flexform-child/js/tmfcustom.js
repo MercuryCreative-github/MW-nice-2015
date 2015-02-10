@@ -14,7 +14,7 @@ function ini() {
     menuWidgetLiLinks();
     moveSponsors();
     //addNetcrackBanner();
-    resizeNetcrackBanner();
+    //resizeNetcrackBanner();
    
     reRowIotTabs();
 
@@ -49,7 +49,7 @@ function homepageSectionsResize(){
         $('section:lt(4)').css('height',screenHeight);
 
         // section01 (the woman) must be full height but taking out the menu and the sponsors height.
-        $('.section01').css('height',screenHeight-menuHeight);
+        $('.section01').css('height',screenHeight-menuHeight-sponsorsHeight);
 
     }
 }
@@ -853,7 +853,7 @@ function equalCoursesBoxes(){
 	});
 }
 
-function addNetcrackBanner(){
+/*function addNetcrackBanner(){
     topPos = 114;
     jQuery('body').prepend('<iframe class="netcrack-banner" src="http://banners.tmforum.org/abmw.aspx?z=67&isframe=true" width="120" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="position: absolute;top: '+topPos+'px;right: 10px;z-index: 1000;}"></iframe> '); 
 }
@@ -870,5 +870,4 @@ function resizeNetcrackBanner(){
    jQuery('iframe#netcrack-banner').attr('src','http://banners.tmforum.org/abmw.aspx?z='+num+'&isframe=true');
 
    //jQuery('iframe#netcrack-banner').after('<h1>'+jQuery(window).width()+'</h1>')
-}
-
+}*/
