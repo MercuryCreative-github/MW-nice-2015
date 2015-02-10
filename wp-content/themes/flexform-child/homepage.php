@@ -89,7 +89,7 @@ Template Name: Home Page
 			<div class="section01-slogan">DIGITAL BUSINESS:<br/><span>MAKING IT REAL</span></div>
 			<div class="section01-date">JUNE 1 - 4, 2015<br/><span>NICE - FRANCE</span></div>
 			<div class="section01-buttons">
-				<a class="sf-button large orange standard">Register</a>
+				<a href="/about-digital-disruption/register/" class="sf-button large orange standard">Register</a>
 				<a class="sf-button large green standard">Keep updated</a>
 				<div class="clear"></div>
 			</div>
