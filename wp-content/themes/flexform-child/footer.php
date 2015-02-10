@@ -69,10 +69,10 @@
 
 			<section id="footer" class="<?php echo $footer_class; ?>">
 				<div class="social-contact row-fluid">
-					<div class="span8 textwidget">
-						<img src="/wp-content/uploads/2014/07/contact-tmforum.png" alt="" />
+					<div class="span12 textwidget">
+						<img src="/wp-content/uploads/2015/02/contact-footer.png" alt="" />
 						<h3>Sign up to receive the latest conference announcements</h3>
-						<a id="updated" class="button medium noMargin btnviolet" href="#modal-1" data-toggle="modal">Join the Mailing List</a>
+						<a id="updated" class="sf-button large green standard" href="#modal-1" data-toggle="modal">Join Mailing List</a>
 						<div id="modal-1" class="modal hide fade" tabindex="-1">
 							<div class="modal-header" style="text-align: center;"><button class="close" type="button" data-dismiss="modal">×</button>
 								<img src="/wp-content/uploads/2014/06/logo-dd-51.png" alt="Keep up to date with the last event news." style="width: 50%;margin: auto;float: none;">							</div>
@@ -84,10 +84,7 @@
 							<div class="modal-body"><?php echo do_shortcode('[contact-form-7 id="20463" title="Sponsor and Exhibitor Guide"]'); ?></div>
 						</div>
 					</div>
-					<div class="span4">
-						<h3>Find Us On</h3>
-						<?php wp_nav_menu( array('menu' => 'social' )); ?>
-					</div>
+	
 				</div>
 				<div class="container">
 					<div id="footer-widgets" class="row clearfix">

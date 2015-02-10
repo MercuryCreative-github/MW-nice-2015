@@ -136,6 +136,8 @@
         margin: 0px 4px;
         padding: 3px 8px;
     }
+    .sec-main-content {width: 90%; margin: 0 auto;}
+    .section04-info {width: 57%;}
 }
 @media screen and (max-width: 1200px) {
     /*uber menu
@@ -445,8 +447,6 @@
     /* Homepage feeds */
     .feed-related-posts .feed-date-category {margin-bottom: 0;}
     .feed-date-category span.date {display: none;}
-    .feed-image {display: none;}
-    .feed-content {padding-left: 0;}
     .feed-content h4, .feed-related-posts h4 {margin-left: 0;}
 
     /*HP - Speakers */
@@ -463,7 +463,6 @@
     .homePageClass .case-study-box:first-child { margin-left: 10px; }
 
     /*HP - White Papers Boxes*/
-    .homePageClass a.sf-button.green { width: 92%; }
     .homePageClass .case-study-box p {
         min-height: 20px;
         padding: 30px 20px 0px 20px;
@@ -481,6 +480,16 @@
     .about-table .footer .footer-icon {
         padding: 0;
     }
+
+    ul.sponsors-logos {width: 90%}
+    .section02-companies li:first-child p, p.list-text {padding-left: 10px;}
+    .section02-companies li {padding-right: 10px;}
+    .feed-related-posts .feed-item {width: 95%;display: table;min-height: 170px;}
+    .feed-image{display: table-cell;}
+    .feed-content{display: table-cell;vertical-align: top;padding: 3px 10px;}
+    .feed-image {width: 230px;}
+    .feed-image img {max-height: 170px;height: 170px;}
+    
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -642,6 +651,12 @@
     body [class*="span"].home-ribbon:after {
         visibility: hidden;
     }
+    .section03-infobox01, .section03-infobox02 {width: 60%;float: none;margin: 0 auto;}
+    .section03-infobox01 h1{padding-top: 60px;}
+    .feed-image img {max-height: 90px;height: 90px;}
+    .feed-image {width: 120px;}
+    .feed-content-text {display: none;}
+    .feed-related-posts .feed-item{min-height: 90px;}
 }
 @media screen and (max-width: 905px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -681,6 +696,11 @@
     #main-navigation > div {
         display: block !important;
     }
+    .section01-info {margin: 0 auto;}
+    .section04-info {float: none;width: 70%;margin: 0 auto;}
+    .section04-title {text-align: center;}
+    .twitter-feed{float: none;width: 66%;margin: 0 auto;}
+    .review-photo img{width: 130px;}
 }
 @media screen and (max-width: 820px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {

@@ -85,16 +85,11 @@
 		?>
 
 		<!--// SITE META //-->
-		<meta http-equiv="Content-Type" content="text/html" charset="<?php bloginfo( 'charset' ); ?>" />
-		
-
-		
+		<meta http-equiv="Content-Type" content="text/html" charset="<?php bloginfo( 'charset' ); ?>" />		
                 
         <!--// SITE TITLE //-->
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		
-		
-			
 		<?php if ($enable_responsive) { ?><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"><?php } ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 		
@@ -200,9 +195,9 @@
 		</script>
 	
 	<!--// CLOSE HEAD //-->
-	<meta property="og:url" content="http://www.dd14.org/">
+	<meta property="og:url" content="http://www.tmforumlive.org/">
 	<meta property="og:title" content="Nice 2014">
-	<meta property="og:description" content="Digital Disruption 2014, Nice, France Dec 8 - 11 Join fellow CxOs and senior-level executives to learn how to transform your business into a digital powerhouse.">
+	<meta property="og:description" content="TM Forum Live 2015, Nice, France Jun 1 - 4 Join fellow CxOs and senior-level executives to learn how to transform your business into a digital powerhouse.">
 	<meta property="og:image" content="http://devsanjose2014.wpengine.com/wp-content/uploads/2014/09/tmforum200x200.png">
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="200">
@@ -212,7 +207,7 @@
 	<!--// OPEN BODY //-->
 	<body <?php body_class($page_class . ' ' . $is_responsive . ' ' . $extra_page_class. ' ' . get_field('custom_page_class')); ?>>
 
-	<img style="display:none;" src="/wp-content/uploads/2014/09/logo-dd14.png" alt="Digital Disruption 2014">
+	<img style="display:none;" src="/wp-content/uploads/2014/09/logo-dd14.png" alt="TM Forum Live 2015">
 	
 		<?php if (is_single()) { ?>
 		<!--// SOCIAL SCRIPTS //-->
@@ -335,46 +330,46 @@
 			</div>
 			<?php } ?>
 			
-			<!--// OPEN #header-section //-->
+			
+			<div id="header-section" class="<?php echo $header_layout; ?> <?php echo $logo_class; ?> clearfix">
+				<div class="container">
+                    <div class="head">
+						<header class="row-fluid" style="margin-top: 10px;">
+							<div id="logo" class="clearfix" style="float:left;padding-bottom:20px;margin-right: 20px;">
+								<a href="<?php echo home_url(); ?>" style="margin-top: 0;">
+									<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" style="width: 180px;">
+								</a>                   
+							</div>
+							<nav id="main-navigation">
+								<?php
+								if(function_exists('wp_nav_menu')) {
+								wp_nav_menu(array(
+								'theme_location' => 'main_navigation',
+								'fallback_cb' => ''
+								)); }
+								?>
+							</nav>
+						</header>
+					</div>
+				</div>
+			</div>
+
+			<!--// OPEN #header-section 
 			<div id="header-section" class="<?php echo $header_layout; ?> <?php echo $logo_class; ?> clearfix">
 			
 				<div class="container">
                     <div class="head">
 					<header class="row-fluid">
-					
 						<div id="logo" class="span6 clearfix">
 							<a href="<?php echo home_url(); ?>">
 								<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
-							</a>
-                            
-                        <div class="slogan">
-                            <span class="title">Nice, <span>France</span></span>
-                            <span class="date">June 1-4, 2015</span>
-                        </div> 
-                                                   
-						</div>
-                        
-                         
-                        <div class="span6">
-                			<nav class="call-to-action">
-                
-                                <?php wp_nav_menu( array('menu' => 'Call to Action', 'container' => 'false', 'items_wrap' => '%3$s' )); ?>           
-                                
-                                <div class="slogan-tablet">
-                                    <span class="title-tablet">Nice, France</span>
-                                    <span class="date-tablet">June 1-4, 2015</span>
-                                </div>                
-                                
-                			</nav>
-                        </div> 
-                        
-                        <div class="divider"></div>                       
-						
-						<!--// OPEN NAV SECTION //-->
+							</a>                   
+						</div>             //-->                                 
+						<!--// OPEN NAV SECTION 
 						<div id="nav-section" class="<?php echo $nav_class; ?> span12 clearfix">
-							<div class="nav-wrap clearfix">
+							<div class="nav-wrap clearfix">//-->
 								
-								<!--// OPEN MAIN NAV //-->
+								<!--// OPEN MAIN NAV
 								<a href="#" class="visible-phone show-menu"><?php _e("Select a page", "swiftframework"); ?><i class="icon-angle-down"></i></a>
 								<nav id="main-navigation">
 									
@@ -384,9 +379,9 @@
 									'theme_location' => 'main_navigation',
 									'fallback_cb' => ''
 									)); }
-									?>
+									?> //-->
 			
-								<!--// CLOSE MAIN NAV //-->
+								<!--// CLOSE MAIN NAV 
 								</nav>
 								
 								<?php if ($enable_nav_search) { ?>
@@ -407,14 +402,7 @@
                                 <a class="logo-mobile" href="<?php echo home_url(); ?>">
                                 	<img class="retina" src="<?php echo $retina_logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
                                 </a>
-                                
-                                <div class="slogan-mobile">
-                                    <span class="title">Nice, France</span>
-                                    <span class="date">June 1-4, 2015</span>            
-                                </div>
-                                
-                                <a target="_blank" class="register-btn-mobile">REGISTER</a>
-                                
+
                                 <button type="button" class="navbar-toggle">
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
@@ -431,9 +419,9 @@
 									?>                               
                                 </div>
                                 
-                            </div>                            
-						<!--// CLOSE NAV SECTION //-->
-						</div>
+                            </div>    //-->                        
+						<!--// CLOSE NAV SECTION 
+						</div>//-->
 
 						<!-- google-analytics -->
 						<script type="text/javascript">

@@ -146,7 +146,6 @@ Template Name: Home Page At The Event
 				$item['date'] = $rss_item->get_date('F j, Y');
 				$item['title'] = $rss_item->get_title();
 				$item['category'] = $rss_item->get_category()->get_label();
-				$item['categories'] = $rss_item->get_categories();
 				$item['image'] = null;
 				$DOM = new DOMDocument();
 				@$DOM->loadHTML($rss_item->get_description());

@@ -17,6 +17,8 @@ function ini() {
     resizeNetcrackBanner();
    
     reRowIotTabs();
+
+    homepageSectionsResize();
    
 
 //<iframe src=http://banners.tmforum.org/abmw.aspx?z=67&isframe=true width=120 height=600 frameborder=0 scrolling=no marginheight=0 marginwidth=0></iframe>
@@ -29,6 +31,27 @@ function ini() {
     // conference_move_widget_node();
     //hideSponsorsBeforeResize();
     //equalCoursesBoxes();
+}
+
+function homepageSectionsResize(){
+    var $ = jQuery;
+    if($('.page-template-homepage-php').index()>0){
+
+        var minHeight       = 768;
+        var screenHeight    = Math.max($(window).height(),minHeight);
+        var menuHeight      = $('#header-section').outerHeight();
+        var sponsorsHeight  = $('.section01-sponsors').outerHeight();
+
+        // remove boxed layout
+        $('.boxed-layout').removeClass('boxed-layout');
+
+        // every section from 1 to 4 has full height or 768 (min)
+        $('section:lt(4)').css('height',screenHeight);
+
+        // section01 (the woman) must be full height but taking out the menu and the sponsors height.
+        $('.section01').css('height',screenHeight-menuHeight);
+
+    }
 }
 
 function getParameterByName(name) {
@@ -259,6 +282,7 @@ jQuery(window).resize(function() {
     scrollListener();
     moveSponsors();
     resizeNetcrackBanner();
+    homepageSectionsResize();
 });
 
 jQuery(window).load(function() {
