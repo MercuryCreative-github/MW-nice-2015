@@ -413,7 +413,7 @@ ul.social-icons.dark.small li a{background-image:url(../images/social-icons-mono
 nav .menu > li:first-child > a{padding: 4px 18px;}
 .head .menu > li > a{padding: 4px 18px;margin: 0 !important;line-height: normal;}
 .logo-left.clearfix .menu > li > ul > li > a {text-transform: none;}
-.logo-left.clearfix .menu > li:hover > a, .head .menu .current-menu-item > a{color:#fff ;background-color:#7e7e82 ;}
+.logo-left.clearfix .menu > li:hover > a, .head .menu .current-menu-item > a{color: #fff!important;background-color:#7e7e82 ;}
 .menu{margin:0 !important}
 .menu .icon-2x {font-size: 18px;position: relative;top: 3px;}
 .mini-nav-wrap{margin-top:25px;}
