@@ -140,12 +140,13 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 
 #hp-section {padding: 30px 0;}
 .sec-main-content {width: 1230px;margin: 0 auto;}
-
+.sf-button {cursor: pointer;}
 /*.section02-companies ul*/
 .section01 {
 	background-image: url('/wp-content/uploads/2015/02/Slider01-bkg.jpg');
 	background-size: cover;
 	position: relative;
+	background-position: right;
 }
 .section01-info {
 		width: 350px;
@@ -302,10 +303,10 @@ p.list-text, .section02-companies li {
 	font-size: 21px;
 	text-transform: uppercase;
 	color: #444;
-	margin: 30px 0 10px 0;
+	margin:20px 0 40px 0;
 	max-width: 100%;
 }
-.container h2.tw-title:before{content: url('/wp-content/uploads/2015/02/icon-twitter.png');left: -4px;top: -12px;position: relative;margin-right: 10px;}
+.container h2.tw-title:before{content: url('/wp-content/uploads/2015/02/icon-twitter.png');left: -4px;top: 18px;position: relative;margin-right: 10px;}
 
 /*section05*/
 .section05 {
@@ -410,7 +411,7 @@ ul.social-icons.dark.small li a{background-image:url(../images/social-icons-mono
 nav .menu > li:first-child > a{padding: 4px 18px;}
 .head .menu > li > a{padding: 4px 18px;margin: 0 !important;line-height: normal;}
 .logo-left.clearfix .menu > li > ul > li > a {text-transform: none;}
-.logo-left.clearfix .menu > li:hover > a, .head .menu .current-menu-item > a{color:#fff ;background-color:#4476b3 ;}
+.logo-left.clearfix .menu > li:hover > a, .head .menu .current-menu-item > a{color:#fff ;background-color:#7e7e82 ;}
 .menu{margin:0 !important}
 .menu .icon-2x {font-size: 18px;position: relative;top: -2px;}
 .mini-nav-wrap{margin-top:25px;}
@@ -1628,11 +1629,11 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 /****************/
 #footer{padding-top:0px;border-top:0px none !important;}
 .social-contact{background:rgb(246,246,246);overflow:hidden;}
-.social-contact img{float:left;margin-right:70px;}
+.social-contact img{float:left;margin-right:70px;margin-bottom: 30px;}
 .social-contact > div{padding:40px;}
 .social-contact > div:last-child{padding-left:0; padding-right: 0;}
 .social-contact .span8 h3{padding:0 60px;}
-.social-contact h3{font-weight:normal;width: 70%;margin-top: 54px;}
+.social-contact h3{font-weight:normal;display: table-cell;vertical-align: middle;}
 .social-contact a#updated{color:#FFF !important;display:inline-block;margin-top:10px !important;}
 #footer-widgets{padding-top:20px;}
 .textwidget .tmforum-footer {width: 100%; text-align: center; margin-top: 10px;}
