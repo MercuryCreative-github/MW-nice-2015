@@ -454,7 +454,7 @@ code p{margin:0px;color:#000;font-size:28px;}
 
 #nav-section {display: table;}
 
-#nav-section #logo {display: table-cell;vertical-align: bottom;}
+#nav-section #logo {display: table-cell;vertical-align: middle;}
 
 #nav-section .logo-left .nav-wrap {display: table-cell;}
 
