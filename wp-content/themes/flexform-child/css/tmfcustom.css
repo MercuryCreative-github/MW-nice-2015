@@ -410,7 +410,7 @@ ul.social-icons.dark.small li a{background-image:url(../images/social-icons-mono
 nav .menu > li:first-child > a{padding: 4px 18px;}
 .head .menu > li > a{padding: 4px 18px;margin: 0 !important;line-height: normal;}
 .logo-left.clearfix .menu > li > ul > li > a {text-transform: none;}
-.logo-left.clearfix .menu > li:hover > a, .head .menu .current-menu-item > a{color:#fff ;background-color:#7e7e82;}
+.logo-left.clearfix .menu > li:hover > a, .head .menu .current-menu-item > a{color:#fff ;background-color:#4476b3 ;}
 .menu{margin:0 !important}
 .menu .icon-2x {font-size: 18px;position: relative;top: -2px;}
 .mini-nav-wrap{margin-top:25px;}
@@ -765,11 +765,7 @@ ul.list-within-list{font-size:14px;margin-left:57px;}
 /********************/
 /***HOTEL & TRAVEL***/
 /********************/
-<<<<<<< HEAD
-.red-subtitle h2 { border-top: 2px solid #d5410c; border-bottom: 2px solid #d5410c; font-size: 24px; font-weight: 400; padding: 8px 0px;}
-=======
 .red-subtitle h2 { border-bottom: 1px solid #d5410c; font-size: 24px; font-weight: 400; padding: 8px 0px;}
->>>>>>> 4c5381d9dfe38208a89c7c119364a533de1b25a7
 .red-subtitle h2:before { display:none;}
 .hyt-ico{float:left;width:70px;text-align:center;font-size:12px;color:#999;}
 .hyt-ico img{-webkit-transition:transform 0.5s;-moz-transition:transform 0.5s;-o-transition:transform 0.5s;-ms-transition:transform 0.5s;transition:transform 0.5s;}
