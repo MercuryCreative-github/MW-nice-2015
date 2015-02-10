@@ -347,11 +347,6 @@
 								<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
 							</a>
 
-												<div class="slogan">
-														<span class="title">San Jose, <span>California</span></span>
-														<span class="date">December 8-11, 2014</span>
-												</div>
-
 						</div>
 
 
@@ -524,7 +519,7 @@
 						<?php }
 					}
 				?>
-				
+
 				<!--// OPEN .container //-->
 				<div class="container">
 
