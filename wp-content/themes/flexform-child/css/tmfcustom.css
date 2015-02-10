@@ -2699,3 +2699,9 @@ input[type="submit"] {
 		color: white;
 		text-transform: uppercase;
 }
+
+#gform_submit_button_1 {
+		display: block;
+		padding: 10px 0;
+		width: 100%;
+}
