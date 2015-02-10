@@ -11,6 +11,7 @@ h1 {
 	text-transform: uppercase;
 	font-size: 40px !important;
 }
+
 .ui-tabs-panel p {padding: 0;}
 .white-background { background:#FFF;}
 .no-shadow #container { box-shadow:none;}
@@ -59,6 +60,7 @@ h1 {
 	font-weight:100;
 	font-size: 40px;
 }
+
 .summit-main-title h1 {margin-bottom: 0;color: #fff;}
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].summit-main-title {color: #fff;margin-bottom: 30px; position: relative;}
 .summit-main-title p {font-size: 20px;}
@@ -2671,9 +2673,9 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 /*}*/
 
 .emodal.fixed {
-position: relative;
-width:290px;
-margin:auto 0;
+	position: relative;
+	width:290px;
+	margin:auto 0;
 }
 
 .emodal.fixed input { width: 80%;}
