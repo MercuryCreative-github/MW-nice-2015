@@ -412,7 +412,7 @@ nav .menu > li:first-child > a{padding: 4px 18px;}
 .logo-left.clearfix .menu > li > ul > li > a {text-transform: none;}
 .logo-left.clearfix .menu > li:hover > a, .head .menu .current-menu-item > a{color:#fff ;background-color:#4476b3 ;}
 .menu{margin:0 !important}
-.menu .icon-2x {font-size: 13px;position: relative;top: -2px;}
+.menu .icon-2x {font-size: 18px;position: relative;top: -2px;}
 .mini-nav-wrap{margin-top:25px;}
 /* Menu customize */
 .nav-border{border-top:1px solid #d2d3d5;}
@@ -433,7 +433,7 @@ nav .menu > li:first-child > a{padding: 4px 18px;}
 #mini-navigation .menu li.social-icon:last-child a span {display:none}
 .navbar-collapse .social-icon {display: block;}
 #nav-pointer{background-color:transparent !important;}
-.twitterhastag{font-size: 0.8em;margin-left: 5px;color: darkorange;top: -3px;position: relative;}
+.twitterhastag{font-size: 0.9em;margin-left: 5px;top: -3px;position: relative;}
 .social-icon:hover >.twitterhastag:hover{color: white;}
 nav .menu ul{background:url("../images/submenutop.png") no-repeat scroll center top rgba(0, 0, 0, 0);display:none;height:auto;left:0px;margin:0;min-width:180px; width:100%;padding-top:10px !important;position:absolute;top:21px;z-index:9995;border:none !important;}
 nav .menu ul li{border-bottom:1px solid #eeeeee !important;background:#fff !important;}
