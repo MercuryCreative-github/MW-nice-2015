@@ -2640,3 +2640,57 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 .discount-circle p span.circle-simbol {
 		font-size: 30px;
 }
+
+
+/****** MODAL *****/
+
+#modal-overlay {
+		background: rgba(0, 0, 0)!important;
+}
+.modal>:first-child {
+		margin-top: 0;
+		color: black!important;
+}
+.modal.tiny {
+		border: 0!important;
+		color: black!important;
+}
+/*.eModal-1 {
+		cursor: pointer;
+		padding: 10px 60px;
+		display: inline-block;
+		margin: 5px auto;
+		background-color: #793A89;
+		color: #fff!important;
+		font-family:'Titillium Web', Arial, sans-serif;
+		font-size: 22px;
+		text-shadow: none;
+		font-weight: 700;*/
+/*    -webkit-box-shadow: 0 0 40px 2px #BBBBBB;
+		box-shadow: 0 0 40px 2px #BBBBBB;*/
+/*}*/
+
+.emodal.fixed {
+position: relative;
+width:290px;
+margin:auto 0;
+}
+
+.emodal.fixed input { width: 80%;}
+
+
+/*MODAL*/
+.tiny.modal.active.theme-1 {
+		background-image: url('/wp-content/uploads/2014/07/logo-menu.png');
+		background-repeat: no-repeat;
+		background-size: 33%;
+		background-position: 217px 20px;
+		padding: 130px 40px 40px 40px !important;
+}
+.modal .title {
+		text-align: center;
+		font-size: 27px !important;
+		font-family: 'Titillium Web' sans-serif !important;
+		border-top: #e4e4e4 1px solid;
+		padding-top: 15px;
+}
