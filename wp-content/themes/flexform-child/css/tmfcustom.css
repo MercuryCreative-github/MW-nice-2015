@@ -5,6 +5,12 @@
 /**************************/
 /*** TMF GENERAL STYLES ***/
 /**************************/
+
+h1 {
+	font-family: 'Open Sans' sans-serif !important;
+	text-transform: uppercase;
+	font-size: 40px !important;
+}
 .ui-tabs-panel p {padding: 0;}
 .white-background { background:#FFF;}
 .no-shadow #container { box-shadow:none;}
@@ -15,6 +21,8 @@
 .mb30 { margin-bottom:30px; }
 .ml30 { margin-left:30px; }
 .mt20 { margin-top:20px; }
+.red-subtitle { border-top: 2px solid #d5410c; border-bottom: 2px solid #d5410c; font-size: 24px; font-weight: 400; padding: 8px 0px;}
+
 
 /**************************/
 /********* BUTTONS ********/
@@ -126,6 +134,201 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 }
 
 .tabs-summits-content{width: 90%!important;margin-left: 4%;}
+
+/**************************/
+/******* HOME PAGE ********/
+/**************************/
+
+.sec-main-content {width: 1230px;margin: 0 auto;}
+
+/*.section02-companies ul*/
+.section01 {
+	background-image: url('/wp-content/uploads/2015/02/Slider01-bkg.jpg');
+	background-size: cover;
+	position: relative;
+}
+.section01-info {
+		width: 350px;
+	margin-top: 3%
+}
+.section01-slogan, .section01-date {
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 22px;
+	line-height: 33px;
+	font-family: "Roboto" sans-serif;
+}
+.section01-slogan {
+	border: #d6d7dc 1px solid;
+	border-left: none;
+	border-right: none;
+	margin: 15px 0;
+	padding: 15px 0;
+}
+.section01-slogan span {
+	font-weight: 400;
+	font-size: 38px;
+}
+.section01-date {
+	font-size: 32px;
+	line-height: 39px;
+	font-weight: 500;
+}
+.section01-date span {font-weight: 100;}
+.section01-buttons {margin-top: 30px;}
+.section01-buttons a {
+	border-radius: 5px;
+	float:left;
+}
+.section01-buttons a.orange {
+	background-color: #cb6d1e;
+	padding: 10px 36px;
+}
+.section01-buttons a.green {
+	background-color: #74a939;
+	padding: 10px 20px;
+	margin-right: 0;
+}
+.section01-sponsors {
+	border-bottom: #d6d7dc 1px solid;
+	padding: 20px 0 0 0;
+	background: white;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+ul.sponsors-logos {margin: 0 auto;display: table;width: 1230px;}
+ul.sponsors-logos li {
+
+	float: left;
+	margin: 0;
+	width: 31%;
+	text-align: center;
+}
+ul.sponsors-logos li.logos-title, p.list-text {
+	text-transform: uppercase;
+	font-size: 18px;
+	display: table-cell;
+	width: 33%;
+}
+ul.sponsors-logos li.logos-title {padding-top: 25px;}
+
+/*section02*/
+.title-green {margin-top: 60px;}
+.title-green h1 {font-weight: 100 !important;color: #6da96f;}
+.section02-text {
+	float: left;
+	width: 47%;
+	font-size: 18px;
+	line-height: 30px;
+}
+.section02-list {
+	float: right;
+	width: 45%;
+	border-left: 1px #e4e4e4 solid;
+	padding-left: 30px;
+}
+.section02-list ul li { margin-bottom: 20px; display: table; width: 100%;}
+.section02-list ul li img, .section02-companies li img { margin-right: 0; display: table-cell;}
+p.list-text, .section02-companies li {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+	width: 85%;
+}
+.section02-companies {
+	margin-top: 100px;
+	border-top: 1px #e4e4e4 solid;
+	padding-top: 40px;
+}
+.section02-companies li {vertical-align: top;width: auto;min-width: 100px;padding-right: 80px}
+.section02-companies li:first-child {display: table;}
+.section02-companies ul {display: table;}
+
+.section02-companies li:first-child p {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 15px;
+}
+
+/*section03*/
+.section03 {
+	background-image: url('/wp-content/uploads/2015/02/networking-bg.png');
+	background-size: cover;
+	min-height: 785px;
+}
+.section03-infobox01{
+	background-image: url('/wp-content/uploads/2015/02/box-networking.png');
+	background-size: cover;
+}
+.section03-infobox01, .section03-infobox02 {
+	width: 45%;
+	height: 400px;
+	float: left;
+	margin-top: 162px;
+	text-align: center;
+}
+.section03-infobox02{background-color: #FFF;}
+.section03-infobox01 h1 {margin-top: 20%;}
+.section03-infobox01 .sf-button.large {border-radius: 5px;margin-top: 20px;}
+
+.section03-top {border-top: 4px #5dc261 solid;margin-bottom: 40px;}
+.section03-top h1 {margin: 20px 0 0;}
+.section03-top span {
+	font-size: 37px;
+	color: #5c5b5f;
+	border-bottom: 3px #e4e4e4 solid;
+	line-height: 70px;
+}
+.section03-top ul li {
+	float: left;
+	width: 31%;
+}
+.section03-top ul li:first-child{border-right: #e4e4e4 2px solid;}
+.section03-top ul li:last-child{border-left: #e4e4e4 2px solid;}
+.section03-bottom {background-color: #f8f8f9;min-height: 131px;}
+.section03-bottom ul {padding: 20px;}
+.section03-bottom ul li{float: left;margin-right: 15px;}
+
+/*section04*/
+.section04 {background-color: #e7e8e9;}
+.section04-info {width: 65%}
+.section04-title {margin: 60px 0 30px 0;}
+
+/*section05*/
+.section05 {
+	background-color: #266073;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+.section05-title h1, .section03-infobox01 h1 {text-align: center;color: #FFF;}
+.review-photo {display: table-cell; width: 25%;}
+.review-photo img {border-radius: 50%;width: 180px;border: 3px #e4e4e4 solid;}
+.review-content,.review-name p {display: table-cell; vertical-align: middle;}
+.review-text {
+	color: #FFF;
+	font-weight: 100;
+	font-style: italic;
+	line-height: 30px;
+	font-size: 17px;
+}
+.review-name{display: table;margin-top: 20px;}
+.review-name img{display: table-cell;margin-right: 20px;}
+.review-name p {
+	line-height: 23px;
+	color: #FFF;
+	font-weight: 100;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /*NICE 14* - borrar cosas viajas de aca a medida que se arma el sitio nuevo para mantener ordenado/
@@ -348,7 +551,7 @@ li.recent-posts-extended .rpwe-block ul.rpwe-ul li.rpwe-clearfix{border-bottom:#
 .home-sponsors #p-toa{margin-left:15%;}
 
 /* TMF KEYNOTES */
- .homespeakers h3{font-size:20px;margin-bottom:5px;}
+.homespeakers h3{font-size:20px;margin-bottom:5px;}
 .homespeakers .position{margin-bottom:5px;}
 .homespeakers .modal-body{max-height:1200px;}
 #topics-container p{margin:0;}
@@ -385,13 +588,6 @@ li.recent-posts-extended .rpwe-block ul.rpwe-ul li.rpwe-clearfix{border-bottom:#
 .feautered h1{font-size:27px;font-weight:bold;color:#575757;}
 .speakers-home{width:12.5%;float:left;margin-right:5%;}
 /*end keynotes*/
-
-/*Slider HP Speakers*/
-.hp_speakers img {
-	border-radius: 50%;
-	width: 130px;
-	height: 130px;
-}
 
 #footer{background:#4D4D4D !important;}
 #footer .widget_nav_menu ul{border:none !important;}
@@ -441,122 +637,64 @@ nav .menu ul{background-color:transparent !important;}
 .dday-table{border-left:#C78C32 5px solid;color:#444444;border-radius:initial;}
 
 /* FEED INFORM **/
-.feed-related-posts {padding-bottom: 10px;border-bottom: 2px solid lightgray; margin-bottom: 15px;}
 .feed-related-posts .home-titles { padding-bottom: 10px; border-bottom: 2px solid lightgray;}
 .feed-related-posts .home-titles img {width: 40px;margin-right: 5px;float: left;}
-.feed-related-posts h4 {margin-left: 10px;}
 .feed-related-posts h1 {
-    font-weight:normal;
-    margin-bottom:0px;
-    border-bottom: 1px solid #D0D0D0;
-    text-transform: uppercase;
-    padding-bottom: 15px;
-    font-size: 32px;
+		font-weight:normal;
+		margin-bottom:0px;
+		border-bottom: 1px solid #D0D0D0;
+		text-transform: uppercase;
+		padding-bottom: 15px;
+		font-size: 32px;
 }
 .feed-related-posts .wpb_row {
-    margin-bottom: 0;
-    float:left;
-    clear:both;
-    width:100%;
-    border-top:2px solid #fafafa;
+		margin-bottom: 0;
+		float:left;
+		clear:both;
+		width:100%;
+		border-top:2px solid #fafafa;
 }
 .feed-related-posts .feed-container h2{
-    margin-bottom:20px;
-    border-bottom: 2px solid #000;
-    font-size: 20px;
-    float: left;
-    padding-bottom: 2px;
+		margin-bottom:20px;
+		border-bottom: 2px solid #000;
+		font-size: 20px;
+		float: left;
+		padding-bottom: 2px;
 }
-.feed-related-posts .feed-item {
-    clear:both;
-    margin: 10px 0;
-    padding: 0px 10px 10px 10px;
-}
+.feed-related-posts .feed-item {float: left; width: 300px;min-height: 380px;background-color:#fff;color: #444;margin: 0 15px 15px 0;}
+.feed-related-posts .feed-item:nth-child(3) {background-color: #6da96f;color: #fff;}
+.feed-related-posts .feed-item:nth-child(2) {background-color: #5fa098;color: #fff;}
 .feed-related-posts .feed-item:hover {background-color: #F2F2F2;}
+.feed-related-posts .feed-item:nth-child(3):hover {background-color: #4C884E;color: #fff;}
+.feed-related-posts .feed-item:nth-child(2):hover {background-color: #4F8B83;color: #fff;}
 .feed-related-posts .feed-item:last-child {border-width: 0;}
-.feed-related-posts .feed-date-category {
-    font-size:12px;
-    color:#666;
-    font-weight:bold;
-    text-transform: uppercase;
+.feed-related-posts .feed-author {
+		font-size:14px;
+		font-weight:bold;
+		text-transform: uppercase;
 }
-.feed-related-posts .feed-date-category span.category {color:#d19e43;}
+.feed-related-posts .feed-author:after {
+	border-bottom: 3px #444 solid;
+	height: 20px;
+}
 #logo-tmf {padding-bottom: 55px;}
 .feed-title {
-	color: #666;
+	color: #444;
 	font-weight: 400;
-	font-size: 15px;
-	margin: 0;
-}
-.feed-content a:hover {text-decoration: none;}
-.feed-image{display:table-cell; width: 80px;}
-.feed-content{display:table-cell; vertical-align:top; padding-left: 10px;}
-/* END FEED INFORM **/
-
-/* FEED INFORM AT THE EVENT */
-.feed-posts-at-event {padding-bottom: 10px; margin-bottom: 15px;}
-.feed-posts-at-event .home-feed-header { float: left; }
-.feed-posts-at-event .feed-button { float: right; }
-.feed-posts-at-event .home-feed-header img { width: 290px; }
-.feed-posts-at-event .home-feed-header p { color: #999; font-weight: bold; }
-.feed-posts-at-event .home-titles { padding-bottom: 10px; border-bottom: 2px solid lightgray;}
-.feed-posts-at-event.home-titles img {width: 40px;margin-right: 5px;float: left;}
-.feed-posts-at-event h4 {}
-.feed-posts-at-event h1 {
-    font-weight:normal;
-    margin-bottom:0px;
-    border-bottom: 1px solid #D0D0D0;
-    text-transform: uppercase;
-    padding-bottom: 15px;
-    font-size: 32px;
-}
-.feed-posts-at-event .wpb_row {
-    margin-bottom: 0;
-    float:left;
-    clear:both;
-    width:100%;
-    border-top:2px solid #fafafa;
-}
-.feed-posts-at-event .feed-container h2{
-    margin-bottom:20px;
-    border-bottom: 2px solid #000;
-    font-size: 20px;
-    float: left;
-    padding-bottom: 2px;
-}
-.feed-posts-at-event .feed-item {
-	margin: 10px 10px 10px 10px;
-	padding: 20px 0px 20px 20px;
-	width: 44%;
-	float: left;
-}
-.feed-posts-at-event .feed-item:hover {background-color: #F2F2F2;}
-.feed-posts-at-event .feed-item:last-child {border-width: 0;}
-.feed-posts-at-event .feed-date-category {
-    font-size:12px;
-    color:#666;
-    font-weight:bold;
-    text-transform: uppercase;
-    margin: 20px 0 0;
-	padding-right: 20px;
+	font-size: 16px;
 	line-height: 20px;
-}
-.feed-posts-at-event .feed-date-category span.category {color:#d19e43;}
-#logo-tmf {padding-bottom: 55px;}
-.feed-title {
-	color: #666;
-	font-weight: 400;
-	font-size: 15px;
 	margin: 0;
 }
+.feed-content-text a p {font-size: 15px; font-weight: 200; line-height: 20px; color:#444;}
+.feed-item:nth-child(2) .feed-title,
+.feed-item:nth-child(3) .feed-title,
+.feed-item:nth-child(2) .feed-content-text a p,
+.feed-item:nth-child(3) .feed-content-text a p {color: #FFF;}
 .feed-content a:hover {text-decoration: none;}
-.feed-posts-at-event .feed-image{ width: 100%;}
-.feed-posts-at-event .feed-content{
-	display: block;
-	vertical-align: top;
-	padding-left: 0;
-}
-/* END FEED INFORM AT THE EVENT */
+.feed-image{width: 300px;}
+.feed-image img{max-height: 200px;height: 200px;}
+.feed-content{padding: 20px;}
+/** END FEED INFORM **/
 
 /****************/
 /*** About Us ***/
@@ -587,11 +725,11 @@ nav#exhibitors-navigation .menu li a:hover{color:#fff !important;}
 .page-template-exhibitors-template-php .inner-page-wrap{margin-top:0px;}
 .cub-top{position:absolute;z-index:20;right:-285px;top:90px;width:496px;}
 /*main title's cubes*/
- #title-cubes{width:415px;height:350px;background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/header-lighter-cubes.png');background-repeat:no-repeat;position:absolute;left:600px;top:100px;}
+#title-cubes{width:415px;height:350px;background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/header-lighter-cubes.png');background-repeat:no-repeat;position:absolute;left:600px;top:100px;}
 /*main title paragraph*/
- p#title{margin-left:0px;font-size:18px;line-height:1.5em;padding:0;}
+p#title{margin-left:0px;font-size:18px;line-height:1.5em;padding:0;}
 /********SECTIONS********/
- .wpb_box_text .box-content-wrap{padding:12px 15px;margin-top:20px;box-shadow:none;border-top:1px solid #EEEDEE;border-bottom:1px solid #EEEDEE;}
+.wpb_box_text .box-content-wrap{padding:12px 15px;margin-top:20px;box-shadow:none;border-top:1px solid #EEEDEE;border-bottom:1px solid #EEEDEE;}
 .downloadsponsors{margin-bottom:35px;}
 
 /***********************/
@@ -622,7 +760,7 @@ ul.list-within-list{font-size:14px;margin-left:57px;}
 .hyt-ico:hover img{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}
 .hotel-travel .wpb_single_image{margin-bottom:0;}
 /* General CSS Fixes */
- a.green-btn:hover, #box-newsletter .form-fields input[type="submit"]:hover{-webkit-box-shadow:0 0 10px #55AA00;box-shadow:0 0 10px #55AA00;}
+a.green-btn:hover, #box-newsletter .form-fields input[type="submit"]:hover{-webkit-box-shadow:0 0 10px #55AA00;box-shadow:0 0 10px #55AA00;}
 p.view-more-home{background:#979797;color:#fff;padding:8px 0px;text-align:center;width:120px;margin:0 auto;}
 p.view-more-home:hover{box-shadow:0 0 10px #979797;}
 p.view-more-home a{color:#fff;text-decoration:none !important;}
@@ -634,11 +772,11 @@ p.view-more-home a{color:#fff;text-decoration:none !important;}
 ul.bullet-bold li, ol.bullet-bold li{font-weight:bold;margin:0 0 14px 14px;}
 ul.bullet-bold li span, ol.bullet-bold li span{font-weight:normal;}
 /* Remove Bullet on List */
- .page-content ul.portfolio-items li{list-style-type:none;}
+.page-content ul.portfolio-items li{list-style-type:none;}
 /* Titles in content with shadow */
- body [class*="span"].title-container{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/shadow.png');background-repeat:no-repeat;background-position:left bottom;padding-bottom:25px;overflow:visible;margin:0 0 -20px 0;margin-bottom:-25px!important;}
+body [class*="span"].title-container{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/shadow.png');background-repeat:no-repeat;background-position:left bottom;padding-bottom:25px;overflow:visible;margin:0 0 -20px 0;margin-bottom:-25px!important;}
 /* Titles in content with shadow */
- .title-container .title{padding:8px 15px;color:#444444;font-size:18px;line-height:1.5em;border-top:1px solid #EEEDEE;border-bottom:1px solid #EEEDEE;background:#f9f9f9;margin-bottom:20px;}
+.title-container .title{padding:8px 15px;color:#444444;font-size:18px;line-height:1.5em;border-top:1px solid #EEEDEE;border-bottom:1px solid #EEEDEE;background:#f9f9f9;margin-bottom:20px;}
 .sponsors .item-logo{height:140px;display:inline-block;vertical-align:middle;text-align:center;}
 .sponsors .item-logo img{margin:0 auto;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);opacity:0;width:70%;-webkit-transition:all 1000ms ease;-moz-transition:all 1000ms ease;-o-transition:all 1000ms ease;-ms-transition:all 1000ms ease;transition:all 1000ms ease;}
 .wrap-logo-featured img{float:left;margin:19px 27px 0 22px;}
@@ -675,7 +813,7 @@ ul.bullet-bold li span, ol.bullet-bold li span{font-weight:normal;}
 /****************/
 /*** DIVIDERS ***/
 /****************/
- .shadowDivider{background:url(http://www.tmforumlive.org/wp-content/uploads/2014/01/shadow3.png) no-repeat;background-size:100% 100%;height:50px;background-position:center bottom;margin-bottom:-20px;border:0;}
+.shadowDivider{background:url(http://www.tmforumlive.org/wp-content/uploads/2014/01/shadow3.png) no-repeat;background-size:100% 100%;height:50px;background-position:center bottom;margin-bottom:-20px;border:0;}
 .lineDivider{border-bottom:1px solid #e5e5e5;}
 .noLineDivider{border:0;border-bottom-width:0;height:20px;}
 
@@ -787,7 +925,7 @@ iframe#twitter-widget-0{width:100% !important;}
 /****************/
 
 /**** Box Newsletter Styles ****/
- #box-newsletter{clear:both;background:#F5F5F5;border-radius:0px;padding:1px 11px 11px;border:1px solid #E0E0E0;}
+#box-newsletter{clear:both;background:#F5F5F5;border-radius:0px;padding:1px 11px 11px;border:1px solid #E0E0E0;}
 #box-newsletter h3{color:#95c83e;font-size:21px;padding-top:7px;line-height:27px;background:url(../images/E-mail-icon.png) right top no-repeat;padding-right:80px;height:62px;}
 #box-newsletter .form-fields input[type="text"], #box-newsletter .form-fields input[type="email"]{border:1px solid #ccc;box-shadow:0 0 0 transparent;border-radius:0;font-family:"Titillium Web", sans-serif;width:88%;display:block;padding:9px 9px;background:#FCFCFC;margin:0 auto 8px;}
 #box-newsletter .form-fields input[type="submit"]{background:#65cb00;color:#fff;display:block;width:168px;padding:6px 0;border-radius:0;margin:12px auto;font-size:16px;}
@@ -810,7 +948,7 @@ iframe#twitter-widget-0{width:100% !important;}
 #box-newsletter2 hr{margin:10px 0;}
 #box-newsletter2 .cyan{color:#29ABE2;}
 /*Widget for EXHIBIT BOOTH & SPONSORSHIP SALES*/
- .widget-sponsorship{height:75px;background-color:#FF9900;border-bottom:#FFC769 5px solid;}
+.widget-sponsorship{height:75px;background-color:#FF9900;border-bottom:#FFC769 5px solid;}
 .sidebar-ad-grid-sponsorship{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/bkg-widget-contact.jpg');background-position:bottom;background-repeat:no-repeat;padding-bottom:20px;}
 .line-sponsorship{margin:0 10px 20px 10px;padding-bottom:20px;text-align:center;background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/line-widget-contact.png');background-repeat:no-repeat;background-position:bottom;}
 .p-sponsorship{padding-top:25px;margin-bottom:30px;font-weight:700;color:#4F4F4F;text-align:center;}
@@ -818,7 +956,7 @@ iframe#twitter-widget-0{width:100% !important;}
 /**** SPONSORS WIDGET ****/
 .sidebar .widget-advert-grid .widget-heading h4{font-size:18px;border-bottom:0;color:#FFF;display:block;background:#44ABE1;text-align:center;margin-top:25px;margin-bottom:0;padding:10px;}
 /* get rid of margin top in platinum page */
- .platinum-program .widget-advert-grid .widget-heading h4{margin-top:0;}
+.platinum-program .widget-advert-grid .widget-heading h4{margin-top:0;}
 .widget-advert-grid ul li{float:none;display:block;width:100%;margin:30px auto;}
 .widget-advert-grid ul{margin:0px auto;}
 .sidebar-ad-grid{-webkit-box-shadow:none;box-shadow:none;}
@@ -861,10 +999,10 @@ ul.listoverview li a {color: #444;}
 /************/
 /* Pricing */
 /**********/
- .phase_1.padd_gen{margin-top:40px !important;}
- .passes-prices .text-box p{ vertical-align: middle; text-align: center; font-size: 24px; padding: 0 20px;}
- .passes-prices .text-box a.btn-readmore {color: white; background-color: #ffaf00;  padding: 10px 20px;}
- .passes-prices .text-box img{margin-bottom: 28px; }
+.phase_1.padd_gen{margin-top:40px !important;}
+.passes-prices .text-box p{ vertical-align: middle; text-align: center; font-size: 24px; padding: 0 20px;}
+.passes-prices .text-box a.btn-readmore {color: white; background-color: #ffaf00;  padding: 10px 20px;}
+.passes-prices .text-box img{margin-bottom: 28px; }
 
 
 /************************/
@@ -987,7 +1125,7 @@ nav#justify-navigation .menu li:hover{background:rgb(68, 171, 225);}
 
 /***************/
 /*CABLE SUMMIT*/
- /************/
+/************/
 .cable-summit ul li{margin-bottom:5px;}
 
 /*****************************/
@@ -1059,14 +1197,14 @@ div.ot-table-container .blue{background-color:#28759A;color:#FFF;}
 .vip-p img{border-bottom:solid 3px;margin-bottom:10px;padding-bottom:10px;}
 .vip-p{border-bottom:solid 1px;font-size:16px;}
 /*For the box*/
- .wpb_box_text.whitestroke .box-content-wrap{position:relative;border:0 none;box-shadow:none;}
+.wpb_box_text.whitestroke .box-content-wrap{position:relative;border:0 none;box-shadow:none;}
 .wpb_box_text.whitestroke .box-content-wrap:after{content:url(../images/bg-mtools.png);bottom:-28px;position:absolute;left:2px;}
 .box-content-wrap .box_width{width:97%;}
 a.button-vip{margin-bottom:0;}
 /* GENERAL */
- .featured-box{background-color:#fafafa!important;color:#494949;}
+.featured-box{background-color:#fafafa!important;color:#494949;}
 /*Page:Contact us;Section:social networking*/
- .network_text_column{margin-left:70px;}
+.network_text_column{margin-left:70px;}
 .contactus_icon_column{float:left;width:52px;}
 a.dark-green{background-color:#AAC32A;color:#FFF;}
 /*Mobile App*/
@@ -1082,12 +1220,12 @@ a.blue02{background-color:#0B74B4;color:#FFF;}
 /****************************************/
 .anchorScroll{transition:color 0.2s;}
 .anchorScroll:hover{text-decoration:none;color:rgb(68, 171, 225);}
- h4, h4 a{color:#000000;/*font-family:Helvetica!important;*/margin-bottom:0;/*there is a 'margin:10px 0;' in the bootstrap.min.css line 9 that stop this one to work*/font-size:15px;/*text-transform:Capitalize;*/line-height:20px;}
+h4, h4 a{color:#000000;/*font-family:Helvetica!important;*/margin-bottom:0;/*there is a 'margin:10px 0;' in the bootstrap.min.css line 9 that stop this one to work*/font-size:15px;/*text-transform:Capitalize;*/line-height:20px;}
 .noMargin{margin:0!important;}
- .platinum-box{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/background-box.png');background-repeat:no-repeat;background-position:bottom right;}
+.platinum-box{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/background-box.png');background-repeat:no-repeat;background-position:bottom right;}
 
 /*platinum caja photo y texto*/
- .wpb_content_element.span8.platinum_photo_ann{padding:10px 0 10px 0;}
+.wpb_content_element.span8.platinum_photo_ann{padding:10px 0 10px 0;}
 .media_center_table tr{height:25px;}
 .media_center_table tr td{padding:2% 10%;font-size:0.9em;}
 .table-title{background:#553553;display:block;padding:10px 30px;color:white;margin-bottom:0;font-size:15px;text-transform:uppercase;font-weight:500;}
@@ -1095,12 +1233,12 @@ a.blue02{background-color:#0B74B4;color:#FFF;}
 .back-lightorange{background-color:rgba(209, 158, 67, 0.73);}
 .back-lightgrey{background-color:rgba(209, 158, 67, 0.41);}
 /*BUTTON*/
- .tmf-green{background-color:#95c83e;color:#ffffff;}
+.tmf-green{background-color:#95c83e;color:#ffffff;}
 .tmf-orange{background-color:#f90;color:#ffffff;}
 a.sf-button.green{background-color:#95c83e;}
 a.sf-button{color:#ffffff;margin-bottom:0;}
 /*page builder:keynotes-bio grey boxes*/
- .keynotes-bio-box{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/shadow.png');background-repeat:no-repeat;background-position:left bottom;padding-bottom:45px;overflow:visible;margin:0 0 -15px 15px;position:relative;}
+.keynotes-bio-box{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/shadow.png');background-repeat:no-repeat;background-position:left bottom;padding-bottom:45px;overflow:visible;margin:0 0 -15px 15px;position:relative;}
 .keynotes-bio-profile{border-bottom:#D5D5D5 1px solid;margin-bottom:10px;padding-bottom:15px;}
 .keynotes-bio-box p{color:#444444;}
 .keynotes-bio-box .speakers-list-name{font-weight:bold;color:#44abe1;}
@@ -1119,10 +1257,10 @@ a.sf-button{color:#ffffff;margin-bottom:0;}
 /***************/
 
 /*for the boxes*/
- .p-box-home{padding:0 20px;}
+.p-box-home{padding:0 20px;}
 .home a img.alignleft{/*margin-bottom:100px;*/;}
 /*page builder:boxes of titles*/
- body [class*="span"].shadow-title{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/shadow.png');background-repeat:no-repeat;background-position:left bottom;padding-bottom:45px;overflow:visible;margin:0 0 -20px 0;}
+body [class*="span"].shadow-title{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/shadow.png');background-repeat:no-repeat;background-position:left bottom;padding-bottom:45px;overflow:visible;margin:0 0 -20px 0;}
 .general-subtitles2 p{color:#505475;font-size:18px;margin-bottom:0; font-weight:bold;margin-top: 20px;}
 .general-subtitles2 h2{margin-bottom: 0!important;}
 .getting-around-title h4 img{margin-bottom:10px;}
@@ -1138,10 +1276,10 @@ a.sf-button{color:#ffffff;margin-bottom:0;}
 .sponsors-fifth-toa img{margin-top:26px;height:90px;}
 .sponsors-fifth-clik img{margin-top:50px;height:40px;}
 /*hotel & travel icons*/
- h3 img{margin-top:-5px;}
+h3 img{margin-top:-5px;}
 .hotel-travel-info-box a{display:block;margin:-60px 0 0 60px;background-color:rgb(242, 242, 242);height:60px;line-height:60px;color:rgb(153, 153, 153);font-weight:bold;text-align:center;transition:color 0.5s;}
 /*page builder:networking-expo and all tha box with grey background*/
- .networking-expo-box{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/shadow.png');background-repeat:no-repeat;background-position:left bottom;padding-bottom:45px;overflow:visible;margin:0 0 -15px 15px;}
+.networking-expo-box{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/shadow.png');background-repeat:no-repeat;background-position:left bottom;padding-bottom:45px;overflow:visible;margin:0 0 -15px 15px;}
 .networking-expo-box h3{color:#444444;}
 .networking-expo-box.wpb_box_text.coloured .box-content-wrap{border:none;}
 .networking-expo-box .box-content-wrap ul li, .networking-expo-box .box-content-wrap p{color:#444444;}
@@ -1443,16 +1581,16 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 .streaming-keynotes-live p a img{opacity:0.7}
 .streaming-keynotes-live p a:hover > img{opacity:1}
 .streaming-keynotes-live .fday{float:left;font-size:24px;margin-left:18px;padding:24px 0px 11px 25px;line-height:18px;}
- .logo-left.clearfix nav .menu li{font-size:14px;background-color:#fff ;/*Added only for non Uber menu version*/}
- /*Register for menu*/
+.logo-left.clearfix nav .menu li{font-size:14px;background-color:#fff ;/*Added only for non Uber menu version*/}
+/*Register for menu*/
 .logo-left.clearfix nav .menu li.registerOnMenu {background-color:#ffaf00;margin-left: 15px;}
 .logo-left.clearfix nav .menu li.registerOnMenu:hover{background-color: #E2740B;}
 .logo-left.clearfix nav .menu li.registerOnMenu:hover a{background-color: transparent;}
 .logo-left.clearfix nav .menu li.registerOnMenu a {color: #fff;}
- .logo-left.clearfix nav .menu li:last-child a {margin-right: 0;}
- .home-page-at-the-event .inner-page-wrap{position:relative;margin-top:0;}
- .home-page-at-the-event .view-all-videos{position:absolute;top:32px;right:0;z-index:10;}
- .view-all-videos a.view-all-button.span3, .view-all-videos a.view-all-button.span4{float:right;}
+.logo-left.clearfix nav .menu li:last-child a {margin-right: 0;}
+.home-page-at-the-event .inner-page-wrap{position:relative;margin-top:0;}
+.home-page-at-the-event .view-all-videos{position:absolute;top:32px;right:0;z-index:10;}
+.view-all-videos a.view-all-button.span3, .view-all-videos a.view-all-button.span4{float:right;}
 .view-all-button{color:white;cursor:pointer;background-color:#009fe3;display:table;text-align:center;font-size:25px;margin-top:0;padding:20px 0;width:100%;margin:15px 0 0 0;float:right;}
 .view-all-button:hover{color:white;text-decoration:none;background:darkorange;}
 .download-presentations{padding:9px 0;font-size:22px;}
@@ -1528,14 +1666,14 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 .event-location-block p{line-height:24px;}
 .event-location-block .sponsor-esri { display: table-cell; border-bottom: #e4e4e4 1px solid; border-top: #e4e4e4 1px solid; }
 .hotel-accommodation ul li, .getting-around ul li{list-style:none;display:block;margin-bottom:1em;}
-.hotel-accommodation ul li:before, .getting-around ul li:before{content:"\2022";font-size:26px;color:#505475;margin-right:10px;position:absolute;left:-0px;}
+.hotel-accommodation ul li:before, .getting-around ul li:before{content:"\2022";font-size:26px;color:#d5410c;margin-right:10px;position:absolute;left:-0px;}
 .hotelandtravel-text{padding:20px;border:1px solid #e3e3e3;border-top:5px solid #e3e3e3;box-sizing:border-box;}
 .hotelandtravel-text img{margin:0 20px 0 0;}
 .hotelandtravel-text p{line-height:120%;}
 .hotelandtravel-text p strong{padding:0 10px;display:table;}
 .hotelandtravel-text ul{overflow:hidden;margin-bottom:0;}
 .hotelandtravel-text ul li{border-bottom:1px solid #969696;line-height:120%;list-style:none;padding:5px 10px;padding-right:20px;}
-.getting-around h4{color:#505475;font-size:18px;line-height:21px;margin-bottom:10px;}
+.getting-around h4{color:#d5410c;font-size:18px;line-height:21px;margin-bottom:10px;}
 #book-today-banner{background:url(/wp-content/uploads/2014/08/book-today-bg.jpg) no-repeat;width:100%;background-size:cover;height:320px;overflow:hidden;}
 #book-today-bottom{height:75px;width:100%;padding:10px;background:rgba(33,33,33,0.8);position:relative;top:100%;margin-top:-95px;}
 #book-today-bottom h1{color:#FFF;font-size:36px;line-height:44px;margin:0 !important;}
@@ -1695,21 +1833,6 @@ a.dd13stories:hover .text-content h2,a.dd13stories:hover .text-content p span{ c
 .top-sponsors-logos .sponsors_logo.logo_2 img.top-sponsor { height: 55px; }
 .top-sponsors-logos .sponsors_logo.logo_4 img.top-sponsor { max-height: 70px; }
 .top-sponsors-logos .sponsors_logo.logo_4 img.top-sponsor { height: 50px; }
-
-/* Homepage sidebar "Read Latest News" link - inline styles */
-.latest-news {
-	text-align: center;
-	padding-bottom: 15px;
-	border-bottom: 2px solid lightgray;
-}
-.latest-news .view-all {color: gray}
-.latest-news .view-all span {display: inline-block}
-.latest-news .view-all span strong {color: darkorange}
-.latest-news .view-all img {
- 	width: 150px;
- 	margin-top: -5px;
- 	margin-left: 5px;
- }
 
 /* IE8 Logo fixes */
 #ie8 #logo a {float: none}
@@ -1909,10 +2032,10 @@ div.wpcf7 br {display: none}
 	background: url('/wp-content/uploads/2014/10/loop.png') no-repeat right center;
 	width: 100%;
 	-webkit-box-sizing : border-box;‌​
-    -moz-box-sizing : border-box;
-    box-sizing : border-box;
-    height: 36px;
-    border-color: #eee;
+		-moz-box-sizing : border-box;
+		box-sizing : border-box;
+		height: 36px;
+		border-color: #eee;
 }
 
 /* Bootsrap was altered on tmf-responsive.css so I need to add max-width to solve this */
@@ -2053,150 +2176,150 @@ div.wpcf7 br {display: none}
 .app14s #header-shadow{ display:none;}
 .app14s #main-container{background:none !important;}
 .app14s_blocks_alignment{
-  float: none !important;
-  vertical-align: middle;
-  display: table-cell !important;
+	float: none !important;
+	vertical-align: middle;
+	display: table-cell !important;
 }
 .app14s .app14s_block1{
-    text-align:right;
+		text-align:right;
 }
 .app14s .app14s_title{
-    border-bottom:solid 1px #A8AAAD;
-    padding-bottom:10px;
-    margin-bottom:15px;
+		border-bottom:solid 1px #A8AAAD;
+		padding-bottom:10px;
+		margin-bottom:15px;
 }
 .app14s .app14s_block1 h1{
-    margin:0;
-    color:#DD9A38;
-    font-size:40px;
-    font-family: "Roboto" !important;
+		margin:0;
+		color:#DD9A38;
+		font-size:40px;
+		font-family: "Roboto" !important;
 }
 .app14s .app14s_block1 h3{
-    line-height:35px;
-    font-size:35px;
-    font-weight: 100;
-    font-family: "Roboto" !important;
-    color:#39363B;
+		line-height:35px;
+		font-size:35px;
+		font-weight: 100;
+		font-family: "Roboto" !important;
+		color:#39363B;
 }
 .app14s .app14s_block1 img{
-    float:right;
-    margin-top:6px;
+		float:right;
+		margin-top:6px;
 }
 .app14s .app14s_block1 .app14s_fecha{
-    float:right;
-    border-left:solid 1px #A8AAAD;
-    padding:5px;
-    margin:5px;
+		float:right;
+		border-left:solid 1px #A8AAAD;
+		padding:5px;
+		margin:5px;
 }
 .app14s .app14s_block2{
-    text-align:center;
+		text-align:center;
 }
 .app14s .app14s_block3{
-    max-width:445px;
+		max-width:445px;
 }
 .app14s .app14s_block3 h4{
-    font-size:24px;
-    font-weight: 100;
-    font-family: "Roboto" !important;
-    color:#39363B;
-    padding-bottom:15px;
-    border-bottom:solid 5px #DD9A38;
-    margin-bottom:15px;
+		font-size:24px;
+		font-weight: 100;
+		font-family: "Roboto" !important;
+		color:#39363B;
+		padding-bottom:15px;
+		border-bottom:solid 5px #DD9A38;
+		margin-bottom:15px;
 }
 .app14s .app14s_block3 ul{
-    font-size:16px;
-    color:#39363B;
-    margin:0px;
+		font-size:16px;
+		color:#39363B;
+		margin:0px;
 }
 .app14s .app14s_block3 ul li{
-    list-style:none;
-    font-size:16px;
-    line-height:16px;
-    margin-bottom: 10px;
-    display:inline-block;
+		list-style:none;
+		font-size:16px;
+		line-height:16px;
+		margin-bottom: 10px;
+		display:inline-block;
 }
 .app14s .app14s_block3 ul li img{
-    float:left;
-    margin-right:15px;
+		float:left;
+		margin-right:15px;
 }
 .app14s_listext{
-    margin-top:5px;
+		margin-top:5px;
 }
 .app14s .app14s_app{
-    text-align:center;
-    margin-bottom:40px;
+		text-align:center;
+		margin-bottom:40px;
 }
 .app14s .app14s_get{
-    text-align:center;
-    width:300px;
-    padding-bottom:10px;
-    border-bottom: solid 1px #A8AAAD;
-    margin:25px auto;
+		text-align:center;
+		width:300px;
+		padding-bottom:10px;
+		border-bottom: solid 1px #A8AAAD;
+		margin:25px auto;
 }
 .app14s .app14s_get p{
-    font-size:21px;
-    font-weight: 100;
-    font-family: "Roboto" !important;
-    color:#39363B;
+		font-size:21px;
+		font-weight: 100;
+		font-family: "Roboto" !important;
+		color:#39363B;
 }
 .app14s .app14s_buttons ul{
-    display:inline-block;
-    margin-right: 20px;
+		display:inline-block;
+		margin-right: 20px;
 }
 .app14s .app14s_buttons ul li{
-    display:block;
-    float:left;
-    margin-left:15px;
+		display:block;
+		float:left;
+		margin-left:15px;
 }
 .app14s .app14s_buttons ul li:first-child{
-    margin-left:0px;
+		margin-left:0px;
 }
 .app14s a{
-    display:block;
-    background-color:#39363B;
-    height:40px;
-    width:140px;
-    border-radius:5px;
+		display:block;
+		background-color:#39363B;
+		height:40px;
+		width:140px;
+		border-radius:5px;
 }
 .app14s a:hover{
-    background-color:#666666;
+		background-color:#666666;
 }
 .app14s .button_googleplay{
-    height:50px;
+		height:50px;
 }
 .app14s .button_appstore{
-    margin-top:5px;
+		margin-top:5px;
 }
 .app14s .button_html5{
-    margin-top:5px;
+		margin-top:5px;
 }
 .app14s .app14s_footer{
-    width:100%;
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    padding-top:10px;
-    height:40px;
-    background-color: #39363B;
-    text-align:center;
-    font-weight: 400;
-    color: #FFF;
-    font-size: 12px;
+		width:100%;
+		position:fixed;
+		bottom:0;
+		left:0;
+		right:0;
+		padding-top:10px;
+		height:40px;
+		background-color: #39363B;
+		text-align:center;
+		font-weight: 400;
+		color: #FFF;
+		font-size: 12px;
 }
 .app14s .app14s_footer a{
-    display:inline-block;
-    color:#FFF;
-    width:auto;
-    border-radius:0;
+		display:inline-block;
+		color:#FFF;
+		width:auto;
+		border-radius:0;
 }
 .app14s .app14s_footer a:hover{
-    display:inline-block;
-    color:#FFF;
-    width:auto;
-    background:none;
-    text-decoration:none;
-    color:#CCCCCC;
+		display:inline-block;
+		color:#FFF;
+		width:auto;
+		background:none;
+		text-decoration:none;
+		color:#CCCCCC;
 }
 
 /******************************/
@@ -2204,18 +2327,18 @@ div.wpcf7 br {display: none}
 /******************************/
 
 .btn-register-pandp-table a{
-   width:90px;
+	width:90px;
 	/*padding:2px 15px;
-   background-color:#ffaf00;*/
-   text-decoration:none;
-   font-size:14px;
-   color:#fff;
+	background-color:#ffaf00;*/
+	text-decoration:none;
+	font-size:14px;
+	color:#fff;
 }
 
 .btn-register-pandp-table a:hover{
-   /*background-color:#E2740B !important;*/
-   text-decoration:none;
-   color:#fff;
+	/*background-color:#E2740B !important;*/
+	text-decoration:none;
+	color:#fff;
 }
 
 /************************************/
@@ -2249,7 +2372,7 @@ div.wpcf7 br {display: none}
 
 /**FORUM TELECOM*/
 .third-list {
-    width: 234px;
+		width: 234px;
 }
 
 /*****************/
@@ -2337,14 +2460,9 @@ div.wpcf7 br {display: none}
 	line-height: 22px;
 }
 .homePageClass .case-study-box .case-study-btn {text-align: center; padding: 20px;}
-.homePageClass a.sf-button.green { width: 83%; }
-.homePageClass a.sf-button.large { padding: 10px 45px; }
 /*sidebar*/
 .textwidget .sidebar-hp-at-event a {float: right; margin-top: 8px; margin-right: 0px;}
 .textwidget .sidebar-hp-at-event {margin-bottom: 40px;}
-/*feed*/
-.feed-content-text p {color: #444;}
-article.feed-item:nth-child(2n) {clear: both;}
 
 
 /*************/
