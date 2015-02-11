@@ -1637,12 +1637,12 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 /****************/
 #footer{padding-top:0px;border-top:0px none !important;}
 .social-contact{background:rgb(246,246,246);overflow:hidden;}
-.social-contact img{float:left;margin-right:70px;margin-bottom: 30px;}
+.social-contact img{float:left;margin-right:15%;margin-bottom: 30px;margin-left: 100px;}
 .social-contact > div{padding:40px;}
 .social-contact > div:last-child{padding-left:0; padding-right: 0;}
 .social-contact .span8 h3{padding:0 60px;}
-.social-contact h3{font-weight:normal;display: table-cell;vertical-align: middle;}
-.social-contact a#updated{color:#FFF !important;display:inline-block;margin-top:10px !important;}
+.social-contact h3{font-weight:normal;display: table-cell;vertical-align: middle;color: #737373;font-family: 'Open Sans' sans-serif;line-height: 35px;padding-top: 20px;}
+.social-contact a#updated{color:#FFF !important;display:inline-block;margin-top:25px !important;border-radius: 5px;padding: 15px 55px;}
 #footer-widgets{padding-top:20px;}
 .textwidget .tmforum-footer {width: 100%; text-align: center; margin-top: 10px;}
 #footer-widgets, .social-contact .span12.textwidget {width: 1230px;margin: 0 auto;}
