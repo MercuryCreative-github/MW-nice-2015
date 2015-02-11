@@ -2740,3 +2740,18 @@ margin-right: 5px;
 .download-summit a:hover:after {
 color: rgb(255, 175, 0);
 }
+
+.color-box {
+color: #ABAAAA !important;
+border: #e4e4e4 2px solid;
+padding: 15px 15px;
+background: #FAFAFA;
+}
+
+#callforspeakers .color-box p {
+font-weight: bold;
+font-size: 19px;
+text-align: center;
+color: #989898;
+line-height: 1.4em;
+}
