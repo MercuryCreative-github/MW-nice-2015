@@ -1658,7 +1658,6 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 /**********************/
 [class^="icon-"]:before, [class*=" icon-"]:before{cursor:pointer !important;}
 
-/********************************/
 /*** AGENDA AT A GLANCE (AAG) **/
 /******************************/
 .tt_tabs_navigation li a{padding:10px 30px !important;border:1px solid #E5E5E5 !important;}
