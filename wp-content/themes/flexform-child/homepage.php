@@ -143,7 +143,7 @@ Template Name: Home Page
 	<div class="sec-main-content">
 		<div class="section03-infobox01">
 			<h1>NETWORK AT <br/>TM FORUM <br/>LIVE!</h1>
-			<a class="sf-button large green standard">Learn More</a>
+			<!--<a href="" class="sf-button large green standard">Learn More</a>-->
 		</div>
 		<div class="section03-infobox02">
 		<div class="section03-top">
