@@ -302,6 +302,20 @@ Template Name: Home Page
 				<div class="review-name"><img src="/wp-content/uploads/2015/02/icon-reviews.png"><p><strong>Wolfgang Gentzsch</strong><br/>CEO, The UberCloud</p></div>
 			</div>
 		</li>
+		<li>
+			<div class="review-photo"><img src="/wp-content/uploads/2015/02/ulf_sm.gif"></div>
+			<div class="review-content">
+				<div class="review-text">"This year at TM Forum Live!, there are more participants than ever from other industries wanting to know what telecom networks can do for them. And that is happening because cloud, mobility and broadband are transforming their businesses.”</div>
+				<div class="review-name"><img src="/wp-content/uploads/2015/02/icon-reviews.png"><p><strong>Ulf Ewaldsson</strong><br/>SVP and CTO, Ericsson</p></div>
+			</div>
+		</li>
+		<li>
+			<div class="review-photo"></div>
+			<div class="review-content">
+				<div class="review-text">“Congrats on the 2014 event, the thematic was very well received and the event meticulously organized, great feedback from attendees, vendors and industry icons alike. The future looks bright!”</div>
+				<div class="review-name"><img src="/wp-content/uploads/2015/02/icon-reviews.png"><p>CIO, Global Digital Service Provider</p></div>
+			</div>
+		</li>
 	</ul>
 </div>
 </section>

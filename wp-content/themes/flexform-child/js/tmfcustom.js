@@ -55,6 +55,15 @@ function homepageSectionsResize(){
 
         $('.section01-info').css('margin-top',section01Margin);
     }
+
+
+
+    $('.reviews ul li').hide();
+    showReview = Math.floor(3*Math.random());
+    $('.reviews ul li').hide();
+     $('.reviews ul li:eq('+showReview+')').hide();
+
+
 }
 
 function getParameterByName(name) {
