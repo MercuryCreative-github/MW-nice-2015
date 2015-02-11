@@ -2756,8 +2756,27 @@ color: #989898;
 line-height: 1.4em;
 }
 
-.callforspeakers label.gfield_label {
-font-size: 17px;
-font-weight: 400;
-text-transform: capitalize;
-}
+.callforspeakers input, #callforspeakers textarea, #callforspeakers select { border: #B1B1B1 1px solid; margin: 0px; padding: 10px; }
+.callforspeakers textarea { width: 47%; }
+.callforspeakers .gform_wrapper .top_label input.medium, #callforspeakers .gform_wrapper textarea.small { width: 98%; }
+.callforspeakers .gform_wrapper .top_label select.medium {width: 100%;}
+.callforspeakers label.gfield_label { font-size: 17px; font-weight: 400; text-transform: capitalize; }
+.callforspeakers select {font-size: 16px;}
+.callforspeakers .ginput_container .charleft {display: none;}
+.callforspeakers .gform_wrapper .gfield_description {padding: 0;}
+.callforspeakers ul.gform_fields li { margin-bottom: 30px; }
+.gform_footer .gform_button.button { border: none; background: #FE9802; width: 200px; cursor: pointer;}
+.gform_footer .gform_button.button:hover { background: #E2740B; }
+.callforspeakers .gform_fields #field_2_2,
+.callforspeakers .gform_fields #field_2_4,
+.callforspeakers .gform_fields #field_2_6,
+.callforspeakers .gform_fields #field_2_10,
+.callforspeakers .gform_fields #field_2_22 { width: 48%; float: left; }
+.callforspeakers .gform_fields #field_2_3,
+.callforspeakers .gform_fields #field_2_5,
+.callforspeakers .gform_fields #field_2_7,
+.callforspeakers .gform_fields #field_2_23 { width: 48%; float: right; margin-top: -103px; margin-right: 1.5%; }
+.callforspeakers .gform_fields #field_2_11 { width: 48%; float: right; margin-top: -196px; margin-right: 1.5%; }
+
+.callforspeakers .gform_confirmation_message_2 {text-align: center;margin: 70px 0;font-size: 22px;}
+.callforspeakers .gform_confirmation_message_2 span.thanks-for-submit {font-weight: bold;font-size: 30px;color: #A09F9F;}
