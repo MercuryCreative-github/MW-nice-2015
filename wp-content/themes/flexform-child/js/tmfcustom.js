@@ -706,7 +706,7 @@ function resizeSponsors() {
 
     });
 
-    jQuery( ".inner-page-wrap" ).animate({opacity: 1,}, 5000, function() {});
+    jQuery( ".inner-page-wrap" ).animate({opacity: 1,}, 1000, function() {});
 
 }
 
