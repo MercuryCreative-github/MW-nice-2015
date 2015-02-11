@@ -646,6 +646,8 @@ function conference_move_widget_node() {
 function resizeSponsors() {
     var logo = 0;
 
+    jQuery('.inner-page-wrap').css('opacity',0);
+
     jQuery(".sponsors .wpb_single_image img").each(function() {
 
         logo++;
@@ -703,6 +705,8 @@ function resizeSponsors() {
         jQuery(".sponsors .image-caption").css('opacity', '1');
 
     });
+
+    jQuery('.inner-page-wrap').fadein('slow');
 
 }
 
