@@ -2653,7 +2653,6 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 /****** MODAL *****/
 
 .emodal-title{display: none;}
-span.ginput_left input {border: none;background: #FFF;border-radius: 0px;}
 .form-logo {text-align: center;}
 
 #modal-overlay {
@@ -2716,8 +2715,6 @@ input[type="submit"] {
 .summit-list ul li img {
 	vertical-align: middle;
 	margin-right: 10px;
-	width: 30px;
-	margin-left: 5px;
 }
 
 .summit-list ul li:hover {
@@ -2766,7 +2763,7 @@ line-height: 1.4em;
 .callforspeakers select {font-size: 16px;}
 .callforspeakers .ginput_container .charleft {display: none;}
 .callforspeakers .gform_wrapper .gfield_description {padding: 0;}
-.callforspeakers ul.gform_fields li { margin-bottom: 30px; float: left; clear: none!important; width: 45%; margin: 0 2.5%;}
+.callforspeakers ul.gform_fields li { margin-bottom: 30px; clear: none!important;}
 .gform_footer .gform_button.button { border: none; background: #FE9802; width: 200px; cursor: pointer;}
 .gform_footer .gform_button.button:hover { background: #E2740B; }
 .callforspeakers .gform_fields #field_2_2,
