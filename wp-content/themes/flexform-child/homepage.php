@@ -94,7 +94,6 @@ Template Name: Home Page
 					<div class="clear"></div>
 				</div>
 			</div>
-
 		</div>
 		<div class="section01-sponsors">
 			<ul class="sponsors-logos">

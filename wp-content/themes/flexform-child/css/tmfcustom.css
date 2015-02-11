@@ -2781,4 +2781,5 @@ line-height: 1.4em;
 
 .inner-page-wrap{opacity: 0;}
 
-.cell{display:table-cell;vertical-align:middle;}
+.cell{display:table-cell;vertical-align: middle;}
+.section01 .cell{vertical-align: top;}
