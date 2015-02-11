@@ -14,6 +14,7 @@
 <footer class="black">
 	<div class="container">
 		<div class="row">
+		<div class="menu newitem"><a href="/travel-hotel/"><strong>Travel & Hotel</strong></a></div>
 			<div class="footer-bottom twelve columns">
 				<div class="footer-tmf-info">
 					<img src="/wp-content/uploads/2014/07/tmforum-logo.png"/>
@@ -24,14 +25,6 @@
                 <div class="footer-buttons-widgets">
 				                
                     <div id="text-6" class="three columns widget_text">		
-
-                    <div class="textwidget">
-                        <ul>
-                        <li>
-                        <a href="/travel-hotel/">Travel & Hotel</a>
-                        </li>
-                        </ul>
-                        </div>
                 	
                 
                         <div class="textwidget">
