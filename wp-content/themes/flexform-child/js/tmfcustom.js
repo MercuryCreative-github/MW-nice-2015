@@ -706,7 +706,7 @@ function resizeSponsors() {
 
     });
 
-    jQuery('.inner-page-wrap').fadein('slow');
+    jQuery('.inner-page-wrap').fadeIn('slow');
 
 }
 
