@@ -253,6 +253,7 @@
     .dd13stories p {
         float: none;
     }
+    .social-contact img{margin-left: 0;}
 }
 @media screen and (max-width: 1024px) {
     /*uber menu
