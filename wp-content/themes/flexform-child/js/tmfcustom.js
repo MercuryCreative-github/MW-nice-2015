@@ -9,28 +9,12 @@ function ini() {
     fullAgenda();
     openClose();
     modalListener();
-    //contactPeople();
     showHiddenMenuText();
     menuWidgetLiLinks();
-    moveSponsors();
-    //addNetcrackBanner();
-    //resizeNetcrackBanner();
-   
+    moveSponsors();   
     reRowIotTabs();
-
     homepageSectionsResize();
-   
 
-//<iframe src=http://banners.tmforum.org/abmw.aspx?z=67&isframe=true width=120 height=600 frameborder=0 scrolling=no marginheight=0 marginwidth=0></iframe>
-
-    /* NOT IN USE*/
-    // actOnIntegration();
-    // customSearches();
-    // homeDivLinks();
-    // weather(); ASK PABLO da un error de permisos.
-    // conference_move_widget_node();
-    //hideSponsorsBeforeResize();
-    //equalCoursesBoxes();
 }
 
 function homepageSectionsResize(){
@@ -827,25 +811,10 @@ function openClose() {
 function moveSponsors(){
     var topSponsors = jQuery('.top-sponsors-logos').html();
     var secSponsors = jQuery('.other-sponsors').html();
-    /*var row1 = jQuery('.other-sponsors').parent().next().html();
-    var row2 = jQuery('.other-sponsors').parent().next().next().html();*/
-
-    //alert(topSponsors);
-    // Add CSS classes to the secondary Sponsors Logos
-    /*jQuery('.other-sponsors').parent().next().addClass('sec_sponsors first_row');
-    jQuery('.other-sponsors').parent().next().next().addClass('sec_sponsors second_row');*/
 
     /* Moving Logos */
     jQuery(".responsive-sponsors .main-sponsors").html(topSponsors);
     jQuery(".responsive-sponsors .secondary-sponsors .title").html(secSponsors);
-    /*jQuery(".responsive-sponsors .secondary-sponsors .row1").html(row1);
-    jQuery(".responsive-sponsors .secondary-sponsors .row2").html(row2);*/
-
-    /* Hiding Secondary Sponsors */
-    /*jQuery('.other-sponsors').parent().css('display','none');
-    jQuery('.other-sponsors').parent().next().css('display','none');
-    jQuery('.other-sponsors').parent().next().next().css('display','none');*/
-
 
     if (jQuery(window).width() < 768) {jQuery('.top-sponsors-logos').hide();jQuery('.responsive-sponsors').show();}
     else{jQuery('.top-sponsors-logos').show();jQuery('.responsive-sponsors').hide();}
@@ -864,22 +833,3 @@ function equalCoursesBoxes(){
 		jQuery(this).height(highestCourse);
 	});
 }
-
-/*function addNetcrackBanner(){
-    topPos = 114;
-    jQuery('body').prepend('<iframe class="netcrack-banner" src="http://banners.tmforum.org/abmw.aspx?z=67&isframe=true" width="120" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="position: absolute;top: '+topPos+'px;right: 10px;z-index: 1000;}"></iframe> '); 
-}
-
-function resizeNetcrackBanner(){
-
-    if(jQuery(window).width() <= 282){num = 71;}
-    else if(jQuery(window).width() <= 378){num = 70;}
-    else if(jQuery(window).width() <= 750){num = 68;}
-    else if(jQuery(window).width() <= 963){num = 69;}
-    else if(jQuery(window).width() <= 1183){num = 70;}
-    else{num = 68;}
-
-   jQuery('iframe#netcrack-banner').attr('src','http://banners.tmforum.org/abmw.aspx?z='+num+'&isframe=true');
-
-   //jQuery('iframe#netcrack-banner').after('<h1>'+jQuery(window).width()+'</h1>')
-}*/
