@@ -431,7 +431,6 @@ nav .menu > li:first-child > a{padding: 4px 18px;}
 .navbar-collapse li{margin-bottom:5px;}
 .social-icon{display:-webkit-inline-box;display:-moz-inline-box;display:inline-box;}
 #mini-navigation .menu li.social-icon a {margin: 3px 8px;padding: 0;}
-#mini-navigation .menu li.social-icon:last-child a span {display:none}
 .navbar-collapse .social-icon {display: block;}
 #nav-pointer{background-color:transparent !important;}
 .twitterhastag{font-size: 0.9em;margin-left: 5px;/* top: -1px; *//* position: relative; */}
@@ -446,7 +445,7 @@ code p{margin:0px;color:#000;font-size:28px;}
 {display:none;height:auto;left: 6px;margin:0;min-width:180px;padding-top:10px !important;position:absolute;top: 25px;z-index:9995;border:none !important;box-shadow: 4px 5px 8px -5px #ccc;}
 #mini-navigation .menu-pre-event-main-menu-container > ul > li:first-child > a{padding: 3px 5px;}
 /*Hide/Show register btn*/
-#main-navigation .menu .registerOnMenu, #mini-navigation .menu .social-icon, #mini-navigation .menu .menuItemHideOnTablet {display: none;}
+#main-navigation .menu .registerOnMenu, #mini-navigation .menu .menuItemHideOnTablet {display: none;}
 
 #nav-section #logo a, #nav-section #mini-logo a {float: none;margin: 0;}
 #nav-section {display: table;}
