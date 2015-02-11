@@ -90,7 +90,12 @@ Template Name: Home Page
 			<div class="section01-date">JUNE 1 - 4, 2015<br/><span>NICE - FRANCE</span></div>
 			<div class="section01-buttons">
 				<a href="/about-digital-disruption/register/" class="sf-button large orange standard">Register</a>
-				<a href="http://#" class="sf-button eModal-1 large green standard">Keep updated</a>
+				<a id="updated" class="sf-button large green standard" href="#modal-1" data-toggle="modal">Keep updated</a>
+						<div id="modal-1" class="modal hide fade" tabindex="-1">
+							<div class="modal-header" style="text-align: center;"><button class="close" type="button" data-dismiss="modal">×</button>
+								<img src="/wp-content/uploads/2014/12/LogoDD14.png" alt="Keep up to date with the last event news." style="width: 50%;margin: auto;float: none;">							</div>
+							<div class="modal-body"><?php echo do_shortcode('[contact-form-7 id="18871" title="Keep Updated 2014"]'); ?></div>
+						</div>
 				<div class="clear"></div>
 			</div>
 		</div>

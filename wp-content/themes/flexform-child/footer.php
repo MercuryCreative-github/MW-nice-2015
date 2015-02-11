@@ -81,7 +81,7 @@
 						</div>
 						<div id="modal-2" class="modal hide fade" tabindex="-1">
 							<div class="modal-header" style="text-align: center;"><button class="close" type="button" data-dismiss="modal">×</button>
-								<img src="/wp-content/uploads/2014/06/logo-dd-51.png" style="width: 50%;margin: auto;float: none;">							</div>
+								<img src="/wp-content/uploads/2014/12/LogoDD14.png" style="width: 50%;margin: auto;float: none;">							</div>
 							<div class="modal-body"><?php echo do_shortcode('[contact-form-7 id="20463" title="Sponsor and Exhibitor Guide"]'); ?></div>
 						</div>
 					</div>
