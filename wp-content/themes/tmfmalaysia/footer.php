@@ -23,7 +23,16 @@
 				</div>
                 <div class="footer-buttons-widgets">
 				                
-                    <div id="text-6" class="three columns widget_text">			
+                    <div id="text-6" class="three columns widget_text">		
+
+                    <div class="textwidget">
+                        <ul>
+                        <li>
+                        <a href="/travel-hotel/">Travel & Hotel</a>
+                        </li>
+                        </ul>
+                        </div>
+                	
                 
                         <div class="textwidget">
                         <ul>
