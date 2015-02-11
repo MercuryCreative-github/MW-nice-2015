@@ -7,7 +7,7 @@
 		 * 
 		 * set custom values to settings
 		 */
-		public static function setSettingsCustomValues(UniteSettingsRev $settings,$arrValues){
+		public static function setSettingsCustomValues(UniteSettingsRev $settings, $arrValues, $postTypesWithCats){
 			$arrSettings = $settings->getArrSettings();
 			
 			foreach($arrSettings as $key=>$setting){
@@ -58,10 +58,26 @@
 				break;
 			}
 			
+			switch($sliderType){
+				case "fixed":
+				case "responsitive":
+				case "fullscreen":
+					//hide autoheight
+					$settingRes = $settings->getSettingByName("auto_height");
+					$settingRes["disabled"] = true;
+					$settings->updateArrSettingByName("auto_height", $settingRes);
+					
+					$settingRes = $settings->getSettingByName("force_full_width");
+					$settingRes["disabled"] = true;
+					$settings->updateArrSettingByName("force_full_width", $settingRes);
+				break;
+			}
 			//change height to max height
 			$settingSize = $settings->getSettingByName("slider_size");
 			$settingSize["slider_type"] = $sliderType;
 			$settings->updateArrSettingByName("slider_size", $settingSize);
+
+			$settings = self::setCategoryByPostTypes($settings, $arrValues, $postTypesWithCats, "post_types", "post_category","post");
 			
 			return($settings);
 		}
@@ -246,7 +262,6 @@
 		}
 		
 		
-		
 		/**
 		 * 
 		 * draw custom inputs for rev slider
@@ -267,6 +282,63 @@
 				break;
 			}			
 		}
+		
+		
+		/**
+		 * 
+		 * get first category from categories list
+		 */
+		private static function getFirstCategory($cats){
+						
+			foreach($cats as $key=>$value){
+				if(strpos($key,"option_disabled") === false)
+					return($key);
+			}
+			return("");
+		}		
+		
+		
+		/**
+		 * set category by post type, with specific name (can be regular or woocommerce)
+		 */
+		public static function setCategoryByPostTypes(UniteSettingsRev $settings,$arrValues, $postTypesWithCats,$nameType,$nameCat,$defaultType){
+			
+			//update the categories list by the post types
+			$postTypes = UniteFunctionsRev::getVal($arrValues, $nameType ,$defaultType);
+			if(strpos($postTypes, ",") !== false)
+				$postTypes = explode(",",$postTypes);
+			else
+				$postTypes = array($postTypes);
+			
+			$arrCats = array();
+			$globalCounter = 0;	
+			
+			$arrCats = array();
+			$isFirst = true;
+			foreach($postTypes as $postType){
+				$cats = UniteFunctionsRev::getVal($postTypesWithCats, $postType,array());
+				if($isFirst == true){
+					$firstValue = self::getFirstCategory($cats);
+					$isFirst = false; 
+				}
+					
+				$arrCats = array_merge($arrCats,$cats);
+			}
+			
+			$settingCategory = $settings->getSettingByName($nameCat);
+			$settingCategory["items"] = $arrCats;
+			$settings->updateArrSettingByName($nameCat, $settingCategory);
+
+			//update value to first category
+			$value = $settings->getSettingValue($nameCat);
+			if(empty($value)){
+				
+				$settings->updateSettingValue($nameCat, $firstValue);
+			}
+			
+			return($settings);
+		}
+		
 		
 	}
 

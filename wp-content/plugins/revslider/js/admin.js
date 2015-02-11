@@ -7,13 +7,54 @@ var UniteAdminRev = new function(){
 	var successMessageID = null;
 	var ajaxLoaderID = null;
 	var ajaxHideButtonID = null;
+	var g_multiple_text_key = [];
 	
 	//video dialog vars:
 	var lastVideoData = null;		//last fetched data
 	var lastVideoCallback = null;   //last callback from video dialog return
 	var colorPickerCallback = null;
 	
+	
 
+	/**********************************
+		-	SHOW INFO AND HIDE INFO	-
+	********************************/
+
+	t.showInfo = function(obj) {
+
+		var info = '<i class="eg-icon-info"></i>';
+		if (obj.type=="warning") info = '<i class="eg-icon-cancel"></i>';
+		if (obj.type=="success") info = '<i class="eg-icon-ok"></i>';
+
+		obj.showdelay = obj.showdelay != undefined ? obj.showdelay : 0;
+		obj.hidedelay = obj.hidedelay != undefined ? obj.hidedelay : 0;
+
+		// CHECK IF THE TOOLBOX WRAPPER EXIST ALREADY
+		if (jQuery('#eg-toolbox-wrapper').length==0) jQuery('#viewWrapper').append('<div id="eg-toolbox-wrapper"></div>');
+
+		// ADD NEW INFO BOX
+		jQuery('#eg-toolbox-wrapper').append('<div class="eg-toolbox newadded">'+info+obj.content+'</div>');
+		var nt = jQuery('#eg-toolbox-wrapper').find('.eg-toolbox.newadded');
+		nt.removeClass('newadded');
+
+
+		// ANIMATE THE INFO BOX
+		punchgs.TweenLite.fromTo(nt,0.5,{y:-50,autoAlpha:0,transformOrigin:"50% 50%", transformPerspective:900, rotationX:-90},{autoAlpha:1,y:0,rotationX:0,ease:punchgs.Back.easeOut,delay:obj.showdelay});
+
+		if (obj.hideon != "event") {
+			nt.click(function() {
+				punchgs.TweenLite.to(nt,0.3,{x:200,ease:punchgs.Power3.easeInOut,autoAlpha:0,onComplete:function() {nt.remove()}});
+			})
+
+			if (obj.hidedelay !=0 && obj.hideon!="click")
+				punchgs.TweenLite.to(nt,0.3,{x:200,ease:punchgs.Power3.easeInOut,autoAlpha:0,delay:obj.hidedelay + obj.showdelay, onComplete:function() {nt.remove()}});
+		} else  {
+			jQuery('#eg-toolbox-wrapper').on(obj.event,function() {
+				punchgs.TweenLite.to(nt,0.3,{x:200,ease:punchgs.Power3.easeInOut,autoAlpha:0,onComplete:function() {nt.remove()}});
+			});
+		}
+	}
+    
 	/**
 	 * escape html, turn html to a string
 	 */
@@ -42,6 +83,20 @@ var UniteAdminRev = new function(){
 		return[curleft,curtop];
 	}	
 	
+	t.stripslashes = function(str) {
+		return (str + '').replace(/\\(.?)/g, function (s, n1) {
+			switch (n1) {
+				case '\\':
+				return '\\';
+				case '0':
+				return '\u0000';
+				case '':
+				return '';
+				default:
+				return n1;
+			}
+		});
+	}
 	
 	/**
 	 * turn string value ("true", "false") to string 
@@ -90,6 +145,70 @@ var UniteAdminRev = new function(){
 	}
 	
 	/**
+	 * change rgb & rgba to hex
+	 */
+	t.rgb2hex = function(rgb) {
+		if (rgb.search("rgb") == -1 || jQuery.trim(rgb) == '') return rgb; //ie6
+		
+		function hex(x) {
+			return ("0" + parseInt(x).toString(16)).slice(-2);
+		}
+		
+		if(rgb.indexOf('-moz') > -1){
+			var temp = rgb.split(' ');
+			delete temp[0];
+			rgb = jQuery.trim(temp.join(' '));
+		}
+		
+		if(rgb.split(')').length > 2){
+			var hexReturn = '';
+			var rgbArr = rgb.split(')');
+			for(var i = 0; i < rgbArr.length - 1; i++){
+				rgbArr[i] += ')';
+				var temp = rgbArr[i].split(',');
+				if(temp.length == 4){
+					rgb = temp[0]+','+temp[1]+','+temp[2];
+					rgb += ')';
+				}else{
+					rgb = rgbArr[i];
+				}
+				rgb = jQuery.trim(rgb);
+				
+				rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
+				
+				hexReturn += "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3])+" ";
+			}
+			
+			return hexReturn;
+		}else{
+			var temp = rgb.split(',');
+			if(temp.length == 4){
+				rgb = temp[0]+','+temp[1]+','+temp[2];
+				rgb += ')';
+			}
+			
+			rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
+			
+			return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+		}
+		
+		
+	}
+	
+	/**
+	 * get transparency value from 0 to 100
+	 */
+	t.getTransparencyFromRgba = function(rgba, inPercent){
+		var temp = rgba.split(',');
+		if(temp.length == 4){
+			inPercent = (typeof inPercent !== 'undefined') ? inPercent : true;
+			return (inPercent) ? temp[3].replace(/[^\d.]/g, "") : temp[3].replace(/[^\d.]/g, "") * 100;
+		}
+		
+		return false;
+	}
+	
+	/**
 	 * debug html on the top of the page (from the master view)
 	 */
 	t.debug = function(html){
@@ -109,10 +228,12 @@ var UniteAdminRev = new function(){
 	 * show error message or call once custom handler function
 	 */
 	t.showErrorMessage = function(htmlError){
-		if(errorMessageID !== null){
-			jQuery("#"+errorMessageID).show().html(htmlError);			
-		}else
-			jQuery("#error_message").show().html(htmlError);
+		//if(errorMessageID !== null){
+		//	jQuery("#"+errorMessageID).show().html(htmlError);			
+		//}else
+		//	jQuery("#error_message").show().html(htmlError);
+		
+		t.showInfo({content:htmlError, type:"warning", showdelay:0, hidedelay:5, hideon:"click", event:"" });
 		
 		showAjaxButton();
 	}
@@ -149,15 +270,19 @@ var UniteAdminRev = new function(){
 	 * show success message
 	 */
 	var showSuccessMessage = function(htmlSuccess){
-		var id = "#success_message";		
-		var delay = 2000;
-		if(successMessageID){
-			id = "#"+successMessageID;
-			delay = 500;
-		}
+		//var id = "#success_message";		
+		//var delay = 2000;
+		//if(successMessageID){
+		//	id = "#"+successMessageID;
+		//	delay = 500;
+		//}
 		
-		jQuery(id).show().html(htmlSuccess);
-		setTimeout("UniteAdminRev.hideSuccessMessage()",delay);
+		t.showInfo({content:htmlSuccess, type:"success", showdelay:0, hidedelay:5, hideon:"", event:"" });
+		
+		//jQuery(id).show().html(htmlSuccess);
+		//setTimeout("UniteAdminRev.hideSuccessMessage()",delay);
+		
+		showAjaxButton();
 	}
 	
 	
@@ -214,8 +339,16 @@ var UniteAdminRev = new function(){
 	 * if exist ajax button to hide, hide it.
 	 */
 	var hideAjaxButton = function(){
-		if(ajaxHideButtonID)
-			jQuery("#"+ajaxHideButtonID).hide();
+		if(ajaxHideButtonID){
+			var doHide = ajaxHideButtonID.split(',');
+			if(doHide.length > 1){
+				for(var i = 0; i < doHide.length; i++){
+					jQuery("#"+doHide[i]).hide();
+				}
+			}else{
+				jQuery("#"+ajaxHideButtonID).hide();
+			}
+		}
 	}
 	
 	/**
@@ -223,7 +356,14 @@ var UniteAdminRev = new function(){
 	 */
 	var showAjaxButton = function(){
 		if(ajaxHideButtonID){
-			jQuery("#"+ajaxHideButtonID).show();
+			var doShow = ajaxHideButtonID.split(',');
+			if(doShow.length > 1){
+				for(var i = 0; i < doShow.length; i++){
+					jQuery("#"+doShow[i]).show();
+				}
+			}else{
+				jQuery("#"+ajaxHideButtonID).show();
+			}
 			ajaxHideButtonID = null;
 		}		
 	}
@@ -238,6 +378,7 @@ var UniteAdminRev = new function(){
 		var objData = {
 			action:g_uniteDirPlagin+"_ajax_action",
 			client_action:action,
+			nonce:g_revNonce,
 			data:data
 		}
 		
@@ -315,6 +456,8 @@ var UniteAdminRev = new function(){
 		
 		// Media Library params
 		var frame = wp.media({
+			//frame:      'post',
+            //state:      'insert',
 			title : title,
 			multiple : isMultiple,
 			library : { type : 'image'},
@@ -413,15 +556,11 @@ var UniteAdminRev = new function(){
 	/**
 	 * get show image url
 	 */
-	t.getUrlShowImage = function(imageUrl,width,height,exact){
+	t.getUrlShowImage = function(imageID,width,height,exact){
 		
-		var filepath = imageUrl.replace(g_urlContent,"");
+		imageID = parseInt(imageID, 0)
 		
-		//if not internal image - return normal image url
-		if(filepath == imageUrl)
-			return(imageUrl);
-		
-		var urlImage = g_urlAjaxShowImage+"&img="+filepath;
+		var urlImage = g_urlAjaxShowImage+"&img="+imageID;
 		
 		if(width)
 			urlImage += "&w="+width;
@@ -450,9 +589,13 @@ var UniteAdminRev = new function(){
 		
 		var thumb = data.thumb_medium;
 		
+		var useURL = (jQuery.trim(jQuery('#input_video_preview').val()) != '') ? jQuery('#input_video_preview').val() : thumb.url;
+		
 		var html = '<div class="video-content-title">'+data.title+'</div>';
-		html += '<img src="'+thumb.url+'" width="'+thumb.width+'" height="'+thumb.height+'" alt="thumbnail">';
-		html += '<div class="video-content-description">'+data.desc_small+'</div>';
+		html += '<img id="video-thumbnail-preview" src="'+useURL+'" width="'+thumb.width+'" height="'+thumb.height+'" alt="thumbnail">';
+		html += '<div class="video-content-description">';
+		if(typeof data.desc_small != "undefined") html += data.desc_small;
+		html += '</div>';
 		
 		jQuery("#video_content").html(html);
 	}
@@ -597,16 +740,22 @@ var UniteAdminRev = new function(){
 	var updateVideoSizeProps = function(){
 		var isFullwidth = jQuery("#input_video_fullwidth").is(":checked");
 		if(isFullwidth == true){	//disable
-			jQuery("#video_size_wrapper").addClass("text-disabled");
-			jQuery("#input_video_width, #input_video_height").addClass("input-disabled");
+			//jQuery("#video_size_wrapper").hide();
+			jQuery("#input_video_width, #input_video_height, #input_video_height_lbl, #input_video_width_lbl").hide();
 			
 		}else{		//enable
-			jQuery("#video_size_wrapper").removeClass("text-disabled");
-			jQuery("#input_video_width, #input_video_height").removeClass("input-disabled");
+			//jQuery("#video_size_wrapper").show();
+			jQuery("#input_video_width, #input_video_height, #input_video_height_lbl, #input_video_width_lbl").show();
+			jQuery("#input_video_cover").prop("checked",false);
 		}
 		
+		var isCover = jQuery("#input_video_cover").is(":checked");
+		if(isCover == true){	//disable
+			jQuery("#input_video_ratio_lbl, #input_video_ratio, #input_video_dotted_overlay_lbl, #input_video_dotted_overlay").show();
+		}else{		//enable
+			jQuery("#input_video_ratio_lbl, #input_video_ratio, #input_video_dotted_overlay_lbl, #input_video_dotted_overlay").hide();
+		}
 	}
-	
 	
 	/**
 	 * open dialog for youtube or vimeo import , add / update
@@ -634,13 +783,29 @@ var UniteAdminRev = new function(){
 		//clear the fields
 		jQuery("#input_video_arguments").val("");
 		jQuery("#input_video_autoplay").prop("checked","");
+		jQuery("#showautoplayfirsttime").hide();
+		jQuery("#input_video_autoplay_first_time").prop("checked","");
 		jQuery("#input_video_nextslide").prop("checked","");
+		jQuery("#input_video_force_rewind").prop("checked","");
 		jQuery("#input_video_fullwidth").prop("checked","");
+		jQuery("#input_video_control").prop("checked","");
+		jQuery("#input_video_mute").prop("checked","");
+		jQuery("#input_disable_on_mobile").prop("checked","");
+		jQuery("#input_video_cover").prop("checked","");
+		jQuery("#input_video_dotted_overlay option[value='none']").attr("selected",true);
+		jQuery("#input_video_ratio option[value='16:9']").attr("selected",true);
+		jQuery('#input_video_preload option[value="auto"]').attr("selected",true);
+		jQuery('#input_video_speed option[value="1"]').attr("selected",true);
+		jQuery('#input_video_loop option[value="none"]').attr("selected",true);
+		jQuery("#input_video_preview").val("");
+		
 		
 		jQuery("#youtube_id").val("");
 		jQuery("#vimeo_id").val("");
 		
 		jQuery("#video_hidden_controls").hide();
+		
+		jQuery("#fullscreenvideofun").hide();
 				
 		var buttonVideoAdd = jQuery("#button-video-add");
 		buttonVideoAdd.text(buttonVideoAdd.data("textadd"));
@@ -648,9 +813,10 @@ var UniteAdminRev = new function(){
 		//open the dialog
 		dialogVideo.dialog({
 				buttons:buttons,
-				minWidth:700,
-				minHeight:550,
-				modal:true
+				minWidth:830,
+				minHeight:820,
+				modal:true,
+				dialogClass:"tpdialogs"
 		});
 		
 		//if update dialog open:		
@@ -671,24 +837,30 @@ var UniteAdminRev = new function(){
 		jQuery("#video_type_chooser").hide();
 		
 		//disable fields:
-		jQuery("#youtube_id,#vimeo_id").prop("disabled","disabled").addClass("input-disabled");
+		//jQuery("#youtube_id,#vimeo_id").prop("disabled","disabled").addClass("input-disabled");
 		
 		//set mode and video id
 		switch(data.video_type){
 			case "youtube":
+				jQuery("#video-dialog-wrap").removeClass("html5select");
 				jQuery("#video_radio_youtube").trigger("click");			
-				jQuery("#youtube_id").val(data.id);				
+				jQuery("#youtube_id").val(data.id);	
+				jQuery("#fullscreenvideofun").hide();				
 			break;
 			case "vimeo":
+				jQuery("#video-dialog-wrap").removeClass("html5select");
 				jQuery("#video_radio_vimeo").trigger("click");
 				jQuery("#vimeo_id").val(data.id);
+				jQuery("#fullscreenvideofun").hide();				
 			break;
 			case "html5":
+				jQuery("#video-dialog-wrap").addClass("html5select");
 				jQuery("#html5_url_poster").val(data.urlPoster);
 				jQuery("#html5_url_mp4").val(data.urlMp4);
 				jQuery("#html5_url_webm").val(data.urlWebm);
 				jQuery("#html5_url_ogv").val(data.urlOgv);
 				jQuery("#video_radio_html5").trigger("click");
+				jQuery("#fullscreenvideofun").show();				
 			break;
 		}
 		
@@ -697,20 +869,93 @@ var UniteAdminRev = new function(){
 		jQuery("#input_video_height").val(data.height);
 		jQuery("#input_video_arguments").val(data.args);
 		
-		if(data.autoplay && data.autoplay == true)
+		jQuery("#input_video_preview").val(data.previewimage);
+		
+		if(data.autoplay && data.autoplay == true){
 			jQuery("#input_video_autoplay").prop("checked","checked");
-		else
+			jQuery("#showautoplayfirsttime").show();
+		}else{
 			jQuery("#input_video_autoplay").prop("checked","");
+			jQuery("#showautoplayfirsttime").hide();
+		}
+		
+		if(data.autoplayonlyfirsttime && data.autoplayonlyfirsttime == true)
+			jQuery("#input_video_autoplay_first_time").prop("checked","checked");
+		else
+			jQuery("#input_video_autoplay_first_time").prop("checked","");
 			
 		if(data.nextslide && data.nextslide == true)
 			jQuery("#input_video_nextslide").prop("checked","checked");
 		else
 			jQuery("#input_video_nextslide").prop("checked","");
+	
+		if(data.forcerewind && data.forcerewind == true)
+			jQuery("#input_video_force_rewind").prop("checked","checked");
+		else
+			jQuery("#input_video_force_rewind").prop("checked","");
 
 		if(data.fullwidth && data.fullwidth == true)
 			jQuery("#input_video_fullwidth").prop("checked","checked");
 		else
 			jQuery("#input_video_fullwidth").prop("checked","");
+		
+		if(data.controls && data.controls == true)
+			jQuery("#input_video_control").prop("checked","checked");
+		else
+			jQuery("#input_video_control").prop("checked","");
+			
+		if(data.mute && data.mute == true)
+			jQuery("#input_video_mute").prop("checked","checked");
+		else
+			jQuery("#input_video_mute").prop("checked","");
+		
+		if(data.disable_on_mobile && data.disable_on_mobile == true)
+			jQuery("#input_disable_on_mobile").prop("checked","checked");
+		else
+			jQuery("#input_disable_on_mobile").prop("checked","");
+			
+		if(data.cover && data.cover == true)
+			jQuery("#input_video_cover").prop("checked","checked");
+		else
+			jQuery("#input_video_cover").prop("checked","");
+		
+		if(data.preload){
+			jQuery("#input_video_preload option").each(function(){
+				if(jQuery(this).val() == data.preload)
+					jQuery(this).attr('selected', true);
+			});
+		}
+		
+		if(data.videospeed){
+			jQuery("#input_video_speed option").each(function(){
+				if(jQuery(this).val() == data.videospeed)
+					jQuery(this).attr('selected', true);
+			});
+		}
+		
+		if(data.dotted){
+			jQuery("#input_video_dotted_overlay option").each(function(){
+				if(jQuery(this).val() == data.dotted)
+					jQuery(this).attr('selected', true);
+			});
+		}
+		if(data.ratio){
+			jQuery("#input_video_ratio option").each(function(){
+				if(jQuery(this).val() == data.ratio)
+					jQuery(this).attr('selected', true);
+			});
+		}
+		
+		if(data.videoloop){
+			if(data.videoloop == true){
+				jQuery('#input_video_loop option[value="loop"]').attr("selected",true);
+			}else{
+				jQuery("#input_video_loop option").each(function(){
+					if(jQuery(this).val() == data.videoloop)
+						jQuery(this).attr('selected', true);
+				});
+			}
+		}
 		
 		//change button text:
 		var buttonVideoAdd = jQuery("#button-video-add");
@@ -726,6 +971,7 @@ var UniteAdminRev = new function(){
 			break;
 		}
 		
+		//if(data.previewimage != '') jQuery("#video-thumbnail-preview").attr('src', data.previewimage);
 	}
 	
 	//add params from textboxes to object
@@ -733,9 +979,21 @@ var UniteAdminRev = new function(){
 		obj.width = jQuery("#input_video_width").val();
 		obj.height = jQuery("#input_video_height").val();
 		obj.args = jQuery("#input_video_arguments").val();
+		obj.previewimage = jQuery("#input_video_preview").val();
 		obj.autoplay = jQuery("#input_video_autoplay").is(":checked");
+		obj.autoplayonlyfirsttime = jQuery("#input_video_autoplay_first_time").is(":checked");
 		obj.nextslide = jQuery("#input_video_nextslide").is(":checked");
+		obj.forcerewind = jQuery("#input_video_force_rewind").is(":checked");
 		obj.fullwidth = jQuery("#input_video_fullwidth").is(":checked");
+		obj.controls = jQuery("#input_video_control").is(":checked");
+		obj.mute = jQuery("#input_video_mute").is(":checked");
+		obj.disable_on_mobile = jQuery("#input_disable_on_mobile").is(":checked");
+		obj.cover = jQuery("#input_video_cover").is(":checked");
+		obj.dotted = jQuery("#input_video_dotted_overlay option:selected").val();
+		obj.preload = jQuery("#input_video_preload option:selected").val();
+		obj.videospeed = jQuery("#input_video_speed option:selected").val();
+		obj.ratio = jQuery("#input_video_ratio option:selected").val();
+		obj.videoloop = jQuery("#input_video_loop option:selected").val();
 		return(obj);
 	}
 	
@@ -752,25 +1010,59 @@ var UniteAdminRev = new function(){
 		jQuery("#video_radio_vimeo").click(function(){
 			jQuery("#video_block_youtube").hide();
 			jQuery("#video_block_html5").hide();
+			jQuery("#rev-html5-options").hide();
+			jQuery("#rev-youtube-options").hide();
 			jQuery("#video_hidden_controls").hide();
-			jQuery("#video_content").show();
+			jQuery("#rev-video-loop-wrap").hide();
+			//jQuery("#video_content").show();
 			jQuery("#video_block_vimeo").show();
+			jQuery("#preview-image-video-wrap").show();
+			jQuery("#video-dialog-wrap").removeClass("html5select");
+			jQuery("#fullscreenvideofun").hide();
 		});
 		
 		jQuery("#video_radio_youtube").click(function(){
 			jQuery("#video_block_vimeo").hide();
 			jQuery("#video_block_html5").hide();			
+			jQuery("#rev-html5-options").hide();			
+			jQuery("#rev-youtube-options").show();			
 			jQuery("#video_hidden_controls").hide();
-			jQuery("#video_content").show();
+			jQuery("#rev-video-loop-wrap").hide();
+			//jQuery("#video_content").show();
 			jQuery("#video_block_youtube").show();
+			jQuery("#preview-image-video-wrap").show();
+			jQuery("#video-dialog-wrap").removeClass("html5select");
+			jQuery("#fullscreenvideofun").hide();
 		});
 		
 		jQuery("#video_radio_html5").click(function(){
 			jQuery("#video_block_vimeo").hide();
 			jQuery("#video_block_youtube").hide();
 			jQuery("#video_block_html5").show();
+			jQuery("#rev-youtube-options").hide();
+			jQuery("#rev-html5-options").show();
 			jQuery("#video_content").hide();
 			jQuery("#video_hidden_controls").show();
+			jQuery("#rev-video-loop-wrap").show();
+			jQuery("#preview-image-video-wrap").hide();
+			jQuery("#video-dialog-wrap").addClass("html5select");
+			jQuery("#fullscreenvideofun").show();	
+		});
+		
+		
+		jQuery("#input_video_autoplay").click(function(){
+			if(jQuery(this).is(":checked")){
+				jQuery("#showautoplayfirsttime").show();
+			}else{
+				jQuery("#showautoplayfirsttime").hide();
+			}
+		});
+		
+		jQuery("#input_video_cover").click(function(){
+			if(jQuery(this).is(":checked")){
+				if(!jQuery('#input_video_fullwidth').is(":checked")) jQuery('#input_video_fullwidth').prop("checked",true);
+			}
+			updateVideoSizeProps();
 		});
 		
 		//set youtube search action
@@ -786,9 +1078,11 @@ var UniteAdminRev = new function(){
 			
 			youtubeID = getYoutubeIDFromUrl(youtubeID);
 			
-			var urlAPI = "http://gdata.youtube.com/feeds/api/videos/"+youtubeID+"?v=2&alt=json-in-script&callback=UniteAdminRev.onYoutubeCallback";
+			var urlAPI = "https://gdata.youtube.com/feeds/api/videos/"+youtubeID+"?v=2&alt=json-in-script&callback=UniteAdminRev.onYoutubeCallback";
 			
 			jQuery.getScript(urlAPI);
+			
+			jQuery("#video_content").show();
 			
 			//handle not found:
 			setTimeout("UniteAdminRev.videoDialogOnError()",2000);
@@ -798,6 +1092,8 @@ var UniteAdminRev = new function(){
 		//add the selected video to the callback function
 		jQuery("#button-video-add").click(function(){
 			var html5Checked = jQuery("#video_radio_html5").prop("checked");
+			
+			jQuery("#video_content").hide();
 			
 			if(html5Checked){	//in case of html5
 				var obj = {};
@@ -839,6 +1135,8 @@ var UniteAdminRev = new function(){
 			
 			jQuery("#vimeo_loader").show();
 			
+			jQuery("#video_content").show();
+			
 			var vimeoID = jQuery("#vimeo_id").val();
 			vimeoID = jQuery.trim(vimeoID);
 			vimeoID = getVimeoIDFromUrl(vimeoID);
@@ -866,7 +1164,8 @@ var UniteAdminRev = new function(){
 			jQuery("#dialog_general_settings").dialog({
 				minWidth:800,
 				minHeight:500,
-				modal:true
+				modal:true,
+				dialogClass:"tpdialogs"
 			});
 			
 		});
@@ -879,6 +1178,36 @@ var UniteAdminRev = new function(){
 				jQuery("#loader_general_settings").hide();
 				jQuery("#dialog_general_settings").dialog("close");
 			});
+		});
+		
+		
+	}
+	
+	
+	//adds the update/deactivate option
+	var initUpdateRoutine = function(){
+		
+		jQuery('#rs-validation-activate').click(function(){
+			
+			UniteAdminRev.setAjaxLoaderID("rs_purchase_validation");
+			UniteAdminRev.setAjaxHideButtonID("rs-validation-activate");
+			
+			var data = {
+				code: jQuery('input[name="rs-validation-token"]').val(),
+				username: jQuery('input[name="rs-validation-username"]').val(),
+				api_key: jQuery('input[name="rs-validation-api-key"]').val()
+			}
+			
+			UniteAdminRev.ajaxRequest("activate_purchase_code",data);
+		});
+		
+		jQuery('#rs-validation-deactivate').click(function(){
+			
+			UniteAdminRev.setAjaxLoaderID("rs_purchase_validation");
+			UniteAdminRev.setAjaxHideButtonID("rs-validation-deactivate");
+			
+			UniteAdminRev.ajaxRequest("deactivate_purchase_code",'');
+			
 		});
 		
 	}
@@ -894,7 +1223,8 @@ var UniteAdminRev = new function(){
 			jQuery("#dialog_update_plugin").dialog({
 				minWidth:600,
 				minHeight:400,
-				modal:true
+				modal:true,
+				dialogClass:"tpdialogs"
 			});
 			
 		});
@@ -908,9 +1238,186 @@ var UniteAdminRev = new function(){
 		
 		initGeneralSettings();
 		
+		initSliderMultipleText();
+		
+		initUpdateRoutine();
+		
 	});
 	
+	/**
+	 * set multiple key values
+	 */
+	t.setMultipleTextKey = function(name, key){
+		g_multiple_text_key[name] = key;
+	}
 	
+	/**
+	 * set multiple key values
+	 */
+	t.getMultipleTextKey = function(name){
+		return g_multiple_text_key[name];
+	}
+	
+	var initSliderMultipleText = function(){
+	
+		jQuery("body").on("click",".remove_multiple_text",function(){ //remove element
+			jQuery("#"+jQuery(this).data('remove')).remove();
+			jQuery(this).parent().remove();
+		});
+		
+		jQuery(".multiple_text_add").click(function(){ //add element
+			
+			var handle = jQuery(this).data('name');
+			var key = t.getMultipleTextKey(handle) + 1;
+			var template = jQuery('.'+handle+'_TEMPLATE').html();
+			
+			template = template.replace(/##ID##/ig, handle+'_'+key).replace(/##NAME##/ig, handle);
+			jQuery('#'+handle+'_row .setting_input').append(template);
+			
+			t.setMultipleTextKey(handle, key);
+		});
+		
+	}
+	
+	/**
+	 * set multiple key values
+	 */
+	t.parseCssMultiAttribute = function(value){
+		if(value == '') return false;
+		var raw = value.split(' ');
+		var retObj = [];
+		
+		switch(raw.length){
+			case 1:
+				retObj[0] = raw[0];
+				retObj[1] = raw[0];
+				retObj[2] = raw[0];
+				retObj[3] = raw[0];
+			break;
+			case 2:
+				retObj[0] = raw[0];
+				retObj[1] = raw[1];
+				retObj[2] = raw[0];
+				retObj[3] = raw[1];
+			break;
+			case 3:
+				retObj[0] = raw[0];
+				retObj[1] = raw[1];
+				retObj[2] = raw[2];
+				retObj[3] = raw[1];
+			break;
+			case 4:
+				retObj[0] = raw[0];
+				retObj[1] = raw[1];
+				retObj[2] = raw[2];
+				retObj[3] = raw[3];
+			break;
+			case 0:
+			default:
+			return false;
+			break;
+		}
+		
+		return retObj;
+	}
+	
+	/**
+	 * get rgb from hex values
+	 */
+	t.convertHexToRGB = function(hex) {
+		var hex = parseInt(((hex.indexOf('#') > -1) ? hex.substring(1) : hex), 16);
+		return [hex >> 16,(hex & 0x00FF00) >> 8,(hex & 0x0000FF)];
+	}
+	
+	
+	t.initGoogleFonts = function(){
+		
+		jQuery('#eg-font-add').click(function(){
+			jQuery('#font-dialog-wrap').dialog({
+				modal:true,
+				draggable:false,
+				resizable:false,
+				width:470,
+				height:320,
+				closeOnEscape:true,
+				dialogClass:'wp-dialog',
+				buttons: [ { text: 'Add Font', click: function() {
+					var data = {};
+					
+					data.handle = t.sanitize_input(jQuery('input[name="eg-font-handle"]').val());
+					data['url'] = jQuery('input[name="eg-font-url"]').val();
+					
+					if(data.handle.length < 3 || data.url.length < 3){
+						alert('Handle has to be at least three character long');
+						return false;
+					}
+					
+					UniteAdminRev.ajaxRequest("add_google_fonts", data, function(response){}); //'#eg-font-add',
+					
+				} } ],
+			});
+		});
+		
+		
+		jQuery('body').on('click', '.eg-font-edit', function(){
+			if(confirm('Really change font settings?')){
+				var data = {};
+				var el = jQuery(this);
+				data.handle = el.closest('.inside').find('input[name="esg-font-handle[]"]').val();
+				data['url'] = el.closest('.inside').find('input[name="esg-font-url[]"]').val();
+				
+				UniteAdminRev.ajaxRequest("edit_google_fonts", data, function(response){}); //'#eg-font-add, .eg-font-edit, .eg-font-delete',
+			}
+			
+		});
+		
+		
+		jQuery('body').on('click', '.eg-font-delete', function(){
+			if(confirm('Really delete font?')){
+				var data = {};
+				var el = jQuery(this);
+				
+				data.handle = el.closest('.inside').find('input[name="esg-font-handle[]"]').val();
+				
+				UniteAdminRev.ajaxRequest("remove_google_fonts", data, function(response){ //'#eg-font-add, .eg-font-edit, .eg-font-delete',
+					if(response.success == true){
+						el.closest('.postbox.eg-postbox').remove();
+					}
+				});
+			}
+		});
+		
+	}
+	
+	t.sanitize_input = function(raw){
+		return raw.toLowerCase().replace(/ /g, '-').replace(/[^-0-9a-z]/g,'');
+	}
+	
+	t.initAccordion = function(){
+		jQuery(".postbox-arrow").each(function(i) {
+
+			jQuery(this).closest('h3').click(function(){
+				var handle = jQuery(this);
+
+				//open
+				if(!handle.hasClass("box-closed")){
+					handle.closest('.postbox').find('.inside').slideUp("fast");
+					handle.addClass("box-closed");
+
+				}else{	//close
+					jQuery('.postbox-arrow').each(function() {
+						var handle = jQuery(this).closest('h3');
+						handle.closest('.postbox').find('.inside').slideUp("fast");
+						handle.addClass("box-closed");
+					})
+					handle.closest('.postbox').find('.inside').slideDown("fast");
+					handle.removeClass("box-closed");
+
+				}
+			});
+
+		});
+	}
 }
 
 

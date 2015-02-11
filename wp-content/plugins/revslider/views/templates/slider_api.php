@@ -3,7 +3,7 @@
 ?>
 	
 	<div id="api_wrapper" class="api_wrapper postbox unite-postbox ">
-			<h3 class="box_closed tp-accordion tpa-closed"><div class="postbox-arrow"></div><span><?php _e("API Functions",REVSLIDER_TEXTDOMAIN) ?></span></h3>
+			<h3 class="box_closed tp-accordion tpa-closed"><div class="postbox-arrow"></div><i style="float:left;margin-top:4px;font-size:14px;" class="eg-icon-tools"></i><span><?php _e("API Functions",REVSLIDER_TEXTDOMAIN) ?></span></h3>
 			<div class="toggled-content tp-closedatstart p20">
 					<div class="api-caption"><?php _e("API Methods",REVSLIDER_TEXTDOMAIN)?>:</div>
 					<div class="divide20"></div>
@@ -46,6 +46,10 @@
 							<td class="api-cell1"><?php _e("External Scroll",REVSLIDER_TEXTDOMAIN)?>:</td>
 							<td class="api-cell2"><input type="text" readonly class="api-input" value="<?php echo $api?>.revscroll(offset);"></td>
 						</tr>
+						<tr>
+							<td class="api-cell1"><?php _e("Redraw Slider",REVSLIDER_TEXTDOMAIN)?>:</td>
+							<td class="api-cell2"><input type="text" readonly  class="api-input" value="<?php echo $api?>.revredraw();"></td>
+						</tr>
 						
 					</table>
 					<div class="divide20"></div>
@@ -62,6 +66,10 @@
 		
 <?php echo $api?>.bind("revolution.slide.onchange",function (e,data) {
 	//alert("slide changed to: "+data.slideIndex);
+	//data.slideIndex <?php _e('is the index of the li container in this Slider', REVSLIDER_TEXTDOMAIN); ?>
+	
+	//data.slide <?php _e('is the current slide jQuery object (the li element)', REVSLIDER_TEXTDOMAIN); ?>
+	
 });
 
 <?php echo $api?>.bind("revolution.slide.onpause",function (e,data) {
@@ -90,6 +98,10 @@
 
 <?php echo $api?>.bind("revolution.slide.onafterswap",function (e) {
 	//alert("after swap");
+});
+
+<?php echo $api?>.bind("revolution.slide.slideatend",function (e) {
+	//alert("slide at end");
 });
 			
 			

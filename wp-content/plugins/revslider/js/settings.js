@@ -15,7 +15,10 @@ var UniteSettingsRev = new function(){
 		var len = form.elements.length;
 		for(var i=0; i<len; i++){
 			var element = form.elements[i];
-			name = element.name;		
+			
+			if(element.name == "##NAME##[]") continue; //ignore dummy from multi text
+			
+			name = element.name;
 			value = element.value;
 			
 			type = element.type;
@@ -43,7 +46,17 @@ var UniteSettingsRev = new function(){
 						value = value.toString();
 				break;
 			}
-			if(flagUpdate == true && name != undefined) obj[name] = value;
+			
+			if(flagUpdate == true && name != undefined){
+				if(name.indexOf('[]') > -1){
+					name = name.replace('[]', '');
+					if(typeof obj[name] !== 'object') obj[name] = [];
+					
+					obj[name][Object.keys(obj[name]).length] = value;
+				}else{
+					obj[name] = value;
+				}
+			}
 		}
 		return(obj);
 	}
@@ -135,6 +148,7 @@ var UniteSettingsRev = new function(){
 		var colorPickerWrapper = jQuery('#divColorPicker');
 		
 		colorPicker = jQuery.farbtastic('#divColorPicker');
+		
 		jQuery(".inputColorPicker").focus(function(){
 			colorPicker.linkTo(this);
 			colorPickerWrapper.show();
@@ -147,10 +161,28 @@ var UniteSettingsRev = new function(){
 				"left":offset.left + input.width()+20-offsetView.left,
 				"top":offset.top - colorPickerWrapper.height() + 100-offsetView.top
 			});
-
 			
-		}).click(function(){			
+			if (jQuery(input.data('linkto'))) {
+				
+				var oldval = jQuery(this).val();
+				jQuery(this).data('int',setInterval(function() {
+					if(input.val() != oldval){
+						oldval = input.val();
+						jQuery('#css_preview').css(input.data('linkto'), oldval);
+						jQuery('input[name="css_'+input.data('linkto')+'"]').val(oldval);
+					}
+				} ,200));
+			}
+			
+		}).blur(function() {
+			clearInterval(jQuery(this).data('int'));
+		
+		}).click(function(){
+            
 			return(false);	//prevent body click
+		}).change(function(){
+			colorPicker.linkTo(this);
+			colorPicker.setColor(jQuery(this).val());
 		});
 		
 		colorPickerWrapper.click(function(){
@@ -196,17 +228,47 @@ var UniteSettingsRev = new function(){
 		
 		jQuery(".button-image-select").click(function(){
 			var settingID = this.id.replace("_button","");
-			UniteAdminRev.openAddImageDialog("Choose Image",function(urlImage){
-				
+			UniteAdminRev.openAddImageDialog("Choose Image",function(urlImage, imageID){
 				//update input:
 				jQuery("#"+settingID).val(urlImage);
 				
 				//update preview image:
-				var urlShowImage = UniteAdminRev.getUrlShowImage(urlImage,100,70,true);
-				jQuery("#" + settingID + "_button_preview").html("<img width='100' height='70' src='"+urlShowImage+"'></img>");
+				var urlShowImage = UniteAdminRev.getUrlShowImage(imageID,100,70,true);
+				jQuery("#" + settingID + "_button_preview").html('<div style="width:100px;height:70px;background:url(\''+urlShowImage+'\'); background-position:center center; background-size:cover;"></div>');
 				
 			});
-		})
+		});
+		
+		jQuery(".button-image-remove").click(function(){
+			var settingID = this.id.replace("_button_remove","");
+			jQuery("#"+settingID).val('');
+			
+			jQuery("#" + settingID + "_button_preview").html('');
+		});
+		
+		jQuery(".button-image-select-video").click(function(){
+			UniteAdminRev.openAddImageDialog("Choose Image",function(urlImage, imageID){
+				
+				//update input:
+				jQuery("#input_video_preview").val(urlImage);
+				
+				//update preview image:
+				var urlShowImage = UniteAdminRev.getUrlShowImage(imageID,200,150,true);
+				jQuery("#video-thumbnail-preview").attr('src', urlShowImage);
+				
+			});
+		});
+		
+		jQuery(".button-image-remove-video").click(function(){
+			jQuery("#input_video_preview").val('');
+
+			if(jQuery('#video_block_vimeo').css('display') != 'none')
+				jQuery("#button_vimeo_search").trigger("click");
+			
+			if(jQuery('#video_block_youtube').css('display') != 'none')
+				jQuery("#button_youtube_search").trigger("click");
+			
+		});
 		
 	}
 	
@@ -228,6 +290,11 @@ var UniteSettingsRev = new function(){
 	        delayIn: 70
 		});
 		
+		jQuery(".button-primary").tipsy({
+			gravity:"s",
+	        delayIn: 70
+		});
+		
 		//init controls
 		initControls();
 		
@@ -238,15 +305,31 @@ var UniteSettingsRev = new function(){
 		//init checklist
 		jQuery(".settings_wrapper .input_checklist").each(function(){
 			var select = jQuery(this);
-			var minWidth = select.data("minwidth");
-			var options = {
-				zIndex:1000
-			};
-			
-			if(minWidth)
-				options.minWidth = minWidth;
+			var ominWidth = select.data("minwidth");
+						
+			if (ominWidth==undefined) ominWidth="none"
 				
-			select.dropdownchecklist(options);
+			select.dropdownchecklist({
+					zIndex:1000,
+					minWidth:ominWidth,
+					onItemClick: function(checkbox,selector) {
+
+									for (var i=0;i<20;i++) 
+										if (checkbox.val()=="notselectable"+i) {
+											//console.log(checkbox.val());
+											checkbox.attr("checked",false);
+										}
+									
+					}
+				});
+			
+			select.parent().find('input').each(function() {
+				var option = jQuery(this);
+
+				for (var i=0;i<20;i++) 
+					if (option.val()=="notselectable"+i) option.parent().addClass("dropdowntitleoption");
+			})
+
 		});
 		
 	}

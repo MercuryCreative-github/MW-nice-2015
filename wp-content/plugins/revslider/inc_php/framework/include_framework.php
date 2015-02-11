@@ -15,5 +15,7 @@ $folderIncludes = dirname(__FILE__)."/";
 	require_once $folderIncludes . 'image_view.class.php';
 	require_once $folderIncludes . 'zip.class.php';
 	require_once $folderIncludes . 'wpml.class.php';
+	require_once $folderIncludes . 'em_integration.class.php';
+	require_once $folderIncludes . 'aq_resizer.class.php';
 	
 ?>
