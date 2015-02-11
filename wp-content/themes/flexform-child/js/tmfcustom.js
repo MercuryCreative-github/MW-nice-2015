@@ -37,7 +37,7 @@ function homepageSectionsResize(){
 
         var section01Margin = Math.max((screenHeight-menuHeight-sponsorsHeight-$('.section01-info').outerHeight())/2,0);
 
-        $('.section01-info').css('margin-top',section01Margin);
+        $('.section01-info').css('margin-top',section01Margin).attr('data','screen: '+screenHeight+' menuHeight:'+menuHeight+' sponsors:'+sponsorsHeight);
     }
 
     $('ul.reviews li').hide();
