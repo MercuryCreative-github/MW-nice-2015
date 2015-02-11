@@ -51,7 +51,7 @@ function homepageSectionsResize(){
         // section01 (the woman) must be full height but taking out the menu and the sponsors height.
         $('.section01').css('height',screenHeight-menuHeight);
 
-        var section01Margin = Math.max((screenHeight-menuHeight-$('.section01-info').outerHeight())/2,0);
+        var section01Margin = Math.max((screenHeight-menuHeight-sponsorsHeight-$('.section01-info').outerHeight())/2,0);
 
         $('.section01-info').css('margin-top',section01Margin);
     }
