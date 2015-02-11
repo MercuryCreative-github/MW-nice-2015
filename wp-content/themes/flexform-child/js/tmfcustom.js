@@ -58,7 +58,7 @@ function homepageSectionsResize(){
 
     $('ul.reviews li').hide();
     showReview = Math.floor(3*Math.random());
-    $('ul.reviews li:eq('+showReview+')').hide();
+    $('ul.reviews li:eq('+showReview+')').show();
 
 }
 
