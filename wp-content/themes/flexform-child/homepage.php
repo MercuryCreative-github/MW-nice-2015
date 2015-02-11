@@ -83,27 +83,27 @@ Template Name: Home Page
 
 <section id="hp-section" class="section01">
 	<div class="cell">
-	<div class="sec-main-content">
-		<div class="section01-info">
-			<div class="section01-logo"><img src="/wp-content/uploads/2015/02/Slider01-logo.png"></div>
-			<div class="section01-slogan">DIGITAL BUSINESS:<br/><span>MAKING IT REAL</span></div>
-			<div class="section01-date">JUNE 1 - 4, 2015<br/><span>NICE - FRANCE</span></div>
-			<div class="section01-buttons">
-				<a href="/about-digital-disruption/register/" class="sf-button large orange standard">Register</a>
-				<a id="updated" class="sf-button large green standard" href="#modal-1" data-toggle="modal">Keep updated</a>
-				<div class="clear"></div>
+		<div class="sec-main-content">
+			<div class="section01-info">
+				<div class="section01-logo"><img src="/wp-content/uploads/2015/02/Slider01-logo.png"></div>
+				<div class="section01-slogan">DIGITAL BUSINESS:<br/><span>MAKING IT REAL</span></div>
+				<div class="section01-date">JUNE 1 - 4, 2015<br/><span>NICE - FRANCE</span></div>
+				<div class="section01-buttons">
+					<a href="/about-digital-disruption/register/" class="sf-button large orange standard">Register</a>
+					<a id="updated" class="sf-button large green standard" href="#modal-1" data-toggle="modal">Keep updated</a>
+					<div class="clear"></div>
+				</div>
 			</div>
-		</div>
 
-	</div>
-	</div>
-	<div class="section01-sponsors">
-		<ul class="sponsors-logos">
-			<li class="logos-title">Sponsors</li>
-			<li><img src="/wp-content/uploads/2014/01/netcraker1.png" height="50" width="247"><p>Platinum</p></li>
-			<li><img src="/wp-content/uploads/2014/01/zte-logo-170x57.jpg" height="45" width="134"><p>Gold</p></li>
-		</ul>
-		<div class="clear"></div>
+		</div>
+		<div class="section01-sponsors">
+			<ul class="sponsors-logos">
+				<li class="logos-title">Sponsors</li>
+				<li><img src="/wp-content/uploads/2014/01/netcraker1.png" height="50" width="247"><p>Platinum</p></li>
+				<li><img src="/wp-content/uploads/2014/01/zte-logo-170x57.jpg" height="45" width="134"><p>Gold</p></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
 	</div>
 </section>
 
