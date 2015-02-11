@@ -2652,6 +2652,10 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 
 /****** MODAL *****/
 
+.emodal-title{display: none;}
+span.ginput_left input {border: none;background: #FFF;border-radius: 0px;}
+.form-logo {text-align: center;}
+
 #modal-overlay {
 		background: rgba(0, 0, 0)!important;
 }
@@ -2663,21 +2667,6 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 		border: 0!important;
 		color: black!important;
 }
-/*.eModal-1 {
-		cursor: pointer;
-		padding: 10px 60px;
-		display: inline-block;
-		margin: 5px auto;
-		background-color: #793A89;
-		color: #fff!important;
-		font-family:'Titillium Web', Arial, sans-serif;
-		font-size: 22px;
-		text-shadow: none;
-		font-weight: 700;*/
-/*    -webkit-box-shadow: 0 0 40px 2px #BBBBBB;
-		box-shadow: 0 0 40px 2px #BBBBBB;*/
-/*}*/
-
 .emodal.fixed {
 	position: relative;
 	width:290px;
@@ -2712,4 +2701,42 @@ input[type="submit"] {
 		display: block;
 		padding: 10px 0;
 		width: 100%;
+}
+
+/* Call for speakers */
+.summit-list ul li {
+	border-bottom: #e4e4e4 1px solid;
+	padding: 10px 0;
+	cursor: pointer;
+	margin-bottom: 0;
+	
+	list-style: none;
+}
+
+.summit-list ul li img {
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.summit-list ul li:hover {
+background: #FAFAFA;
+}
+
+.summit-list ul li a {
+color: #222222;
+}
+
+.download-summit a:after {
+content: "\f019";
+font-family: FontAwesome;
+font-size: 20px;
+vertical-align: middle;
+color: rgb(205, 205, 205);
+float: right;
+margin-top: 3px;
+margin-right: 5px;
+}
+
+.download-summit a:hover:after {
+color: rgb(255, 175, 0);
 }
