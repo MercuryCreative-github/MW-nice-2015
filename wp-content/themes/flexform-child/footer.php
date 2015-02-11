@@ -76,7 +76,7 @@
 						<a id="updated" class="sf-button large green standard" href="#modal-1" data-toggle="modal">Join Mailing List</a>
 						<div id="modal-1" class="modal hide fade" tabindex="-1">
 							<div class="modal-header" style="text-align: center;"><button class="close" type="button" data-dismiss="modal">×</button>
-								<img src="/wp-content/uploads/2014/06/logo-dd-51.png" alt="Keep up to date with the last event news." style="width: 50%;margin: auto;float: none;">							</div>
+								<img src="/wp-content/uploads/2014/12/LogoDD14.png" alt="Keep up to date with the last event news." style="width: 50%;margin: auto;float: none;">							</div>
 							<div class="modal-body"><?php echo do_shortcode('[contact-form-7 id="18871" title="Keep Updated 2014"]'); ?></div>
 						</div>
 						<div id="modal-2" class="modal hide fade" tabindex="-1">
