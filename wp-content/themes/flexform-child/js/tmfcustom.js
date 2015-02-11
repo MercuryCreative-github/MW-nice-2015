@@ -37,7 +37,7 @@ function homepageSectionsResize(){
 
         var section01Margin = Math.max((screenHeight-menuHeight-sponsorsHeight-$('.section01-info').outerHeight())/2,0);
 
-        $('.section01-info').css('margin-top',section01Margin).attr('data','screen: '+screenHeight+' menuHeight:'+menuHeight+' sponsors:'+sponsorsHeight);
+        $('.section01-info').stop(true,true).animate({'margin-top': section01Margin}, 500).attr('data','screen: '+screenHeight+' menuHeight:'+menuHeight+' sponsors:'+sponsorsHeight);;
     }
 
     $('ul.reviews li').hide();
@@ -281,6 +281,7 @@ jQuery(window).load(function() {
     jQuery( ".getRidofClasses" ).fadeTo('slow',1);
     resizeSponsors();
     scrollListener();
+    homepageSectionsResize();
 });
 
 function fullAgenda(){

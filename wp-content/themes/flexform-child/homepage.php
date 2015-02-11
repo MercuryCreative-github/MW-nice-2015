@@ -85,7 +85,7 @@ Template Name: Home Page
 	<div class="cell">
 		<div class="sec-main-content">
 			<div class="section01-info">
-				<div class="section01-logo"><img src="/wp-content/uploads/2015/02/Slider01-logo.png"></div>
+				<div class="section01-logo"><img src="/wp-content/uploads/2015/02/Slider01-logo.png" width="350" height="165"></div>
 				<div class="section01-slogan">DIGITAL BUSINESS:<br/><span>MAKING IT REAL</span></div>
 				<div class="section01-date">JUNE 1 - 4, 2015<br/><span>NICE - FRANCE</span></div>
 				<div class="section01-buttons">
