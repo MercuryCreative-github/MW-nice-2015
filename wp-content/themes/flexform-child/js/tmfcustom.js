@@ -37,10 +37,10 @@ function homepageSectionsResize(){
     var $ = jQuery;
     if($('.page-template-homepage-php').index()>0){
 
-        var minHeight       = 768;
+        var sponsorsHeight  = $('.section01-sponsors').outerHeight();
+        var minHeight       = 768-sponsorsHeight;
         var screenHeight    = Math.max($(window).height(),minHeight);
         var menuHeight      = $('#header-section').outerHeight();
-        var sponsorsHeight  = $('.section01-sponsors').outerHeight();
 
         // remove boxed layout
         $('.boxed-layout').removeClass('boxed-layout');
