@@ -276,7 +276,7 @@ Template Name: Home Page
 <div id='twitter_widget' class='widget twitter_widget'>
             <div class="widget-heading clearfix">
                         <h2 class="tw-title">Latest on Twitter</h2>
-                        <a class="twitter-timeline" width"100%" height="380" href="https://twitter.com/tmforumorg" data-widget-id="365265624051617792" data-chrome="noheader transparent" data-link-color="#338ECC" data-border-color="#ffffff" data-tweet-limit="3" data-src-2x="false" data-src="false" >
+                        <a class="twitter-timeline" width"100%" height="380" href="https://twitter.com/tmforumorg" data-widget-id="365265624051617792" data-chrome="noheader transparent" data-link-color="#338ECC" data-border-color="#ffffff" data-tweet-limit="5" data-src-2x="false" data-src="false" >
                             Tweets by @tmforumorg
                         </a>
                         <script>
