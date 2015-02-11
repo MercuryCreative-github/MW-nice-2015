@@ -49,7 +49,7 @@ function homepageSectionsResize(){
         $('section:lt(4)').css('height',screenHeight);
 
         // section01 (the woman) must be full height but taking out the menu and the sponsors height.
-        $('.section01').css('height',screenHeight-menuHeight-sponsorsHeight);
+        $('.section01').css('height',screenHeight-menuHeight);
 
     }
 }
