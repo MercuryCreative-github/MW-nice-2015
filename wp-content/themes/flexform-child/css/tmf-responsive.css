@@ -254,6 +254,7 @@
         float: none;
     }
     .social-contact img{margin-left: 0;}
+    .section01-info {background: rgba(0, 31, 52, 0.5);padding: 10px;}
 }
 @media screen and (max-width: 1024px) {
     /*uber menu
