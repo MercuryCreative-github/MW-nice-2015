@@ -110,7 +110,7 @@ Template Name: Home Page
 		<div class="title-green"><h1>The Event</h1></div>
 		<div class="section02-info">
 			<div class="section02-text">Connect and network with the who’s who of the digital ecosystem in a unique, collaborative environment to develop solutions to key digital business challenges and put profitable strategies into play. Focused on actionable outcomes, you’ll experience essential case studies, live proof-of-concept demos, and thought-provoking discussion and debate with your business and IT peers. Make it real! 
-				<a href="/about-digital-disruption/register/" class="sf-button large orange standard">Register Now</a>
+				<br/><a href="/about-digital-disruption/register/" class="sf-button large orange standard">Register Now</a>
 			</div>
 			<div class="section02-list">
 				<ul>
