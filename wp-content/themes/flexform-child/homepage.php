@@ -85,7 +85,7 @@ Template Name: Home Page
 	<div class="cell">
 		<div class="sec-main-content">
 			<div class="section01-info">
-				<div class="section01-logo"><img src="/wp-content/uploads/2015/02/Slider01-logo.png"></div>
+				<div class="section01-logo"><img src="/wp-content/uploads/2015/02/Slider01-logo.png" width="350" height="165"></div>
 				<div class="section01-slogan">DIGITAL BUSINESS:<br/><span>MAKING IT REAL</span></div>
 				<div class="section01-date">JUNE 1 - 4, 2015<br/><span>NICE - FRANCE</span></div>
 				<div class="section01-buttons">
@@ -96,12 +96,9 @@ Template Name: Home Page
 			</div>
 		</div>
 		<div class="section01-sponsors">
-			<ul class="sponsors-logos">
-				<li class="logos-title">Sponsors</li>
-				<li><img src="/wp-content/uploads/2014/01/netcraker1.png" height="50" width="247"><p>Platinum</p></li>
-				<li><img src="/wp-content/uploads/2014/01/zte-logo-170x57.jpg" height="45" width="134"><p>Gold</p></li>
-			</ul>
-			<div class="clear"></div>
+			<div class="sponsors-logos">
+				<img src="/wp-content/uploads/2014/01/netcraker1.png" height="50" width="247"><p>Platinum Sponsor</p>
+			</div>
 		</div>
 	</div>
 </section>
@@ -112,11 +109,13 @@ Template Name: Home Page
 	<div class="section02">
 		<div class="title-green"><h1>The Event</h1></div>
 		<div class="section02-info">
-			<div class="section02-text">Connect and network with the who’s who of the digital ecosystem in a unique, collaborative environment to develop solutions to key digital business challenges and put profitable strategies into play. Focused on actionable outcomes, you’ll experience essential case studies, live proof-of-concept demos, and thought-provoking discussion and debate with your business and IT peers. Make it real! </div>
+			<div class="section02-text">Connect and network with the who’s who of the digital ecosystem in a unique, collaborative environment to develop solutions to key digital business challenges and put profitable strategies into play. Focused on actionable outcomes, you’ll experience essential case studies, live proof-of-concept demos, and thought-provoking discussion and debate with your business and IT peers. Make it real! 
+				<br/><a href="/about-digital-disruption/register/" class="sf-button large orange standard">Register Now</a>
+			</div>
 			<div class="section02-list">
 				<ul>
-					<li><img src="/wp-content/uploads/2015/02/event-icon01.png"><p class="list-text"><strong>100+</strong> SESSIONS, LIVE DEMOS AND WORKSHOPS</p></li>
 					<li><img src="/wp-content/uploads/2015/02/event-icon02.png"><p class="list-text"><strong>6 SUMMITS</strong></p></li>
+					<li><img src="/wp-content/uploads/2015/02/event-icon01.png"><p class="list-text"><strong>100+</strong> SESSIONS, WORKSHOPS AND DEMOS</p></li>
 					<li><img src="/wp-content/uploads/2015/02/event-icon03.png"><p class="list-text"><strong>30+ HOURS</strong> OF NETWORKING</p></li>
 					<li><img src="/wp-content/uploads/2015/02/event-icon04.png"><p class="list-text"><strong>200+</strong> SPEAKERS</p></li>
 				</ul>
@@ -127,10 +126,10 @@ Template Name: Home Page
 		<div class="section02-companies">
 			<ul>
 				<li><img src="/wp-content/uploads/2015/02/icon-speaker-squard.png"><p>Companies currently <br/>speaking at <strong>TM Forum Live!</strong></p></li>
-				<li><img src="/wp-content/uploads/2015/02/logo-orange-hp.png"></li>
-				<li><img src="/wp-content/uploads/2015/02/logo-microsoft-hp.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/British-Gas-logo.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/Telefonica-Logo.png"></li>
 				<li><img src="/wp-content/uploads/2015/02/logo-google-hp.png"></li>
-				<li><img src="/wp-content/uploads/2015/02/logo-bt-hp.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/vodafone-mobile-logo.png"></li>
 			</ul>
 		</div>
 		</div>
@@ -149,7 +148,7 @@ Template Name: Home Page
 			<h1>THE PEOPLE</h1>
 			<p><strong>2014 ATTENDEES DETAIL:</strong></p>
 			<ul>
-				<li><span>80%</span><br/>Countries Represented</li>
+				<li><span>80</span><br/>Countries Represented</li>
 				<li><span>296</span><br/>CxOs</li>
 				<li><span>540+</span><br/>Companies In attendance</li>
 			</ul>

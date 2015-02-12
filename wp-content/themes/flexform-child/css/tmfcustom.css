@@ -183,7 +183,7 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 	float:left;
 }
 .section01-buttons a.orange {
-	background-color: #cb6d1e;
+	background-color: #ED7900;
 	padding: 10px 36px;
 }
 .section01-buttons a.green {
@@ -199,9 +199,8 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 	bottom: 0;
 	width: 100%;
 }
-ul.sponsors-logos {margin: 0 auto;display: table;width: 1230px;}
-ul.sponsors-logos li {
-
+.sponsors-logos {margin: 0 auto;display: table;width: 1230px;}
+/*ul.sponsors-logos li {
 	float: left;
 	margin: 0;
 	width: 31%;
@@ -213,7 +212,7 @@ ul.sponsors-logos li.logos-title, p.list-text {
 	display: table-cell;
 	width: 33%;
 }
-ul.sponsors-logos li.logos-title {padding-top: 25px;}
+ul.sponsors-logos li.logos-title {padding-top: 25px;}*/
 
 /*section02*/
 .title-green {}
@@ -230,8 +229,10 @@ ul.sponsors-logos li.logos-title {padding-top: 25px;}
 	border-left: 1px #e4e4e4 solid;
 	padding-left: 30px;
 }
-.section02-list ul li { margin-bottom: 20px; display: table; width: 100%;}
+.section02-list ul li { margin-bottom: 10px; display: table; width: 100%;}
 .section02-list ul li img, .section02-companies li img { margin-right: 0; display: table-cell;}
+.section02-companies li img {min-width: 60px;height: auto;width: 170px;margin-right: 60px;}
+.section02-companies li:first-child img {height: 70px;width: 70px;}
 p.list-text, .section02-companies li {
 	display: table-cell;
 	vertical-align: middle;
@@ -243,7 +244,7 @@ p.list-text, .section02-companies li {
 	border-top: 1px #e4e4e4 solid;
 	padding-top: 40px;
 }
-.section02-companies li {vertical-align: top;width: auto;min-width: 100px;padding-right: 80px}
+.section02-companies li {vertical-align: middle;width: auto;min-width: 100px;margin-right: 40px;}
 .section02-companies li:first-child {display: table;}
 .section02-companies ul {display: table;}
 
@@ -252,6 +253,7 @@ p.list-text, .section02-companies li {
 	vertical-align: middle;
 	padding-left: 15px;
 }
+.section02-text a.orange.standard {margin-top: 30px;border-radius: 5px;}
 
 /*section03*/
 .section03 {
@@ -288,23 +290,23 @@ p.list-text, .section02-companies li {
 .section03-top ul li:first-child{border-right: #e4e4e4 2px solid;}
 .section03-top ul li:last-child{border-left: #e4e4e4 2px solid;}
 .section03-bottom {background-color: #f8f8f9;min-height: 131px;}
-.section03-bottom ul {padding: 20px;}
+
 .section03-bottom ul li{float: left;margin-right: 15px;}
 
 /*section04*/
 .section04 {background-color: #e7e8e9;}
 .section04-info {width: 52%;float: left;}
-.section04-title {}
 
 .twitter-feed {float: left;width: 30%;background: #fff;padding: 0 15px 10px;border-top: #76a9db 4px solid;}
 .container h2.tw-title{
 	font-family: 'Open Sans' sans-serif;
 	font-weight: 600;
-	font-size: 21px;
+	font-size: 1.1em;
 	text-transform: uppercase;
 	color: #444;
 	margin:20px 0 40px 0;
 	max-width: 100%;
+	padding-right: 0;
 }
 .container h2.tw-title:before{content: url('/wp-content/uploads/2015/02/icon-twitter.png');left: -4px;top: 18px;position: relative;margin-right: 10px;}
 
@@ -315,7 +317,7 @@ p.list-text, .section02-companies li {
 	padding-bottom: 20px;
 }
 .section05-title h1, .section03-infobox01 h1 {text-align: center;color: #FFF;}
-.review-photo {display: table-cell; width: 25%;}
+.review-photo {display: table-cell; width: 15%;padding-right: 30px;}
 .review-photo img {border-radius: 50%;width: 180px;border: 3px #e4e4e4 solid;}
 .review-content,.review-name p {display: table-cell; vertical-align: middle;}
 .review-text {
@@ -333,7 +335,7 @@ p.list-text, .section02-companies li {
 	font-weight: 100;
 }
 
-
+.twfollow {display: none;}
 
 
 

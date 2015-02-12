@@ -137,7 +137,9 @@
         padding: 3px 8px;
     }
     .sec-main-content {width: 90%; margin: 0 auto;}
-    .section04-info {width: 57%;}
+    .section04-info {width: 65%;}
+    /*contacto footer '15*/
+    #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
 }
 @media screen and (max-width: 1200px) {
     /*uber menu
@@ -212,6 +214,11 @@
     .online-training .about-table .wpb_wrapper.clearfix {min-height: 800px;}
     p.welcome-contact {line-height: 20px;}
 
+    /*contact footer '15*/
+    .section04-info {width: 65%;}
+    .feed-image {width: 280px;}
+    .feed-related-posts .feed-item{width: 280px;}
+
 }
 @media screen and (max-width: 1077px) {
     h2:before, h3.faq-section-title:before {
@@ -254,7 +261,7 @@
         float: none;
     }
     .social-contact img{margin-left: 0;}
-    .section01-info {background: rgba(0, 31, 52, 0.5);padding: 10px;}
+    .section01-info {background: rgba(0, 31, 52, 0.82);padding: 10px;}
 }
 @media screen and (max-width: 1024px) {
     /*uber menu
@@ -334,6 +341,9 @@
     .tt_responsive .tt_timetable {
         margin-top: 0;
     }
+    /*'15*/
+    .section02-companies li img {margin-right: 10px;height: auto;}
+
 }
 /* iPads (landscape) ----------- */
 
@@ -484,6 +494,10 @@
     }
 
     ul.sponsors-logos {width: 90%}
+
+    /*'15*/
+    .section02-companies ul {display: block;padding: 0;}
+    .section02-companies li:first-child {margin: 0 auto 25px auto;}
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -645,7 +659,6 @@
 .feed-image{display:none;}
     .feed-related-posts h4{margin-left: -10px;}
 */
-
     .passes-prices .text-box a.btn-readmore {
         top: 40px;
     }
@@ -667,12 +680,16 @@
     .feed-content-text {display: none;}
     .feed-related-posts .feed-item{min-height: 90px;}
     #footer-widgets {width: 100%;}
+    /*Nice15-1st section*/
+    .section01-buttons {margin-top: 10px;}
 }
 @media screen and (max-width: 905px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
         width: 92% !important;
         margin-left: 8% !important;
     }
+    /*twitter feed '15*/
+    .container h2.tw-title:before {margin-right: 0px;}
 }
 @media screen and (max-width: 880px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -788,7 +805,7 @@
 }
 @media screen and (min-width: 768px) and (max-width: 800px) {
     #footer .social-contact img {
-        display: none;
+        width: 40%;
     }
     .social-contact .span8 h3 {
         padding: 0 30px 0 0;
@@ -934,6 +951,14 @@
     /*remove netcraker banner for mobile*/
     .netcrack-banner {display: none;}
 
+    /*netcraker logos '15*/
+    .section03-bottom ul{padding: 5px}
+    .section03-bottom ul li{margin-right: 5px;}
+    .section03-bottom ul li img {width: 80%;}
+
+    /*contact footer '15*/
+    .social-contact a#updated {margin: 25px auto;text-align: center;}
+
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -966,6 +991,10 @@
         float:none;
         margin:10px 0;
     }
+    /*'15*/
+    .section02-companies li {min-width: 100px;display: block;width: 100%;}
+    .section02-companies li:first-child img {margin-right: -25px;}
+
 }
 @media screen and (max-width: 480px) {
     #megaMenu #megaMenuToggle {
