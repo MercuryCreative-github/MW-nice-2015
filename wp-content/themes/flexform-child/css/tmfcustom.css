@@ -183,7 +183,7 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 	float:left;
 }
 .section01-buttons a.orange {
-	background-color: #cb6d1e;
+	background-color: #ED7900;
 	padding: 10px 36px;
 }
 .section01-buttons a.green {
@@ -254,6 +254,7 @@ p.list-text, .section02-companies li {
 	vertical-align: middle;
 	padding-left: 15px;
 }
+.section02-text a.orange.standard {margin-top: 30px;border-radius: 5px;}
 
 /*section03*/
 .section03 {
