@@ -97,8 +97,8 @@ Template Name: Home Page
 		</div>
 		<div class="section01-sponsors">
 			<ul class="sponsors-logos">
-				<li class="logos-title">Sponsors</li>
-				<li><img src="/wp-content/uploads/2014/01/netcraker1.png" height="50" width="247"><p>Platinum</p></li>
+				<li class="logos-title">Platinum Sponsor</li>
+				<li><img src="/wp-content/uploads/2014/01/netcraker1.png" height="50" width="247"></li>
 			</ul>
 			<div class="clear"></div>
 		</div>
