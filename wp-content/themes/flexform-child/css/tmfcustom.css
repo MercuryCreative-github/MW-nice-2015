@@ -232,7 +232,8 @@ ul.sponsors-logos li.logos-title {padding-top: 25px;}
 }
 .section02-list ul li { margin-bottom: 90px; display: table; width: 100%;}
 .section02-list ul li img, .section02-companies li img { margin-right: 0; display: table-cell;}
-.section02-companies li img {min-width: 60px;height: 60px;}
+.section02-companies li img {min-width: 60px;height: 60px;margin-right: 60px;}
+.section02-companies li:first-child img {margin-right: 0;}
 p.list-text, .section02-companies li {
 	display: table-cell;
 	vertical-align: middle;
@@ -301,11 +302,12 @@ p.list-text, .section02-companies li {
 .container h2.tw-title{
 	font-family: 'Open Sans' sans-serif;
 	font-weight: 600;
-	font-size: 21px;
+	font-size: 1.1em;
 	text-transform: uppercase;
 	color: #444;
 	margin:20px 0 40px 0;
 	max-width: 100%;
+	padding-right: 0;
 }
 .container h2.tw-title:before{content: url('/wp-content/uploads/2015/02/icon-twitter.png');left: -4px;top: 18px;position: relative;margin-right: 10px;}
 
@@ -316,7 +318,7 @@ p.list-text, .section02-companies li {
 	padding-bottom: 20px;
 }
 .section05-title h1, .section03-infobox01 h1 {text-align: center;color: #FFF;}
-.review-photo {display: table-cell; width: 25%;}
+.review-photo {display: table-cell; width: 15%;padding-right: 30px;}
 .review-photo img {border-radius: 50%;width: 180px;border: 3px #e4e4e4 solid;}
 .review-content,.review-name p {display: table-cell; vertical-align: middle;}
 .review-text {
