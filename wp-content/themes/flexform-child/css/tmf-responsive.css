@@ -254,7 +254,7 @@
         float: none;
     }
     .social-contact img{margin-left: 0;}
-    .section01-info {background: rgba(0, 31, 52, 0.5);padding: 10px;}
+    .section01-info {background: rgba(0, 31, 52, 0.82);padding: 10px;}
 }
 @media screen and (max-width: 1024px) {
     /*uber menu
@@ -667,6 +667,8 @@
     .feed-content-text {display: none;}
     .feed-related-posts .feed-item{min-height: 90px;}
     #footer-widgets {width: 100%;}
+    /*Nice15-1st section*/
+    .section01-buttons {margin-top: 10px;}
 }
 @media screen and (max-width: 905px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {

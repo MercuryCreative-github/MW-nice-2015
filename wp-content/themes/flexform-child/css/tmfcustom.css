@@ -230,8 +230,9 @@ ul.sponsors-logos li.logos-title {padding-top: 25px;}
 	border-left: 1px #e4e4e4 solid;
 	padding-left: 30px;
 }
-.section02-list ul li { margin-bottom: 20px; display: table; width: 100%;}
+.section02-list ul li { margin-bottom: 90px; display: table; width: 100%;}
 .section02-list ul li img, .section02-companies li img { margin-right: 0; display: table-cell;}
+.section02-companies li img {min-width: 60px;height: 60px;}
 p.list-text, .section02-companies li {
 	display: table-cell;
 	vertical-align: middle;
@@ -243,7 +244,7 @@ p.list-text, .section02-companies li {
 	border-top: 1px #e4e4e4 solid;
 	padding-top: 40px;
 }
-.section02-companies li {vertical-align: top;width: auto;min-width: 100px;padding-right: 80px}
+.section02-companies li {vertical-align: top;width: auto;min-width: 100px;margin-right: 40px;}
 .section02-companies li:first-child {display: table;}
 .section02-companies ul {display: table;}
 

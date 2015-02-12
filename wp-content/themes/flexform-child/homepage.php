@@ -126,7 +126,7 @@ Template Name: Home Page
 	</div>
 		<div class="section02-companies">
 			<ul>
-				<li><img src="/wp-content/uploads/2015/02/icon-speaker-squard.png"><p>Companies currently <br/>speaking at <strong>TM Forum Live!</strong></p></li>
+				<li><img src="/wp-content/uploads/2015/02/icon-speaker-squard.png"><span>Companies currently <br/>speaking at <strong>TM Forum Live!</strong></span></li>
 				<li><img src="/wp-content/uploads/2015/02/logo-orange-hp.png"></li>
 				<li><img src="/wp-content/uploads/2015/02/logo-microsoft-hp.png"></li>
 				<li><img src="/wp-content/uploads/2015/02/logo-google-hp.png"></li>
