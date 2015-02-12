@@ -199,9 +199,8 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 	bottom: 0;
 	width: 100%;
 }
-ul.sponsors-logos {margin: 0 auto;display: table;width: 1230px;}
-ul.sponsors-logos li {
-
+.sponsors-logos {margin: 0 auto;display: table;width: 1230px;}
+/*ul.sponsors-logos li {
 	float: left;
 	margin: 0;
 	width: 31%;
@@ -213,7 +212,7 @@ ul.sponsors-logos li.logos-title, p.list-text {
 	display: table-cell;
 	width: 33%;
 }
-ul.sponsors-logos li.logos-title {padding-top: 25px;}
+ul.sponsors-logos li.logos-title {padding-top: 25px;}*/
 
 /*section02*/
 .title-green {}
