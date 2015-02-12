@@ -343,6 +343,7 @@
     }
     /*'15*/
     .section02-companies li img {margin-right: 10px;height: auto;}
+    ..section02-companies li {margin-right: 0;}
 
 }
 /* iPads (landscape) ----------- */
@@ -497,7 +498,7 @@
 
     /*'15*/
     .section02-companies ul {display: block;padding: 0;}
-    .section02-companies li:first-child {margin: 0 auto 25px auto;}
+    .section02-companies li:first-child {margin: 0 auto 45px auto;}
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -958,6 +959,8 @@
 
     /*contact footer '15*/
     .social-contact a#updated {margin: 25px auto;text-align: center;}
+    .section02-text {float: none;width: 100%;}
+    .section02-list {float: none;width: 100%;border-left: none;padding-left: 0px;margin-top: 50px;}
 
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
