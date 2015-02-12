@@ -137,7 +137,7 @@
         padding: 3px 8px;
     }
     .sec-main-content {width: 90%; margin: 0 auto;}
-    .section04-info {width: 57%;}
+    .section04-info {width: 65%;}
     /*contacto footer '15*/
     #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
 }
@@ -213,6 +213,11 @@
     /*ONLINE TRAINING*/
     .online-training .about-table .wpb_wrapper.clearfix {min-height: 800px;}
     p.welcome-contact {line-height: 20px;}
+
+    /*contact footer '15*/
+    .section04-info {width: 65%;}
+    .feed-image {width: 280px;}
+    .feed-related-posts .feed-item{width: 280px;}
 
 }
 @media screen and (max-width: 1077px) {
@@ -336,6 +341,9 @@
     .tt_responsive .tt_timetable {
         margin-top: 0;
     }
+    /*'15*/
+    .section02-companies li img {margin-right: 10px;height: auto;}
+
 }
 /* iPads (landscape) ----------- */
 
@@ -486,6 +494,10 @@
     }
 
     ul.sponsors-logos {width: 90%}
+
+    /*'15*/
+    .section02-companies ul {display: block;padding: 0;}
+    .section02-companies li:first-child {margin: 0 auto 25px auto;}
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -979,6 +991,10 @@
         float:none;
         margin:10px 0;
     }
+    /*'15*/
+    .section02-companies li {min-width: 100px;display: block;width: 100%;}
+    .section02-companies li:first-child img {margin-right: -25px;}
+
 }
 @media screen and (max-width: 480px) {
     #megaMenu #megaMenuToggle {
