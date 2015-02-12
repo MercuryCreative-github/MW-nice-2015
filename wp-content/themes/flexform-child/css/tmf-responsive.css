@@ -961,6 +961,7 @@
     .social-contact a#updated {margin: 25px auto;text-align: center;}
     .section02-text {float: none;width: 100%;}
     .section02-list {float: none;width: 100%;border-left: none;padding-left: 0px;margin-top: 50px;}
+    .section03-top span {font-size: 2.1em;}
 
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
