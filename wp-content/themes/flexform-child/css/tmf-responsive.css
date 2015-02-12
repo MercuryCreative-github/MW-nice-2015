@@ -138,6 +138,8 @@
     }
     .sec-main-content {width: 90%; margin: 0 auto;}
     .section04-info {width: 57%;}
+    /*contacto footer '15*/
+    #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
 }
 @media screen and (max-width: 1200px) {
     /*uber menu
@@ -791,7 +793,7 @@
 }
 @media screen and (min-width: 768px) and (max-width: 800px) {
     #footer .social-contact img {
-        display: none;
+        width: 40%;
     }
     .social-contact .span8 h3 {
         padding: 0 30px 0 0;
@@ -941,6 +943,9 @@
     .section03-bottom ul{padding: 5px}
     .section03-bottom ul li{margin-right: 5px;}
     .section03-bottom ul li img {width: 80%;}
+
+    /*contact footer '15*/
+    .social-contact a#updated {margin: 25px auto;text-align: center;}
 
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
