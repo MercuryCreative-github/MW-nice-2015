@@ -230,7 +230,7 @@ ul.sponsors-logos li.logos-title {padding-top: 25px;}
 	border-left: 1px #e4e4e4 solid;
 	padding-left: 30px;
 }
-.section02-list ul li { margin-bottom: 90px; display: table; width: 100%;}
+.section02-list ul li { margin-bottom: 10px; display: table; width: 100%;}
 .section02-list ul li img, .section02-companies li img { margin-right: 0; display: table-cell;}
 .section02-companies li img {min-width: 60px;height: 60px;margin-right: 60px;}
 .section02-companies li:first-child img {margin-right: 0;}
@@ -290,7 +290,7 @@ p.list-text, .section02-companies li {
 .section03-top ul li:first-child{border-right: #e4e4e4 2px solid;}
 .section03-top ul li:last-child{border-left: #e4e4e4 2px solid;}
 .section03-bottom {background-color: #f8f8f9;min-height: 131px;}
-.section03-bottom ul {padding: 20px;}
+.section03-bottom ul {padding: 20px 5px;}
 .section03-bottom ul li{float: left;margin-right: 15px;}
 
 /*section04*/

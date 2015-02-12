@@ -645,7 +645,6 @@
 .feed-image{display:none;}
     .feed-related-posts h4{margin-left: -10px;}
 */
-
     .passes-prices .text-box a.btn-readmore {
         top: 40px;
     }
@@ -675,6 +674,8 @@
         width: 92% !important;
         margin-left: 8% !important;
     }
+    /*twitter feed '15*/
+    .container h2.tw-title:before {margin-right: 0px;}
 }
 @media screen and (max-width: 880px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -935,6 +936,11 @@
 
     /*remove netcraker banner for mobile*/
     .netcrack-banner {display: none;}
+
+    /*netcraker logos '15*/
+    .section03-bottom ul{padding: 5px}
+    .section03-bottom ul li{margin-right: 5px;}
+    .section03-bottom ul li img {width: 80%;}
 
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
