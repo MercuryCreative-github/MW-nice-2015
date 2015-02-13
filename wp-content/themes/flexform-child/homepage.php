@@ -148,7 +148,7 @@ Template Name: Home Page
 			<h1>THE PEOPLE</h1>
 			<p><strong>2014 ATTENDEES DETAIL:</strong></p>
 			<ul>
-				<li><span>80</span><br/>Countries Represented</li>
+				<li><span>80+</span><br/>Countries Represented</li>
 				<li><span>296</span><br/>CxOs</li>
 				<li><span>540+</span><br/>Companies In attendance</li>
 			</ul>
