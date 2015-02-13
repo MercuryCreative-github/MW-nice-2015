@@ -433,7 +433,11 @@ nav .menu > li:first-child > a{padding: 4px 18px;}
 .navbar-collapse > ul > li {border-bottom:1px solid #E4E4E4; width:100%; margin:0 auto;}
 .navbar-collapse ul{margin-bottom:0px;}
 .navbar-collapse li{margin-bottom:5px;}
-.social-icon{display:-webkit-inline-box;display:-moz-inline-box;display:inline-box;}
+
+/*'15*/
+/*.social-icon{display:-webkit-inline-box;display:-moz-inline-box;display:inline-box;}*/
+.menu .social-icon a span {vertical-align: middle;}
+
 #mini-navigation .menu li.social-icon a {margin: 3px 8px;padding: 0;}
 .navbar-collapse .social-icon {display: block;}
 #nav-pointer{background-color:transparent !important;}
