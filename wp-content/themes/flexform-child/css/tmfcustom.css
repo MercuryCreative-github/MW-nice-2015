@@ -199,7 +199,8 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 	bottom: 0;
 	width: 100%;
 }
-.sponsors-logos {margin: 0 auto;display: table;width: 1230px;}
+.sponsors-logos {margin: 0 auto;display: table;}
+.sponsors-logos p {text-align: center;}
 /*ul.sponsors-logos li {
 	float: left;
 	margin: 0;
@@ -231,8 +232,8 @@ ul.sponsors-logos li.logos-title {padding-top: 25px;}*/
 }
 .section02-list ul li { margin-bottom: 10px; display: table; width: 100%;}
 .section02-list ul li img, .section02-companies li img { margin-right: 0; display: table-cell;}
-.section02-companies li img {min-width: 60px;height: auto;width: 170px;margin-right: 60px;}
-.section02-companies li:first-child img {height: 70px;width: 70px;}
+.section02-companies li img {min-width: 60px;height: auto;width: 170px;margin-right: 30px;}
+.section02-companies li:first-child img {height: 70px;width: 70px;margin-right: 0;}
 p.list-text, .section02-companies li {
 	display: table-cell;
 	vertical-align: middle;
@@ -283,6 +284,7 @@ p.list-text, .section02-companies li {
 	border-bottom: 3px #e4e4e4 solid;
 	line-height: 70px;
 }
+.section03-bottom {padding: 15px 10px 0 10px;}
 .section03-top ul li {
 	float: left;
 	width: 31%;
@@ -679,7 +681,7 @@ nav .menu ul{background-color:transparent !important;}
 		float: left;
 		padding-bottom: 2px;
 }
-.feed-related-posts .feed-item {float: left; width: 300px;min-height: 380px;background-color:#fff;color: #444;margin: 0 15px 15px 0;}
+.feed-related-posts .feed-item {max-height: 380px;float: left; width: 300px;min-height: 380px;background-color:#fff;color: #444;margin: 0 15px 15px 0;}
 .feed-related-posts .feed-item:nth-child(3) {background-color: #6da96f;color: #fff;}
 .feed-related-posts .feed-item:nth-child(2) {background-color: #5fa098;color: #fff;}
 .feed-related-posts .feed-item:hover {background-color: #F2F2F2;}
