@@ -206,21 +206,8 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .logo_2 img {width: 150px;}
 .logo_3 img {width: 95px;}
 p.image-caption{margin:10px 0 0 0;line-height:100%;}
-.sponsors_logo {text-align:center; position: relative; display: inline-block; max-width: 16%; margin-left: 28px;}
-.sponsors_logo a {display: block; margin: auto; height: 70px; line-height: 70px;}
-/*ul.sponsors-logos li {
-	float: left;
-	margin: 0;
-	width: 31%;
-	text-align: center;
-}
-ul.sponsors-logos li.logos-title, p.list-text {
-	text-transform: uppercase;
-	font-size: 18px;
-	display: table-cell;
-	width: 33%;
-}
-ul.sponsors-logos li.logos-title {padding-top: 25px;}*/
+.sponsors_logo {text-align:center; position: relative; display: inline-block; max-width: 30%; margin-left: 85px;}
+.sponsors_logo a {display: block; margin: auto; height: 90px; line-height: 90px;}
 
 /*section02*/
 .title-green {}
