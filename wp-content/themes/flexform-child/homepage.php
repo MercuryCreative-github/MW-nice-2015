@@ -97,11 +97,18 @@ Template Name: Home Page
 		</div>
 		<div class="section01-sponsors">
 			<div class="sponsors-logos">
-				<ul>
-				<li><img src="/wp-content/uploads/2014/01/netcraker1.png" height="50" width="247"><p>Platinum Sponsor</p></li>
-				<li><img src="/wp-content/uploads/2015/02/genE_250-2012.gif"><p>Gold Sponsor</p></li>
-				<li><img src="/wp-content/uploads/2015/02/Exhibitor-resource1.png"><p>Gold Sponsor</p></li>
-				</ul>
+				<div class="sponsors_logo logo_1">
+					<a href="/event-sponsors/"><img src="/wp-content/uploads/2014/01/netcraker1.png" height="50" width="247"></a>
+					<p class="image-caption">Platinum Sponsor</p>
+				</div>
+				<div class="sponsors_logo logo_2">
+					<a href="/event-sponsors/"><img src="/wp-content/uploads/2015/02/genE_250-2012.gif"></a>
+					<p class="image-caption">Gold Sponsor</p>
+				</div>
+				<div class="sponsors_logo logo_3">
+					<a href="/event-sponsors/"><img src="/wp-content/uploads/2015/02/Exhibitor-resource1.png"></a>
+					<p class="image-caption">Gold Sponsor</p>
+				</div>
 			</div>
 		</div>
 	</div>
