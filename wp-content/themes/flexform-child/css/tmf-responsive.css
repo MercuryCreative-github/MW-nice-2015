@@ -137,9 +137,11 @@
         padding: 3px 8px;
     }
     .sec-main-content {width: 90%; margin: 0 auto;}
-    .section04-info {width: 65%;}
+    .section04-info {width: 58%;margin-left: 0;}
+    .section04-title h1 {text-align: left;}
     /*contacto footer '15*/
     #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
+    .section03-bottom ul li:nth-child(4) {margin-left: 0;}
 }
 @media screen and (max-width: 1200px) {
     /*uber menu
@@ -218,6 +220,7 @@
     .section04-info {width: 65%;}
     .feed-image {width: 280px;}
     .feed-related-posts .feed-item{width: 280px;}
+    .section03-bottom ul {padding: 15px 30px;}
 
 }
 @media screen and (max-width: 1077px) {
@@ -260,8 +263,10 @@
     .dd13stories p {
         float: none;
     }
+    /*'15*/
     .social-contact img{margin-left: 0;}
     .section01-info {background: rgba(0, 31, 52, 0.82);padding: 10px;}
+    .section03-bottom ul {padding: 15px 10px;}
 }
 @media screen and (max-width: 1024px) {
     /*uber menu
@@ -499,6 +504,7 @@
     /*'15*/
     .section02-companies ul {display: block;padding: 0;}
     .section02-companies li:first-child {margin: 0 auto 45px auto;}
+    .section03-bottom ul {padding: 15px 0;}
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {

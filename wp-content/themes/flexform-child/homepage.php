@@ -97,7 +97,18 @@ Template Name: Home Page
 		</div>
 		<div class="section01-sponsors">
 			<div class="sponsors-logos">
-				<img src="/wp-content/uploads/2014/01/netcraker1.png" height="50" width="247"><p>Platinum Sponsor</p>
+				<div class="sponsors_logo logo_1">
+					<a href="/event-sponsors/"><img src="/wp-content/uploads/2014/01/netcraker1.png"></a>
+					<p class="image-caption">Platinum Sponsor</p>
+				</div>
+				<div class="sponsors_logo logo_2">
+					<a href="/event-sponsors/"><img src="/wp-content/uploads/2015/02/genE_250-2012.gif"></a>
+					<p class="image-caption">Gold Sponsor</p>
+				</div>
+				<div class="sponsors_logo logo_3">
+					<a href="/event-sponsors/"><img src="/wp-content/uploads/2015/02/Exhibitor-resource1.png"></a>
+					<p class="image-caption">Gold Sponsor</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -148,7 +159,7 @@ Template Name: Home Page
 			<h1>THE PEOPLE</h1>
 			<p><strong>2014 ATTENDEES DETAIL:</strong></p>
 			<ul>
-				<li><span>80</span><br/>Countries Represented</li>
+				<li><span>80+</span><br/>Countries Represented</li>
 				<li><span>296</span><br/>CxOs</li>
 				<li><span>540+</span><br/>Companies In attendance</li>
 			</ul>
@@ -184,15 +195,18 @@ Template Name: Home Page
 							* Recibo un item rss y limpia el formato para hacer más facil el print de los campos
 							*/
 							function limpiar_formato_feed($rss_item){
+
 									$item = array();
-									$item['link'] = $rss_item->get_link();
-									$item['title'] = $rss_item->get_title();
-									$item['category'] = $rss_item->get_category()->get_label();
-									$item['categories'] = $rss_item->get_categories();
-									$item['image'] = null;
+									$item['link'] 	= $rss_item->get_link();
+									$item['title'] 	= $rss_item->get_title();
+									
+									if ($author = $rss_item->get_author()){
+											$item['author'] = 'By ' . $author->get_name();
+									}else {$item['author'] ="";}
+
+									$item['image'] 	= null;
 									$DOM = new DOMDocument();
 									@$DOM->loadHTML($rss_item->get_description());
-
 
 									$imagenes = $DOM->getElementsByTagName('img');
 									$parrafos = $DOM->getElementsByTagName('p');
@@ -227,6 +241,7 @@ Template Name: Home Page
 									$maxitems = $feed_inform->get_item_quantity($cantidad_posts_feed);
 									$feed_items_inform = $feed_inform->get_items(0, $maxitems);
 							}
+
 							$items_feed = array();
 							if(count($feed_items_inform) > 0) {
 									foreach($feed_items_inform as $feed_item_inform) {
@@ -249,7 +264,9 @@ Template Name: Home Page
 									</figure>
 									<div class="feed-content">
 									<p class="feed-author">
-										<?php echo $item['category']; ?>
+									
+									<?php echo $item['author']; ?>
+
 									</p>
 										<a href="<?php echo $item['link']; ?>" target="_blank">
 											<h4 class="feed-title"><?php echo $item['title']; ?></h4>

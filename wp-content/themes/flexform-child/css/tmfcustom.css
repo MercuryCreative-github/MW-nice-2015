@@ -118,16 +118,16 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 	padding: 19px 16px 13px;
 }
 .summit-sidebar-tabs a.download-agenda span.text-btn, .summit-sidebar-tabs.cca a.download-agenda span.small-text-btn,
-.summit-sidebar-tabs a.sf-button.standard.register-agenda span.register-text {
+a.sf-button.standard.register-agenda span.register-text{
 	font-weight: bold;
 	padding-right: 15px;
 	margin-right: 68px;
 	padding-top: 0;
 }
 .summit-sidebar-tabs a.download-agenda span.text-btn {font-size: 30px;}
-.summit-sidebar-tabs a.sf-button.standard.register-agenda span.register-text {font-size: 25px;}
+a.sf-button.standard.register-agenda span.register-text {font-size: 25px;}
 .summit-sidebar-tabs a.download-agenda span.small-text-btn{font-size: 20px;}
-.summit-sidebar-tabs a.sf-button.standard.register-agenda {
+a.sf-button.standard.register-agenda {
 	background-image: url('/wp-content/uploads/2015/02/icon-register.png');
 	background-repeat: no-repeat;
 	background-position: right bottom;
@@ -201,19 +201,13 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 }
 .sponsors-logos {margin: 0 auto;display: table;}
 .sponsors-logos p {text-align: center;}
-/*ul.sponsors-logos li {
-	float: left;
-	margin: 0;
-	width: 31%;
-	text-align: center;
-}
-ul.sponsors-logos li.logos-title, p.list-text {
-	text-transform: uppercase;
-	font-size: 18px;
-	display: table-cell;
-	width: 33%;
-}
-ul.sponsors-logos li.logos-title {padding-top: 25px;}*/
+
+.logo_1 img {width: 247px;}
+.logo_2 img {width: 150px;}
+.logo_3 img {width: 95px;}
+p.image-caption{margin:10px 0 0 0;line-height:100%;}
+.sponsors_logo {text-align:center; position: relative; display: inline-block; max-width: 30%; margin-left: 85px;}
+.sponsors_logo a {display: block; margin: auto; height: 90px; line-height: 90px;}
 
 /*section02*/
 .title-green {}
@@ -284,7 +278,8 @@ p.list-text, .section02-companies li {
 	border-bottom: 3px #e4e4e4 solid;
 	line-height: 70px;
 }
-.section03-bottom {padding: 15px 10px 0 10px;}
+.section03-bottom {padding: 0px 10px;}
+.section03-bottom ul {padding: 15px 50px;}
 .section03-top ul li {
 	float: left;
 	width: 31%;
@@ -292,12 +287,13 @@ p.list-text, .section02-companies li {
 .section03-top ul li:first-child{border-right: #e4e4e4 2px solid;}
 .section03-top ul li:last-child{border-left: #e4e4e4 2px solid;}
 .section03-bottom {background-color: #f8f8f9;min-height: 131px;}
-
 .section03-bottom ul li{float: left;margin-right: 15px;}
+.section03-bottom ul li:nth-child(4) {margin-left: 60px;}
 
 /*section04*/
 .section04 {background-color: #e7e8e9;}
-.section04-info {width: 52%;float: left;}
+.section04-info {width: 52%;float: left;margin-left: 3.5%;}
+.section04-title h1 {text-align: center;}
 
 .twitter-feed {float: left;width: 30%;background: #fff;padding: 0 15px 10px;border-top: #76a9db 4px solid;}
 .container h2.tw-title{
@@ -338,15 +334,6 @@ p.list-text, .section02-companies li {
 }
 
 .twfollow {display: none;}
-
-
-
-
-
-
-
-
-
 
 /*NICE 14* - borrar cosas viajas de aca a medida que se arma el sitio nuevo para mantener ordenado/
 /**************************/
@@ -696,6 +683,7 @@ nav .menu ul{background-color:transparent !important;}
 		font-size:14px;
 		font-weight:bold;
 		text-transform: uppercase;
+		margin-bottom: 5px;
 }
 .feed-related-posts .feed-author:after {
 	border-bottom: 3px #444 solid;
@@ -705,8 +693,8 @@ nav .menu ul{background-color:transparent !important;}
 .feed-title {
 	color: #444;
 	font-weight: 400;
-	font-size: 16px;
-	line-height: 20px;
+	font-size: 20px;
+	line-height: 23px;
 	margin: 0;
 }
 .feed-content-text a p {font-size: 15px; font-weight: 200; line-height: 20px; color:#444;}
@@ -717,7 +705,7 @@ nav .menu ul{background-color:transparent !important;}
 .feed-content a:hover {text-decoration: none;}
 .feed-image{width: 300px;}
 .feed-image img{max-height: 200px;height: 200px;}
-.feed-content{padding: 20px;}
+.feed-content{padding: 5px 20px;}
 /** END FEED INFORM **/
 
 /****************/
@@ -1824,10 +1812,6 @@ a.dd13stories:hover .text-content h2,a.dd13stories:hover .text-content p span{ c
 /*added only for the 6th logo => */.top-sponsors-logos .sponsors_logo.logo_6 img.top-sponsor{max-height:40px;}
 .top-sponsors-logos {/*display: none;*/ margin:0;padding:25px 0 0 0;border-bottom:4px solid #f0f0f0;}
 .top-sponsors-logos .span12{margin-left:0;}
-.top-sponsors-logos .image-caption{margin:10px 0 0 0;line-height:100%;}
-.top-sponsors-logos .sponsors_title h3 {margin-top:25px; text-transform: uppercase}
-.top-sponsors-logos .sponsors_logo {text-align:center; position: relative; display: inline-block; max-width: 16%; margin-left: 28px;}
-.top-sponsors-logos .sponsors_logo a {display: block; margin: auto; height: 70px; line-height: 70px;}
 .top-sponsors, .other-sponsors {display: none;} /* Show Sponsors only on bigger screens */
 .responsive-sponsors {display: none; text-align: center;}
 .responsive-sponsors .main-sponsors h3 {
