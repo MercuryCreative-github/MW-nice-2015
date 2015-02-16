@@ -197,12 +197,14 @@ Template Name: Home Page
 							function limpiar_formato_feed($rss_item){
 
 									$item = array();
-									$item['link'] = $rss_item->get_link();
-									$item['title'] = $rss_item->get_title();
-									//$item['author'] = $rss_item->get_the_author();
-									//$item['category'] = $rss_item->get_category()->get_label();
-									//$item['categories'] = $rss_item->get_categories();
-									$item['image'] = null;
+									$item['link'] 	= $rss_item->get_link();
+									$item['title'] 	= $rss_item->get_title();
+									
+									if ($author = $rss_item->get_author()){
+											$item['author'] = 'By ' . $author->get_name();
+									}else {$item['author'] ="";}
+
+									$item['image'] 	= null;
 									$DOM = new DOMDocument();
 									@$DOM->loadHTML($rss_item->get_description());
 
@@ -230,7 +232,7 @@ Template Name: Home Page
 									return $item;
 							}
 
-							$cantidad_posts_feed = 4;
+							$cantidad_posts_feed = 0;
 							$url_feed_inform = "http://inform.tmforum.org/tag/tm-forum-live-2015/feed/";
 							$feed_inform = fetch_feed($url_feed_inform);
 
@@ -239,6 +241,7 @@ Template Name: Home Page
 									$maxitems = $feed_inform->get_item_quantity($cantidad_posts_feed);
 									$feed_items_inform = $feed_inform->get_items(0, $maxitems);
 							}
+
 							$items_feed = array();
 							if(count($feed_items_inform) > 0) {
 									foreach($feed_items_inform as $feed_item_inform) {
@@ -261,8 +264,9 @@ Template Name: Home Page
 									</figure>
 									<div class="feed-content">
 									<p class="feed-author">
-									<!--<?php the_author(); ?>
-									<?php //echo $item['author']; ?>-->
+									
+									<?php echo $item['author']; ?>
+
 									</p>
 										<a href="<?php echo $item['link']; ?>" target="_blank">
 											<h4 class="feed-title"><?php echo $item['title']; ?></h4>
