@@ -98,7 +98,7 @@ Template Name: Home Page
 		<div class="section01-sponsors">
 			<div class="sponsors-logos">
 				<div class="sponsors_logo logo_1">
-					<a href="/event-sponsors/"><img src="/wp-content/uploads/2014/01/netcraker1.png" height="50" width="247"></a>
+					<a href="/event-sponsors/"><img src="/wp-content/uploads/2014/01/netcraker1.png"></a>
 					<p class="image-caption">Platinum Sponsor</p>
 				</div>
 				<div class="sponsors_logo logo_2">

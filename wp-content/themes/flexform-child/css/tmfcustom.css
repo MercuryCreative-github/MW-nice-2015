@@ -201,6 +201,13 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 }
 .sponsors-logos {margin: 0 auto;display: table;}
 .sponsors-logos p {text-align: center;}
+
+.logo_1 img {width: 247px;}
+.logo_2 img {width: 150px;}
+.logo_3 img {width: 95px;}
+p.image-caption{margin:10px 0 0 0;line-height:100%;}
+.sponsors_logo {text-align:center; position: relative; display: inline-block; max-width: 16%; margin-left: 28px;}
+.sponsors_logo a {display: block; margin: auto; height: 70px; line-height: 70px;}
 /*ul.sponsors-logos li {
 	float: left;
 	margin: 0;
@@ -1819,10 +1826,6 @@ a.dd13stories:hover .text-content h2,a.dd13stories:hover .text-content p span{ c
 /*added only for the 6th logo => */.top-sponsors-logos .sponsors_logo.logo_6 img.top-sponsor{max-height:40px;}
 .top-sponsors-logos {/*display: none;*/ margin:0;padding:25px 0 0 0;border-bottom:4px solid #f0f0f0;}
 .top-sponsors-logos .span12{margin-left:0;}
-.top-sponsors-logos .image-caption{margin:10px 0 0 0;line-height:100%;}
-.top-sponsors-logos .sponsors_title h3 {margin-top:25px; text-transform: uppercase}
-.top-sponsors-logos .sponsors_logo {text-align:center; position: relative; display: inline-block; max-width: 16%; margin-left: 28px;}
-.top-sponsors-logos .sponsors_logo a {display: block; margin: auto; height: 70px; line-height: 70px;}
 .top-sponsors, .other-sponsors {display: none;} /* Show Sponsors only on bigger screens */
 .responsive-sponsors {display: none; text-align: center;}
 .responsive-sponsors .main-sponsors h3 {
