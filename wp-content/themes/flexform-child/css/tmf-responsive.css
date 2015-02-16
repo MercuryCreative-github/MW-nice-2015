@@ -141,6 +141,7 @@
     .section04-title h1 {text-align: left;}
     /*contacto footer '15*/
     #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
+    .section03-bottom ul li:nth-child(4) {margin-left: 0;}
 }
 @media screen and (max-width: 1200px) {
     /*uber menu
