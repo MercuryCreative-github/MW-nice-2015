@@ -232,7 +232,7 @@ Template Name: Home Page
 									return $item;
 							}
 
-							$cantidad_posts_feed = 0;
+							$cantidad_posts_feed = 4;
 							$url_feed_inform = "http://inform.tmforum.org/tag/tm-forum-live-2015/feed/";
 							$feed_inform = fetch_feed($url_feed_inform);
 
