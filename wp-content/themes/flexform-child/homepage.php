@@ -195,16 +195,16 @@ Template Name: Home Page
 							* Recibo un item rss y limpia el formato para hacer más facil el print de los campos
 							*/
 							function limpiar_formato_feed($rss_item){
+
 									$item = array();
 									$item['link'] = $rss_item->get_link();
 									$item['title'] = $rss_item->get_title();
-									$item['author'] = $rss_item->get_the_author();
+									//$item['author'] = $rss_item->get_the_author();
 									//$item['category'] = $rss_item->get_category()->get_label();
 									//$item['categories'] = $rss_item->get_categories();
 									$item['image'] = null;
 									$DOM = new DOMDocument();
 									@$DOM->loadHTML($rss_item->get_description());
-
 
 									$imagenes = $DOM->getElementsByTagName('img');
 									$parrafos = $DOM->getElementsByTagName('p');
@@ -261,8 +261,8 @@ Template Name: Home Page
 									</figure>
 									<div class="feed-content">
 									<p class="feed-author">
-									<?php the_author(); ?>
-									<!--<?php //echo $item['author']; ?>-->
+									<!--<?php the_author(); ?>
+									<?php //echo $item['author']; ?>-->
 									</p>
 										<a href="<?php echo $item['link']; ?>" target="_blank">
 											<h4 class="feed-title"><?php echo $item['title']; ?></h4>
