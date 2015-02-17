@@ -89,7 +89,7 @@ Template Name: Home Page
 				<div class="section01-slogan">DIGITAL BUSINESS:<br/><span>MAKING IT REAL</span></div>
 				<div class="section01-date">JUNE 1 - 4, 2015<br/><span>NICE - FRANCE</span></div>
 				<div class="section01-buttons">
-					<a href="/about-digital-disruption/register/" class="sf-button large orange standard">Register</a>
+					<a href="/passes-pricing/" class="sf-button large orange standard">Register</a>
 					<a id="updated" class="sf-button large green standard" href="#modal-1" data-toggle="modal">Keep updated</a>
 					<div class="clear"></div>
 				</div>
@@ -98,15 +98,15 @@ Template Name: Home Page
 		<div class="section01-sponsors">
 			<div class="sponsors-logos">
 				<div class="sponsors_logo logo_1">
-					<a href="/event-sponsors/"><img src="/wp-content/uploads/2014/01/netcraker1.png"></a>
+					<a href="/sponsors/"><img src="/wp-content/uploads/2014/01/netcraker1.png"></a>
 					<p class="image-caption">Platinum Sponsor</p>
 				</div>
 				<div class="sponsors_logo logo_2">
-					<a href="/event-sponsors/"><img src="/wp-content/uploads/2015/02/genE_250-2012.gif"></a>
+					<a href="/sponsors/"><img src="/wp-content/uploads/2015/02/genE_250-2012.gif"></a>
 					<p class="image-caption">Gold Sponsor</p>
 				</div>
 				<div class="sponsors_logo logo_3">
-					<a href="/event-sponsors/"><img src="/wp-content/uploads/2015/02/Exhibitor-resource1.png"></a>
+					<a href="/sponsors/"><img src="/wp-content/uploads/2015/02/Exhibitor-resource1.png"></a>
 					<p class="image-caption">Gold Sponsor</p>
 				</div>
 			</div>
@@ -121,7 +121,7 @@ Template Name: Home Page
 		<div class="title-green"><h1>The Event</h1></div>
 		<div class="section02-info">
 			<div class="section02-text">Connect and network with the who’s who of the digital ecosystem in a unique, collaborative environment to develop solutions to key digital business challenges and put profitable strategies into play. Focused on actionable outcomes, you’ll experience essential case studies, live proof-of-concept demos, and thought-provoking discussion and debate with your business and IT peers. Make it real! 
-				<br/><a href="/about-digital-disruption/register/" class="sf-button large orange standard">Register Now</a>
+				<br/><a href="/passes-pricing/" class="sf-button large orange standard">Register Now</a>
 			</div>
 			<div class="section02-list">
 				<ul>
