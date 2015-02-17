@@ -201,7 +201,7 @@ Template Name: Home Page
 									$item['title'] 	= $rss_item->get_title();
 									
 									if ($author = $rss_item->get_author()){
-											$item['author'] = 'By ' . $author->get_name();
+											$item['author'] = $author->get_name();
 									}else {$item['author'] ="";}
 
 									$item['image'] 	= null;
