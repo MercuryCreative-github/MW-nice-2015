@@ -106,6 +106,18 @@ Template Name: Exhibitors list
 	if(!$remove_breadcrumbs) {
 		echo sf_breadcrumbs();
 } ?>
+<nav id="exhibitors-navigation">
+									
+									<?php
+									if(function_exists('wp_nav_menu')) {
+									wp_nav_menu(array(
+									'theme_location' => 'exhibitors_menu',
+									'fallback_cb' => ''
+									)); }
+									?>
+			
+								<!--// CLOSE MAIN NAV //-->
+								</nav>
 
 <div class="inner-page-wrap <?php echo $page_wrap_class; ?> clearfix">
 
@@ -132,6 +144,7 @@ Template Name: Exhibitors list
 		<?php } else { ?>
 
 		<div class="page-content clearfix">
+		<div class="exhibitors-list"></div>
 
       <script id="simpleEventTemplate" type="text/x-jQuery-tmpl">
         {{each Echibitors}}
