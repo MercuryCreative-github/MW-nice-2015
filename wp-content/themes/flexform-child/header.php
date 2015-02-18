@@ -203,7 +203,7 @@
 	<meta property="og:url" content="http://www.tmforumlive.org/">
 	<meta property="og:title" content="TM Forum Live! 2015">
 	<meta property="og:description" content="TM Forum Live! Nice, France 1 - 4 June 2015">
-	<meta property="og:image" content="http://devsanjose2014.wpengine.com/wp-content/uploads/2014/09/tmforum200x200.png">
+	<meta property="og:image" content="/wp-content/uploads/2015/02/logo-socialmedia.png">
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="200">
 	<meta property="og:image:height" content="200">
