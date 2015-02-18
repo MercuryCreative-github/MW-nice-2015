@@ -335,6 +335,9 @@ p.list-text, .section02-companies li {
 
 .twfollow {display: none;}
 
+/**/
+.exhibitorslist .widget.list_icons_widget a{font-size: 23px;}
+
 /*NICE 14* - borrar cosas viajas de aca a medida que se arma el sitio nuevo para mantener ordenado/
 /**************************/
 /*** TMF GENERAL STYLES ***/
@@ -730,10 +733,10 @@ nav .menu ul{background-color:transparent !important;}
 #exhibitors-navigation{width:100%;display:inline-block;text-align:center;}
 nav#exhibitors-navigation .menu li{background:#fff;border:solid 1px #F2F2F2;width:218px;text-align:center;display:inline-block;}
 nav#exhibitors-navigation .menu li a{margin:0; padding: 0; line-height: 44px; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;}
-nav#exhibitors-navigation .menu li.current-menu-item{background:#d19e43;}
-nav#exhibitors-navigation .menu li.current-menu-item a{color:#fff;background:#d19e43;}
-nav#exhibitors-navigation .menu li:hover{background:#d19e43 !important;}
-nav#exhibitors-navigation .menu li a:hover{color:#fff !important;}
+nav#exhibitors-navigation .menu li.current-menu-item{background:#ee7630;}
+nav#exhibitors-navigation .menu li.current-menu-item a{color:#fff;background:#ee7630;}
+nav#exhibitors-navigation .menu li:hover{background:#ee7630 !important;}
+nav#exhibitors-navigation .menu li:hover a{color:#fff !important;}
 .page-template-exhibitors-template-php .inner-page-wrap{margin-top:0px;}
 .cub-top{position:absolute;z-index:20;right:-285px;top:90px;width:496px;}
 /*main title's cubes*/
