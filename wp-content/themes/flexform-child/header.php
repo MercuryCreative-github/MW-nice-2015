@@ -200,10 +200,10 @@
 		</script>
 
 	<!--// CLOSE HEAD //-->
-	<meta property="og:url" content="http://www.dd14.org/">
-	<meta property="og:title" content="San Jose 2014">
-	<meta property="og:description" content="Digital Disruption 2014, San Jose, California Dec 8 - 11 Join fellow CxOs and senior-level executives to learn how to transform your business into a digital powerhouse.">
-	<meta property="og:image" content="http://devsanjose2014.wpengine.com/wp-content/uploads/2014/09/tmforum200x200.png">
+	<meta property="og:url" content="http://www.tmforumlive.org/">
+	<meta property="og:title" content="TM Forum Live! 2015">
+	<meta property="og:description" content="TM Forum Live! Nice, France 1 - 4 June 2015">
+	<meta property="og:image" content="/wp-content/uploads/2015/02/logo-socialmedia.png">
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="200">
 	<meta property="og:image:height" content="200">
@@ -212,7 +212,7 @@
 	<!--// OPEN BODY //-->
 	<body <?php body_class($page_class . ' ' . $is_responsive . ' ' . $extra_page_class. ' ' . get_field('custom_page_class')); ?>>
 
-	<img style="display:none;" src="/wp-content/uploads/2014/09/logo-dd14.png" alt="Digital Disruption 2014">
+	<img style="display:none;" src="/wp-content/uploads/2015/02/logo-footer.png" alt="TM Forum Live! 2015">
 
 		<?php if (is_single()) { ?>
 		<!--// SOCIAL SCRIPTS //-->

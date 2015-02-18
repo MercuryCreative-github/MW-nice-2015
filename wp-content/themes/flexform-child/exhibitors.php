@@ -123,9 +123,6 @@ Template Name: Exhibitors list
 
 			<div class="page-content span6">
 
-
-
-
 			</div>
 
 			<aside class="sidebar left-sidebar span3">
@@ -135,8 +132,6 @@ Template Name: Exhibitors list
 		<?php } else { ?>
 
 		<div class="page-content clearfix">
-		<div class="text-box"><p>Find out more on becoming a sponsor or exhibitor! <a href="http://marketing.tmforum.org/acton/fs/blocks/showLandingPage/a/1332/p/p-0060/t/page/fm/0" target="_blank">Click here</a></p></div>
-			<div class="exhibitors-list"></div>
 
       <script id="simpleEventTemplate" type="text/x-jQuery-tmpl">
         {{each Echibitors}}
@@ -340,7 +335,7 @@ Template Name: Exhibitors list
 
     <script type="text/javascript">
 
-	jQuery(document).ready(function(){LoadShow(744);})
+	jQuery(document).ready(function(){LoadShow(784);})
 
     </script>
 		</div>
