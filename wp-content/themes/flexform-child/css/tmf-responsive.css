@@ -265,7 +265,8 @@
     }
     /*'15*/
     .social-contact img{margin-left: 0;}
-    .section01-info {background: rgba(0, 31, 52, 0.82);padding: 10px;}
+    .section01-info {padding: 10px;margin: auto;}
+    .section01-info .cell {background: rgba(0, 31, 52, 0.82);}
     .section03-bottom ul {padding: 15px 10px;}
 }
 @media screen and (max-width: 1024px) {
@@ -968,6 +969,9 @@
     .section02-text {float: none;width: 100%;}
     .section02-list {float: none;width: 100%;border-left: none;padding-left: 0px;margin-top: 50px;}
     .section03-top span {font-size: 2.1em;}
+
+    .section01-sponsors{position: relative;}
+    .sponsors_logo{margin-left: 35px;}
 
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
