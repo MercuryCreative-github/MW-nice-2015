@@ -266,7 +266,7 @@
     /*'15*/
     .social-contact img{margin-left: 0;}
     .section01-info {padding: 10px;margin: auto;}
-    .section01-info .cell {background: rgba(0, 31, 52, 0.82);}
+    .section01 .cell {background: rgba(0, 7, 11, 0.62);}
     .section03-bottom ul {padding: 15px 10px;}
 }
 @media screen and (max-width: 1024px) {
