@@ -193,7 +193,7 @@ a.sf-button.standard.register-agenda {
 }
 .section01-sponsors {
 	border-bottom: #d6d7dc 1px solid;
-	padding: 20px 0 0 0;
+	padding: 5px 0;
 	background: white;
 	position: absolute;
 	bottom: 0;
@@ -202,12 +202,12 @@ a.sf-button.standard.register-agenda {
 .sponsors-logos {margin: 0 auto;display: table;}
 .sponsors-logos p {text-align: center;}
 
-.logo_1 img {width: 247px;}
-.logo_2 img {width: 150px;}
-.logo_3 img {width: 95px;}
+.logo_1 img {height: 40px;}
+.logo_2 img {height: 53px;}
+.logo_3 img {height: 60px;}
 p.image-caption{margin:10px 0 0 0;line-height:100%;}
 .sponsors_logo {text-align:center; position: relative; display: inline-block; max-width: 30%; margin-left: 85px;}
-.sponsors_logo a {display: block; margin: auto; height: 90px; line-height: 90px;}
+.sponsors_logo a {display: block; margin: auto; height: 60px; line-height: 60px;}
 
 /*section02*/
 .title-green {}
