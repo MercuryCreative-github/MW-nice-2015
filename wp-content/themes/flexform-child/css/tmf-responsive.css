@@ -3543,7 +3543,7 @@
 
 /****** REGISTER BUTTON ON MAIN MENU ****/
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 890px) {
   #main-navigation .menu-event-main-menu-container {
       width:100%;
   }
