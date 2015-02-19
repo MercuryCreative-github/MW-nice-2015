@@ -2813,6 +2813,12 @@ figure.lightbox {
 #footer-widgets .widget {
 	padding-bottom: 30px;
 }
+
+/* fix to remove padding bottom from 4th column menu */
+#nav_menu-14.widget {
+		padding-bottom: 5px;
+}
+/****/
 #copyright {
 	padding: 15px 0;
 	-webkit-box-sizing: border-box;
