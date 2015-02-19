@@ -85,7 +85,7 @@ Template Name: Home Page
 	<div class="cell">
 		<div class="sec-main-content">
 			<div class="section01-info">
-				<div class="section01-logo"><img src="/wp-content/uploads/2015/02/Slider01-logo.png" width="350" height="165"></div>
+				<div class="section01-logo" style="text-align:center;"><img src="/wp-content/uploads/2015/02/Slider01-logo.png" width="250" /></div>
 				<div class="section01-slogan">DIGITAL BUSINESS:<br/><span>MAKING IT REAL</span></div>
 				<div class="section01-date">JUNE 1 - 4, 2015<br/><span>NICE - FRANCE</span></div>
 				<div class="section01-buttons">
@@ -120,7 +120,7 @@ Template Name: Home Page
 	<div class="section02">
 		<div class="title-green"><h1>The Event</h1></div>
 		<div class="section02-info">
-			<div class="section02-text">Connect and network with the who’s who of the digital ecosystem in a unique, collaborative environment to develop solutions to key digital business challenges and put profitable strategies into play. Focused on actionable outcomes, you’ll experience essential case studies, live proof-of-concept demos, and thought-provoking discussion and debate with your business and IT peers. Make it real! 
+			<div class="section02-text">Connect and network with the who’s who of the digital ecosystem in a unique, collaborative environment to develop solutions to key digital business challenges and put profitable strategies into play. Focused on actionable outcomes, you’ll experience essential case studies, live proof-of-concept demos, and thought-provoking discussion and debate with your business and IT peers. Make it real!
 				<br/><a href="/passes-pricing/" class="sf-button large orange standard">Register Now</a>
 			</div>
 			<div class="section02-list">
@@ -199,7 +199,7 @@ Template Name: Home Page
 									$item = array();
 									$item['link'] 	= $rss_item->get_link();
 									$item['title'] 	= $rss_item->get_title();
-									
+
 									if ($author = $rss_item->get_author()){
 											$item['author'] = $author->get_name();
 									}else {$item['author'] ="";}
@@ -264,7 +264,7 @@ Template Name: Home Page
 									</figure>
 									<div class="feed-content">
 									<p class="feed-author">
-									
+
 									<?php echo $item['author']; ?>
 
 									</p>
