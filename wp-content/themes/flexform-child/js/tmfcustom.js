@@ -11,7 +11,7 @@ function ini() {
     modalListener();
     showHiddenMenuText();
     menuWidgetLiLinks();
-    moveSponsors();   
+    moveSponsors();
     reRowIotTabs();
     homepageSectionsResize();
 
@@ -22,7 +22,7 @@ function homepageSectionsResize(){
     if($('.page-template-homepage-php').index()>0){
 
         var sponsorsHeight  = 108;//$('.section01-sponsors').outerHeight();
-        var minHeight       = 760-sponsorsHeight;
+        var minHeight       = 760;
         var screenHeight    = Math.max($(window).height(),minHeight);
         var menuHeight      = $('#header-section').outerHeight();
 
@@ -50,7 +50,7 @@ function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
         results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); 
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 
 }
 
@@ -59,7 +59,7 @@ function reRowIotTabs() {
    jQuery('.summit-tabs div[id|="tab"]').each(function(){
 
     // save div content from last row
-    var newSpan4 =  jQuery('.row:eq(2) .span12', this);    
+    var newSpan4 =  jQuery('.row:eq(2) .span12', this);
 
     // remove last row
     jQuery('.row:eq(2)', this).remove();
@@ -72,8 +72,8 @@ function reRowIotTabs() {
     jQuery('.row-fluid', this).append(newSpan4);
     jQuery('.row-fluid .span12', this).removeClass( "span12" ).addClass( "span4" );
 
-    }) 
-}       
+    })
+}
 
 
 
@@ -179,7 +179,7 @@ function agendaAtaGlance() {
         jQuery('td.n',this).remove();
       });
 
- 
+
 
 /*
    // si me quedo una fila de 1 td y la fila siguiente tiene tmax-1 tds, copio el td solitario y lo agrego a la fila siguiente
@@ -215,7 +215,7 @@ function agendaAtaGlance() {
         }
     });
 
-   
+
     //new tweaks passng to 12 columns width
     jQuery('.tt_timetable tr').each(function(){
 
@@ -223,10 +223,10 @@ function agendaAtaGlance() {
          var tds = jQuery('td', this).length;
          var tmax = $(this).attr('tmax');
          colspan =  60/tds;
-         
+
          $('td',this).each(function(){
            $(this).attr('colspan',colspan)
-           $(this).css('width',100/(60/colspan)+'%')  
+           $(this).css('width',100/(60/colspan)+'%')
          })
     })
 
@@ -343,7 +343,7 @@ function fullAgenda(){
     jQuery('.imgMove').each(function(){
         var $ = jQuery;
         day = $(this).attr('day');
-        start = $(this).attr('starthour');    
+        start = $(this).attr('starthour');
         cual=$('#tab-'+day+' .defTrack[starhour="'+start+'"]').append($(this));
     })
 
@@ -373,7 +373,7 @@ function scrollListener() {
     if(hash=="#tab-monday" || hash=="#tab-tuesday" || hash=="#tab-wednesday" || hash=="#tab-thursday"){
         offset=200;
     }
-    
+
     if(hash!==''){
 
     var screenTop = jQuery(document).scrollTop();
@@ -639,7 +639,7 @@ function conference_move_widget_node() {
 function resizeSponsors() {
     var logo = 0;
 
-    
+
 
     jQuery(".sponsors .wpb_single_image img").each(function() {
 
