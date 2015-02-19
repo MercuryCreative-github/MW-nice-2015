@@ -1430,7 +1430,7 @@
     }*/
     #nav-section .nav-wrap {
       margin-top: 10px;
-    
+
 }
     nav.call-to-action {
         padding-top: 0;
@@ -1486,8 +1486,8 @@
     #logo img{margin: auto;}
 } #main-navigation {
         float: none;
-    
-        float: none;  box-shadow: 1px 3px 5px #ccc;  background: white;  
+
+        float: none;  box-shadow: 1px 3px 5px #ccc;  background: white;
 }
     nav#main-navigation .menu>li {
         float: none;
@@ -1496,7 +1496,7 @@
         width: 100%;
         border-top: none;
         font-weight: 600;
-    
+
         margin: 0;
         padding: 10px 0;
 }
@@ -1505,7 +1505,7 @@
     }
     nav#main-navigation .menu li a {
         text-align: center;
-    
+
 }
     nav#main-navigation .menu ul li a {
         font-weight: 400;
@@ -1862,7 +1862,7 @@
     }
     nav ul.menu {
         display: none;
-    
+
         background: white;
 }
     /*new home*/
@@ -2446,7 +2446,7 @@
     /*Mobile Menu*/
     #nav-section {
       padding-bottom:0px;
-    
+
       margin-bottom: 20px!important;
 }
     .call-to-action {
@@ -2493,7 +2493,7 @@
         position: absolute;
         top: 8px;
         width: 35px;
-    
+
         right: 0;
 }
     header {
@@ -3539,4 +3539,19 @@
     .back-to-top {
         margin-bottom: 0;
     }
+}
+
+/****** REGISTER BUTTON ON MAIN MENU ****/
+
+@media screen and (min-width: 890px) {
+  #main-navigation .menu-event-main-menu-container {
+      width:100%;
+  }
+  #menu-event-main-menu li.menu-item:last-child {
+      background: none repeat scroll 0 0 #f8ae1e;
+      float: right;
+  }
+  #menu-event-main-menu li.menu-item:last-child a {
+      color:#FFF;
+  }
 }
