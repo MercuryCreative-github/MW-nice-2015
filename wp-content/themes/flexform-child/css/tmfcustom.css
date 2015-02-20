@@ -111,20 +111,20 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .summit-sidebar-tabs.digital-operations a.summit-color:hover {background-color: #1A9198;}
 .summit-sidebar-tabs.executive a.summit-color:hover {background-color: #575757;}
 
-.summit-sidebar-tabs a.sf-button.standard.download-agenda{
+a.sf-button.standard.download-agenda{
 	background-image: url('/wp-content/uploads/2015/02/icon-download-agenda.png');
 	background-repeat: no-repeat;
 	background-position: right bottom;
 	padding: 19px 16px 13px;
 }
-.summit-sidebar-tabs a.download-agenda span.text-btn, .summit-sidebar-tabs.cca a.download-agenda span.small-text-btn,
+a.download-agenda span.text-btn, .summit-sidebar-tabs.cca a.download-agenda span.small-text-btn,
 a.sf-button.standard.register-agenda span.register-text{
 	font-weight: bold;
 	padding-right: 15px;
 	margin-right: 68px;
 	padding-top: 0;
 }
-.summit-sidebar-tabs a.download-agenda span.text-btn {font-size: 30px;}
+a.download-agenda span.text-btn {font-size: 30px;}
 a.sf-button.standard.register-agenda span.register-text {font-size: 25px;}
 .summit-sidebar-tabs a.download-agenda span.small-text-btn{font-size: 20px;}
 a.sf-button.standard.register-agenda {
@@ -133,7 +133,6 @@ a.sf-button.standard.register-agenda {
 	background-position: right bottom;
 	padding: 19px 50px 13px;
 }
-
 .tabs-summits-content{width: 90%!important;margin-left: 4%;}
 
 /**************************/
@@ -361,7 +360,8 @@ a.button.btnviolet{background-color:#505575;border-radius:3px;color:#FFF;}
 a.button.btnviolet:hover{background-color:#242A4E;}
 a.sf-button.medium.purple{font-size:15px;line-height:20px;padding:10px 16px;background-color:#4E5577;}
 a.sf-button.purple:hover{background-color:#242A4E;}
-a.sf-button.medium.orange{font-size:15px;line-height:20px;padding:10px 16px;background-color:#ffaf00;}
+a.sf-button.medium.orange{font-size:15px;line-height:20px;padding:10px 16px;background-color:#ee7813;}
+a.sf-button.medium.yellow{font-size:15px;line-height:20px;padding:10px 16px;background-color:#f8ad13;}
 a.sf-button.orange:hover{background-color:#E2740B;}
 
 /**************************/
@@ -644,9 +644,9 @@ nav .menu ul{background-color:transparent !important;}
 .dday01{background:#E29F38;}
 .dday02{background:#C78C32;}
 .dday03{background:#B07C2B;}
-.fday{font-size:17px;margin-left: 57px;padding:11px 0px 11px 0px;line-height:22px;text-transform: capitalize;}
+.fday{font-size:17px;margin-left: 57px;padding:0px 0px 11px 0px;line-height:22px;text-transform: capitalize;}
 .dday span{font-size:20px;}
-.dday p, .dday-table p{font-size:15px;line-height:18px;margin-top:10px;}
+.dday p, .dday-table p{font-size:15px;line-height:18px;}
 .dday-table{border-left:#ee7813 5px solid;color:#444444;border-radius:initial;}
 
 /* FEED INFORM **/
@@ -765,6 +765,10 @@ p#title{margin-left:0px;font-size:18px;line-height:1.5em;padding:0;}
 .about-table ul{padding:0 30px 10px 30px;}
 p.welcome-contact{line-height:5px;padding-bottom:10px;}
 ul.list-within-list{font-size:14px;margin-left:57px;}
+
+.exhibitor-resources a.sf-button.standard.register-agenda span.register-text {font-size: 20px;font-weight: 100;line-height: 15px;}
+.exhibitor-resources a.sf-button.download-agenda {line-height: 21px;padding: 10px 95px 10px 20px; background-size: 70px;font-size: 17px;font-weight: 100;}
+.exhibitor-resources a.sf-button.standard.register-agenda {	padding: 11px 95px 7px 20px; background-image: url('/wp-content/uploads/2015/02/icon-register-big.png');background-size: 65px;}
 
 /********************/
 /***HOTEL & TRAVEL***/
