@@ -3541,7 +3541,7 @@
     }
 }
 
-/****** REGISTER BUTTON ON MAIN MENU ****/
+/****** REGISTER BUTTON ON MAIN MENU ***
 
 @media screen and (min-width: 890px) {
   #main-navigation .menu-event-main-menu-container {
@@ -3554,4 +3554,4 @@
   #menu-event-main-menu li.menu-item:last-child a {
       color:#FFF;
   }
-}
+}*/
