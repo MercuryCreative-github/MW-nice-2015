@@ -312,6 +312,7 @@ p.list-text, .section02-companies li {
 	margin:20px 0 40px 0;
 	max-width: 100%;
 	padding-right: 0;
+	border-bottom: none;
 }
 .container h2.tw-title:before{content: url('/wp-content/uploads/2015/02/icon-twitter.png');left: -4px;top: 18px;position: relative;margin-right: 10px;}
 
