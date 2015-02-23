@@ -24,6 +24,11 @@ h1 {
 .mt20 { margin-top:20px; }
 .light { font-weight:300;}
 
+/*List*/
+.page-content .list-tick-icon ul li {list-style-type: none;}
+.page-content .list-tick-icon ul li:before{content:"\f00c";font-family:FontAwesome;font-size:14px;padding-right:10px;color: #ee7630;}
+.page-content ul li {line-height: 2.0em;}
+
 /**************************/
 /********* BUTTONS ********/
 /**************************/
@@ -350,7 +355,7 @@ p.list-text, .section02-companies li {
 .twfollow {display: none;}
 
 /**/
-.exhibitorslist .widget.list_icons_widget a{font-size: 23px;}
+.exhibitorslist .widget.list_icons_widget a, .big-sidebar-list .widget.list_icons_widget a{font-size: 23px;}
 
 /*NICE 14* - borrar cosas viajas de aca a medida que se arma el sitio nuevo para mantener ordenado/
 /**************************/
