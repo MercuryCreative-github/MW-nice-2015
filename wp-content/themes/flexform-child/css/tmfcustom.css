@@ -11,6 +11,7 @@ h1 {
 	text-transform: uppercase;
 	font-size: 40px !important;
 }
+.page-content h4{margin-bottom: 5px;font-weight: 600;color: #ee7630;}
 
 .ui-tabs-panel p {padding: 0;}
 .white-background { background:#FFF;}
@@ -369,7 +370,7 @@ div.alert-info{display:none;} /* <--do not remove! */
 .tp-bullets.simplebullets.round{height:10px !important;}
 li{list-style-type:none;font-weight:normal;}
 p{font-family:"Open Sans", Arial, sans-serif;font-weight:normal;}
-.container h2 {margin:30px 0 20px 0; font-family: 'Open Sans' sans-serif;font-weight: 400;font-size: 28px;border-bottom: #ee7813 1px solid;padding-bottom: 10px;}
+.container h2 {margin:30px 0 10px 0; font-family: 'Open Sans' sans-serif;font-weight: 400;font-size: 25px;border-bottom: #ee7813 1px solid;padding-bottom: 5px;}
 h3.faq-section-title{font-size:30px;line-height:40px;font-weight:normal !important;}
 .wpb_wrapper.clearfix{position:relative;}
 
@@ -788,7 +789,7 @@ p.welcome-contact{line-height:5px;padding-bottom:10px;}
 ul.list-within-list{font-size:14px;margin-left:57px;}
 
 .exhibitor-resources a.sf-button.standard.register-agenda span.register-text {font-size: 20px;font-weight: 100;line-height: 15px;}
-.exhibitor-resources a.sf-button.download-agenda {line-height: 21px;padding: 10px 95px 10px 20px; background-size: 70px;font-size: 17px;font-weight: 100;}
+.exhibitor-resources a.sf-button.download-agenda {line-height: 19px;padding: 10px 95px 10px 20px; background-size: 70px;font-size: 17px;font-weight: 100;}
 .exhibitor-resources a.sf-button.standard.register-agenda {	padding: 11px 95px 7px 20px; background-image: url('/wp-content/uploads/2015/02/icon-register-big.png');background-size: 65px;}
 
 /********************/
@@ -808,7 +809,6 @@ p.view-more-home a{color:#fff;text-decoration:none !important;}
 /*#page-wrap .wpb_box_text.coloured .box-content-wrap{background:#f9f9f9;color:#6CB64D;}*/
 .page-content ul, .page-content ol{margin:0 0 20px 20px;}
 .page-content ul li{list-style-type:disc;}
-.page-content h4{margin-bottom:0;font-weight:normal;}
 ul.bullet-bold li, ol.bullet-bold li{font-weight:bold;margin:0 0 14px 14px;}
 ul.bullet-bold li span, ol.bullet-bold li span{font-weight:normal;}
 /* Remove Bullet on List */
@@ -2554,22 +2554,14 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 }
 .the-content td.call-to-action { padding: 20px 5px; }
 .the-content td.call-to-action h3 {
-	margin: 0 !important;
 	color: #ABAAAA !important;
 	font-weight: bold;
-	font-size: 1.4em;
-	font-family: Open Sans;
+	font-size: 2.5em;
+	line-height: 1.2em;
 }
-.the-content td.call-to-action h3.call-to-action-1 {
-	color: #8E8E8E !important;
-	font-weight: bold;
-	font-size: 3.5em;
-	margin-bottom: 5px !important;
-	font-family: Open Sans;
-}
-.the-content td.call-to-action h3.call-to-action-2 { line-height: 150%; }
-.the-content span.cal-to-action-date { color: #4EB748; font-size: 2.1em; line-height:1.1em; }
-.the-content span.call-to-action-register { font-size: 1.4em; }
+.the-content td.call-to-action h3 span.your-boss {font-size: 1.6em;}
+.the-content td.call-to-action a {color: #FFF;background-color: #ee7630;padding: 10px 29px;}
+.the-content td.call-to-action a:hover {background-color: #E2740B;border-bottom: none;}
 
 .the-content .section-apply-keynote .wpb_column .float-left {
 	font-weight: bold;
