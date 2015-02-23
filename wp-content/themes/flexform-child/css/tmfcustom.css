@@ -25,9 +25,10 @@ h1 {
 .light { font-weight:300;}
 
 /*List*/
+.page-content .list-tick-icon ul {margin-left: 5px;}
 .page-content .list-tick-icon ul li {list-style-type: none;}
 .page-content .list-tick-icon ul li:before{content:"\f00c";font-family:FontAwesome;font-size:14px;padding-right:10px;color: #ee7630;}
-.page-content ul li {line-height: 2.0em;}
+.page-content ul li {line-height: 2.0em;list-style-position:outside;}
 
 /**************************/
 /********* BUTTONS ********/
@@ -806,7 +807,6 @@ p.view-more-home:hover{box-shadow:0 0 10px #979797;}
 p.view-more-home a{color:#fff;text-decoration:none !important;}
 /*#page-wrap .wpb_box_text.coloured .box-content-wrap{background:#f9f9f9;color:#6CB64D;}*/
 .page-content ul, .page-content ol{margin:0 0 20px 20px;}
-.page-content ul li, .page-content ol li{line-height:1.5em;list-style-position:outside;}
 .page-content ul li{list-style-type:disc;}
 .page-content h4{margin-bottom:0;font-weight:normal;}
 ul.bullet-bold li, ol.bullet-bold li{font-weight:bold;margin:0 0 14px 14px;}
