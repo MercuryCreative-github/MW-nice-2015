@@ -506,6 +506,8 @@
     .section02-companies ul {display: block;padding: 0;}
     .section02-companies li:first-child {margin: 0 auto 45px auto;}
     .section03-bottom ul {padding: 15px 0;}
+
+    .exhibitor-resources a.sf-button.standard.register-agenda {padding-right: 0px;}
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -3539,6 +3541,8 @@
     .back-to-top {
         margin-bottom: 0;
     }
+
+     .exhibitor-resources a.sf-button.standard.register-agenda {padding-right: 60px;}
 }
 
 /****** REGISTER BUTTON ON MAIN MENU ***
