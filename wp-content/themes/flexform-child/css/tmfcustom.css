@@ -97,8 +97,9 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .page-content .summit-sidebar-tabs.executive ul li:before {color: #201e20;}
 
 /*sidebar form*/
-input[type="text"], input[type="password"], input[type="email"], textarea, select, input[type="tel"] { background:#FFFFFF; border-radius:0;}
-.gform_wrapper input[type="email"], .gform_wrapper input[type="text"] {background: none repeat scroll 0 0 #fff; border-radius: 0; height: 32px; padding-left: 10px; }
+input[type="text"], input[type="password"], input[type="email"], textarea, select, input[type="tel"] { background:#FFFFFF; border-radius:0; padding-left:10px; }
+.gform_wrapper input[type="email"], .gform_wrapper input[type="text"] {background: none repeat scroll 0 0 #fff; border-radius: 0; height: 32px; padding-left: 10px; font-size:14px;}
+.summit-sidebar-tabs .gform_wrapper input[type="email"], .summit-sidebar-tabs  .gform_wrapper input[type="text"] {font-size:14px;}
 .page-content .summit-sidebar-tabs h4 { margin-bottom:10px;}
 .gform_wrapper input { background:#FFFFFF; border-radius:0;}
 .summit-sidebar-tabs .gform_wrapper { margin: 0 0 40px; }
