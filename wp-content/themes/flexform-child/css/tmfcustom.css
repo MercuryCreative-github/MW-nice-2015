@@ -97,10 +97,11 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .page-content .summit-sidebar-tabs.executive ul li:before {color: #201e20;}
 
 /*sidebar form*/
+.summit-sidebar-tabs .gform_wrapper { margin: 0 0 40px; }
 #field_4_5 label { display:none;}
 .page-content .summit-sidebar-tabs ul li.gfield { border: 0 none; line-height: 14px; padding:0;}
 .summit-sidebar-tabs .gform_wrapper .gfield_checkbox li { margin:0;}
-.summit-sidebar-tabs .gform_wrapper .gform_footer { margin:0; padding:0;}
+.summit-sidebar-tabs .gform_wrapper .gform_footer { padding:0;}
 .summit-sidebar-tabs .gform_footer .gform_button.button { background: none repeat scroll 0 0 #909094; padding: 5px;}
 
 /*buttons*/
