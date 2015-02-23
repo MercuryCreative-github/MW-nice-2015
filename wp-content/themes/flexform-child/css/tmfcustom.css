@@ -22,7 +22,7 @@ h1 {
 .mb30 { margin-bottom:30px; }
 .ml30 { margin-left:30px; }
 .mt20 { margin-top:20px; }
-
+.light { font-weight:300;}
 
 /**************************/
 /********* BUTTONS ********/
@@ -95,6 +95,13 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .page-content .summit-sidebar-tabs.business-innovation ul li:before {color: #225f91;}
 .page-content .summit-sidebar-tabs.digital-operations ul li:before {color: #27abb2;}
 .page-content .summit-sidebar-tabs.executive ul li:before {color: #201e20;}
+
+/*sidebar form*/
+#field_4_5 label { display:none;}
+.page-content .summit-sidebar-tabs ul li.gfield { border: 0 none; line-height: 14px; padding:0;}
+.gform_wrapper .gfield_checkbox li { margin:0;}
+.gform_wrapper .gform_footer { margin:0; padding:0;}
+.gform_footer .gform_button.button { background: none repeat scroll 0 0 #909094; padding: 5px;}
 
 /*buttons*/
 .summit-sidebar-tabs.cca a.summit-color {background-color: #f3a626; color: #FFF;}
@@ -2702,7 +2709,7 @@ input[type="submit"] {
 	padding: 10px 0;
 	cursor: pointer;
 	margin-bottom: 0;
-	
+
 	list-style: none;
 }
 
