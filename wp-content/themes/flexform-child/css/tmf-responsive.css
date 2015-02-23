@@ -508,6 +508,11 @@
     .section03-bottom ul {padding: 15px 0;}
 
     .exhibitor-resources a.sf-button.standard.register-agenda {padding-right: 0px;}
+
+    /*call to action - pricing page*/
+    .the-content td.call-to-action h3 {font-size: 1.8em;}
+    .the-content td.call-to-action a {color: #ee7630;background-color: transparent;padding: 0;}
+    .the-content td.call-to-action a:hover {background-color: transparent;}
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
