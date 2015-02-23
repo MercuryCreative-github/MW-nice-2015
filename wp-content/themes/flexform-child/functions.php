@@ -1,7 +1,7 @@
 <?php
 
 
-   
+
 function hide_menu_items() {
 	//remove_menu_page( 'edit.php?post_type=team' );
 	remove_menu_page( 'edit.php?post_type=jobs' );
@@ -87,7 +87,7 @@ function hide_menu_items() {
     	// Responsive fixes
 		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '7.9', 'all');
     	wp_enqueue_style('tmf-responsive-css'); // Enqueue it!
-    	
+
     	// Print Styles
 		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '7.9', 'all');
     	wp_enqueue_style('tmf-print-css'); // Enqueue it!
@@ -102,7 +102,7 @@ function hide_menu_items() {
 	/* CUSTOM MENU SETUP
 	================================================== */
 
-	
+
 	function setup_menus2() {
 		// This theme uses wp_nav_menu() in four locations.
 		register_nav_menus( array(
@@ -200,7 +200,7 @@ function yoursite_pre_user_query($user_search) {
   global $current_user;
   $username = $current_user->user_login;
 
-  if ($username !== 'bsastre' && $username !== 'agiannastasio' && $username !== 'mvallve' && $username !== 'jgoldfein'&& $username !== 'lmazzilli') { 
+  if ($username !== 'bsastre' && $username !== 'agiannastasio' && $username !== 'mvallve' && $username !== 'jgoldfein'&& $username !== 'lmazzilli') {
     global $wpdb;
     $user_search->query_where = str_replace('WHERE 1=1',
       "WHERE 1=1 AND {$wpdb->users}.user_login != 'tmforum'",$user_search->query_where);
@@ -256,7 +256,7 @@ function yoursite_pre_user_query($user_search) {
       "WHERE 1=1 AND {$wpdb->users}.user_login != 'mmusillo'",$user_search->query_where);
     $user_search->query_where = str_replace('WHERE 1=1',
       "WHERE 1=1 AND {$wpdb->users}.user_login != 'priyaekbote'",$user_search->query_where);
-  }  
+  }
 }
 
 /* Agenda Tracks Posts Type */
@@ -439,9 +439,9 @@ add_action( 'user_register', 'create_company_on_user_save',10,1);
 function getUserCompanies( $userId = 0, $isSingle = false ) {
 	$unserializedArray = array();
 	if( (int) $userId == 0 ) return $unserializedArray;
-	
+
 	$companiesMeta = get_user_meta( $userId, "company" );
-	
+
 	if( !empty( $companiesMeta ) ) {
 		$companies = $companiesMeta[0];
 		if( !is_array( $companies ) ) {
@@ -457,16 +457,16 @@ function getUserCompanies( $userId = 0, $isSingle = false ) {
 	} else {
 		$unserializedArray[0] = '';
 	}
-	
+
 	return ( $isSingle ? $unserializedArray[0] : $unserializedArray );
 }
 
 function getUserJobRolesByCompanyId( $userId = 0, $companyId = 0 ) {
 	$jobRole = '';
 	if( (int) $companyId == 0 || (int)$userId == 0 ) return $jobRole;
-	
+
 	$jobRoleMeta = get_user_meta( (int)$userId, "job_role" );
-	
+
 	if( !empty( $jobRoleMeta )) {
 		$jobRoleMeta = $jobRoleMeta[0];
 		foreach( $jobRoleMeta as $compId => $jobRoleVal ) {
@@ -476,6 +476,47 @@ function getUserJobRolesByCompanyId( $userId = 0, $companyId = 0 ) {
 	}
 	return $jobRole;
 }
+/*acton subscription form */
+// When sending Suscription form at the Sidebar
+add_action("gform_after_submission_4", "custom_post_submission_newsletters_subscribe", 10, 2);
 
+if (!function_exists('custom_post_submission_newsletters_subscribe')) {
+    function custom_post_submission_newsletters_subscribe($entry, $form) {
+
+    if($entry['2.1'] == true){
+      $agile = $entry['2.1'];
+    }else{
+      $agile = 'false';
+       }
+    if($entry['3.1'] == true){
+      $digital = $entry['3.1'];
+    }else{
+      $digital = 'false';
+       }
+    if($entry['4.1'] == true){
+      $customer = $entry['4.1'];
+    }else{
+      $customer = 'false';
+       }
+
+    //include ActonConnection class
+        require_once (get_stylesheet_directory() .'/core/classes/class.Acton-WordPress-Connection.php');
+        // declare new ActonWordPressConnection object
+        $ao_gf1 = new ActonConnection;
+        //match fields
+        // format: setPostItems('your Act-On data field name','your custom form html input name')
+        // @param string
+        $ao_gf1->setPostItems('Email', $entry['5']);
+        // @param string true /false
+        $ao_gf1->setPostItems('Digest Agile Business IT', $agile);
+        // @param string true /false
+        $ao_gf1->setPostItems('Digest Open Digital Ecosystem', $digital);
+        // @param string true /false
+        $ao_gf1->setPostItems('Digest Customer Engagement', $customer);
+      //Update with ACTON form external URL
+        // processConnection method, with your external post URL passed as the argument
+        $ao_gf1->processConnection('http://marketing.tmforum.org/acton/eform/1332/00de/d-ext-0002');
+    }
+}
 
 ?>
