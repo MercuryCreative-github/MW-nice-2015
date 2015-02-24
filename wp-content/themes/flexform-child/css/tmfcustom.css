@@ -30,6 +30,8 @@ h1 {
 .page-content .list-tick-icon ul li {list-style-type: none;}
 .page-content .list-tick-icon ul li:before{content:"\f00c";font-family:FontAwesome;font-size:14px;padding-right:10px;color: #ee7630;}
 .page-content ul li {line-height: 2.0em;list-style-position:outside;}
+.gray-list ul li {color: #7e7e82;font-weight: bold;}
+.gray-list ul li span.gray-list-p {color: #444; font-weight: normal;}
 
 /**************************/
 /********* BUTTONS ********/
@@ -355,7 +357,6 @@ p.list-text, .section02-companies li {
 }
 
 .twfollow {display: none;}
-
 /**/
 .exhibitorslist .widget.list_icons_widget a, .big-sidebar-list .widget.list_icons_widget a{font-size: 23px;}
 
@@ -369,7 +370,8 @@ h3{margin:25px 0 10px 0;}
 div.alert-info{display:none;} /* <--do not remove! */
 .tp-bullets.simplebullets.round{height:10px !important;}
 li{list-style-type:none;font-weight:normal;}
-p{font-family:"Open Sans", Arial, sans-serif;font-weight:normal;margin-bottom: 20px;}
+p{font-family:"Open Sans", Arial, sans-serif;font-weight:normal;}
+.page-content p {margin-bottom: 20px;}
 .container h2 {margin:30px 0 10px 0; font-family: 'Open Sans' sans-serif;font-weight: 400;font-size: 25px;border-bottom: #ee7813 1px solid;padding-bottom: 5px;}
 h3.faq-section-title{font-size:30px;line-height:40px;font-weight:normal !important;}
 .wpb_wrapper.clearfix{position:relative;}
