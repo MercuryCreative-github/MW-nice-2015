@@ -11,7 +11,7 @@ h1 {
 	text-transform: uppercase;
 	font-size: 40px !important;
 }
-.page-content h4{margin-bottom: 5px;font-weight: 600;color: #ee7630;}
+.page-content .subtitle h4{margin-bottom: 5px;font-weight: 600;color: #ee7630;}
 
 .ui-tabs-panel p {padding: 0;}
 .white-background { background:#FFF;}
