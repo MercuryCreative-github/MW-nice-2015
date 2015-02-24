@@ -360,6 +360,11 @@ p.list-text, .section02-companies li {
 /**/
 .exhibitorslist .widget.list_icons_widget a, .big-sidebar-list .widget.list_icons_widget a{font-size: 23px;}
 
+/*CATALYST DEMOSTRATION*/
+
+.catalyst-demo .row {margin-left: -40px;}
+.catalyst-logos img {max-width: 150px;margin-right: 33px;}
+
 /*NICE 14* - borrar cosas viajas de aca a medida que se arma el sitio nuevo para mantener ordenado/
 /**************************/
 /*** TMF GENERAL STYLES ***/
@@ -372,7 +377,7 @@ div.alert-info{display:none;} /* <--do not remove! */
 li{list-style-type:none;font-weight:normal;}
 p{font-family:"Open Sans", Arial, sans-serif;font-weight:normal;}
 .page-content p {margin-bottom: 20px;}
-.container h2 {margin:30px 0 10px 0; font-family: 'Open Sans' sans-serif;font-weight: 400;font-size: 25px;border-bottom: #ee7813 1px solid;padding-bottom: 5px;}
+.container h2 {margin:10px 0; font-family: 'Open Sans' sans-serif;font-weight: 400;font-size: 25px;border-bottom: #ee7813 1px solid;padding-bottom: 5px;}
 h3.faq-section-title{font-size:30px;line-height:40px;font-weight:normal !important;}
 .wpb_wrapper.clearfix{position:relative;}
 
