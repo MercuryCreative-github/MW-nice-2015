@@ -224,14 +224,6 @@
 
 }
 @media screen and (max-width: 1077px) {
-    h2:before, h3.faq-section-title:before {
-        content: url('../../../uploads/2014/08/subtitle-e1407968140613-small.png');
-        position: absolute;
-        left: -28px;
-    }
-    h2:before, h3.faq-section-title:before .sponsors {
-        left: -18px
-    }
     .sponsors h2 {
         padding-left: 10px;
     }
@@ -513,6 +505,9 @@
     .the-content td.call-to-action h3 {font-size: 1.8em;}
     .the-content td.call-to-action a {color: #ee7630;background-color: transparent;padding: 0;}
     .the-content td.call-to-action a:hover {background-color: transparent;}
+
+    /*catalyst demo*/
+    .catalyst-logos img {margin-right: 40px;}
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -723,9 +718,6 @@
         width: 87% !important;
         margin-left: 8% !important;
     }
-    h2:before, h3.faq-section-title:before {
-        content: url('../../../uploads/2014/08/subtitle-e1407968140613-small.png');
-    }
     a.sf-button.blue {
         float: right;
     }
@@ -816,6 +808,7 @@
         max-width:350px;
         margin:auto;
     }
+   
 
 }
 @media screen and (min-width: 768px) and (max-width: 800px) {
@@ -979,6 +972,8 @@
 
     .section01-sponsors{position: relative;}
     .sponsors_logo{margin-left: 35px;}
+
+    .catalyst-demo .row{margin-left: 0px;}
 
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
