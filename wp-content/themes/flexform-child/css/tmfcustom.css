@@ -33,15 +33,35 @@ h1 {
 .gray-list ul li {color: #7e7e82;font-weight: bold;}
 .gray-list ul li span.gray-list-p {color: #444; font-weight: normal;}
 
+.call-box {background: #ee7630;color: #FFF;text-align: center;padding: 10px 0;}
+
 /**************************/
 /********* BUTTONS ********/
 /**************************/
 .sf-button.green.standard {color: #FFF}
 .sf-button.standard {text-transform: uppercase;}
 
-/**************************/
-/******** HOME PAGE *******/
-/**************************/
+/* NETWORKING */
+.networking .page-content .networking-tab .ui-widget-header li:hover a#ui-id-1,
+.networking .page-content .networking-tab .ui-widget-header li:hover a#ui-id-2,
+.networking .page-content .networking-tab .ui-widget-header li:hover a#ui-id-3,   
+.networking .page-content .networking-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-1,
+.networking .page-content .networking-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-2, 
+.networking .page-content .networking-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-3,  
+.networking.page .networking-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1,
+.networking.page .networking-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2,
+.networking.page .networking-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #ee7630 !important;}
+.networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+	padding: 0 20px;
+	line-height: 44px;
+	margin: 0;
+}
+.networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
+.networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
+.networking-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
 
 /**************************/
 /******* SUBMIT PAGE ******/
@@ -55,12 +75,12 @@ h1 {
 
 /*navegation-tabs*/
 .page-content .ui-widget-header li:hover a, .page-content .ui-widget-header li.ui-tabs-active:hover a, .page .page-content .ui-tabs .ui-tabs-nav li.ui-tabs-active a {color: #fff;}
-.page-content .ui-widget-header li:hover a#ui-id-1, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-1, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1 {background: #f3a626 !important;}
-.page-content .ui-widget-header li:hover a#ui-id-2, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-2, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2 {background: #8b1e88 !important;}
-.page-content .ui-widget-header li:hover a#ui-id-3, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-3, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #7db342 !important;}
-.page-content .ui-widget-header li:hover a#ui-id-4, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-4, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-4 {background: #225f91 !important;}
-.page-content .ui-widget-header li:hover a#ui-id-5, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-5, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-5 {background: #27abb2 !important;}
-.page-content .ui-widget-header li:hover a#ui-id-6, .page-content .ui-widget-header li.ui-tabs-active:hover a#ui-id-6, .page .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-6 {background: #201e20 !important;}
+.ui-widget-header li:hover a#ui-id-1, .ui-widget-header li.ui-tabs-active:hover a#ui-id-1, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1 {background: #f3a626 !important;}
+.ui-widget-header li:hover a#ui-id-2, .ui-widget-header li.ui-tabs-active:hover a#ui-id-2, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2 {background: #8b1e88 !important;}
+.ui-widget-header li:hover a#ui-id-3, .ui-widget-header li.ui-tabs-active:hover a#ui-id-3, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #7db342 !important;}
+.ui-widget-header li:hover a#ui-id-4, .ui-widget-header li.ui-tabs-active:hover a#ui-id-4, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-4 {background: #225f91 !important;}
+.ui-widget-header li:hover a#ui-id-5, .ui-widget-header li.ui-tabs-active:hover a#ui-id-5, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-5 {background: #27abb2 !important;}
+.ui-widget-header li:hover a#ui-id-6, .ui-widget-header li.ui-tabs-active:hover a#ui-id-6, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-6 {background: #201e20 !important;}
 
 /*tabs-content*/
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].summit-inner-tabs {margin: 0 0 20px 0;padding: 0 40px;}
@@ -361,8 +381,7 @@ p.list-text, .section02-companies li {
 /**/
 .exhibitorslist .widget.list_icons_widget a, .big-sidebar-list .widget.list_icons_widget a{font-size: 23px;}
 
-/*CATALYST DEMOSTRATION*/
-
+/* CATALYST DEMOSTRATION */
 .catalyst-demo .row {margin-left: -40px;}
 .catalyst-logos img {max-width: 130px;margin-right: 50px;margin-bottom: 25px;}
 
@@ -392,6 +411,7 @@ a.sf-button.medium.purple{font-size:15px;line-height:20px;padding:10px 16px;back
 a.sf-button.purple:hover{background-color:#242A4E;}
 a.sf-button.medium.orange{font-size:15px;line-height:20px;padding:10px 16px;background-color:#ee7813;}
 a.sf-button.medium.yellow{font-size:15px;line-height:20px;padding:10px 16px;background-color:#f8ad13;}
+a.sf-button.medium.yellow.register-agenda{padding:10px 24px;}
 a.sf-button.orange:hover{background-color:#E2740B;}
 
 /**************************/
@@ -886,7 +906,6 @@ body [class*="span"].title-container{background-image:url('http://www.tmforumliv
 .menu-item .scroll-to-top{line-height:20px;}
 .scroll-to-top:hover{color:rgb(100, 200, 225);text-decoration:none;}
 .general-subtitles2 .scroll-to-top{padding:0 0 43px 0}
-.networking .general-subtitles2 img{margin-top:16px;}
 .float-left-back-to-top .general-subtitles2 .scroll-to-top{padding:34px 0 7px 52px; float: left;}
 #mini-navigation #menu-tmf-live-1 li a{padding:22px 0;}
 #mini-navigation #menu-tmf-live-1 li ul li a{padding:8px 12px;}
@@ -1535,7 +1554,7 @@ a.sf-button.standard.download-agenda.a-glance{
 	background-image: url('/wp-content/uploads/2015/02/icon-download-agenda.png');
 	background-repeat: no-repeat;
 	background-position: right bottom;
-	padding: 15px 100px 15px 24px;
+	padding: 15px 63px 15px 24px;
 }
 a.download-agenda.a-glance span.text-btn,  a.download-agenda.a-glance span.small-text-btn {
 	font-weight: bold;
