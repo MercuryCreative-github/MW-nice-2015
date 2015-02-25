@@ -3545,17 +3545,12 @@
      .exhibitor-resources a.sf-button.standard.register-agenda {padding-right: 60px;}
 }
 
-/****** REGISTER BUTTON ON MAIN MENU ***
+/****** REGISTER BUTTON ON MAIN MENU ****/
 
 @media screen and (min-width: 890px) {
-  #main-navigation .menu-event-main-menu-container {
-      width:100%;
-  }
-  #menu-event-main-menu li.menu-item:last-child {
-      background: none repeat scroll 0 0 #f8ae1e;
-      float: right;
-  }
-  #menu-event-main-menu li.menu-item:last-child a {
-      color:#FFF;
-  }
-}*/
+  #main-navigation .menu-event-main-menu-container, #mini-navigation .menu-event-main-menu-container { width:100%; }
+  .summit #main-navigation .menu-event-main-menu-container, #mini-navigation .menu-event-main-menu-container { width:90%; }
+  #menu-event-main-menu li.menu-register-btn, #mini-navigation li.menu-register-btn { float: right; }
+  #menu-event-main-menu li.menu-register-btn a, #mini-navigation li.menu-register-btn a { color:#FFF; background: none repeat scroll 0 0 #f8ae1e; }
+  #menu-event-main-menu li.menu-register-btn a:hover, #mini-navigation li.menu-register-btn a:hover{background-color: #D88801}
+}

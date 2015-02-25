@@ -138,8 +138,9 @@ a.sf-button.standard.download-agenda{
 	background-image: url('/wp-content/uploads/2015/02/icon-download-agenda.png');
 	background-repeat: no-repeat;
 	background-position: right bottom;
-	padding: 19px 16px 13px;
+	padding: 13px 16px;
 }
+a.download-agenda span.small-text-btn {font-size: 21px;font-weight: 300;}
 a.download-agenda span.text-btn, .summit-sidebar-tabs.cca a.download-agenda span.small-text-btn,
 a.sf-button.standard.register-agenda span.register-text{
 	font-weight: bold;
@@ -147,7 +148,7 @@ a.sf-button.standard.register-agenda span.register-text{
 	margin-right: 68px;
 	padding-top: 0;
 }
-a.download-agenda span.text-btn {font-size: 30px;}
+a.download-agenda span.text-btn {font-size: 22px;}
 a.sf-button.standard.register-agenda span.register-text {font-size: 25px;}
 .summit-sidebar-tabs a.download-agenda span.small-text-btn{font-size: 20px;}
 a.sf-button.standard.register-agenda {
