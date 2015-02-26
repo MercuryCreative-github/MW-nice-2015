@@ -14,7 +14,7 @@ function ini() {
     moveSponsors();
     reRowIotTabs();
     homepageSectionsResize();
-
+    acordion();
 }
 
 function homepageSectionsResize(){
@@ -634,12 +634,9 @@ function conference_move_widget_node() {
 }
 /*End conference_move_widget_node*/
 
-
 /*========= align sponsor logos vertically according to height and ajust size to fit design ========== */
 function resizeSponsors() {
     var logo = 0;
-
-
 
     jQuery(".sponsors .wpb_single_image img").each(function() {
 
@@ -773,8 +770,6 @@ function responsiveTables() {
         correctionTMF();
     }
 
-
-
     function correctionTMF() {
         tr = 0;
         jQuery('.pinned table tr').each(function() {
@@ -834,3 +829,25 @@ function equalCoursesBoxes(){
         jQuery(this).height(highestCourse);
     });
 }
+
+//Hide & Show like ACORDION 
+function acordion(){
+    
+    jQuery('.hiddenContent').each(function(){ jQuery(this).parent().hide();jQuery(this).show(); })
+
+    jQuery('.visibleTitle').click(function(){
+
+        var toOpen = jQuery(this).parent().next()//.children('.row [class*="span"].hiddenContent');\
+        
+        if(toOpen.css('display')!=='block'){
+            jQuery('.hiddenContent').parent().stop(true,true).slideUp();
+            toOpen.slideDown();
+            jQuery('.read-more-icon').removeClass("open");
+            jQuery('.read-more-icon',this).addClass("open");
+        }else{
+            jQuery('.hiddenContent').parent().stop(true,true).slideUp();
+            jQuery('.read-more-icon').removeClass("open");
+        }
+        //
+    });
+} 

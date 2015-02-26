@@ -222,16 +222,11 @@
     .feed-related-posts .feed-item{width: 280px;}
     .section03-bottom ul {padding: 15px 30px;}
 
+    /*Accordion*/
+    .visible-sponsor {padding-left: 100px;}
+
 }
 @media screen and (max-width: 1077px) {
-    h2:before, h3.faq-section-title:before {
-        content: url('../../../uploads/2014/08/subtitle-e1407968140613-small.png');
-        position: absolute;
-        left: -28px;
-    }
-    h2:before, h3.faq-section-title:before .sponsors {
-        left: -18px
-    }
     .sponsors h2 {
         padding-left: 10px;
     }
@@ -508,6 +503,17 @@
     .section03-bottom ul {padding: 15px 0;}
 
     .exhibitor-resources a.sf-button.standard.register-agenda {padding-right: 0px;}
+
+    /*call to action - pricing page*/
+    .the-content td.call-to-action h3 {font-size: 1.8em;}
+    .the-content td.call-to-action a {color: #ee7630;background-color: transparent;padding: 0;}
+    .the-content td.call-to-action a:hover {background-color: transparent;}
+
+    /*catalyst demo*/
+    .catalyst-logos img {margin-right: 40px;}
+    /*Accordion*/
+    .visible-sponsor {padding-left: 0px;}
+
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -718,9 +724,6 @@
         width: 87% !important;
         margin-left: 8% !important;
     }
-    h2:before, h3.faq-section-title:before {
-        content: url('../../../uploads/2014/08/subtitle-e1407968140613-small.png');
-    }
     a.sf-button.blue {
         float: right;
     }
@@ -811,6 +814,7 @@
         max-width:350px;
         margin:auto;
     }
+   
 
 }
 @media screen and (min-width: 768px) and (max-width: 800px) {
@@ -975,6 +979,11 @@
     .section01-sponsors{position: relative;}
     .sponsors_logo{margin-left: 35px;}
 
+    .catalyst-demo .row{margin-left: 0px;}
+
+    /*Accordion*/
+    .row [class*="span"].visibleTitle {margin-bottom: 0;}
+    .visible-sponsor {padding-left: 40px;}
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -2418,6 +2427,8 @@
     .responsive-sponsors .image-caption {
         margin-bottom: 20px;
     }
+/*Accordion*/
+    .visible-sponsor {padding-left: 0px;}
 }
 @media screen and (max-width: 640px) {
     /*SUPPLIERS*/
@@ -3545,17 +3556,12 @@
      .exhibitor-resources a.sf-button.standard.register-agenda {padding-right: 60px;}
 }
 
-/****** REGISTER BUTTON ON MAIN MENU ***
+/****** REGISTER BUTTON ON MAIN MENU ****/
 
 @media screen and (min-width: 890px) {
-  #main-navigation .menu-event-main-menu-container {
-      width:100%;
-  }
-  #menu-event-main-menu li.menu-item:last-child {
-      background: none repeat scroll 0 0 #f8ae1e;
-      float: right;
-  }
-  #menu-event-main-menu li.menu-item:last-child a {
-      color:#FFF;
-  }
-}*/
+  #main-navigation .menu-event-main-menu-container, #mini-navigation .menu-event-main-menu-container { width:100%; }
+  .summit #main-navigation .menu-event-main-menu-container { width:90%; }
+  #menu-event-main-menu li.menu-register-btn, #mini-navigation li.menu-register-btn { float: right; }
+  #menu-event-main-menu li.menu-register-btn a, #mini-navigation li.menu-register-btn a { color:#FFF; background: none repeat scroll 0 0 #f8ae1e; }
+  #menu-event-main-menu li.menu-register-btn a:hover, #mini-navigation li.menu-register-btn a:hover{background-color: #D88801}
+}
