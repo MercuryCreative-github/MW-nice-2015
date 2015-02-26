@@ -832,14 +832,22 @@ function equalCoursesBoxes(){
 
 //Hide & Show like ACORDION 
 function acordion(){
-jQuery('.visibleTitle').click(function(){
-    var toOpen = jQuery(this).parent().next('.row').children('.row [class*="span"].hiddenContent');
-    toOpen.css("display","block");
-    openIcon = toOpen.children('.read-more-icon:after');
-    openIcon.css("content","\f068");
+    
+    jQuery('.hiddenContent').each(function(){ jQuery(this).parent().hide();jQuery(this).show(); })
 
-    /*if (jQuery('.row [class*="span"].hiddenContent').css("display","block") == true){
-        jQuery('.row [class*="span"].hiddenContent').css("display","none");
-    };*/
+    jQuery('.visibleTitle').click(function(){
+
+        var toOpen = jQuery(this).parent().next()//.children('.row [class*="span"].hiddenContent');\
+        
+        if(toOpen.css('display')!=='block'){
+            jQuery('.hiddenContent').parent().stop(true,true).slideUp();
+            toOpen.slideDown();
+            jQuery('.read-more-icon').removeClass("open");
+            jQuery('.read-more-icon',this).addClass("open");
+        }else{
+            jQuery('.hiddenContent').parent().stop(true,true).slideUp();
+            jQuery('.read-more-icon').removeClass("open");
+        }
+        //
     });
-}
+} 

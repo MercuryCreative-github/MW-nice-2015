@@ -222,6 +222,9 @@
     .feed-related-posts .feed-item{width: 280px;}
     .section03-bottom ul {padding: 15px 30px;}
 
+    /*Accordion*/
+    .visible-sponsor {padding-left: 100px;}
+
 }
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
@@ -508,6 +511,9 @@
 
     /*catalyst demo*/
     .catalyst-logos img {margin-right: 40px;}
+    /*Accordion*/
+    .visible-sponsor {padding-left: 0px;}
+
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -975,6 +981,9 @@
 
     .catalyst-demo .row{margin-left: 0px;}
 
+    /*Accordion*/
+    .row [class*="span"].visibleTitle {margin-bottom: 0;}
+    .visible-sponsor {padding-left: 40px;}
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -2418,6 +2427,8 @@
     .responsive-sponsors .image-caption {
         margin-bottom: 20px;
     }
+/*Accordion*/
+    .visible-sponsor {padding-left: 0px;}
 }
 @media screen and (max-width: 640px) {
     /*SUPPLIERS*/
@@ -3549,7 +3560,7 @@
 
 @media screen and (min-width: 890px) {
   #main-navigation .menu-event-main-menu-container, #mini-navigation .menu-event-main-menu-container { width:100%; }
-  .summit #main-navigation .menu-event-main-menu-container, #mini-navigation .menu-event-main-menu-container { width:90%; }
+  .summit #main-navigation .menu-event-main-menu-container { width:90%; }
   #menu-event-main-menu li.menu-register-btn, #mini-navigation li.menu-register-btn { float: right; }
   #menu-event-main-menu li.menu-register-btn a, #mini-navigation li.menu-register-btn a { color:#FFF; background: none repeat scroll 0 0 #f8ae1e; }
   #menu-event-main-menu li.menu-register-btn a:hover, #mini-navigation li.menu-register-btn a:hover{background-color: #D88801}

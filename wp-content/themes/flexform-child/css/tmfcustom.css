@@ -37,17 +37,21 @@ h1 {
 .call-box p a:hover {color: #FFF}
 
 /*Accordion*/
-.visibleTitle {display: table;margin-bottom: 0;}
+.visibleTitle {display: table;margin-bottom: 0;cursor: pointer;}
 .visibleTitle .nday {display: table-cell; min-height: initial; width: 250px;}
-.visibleTitle .title-place {display: table-cell;line-height: 22px;}
+.visibleTitle .title-place {display: table-cell;line-height: 22px;padding-right: 10px;}
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].gray-accordion, 
-.wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].withe-accordion{padding: 20px 10px 10px 20px; position: relative;}
+.wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].withe-accordion{padding: 20px 10px 20px 20px; position: relative;}
 .gray-accordion {background-color: #F0F0F0;}
 .row [class*="span"].hiddenContent {display: none;border-top: #A3A3A3 1px solid;}
-.visible-sponsor {display: table-cell;vertical-align: middle;}
+.visible-sponsor {display: table-cell;vertical-align: middle;padding-left: 200px;}
 .visible-sponsor img {max-height: 40px;}
 .read-more-icon {position: absolute;right: 0;top: 10px;}
 .read-more-icon:after {content: "\f067";float: right;color: #B4B4B4;margin-right: 0;font-family: FontAwesome;font-size: 14px;}
+.read-more-icon.open:after {content: "\f068";}
+
+.gray-accordion .fday, .withe-accordion .fday{padding: 0;}
+.gray-accordion a, .withe-accordion a {color: #ee7630;}
 
 /**************************/
 /********* BUTTONS ********/
