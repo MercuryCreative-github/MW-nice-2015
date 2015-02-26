@@ -33,7 +33,21 @@ h1 {
 .gray-list ul li {color: #7e7e82;font-weight: bold;}
 .gray-list ul li span.gray-list-p {color: #444; font-weight: normal;}
 
-.call-box {background: #ee7630;color: #FFF;text-align: center;padding: 10px 0;}
+.call-box p, .call-box p a {background: #ee7630;color: #FFF;text-align: center;padding: 10px 20px;}
+.call-box p a:hover {color: #FFF}
+
+/*Accordion*/
+.visibleTitle {display: table;margin-bottom: 0;}
+.visibleTitle .nday {display: table-cell; min-height: initial; width: 250px;}
+.visibleTitle .title-place {display: table-cell;line-height: 22px;}
+.wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].gray-accordion, 
+.wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].withe-accordion{padding: 20px 10px 10px 20px; position: relative;}
+.gray-accordion {background-color: #F0F0F0;}
+.row [class*="span"].hiddenContent {display: none;border-top: #A3A3A3 1px solid;}
+.visible-sponsor {display: table-cell;vertical-align: middle;}
+.visible-sponsor img {max-height: 40px;}
+.read-more-icon {position: absolute;right: 0;top: 10px;}
+.read-more-icon:after {content: "\f067";float: right;color: #B4B4B4;margin-right: 0;font-family: FontAwesome;font-size: 14px;}
 
 /**************************/
 /********* BUTTONS ********/

@@ -14,7 +14,7 @@ function ini() {
     moveSponsors();
     reRowIotTabs();
     homepageSectionsResize();
-
+    acordion();
 }
 
 function homepageSectionsResize(){
@@ -634,12 +634,9 @@ function conference_move_widget_node() {
 }
 /*End conference_move_widget_node*/
 
-
 /*========= align sponsor logos vertically according to height and ajust size to fit design ========== */
 function resizeSponsors() {
     var logo = 0;
-
-
 
     jQuery(".sponsors .wpb_single_image img").each(function() {
 
@@ -773,8 +770,6 @@ function responsiveTables() {
         correctionTMF();
     }
 
-
-
     function correctionTMF() {
         tr = 0;
         jQuery('.pinned table tr').each(function() {
@@ -832,5 +827,19 @@ function equalCoursesBoxes(){
     console.log(highestCourse);
     jQuery('.online-training .about-table').each(function(){
         jQuery(this).height(highestCourse);
+    });
+}
+
+//Hide & Show like ACORDION 
+function acordion(){
+jQuery('.visibleTitle').click(function(){
+    var toOpen = jQuery(this).parent().next('.row').children('.row [class*="span"].hiddenContent');
+    toOpen.css("display","block");
+    openIcon = toOpen.children('.read-more-icon:after');
+    openIcon.css("content","\f068");
+
+    /*if (jQuery('.row [class*="span"].hiddenContent').css("display","block") == true){
+        jQuery('.row [class*="span"].hiddenContent').css("display","none");
+    };*/
     });
 }
