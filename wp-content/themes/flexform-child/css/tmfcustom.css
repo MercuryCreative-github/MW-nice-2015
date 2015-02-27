@@ -163,6 +163,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea, selec
 #gforms_confirmation_message { margin-bottom: 40px; }
 
 /*buttons*/
+.summit-buttons a.sf-button.standard.download-agenda {padding: 13px 85px 13px 16px;}
 .summit-sidebar-tabs.cca a.summit-color {background-color: #f3a626; color: #FFF;}
 .summit-sidebar-tabs.iot a.summit-color {background-color: #8b1e88; color: #FFF;}
 .summit-sidebar-tabs.nfv a.summit-color {background-color: #7db342; color: #FFF;}
@@ -184,8 +185,7 @@ a.sf-button.standard.download-agenda{
 	padding: 13px 16px;
 }
 a.download-agenda span.small-text-btn {font-size: 21px;font-weight: 300;}
-a.download-agenda span.text-btn, .summit-sidebar-tabs.cca a.download-agenda span.small-text-btn,
-a.sf-button.standard.register-agenda span.register-text{
+a.download-agenda span.text-btn, a.sf-button.standard.register-agenda span.register-text{
 	font-weight: bold;
 	padding-right: 15px;
 	margin-right: 68px;
