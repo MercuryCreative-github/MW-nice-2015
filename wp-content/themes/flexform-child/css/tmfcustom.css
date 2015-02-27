@@ -53,6 +53,11 @@ h1 {
 .gray-accordion .fday, .withe-accordion .fday{padding: 0;}
 .gray-accordion a, .withe-accordion a {color: #ee7630;}
 
+/*sidebar*/
+
+p.sidebar-contact {text-align: center;margin-right: 30px;line-height: 35px;}
+p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color: #939393;padding: 5px 20px;}
+
 /**************************/
 /********* BUTTONS ********/
 /**************************/
