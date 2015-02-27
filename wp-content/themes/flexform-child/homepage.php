@@ -109,6 +109,10 @@ Template Name: Home Page
 					<a href="/sponsors/"><img src="/wp-content/uploads/2015/02/Exhibitor-resource1.png"></a>
 					<p class="image-caption">Gold Sponsor</p>
 				</div>
+				<div class="sponsors_logo logo_4">
+					<a href="/sponsors/"><img src="/wp-content/uploads/2015/02/SevOneLogo.png"></a>
+					<p class="image-caption">Gold Sponsor</p>
+				</div>
 			</div>
 		</div>
 	</div>

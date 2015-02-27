@@ -53,6 +53,11 @@ h1 {
 .gray-accordion .fday, .withe-accordion .fday{padding: 0;}
 .gray-accordion a, .withe-accordion a {color: #ee7630;}
 
+/*sidebar*/
+
+p.sidebar-contact {text-align: center;margin-right: 30px;line-height: 35px;}
+p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color: #939393;padding: 5px 20px;}
+
 /**************************/
 /********* BUTTONS ********/
 /**************************/
@@ -263,9 +268,11 @@ a.sf-button.standard.register-agenda {
 .sponsors-logos {margin: 0 auto;display: table;}
 .sponsors-logos p {text-align: center;}
 
+.logo_1 {margin-left: 0;}
 .logo_1 img {height: 40px;}
 .logo_2 img {height: 53px;}
 .logo_3 img {height: 60px;}
+.logo_4 img {height: 33px;}
 p.image-caption{margin:10px 0 0 0;line-height:100%;}
 .sponsors_logo {text-align:center; position: relative; display: inline-block; max-width: 30%; margin-left: 85px;}
 .sponsors_logo a {display: block; margin: auto; height: 60px; line-height: 60px;}
