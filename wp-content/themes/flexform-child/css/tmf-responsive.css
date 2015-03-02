@@ -114,6 +114,7 @@
     nav#top-bar-menu {
         width: 745px;
     }
+
 }
 @media all and (min-width: 1250px) {
     /*tables size*/
@@ -138,7 +139,6 @@
     }
     .sec-main-content {width: 90%; margin: 0 auto;}
     .section04-info {width: 58%;margin-left: 0;}
-    .section04-title h1 {text-align: left;}
     /*contacto footer '15*/
     #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
     .section03-bottom ul li:nth-child(4) {margin-left: 0;}
@@ -232,6 +232,11 @@
     #menu-event-main-menu{
         width: 805px;
     }
+
+     .ml30{
+        margin-left: 0px;
+    }
+
 
 }
 @media screen and (max-width: 1077px) {
@@ -751,6 +756,18 @@
         width: 87% !important;
         margin-left: 8% !important;
     }
+
+    .ui-corner-top{
+        padding: 0 0px !important;
+    }
+
+    .ui-tabs-anchor{
+        font-size: 1.8vw !important;
+        width: 100%;
+        text-align: center;
+        padding: 0 10px !important;
+    }
+
 }
 @media screen and (max-width: 840px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -1023,6 +1040,10 @@
     .sponsors_logo a{
         height: 6vw;
         line-height: auto;
+    }
+
+    .span2{
+        text-align: center;
     }
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
@@ -1699,7 +1720,7 @@
         width: 100%;
     }
     .ui-tabs .ui-tabs-nav li {
-        width: 20% !important;
+        /*width: 20% !important;*/
         float: left;
         box-sizing: border-box;
         text-align: center;
@@ -3502,9 +3523,9 @@
     .call-to-action li.register-btn {
         float: right;
     }
-    .ui-tabs .ui-tabs-nav li {
+    /*.ui-tabs .ui-tabs-nav li {
         width: 20% !important;
-    }
+    }*/
 }
 @media screen and (min-width: 641px) and (max-width: 840px) {
     .head .social-icon {

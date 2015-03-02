@@ -82,6 +82,12 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	line-height: 44px;
 	margin: 0;
 }
+
+
+.span8{
+	width: 100% !important;
+}
+
 .networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
 .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
 .networking-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
