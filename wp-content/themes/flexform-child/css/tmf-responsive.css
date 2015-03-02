@@ -1048,7 +1048,7 @@
     /* .item.cuadrob.cuadrob1{ top: 652px !important; left: 0px !important;} */
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 675px){
     .section01-sponsors{display: none;}
 }
 
