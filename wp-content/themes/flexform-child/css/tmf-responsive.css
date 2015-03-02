@@ -1014,7 +1014,12 @@
     .row [class*="span"].visibleTitle {margin-bottom: 0;}
     .visible-sponsor {padding-left: 40px;}
 
-    .section01-sponsors{margin-top: 4%;}
+    /*sponsors aligned*/
+    .section01-sponsors{margin-top: 11%;}
+    .sponsors_logo a{
+        height: auto;
+        line-height: auto;
+    }
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
