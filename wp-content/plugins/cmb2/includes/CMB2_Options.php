@@ -34,6 +34,12 @@ class CMB2_Option {
 	protected $options = array();
 
 	/**
+	 * Current option key
+	 * @var string
+	 */
+	protected $key = '';
+
+	/**
 	 * Initiate option object
 	 * @since 2.0.0
 	 */
@@ -82,7 +88,7 @@ class CMB2_Option {
 	function get( $field_id, $default = false ) {
 		$opts = $this->get_options();
 
-		if ( $field_id == 'all' ) {
+		if ( 'all' == $field_id ) {
 			return $opts;
 		} elseif ( array_key_exists( $field_id, $opts ) ) {
 			return false !== $opts[ $field_id ] ? $opts[ $field_id ] : $default;
@@ -98,12 +104,12 @@ class CMB2_Option {
 	 * @param  mixed   $value      Value to update data with
 	 * @param  bool    $resave     Whether to re-save the data
 	 * @param  bool    $single     Whether data should not be an array
-	 * @return array               Modified options
+	 * @return boolean             Return status of update
 	 */
 	function update( $field_id, $value = '', $resave = false, $single = true ) {
 		$this->get_options();
 
-		if ( $field_id !== true ) {
+		if ( true !== $field_id ) {
 
 			if ( ! $single ) {
 				// If multiple, add to array
@@ -114,7 +120,7 @@ class CMB2_Option {
 
 		}
 
-		if ( $resave || $field_id === true ) {
+		if ( $resave || true === $field_id ) {
 			return $this->set();
 		}
 
@@ -124,18 +130,19 @@ class CMB2_Option {
 	/**
 	 * Saves the option array
 	 * Needs to be run after finished using remove/update_option
-	 * @uses apply_filters() Calls 'cmb2_override_option_save_{$this->key}' hook to allow
-	 * 	overwriting the option value to be stored.
+	 * @uses apply_filters() Calls 'cmb2_override_option_save_{$this->key}' hook
+	 * to allow overwriting the option value to be stored.
 	 *
 	 * @since  1.0.1
-	 * @return boolean             Success/Failure
+	 * @param  array $options Optional options to override
+	 * @return bool           Success/Failure
 	 */
-	function set( $options = false ) {
-		$this->options = $options ? $options : $this->options;
+	function set( $options = array() ) {
+		$this->options = ! empty( $options ) ? $options : $this->options;
 
 		$test_save = apply_filters( "cmb2_override_option_save_{$this->key}", 'cmb2_no_override_option_save', $this->options, $this );
 
-		if ( $test_save !== 'cmb2_no_override_option_save' ) {
+		if ( 'cmb2_no_override_option_save' !== $test_save ) {
 			return $test_save;
 		}
 
@@ -149,16 +156,15 @@ class CMB2_Option {
 	 * 	overwriting the option value to be retrieved.
 	 *
 	 * @since  1.0.1
-	 * @param  string $option  Name of option to retrieve. Expected to not be SQL-escaped.
-	 * @param  mixed  $default Optional. Default value to return if the option does not exist.
-	 * @return mixed           Value set for the option.
+	 * @param  mixed $default Optional. Default value to return if the option does not exist.
+	 * @return mixed          Value set for the option.
 	 */
 	function get_options( $default = null ) {
 		if ( empty( $this->options ) ) {
 
 			$test_get = apply_filters( "cmb2_override_option_get_{$this->key}", 'cmb2_no_override_option_get', $default, $this );
 
-			if ( $test_get !== 'cmb2_no_override_option_get' ) {
+			if ( 'cmb2_no_override_option_get' !== $test_get ) {
 				$this->options = $test_get;
 			} else {
 				// If no override, get the option

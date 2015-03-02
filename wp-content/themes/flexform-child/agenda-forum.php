@@ -296,6 +296,10 @@ Template Name: Agenda Forum
 
 				//manage time of the presentation
 				$time= get_field('time');
+				$forumToShow= get_field('forum');
+				
+				$forumToShow= $forumToShow->post_name;
+
 				$time= explode(":", $time);
 				$hour = $time[0];
 				$mins = $time[1];
@@ -316,7 +320,7 @@ Template Name: Agenda Forum
 
 				$linkToForum = get_permalink();
 
-				$forum.='<div class="textTrack'.$i.' moveDiv" day="' . $daytag . '" time="' .$time. '" hour="' .$hour. '" mins="' .$mins. '"><div class="body-text clearfix">
+				$forum.='<div forum="'.$forumToShow.'" class="textTrack'.$i.' moveDiv" day="' . $daytag . '" time="' .$time. '" hour="' .$hour. '" mins="' .$mins. '"><div class="body-text clearfix">
 									<h2><a href="'.$linkToForum.'">'.get_the_title().'</a></h2>
 									<div class="timeTrack">' .  $displayTime . $subtitle. '</div>' . $speakersDisplay.$moderatorsDisplay.$panelistsDisplay.$collaboratorDisplay.$content .'<div class="link-pages"></div>
 								</div></div>';
