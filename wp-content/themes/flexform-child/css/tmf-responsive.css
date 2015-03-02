@@ -523,19 +523,19 @@
     .visible-sponsor {padding-left: 0px;}
 
     /*fix responsive sponsors - one line*/
-    .logo_1{
+    .logo_1 img{
         height: 2.9vw;
     }
 
-    .logo_2{
+    .logo_2 img{
         height: 3.9vw;
     }
     
-    .logo_3{
+    .logo_3 img{
         height: 4.444vw;
     }
 
-    .logo_4{
+    .logo_4 img{
         height: 2.444vw;
     }
 
