@@ -1017,7 +1017,7 @@
     /*sponsors aligned*/
     .section01-sponsors{margin-top: 11%;}
     .sponsors_logo a{
-        height: auto;
+        height: 6vw;
         line-height: auto;
     }
 }
