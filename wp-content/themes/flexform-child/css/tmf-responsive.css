@@ -225,6 +225,10 @@
     /*Accordion*/
     .visible-sponsor {padding-left: 100px;}
 
+    #menu-event-main-menu-2 a[href="https://twitter.com/tmforumorg"]{
+        display: none;
+    }
+
 }
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
