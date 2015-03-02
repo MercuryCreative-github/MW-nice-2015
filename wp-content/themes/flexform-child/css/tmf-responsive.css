@@ -1054,7 +1054,9 @@
 
 @media screen and (max-width: 675px){
     .section01-sponsors{display: none;}
-    
+}
+
+@media screen and (max-width: 640px){
     #footer .widget ul li{
         float: none !important;
         display: inline-block;
