@@ -110,7 +110,7 @@ Template Name: Home Page
 					<p class="image-caption">Gold Sponsor</p>
 				</div>
 				<div class="sponsors_logo logo_4">
-					<a href="/sponsors/"><img src="/wp-content/uploads/2015/02/SevOneLogo.png"></a>
+					<a href="/sponsors/"><img src="/wp-content/uploads/2014/01/SevOneLogo.png"></a>
 					<p class="image-caption">Gold Sponsor</p>
 				</div>
 			</div>
