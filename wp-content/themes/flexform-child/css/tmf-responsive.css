@@ -547,8 +547,8 @@
         text-align: center;
     }
 
-    .widget ul li{
-        float: none;
+    #footer .widget ul li{
+        float: none !important;
         display: inline-block;
     }
 
