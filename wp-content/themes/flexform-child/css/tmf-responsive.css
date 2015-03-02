@@ -539,6 +539,10 @@
         height: 2.444vw;
     }
 
+    .sponsors_logo{
+        margin-left: 80px;
+    }
+
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -1009,6 +1013,8 @@
     /*Accordion*/
     .row [class*="span"].visibleTitle {margin-bottom: 0;}
     .visible-sponsor {padding-left: 40px;}
+
+    .section01-sponsors{margin-top: 4%;}
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
