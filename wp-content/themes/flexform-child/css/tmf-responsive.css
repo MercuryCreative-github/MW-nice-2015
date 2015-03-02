@@ -229,6 +229,10 @@
         display: none;
     }
 
+    #menu-event-main-menu{
+        width: 805px;
+    }
+
 }
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
