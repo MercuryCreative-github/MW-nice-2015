@@ -543,6 +543,15 @@
         margin-left: 80px;
     }
 
+    .widget ul{
+        text-align: center;
+    }
+
+    .widget ul li{
+        float: none;
+        display: inline-block;
+    }
+
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
