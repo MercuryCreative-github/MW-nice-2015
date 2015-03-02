@@ -1047,6 +1047,11 @@
     }
     /* .item.cuadrob.cuadrob1{ top: 652px !important; left: 0px !important;} */
 }
+
+@media screen and (max-width: 480px){
+    .section01-sponsors{display: none;}
+}
+
 @media screen and (max-width: 550px) {
     .app14s .app14s_buttons ul li{
         float:none;
