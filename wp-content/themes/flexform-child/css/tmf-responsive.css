@@ -547,11 +547,6 @@
         text-align: center;
     }
 
-    #footer .widget ul li{
-        float: none !important;
-        display: inline-block;
-    }
-
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -1059,6 +1054,11 @@
 
 @media screen and (max-width: 675px){
     .section01-sponsors{display: none;}
+    
+    #footer .widget ul li{
+        float: none !important;
+        display: inline-block;
+    }
 }
 
 @media screen and (max-width: 550px) {
