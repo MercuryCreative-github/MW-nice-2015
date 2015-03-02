@@ -6,13 +6,13 @@
  * @param  string $class_name Name of the class being requested
  */
 function cmb2_autoload_classes( $class_name ) {
-	if ( class_exists( $class_name, false ) || false === strpos( $class_name, 'CMB2_' ) ) {
+	if ( class_exists( $class_name, false ) || false === strpos( $class_name, 'CMB2' ) ) {
 		return;
 	}
 
 	$file = cmb2_dir( "includes/{$class_name}.php" );
 	if ( file_exists( $file ) ) {
-		@include_once( $file );
+		include_once( $file );
 	}
 }
 spl_autoload_register( 'cmb2_autoload_classes' );
@@ -33,7 +33,7 @@ function cmb2_utils() {
  * @since  2.0.0
  * @return CMB2_Ajax object CMB utilities class
  */
-function cmb2_ajax( $args = array() ) {
+function cmb2_ajax() {
 	static $cmb2_ajax;
 	$cmb2_ajax = $cmb2_ajax ? $cmb2_ajax : new CMB2_Ajax();
 	return $cmb2_ajax;
@@ -83,8 +83,8 @@ function cmb2_get_option( $option_key, $field_id = '' ) {
  * @param  string  $option_key Option key
  * @param  string  $field_id   Option array field key
  * @param  mixed   $value      Value to update data with
- * @param  bool    $single     Whether data should not be an array
- * @return array               Modified options
+ * @param  boolean $single     Whether data should not be an array
+ * @return boolean             Success/Failure
  */
 function cmb2_update_option( $option_key, $field_id, $value, $single = true ) {
 	if ( cmb2_options( $option_key )->update( $field_id, $value, false, $single ) ) {
@@ -98,10 +98,10 @@ function cmb2_update_option( $option_key, $field_id, $value, $single = true ) {
  * Get a CMB field object.
  * @since  1.1.0
  * @param  array  $meta_box    Metabox ID or Metabox config array
- * @param  array  $field_args  Field ID or all field arguments
+ * @param  array  $field_id    Field ID or all field arguments
  * @param  int    $object_id   Object ID
  * @param  string $object_type Type of object being saved. (e.g., post, user, comment, or options-page)
- * @return object              CMB2_Field object
+ * @return CMB2_Field|null     CMB2_Field object unless metabox config cannot be found
  */
 function cmb2_get_field( $meta_box, $field_id, $object_id = 0, $object_type = 'post' ) {
 
@@ -141,7 +141,7 @@ function cmb2_get_field( $meta_box, $field_id, $object_id = 0, $object_type = 'p
  * Get a field's value.
  * @since  1.1.0
  * @param  array  $meta_box    Metabox ID or Metabox config array
- * @param  array  $field_args  Field ID or all field arguments
+ * @param  array  $field_id    Field ID or all field arguments
  * @param  int    $object_id   Object ID
  * @param  string $object_type Type of object being saved. (e.g., post, user, comment, or options-page)
  * @return mixed               Maybe escaped value
@@ -152,9 +152,19 @@ function cmb2_get_field_value( $meta_box, $field_id, $object_id = 0, $object_typ
 }
 
 /**
+ * Because OOP can be scary
+ * @since  2.0.2
+ * @param  array $meta_box_config Metabox Config array
+ * @return CMB2 object            Instantiated CMB2 object
+ */
+function new_cmb2_box( array $meta_box_config ) {
+	return cmb2_get_metabox( $meta_box_config );
+}
+
+/**
  * Retrieve a CMB instance by the metabox ID
  * @since  2.0.0
- * @param  array $meta_box  Metabox ID or Metabox config array
+ * @param  mixed $meta_box  Metabox ID or Metabox config array
  * @return CMB2 object
  */
 function cmb2_get_metabox( $meta_box, $object_id = 0 ) {
@@ -181,7 +191,7 @@ function cmb2_get_metabox( $meta_box, $object_id = 0 ) {
 /**
  * Retrieve a metabox form
  * @since  2.0.0
- * @param  array   $meta_box  Metabox config array or Metabox ID
+ * @param  mixed   $meta_box  Metabox config array or Metabox ID
  * @param  int     $object_id Object ID
  * @param  array   $args      Optional arguments array
  * @return string             CMB html form markup
@@ -203,7 +213,7 @@ function cmb2_get_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 /**
  * Display a metabox form & save it on submission
  * @since  1.0.0
- * @param  array   $meta_box  Metabox config array or Metabox ID
+ * @param  mixed   $meta_box  Metabox config array or Metabox ID
  * @param  int     $object_id Object ID
  * @param  array   $args      Optional arguments array
  */
@@ -227,7 +237,7 @@ function cmb2_print_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 		// check nonce
 		isset( $_POST['submit-cmb'], $_POST['object_id'], $_POST[ $cmb->nonce() ] )
 		&& wp_verify_nonce( $_POST[ $cmb->nonce() ], $cmb->nonce() )
-		&& $_POST['object_id'] == $object_id
+		&& $object_id && $_POST['object_id'] == $object_id
 	) {
 		$cmb->save_fields( $object_id, $cmb->object_type(), $_POST );
 	}
@@ -260,7 +270,7 @@ function cmb2_print_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 /**
  * Display a metabox form (or optionally return it) & save it on submission
  * @since  1.0.0
- * @param  array   $meta_box  Metabox config array or Metabox ID
+ * @param  mixed   $meta_box  Metabox config array or Metabox ID
  * @param  int     $object_id Object ID
  * @param  array   $args      Optional arguments array
  */
@@ -268,6 +278,6 @@ function cmb2_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 	if ( ! isset( $args['echo'] ) || $args['echo'] ) {
 		cmb2_print_metabox_form( $meta_box, $object_id, $args );
 	} else {
-		cmb2_get_metabox_form( $meta_box, $object_id, $args );
+		return cmb2_get_metabox_form( $meta_box, $object_id, $args );
 	}
 }

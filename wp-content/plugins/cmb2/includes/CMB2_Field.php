@@ -2,9 +2,13 @@
 
 /**
  * CMB field class
+ *
  * @since  1.1.0
+ *
  * @method string _id()
  * @method string type()
+ * @method mixed fields()
+ * @method mixed count()
  */
 class CMB2_Field {
 
@@ -49,6 +53,27 @@ class CMB2_Field {
 	 * @since 1.1.0
 	 */
 	public $escaped_value = null;
+
+	/**
+	 * Grouped Field's current numeric index during the save process
+	 * @var   mixed
+	 * @since 2.0.0
+	 */
+	public $index = 0;
+
+	/**
+	 * Array of field options
+	 * @var   array
+	 * @since 2.0.0
+	 */
+	protected $field_options = array();
+
+	/**
+	 * Array of field param callback results
+	 * @var   array
+	 * @since 2.0.0
+	 */
+	protected $callback_results = array();
 
 	/**
 	 * Constructs our field object
@@ -203,8 +228,8 @@ class CMB2_Field {
 	/**
 	 * Updates metadata/option data
 	 * @since  1.0.1
-	 * @param  mixed $value  Value to update data with
-	 * @param  bool  $single Whether data is an array (add_metadata)
+	 * @param  mixed $new_value Value to update data with
+	 * @param  bool  $single    Whether data is an array (add_metadata)
 	 */
 	public function update_data( $new_value, $single = true ) {
 		$a = $this->data_args( array( 'single' => $single ) );
@@ -393,8 +418,8 @@ class CMB2_Field {
 			: null;
 
 		$new_value = $this->sanitization_cb( $meta_value );
-		$name      = $this->id();
 		$old       = $this->get_data();
+		// $name      = $this->id();
 		// if ( $this->args( 'multiple' ) && ! $this->args( 'repeatable' ) && ! $this->group ) {
 		// 	$this->remove_data();
 		// 	if ( ! empty( $new_value ) ) {
@@ -404,13 +429,9 @@ class CMB2_Field {
 		// 		}
 		// 	}
 		// } else
-		if ( ! empty( $new_value ) && $new_value !== $old  ) {
-			$this->updated[] = $name;
+		if ( ! cmb2_utils()->isempty( $new_value ) && $new_value !== $old ) {
 			return $this->update_data( $new_value );
-		} elseif ( empty( $new_value ) ) {
-			if ( ! empty( $old ) ) {
-				$this->updated[] = $name;
-			}
+		} elseif ( cmb2_utils()->isempty( $new_value ) ) {
 			return $this->remove_data();
 		}
 	}
@@ -480,9 +501,9 @@ class CMB2_Field {
 	/**
 	 * Escape the value before output. Defaults to 'esc_attr()'
 	 * @since  1.0.1
-	 * @param  mixed  $meta_value Meta value
-	 * @param  mixed  $func       Escaping function (if not esc_attr())
-	 * @return mixed              Final value
+	 * @param  mixed    $meta_value Meta value
+	 * @param  callable $func       Escaping function (if not esc_attr())
+	 * @return mixed                Final value
 	 */
 	public function escaped_value( $func = 'esc_attr', $meta_value = '' ) {
 
@@ -499,19 +520,19 @@ class CMB2_Field {
 		}
 
 		// Or custom escaping filter can be used
-		$esc = apply_filters( 'cmb2_types_esc_'. $this->type(), null, $meta_value, $this->args(), $this );
+		$esc = apply_filters( "cmb2_types_esc_{$this->type()}", null, $meta_value, $this->args(), $this );
 		if ( null !== $esc ) {
 			return $esc;
 		}
 
 		if ( false === $cb || $this->escaping_exception() ) {
 			// If requesting NO escaping, return meta value
-			return ! empty( $meta_value ) ? $meta_value : $this->args( 'default' );
+			return $this->val_or_default( $meta_value );
 		}
 
 		// escaping function passed in?
 		$func       = $func ? $func : 'esc_attr';
-		$meta_value = ! empty( $meta_value ) ? $meta_value : $this->args( 'default' );
+		$meta_value = $this->val_or_default( $meta_value );
 
 		if ( is_array( $meta_value ) ) {
 			foreach ( $meta_value as $key => $value ) {
@@ -523,6 +544,16 @@ class CMB2_Field {
 
 		$this->escaped_value = $meta_value;
 		return $this->escaped_value;
+	}
+
+	/**
+	 * Return non-empty value or field default if value IS empty
+	 * @since  2.0.0
+	 * @param  mixed $meta_value Field value
+	 * @return mixed             Field value, or default value
+	 */
+	public function val_or_default( $meta_value ) {
+		return ! cmb2_utils()->isempty( $meta_value ) ? $meta_value : $this->args( 'default' );
 	}
 
 	/**
@@ -543,14 +574,14 @@ class CMB2_Field {
 
 		// Is timezone arg set?
 		if ( $this->args( 'timezone' ) ) {
-			return $this->args( 'timezone' ) ;
+			return $this->args( 'timezone' );
 		}
 		// Is there another meta key with a timezone stored as its value we should use?
 		else if ( $this->args( 'timezone_meta_key' ) ) {
 			return $this->get_data( $this->args( 'timezone_meta_key' ) );
 		}
 
-		return false;
+		return '';
 	}
 
 	/**
@@ -638,40 +669,98 @@ class CMB2_Field {
 	 * @return string Space concatenated list of classes
 	 */
 	public function row_classes() {
-		$classes = 'cmb-type-'. str_replace( '_', '-', sanitize_html_class( $this->type() ) );
-		$classes .= ' cmb2-id-'. str_replace( '_', '-', sanitize_html_class( $this->id() ) );
-		$classes .= $this->args( 'repeatable' ) ? ' cmb-repeat' : '';
-		$classes .= $this->group ? ' cmb-repeat-group-field' : '';
-		// 'inline' flag, or _inline in the field type, set to true
-		$classes .= $this->args( 'inline' ) ? ' cmb-inline' : '';
 
+		$classes = array();
+
+		/**
+		 * By default, 'text_url' and 'text' fields get table-like styling
+		 *
+		 * @since 2.0.0
+		 *
+		 * @param array $field_types The types of fields which should get the 'table-layout' class
+		 */
 		$repeat_table_rows_types = apply_filters( 'cmb2_repeat_table_row_types', array(
-			'text_url', 'text'
+			'text_url', 'text',
 		) );
 
-		if ( in_array( $this->type(), $repeat_table_rows_types ) ) {
-			$classes .= ' table-layout';
+		$conditional_classes = array(
+			'cmb-type-' . str_replace( '_', '-', sanitize_html_class( $this->type() ) ) => true,
+			'cmb2-id-' . str_replace( '_', '-', sanitize_html_class( $this->id() ) )    => true,
+			'cmb-repeat'             => $this->args( 'repeatable' ),
+			'cmb-repeat-group-field' => $this->group,
+			'cmb-inline'             => $this->args( 'inline' ),
+			'table-layout'           => in_array( $this->type(), $repeat_table_rows_types ),
+		);
+
+		foreach ( $conditional_classes as $class => $condition ) {
+			if ( $condition ) {
+				$classes[] = $class;
+			}
 		}
 
-		return apply_filters( 'cmb2_row_classes', $classes, $this );
+		if ( $added_classes = $this->get_param_callback_result( 'row_classes', false ) ) {
+			$added_classes = is_array( $added_classes ) ? implode( ' ', $added_classes ) : (string) $added_classes;
+		}
+
+		if ( $added_classes ) {
+			$classes[] = esc_attr( $added_classes );
+		}
+
+		/**
+		 * Globally filter row classes
+		 *
+		 * @since 2.0.0
+		 *
+		 * @param string            $classes Space-separated list of row classes
+		 * @param CMB2_Field object $field   This field object
+		 */
+		return apply_filters( 'cmb2_row_classes', implode( ' ', $classes ), $this );
 	}
 
 	/**
-	 * Check if param is a callback, and if so, call it.
-	 * If not echo out whatever is there.
+	 * Displays the results of the param callbacks.
 	 *
-	 * @since  2.0.0
-	 * @param  string  $param Field parameter
+	 * @since 2.0.0
+	 * @param string $param Field parameter
 	 */
 	public function peform_param_callback( $param ) {
-		if ( $cb = $this->maybe_callback( $param ) ) {
-			// Ok, callback is good, let's run it and bail
-			echo call_user_func( $cb, $this->args(), $this );
-			return;
+		echo $this->get_param_callback_result( $param );
+	}
+
+	/**
+	 * Store results of the param callbacks for continual access
+	 * @since  2.0.0
+	 * @param  string $param Field parameter
+	 * @param  bool   $echo  Whether field should be 'echoed'
+	 * @return mixed         Results of param/param callback
+	 */
+	public function get_param_callback_result( $param, $echo = true ) {
+
+		// If we've already retrieved this param's value,
+		if ( array_key_exists( $param, $this->callback_results ) ) {
+			// send it back
+			return $this->callback_results[ $param ];
 		}
 
-		// Otherwise just echo out whatever's there
-		echo $this->args( $param );
+		if ( $cb = $this->maybe_callback( $param ) ) {
+			if ( $echo ) {
+				// Ok, callback is good, let's run it and store the result
+				ob_start();
+				echo call_user_func( $cb, $this->args(), $this );
+				// grab the result from the output buffer and store it
+				$this->callback_results[ $param ] = ob_get_contents();
+				ob_end_clean();
+			} else {
+				$this->callback_results[ $param ] = call_user_func( $cb, $this->args(), $this );
+			}
+
+			return $this->callback_results[ $param ];
+		}
+
+		// Otherwise just get whatever is there
+		$this->callback_results[ $param ] = $this->args( $param );
+
+		return $this->callback_results[ $param ];
 	}
 
 	/**
@@ -692,7 +781,7 @@ class CMB2_Field {
 	 * @return array        Array of options
 	 */
 	public function options( $key = '' ) {
-		if ( isset( $this->field_options ) && is_array( $this->field_options ) ) {
+		if ( ! empty( $this->field_options ) ) {
 			if ( $key ) {
 				return array_key_exists( $key, $this->field_options ) ? $this->field_options[ $key ] : false;
 			}
@@ -748,7 +837,6 @@ class CMB2_Field {
 			'preview_size'      => 'file' == $args['type'] ? array( 350, 350 ) : array( 50, 50 ),
 		) );
 
-
 		// Allow a filter override of the default value
 		$args['default']    = apply_filters( 'cmb2_default_filter', $args['default'], $this );
 		// $args['multiple']   = isset( $args['multiple'] ) ? $args['multiple'] : ( 'multicheck' == $args['type'] ? true : false );
@@ -771,8 +859,8 @@ class CMB2_Field {
 
 		if ( $this->group ) {
 
-			$args['id']    = $this->group->args( 'id' ) .'_'. $this->group->args( 'count' ) .'_'. $args['id'];
-			$args['_name'] = $this->group->args( 'id' ) .'['. $this->group->args( 'count' ) .']['. $args['_name'] .']';
+			$args['id']    = $this->group->args( 'id' ) . '_' . $this->group->args( 'count' ) . '_' . $args['id'];
+			$args['_name'] = $this->group->args( 'id' ) . '[' . $this->group->args( 'count' ) . '][' . $args['_name'] . ']';
 		}
 
 		if ( 'wysiwyg' == $args['type'] ) {
