@@ -2194,6 +2194,11 @@ div.wpcf7 br {display: none}
 	margin-top: 2px;
 }
 
+.speaker-info img{
+	display: block;
+	border-radius: 50%;
+}
+
 /* Speaker Profile page */
 
 .speaker-profile .speaker-info .thumb {
