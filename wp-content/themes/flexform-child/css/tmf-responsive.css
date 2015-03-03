@@ -228,16 +228,9 @@
     #menu-event-main-menu-2 a[href="https://twitter.com/tmforumorg"]{
         display: none;
     }
+    /*#menu-event-main-menu{ width: 805px;}*/
 
-    #menu-event-main-menu{
-        width: 805px;
-    }
-
-     .ml30{
-        margin-left: 0px;
-    }
-
-
+    .ml30{ margin-left: 0px;    }
 }
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
