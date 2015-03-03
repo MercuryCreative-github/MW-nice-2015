@@ -757,15 +757,9 @@
         margin-left: 8% !important;
     }
 
-    .ui-corner-top{
-        padding: 0 0px !important;
-    }
-
     .ui-tabs-anchor{
         font-size: 1.8vw !important;
-        width: 100%;
         text-align: center;
-        padding: 0 10px !important;
     }
 
 }
@@ -1515,7 +1509,7 @@
     #nav-section .nav-wrap {
       margin-top: 10px;
 
-}
+    }
     nav.call-to-action {
         padding-top: 0;
         height: 65px;
@@ -1566,13 +1560,13 @@
     display: block;
     text-align: center;
     margin: auto;
-
+    }
     #logo img{margin: auto;}
-} #main-navigation {
+    #main-navigation {
         float: none;
 
         float: none;  box-shadow: 1px 3px 5px #ccc;  background: white;
-}
+    }
     nav#main-navigation .menu>li {
         float: none;
         display: block;
@@ -1583,14 +1577,14 @@
 
         margin: 0;
         padding: 10px 0;
-}
+    }
     nav#main-navigation .menu>li:first-child {
         border-top-width: 0;
     }
     nav#main-navigation .menu li a {
         text-align: center;
 
-}
+    }
     nav#main-navigation .menu ul li a {
         font-weight: 400;
         border: 0;
@@ -1619,7 +1613,7 @@
         width: 100%;
         padding-bottom: 0;
         margin-bottom: 0;
-}
+    }
     div#nav-section .visible-phone.show-menu {
         width: 100%;
         text-align: center;
@@ -1722,7 +1716,7 @@
     .ui-tabs .ui-tabs-nav li {
         /*width: 20% !important;*/
         float: left;
-        box-sizing: border-box;
+        /*box-sizing: border-box;*/
         text-align: center;
     }
     .wpb_tabs .ui-tabs .ui-tabs-nav li a {
@@ -1732,6 +1726,10 @@
     }
     .tt_items_list li {
         padding: 10px 20px !important;
+    }
+
+    .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
+        padding: 0 20px 0 0 !important;
     }
 }
 @media screen and (max-width: 767px) {
