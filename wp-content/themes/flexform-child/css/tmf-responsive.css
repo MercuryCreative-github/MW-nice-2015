@@ -144,6 +144,8 @@
     .section03-bottom ul li:nth-child(4) {margin-left: 0;}
 }
 @media screen and (max-width: 1200px) {
+
+    #main-navigation .menu .menu-item.social-icon.twitter {display: none;}
     /*uber menu
     #main-navigation {
         margin-top: -11px !important;
