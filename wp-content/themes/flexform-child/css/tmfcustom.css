@@ -2199,6 +2199,10 @@ div.wpcf7 br {display: none}
 	border-radius: 50%;
 }
 
+.speaker-item > a{
+	border: none;
+}
+
 /* Speaker Profile page */
 
 .speaker-profile .speaker-info .thumb {
