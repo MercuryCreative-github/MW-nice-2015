@@ -2207,6 +2207,14 @@ div.wpcf7 br {display: none}
 	background: none;
 }
 
+.speaker-item a:hover .thumb img{
+	opacity: 0;
+}
+
+.thumb{
+	background: #ee7630;
+}
+
 /*turn off the speakers menu, including the search input*/
 .speakers-actions{
 	display: none;
