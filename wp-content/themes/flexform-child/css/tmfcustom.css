@@ -2073,7 +2073,7 @@ div.wpcf7 br {display: none}
 .speaker-item.span6 {
 	max-width: 450px;
 	min-height: 80px;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
 	max-height: 112px;
 }
 /*.speaker-item.span6:nth-child(even) {margin-right: 20px}*/
@@ -2145,7 +2145,7 @@ div.wpcf7 br {display: none}
 	}
 	.speakers-actions.span12 {margin-left: 10px}
 	.speakers-actions .form {margin-left: 2px}
-	.speaker-item.span6 {margin: 0 7px 20px}
+	.speaker-item.span6 {margin: 0 7px 40px}
 }
 
 .speaker-item a {
@@ -2177,7 +2177,8 @@ div.wpcf7 br {display: none}
 	color: #ee7630;
 	font-size: 20px;
 	line-height: 22px;
-	margin-bottom: 3px
+	margin-bottom: 3px;
+	padding-bottom: 10px;
 }
 .speaker-item .speaker-info .role {
 	font-style: italic;
@@ -2226,10 +2227,7 @@ div.wpcf7 br {display: none}
 }
 
 /*turn off the speakers menu, including the search input*/
-.speakers-actions{
-	display: none;
-}
-
+.span12.speakers-actions{display: none;}
 
 /* Speaker Profile page */
 
