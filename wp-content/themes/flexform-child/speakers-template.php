@@ -126,7 +126,7 @@ Template Name: Speakers
 					$avatar = get_user_meta($sid, 'image',1);
 					foreach ( $blogusers as $user ) {
 						echo '<div class="speaker-item span6">';
-						echo '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
+						//echo '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
 						echo '<span class="speaker-info">';
 						echo '<span class="thumb">' . wp_get_attachment_image($user->image) . '</span>';
 						echo '<span class="name">' . esc_html( $user->display_name ) . '</span>';
@@ -148,7 +148,7 @@ Template Name: Speakers
 						//echo '<strong class="company">' . get_the_title($user->company[0]) . '</strong>';
 						echo '<i class="highlighted">' . esc_html( $user->speaker_attribs[0] ) . '</i><i class="keynote">' . esc_html( $user->speaker_attribs[1] ) . '</i>';
 						echo '</span>';
-						echo '</a>';
+						//echo '</a>';
 						echo '</div> <!-- End Speaker -->';
 				}
 			?>
