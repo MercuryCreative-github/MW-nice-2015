@@ -233,6 +233,9 @@
     /*#menu-event-main-menu{ width: 805px;}*/
 
     .ml30{ margin-left: 0px;    }
+    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
+        width: 100vw;
+    }
 }
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
@@ -739,6 +742,7 @@
     }
     /*twitter feed '15*/
     .container h2.tw-title:before {margin-right: 0px;}
+    .ui-tabs .ui-tabs-nav li{display: flex;}
 }
 @media screen and (max-width: 880px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -1726,6 +1730,11 @@
     .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
         padding: 0 20px 0 0 !important;
     }
+
+    #ui-id-1, #ui-id-2, #ui-id-3, #ui-id-4, #ui-id-5, #ui-id-6{
+        font-size: 15px !important;
+        padding: 12px 15px !important;
+    }
 }
 @media screen and (max-width: 767px) {
     /*--------------*/
@@ -2327,6 +2336,14 @@
 
     .img-link{
         padding-top: 0px !important;
+    }
+
+    .wpb_wrapper p img{
+        display: none;
+    }
+
+    .summit-main-title-text{
+        margin-left: 3%;
     }
 }
 @media screen and (max-width: 700px) {
