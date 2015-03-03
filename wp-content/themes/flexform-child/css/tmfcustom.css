@@ -2203,6 +2203,15 @@ div.wpcf7 br {display: none}
 	border: none;
 }
 
+.speaker-item a:hover{
+	background: none;
+}
+
+/*turn off the speakers menu, including the search input*/
+.speakers-actions{
+	display: none;
+}
+
 /* Speaker Profile page */
 
 .speaker-profile .speaker-info .thumb {
