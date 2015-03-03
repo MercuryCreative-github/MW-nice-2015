@@ -2825,6 +2825,10 @@
         font-size: 18px;
         line-height: 24px;
     }
+
+    .visibleTitle .nday{
+        width: 33%;
+    }
 }
 @media screen and (max-width: 480px) {
     .conference-overview .text-box div div {
