@@ -82,6 +82,12 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	line-height: 44px;
 	margin: 0;
 }
+
+
+.span8{
+	width: 100% !important;
+}
+
 .networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
 .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
 .networking-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
@@ -2094,15 +2100,15 @@ div.wpcf7 br {display: none}
 	border: 1px solid #eee;
 }
 .speakers-actions .filters button.active {
-	background-color: #d19e43;
-	border-color: #d19e43;
+	background-color: #ee7630;
+	border-color: #ee7630;
 	color: #fff;
 }
 .speakers-actions .filters a:hover,
 .speakers-actions .filters button:hover,
 .speakers-actions .filters button:active {
 	outline: none;
-	border: 1px solid #d19e43;
+	border: 1px solid #ee7630;
 	text-decoration: none
 }
 .speakers-actions .form input {
@@ -2168,7 +2174,7 @@ div.wpcf7 br {display: none}
 }
 
 .speaker-item .speaker-info .name {
-	color: #d19e43;
+	color: #ee7630;
 	font-size: 20px;
 	line-height: 22px;
 	margin-bottom: 3px
@@ -2187,6 +2193,43 @@ div.wpcf7 br {display: none}
 	color: #000;
 	margin-top: 2px;
 }
+
+.speaker-info img{
+	display: block;
+	border-radius: 50%;
+	transition: all 0.2s;
+}
+
+.speaker-item a{
+	border: none;
+}
+
+.speaker-item a:hover{
+	background: none;
+}
+
+.speaker-item a:hover .thumb img{
+	opacity: 0;
+}
+
+.speaker-item a:hover .thumb{
+	background-color: #ee7630;
+}
+
+.thumb{
+	border-radius: 50%;
+	transition: all 0.2s;
+	background-image: url(../images/SpeakersPlus.png);
+	background-size: 100% 100%;
+	background-position: center;
+
+}
+
+/*turn off the speakers menu, including the search input*/
+.speakers-actions{
+	display: none;
+}
+
 
 /* Speaker Profile page */
 

@@ -114,6 +114,7 @@
     nav#top-bar-menu {
         width: 745px;
     }
+
 }
 @media all and (min-width: 1250px) {
     /*tables size*/
@@ -138,7 +139,6 @@
     }
     .sec-main-content {width: 90%; margin: 0 auto;}
     .section04-info {width: 58%;margin-left: 0;}
-    .section04-title h1 {text-align: left;}
     /*contacto footer '15*/
     #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
     .section03-bottom ul li:nth-child(4) {margin-left: 0;}
@@ -224,6 +224,19 @@
 
     /*Accordion*/
     .visible-sponsor {padding-left: 100px;}
+
+    #menu-event-main-menu-2 a[href="https://twitter.com/tmforumorg"]{
+        display: none;
+    }
+
+    #menu-event-main-menu{
+        width: 805px;
+    }
+
+     .ml30{
+        margin-left: 0px;
+    }
+
 
 }
 @media screen and (max-width: 1077px) {
@@ -514,6 +527,31 @@
     /*Accordion*/
     .visible-sponsor {padding-left: 0px;}
 
+    /*fix responsive sponsors - one line*/
+    .logo_1 img{
+        height: 2.9vw;
+    }
+
+    .logo_2 img{
+        height: 3.9vw;
+    }
+    
+    .logo_3 img{
+        height: 4.444vw;
+    }
+
+    .logo_4 img{
+        height: 2.444vw;
+    }
+
+    .sponsors_logo{
+        margin-left: 80px;
+    }
+
+    .widget ul{
+        text-align: center;
+    }
+
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -718,6 +756,12 @@
         width: 87% !important;
         margin-left: 8% !important;
     }
+
+    .ui-tabs-anchor{
+        font-size: 1.8vw !important;
+        text-align: center;
+    }
+
 }
 @media screen and (max-width: 840px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -984,6 +1028,17 @@
     /*Accordion*/
     .row [class*="span"].visibleTitle {margin-bottom: 0;}
     .visible-sponsor {padding-left: 40px;}
+
+    /*sponsors aligned*/
+    .section01-sponsors{margin-top: 11%;}
+    .sponsors_logo a{
+        height: 6vw;
+        line-height: auto;
+    }
+
+    .span2{
+        text-align: center;
+    }
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -1011,6 +1066,18 @@
     }
     /* .item.cuadrob.cuadrob1{ top: 652px !important; left: 0px !important;} */
 }
+
+@media screen and (max-width: 675px){
+    .section01-sponsors{display: none;}
+}
+
+@media screen and (max-width: 640px){
+    #footer .widget ul li{
+        float: none !important;
+        display: inline-block;
+    }
+}
+
 @media screen and (max-width: 550px) {
     .app14s .app14s_buttons ul li{
         float:none;
@@ -1442,7 +1509,7 @@
     #nav-section .nav-wrap {
       margin-top: 10px;
 
-}
+    }
     nav.call-to-action {
         padding-top: 0;
         height: 65px;
@@ -1493,13 +1560,13 @@
     display: block;
     text-align: center;
     margin: auto;
-
+    }
     #logo img{margin: auto;}
-} #main-navigation {
+    #main-navigation {
         float: none;
 
         float: none;  box-shadow: 1px 3px 5px #ccc;  background: white;
-}
+    }
     nav#main-navigation .menu>li {
         float: none;
         display: block;
@@ -1510,14 +1577,14 @@
 
         margin: 0;
         padding: 10px 0;
-}
+    }
     nav#main-navigation .menu>li:first-child {
         border-top-width: 0;
     }
     nav#main-navigation .menu li a {
         text-align: center;
 
-}
+    }
     nav#main-navigation .menu ul li a {
         font-weight: 400;
         border: 0;
@@ -1546,7 +1613,7 @@
         width: 100%;
         padding-bottom: 0;
         margin-bottom: 0;
-}
+    }
     div#nav-section .visible-phone.show-menu {
         width: 100%;
         text-align: center;
@@ -1647,9 +1714,9 @@
         width: 100%;
     }
     .ui-tabs .ui-tabs-nav li {
-        width: 20% !important;
+        /*width: 20% !important;*/
         float: left;
-        box-sizing: border-box;
+        /*box-sizing: border-box;*/
         text-align: center;
     }
     .wpb_tabs .ui-tabs .ui-tabs-nav li a {
@@ -1659,6 +1726,10 @@
     }
     .tt_items_list li {
         padding: 10px 20px !important;
+    }
+
+    .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
+        padding: 0 20px 0 0 !important;
     }
 }
 @media screen and (max-width: 767px) {
@@ -3450,9 +3521,9 @@
     .call-to-action li.register-btn {
         float: right;
     }
-    .ui-tabs .ui-tabs-nav li {
+    /*.ui-tabs .ui-tabs-nav li {
         width: 20% !important;
-    }
+    }*/
 }
 @media screen and (min-width: 641px) and (max-width: 840px) {
     .head .social-icon {

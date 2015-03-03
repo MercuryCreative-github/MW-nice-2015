@@ -305,7 +305,7 @@ function fullAgenda(){
         tab=(jQuery(this).closest('div.wpb_tab').attr('id')).substring(4);
         var arrayOfPresentations=[];
 
-        jQuery('.moveDiv[day*="'+tab+'"]').each(function(){
+        jQuery('.moveDiv[forum*="'+tab+'"]').each(function(){
             if(jQuery(this).attr('time')>=startHour){
                 if(jQuery(this).attr('time')<endHour){
 

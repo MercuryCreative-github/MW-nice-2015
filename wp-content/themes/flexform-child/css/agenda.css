@@ -7,9 +7,7 @@
 .no-margin-right {margin-right:0!important}
 .no-margin {margin:0!important}
 .table-title {background:#fff;display:block;color:#4D4C4C;height:30px}
-.second-table {
-    background:#fff;
-}
+.second-table {    background:#fff;}
 .margin-left-ul {
     margin-left:40px;
     list-style-position:outside;

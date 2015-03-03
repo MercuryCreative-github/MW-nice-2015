@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:  CMB2 (beta)
+ * Plugin Name:  CMB2
  * Plugin URI:   https://github.com/WebDevStudios/CMB2
  * Description:  CMB2 will create metaboxes and forms with custom fields that will blow your mind.
  * Author:       WebDevStudios
@@ -11,7 +11,7 @@
  *               Bill Erickson (@billerickson / billerickson.net)
  *               Andrew Norcross (@norcross / andrewnorcross.com)
  *
- * Version:      2.0.0.6
+ * Version:      2.0.2
  *
  * Text Domain:  cmb2
  * Domain Path:  languages
@@ -42,19 +42,19 @@
                   or things might explode!
 *************************************************************************/
 
-if ( ! class_exists( 'cmb2_bootstrap_200beta', false ) ) {
+if ( ! class_exists( 'cmb2_bootstrap_202', false ) ) {
 
 	/**
 	 * Check for newest version of CMB
 	 */
-	class cmb2_bootstrap_200beta {
+	class cmb2_bootstrap_202 {
 
 		/**
 		 * Current version number
 		 * @var   string
 		 * @since 1.0.0
 		 */
-		const VERSION = '2.0.0.6';
+		const VERSION = '2.0.2';
 
 		/**
 		 * Current version hook priority
@@ -63,7 +63,7 @@ if ( ! class_exists( 'cmb2_bootstrap_200beta', false ) ) {
 		 * @var   int
 		 * @since 2.0.0
 		 */
-		const PRIORITY = 9999;
+		const PRIORITY = 9997;
 
 		public static $single = null;
 
@@ -75,6 +75,13 @@ if ( ! class_exists( 'cmb2_bootstrap_200beta', false ) ) {
 		}
 
 		private function __construct() {
+			/**
+			 * A constant you can use to check if CMB2 is loaded
+			 * for your plugins/themes with CMB2 dependency
+			 */
+			if ( ! defined( 'CMB2_LOADED' ) ) {
+				define( 'CMB2_LOADED', true );
+			}
 			add_action( 'init', array( $this, 'include_cmb' ), self::PRIORITY );
 		}
 
@@ -84,7 +91,7 @@ if ( ! class_exists( 'cmb2_bootstrap_200beta', false ) ) {
 					define( 'CMB2_VERSION', self::VERSION );
 				}
 				$this->l10ni18n();
-				require_once 'CMB2.php';
+				require_once 'bootstrap.php';
 			}
 		}
 
@@ -103,12 +110,12 @@ if ( ! class_exists( 'cmb2_bootstrap_200beta', false ) ) {
 
 			if ( ! $loaded ) {
 				$locale = apply_filters( 'plugin_locale', get_locale(), 'cmb2' );
-				$mofile = dirname( __FILE__ ) . '/languages/cmb2-'. $locale .'.mo';
+				$mofile = dirname( __FILE__ ) . '/languages/cmb2-' . $locale . '.mo';
 				load_textdomain( 'cmb2', $mofile );
 			}
 		}
 
 	}
-	cmb2_bootstrap_200beta::go();
+	cmb2_bootstrap_202::go();
 
 } // class exists check
