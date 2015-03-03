@@ -2246,6 +2246,7 @@ div.wpcf7 br {display: none}
 	vertical-align: top;
 }
 .speaker-profile .speaker-info .name { border-bottom: 1px solid #cacaca; font-weight: bold; }
+.speaker-info .subtitle h4 {border: none;margin-bottom: 0;padding-bottom: 5px;font-size: 24px;}
 .speaker-profile h3 {
 	font-size: 18px;
 	font-weight: normal;
@@ -2255,7 +2256,8 @@ div.wpcf7 br {display: none}
 	padding: 5px 10px;
 }
 .article-body-wrap .body-text div.timeTrack, .speaker-profile p.time{ padding: 10px; line-height: 100%; background: #f3f3f3; font-size: 16px; color: #434343; }
-.speaking-schedule{ margin-bottom: 50px;}
+.speaking-schedule{ margin:15px 0;border-left: #ee7813 4px solid;padding-left: 20px;}
+.speaking-schedule a {color: #444; border: none;}
 .speakerTrack a img, .textTrack a img { border-radius: 50%; width: 70px; height: 70px; float: left; margin-right: 20px; display: block;}
 .speakerTrack .speakerSidebar { display: table-cell; vertical-align: middle; }
 /*.textTrack .speakerSidebar { display: table-cell; vertical-align: middle; } I don't know who put this */
@@ -2703,15 +2705,15 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	padding-left: 8px;
 }
 
-.the-content .page-content h4 {
-		font-size:24px;
+.the-content .page-content h4, .speaker-profile h4 {
 		font-family: Open Sans;
 		border-bottom: 1px solid #bdbdbd;
 		padding-bottom:10px;
 		margin-bottom:10px;
 		margin-top:0px;
-		font-weight:600;
 }
+.the-content .page-content h4 {font-weight:600;font-size:24px;}
+.speaker-profile h4 {font-weight: 300;font-size: 20px}
 
 .the-content .span10 .float-left {
 		color: #abaaaa;
