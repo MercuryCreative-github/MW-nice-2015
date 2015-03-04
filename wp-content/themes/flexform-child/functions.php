@@ -259,42 +259,6 @@ function yoursite_pre_user_query($user_search) {
   }
 }
 
-/* Agenda Tracks Posts Type */
-add_action('init', 'cpt_agenda_tracks');
-function cpt_agenda_tracks() {
-register_post_type('agenda_tracks', array(
-	'label' => 'Agenda Tracks',
-	'menu_icon' => 'dashicons-book',
-	'description' => 'Post type for Agenda Tracks.',
-	'public' => true,
-	'show_ui' => true,
-	'show_in_menu' => true,
-	'show_in_admin_bar' => true,
-	'can_export' => true,
-	'delete_with_user' => false,
-	'capability_type' => 'post',
-	'map_meta_cap' => true,
-	'hierarchical' => false,
-	'rewrite' => array('slug' => 'presentations', 'with_front' => true),
-	'query_var' => true,
-	'supports' => array('title','editor','revisions'),
-	'labels' => array (
-		'name' => 'Presentations',
-		'singular_name' => 'Presentation',
-		'menu_name' => 'Presentations',
-		'add_new' => 'Add Presentation',
-		'add_new_item' => 'Add New Presentation',
-		'edit' => 'Edit',
-		'edit_item' => 'Edit Presentation',
-		'new_item' => 'New Presentation',
-		'view' => 'View Presentations',
-		'view_item' => 'View Presentation',
-		'search_items' => 'Search Presentations',
-		'not_found' => 'No Presentations Found',
-		'not_found_in_trash' => 'No Presentations Found in Trash',
-		'parent' => 'Parent Presentation',
-)
-) ); }
 /* Companies Posts Type */
 add_action('init', 'cpt_companies');
 function cpt_companies() {
