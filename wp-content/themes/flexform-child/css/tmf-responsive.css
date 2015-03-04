@@ -246,6 +246,11 @@
         margin-right: auto;
         margin-left: auto;
     }
+
+    /*sidebar*/
+    .textwidget a.sf-button.standard.download-agenda.a-glance {width: 100%;padding: 15px 0 15px 0;}
+    .textwidget a.sf-button.standard.register-agenda span, .textwidget a.download-agenda.a-glance span {margin-left: 10px;}
+    .textwidget a.sf-button.medium.yellow.register-agenda {width: 100%;padding: 10px 0;}
 }
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
@@ -1511,6 +1516,11 @@
     .main-video-name.SKL {
         width: 190px;
     }
+
+    /*sidebar*/
+    .textwidget a.sf-button.standard.download-agenda.a-glance, .textwidget a.sf-button.standard.register-agenda {background-image: none;}
+    .textwidget a.download-agenda.a-glance span.text-btn, .textwidget a.download-agenda.a-glance span.small-text-btn{padding-right:0;}
+    .textwidget a.download-agenda span.text-btn, .textwidget a.sf-button.standard.register-agenda span.register-text {margin-right: 0;padding-right: 0;}
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
     body [class*="span"].home-ribbon:after {
@@ -2393,6 +2403,11 @@
     .summit-main-title-text .summit-subtitle{font-size: 18px;}
     .summit-main-title-text{padding: 0;}
     .summit-main-title-text p{margin-bottom: 12px;}
+
+    /*sidebar*/
+    .textwidget-btn {text-align: center;}
+    .textwidget-btn a {text-align: left;}
+    .textwidget a.sf-button.standard.download-agenda.a-glance, .textwidget a.sf-button.medium.yellow.register-agenda {width: 320px;}
 }
 @media screen and (max-width: 700px) {
     .page-content .questions ul li:after {
