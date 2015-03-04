@@ -369,7 +369,7 @@ function profile_admin_buffer_start() { ob_start("remove_plain_bio"); }
 function profile_admin_buffer_end() { ob_end_flush(); }
 
 add_action('admin_head', 'profile_admin_buffer_start');
-add_action('admin_footer', 'profile_admin_buffer_end');
+add_action('admin_summit-slugter', 'profile_admin_buffer_end');
 
 
 // Create New Company from user edit/create
@@ -482,5 +482,61 @@ if (!function_exists('custom_post_submission_newsletters_subscribe')) {
         $ao_gf1->processConnection('http://marketing.tmforum.org/acton/eform/1332/00de/d-ext-0002');
     }
 }
+
+
+// [summits_shortcode summit-slug="summit-slug-value"]
+function summits_shortcode_func( $atts ) {
+    $a = shortcode_atts( array(
+        'summit_slug' => 'default',
+    ), $atts );
+
+    $summit_slug = $a['summit_slug'];
+
+
+// The Vars to run the Query that gets all the Presentations with this Forum Asociated
+	$args = array(
+	'post_type' 	=> 'tmf_sessions',
+	'order' 		=> 'ASC',
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'tmf_summit_category',
+			'field'    => 'slug',
+			'terms'    => $summit_slug,
+		),
+	), 
+	);
+
+	
+	$loop = new WP_Query( $args );
+
+	$sessions='';
+	$i=0;
+
+	while ( $loop->have_posts() ) : $loop->the_post();
+	
+	$sessionId = get_the_ID();
+	$sessionTitle = get_the_title();
+
+	$prefix = '_TMF_';
+
+	$sessionStarts = get_post_meta( $sessionId, $prefix . 'session_start_date',true);
+	$sessionChair = get_post_meta( $sessionId, $prefix . 'chair',true);
+	$sessionSponsors = get_post_meta( $sessionId, $prefix . 'sponsors',true);
+
+	$sessions.= $sessionTitle.'</br>';
+	$sessions.= $sessionStarts.'</br>';
+	$sessions.= $sessionChair.'</br>';
+	$sessions.= $sessionSponsors.'</br>';
+
+	
+	$i++;
+	endwhile;
+
+	return $sessions;
+
+}
+add_shortcode( 'summits_shortcode', 'summits_shortcode_func' );
+
+
 
 ?>
