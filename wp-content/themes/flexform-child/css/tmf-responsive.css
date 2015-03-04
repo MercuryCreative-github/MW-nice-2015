@@ -3288,7 +3288,6 @@
     .container h2.tw-title:before{
         display: block;
         margin-bottom: 25px;
-        text-align: center;
     }
 }
 @media screen and (max-width: 477px) {
