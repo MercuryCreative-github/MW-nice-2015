@@ -477,8 +477,15 @@ ul.social-icons.dark.small li a{background-image:url(../images/social-icons-mono
 .register-btn-mobile{background-color:#ffaf00;width:136px;box-sizing:border-box;padding:1px 9px 9px 9px;text-align:center;font-weight:400;font-size:13px;color:#fff;float:left;}
 .register-btn-mobile:hover{color:#fff;}
 .menu-pre-event-main-menu-container{margin:0 auto !important;}
-nav .menu > li:first-child > a{padding: 4px 18px;}
-.head .menu > li > a{padding: 4px 18px;margin: 0 !important;line-height: normal;}
+nav .menu > li:first-child > a{
+	padding: 4px 15px;
+	margin-left: 18px!important;
+}
+.head .menu > li > a{
+	padding: 4px 15px;
+	margin: 0 !important;
+	line-height: normal;
+}
 .logo-left.clearfix .menu > li > ul > li > a {text-transform: none;}
 .logo-left.clearfix .menu > li:hover > a, .head .menu .current-menu-item > a{color: #fff!important;background-color:#7e7e82 ;}
 .menu{margin:0 !important}

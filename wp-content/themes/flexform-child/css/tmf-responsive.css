@@ -236,6 +236,10 @@
     .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
         width: 100vw;
     }
+
+    nav .menu li a{
+        font-size: 14px;
+    }
 }
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
@@ -718,6 +722,13 @@
         top: 20px;
     }
 }
+
+@media screen and (min-width: 840px) and (max-width: 945px){
+    nav .menu li a{
+        font-size: 12.5px;
+    }
+}
+
 @media screen and (max-width: 915px) {
     div#top-bar-social {
         display: none;
