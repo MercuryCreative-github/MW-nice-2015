@@ -2353,13 +2353,22 @@
         padding-top: 0px !important;
     }
 
-    .wpb_wrapper p img{
+    .wpb_wrapper > p{
         display: none;
     }
 
     .summit-main-title-text{
         margin-left: 3%;
+        font-size: 
     }
+
+    .summit-main-title-text h1{
+        font-size: 30px !important;
+        line-height: 40px;
+    }
+    .summit-main-title-text .summit-subtitle{font-size: 18px;}
+    .summit-main-title-text{padding: 0;}
+    .summit-main-title-text p{margin-bottom: 12px;}
 }
 @media screen and (max-width: 700px) {
     .page-content .questions ul li:after {
@@ -2401,7 +2410,7 @@
     }
 
     /*custom-tabs class it's for select the tabs btns of pages summit & networking*/
-    .custom-tabs li{
+    .summit-tabs li, .networking-tab li{
         width: 100%;
     }
 }
