@@ -1813,6 +1813,11 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 		margin-top: 15px;
 }
 
+.sponsors .span6{
+	float: none;
+	margin: 0 auto;
+}
+
 /*******************/
 /*** CONCTACT US ***/
 /*******************/
