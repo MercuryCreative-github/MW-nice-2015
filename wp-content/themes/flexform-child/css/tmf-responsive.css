@@ -2399,6 +2399,11 @@
     #copyright .beam-me-up {
         margin-top: 0px !important;
     }
+
+    /*custom-tabs class it's for select the tabs btns of pages summit & networking*/
+    .custom-tabs li{
+        width: 100%;
+    }
 }
 @media screen and (max-width: 680px) {
        /*HP AT THE EVENT*/
@@ -2863,6 +2868,15 @@
 
     .visibleTitle .nday{
         width: 33%;
+        padding-right: 13px;
+    }
+
+    .dday-table{
+        border: none;
+    }
+
+    .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].gray-accordion, .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].withe-accordion{
+        padding: 14px 10px 13px 1px;
     }
 }
 @media screen and (max-width: 480px) {
