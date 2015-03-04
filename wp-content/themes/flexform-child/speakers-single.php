@@ -207,7 +207,7 @@ echo $speakerItem;
 function callPresentations($userId,$user,$day){
 // The Vars to run the Query that gets all the Agenda Tracks (presentations) with the speaker asociated
 $args = array(
-	'post_type' => 'tmf_presentations',
+	'post_type' => 'agenda_tracks',
 	'meta_key' => 'day', // para ordenar por dia asc primero defino meta_key
     'orderby'   => 'meta_value', // luego el order orderby
 	'order' => 'ASC', // finalmente si es asc o desc
@@ -246,7 +246,7 @@ echo '</pre>';*/
 
 
 	$args = array(
-	'post_type' => 'tmf_presentations',
+	'post_type' => 'agenda_tracks',
 	'meta_key' => 'day', // para ordenar por dia asc primero defino meta_key
 	'orderby'   => 'meta_value', // luego el order orderby
 	'order' => 'ASC', // finalmente si es asc o desc

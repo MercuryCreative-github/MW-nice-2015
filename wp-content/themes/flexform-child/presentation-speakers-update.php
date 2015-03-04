@@ -20,7 +20,7 @@ if( isset( $_GET['id'] ) ) {
 									'posts_per_page' 	 => -1,
 									'orderby'          => 'post_date',
 									'order'            => 'DESC',
-									'post_type'        => 'tmf_presentations',
+									'post_type'        => 'agenda_tracks',
 									'post_status'      => 'publish'
 								);
 								

@@ -120,15 +120,21 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 )
             );
 
-           $meta_boxes['tmf_presentations'] = array(
-                'id' => 'tmf_presentations',
+           $meta_boxes['agenda_tracks'] = array(
+                'id' => 'agenda_tracks',
                 'title' => __('TM Forum Presentations settings', 'cmb2'),
-                'object_types' => array('tmf_sessions'), // Post type
+                'object_types' => array('agenda_tracks'), // Post type
                 'context' => 'normal',
                 'priority' => 'high',
                 'show_names' => true, // Show field names on the left
                 'fields' => array(
                    
+                    array(
+                        'name' => __('Presentations subtitle', 'cmb2'),
+                        'id' => $prefix . 'presentations_subtitle',
+                        'type' => 'text',
+                    ),
+
                     array(
                         'name' => __('Presentations start time and date', 'cmb2'),
                         'id' => $prefix . 'presentations_start_date',
@@ -142,6 +148,12 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                     ),
 
                     array(
+                        'name' => __('Location', 'cmb2'),
+                        'id' => $prefix . 'presentations_location',
+                        'type' => 'text',
+                    ),
+
+                    array(
                         'name' => 'Presentations Speakers',
                         'id' => $prefix . 'presentations_speakers',
                         'desc' => 'Chair',
@@ -151,12 +163,13 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                     ),
 
                     array(
-                        'name' => 'Session Sponsor',
-                        'id' => $prefix . 'sponsors',
-                        'desc' => 'Sponsor',
-                        'options' => self::get_all_sponsors(),
+                        'name' => 'Session',
+                        'id' => $prefix . 'presentation_session',
+                        'desc' => 'Select the session this presentation is included',
+                        'options' => self::get_all_sessions(),
                         'type' => 'pw_multiselect',
                         'sanitization_cb' => 'pw_select2_sanitise',
+
                     ),
 
                     /*array(
@@ -170,6 +183,29 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                     ),*/
                 )
             );
+
+            $meta_boxes['agenda_tracks_users'] = array(
+                            'id' => 'agenda_tracks_users',
+                            'title' => __('TM Forum Presentations', 'cmb2'),
+                            'object_types' => array('user'), // Post type
+                            'context' => 'normal',
+                            'priority' => 'high',
+                            'show_names' => true, // Show field names on the left
+                            'fields' => array(
+                               
+                                array(
+                                    'name' => 'Speaker at',
+                                    'id' =>  'speaker_at',
+                                    'desc' => 'Select the Presentations this user speaks at',
+                                    'options' => self::get_all_presentations(),
+                                    'type' => 'pw_multiselect',
+                                    'sanitization_cb' => 'pw_select2_sanitise',
+
+                                ),
+
+                               
+                            )
+                        );
             return $meta_boxes;
         }
 
@@ -501,6 +537,44 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             }
             return $tmf_events;
         }
+        
+        public function get_all_sessions(){
+            global $post;
+             
+            $args = array(
+            'post_type' => 'tmf_sessions', 
+            'posts_per_page' => -1,
+            );
+            
+            $all_events = get_posts($args);
+
+            foreach ($all_events as $page) {
+                $post_title = $page->post_title;
+                $tmf_events[$page->ID] = __($post_title, 'cmb2');
+            }
+
+            return $tmf_events;
+        }
+        public function get_all_presentations(){
+            global $post;
+             
+            $args = array(
+            //'post_type' => 'agenda_tracks', 
+            'post_type' => 'agenda_tracks', 
+            'posts_per_page' => -1,
+            );
+            
+            $all_events = get_posts($args);
+
+            foreach ($all_events as $page) {
+                $post_title = $page->post_title;
+                $tmf_events[$page->ID] = __($post_title, 'cmb2');
+            }
+
+            return $tmf_events;
+        }
+
+
 		
          public function get_event_categories(){
             

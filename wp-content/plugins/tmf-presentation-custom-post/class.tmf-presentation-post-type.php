@@ -55,7 +55,7 @@ if (!class_exists('TMF_Presentation_Post_Type')) {
                 'show_in_nav_menus'   => true,
                 'show_in_admin_bar'   => true,
                 'labels'              => $labels,
-                'taxonomies'          => array( 'post_type_Presentations_category', 'post_tag' ),
+                'taxonomies'          => array( 'post_type_Presentations_category' ),
                 'hierarchical'        => false,
                 'menu_position'       => 7,
                 'can_export'          => true,
@@ -74,32 +74,32 @@ if (!class_exists('TMF_Presentation_Post_Type')) {
                     'create_posts' => 'create_tmf_Presentation',
                      
                     // primitive caps used outside of map_meta_cap()
-                    'edit_posts' => 'edit_tmf_presentations',
-                    'edit_others_posts' => 'manage_tmf_presentations',
-                    'publish_posts' => 'edit_tmf_presentations',
+                    'edit_posts' => 'edit_agenda_tracks',
+                    'edit_others_posts' => 'manage_agenda_tracks',
+                    'publish_posts' => 'edit_agenda_tracks',
                     'read_private_posts' => 'read',
                      
                     // primitive caps used inside of map_meta_cap()
                     'read' => 'read',
-                    'delete_posts' => 'delete_tmf_presentations',
-                    'delete_private_posts' => 'delete_tmf_presentations',
-                    'delete_published_posts' => 'delete_tmf_presentations',
-                    'delete_others_posts' => 'delete_tmf_presentations',
-                    'edit_private_posts' => 'edit_tmf_presentations',
-                    'edit_published_posts' => 'edit_tmf_presentations'
+                    'delete_posts' => 'delete_agenda_tracks',
+                    'delete_private_posts' => 'delete_agenda_tracks',
+                    'delete_published_posts' => 'delete_agenda_tracks',
+                    'delete_others_posts' => 'delete_agenda_tracks',
+                    'edit_private_posts' => 'edit_agenda_tracks',
+                    'edit_published_posts' => 'edit_agenda_tracks'
                 ),                
                 'supports'          => array(
                     'title',
 					'editor',
-                    'thumbnail',
+                    /*'thumbnail',
                     'custom-fields',
-                    'excerpt',
+                    'excerpt',*/
                     'revisions',                    
                 ),
                 'rewrite'=>array(
                     'slug'=>'presentations','with_front' => true),
             );
-            register_post_type( 'tmf_presentations', $args );
+            register_post_type( 'agenda_tracks', $args );
         }
       
         

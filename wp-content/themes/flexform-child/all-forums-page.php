@@ -126,7 +126,7 @@ Template Name: All Summits Page
 
 				// The Vars to run the Query that gets all the Presentations with this Forum Asociated
 				$args = array(
-						'post_type' 	=> 'tmf_presentations',
+						'post_type' 	=> 'agenda_tracks',
 						'meta_key' 		=> 'forum',
 						'order' 		=> 'ASC',
 						'orderby' 		=> 'meta_value',						

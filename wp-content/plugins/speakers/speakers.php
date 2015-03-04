@@ -197,7 +197,7 @@ $args = array(
 	array(
 		'id' => 'speakers',
 		'title' => 'Speakers',
-		'post_type' => 'tmf_presentations',
+		'post_type' => 'agenda_tracks',
 		'context' => 'advanced',
 		'priority' => 'high',
 		'args' => array(
@@ -209,7 +209,7 @@ $args = array(
 	array(
 		'id' => 'moderators',
 		'title' => 'Moderators',
-		'post_type' => 'tmf_presentations',
+		'post_type' => 'agenda_tracks',
 		'context' => 'advanced',
 		'priority' => 'high',
 		'args' => array(
@@ -221,7 +221,7 @@ $args = array(
 	array(
 		'id' => 'facilitators',
 		'title' => 'Facilitators',
-		'post_type' => 'tmf_presentations',
+		'post_type' => 'agenda_tracks',
 		'context' => 'advanced',
 		'priority' => 'high',
 		'args' => array(
@@ -233,7 +233,7 @@ $args = array(
 	array(
 		'id' => 'collaborators',
 		'title' => 'Collaborators',
-		'post_type' => 'tmf_presentations',
+		'post_type' => 'agenda_tracks',
 		'context' => 'advanced',
 		'priority' => 'high',
 		'args' => array(
@@ -245,7 +245,7 @@ $args = array(
 	array(
 		'id' => 'panelists',
 		'title' => 'Panelists',
-		'post_type' => 'tmf_presentations',
+		'post_type' => 'agenda_tracks',
 		'context' => 'advanced',
 		'priority' => 'high',
 		'args' => array(
