@@ -240,6 +240,12 @@
     nav .menu li a{
         font-size: 14px;
     }
+
+    .summit #header-section .container {
+        width: 94%!important;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
@@ -720,6 +726,14 @@
     }
     .passes-prices .text-box p {
         top: 20px;
+    }
+}
+
+@media screen and (min-width: 840px) and (max-width: 990px){
+    .summit #header-section .container {
+        width: 100%!important;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 
@@ -3708,7 +3722,7 @@
 
 @media screen and (min-width: 890px) {
   #main-navigation .menu-event-main-menu-container, #mini-navigation .menu-event-main-menu-container { width:100%; }
-  .summit #main-navigation .menu-event-main-menu-container { width:90%; }
+  /*.summit #main-navigation .menu-event-main-menu-container { width:90%; }*/
   #menu-event-main-menu li.menu-register-btn, #mini-navigation li.menu-register-btn { float: right; }
   #menu-event-main-menu li.menu-register-btn a, #mini-navigation li.menu-register-btn a { color:#FFF; background: none repeat scroll 0 0 #f8ae1e; }
   #menu-event-main-menu li.menu-register-btn a:hover, #mini-navigation li.menu-register-btn a:hover{background-color: #D88801}

@@ -95,7 +95,19 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 /*full-with*/
 .summit .inner-page-wrap {margin-top: 0px;}
 .span12.summit-tabs {width: 100%;}
-.summit .container {width: 100%!important;}
+
+.summit .container {
+	width: 100%!important;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.summit #header-section .container {
+	width: 1108px!important;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 
 /*navegation-tabs*/
 .page-content .ui-widget-header li:hover a, .page-content .ui-widget-header li.ui-tabs-active:hover a, .page .page-content .ui-tabs .ui-tabs-nav li.ui-tabs-active a {color: #fff;}
