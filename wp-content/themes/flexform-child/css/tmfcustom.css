@@ -225,7 +225,7 @@ a.sf-button.standard.register-agenda {
 }
 .summit-day img {height: 40px; margin-right: 15px;}
 .summit-session {margin-bottom: 30px;float: left;width: 65%;}
-.summit-presentation {background: #F0F0F0;padding: 10px;display: block;}
+.summit-presentation {background: #F0F0F0;padding: 10px;display: table;}
 .session-sponsor {float: right;}
 .session-sponsor img { height: 40px;}
 .session-name {margin-bottom: 0;text-transform: uppercase;font-weight: bold;}
