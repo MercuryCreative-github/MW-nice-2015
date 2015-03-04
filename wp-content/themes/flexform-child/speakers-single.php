@@ -346,7 +346,7 @@ if (count($presentationsIDs)>0){
 	return $sidebarSchedule;
 	}
 
-	$sidebarSchedule = callPresentations($userId,$user,'monday');
+	//$sidebarSchedule = callPresentations($userId,$user,'monday');
 
 ?>
 
