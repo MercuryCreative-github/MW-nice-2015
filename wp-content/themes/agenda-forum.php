@@ -126,7 +126,7 @@ Template Name: Agenda Forum
 
 				// The Vars to run the Query that gets all the Agenda Tracks (forum) with the speaker asociated
 			$args = array(
-					'post_type' => 'agenda_tracks',
+					'post_type' => 'tmf_presentations',
 					'order' => 'ASC',
 					'meta_query' => array(
 							array(

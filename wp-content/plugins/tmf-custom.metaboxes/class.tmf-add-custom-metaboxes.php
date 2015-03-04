@@ -119,6 +119,57 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                     ),*/
                 )
             );
+
+           $meta_boxes['tmf_presentations'] = array(
+                'id' => 'tmf_presentations',
+                'title' => __('TM Forum Presentations settings', 'cmb2'),
+                'object_types' => array('tmf_sessions'), // Post type
+                'context' => 'normal',
+                'priority' => 'high',
+                'show_names' => true, // Show field names on the left
+                'fields' => array(
+                   
+                    array(
+                        'name' => __('Presentations start time and date', 'cmb2'),
+                        'id' => $prefix . 'presentations_start_date',
+                        'type' => 'text_datetime_timestamp',
+                    ),
+                    
+                    array(
+                        'name' => __('presentations end time and date', 'cmb2'),
+                        'id' => $prefix . 'presentations_end_date',
+                        'type' => 'text_datetime_timestamp',
+                    ),
+
+                    array(
+                        'name' => 'Presentations Speakers',
+                        'id' => $prefix . 'presentations_speakers',
+                        'desc' => 'Chair',
+                        'options' => self::get_all_speakers(),
+                        'type' => 'pw_multiselect',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+                    ),
+
+                    array(
+                        'name' => 'Session Sponsor',
+                        'id' => $prefix . 'sponsors',
+                        'desc' => 'Sponsor',
+                        'options' => self::get_all_sponsors(),
+                        'type' => 'pw_multiselect',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+                    ),
+
+                    /*array(
+                        'name' => 'Summit',
+                        'id' => $prefix . 'session_summits',
+                        'desc' => 'Select the session this summit is included',
+                        'options' => self::get_summits(),
+                        'type' => 'pw_multiselect',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+
+                    ),*/
+                )
+            );
             return $meta_boxes;
         }
 

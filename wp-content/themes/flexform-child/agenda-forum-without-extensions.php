@@ -127,7 +127,7 @@ Template Name: Agenda Forum Without Extensions
 
 				// The Vars to run the Query that gets all the Presentations with this Forum Asociated
 				$args = array(
-						'post_type' => 'agenda_tracks',
+						'post_type' => 'tmf_presentations',
 						'order' => 'ASC',
 						'meta_query' => array(
 								array(

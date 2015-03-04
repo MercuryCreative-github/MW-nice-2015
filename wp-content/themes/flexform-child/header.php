@@ -487,7 +487,7 @@
 					}
 
 
-					if ( is_singular( 'agenda_tracks' ) ) {
+					if ( is_singular( 'tmf_presentations' ) ) {
 						$rev_slider_alias =  get_field('revolution_slider');
 						if ($rev_slider_alias != ""){
 						?>

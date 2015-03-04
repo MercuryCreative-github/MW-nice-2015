@@ -1655,7 +1655,7 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 .padding-video-elements{padding:0 5%;}
 .fluid-width-video-wrapper{border-bottom:4px solid #b2b2b2;}
 .flare-horizontal.flare-position-bottom{position:absolute;bottom:40px;right:5%;}
-.single-agenda_tracks .flare-horizontal.flare-position-bottom{bottom:0px;right:0;position: relative;}
+.single-tmf_presentations .flare-horizontal.flare-position-bottom{bottom:0px;right:0;position: relative;}
 .seeMoreForum{font-weight: bold;font-size: 85%;bottom: 40px;z-index: 1;position: relative;display: inline-block;}
 .news-coverage .flare-horizontal.flare-position-bottom{position:relative;bottom:0;right:0;}
 .article-body-wrap{position:relative;}
@@ -2305,7 +2305,7 @@ div.wpcf7 br {display: none}
 .speakerTrack a img, .textTrack a img { border-radius: 50%; width: 70px; height: 70px; float: left; margin-right: 20px; display: block;}
 .speakerTrack .speakerSidebar { display: table-cell; vertical-align: middle; }
 /*.textTrack .speakerSidebar { display: table-cell; vertical-align: middle; } I don't know who put this */
-.agenda_tracks .page-content .article-body-wrap .speakerTrack {display: none;}
+.tmf_presentations .page-content .article-body-wrap .speakerTrack {display: none;}
 .ui-tabs-panel .textTrack p {padding: 0px;}
 
 /******************************/
