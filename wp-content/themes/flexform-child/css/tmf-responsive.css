@@ -142,6 +142,9 @@
     /*contacto footer '15*/
     #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
     .section03-bottom ul li:nth-child(4) {margin-left: 0;}
+
+    /*footer*/
+    .container #footer-widgets .span3:first-child {margin-left: 0;}
 }
 @media screen and (max-width: 1200px) {
 
@@ -370,7 +373,10 @@
     }
     /*'15*/
     .section02-companies li img {margin-right: 10px;height: auto;}
-    ..section02-companies li {margin-right: 0;}
+    .section02-companies li {margin-right: 0;}
+
+    /*footer*/
+    .container #footer-widgets .span3 {margin-left: 0;}
 
 }
 /* iPads (landscape) ----------- */
@@ -559,10 +565,6 @@
 
     .sponsors_logo{
         margin-left: 80px;
-    }
-
-    .widget ul{
-        text-align: center;
     }
 
 }
@@ -1068,6 +1070,9 @@
     .span2{
         text-align: center;
     }
+
+    /*footer*/
+    #footer-widgets div.span3:first-child { width: 100%; float: none; }
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -1098,13 +1103,6 @@
 
 @media screen and (max-width: 675px){
     .section01-sponsors{display: none;}
-}
-
-@media screen and (max-width: 640px){
-    #footer .widget ul li{
-        float: none !important;
-        display: inline-block;
-    }
 }
 
 @media screen and (max-width: 550px) {
@@ -2406,8 +2404,9 @@
 
     /*sidebar*/
     .textwidget-btn {text-align: center;}
-    .textwidget-btn a {text-align: left;}
+    .textwidget-btn a, .list_icons_widget .list-agenda-link, .textwidget  ul.agenda-info li {text-align: left;}
     .textwidget a.sf-button.standard.download-agenda.a-glance, .textwidget a.sf-button.medium.yellow.register-agenda {width: 320px;}
+
 }
 @media screen and (max-width: 700px) {
     .page-content .questions ul li:after {
@@ -2440,6 +2439,9 @@
     }
     #footer-widgets .widget {
         padding-bottom: 0px;
+    }
+    #footer-widgets div.span3{
+        margin-bottom: 20px;
     }
     #footer-widgets div.span3:first-child {
         margin-bottom: 20px;
@@ -2767,12 +2769,6 @@
         display: none;
     }
     .homelinks[class*="span"] {
-        width: 100%;
-        float: none;
-    }
-    /*footer*/
-
-    #footer-widgets div.span3:first-child {
         width: 100%;
         float: none;
     }
