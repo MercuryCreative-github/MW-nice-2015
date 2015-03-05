@@ -1789,6 +1789,9 @@
         font-size: 15px !important;
         padding: 12px 15px !important;
     }
+
+    #menu-exhibitors-menu{display: block;}
+
 }
 
 @media only screen and (min-width: 700px) and (max-width: 760px){
@@ -2635,7 +2638,7 @@
       padding-bottom:0px;
 
       margin-bottom: 20px!important;
-}
+    }
     .call-to-action {
         display: none;
     }
@@ -2689,9 +2692,8 @@
     header .container .four.columns:first-child a img {
         display: none;
     }
-    .current-menu-item > a {
-        background-color: transparent !important;
-    }
+    /*.current-menu-item > a {background-color: transparent !important;}*/
+
     /*Logo*/
 
     .logo {
