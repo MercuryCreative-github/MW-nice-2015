@@ -3624,6 +3624,7 @@
     .section01-buttons{text-align: center;}
     .section01-buttons a{float: none;}
     .section01-buttons a:first-child{margin-right: 0; margin-top: 16px;}
+    .section01-info{padding: 0;}
 }
 
 @media only screen and (-webkit-min-width: 980px) and (-webkit-max-width: 1024px) {
