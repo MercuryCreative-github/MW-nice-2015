@@ -3327,6 +3327,15 @@
         display: block;
         margin-bottom: 25px;
     }
+
+    .btn-register-pandp-table{
+        text-align: center;
+    }
+
+    .center-apply-btn{
+        width: 100%;
+        text-align: center;
+    }
 }
 @media screen and (max-width: 477px) {
     .ui-tabs .ui-tabs-nav li {
