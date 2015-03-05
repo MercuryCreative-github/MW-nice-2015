@@ -116,7 +116,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         // Optionally allow only attachments and not any URL (this hides the text input for the url):
                         "options" => array(
                             "url" => false
-                    )
+                    ),
 
                     /*array(
                         'name' => 'Summit',
@@ -233,7 +233,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'desc' => 'Please add the summit main color. Customer Centricity & Analytics: #F3A626; Internet of Things: #AA1C78; Managing NFV-SDN: #7DB342; Business Innovation: #225F91; Digital Operations: #27ABB2'
                         'type' => 'colorpicker',
                         'default'  => '#AA1C78',
-                    )
+                    ),
                     /*array(
                         'name' => 'Summit',
                         'id' => $prefix . 'session_summits',
