@@ -3625,6 +3625,8 @@
     .section01-buttons a{float: none;}
     .section01-buttons a:first-child{margin-right: 0; margin-top: 16px;}
     .section01-info{padding: 0;}
+    .section02-companies ul{margin-left: 0;}
+    .section02-companies ul li img{margin: 0 auto;}
 }
 
 @media only screen and (-webkit-min-width: 980px) and (-webkit-max-width: 1024px) {
@@ -3646,8 +3648,6 @@
         float: right;
     }
 
-    #rev-slider-widget-126{margin-top: 64px;}
-
     /*.ui-tabs .ui-tabs-nav li {
         width: 20% !important;
     }*/
@@ -3660,6 +3660,15 @@
     }
     .head .social-icon > a {
         padding: 0px !important;
+    }
+}
+
+@media screen and (max-width: 641px){
+    #center-social-btns{
+        width: 205px; 
+        margin: 0 auto; 
+        height: 50px; 
+        padding-left: 23px;
     }
 }
 /* Keep Updated Modal Form */
