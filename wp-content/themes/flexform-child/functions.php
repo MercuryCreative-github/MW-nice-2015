@@ -264,7 +264,7 @@ add_action('init', 'cpt_companies');
 function cpt_companies() {
 register_post_type('companies', array(
 	'label' => 'Companies',
-	'menu_icon' => 'dashicons-portfolio',
+	'menu_icon' => 'dashicons-megaphone',
 	'description' => 'Post type for Companies.',
 	'public' => true,
 	'show_ui' => true,
