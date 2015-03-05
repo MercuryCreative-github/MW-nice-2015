@@ -130,10 +130,29 @@ if (!class_exists('Speakers')) {
 
 	};
 
+
+	if(!function_exists('update_presentation')){
+
+
+		    function update_presentation($role_to_update) {
+
+				if( isset( $_POST[$role_to_update.'s_hidden'] ) ) {
+
+					$speakerIds = $_POST[$role_to_update.'s_meta'];
+					$sizeSpeakers = sizeof( $speakerIds );
+					$presentationId = $_POST['post_ID'];
+
+					update_post_meta($presentationId,$role_to_update.'s',$speakerIds);
+				}
+			};
+
+		};
+
 		$roles=array('speaker','panelist','collaborator','facilitator','moderator');
 
 		foreach ($roles as $role_to_update) {
 			update_speakers_by_role($role_to_update);
+			update_presentation($role_to_update);
 		}
 
 		}

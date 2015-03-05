@@ -155,174 +155,79 @@
 						<section class="article-body-wrap">
 							<div class="body-text clearfix">
 								<?php
-									// get the selected day
-									$day=get_field('day');
-									$dayAtt='';
-									$speakersDisplay='';
-									$daytag='';
-									$time='';
-									$hour='';
-									$mins='';
-									$displayTime='';
-									$subtitle='';
-									$content='';
-
-									for($j=0;$j<count($day);$j++){
-
-									$dayAtt = $day[$j];
-									$term = get_term_by('id', $dayAtt,'events_category');
-									$daytag.= ($term -> slug);
-									}
 
 
-									$forumId = get_field('forum');
-									$forumId = $forumId->ID;
-									$forumLink = get_post_meta($forumId,'timetable_custom_url',1);
+									$forumId = get_post_meta(get_the_ID(), '_TMF_presentation_session', true);
+									$forumLink = get_permalink($forumId);
 
 									$forum = '<a href="'.$forumLink.'">'.get_the_title( $forumId ).'</a>';
 
 									//manage time of the presentation
-									$time= get_field('time');
-									$time= explode(":", $time);
-									$hour = $time[0];
-									$mins = $time[1];
-									$time=$hour.'.'.$mins;
-									if($hour>12){$displayTime=($hour-12).':'.$mins.' PM';}
-									else{$displayTime=($hour).':'.$mins.' AM';};
+									$sessionId= get_post_meta(get_the_ID(), '_TMF_presentation_session', true);
+									$sessionTime= get_post_meta($sessionId, '_TMF_session_start_date', true);
 
-									if($daytag=='monday'){$dnumber='08';}
-									else if($daytag=='tuesday'){$dnumber='09';}
-									else if($daytag=='wednesday'){$dnumber='10';}
-									else if($daytag=='thursday'){$dnumber='11';}
-									else {$dnumber='';}
+								    	// variables set
+								    	$presentationsHtmlOutput='';
 
-									$sidebarSchedule= '<div><div class="dday-table dday01-table"><p>DEC<span class="number-day">'.$dnumber.'</span></p></div><div class="fday"><strong>'.$forum.'</strong><br>'.$displayTime.'</div></div></br>';
+								    	$args = array(
+											'post_type'  => 'agenda_tracks',
+											'meta_key'	 => '_TMF_presentations_start_date',
+											'orderby'	 => 'meta_value',
+											'order' 		=> 'ASC',
+											'meta_query' => array(
+												array(
+													'key'     => '_TMF_presentation_session',
+													'value'   => $sessionId,
+													'compare' => 'LIKE',
+												),
+											),
+										);
+
+
+										// This are all the presentations in the same session
+										$presentationToCheck = new WP_Query( $args );
+
+										$sidebarSchedule='';
+
+										// The Loop
+										if ( $presentationToCheck->have_posts() ) {
+
+											while ( $presentationToCheck->have_posts() ) {
+
+												// needed variables				
+												$presentationToCheck->the_post();
+												$presentationToCheckId=get_the_ID();
+												$presentationTitle=get_the_title();
+												$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
+												$dnumber=date('d',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+												$dmonth=date('M',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+												$displayTime=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+												$presentationLink = get_permalink();
+
+												$sidebarSchedule.= '<div>';
+												$sidebarSchedule.= '<div class="dday-table dday01-table">';
+												$sidebarSchedule.= '<p>'.$dmonth.'<span class="number-day">'.$dnumber.'</span></p>';
+												$sidebarSchedule.= '</div>';
+												$sidebarSchedule.= '<div class="fday">';
+												$sidebarSchedule.='<a href="'.$presentationLink .'">'.$presentationTitle.'</a><br>';
+												$sidebarSchedule.= $displayTime.'</div></div></br>';
+												
+											}
+										}
+
+								    wp_reset_query();
 
 									// define subtitle
-									$subtitle= get_field('sub_title');
+									$subtitle= get_post_meta(get_the_ID(),'_TMF_presentations_subtitle',true);
 								?>
 
 
-									<h2><?php the_title(); echo '<br> <small>'.$subtitle.'</small>'; ?> </h2>
+								<h2><?php the_title(); echo '<br> <small>'.$subtitle.'</small>'; ?> </h2>
 
 
+								<?php the_content();?>
 
-								<?php the_content();
-
-								echo '<p class="seeMoreForum">> See more from '.$forum.'</p>';
-
-								?>
-
-								<div class="link-pages"><?php wp_link_pages(); ?></div>
-							</div>
-
-							<?php if ($show_author_info) { ?>
-
-							<div class="author-info-wrap clearfix">
-								<div class="author-avatar"><?php if(function_exists('get_avatar')) { echo get_avatar(get_the_author_meta('ID'), '164'); } ?></div>
-								<div class="post-info">
-									<div class="author-name"><span><?php _e("Posted by", "swiftframework"); ?></span><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php the_author_meta('display_name'); ?></a></div>
-									<div class="post-date"><?php echo $post_date; ?></div>
-								</div>
-							</div>
-
-							<?php } ?>
-
-						</section>
-					</div>
-				</div>
-
-				<?php if ($show_related) { ?>
-
-				<div class="related-wrap">
-				<?php
-					$categories = get_the_category($post->ID);
-					if ($categories) {
-						$category_ids = array();
-						foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
-
-						$args=array(
-							'category__in' => $category_ids,
-							'post__not_in' => array($post->ID),
-							'showposts'=> 4, // Number of related posts that will be shown.
-							'orderby' => 'rand'
-						);
-					}
-					$related_posts_query = new wp_query($args);
-					if( $related_posts_query->have_posts() ) {
-						_e("<h4>Related Articles</h4>", "swiftframework");
-						echo '<ul class="related-items row clearfix">';
-						while ($related_posts_query->have_posts()) {
-							$related_posts_query->the_post();
-							$thumb_image = "";
-							$thumb_image = get_post_meta($post->ID, 'sf_thumbnail_image', true);
-							if (!$thumb_image) {
-								$thumb_image = get_post_thumbnail_id();
-							}
-							$thumb_img_url = wp_get_attachment_url( $thumb_image, 'full' );
-							$image = aq_resize( $thumb_img_url, 220, 152, true, false);
-							?>
-							<?php if ($sidebar_config == "both-sidebars" || $sidebar_config == "no-sidebars") { ?>
-							<li class="related-item span3 clearfix">
-							<?php } else { ?>
-							<li class="related-item span2 clearfix">
-							<?php } ?>
-								<figure>
-									<a href="<?php the_permalink(); ?>">
-										<div class="overlay"><div class="thumb-info">
-											<i class="icon-file-alt"></i>
-										</div></div>
-										<img src="<?php echo $image[0]; ?>" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" />
-									</a>
-								</figure>
-								<h5><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h5>
-							</li>
-						<?php }
-						echo '</ul>';
-					}
-
-					wp_reset_query();
-				?>
-				</div>
-
-				<?php } ?>
-
-
-				<?php if ( comments_open() ) { ?>
-				<div id="comment-area">
-					<?php comments_template('', true); ?>
-				</div>
-				<?php } ?>
-
-			</div>
-
-			<?php if ($sidebar_config == "both-sidebars") { ?>
-			<aside class="sidebar left-sidebar span3">
-				<?php dynamic_sidebar($left_sidebar); ?>
-			</aside>
-			<?php } ?>
-
-		<!-- CLOSE article -->
-		</article>
-
-		<?php if ($sidebar_config == "left-sidebar") { ?>
-
-			<aside class="sidebar left-sidebar span4">
-				<?php dynamic_sidebar($left_sidebar); ?>
-			</aside>
-
-		<?php } else if ($sidebar_config == "right-sidebar") { ?>
-
-			<aside class="sidebar right-sidebar span4">
-
-				<div id="calendar_widget" class="widget calendar_widget">
-				<?php echo '<div class="widget-heading clearfix"style="margin-top:45px"><h4>Presentation schedule</h4></div>'.$sidebarSchedule; ?>
-				</div>
-
-
-
-
-				<div class="speakerTrack">
+								<div class="speakerTrack">
 					<?php
 
 					//print_r(get_field('speakers'));
@@ -436,6 +341,118 @@
 
 					?>
 					</div>
+
+								<p class="seeMoreForum">> See more from <?php echo $forum ?> </p>
+
+								
+
+								<div class="link-pages"><?php wp_link_pages(); ?></div>
+							</div>
+
+							<?php if ($show_author_info) { ?>
+
+							<div class="author-info-wrap clearfix">
+								<div class="author-avatar"><?php if(function_exists('get_avatar')) { echo get_avatar(get_the_author_meta('ID'), '164'); } ?></div>
+								<div class="post-info">
+									<div class="author-name"><span><?php _e("Posted by", "swiftframework"); ?></span><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php the_author_meta('display_name'); ?></a></div>
+									<div class="post-date"><?php echo $post_date; ?></div>
+								</div>
+							</div>
+
+							<?php } ?>
+
+						</section>
+					</div>
+				</div>
+
+				<?php if ($show_related) { ?>
+
+				<div class="related-wrap">
+				<?php
+					$categories = get_the_category($post->ID);
+					if ($categories) {
+						$category_ids = array();
+						foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+
+						$args=array(
+							'category__in' => $category_ids,
+							'post__not_in' => array($post->ID),
+							'showposts'=> 4, // Number of related posts that will be shown.
+							'orderby' => 'rand'
+						);
+					}
+					$related_posts_query = new wp_query($args);
+					if( $related_posts_query->have_posts() ) {
+						_e("<h4>Related Articles</h4>", "swiftframework");
+						echo '<ul class="related-items row clearfix">';
+						while ($related_posts_query->have_posts()) {
+							$related_posts_query->the_post();
+							$thumb_image = "";
+							$thumb_image = get_post_meta($post->ID, 'sf_thumbnail_image', true);
+							if (!$thumb_image) {
+								$thumb_image = get_post_thumbnail_id();
+							}
+							$thumb_img_url = wp_get_attachment_url( $thumb_image, 'full' );
+							$image = aq_resize( $thumb_img_url, 220, 152, true, false);
+							?>
+							<?php if ($sidebar_config == "both-sidebars" || $sidebar_config == "no-sidebars") { ?>
+							<li class="related-item span3 clearfix">
+							<?php } else { ?>
+							<li class="related-item span2 clearfix">
+							<?php } ?>
+								<figure>
+									<a href="<?php the_permalink(); ?>">
+										<div class="overlay"><div class="thumb-info">
+											<i class="icon-file-alt"></i>
+										</div></div>
+										<img src="<?php echo $image[0]; ?>" width="<?php echo $image[1]; ?>" height="<?php echo $image[2]; ?>" />
+									</a>
+								</figure>
+								<h5><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h5>
+							</li>
+						<?php }
+						echo '</ul>';
+					}
+
+					wp_reset_query();
+				?>
+				</div>
+
+				<?php } ?>
+
+
+				<?php if ( comments_open() ) { ?>
+				<div id="comment-area">
+					<?php comments_template('', true); ?>
+				</div>
+				<?php } ?>
+
+			</div>
+
+			<?php if ($sidebar_config == "both-sidebars") { ?>
+			<aside class="sidebar left-sidebar span3">
+				<?php dynamic_sidebar($left_sidebar); ?>
+			</aside>
+			<?php } ?>
+
+		<!-- CLOSE article -->
+		</article>
+
+		<?php if ($sidebar_config == "left-sidebar") { ?>
+
+			<aside class="sidebar left-sidebar span4">
+				<?php dynamic_sidebar($left_sidebar); ?>
+			</aside>
+
+		<?php } else if ($sidebar_config == "right-sidebar") { ?>
+
+			<aside class="sidebar right-sidebar span4">
+
+				<div id="calendar_widget" class="widget calendar_widget">
+				<?php echo '<div class="widget-heading clearfix"style="margin-top:45px"><h4>Also in this session</h4></div>'.$sidebarSchedule; ?>
+				</div>
+
+				
 			</aside>
 
 		<?php } else if ($sidebar_config == "both-sidebars") { ?>

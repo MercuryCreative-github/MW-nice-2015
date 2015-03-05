@@ -142,8 +142,13 @@
     /*contacto footer '15*/
     #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
     .section03-bottom ul li:nth-child(4) {margin-left: 0;}
+
+    /*footer*/
+    .container #footer-widgets .span3:first-child {margin-left: 0;}
 }
 @media screen and (max-width: 1200px) {
+
+    #main-navigation .menu .menu-item.social-icon.twitter {display: none;}
     /*uber menu
     #main-navigation {
         margin-top: -11px !important;
@@ -228,16 +233,27 @@
     #menu-event-main-menu-2 a[href="https://twitter.com/tmforumorg"]{
         display: none;
     }
+    /*#menu-event-main-menu{ width: 805px;}*/
 
-    #menu-event-main-menu{
-        width: 805px;
+    .ml30{ margin-left: 0px;    }
+    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
+        width: 100vw;
     }
 
-     .ml30{
-        margin-left: 0px;
+    nav .menu li a{
+        font-size: 14px;
     }
 
+    .summit #header-section .container {
+        width: 94%!important;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
+    /*sidebar*/
+    .textwidget a.sf-button.standard.download-agenda.a-glance {width: 100%;padding: 15px 0 15px 0;}
+    .textwidget a.sf-button.standard.register-agenda span, .textwidget a.download-agenda.a-glance span {margin-left: 10px;}
+    .textwidget a.sf-button.medium.yellow.register-agenda {width: 100%;padding: 10px 0;}
 }
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
@@ -357,7 +373,10 @@
     }
     /*'15*/
     .section02-companies li img {margin-right: 10px;height: auto;}
-    ..section02-companies li {margin-right: 0;}
+    .section02-companies li {margin-right: 0;}
+
+    /*footer*/
+    .container #footer-widgets .span3 {margin-left: 0;}
 
 }
 /* iPads (landscape) ----------- */
@@ -548,10 +567,6 @@
         margin-left: 80px;
     }
 
-    .widget ul{
-        text-align: center;
-    }
-
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -720,6 +735,21 @@
         top: 20px;
     }
 }
+
+@media screen and (min-width: 840px) and (max-width: 990px){
+    .summit #header-section .container {
+        width: 100%!important;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 840px) and (max-width: 945px){
+    nav .menu li a{
+        font-size: 12.5px;
+    }
+}
+
 @media screen and (max-width: 915px) {
     div#top-bar-social {
         display: none;
@@ -744,6 +774,7 @@
     }
     /*twitter feed '15*/
     .container h2.tw-title:before {margin-right: 0px;}
+    .ui-tabs .ui-tabs-nav li{display: flex;}
 }
 @media screen and (max-width: 880px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -1039,6 +1070,9 @@
     .span2{
         text-align: center;
     }
+
+    /*footer*/
+    #footer-widgets div.span3:first-child { width: 100%; float: none; }
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -1068,14 +1102,13 @@
 }
 
 @media screen and (max-width: 675px){
-    .section01-sponsors{display: none;}
+    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
+        width: 100%;
+    }
 }
 
-@media screen and (max-width: 640px){
-    #footer .widget ul li{
-        float: none !important;
-        display: inline-block;
-    }
+@media screen and (max-width: 675px){
+    .section01-sponsors{display: none;}
 }
 
 @media screen and (max-width: 550px) {
@@ -1085,7 +1118,7 @@
     }
     /*'15*/
     .section02-companies li {min-width: 100px;display: block;width: 100%;margin-bottom: 30px;}
-    .section02-companies li:first-child img {margin-right: -25px;}
+    /*.section02-companies li:first-child img {margin-right: -25px;}*/
     .section03-top ul {margin: 0; font-size: 0.9em;}
     .section03-infobox01, .section03-infobox02 {width: 100%;}
     .review-photo {display: none;}
@@ -1135,6 +1168,21 @@
     .feed-related-posts .feed-author {font-size: 12px;line-height: 16px;margin-bottom: 5px;}
     .feed-related-posts h4 {margin-left: 0;font-size: 14px;}
     .review-photo {display: none;}
+    #page-wrap{padding: 0px !important;}
+    .sec-main-content{
+        width: 100%;
+        margin: 0px;
+    }
+
+    .reviews{
+        margin-left: 10px !important;
+        padding-right: 5px;
+    }
+
+
+    .title-green, .section02-info{
+        padding: 0 20px !important;
+    }
 }
 @media screen and (max-width: 320px) {
     #megaMenu #megaMenuToggle {
@@ -1472,6 +1520,11 @@
     .main-video-name.SKL {
         width: 190px;
     }
+
+    /*sidebar*/
+    .textwidget a.sf-button.standard.download-agenda.a-glance, .textwidget a.sf-button.standard.register-agenda {background-image: none;}
+    .textwidget a.download-agenda.a-glance span.text-btn, .textwidget a.download-agenda.a-glance span.small-text-btn{padding-right:0;}
+    .textwidget a.download-agenda span.text-btn, .textwidget a.sf-button.standard.register-agenda span.register-text {margin-right: 0;padding-right: 0;}
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
     body [class*="span"].home-ribbon:after {
@@ -1731,7 +1784,22 @@
     .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
         padding: 0 20px 0 0 !important;
     }
+
+    #ui-id-1, #ui-id-2, #ui-id-3, #ui-id-4, #ui-id-5, #ui-id-6{
+        font-size: 15px !important;
+        padding: 12px 15px !important;
+    }
+
+    #menu-exhibitors-menu{display: block;}
+
 }
+
+@media only screen and (min-width: 700px) and (max-width: 760px){
+    #ui-id-1, #ui-id-2, #ui-id-3, #ui-id-4, #ui-id-5, #ui-id-6{
+        padding: 12px 10px !important;
+    }
+}
+
 @media screen and (max-width: 767px) {
     /*--------------*/
     /*---- HOME ----*/
@@ -1946,7 +2014,7 @@
         display: none;
 
         background: white;
-}
+    }
     /*new home*/
 
     body [class*="span"].home-ribbon:after {
@@ -2325,6 +2393,36 @@
     .responsive-sponsors .image-caption {
         margin-bottom: 60px;
     }
+
+    .sponsors .blank_spacer{
+        display: none !important;
+    }
+
+    .img-link{
+        padding-top: 0px !important;
+    }
+
+    .summit-main-title p img{
+        display: none;
+    }
+
+    .summit-main-title-text{
+        margin-left: 3%;
+    }
+
+    .summit-main-title-text h1{
+        font-size: 28px !important;
+        line-height: 40px;
+    }
+    .summit-main-title-text .summit-subtitle{font-size: 18px;}
+    .summit-main-title-text{padding: 0;}
+    .summit-main-title-text p{margin-bottom: 12px;}
+
+    /*sidebar*/
+    .textwidget-btn {text-align: center;}
+    .textwidget-btn a, .list_icons_widget .list-agenda-link, .textwidget  ul.agenda-info li {text-align: left;}
+    .textwidget a.sf-button.standard.download-agenda.a-glance, .textwidget a.sf-button.medium.yellow.register-agenda {width: 320px;}
+
 }
 @media screen and (max-width: 700px) {
     .page-content .questions ul li:after {
@@ -2358,11 +2456,19 @@
     #footer-widgets .widget {
         padding-bottom: 0px;
     }
+    #footer-widgets div.span3{
+        margin-bottom: 20px;
+    }
     #footer-widgets div.span3:first-child {
         margin-bottom: 20px;
     }
     #copyright .beam-me-up {
         margin-top: 0px !important;
+    }
+
+    /*custom-tabs class it's for select the tabs btns of pages summit & networking*/
+    .summit-tabs li, .networking-tab li{
+        width: 100%;
     }
 }
 @media screen and (max-width: 680px) {
@@ -2532,7 +2638,7 @@
       padding-bottom:0px;
 
       margin-bottom: 20px!important;
-}
+    }
     .call-to-action {
         display: none;
     }
@@ -2586,9 +2692,8 @@
     header .container .four.columns:first-child a img {
         display: none;
     }
-    .current-menu-item > a {
-        background-color: transparent !important;
-    }
+    /*.current-menu-item > a {background-color: transparent !important;}*/
+
     /*Logo*/
 
     .logo {
@@ -2679,12 +2784,6 @@
         display: none;
     }
     .homelinks[class*="span"] {
-        width: 100%;
-        float: none;
-    }
-    /*footer*/
-
-    #footer-widgets div.span3:first-child {
         width: 100%;
         float: none;
     }
@@ -2824,6 +2923,19 @@
     .passes-prices .text-box p {
         font-size: 18px;
         line-height: 24px;
+    }
+
+    .visibleTitle .nday{
+        width: 33%;
+        padding-right: 13px;
+    }
+
+    .dday-table{
+        border: none;
+    }
+
+    .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].gray-accordion, .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].withe-accordion{
+        padding: 14px 10px 13px 1px;
     }
 }
 @media screen and (max-width: 480px) {
@@ -3212,10 +3324,24 @@
     .responsive-sponsors .image-caption {
         margin-bottom: 20px;
     }
+
+    .container h2.tw-title:before{
+        display: block;
+        margin-bottom: 25px;
+    }
+
+    .btn-register-pandp-table{
+        text-align: center;
+    }
+
+    .center-apply-btn{
+        width: 100%;
+        text-align: center;
+    }
 }
 @media screen and (max-width: 477px) {
     .ui-tabs .ui-tabs-nav li {
-        width: 20% !important;
+        /*width: 20% !important;*/
     }
 }
 @media screen and (max-width: 380px) {
@@ -3402,6 +3528,7 @@
         margin-bottom: -20px;
     }
 }
+
 @media screen and (max-width: 320px) {
     .hp-at-the-event .rss-view-all-stories {
         padding: 10px 25px;
@@ -3503,6 +3630,16 @@
         margin-top: -25px;
     }
 }
+
+@media screen and (max-width: 380px){
+    .section01-buttons{text-align: center;}
+    .section01-buttons a{float: none;}
+    .section01-buttons a:first-child{margin-right: 0; margin-top: 16px;}
+    .section01-info{padding: 0;}
+    .section02-companies ul{margin-left: 0;}
+    .section02-companies ul li img{margin: 0 auto;}
+}
+
 @media only screen and (-webkit-min-width: 980px) and (-webkit-max-width: 1024px) {
     .visible-phone.show-menu {
         display: none !important;
@@ -3521,6 +3658,7 @@
     .call-to-action li.register-btn {
         float: right;
     }
+
     /*.ui-tabs .ui-tabs-nav li {
         width: 20% !important;
     }*/
@@ -3533,6 +3671,15 @@
     }
     .head .social-icon > a {
         padding: 0px !important;
+    }
+}
+
+@media screen and (max-width: 641px){
+    .footer-social-list{
+        width: 205px; 
+        margin: 0 auto; 
+        height: 50px; 
+        padding-left: 23px;
     }
 }
 /* Keep Updated Modal Form */
@@ -3631,7 +3778,7 @@
 
 @media screen and (min-width: 890px) {
   #main-navigation .menu-event-main-menu-container, #mini-navigation .menu-event-main-menu-container { width:100%; }
-  .summit #main-navigation .menu-event-main-menu-container { width:90%; }
+  /*.summit #main-navigation .menu-event-main-menu-container { width:90%; }*/
   #menu-event-main-menu li.menu-register-btn, #mini-navigation li.menu-register-btn { float: right; }
   #menu-event-main-menu li.menu-register-btn a, #mini-navigation li.menu-register-btn a { color:#FFF; background: none repeat scroll 0 0 #f8ae1e; }
   #menu-event-main-menu li.menu-register-btn a:hover, #mini-navigation li.menu-register-btn a:hover{background-color: #D88801}

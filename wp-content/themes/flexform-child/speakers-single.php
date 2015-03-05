@@ -160,7 +160,7 @@ $speakerItem= '<div class="speaker-info">';
 		$speakerItem.= wp_get_attachment_image($user->image);
 		$speakerItem.= '<div style="margin-top: 20px;"><a href="'.$companyURL.'" target="_blank">'.$companyThumb.'</a></div>';
 	$speakerItem.= '</div>';
-	$speakerItem.= '<div style="display:table-cell;vertical-align: top;">';
+	$speakerItem.= '<div class="subtitle" style="display:table-cell;vertical-align: top;">';
 		$speakerItem.= '<h4>' . esc_html( $user->display_name ). $twitter . '</h4>';
 		
 		// Get companies and job role
@@ -260,7 +260,7 @@ echo '</pre>';*/
 
 
 	$presentations='';
-	$presentations.='<div class="wpb_wrapper clearfix"><h2>' . esc_html( $user->display_name ) . '&#39;s schedule</h2></div>';
+	$presentations.='<div class="wpb_wrapper clearfix"><h4>' . esc_html( $user->display_name ) . '&#39;s <strong>Schedule</strong></h4></div>';
 
 if (count($presentationsIDs)>0){
 	while ( $loop->have_posts() ) : $loop->the_post();
@@ -275,7 +275,11 @@ if (count($presentationsIDs)>0){
 	$time='';
 	$hour='';
 	$mins='';
-	$displayTime='';
+	$endTime='';
+	$endHour='';
+	$endMins='';
+	$showStartTime='';
+	$showEndTime='';
 	$subtitle='';
 	$content='';
 
@@ -292,17 +296,27 @@ if (count($presentationsIDs)>0){
 	$forum = '<a href="'.$forumLink.'">'.get_the_title( $forumId ).'</a>';
 
 	$time= get_field('time');
+	echo $time;
 	$time= split(":", $time);
 	$hour = $time[0];
 	$mins = $time[1];
 	$time=$hour.'.'.$mins;
-	if($hour>12){$displayTime=($hour-12).':'.$mins.' PM';}
-	else{$displayTime=($hour).':'.$mins.' AM';};
+	if($hour>12){$showStartTime=($hour-12).':'.$mins.' pm';}
+	else{$showStartTime=($hour).':'.$mins.' am';};
 
-	if($daytag=='monday'){$dnumber='08';}
-	else if($daytag=='tuesday'){$dnumber='09';}
-	else if($daytag=='wednesday'){$dnumber='10';}
-	else if($daytag=='thursday'){$dnumber='11';}
+	$endTime= get_field('end_time');
+	echo $endTime;
+	$endTime= split(":", $endTime);
+	$endHour = $endTime[0];
+	$endMins = $endTime[1];
+	$endTime=$endHour.'.'.$endMins;
+	if($endHour>12){$showEndTime=($endHour-12).':'.$endMins.' pm';}
+	else{$showEndTime=($endHour).':'.$endMins.' am';};
+
+	if($daytag=='monday'){$dnumber='01';}
+	else if($daytag=='tuesday'){$dnumber='02';}
+	else if($daytag=='wednesday'){$dnumber='03';}
+	else if($daytag=='thursday'){$dnumber='04';}
 	else {$dnumber='';}
 
 	// define subtitle
@@ -313,15 +327,15 @@ if (count($presentationsIDs)>0){
 	$linkToForum = get_permalink();
 
 	$presentations.='<div class="speaking-schedule">';
-	$presentations.='<a href="'.$linkToForum.'"><h4 style="border-bottom: 1px solid;padding-bottom: 5px;margin-bottom: 5px;">'.get_the_title().'</h4></a>';
-	$presentations.='<p class="">'.$subtitle. $displayTime.' on <span style="text-transform:capitalize">'.$daytag.'</span></p>';
-	$presentations.= $content . '<p style="font-weight: bold;font-size: 85%;">> See more from '.$forum.'</p></div>';
+	$presentations.='<p><strong><a href="'.$linkToForum.'">'.get_the_title().'</a></strong><br/>';
+	$presentations.='<span style="text-transform: capitalize;">'.$daytag.'</span> - '.$showStartTime.' - '.$showEndTime.'</p>';
+	$presentations.='</div>';
 
 	$title= explode(' – ',get_the_title());
 	$title= get_the_title();
 
 	$sidebarSchedule .='<div class="nday" style="margin-bottom:10px;"><div class="dday" style="background:#ffffff"><p>DEC<br><span>'.$dnumber.'</span></p></div>';
-	$sidebarSchedule .='<div class="fday"><strong><span style="text-transform:capitalize">' .$title. '</span></strong></br><strong>'.$forum. '<!-- at '. $displayTime.'--></strong></div></div><div class="clear"></div>';
+	$sidebarSchedule .='<div class="fday"><strong><span style="text-transform:capitalize">' .$title. '</span></strong></br><strong>'.$forum. '<!-- at '. $showStartTime.'--></strong></div></div><div class="clear"></div>';
 	endwhile;
 }
 
@@ -332,7 +346,7 @@ if (count($presentationsIDs)>0){
 	return $sidebarSchedule;
 	}
 
-	$sidebarSchedule = callPresentations($userId,$user,'monday');
+	//$sidebarSchedule = callPresentations($userId,$user,'monday');
 
 ?>
 
@@ -369,9 +383,6 @@ if (count($presentationsIDs)>0){
 	<?php } else if ($sidebar_config == "right-sidebar") { ?>
 
 		<aside class="sidebar right-sidebar span4">
-			<div id="calendar_widget" class="widget calendar_widget">
-			<?php echo '<div class="widget-heading clearfix"><h4> '.esc_html( $user->display_name ).' shedule</h4></div>'.$sidebarSchedule; ?>
-	  	</div>
 			<?php dynamic_sidebar($right_sidebar); ?>
 		</aside>
 

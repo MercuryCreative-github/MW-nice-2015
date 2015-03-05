@@ -26,9 +26,8 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
         private static function init_hooks() {
             self::$initiated = true;
-            if (is_plugin_active('cmb2/init.php')) {
-                add_filter('cmb2_meta_boxes', array('TMF_Add_Custom_metaboxes',
-                        'cmb2_TMF_metaboxes'));
+           // if (is_plugin_active('cmb2/init.php')) {
+                add_filter('cmb2_meta_boxes', array('TMF_Add_Custom_metaboxes','cmb2_TMF_metaboxes'));
 
                 //replace permalink to redirect url page setting if exists
                 //used for redirect_url metabox
@@ -37,7 +36,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 add_filter('post_link', array('TMF_Add_Custom_metaboxes','return_dinamic_permalink_from_page_setting_post'), 5, 2);
                 add_filter('nav_menu_link_attributes', array('TMF_Add_Custom_metaboxes','custom_menu_item_url_from_page_setting'), 5, 3);
                 add_action('template_redirect', array('TMF_Add_Custom_metaboxes','redirect_from_settings'));
-            }
+           // }
         }
         public function cmb2_TMF_metaboxes(array $meta_boxes) {
 
@@ -47,7 +46,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             $meta_boxes['redirect_url']  = array(
                 'id' => 'redirect_url',
                 'title' => __('TMF - Page Settings', 'cmb2'),
-                'object_types' => array('page','tmf_press','tmf_programs', 'tmf_events','post','product'),
+                'object_types' => array('page','tmf_sessions','tmf_presentations', 'post'),
                 'context' => 'normal',
                 'priority' => 'high',
                 'show_names' => true, // Show field names on the left
@@ -56,8 +55,9 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'name' => __('Redirect to internal page', 'cmb2'),
                         'desc' => __('Select an internal page to redirect, the permalink will be replaced.', 'cmb2'),
                         'id' => $prefix . 'redirect_url',
-                        'type' => 'select',
-                        'options' => array('TMF_Add_Custom_metaboxes', 'all_pages_select_field_options')
+                        'type' => 'pw_select',
+                        'options' => self::all_pages_select_field_options(),
+
                     ),
                      array(
                         'name' => __('Redirect to external url', 'cmb2'),
@@ -65,259 +65,280 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'id' => $prefix . 'redirect_external_url',
                         'type' => 'text_url',
                     ),
-                    array(
-                        'name' => __( 'Separate Content markup ', 'cmb2' ),
-                        'desc' => __( 'Separate Content and ExtraContent', 'cmb2' ),
-                        'id'   => $prefix . 'separate_content_and_extracontent',
-                        'type' => 'checkbox',
-                        'show_on_cb' => array( 'TMF_Add_Custom_metaboxes','show_if_is_page'), // function should return a bool value
-                    ),
-                    array(
-                        'name' => __( 'Sidebar over Header', 'cmb2' ),
-                        'desc' => __( 'It will show the sidebar overlaping the header by 70px instead of below it.', 'cmb2' ),
-                        'id'   => $prefix . 'sidebar_over_header',
-                        'type' => 'checkbox',
-                    ),
-                    array(
-                        'name' => __( 'Slider on Content', 'cmb2' ),
-                        'desc' => __( 'It will show the slider on the header inside the content instead of on top of both content and sidebar. Therefore, the sidebar will go up to the top of the page', 'cmb2' ),
-                        'id'   => $prefix . 'slider_on_content',
-                        'type' => 'checkbox',
-                    ),
-                    array(
-						'name' => 'Highlighted Event',
-						'id' => $prefix . 'highlighted_event',
-						'desc' => 'Highlighted Event',
- 						'options' => self::get_all_events(),
-						'type'    => 'select',
-						'sanitization_cb' => 'pw_select2_sanitise',
-					),
+         
+                   
                 ),
             );
 
-            $meta_boxes['training_buttons'] = array(
-                'id' => 'training_buttons',
-                'title' => __('TMF - Training Buttons', 'cmb2'),
-                'object_types' => array('page'), // Post type
-                //only show it on training pages
-                'show_on'      => array( 'key' => 'page-template', 'value' => 'training.php' ),
+           $meta_boxes['tmf_events'] = array(
+                'id' => 'tmf_events',
+                'title' => __('TM Forum Sessions settings', 'cmb2'),
+                'object_types' => array('tmf_sessions'), // Post type
                 'context' => 'normal',
                 'priority' => 'high',
                 'show_names' => true, // Show field names on the left
                 'fields' => array(
+                   
                     array(
-                        'name' => __('Register button', 'cmb2'),
-                        'desc' => __('Register course button URL', 'cmb2'),
-                        'id' => $prefix . 'training_button_register',
-                        'type' => 'text_url',
+                        'name' => __('Sesion start time and date', 'cmb2'),
+                        'id' => $prefix . 'session_start_date',
+                        'type' => 'text_datetime_timestamp',
                     ),
+                    
                     array(
-                        'name' => __('Register button text', 'cmb2'),
-                        'desc' => __('Register  button text (default:register)', 'cmb2'),
-                        'id' => $prefix . 'training_button_register_text',
-                        'type' => 'text_medium',
+                        'name' => __('Session end time and date', 'cmb2'),
+                        'id' => $prefix . 'session_end_date',
+                        'type' => 'text_datetime_timestamp',
                     ),
+
                     array(
-                        'name' => __('Register icon', 'cmb2'),
-                        'desc' => __('Select icon', 'cmb2'),
-                        'id' => $prefix . 'training_button_register_icon',
-                        'type'    => 'select',
-                        'options' => array(
-                                          'register' => __( 'register', 'cmb' ),
-                                          'contact'   => __( 'contact', 'cmb' ),
-                                          'link'     => __( 'link', 'cmb' ),
-                                          'members'     => __( 'members', 'cmb' ),
-                                           ),
-                         'default' => 'custom',
+                        'name' => 'Chair',
+                        'id' => $prefix . 'chair',
+                        'desc' => 'Chair',
+                        'options' => self::get_all_speakers(),
+                        'type' => 'pw_select',
+                        'sanitization_cb' => 'pw_select2_sanitise',
                     ),
+
                     array(
-                        'name' => __('Resume button', 'cmb2'),
-                        'desc' => __('Resume training button URL', 'cmb2'),
-                        'id' => $prefix . 'training_button_resume',
-                        'type' => 'text_url',
-                    ),
-                     array(
-                        'name' => __('Resume icon', 'cmb2'),
-                        'id' => $prefix . 'training_button_resume_icon',
-                        'type'    => 'checkbox',
-                    ),
-                    array(
-                        'name' => __('Suggested Courses to take next', 'cmb2'),
-                        'desc' => __('Suggested Courses to take next' , 'cmb2'),
-                        'id' => $prefix . 'suggested_courses_online',
-                        'options' => array('TMF_Add_Custom_metaboxes','all_training_courses')
+                        'name' => 'Session Sponsor',
+                        'id' => $prefix . 'sponsors',
+                        'desc' => 'Sponsor',
+                        'options' => self::get_all_sponsors(),
                         'type' => 'pw_multiselect',
                         'sanitization_cb' => 'pw_select2_sanitise',
                     ),
-                ),
-            );
 
+                    /*array(
+                        'name' => 'Summit',
+                        'id' => $prefix . 'session_summits',
+                        'desc' => 'Select the session this summit is included',
+                        'options' => self::get_summits(),
+                        'type' => 'pw_multiselect',
+                        'sanitization_cb' => 'pw_select2_sanitise',
 
-
-            $meta_boxes['tmf_testimonials'] = array(
-                'id' => 'tmf_testimonials',
-                'title' => __('TMF - Testimonials', 'cmb2'),
-                'object_types' => array('testimonial'), // Post type
-                'context' => 'normal',
-                'priority' => 'high',
-                'show_names' => true, // Show field names on the left
-                'fields' => array(
-                    array(
-                        'name' => __('Job Role ', 'cmb2'),
-                        'id' => $prefix . 'testimonials_role',
-                        'type' => 'text_medium',
-                    ),
-                    array(
-                        'name' => __('Company', 'cmb2'),
-                        'id' => $prefix . 'testimonials_company',
-                        'type' => 'text_medium',
-                    ),
-                 ),
-            );
-
-            $meta_boxes['tmf_events'] = array(
-                'id' => 'tmf_events',
-                'title' => __('TMF - Events', 'cmb2'),
-                'object_types' => array('tmf_events'), // Post type
-                'context' => 'normal',
-                'priority' => 'high',
-                'show_names' => true, // Show field names on the left
-                'fields' => array(
-                        array(
-        				'id'          => $prefix . 'other_cities_time',
-        				'type'        => 'group',
-        				'description' => __( 'Please select the event location and time zone.<br />For Webinars you can select more than one city in order to give the user time zone references.', 'cmb2' ),
-        				'options'     => array(
-        					'group_title'   => __( 'Event location and time zone {#}', 'cmb2' ), // {#} gets replaced by row number
-        					'add_button'    => __( 'Add Another City', 'cmb2' ),
-        					'remove_button' => __( 'Remove City', 'cmb2' ),
-        					'sortable'      => true, // beta
-        				),
-        				// Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
-        				'fields'      => array(
-        					array(
-        						'name' => 'Location / city',
-        						'id'   => 'title',
-        						'type' => 'text',
-        						// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
-        					),
-                            array(
-                                'name' => __('Time zone', 'cmb2'),
-                                'id' => $prefix . 'event_start_date',
-                                'type' => 'select_timezone',
-                            ),
-        				),
-        			),
-
-                    array(
-                        'name' => 'No start time needed',
-                        'id'   => $prefix . 'no_start_time',
-                        'type' => 'checkbox',
-                        'description'=> 'Check this option if there is no start time. E.g. Past Events',
-                    ),
-                    array(
-                        'name' => __('UTC start time and date', 'cmb2'),
-                        'id' => $prefix . 'event_utc_start_date',
-                        'type' => 'text_datetime_timestamp',
-                    ),
-                     array(
-                        'name' => 'No end time needed',
-                        'id'   => $prefix . 'no_end_time',
-                        'type' => 'checkbox',
-                        'description'=> 'Check this option if there is no end time. E.g. On-demand Webinars',
-                    ),
-                    array(
-                        'name' => __('UTC end time and date', 'cmb2'),
-                        'id' => $prefix . 'event_utc_end_date',
-                        'type' => 'text_datetime_timestamp',
-                    ),
-					array(
-                        'name' => 'Event Logo',
-                        'desc' => 'Upload an image or enter an URL.',
-                        'id' => $prefix . 'event_logo',
-                        'type' => 'file',
-                        // 'allow' => array( 'url', 'attachment' ) // limit to just attachments with array( 'attachment' )
-                    ),
-					array(
-						'name' => 'Speaker',
-						'id' => $prefix . 'speaker',
-						'desc' => 'Speaker',
- 						'options' => self::get_all_speakers(),
-						'type' => 'pw_multiselect',
-						'sanitization_cb' => 'pw_select2_sanitise',
-					),
-					array(
-						'name' => 'Sponsor',
-						'id' => $prefix . 'sponsor',
-						'desc' => 'Sponsor',
- 						'options' => self::get_all_sponsors(),
-						'type' => 'pw_multiselect',
-						'sanitization_cb' => 'pw_select2_sanitise',
-					),
-					array(
-						'name' => 'Strategic Programs',
-						'id' => $prefix . 'strategic_programs',
-						'desc' => 'Strategic Programs',
- 						'options' => self::get_all_strategic_programs(),
-						'type' => 'pw_multiselect',
-						'sanitization_cb' => 'pw_select2_sanitise',
-					),
-					
-					array(
-						'name' => 'Related Webinars',
-						'id' => $prefix . 'related_webinars',
-						'desc' => 'Related Webinars',
- 						'options' => self::get_related_webinars(),
-						'type' => 'pw_multiselect',
-						'sanitization_cb' => 'pw_select2_sanitise',
-					),
-
-					array(
-                        'name' => __('Sponsored webinars', 'cmb2'),
-                        'desc' => __('Sponsored webinars', 'cmb2' ),
-                        'id' => $prefix . 'sponsored_webinars',
-                        'type' => 'checkbox',
-                    ),
-
-					array(
-                        'name' => __('Register Online url', 'cmb2'),
-                        'desc' => __('Register Online url', 'cmb2'),
-                        'id' => $prefix . 'register_online_url',
-                        'type' => 'text_url',
-                    ),
-
-					array(
-                        'name' => __('View Webinar url', 'cmb2'),
-                        'desc' => __('View Webinar url.', 'cmb2'),
-                        'id' => $prefix . 'view_webinar_url',
-                        'type' => 'text_url',
-                    ),
-					array(
-                        'name' => __('Inform Category Feed URL', 'cmb2'),
-                        'desc' => __('Inform Category Feed URL', 'cmb2'),
-                        'id' => $prefix . 'inform_category',
-                        'type' => 'text_url',
-                    ),
-
-                    array(
-                        'name' => __('Color', 'cmb2'),
-                        'desc' => __('Principal color of the event', 'cmb2'),
-                        'id' => $prefix . 'event_color',
-                        'type' => 'colorpicker',
-                        'default'  => '#444444',
-                    ),
-                    array(
-                        'name' => __('Call For Speakers Phase', 'cmb2'),
-                        'desc' => __('Is open to Call for Speakers?', 'cmb2' ),
-                        'id' => $prefix . 'event_cfs_phase',
-                        'type' => 'checkbox',
-                    ),
- 
-
+                    ),*/
                 )
             );
+
+           $meta_boxes['agenda_tracks'] = array(
+                'id' => 'agenda_tracks',
+                'title' => __('TM Forum Presentations settings', 'cmb2'),
+                'object_types' => array('agenda_tracks'), // Post type
+                'context' => 'normal',
+                'priority' => 'high',
+                'show_names' => true, // Show field names on the left
+                'fields' => array(
+                   
+                    array(
+                        'name' => __('Presentations subtitle', 'cmb2'),
+                        'id' => $prefix . 'presentations_subtitle',
+                        'type' => 'text',
+                    ),
+
+                    array(
+                        'name' => __('Presentations start time and date', 'cmb2'),
+                        'id' => $prefix . 'presentations_start_date',
+                        'type' => 'text_datetime_timestamp',
+                    ),
+                    
+                    array(
+                        'name' => __('presentations end time and date', 'cmb2'),
+                        'id' => $prefix . 'presentations_end_date',
+                        'type' => 'text_datetime_timestamp',
+                    ),
+
+                    array(
+                        'name' => __('Location', 'cmb2'),
+                        'id' => $prefix . 'presentations_location',
+                        'type' => 'text',
+                    ),
+
+                    array(
+                        'name' => 'Presentation Speakers',
+                        'id' => 'speakers_meta',
+                        'desc' => 'Select the Speakers',
+                        'options' => self::get_all_speakers(),
+                        'type' => 'pw_multiselect',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+                    ),
+
+
+                    array(
+                        'name' => 'Presentation Collaborators',
+                        'id' => 'collaborators_meta',
+                        'desc' => 'Select the Collaborators',
+                        'options' => self::get_all_speakers(),
+                        'type' => 'pw_multiselect',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+                    ),
+
+
+                    array(
+                        'name' => 'Presentations Panelists',
+                        'id' => 'panelists_meta',
+                        'desc' => 'Select the Panelists',
+                        'options' => self::get_all_speakers(),
+                        'type' => 'pw_multiselect',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+                    ),
+
+
+                    array(
+                        'name' => 'Presentations Facilitators',
+                        'id' => 'facilitators_meta',
+                        'desc' => 'Select the Facilitators',
+                        'options' => self::get_all_speakers(),
+                        'type' => 'pw_multiselect',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+                    ),
+
+
+                    array(
+                        'name' => 'Presentations Moderators',
+                        'id' => 'moderators_meta',
+                        'desc' => 'Select the Moderators',
+                        'options' => self::get_all_speakers(),
+                        'type' => 'pw_multiselect',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+                    ),
+
+                    array(
+                        'name' => 'Session',
+                        'id' => $prefix . 'presentation_session',
+                        'desc' => 'Select the session this presentation is included',
+                        'options' => self::get_all_sessions(),
+                        'type' => 'pw_select',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+
+                    ),
+
+                    /*array(
+                        'name' => 'Summit',
+                        'id' => $prefix . 'session_summits',
+                        'desc' => 'Select the session this summit is included',
+                        'options' => self::get_summits(),
+                        'type' => 'pw_multiselect',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+
+                    ),*/
+                )
+            );
+
+            $meta_boxes['agenda_tracks_users'] = array(
+                            'id' => 'agenda_tracks_users',
+                            'title' => __('TM Forum Presentations', 'cmb2'),
+                            'object_types' => array('user'), // Post type
+                            'context' => 'normal',
+                            'priority' => 'high',
+                            'show_names' => true, // Show field names on the left
+                            'fields' => array(
+                               
+                                array(
+                                    'name' => 'Speaker at',
+                                    'id' =>  'speaker_at',
+                                    'desc' => 'Select the Presentations this user speaks at',
+                                    'options' => self::get_all_presentations(),
+                                    'type' => 'pw_multiselect',
+                                    'sanitization_cb' => 'pw_select2_sanitise',
+                                ),
+                               
+                                array(
+                                    'name' => 'Moderator at',
+                                    'id' =>  'moderator_at',
+                                    'desc' => 'Select the Presentations this user moderates at',
+                                    'options' => self::get_all_presentations(),
+                                    'type' => 'pw_multiselect',
+                                    'sanitization_cb' => 'pw_select2_sanitise',
+                                ),
+                               
+                                array(
+                                    'name' => 'Panelist at',
+                                    'id' =>  'panelist_at',
+                                    'desc' => 'Select the Presentations where this user is panelist',
+                                    'options' => self::get_all_presentations(),
+                                    'type' => 'pw_multiselect',
+                                    'sanitization_cb' => 'pw_select2_sanitise'
+                                ),
+
+                               
+                                array(
+                                    'name' => 'Collaborator at',
+                                    'id' =>  'collaborator_at',
+                                    'desc' => 'Select the Presentations this user collaborates at',
+                                    'options' => self::get_all_presentations(),
+                                    'type' => 'pw_multiselect',
+                                    'sanitization_cb' => 'pw_select2_sanitise',
+
+                                ),
+
+                                array(
+                                    'name' => 'Facilitator at',
+                                    'id' =>  'facilitator_at',
+                                    'desc' => 'Select the Presentations this user faciliatates at',
+                                    'options' => self::get_all_presentations(),
+                                    'type' => 'pw_multiselect',
+                                    'sanitization_cb' => 'pw_select2_sanitise',
+
+                                ),
+
+                                /*array(
+                                    'name' => 'Chair at',
+                                    'id' =>  'chair_at',
+                                    'desc' => 'Select the Session this user is chair.',
+                                    'options' => self::get_all_sessions(),
+                                    'type' => 'pw_multiselect',
+                                    'sanitization_cb' => 'pw_select2_sanitise',
+
+                                ),*/
+
+                                 array(
+                                    'name' => 'Company',
+                                    'id' => 'company',
+                                    'desc' => 'Company',
+                                    'options' => self::get_all_sponsors(),
+                                    'type' => 'pw_select',
+                                    'sanitization_cb' => 'pw_select2_sanitise',
+                                ),
+
+                                array(
+                                    'name' => __('New Company', 'cmb2'),
+                                    'id' => 'new_company',
+                                    'type' => 'text',
+                                ),
+
+                                array(
+                                    'name' => __('Job Role', 'cmb2'),
+                                    'id' => 'job_role',
+                                    'type' => 'text',
+                                ),
+
+                                array(
+                                    'name' => __('Twitter Ailas', 'cmb2'),
+                                    'id' => 'twitter_alias',
+                                    'type' => 'text',
+                                ),
+
+                                array(
+                                    'name' => __('Biography', 'cmb2'),
+                                    'id' => 'biography',
+                                    'type' => 'wysiwyg',
+                                ),
+
+                                array(
+                                    'name' => __('Head shot', 'cmb2'),
+                                    'id' => 'image',
+                                    'type' => 'file',
+                                ),
+
+
+                               
+                            )
+                        );
             return $meta_boxes;
         }
+
+
 
         public function all_pages_select_field_options() {
             global $post;
@@ -330,18 +351,15 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 'order' => 'DESC',
                 'include' => '',
                 //do not show current page
-                'exclude' => array(
-                    $post->ID,
-                    '997',
-                    '998',
-                    '999',
-                    ),
+                'exclude' => false,
                 'meta_key' => '',
                 'meta_value' => '',
-                //tmf_events, tmf_press, tmf_programs, post
+                //tmf_events, tmf_sessions, tmf_programs, post
                 'post_type' => array(
                     'page',
-                    'tmf_programs',
+                    'tmf_sessions',
+                    'agenda_tracks',
+                    'posts',
                     ),
                 'post_mime_type' => '',
                 'post_parent' => '',
@@ -349,10 +367,11 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 'suppress_filters' => true);
             $pages = get_posts($args);
 
-            $option_pages = array('' => 'None');
             foreach ($pages as $page) {
-                $front_end_value = $page->ID . " [" . $page->post_type . "] -- " . $page->
-                    post_title;
+
+                $post_type = get_post_type_object( get_post_type( $page->ID ) );
+
+                $front_end_value =  $page->post_title . " [" .  $post_type->label . "] ";
                 $option_pages[$page->ID] = __($front_end_value, 'cmb2');
             }
             return $option_pages;
@@ -470,7 +489,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
         public function redirect_from_settings(){
             
-            if(!is_single() && !is_page() && !is_product())
+            if(!is_single() && !is_page())
             return;
               
             global $post;
@@ -491,47 +510,38 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return (isset($_POST['post_type']) && $slug == $_POST['post_type'] ) || $slug == $GLOBALS['post_type'];
         }
 
-		public function get_all_speakers(){
-			global $wpdb;
+        public function get_all_speakers(){
 
- 			$users = $wpdb->get_results( "SELECT wp_users.ID, wp_users.display_name
-										  FROM wp_users, wp_usermeta
-										  WHERE (wp_users.ID = wp_usermeta.user_id)
-										  AND ( ( meta_key = '_TMF_User_Role')
-										  AND (  wp_usermeta.meta_value LIKE '%Speaker%' ) )
-										GROUP BY wp_users.ID
-										ORDER BY `user_id` ASC" );
+                $args = array(
+                'role'=>'speaker',
+                );// meta_query);
 
-			$speakers = array();
-			foreach ($users as $user) {
-                $display_name =  $user->display_name;
-                 $speakers[$user->ID] = __($display_name, 'cmb2');
-            }
+                $user_query = new WP_User_Query( $args );
 
- 			return $speakers;
-		}
+                foreach ( $user_query->results as $user ){
+                  $display_name =  $user->display_name;
+                  $speakers[$user->ID] = __($display_name, 'cmb2');
 
-		public function get_all_sponsors(){
-			global $post;
+                }
+
+            return $speakers;
+        }
+
+        public function get_all_sponsors(){
+            global $post;
 
             // get all terms in the taxonomy
             $terms = get_terms( 'sponsorship-categories' ); 
             // convert array of term objects to array of term IDs
             $term_ids = wp_list_pluck( $terms, 'term_id' );
- 			
-			$args = array(
-			'post_type' => 'tmf_companies', 
-			'posts_per_page' => -1,
-			'tax_query' => array(
-							array(
-							 'taxonomy' => 'sponsorship-categories',
-							 'field' => 'slug',
-							 'terms' => 'webinar-sponsor'
-							)
-				)
-			);
+            
+            $args = array(
+            'post_type' => 'companies', 
+            'posts_per_page' => -1,
+     
+            );
 
-			$tmf_companies = get_posts( $args );
+            $tmf_companies = get_posts( $args );
 
             $sponsors = array();
             foreach ($tmf_companies as $page) {
@@ -539,48 +549,99 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 $sponsors[$page->ID] = __($post_title, 'cmb2');
             }
             return $sponsors;
-		}
+        }
 
-		public function get_all_strategic_programs(){
-			global $post;
+        public function get_all_strategic_programs(){
+            global $post;
              
-			$args = array(
-			'post_type' => 'tmf_programs', 
-			'posts_per_page' => -1,
-			'tax_query' => array(
-							array(
-							 'taxonomy' => 'tmf_programs_category',
-							 'field' => 'slug',
-							 'terms' => 'strategic_programs'
-							)
-				)
-			);
-			
+            $args = array(
+            'post_type' => 'tmf_programs', 
+            'posts_per_page' => -1,
+            'tax_query' => array(
+                            array(
+                             'taxonomy' => 'tmf_programs_category',
+                             'field' => 'slug',
+                             'terms' => 'strategic-programs'
+                            )
+                )
+            );
+            
             $tmf_programs = get_posts($args);
-
+			 
             $strategic_programs = array();
             foreach ($tmf_programs as $page) {
                 $post_title = $page->post_title;
                 $strategic_programs[$page->ID] = __($post_title, 'cmb2');
             }
             return $strategic_programs;
-		}
+        }
 		
-		public function get_related_webinars(){
-			global $post;
+		  public function get_all_related_programs(){
+            global $post;
              
-			$args = array(
-			'post_type' => 'tmf_events', 
-			'posts_per_page' => -1,
-			'tax_query' => array(
-							array(
-							 'taxonomy' => 'tmf_event_category',
-							 'field' => 'slug',
-							 'terms' => 'webinar'
-							)
-				)
-			);
-			
+            $args = array(
+            'post_type' => 'tmf_programs', 
+            'posts_per_page' => -1,
+            'tax_query' => array(
+                            array(
+                             'taxonomy' => 'tmf_programs_category',
+                             'field' => 'slug',
+                             'terms' => 'programs'
+                            )
+                )
+            );
+            
+            $tmf_programs = get_posts($args);
+			 
+            $programs = array();
+            foreach ($tmf_programs as $page) {
+                $post_title = $page->post_title;
+                $programs[$page->ID] = __($post_title, 'cmb2');
+            }
+            return $programs;
+        }
+		
+		 public function get_all_related_publications(){
+            global $post;
+             
+            $args = array(
+            'post_type' => 'product',
+    		'post_status' => 'publish',
+            'posts_per_page' => -1,
+            'tax_query' => array(
+                            array(
+                             'taxonomy' => 'product_cat',
+                             'field' => 'slug',
+                             'terms' => 'research-and-analysis'
+                            )
+                )
+            );
+            
+            $tmf_publication = get_posts($args);
+			 
+            $related_publication = array();
+            foreach ($tmf_publication as $page) {
+                $post_title = $page->post_title;
+                $related_publication[$page->ID] = __($post_title, 'cmb2');
+            }
+            return $related_publication;
+        }
+        
+        public function get_related_webinars(){
+            global $post;
+             
+            $args = array(
+            'post_type' => 'tmf_events', 
+            'posts_per_page' => -1,
+            'tax_query' => array(
+                            array(
+                             'taxonomy' => 'tmf_event_category',
+                             'field' => 'slug',
+                             'terms' => 'webinar'
+                            )
+                )
+            );
+            
             $tmf_events = get_posts($args);
 
             $related_webinars = array();
@@ -589,16 +650,16 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 $related_webinars[$page->ID] = __($post_title, 'cmb2');
             }
             return $related_webinars;
-		}
-		
-		public function get_all_events(){
-			global $post;
+        }
+        
+        public function get_all_events(){
+            global $post;
              
-			$args = array(
-			'post_type' => 'tmf_events', 
-			'posts_per_page' => -1,
- 			);
-			
+            $args = array(
+            'post_type' => 'tmf_events', 
+            'posts_per_page' => -1,
+            );
+            
             $all_events = get_posts($args);
 
             $tmf_events = array('' => 'None');
@@ -607,7 +668,88 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 $tmf_events[$page->ID] = __($post_title, 'cmb2');
             }
             return $tmf_events;
-		}
+        }
+        
+        public function get_all_sessions(){
+            global $post;
+             
+            $args = array(
+            'post_type' => 'tmf_sessions', 
+            'posts_per_page' => -1,
+            );
+            
+            $all_events = get_posts($args);
+
+            foreach ($all_events as $page) {
+                $post_title = $page->post_title;
+                $tmf_events[$page->ID] = __($post_title, 'cmb2');
+            }
+
+            return $tmf_events;
+        }
+        public function get_all_presentations(){
+            global $post;
+             
+            $args = array(
+            //'post_type' => 'agenda_tracks', 
+            'post_type' => 'agenda_tracks', 
+            'posts_per_page' => -1,
+            );
+            
+            $all_events = get_posts($args);
+
+            foreach ($all_events as $page) {
+                $post_title = $page->post_title;
+                $tmf_events[$page->ID] = __($post_title, 'cmb2');
+            }
+
+            wp_reset_query();
+
+            return $tmf_events;
+        }
+
+
+		
+         public function get_event_categories(){
+            
+            $category_id = get_term_by( 'slug', 'webinar', 'tmf_event_category' );
+            $webinar_cat = $category_id->term_id; 
+            $categories = get_terms( array( 'tmf_event_category' ), array( "parent" => "0", "hide_empty" => false ) );  
+            
+            
+
+            $event_categories = array();
+            foreach ($categories as $category) {
+                
+                $category_term_id = $category->term_id;
+                $category_name = $category->name;
+                
+                $event_categories[$category_term_id] = __($category_name, 'cmb2');
+            }
+         
+            return $event_categories;
+        }
+
+        public function get_summits(){
+            
+        $taxonomies = array( 
+            'tmf_summit_category',
+        );
+        $terms = get_terms($taxonomies, $args);
+        
+        $event_categories = array();
+        
+        foreach ($terms as $category) {
+                
+           $category_term_id = $category->term_id;
+           $category_name = $category->name;
+                
+           $event_categories[$category_term_id] = __($category_name, 'cmb2');
+        }
+        
+        return $event_categories;
+
+        }
 
     }
 
