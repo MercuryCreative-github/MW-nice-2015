@@ -3517,6 +3517,7 @@
         margin-bottom: -20px;
     }
 }
+
 @media screen and (max-width: 320px) {
     .hp-at-the-event .rss-view-all-stories {
         padding: 10px 25px;
@@ -3618,6 +3619,13 @@
         margin-top: -25px;
     }
 }
+
+@media screen and (max-width: 380px){
+    .section01-buttons{text-align: center;}
+    .section01-buttons a{float: none;}
+    .section01-buttons a:first-child{margin-right: 0; margin-top: 16px;}
+}
+
 @media only screen and (-webkit-min-width: 980px) and (-webkit-max-width: 1024px) {
     .visible-phone.show-menu {
         display: none !important;
