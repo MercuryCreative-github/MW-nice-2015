@@ -3664,7 +3664,7 @@
 }
 
 @media screen and (max-width: 641px){
-    #center-social-btns{
+    .footer-social-list{
         width: 205px; 
         margin: 0 auto; 
         height: 50px; 
