@@ -221,8 +221,9 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                     array(
                         'name' => 'Summit Color Picker',
                         'id'   => $prefix . 'summit_colorpicker',
+                        'desc' => 'Please add the summit main color. Customer Centricity & Analytics: #F3A626; Internet of Things: #AA1C78; Managing NFV-SDN: #7DB342; Business Innovation: #225F91; Digital Operations: #27ABB2'
                         'type' => 'colorpicker',
-                        'default'  => '#aa1c78',
+                        'default'  => '#AA1C78',
                     ),
 
                     /*array(
