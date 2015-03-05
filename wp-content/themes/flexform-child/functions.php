@@ -522,7 +522,52 @@ function summits_shortcode_func( $atts ) {
 				$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
 				$presentationStart=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
 				$presentationEnd=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
-				$presentationSesion=get_post_meta($presentationToCheckId,'_TMF_presentation_session',true);
+
+
+				$roles=array('speaker','panelist','collaborator','facilitator','moderator');
+				
+				foreach ($roles as $role_to_update) {
+
+				$role_to_fetch=	$role_to_update.'s_meta';
+
+				$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
+
+				}
+
+				if(count($presentationSpeakers)>1)
+				array_shift($presentationSpeakers);
+
+				$user_query = new WP_User_Query( array( 'include' => $presentationSpeakers ) );
+
+				echo "<pre>";
+				var_dump($presentationSpeakers);
+				echo "</pre>";
+
+				if ( ! empty( $user_query->results ) ) {
+				
+				foreach ( $user_query->results as $user ) {
+
+					// needed variables				
+					$userMeta = get_user_meta( $user->ID, $role_to_update.'_at' );
+
+					//Chair output
+					$SpeakerHtmlOutput.='<div>';
+					$SpeakerHtmlOutput.='Speaker: '.$user->display_name;
+					$SpeakerHtmlOutput.='</div>';
+
+
+							
+					}
+				}
+
+
+				wp_reset_query();
+
+
+
+
+
+				$presentationSesion=$sessionId;
 				$presentationLink = get_permalink();
 
 				//Presentations output
@@ -531,7 +576,7 @@ function summits_shortcode_func( $atts ) {
 				$presentationsHtmlOutput.='<a href="'.$presentationLink.'">';
 				$presentationsHtmlOutput.=$presentationTitle.'<br>';
 				$presentationsHtmlOutput.='</a>';
-				$presentationsHtmlOutput.=$presentationSesion.'<br>';
+				//$presentationsHtmlOutput.=$SpeakerHtmlOutput;
 
 			}
 		}
