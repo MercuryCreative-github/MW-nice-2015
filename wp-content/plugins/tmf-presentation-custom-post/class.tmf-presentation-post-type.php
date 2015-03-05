@@ -1,6 +1,6 @@
 <?php
-if (!class_exists('TMF_Presentation_Post_Type')) {
-	class TMF_Presentation_Post_Type {
+if (!class_exists('tmf_presentation_Post_Type')) {
+	class tmf_presentation_Post_Type {
 
 		private static $initiated = false;
         
@@ -31,7 +31,7 @@ if (!class_exists('TMF_Presentation_Post_Type')) {
         
         private static function register_presentation_post_type() {
             $labels = array(
-                'name'                => _x( 'TM Forum Registered Presentations', 'Post Type General Name', 'text_domain' ),
+                'name'                => _x( 'TM Forum Presentations', 'Post Type General Name', 'text_domain' ),
                 'singular_name'       => _x( 'Presentation', 'Post Type Singular Name', 'text_domain' ),
                 'menu_name'           => __( 'Presentations', 'text_domain' ),
                 'parent_item_colon'   => __( 'Parent Item:', 'text_domain' ),
@@ -64,30 +64,7 @@ if (!class_exists('TMF_Presentation_Post_Type')) {
                 'publicly_queryable'  => true,
                 'capability_type'     => 'page',
                 'map_meta_cap' => true, // Set to false, if users are not allowed to edit/delete existing posts
-                'capabilities' => array(
-                    // meta caps (don't assign these to roles)
-                    'edit_post' => 'edit_tmf_Presentation',
-                    'read_post' => 'read_tmf_Presentation',
-                    'delete_post' => 'delete_tmf_Presentation',
-                     
-                    // primitive/meta caps
-                    'create_posts' => 'create_tmf_Presentation',
-                     
-                    // primitive caps used outside of map_meta_cap()
-                    'edit_posts' => 'edit_agenda_tracks',
-                    'edit_others_posts' => 'manage_agenda_tracks',
-                    'publish_posts' => 'edit_agenda_tracks',
-                    'read_private_posts' => 'read',
-                     
-                    // primitive caps used inside of map_meta_cap()
-                    'read' => 'read',
-                    'delete_posts' => 'delete_agenda_tracks',
-                    'delete_private_posts' => 'delete_agenda_tracks',
-                    'delete_published_posts' => 'delete_agenda_tracks',
-                    'delete_others_posts' => 'delete_agenda_tracks',
-                    'edit_private_posts' => 'edit_agenda_tracks',
-                    'edit_published_posts' => 'edit_agenda_tracks'
-                ),                
+                
                 'supports'          => array(
                     'title',
 					'editor',

@@ -35,7 +35,7 @@ if (!class_exists('TMF_Summit_Post_Type')) {
         
         private static function register_Summit_post_type() {
             $labels = array(
-                'name'                => _x( 'TM Forum Registered Session', 'Post Type General Name', 'text_domain' ),
+                'name'                => _x( 'TM Forum Session', 'Post Type General Name', 'text_domain' ),
                 'singular_name'       => _x( 'Session', 'Post Type Singular Name', 'text_domain' ),
                 'menu_name'           => __( 'Sessions', 'text_domain' ),
                 'parent_item_colon'   => __( 'Parent Item:', 'text_domain' ),

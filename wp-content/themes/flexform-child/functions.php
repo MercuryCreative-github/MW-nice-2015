@@ -429,17 +429,16 @@ function getUserJobRolesByCompanyId( $userId = 0, $companyId = 0 ) {
 	$jobRole = '';
 	if( (int) $companyId == 0 || (int)$userId == 0 ) return $jobRole;
 
-	$jobRoleMeta = get_user_meta( (int)$userId, "job_role" );
+	$jobRoleMeta = get_user_meta( (int)$userId, "job_role",true );
 
 	if( !empty( $jobRoleMeta )) {
-		$jobRoleMeta = $jobRoleMeta[0];
-		foreach( $jobRoleMeta as $compId => $jobRoleVal ) {
-			if( (int)$compId == (int)$companyId )
-				return $jobRoleVal;
-		}
+		$jobRoleMeta = $jobRoleMeta;
+		return ($jobRoleMeta);
+		
 	}
 	return $jobRole;
 }
+
 /*acton subscription form */
 // When sending Suscription form at the Sidebar
 add_action("gform_after_submission_4", "custom_post_submission_newsletters_subscribe", 10, 2);
@@ -486,57 +485,442 @@ if (!function_exists('custom_post_submission_newsletters_subscribe')) {
 
 // [summits_shortcode summit-slug="summit-slug-value"]
 function summits_shortcode_func( $atts ) {
+
+    // OutPut functions START HERE. Please read last.
+    function get_presentations($sessionStarts,$summit_slug,$sessionId){
+
+    	// variables set
+    	$presentationsHtmlOutput='';
+
+    	$args = array(
+			'post_type'  => 'agenda_tracks',
+			'meta_key'	 => '_TMF_presentations_start_date',
+			'orderby'	 => 'meta_value_num',
+			'order' 		=> 'ASC',
+			'meta_query' => array(
+				array(
+					'key'     => '_TMF_presentation_session',
+					'value'   => $sessionId,
+					'compare' => 'LIKE',
+				),
+			),
+		);
+
+
+		// This are all the presentations that have him/her listed as spekear/moderator/etc
+		$presentationToCheck = new WP_Query( $args );
+
+		// The Loop
+		if ( $presentationToCheck->have_posts() ) {
+
+			while ( $presentationToCheck->have_posts() ) {
+
+				// needed variables				
+				$presentationToCheck->the_post();
+				$presentationToCheckId=get_the_ID();
+				$presentationTitle=get_the_title();
+				$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
+				$presentationStart=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+				$presentationEnd=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
+				$presentationSesion=get_post_meta($presentationToCheckId,'_TMF_presentation_session',true);
+				$presentationLink = get_permalink();
+
+				//Presentations output
+				$presentationsHtmlOutput.=$presentationStart.' - ';
+				$presentationsHtmlOutput.=$presentationEnd.'<br>';
+				$presentationsHtmlOutput.='<a href="'.$presentationLink.'">';
+				$presentationsHtmlOutput.=$presentationTitle.'<br>';
+				$presentationsHtmlOutput.='</a>';
+				$presentationsHtmlOutput.=$presentationSesion.'<br>';
+
+			}
+		}
+
+    	wp_reset_query();
+
+
+		return $presentationsHtmlOutput;
+	} // end get_presentations
+
+	function get_chair($sessionChair){
+
+		// variables set
+		$chairHtmlOutput='';
+
+		// User query to get Chair
+		$user_query = new WP_User_Query( array( 'include' => $sessionChair ) );
+
+			if ( ! empty( $user_query->results ) ) {
+				
+				foreach ( $user_query->results as $user ) {
+
+					// needed variables				
+					$userMeta = get_user_meta( $user->ID, $role_to_update.'_at' );
+
+					//Chair output
+					$chairHtmlOutput.='<div>';
+					$chairHtmlOutput.='Chair: '.$user->display_name;
+					$chairHtmlOutput.='</div>';
+
+
+						
+				}
+			}
+
+
+		wp_reset_query();
+		return $chairHtmlOutput;
+	}  // end get_chair
+
+	function get_sponsors($sessionSponsors){
+
+		// variables set
+		$sponsorsHtmlOutput='';
+
+		// sponsors get
+		foreach ($sessionSponsors as $sponsorId) {
+
+			// needed variables		
+			$sponsorLogo = get_the_post_thumbnail( $sponsorId, 'medium');
+			$sponsorUrl = get_post_meta( $sponsorId, 'url', true );
+			$sponsorName = get_the_title( $sponsorId );
+
+			//Sponsors output
+			$sponsorsHtmlOutput.='<a href="'.$sponsorUrl.'" target="_blank">'.$sponsorLogo.'</a>';
+		}
+			wp_reset_query();
+			return $sponsorsHtmlOutput;
+
+	} // end get_sponsors
+
+    // OutPut functions FINISH HERE
+   
+
+    // Shortcode functionality HERE
+
+    // shortcode variables
     $a = shortcode_atts( array(
         'summit_slug' => 'default',
     ), $atts );
 
+    // summit var definitions bases on shortcode input.
     $summit_slug = $a['summit_slug'];
 
 
-// The Vars to run the Query that gets all the Presentations with this Forum Asociated
+	// The Vars to run the Query that gets all the Presentations with this Forum Asociated based on the $summit_slug
 	$args = array(
 	'post_type' 	=> 'tmf_sessions',
 	'order' 		=> 'ASC',
-	'tax_query' => array(
-		array(
-			'taxonomy' => 'tmf_summit_category',
-			'field'    => 'slug',
-			'terms'    => $summit_slug,
-		),
-	), 
+	'meta_key'	 	=> '_TMF_session_start_date',
+	'orderby'	 	=> 'meta_value_num',
+	'tax_query'		=> array(
+			array(
+				'taxonomy' => 'tmf_summit_category',
+				'field'    => 'slug',
+				'terms'    => $summit_slug,
+			),
+		), 
 	);
 
-	
+	// WP Query
 	$loop = new WP_Query( $args );
 
+	// Variables set
 	$sessions='';
-	$i=0;
+	$storedDay = '';
 
 	while ( $loop->have_posts() ) : $loop->the_post();
 	
+	// needed variables
 	$sessionId = get_the_ID();
 	$sessionTitle = get_the_title();
-
 	$prefix = '_TMF_';
-
 	$sessionStarts = get_post_meta( $sessionId, $prefix . 'session_start_date',true);
 	$sessionChair = get_post_meta( $sessionId, $prefix . 'chair',true);
 	$sessionSponsors = get_post_meta( $sessionId, $prefix . 'sponsors',true);
 
-	$sessions.= $sessionTitle.'</br>';
-	$sessions.= $sessionStarts.'</br>';
-	$sessions.= $sessionChair.'</br>';
-	$sessions.= $sessionSponsors.'</br>';
 
-	
+	// If a new day stars, we write the DAY
+	if($storedDay!==date('l',$sessionStarts)){
+		$storedDay=date('l',$sessionStarts);
+		$sessions.= '<div><h3>'.$storedDay.'</h3></div>';
+	}
+
+	// Sessions output depends on functions
+	$sessions.= '<div>';
+	$sessions.= '<h1>'.$sessionTitle.'</h1>';
+	$sessions.= get_sponsors($sessionSponsors);
+	$sessions.= get_chair($sessionChair);
+	$sessions.= get_presentations($sessionStarts,$summit_slug,$sessionId);
+	$sessions.= '</div>';
+
+
 	$i++;
 	endwhile;
 
+	wp_reset_query();
+
 	return $sessions;
 
-}
+} // end of shortcode
+
 add_shortcode( 'summits_shortcode', 'summits_shortcode_func' );
 
+
+
+
+
+
+function update_presentation_on_user_save($user_id){
+        if (!$user_id>0)
+                return;
+
+        $user = get_user_by('id', $user_id);
+
+
+        //var_dump($user); die;
+
+
+        // remove the speaker from all the presentations that he/she not longer belongs.
+        function removeSpeaker($speaker_role,$user,$user_id){
+
+        $role_to_update=$speaker_role.'s_meta';
+
+        $args = array(
+			'post_type'  => 'agenda_tracks',
+			'meta_key'   => $role_to_update,
+			'meta_query' => array(
+				array(
+					'key'     => $role_to_update,
+					'value'   => $user_id,
+					'compare' => 'LIKE',
+				),
+			),
+		);
+
+
+		// This are all the presentations that have him/her listed as spekear/moderator/etc
+		$presentationToCheck = new WP_Query( $args );
+
+		// The Loop
+		if ( $presentationToCheck->have_posts() ) {
+
+			while ( $presentationToCheck->have_posts() ) {
+				
+				$presentationToCheck->the_post();
+				$presentationToCheckId=get_the_ID();
+
+
+
+				// this is the new data sumbitted
+				$role_at = $speaker_role.'_at';
+				$new_data=($user->$role_at); 
+
+	
+				if(!in_array($presentationToCheckId,$new_data)){
+
+					echo 'hay que borrar '.$user_id.' de '.$presentationToCheckId.'<br>'; //die;
+
+					$justErasedFrom[]=$presentationToCheckId;
+
+					$presentationMeta = get_post_meta($presentationToCheckId, $role_to_update,true);
+
+					$key = array_search($user_id, $presentationMeta);
+
+
+					if(($key) !== false) {
+								unset($presentationMeta[$key]);
+								update_post_meta( $presentationToCheckId, $role_to_update, $presentationMeta );
+							}	
+				}
+			}
+			
+
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+
+
+		return $justErasedFrom;
+
+		} // removeSpeaker ends
+
+        // add the speaker from all the presentations that he/she does not yet belong.
+        function addSpeaker($speaker_role,$user,$user_id,$justErasedFrom){
+
+        $role_to_update=$speaker_role.'s_meta';
+
+        $args = array(
+			'post_type'  => 'agenda_tracks',
+			'meta_query' => array(
+				'relation' => 'OR',
+				array(
+					'key'     => $role_to_update,
+                    'compare' => 'NOT EXISTS',
+                    'value' => ''
+				),
+				array(
+					'key'     => $role_to_update,
+					'value'   => $user_id,
+					'compare' => '!=',
+				),
+			),
+			'post__not_in'	 => $justErasedFrom,
+		);
+	
+
+		// This are all the presentations that DONT have him/her listed as spekear/moderator/etc
+		$presentationToAdd = new WP_Query( $args );
+
+		// The Loop
+		if ( $presentationToAdd->have_posts() ) {
+
+			while ( $presentationToAdd->have_posts() ) {
+				
+				$presentationToAdd->the_post();
+				$presentationToAddId=get_the_ID();
+
+				// this is the new data sumbitted
+				$role_at = $speaker_role.'_at';
+				$new_data=($user->$role_at); 
+
+	
+				if(in_array($presentationToAddId,$new_data)){
+
+					echo 'hay que agregar '.$user_id.' a '.$presentationToAddId.'<br>'; //die;
+					$presentationMeta = get_post_meta($presentationToAddId, $role_to_update,true);
+
+
+					if(!$presentationMeta){
+						$presentationMeta[]=$user_id;
+						add_post_meta( $presentationToAddId, $role_to_update, $presentationMeta );
+					}
+
+					// check if not already in.
+					else if(!in_array($user_id,$presentationMeta)){
+						$presentationMeta[]=$user_id;
+						update_post_meta( $presentationToAddId, $role_to_update, $presentationMeta );
+					}
+
+					
+
+					
+				}
+			}
+			
+
+		}else { 
+
+			echo 'wrong query'; die;
+
+
+		}
+
+		/* Restore original Post Data */
+		wp_reset_postdata();
+
+		} // removeSpeaker ends
+
+
+		$roles=array('speaker','panelist','collaborator','facilitator','moderator');
+
+		foreach ($roles as $role_to_update) {
+			$justErasedFrom = removeSpeaker($role_to_update,$user,$user_id);
+			addSpeaker($role_to_update,$user,$user_id,$justErasedFrom);
+		}
+
+}
+
+add_action('profile_update','update_presentation_on_user_save',10,1);
+add_action('user_register', 'update_presentation_on_user_save',10,1);
+
+
+
+
+
+/**
+ * Save user metadata when a presentation is saved.
+ *
+ * @param int $post_id The post ID.
+ * @param post $post The post object.
+ * @param bool $update Whether this is an existing post being updated or not.
+ */
+function save_presentation( $post_id, $post, $update ) {
+
+    	if(!function_exists('update_speakers_by_role')){
+
+
+		    function update_speakers_by_role($role_to_update) {
+
+
+			//if( isset( $_POST[$role_to_update.'s_hidden'] ) ) {
+
+				$speakerIds = explode (',',$_POST[$role_to_update.'s_meta']);
+				$sizeSpeakers = count( $speakerIds );
+				$presentationIds[] = $_POST['post_ID'];
+
+				// remove the presentation to the unselected users
+					$args = array(
+					'meta_query' =>array(array('meta_key' => $role_to_update.'_at' ,'value' => $presentationId ,'compare' => 'LIKE'),) 
+					);
+
+					$user_query = new WP_User_Query( $args );
+
+					if ( ! empty( $user_query->results ) ) {
+					foreach ( $user_query->results as $user ) {
+
+						$userMeta = get_user_meta( $user->ID, $role_to_update.'_at' );
+
+						if(!$userMeta){}
+
+
+						else if( !empty( $userMeta ) ) {
+							$presentationIds = $userMeta[0];
+							if(is_array ( $presentationIds ))
+							if(($key = array_search($_POST['post_ID'], $presentationIds)) !== false) {
+								unset($presentationIds[$key]);
+								update_user_meta( $user->ID, $role_to_update.'_at', $presentationIds );
+							}							
+						}
+						}
+					}
+
+
+				// add the preentation to the users selected
+				if( $sizeSpeakers > 0 ) {
+					for( $i = 0; $i < $sizeSpeakers; $i++ ) {
+						$userMeta = get_user_meta( $speakerIds[$i], $role_to_update.'_at' );
+						
+						if( !empty( $userMeta ) ) {
+							$presentationIds = $userMeta[0];
+							if(is_array ( $presentationIds ))
+							if( !in_array( $_POST['post_ID'], $presentationIds )) {
+								$presentationIds[] = $_POST['post_ID'];
+								update_user_meta( $speakerIds[$i], $role_to_update.'_at', $presentationIds );
+							}
+						}
+
+						if(!$userMeta){
+							$presentationIds[] = $_POST['post_ID'];
+							add_user_meta( $speakerIds[$i], $role_to_update.'_at',  $presentationIds);
+
+						}
+					}
+				}
+			//}
+		};
+
+	};
+
+		$roles=array('speaker','panelist','collaborator','facilitator','moderator');
+
+		foreach ($roles as $role_to_update) {
+			update_speakers_by_role($role_to_update);
+		}
+}
+
+add_action( 'save_post', 'save_presentation', 10, 3 );
 
 
 ?>
