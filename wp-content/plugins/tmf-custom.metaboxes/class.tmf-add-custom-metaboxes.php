@@ -109,6 +109,16 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'sanitization_cb' => 'pw_select2_sanitise',
                     ),
 
+                    array(
+                        'name' => 'Summit icon',
+                        'desc' => 'Upload the summit icon.',
+                        'id' => $prefix . 'summit_image',
+                        'type' => 'file',
+                        // Optionally allow only attachments and not any URL (this hides the text input for the url):
+                        "options" => array(
+                            "url" => false
+                    )
+
                     /*array(
                         'name' => 'Summit',
                         'id' => $prefix . 'session_summits',
@@ -233,8 +243,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         // Optionally allow only attachments and not any URL (this hides the text input for the url):
                         "options" => array(
                             "url" => false
-                        )
-                    ),
+                    )
                     /*array(
                         'name' => 'Summit',
                         'id' => $prefix . 'session_summits',
