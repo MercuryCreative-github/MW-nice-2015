@@ -297,7 +297,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                     'id' => 'company',
                                     'desc' => 'Company',
                                     'options' => self::get_all_sponsors(),
-                                    'type' => 'pw_select',
+                                    'type' => 'pw_multiselect',
                                     'sanitization_cb' => 'pw_select2_sanitise',
                                 ),
 
