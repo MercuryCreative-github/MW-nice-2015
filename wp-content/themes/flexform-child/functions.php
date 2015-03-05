@@ -264,7 +264,7 @@ add_action('init', 'cpt_companies');
 function cpt_companies() {
 register_post_type('companies', array(
 	'label' => 'Companies',
-	'menu_icon' => 'dashicons-portfolio',
+	'menu_icon' => 'dashicons-megaphone',
 	'description' => 'Post type for Companies.',
 	'public' => true,
 	'show_ui' => true,
@@ -525,47 +525,55 @@ function summits_shortcode_func( $atts ) {
 
 
 				$roles=array('speaker','panelist','collaborator','facilitator','moderator');
+
+				$SpeakerHtmlOutput='';
 				
 				foreach ($roles as $role_to_update) {
 
-				$role_to_fetch=	$role_to_update.'s_meta';
+					$role_to_fetch=	$role_to_update.'s_meta';
 
-				$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
-
-				}
-
-				if(count($presentationSpeakers)>1)
-				array_shift($presentationSpeakers);
-
-				$user_query = new WP_User_Query( array( 'include' => $presentationSpeakers ) );
-
-				echo "<pre>";
-				var_dump($presentationSpeakers);
-				echo "</pre>";
-
-				if ( ! empty( $user_query->results ) ) {
-				
-				foreach ( $user_query->results as $user ) {
-
-					// needed variables				
-					$userMeta = get_user_meta( $user->ID, $role_to_update.'_at' );
-
-					//Chair output
-					$SpeakerHtmlOutput.='<div>';
-					$SpeakerHtmlOutput.='Speaker: '.$user->display_name;
-					$SpeakerHtmlOutput.='</div>';
+					$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
 
 
-							
+					if(count($presentationSpeakers)>1){
+					
+
+						foreach ( $presentationSpeakers as $presentationSpeaker ) {
+
+							// needed variables				
+							$userMeta = get_user_meta( $presentationSpeaker, $role_to_update.'_at',true);
+							$userJobRole = get_user_meta( $presentationSpeaker, 'job_role',true);
+							$userCompanies = get_user_meta( $presentationSpeaker, 'company',true);
+
+							// we are using just the first company.
+							$userCompanyId = $userCompanies[0];
+
+							$userCompanyName= get_the_title($userCompanyId);
+
+							$user = get_user_by( 'id', $presentationSpeaker ); 
+
+							// if the user has the checked role in this presentation
+							if(is_array($userMeta)){
+								$hasThisRole=in_array($presentationToCheckId,$userMeta);
+
+								if($hasThisRole){
+									//speaker output to store
+									$SpeakerHtmlOutput ='<div class"singe-speaker">';
+									$SpeakerHtmlOutput.=$user->display_name;
+									$SpeakerHtmlOutput.=($userJobRole);
+									$SpeakerHtmlOutput.=' at '.$userCompanyName;
+									$SpeakerHtmlOutput.='</div>';
+
+									// this array contains inside one array per role and inside each of them, the speakers data.
+									$arrayByRole[$role_to_update][]=$SpeakerHtmlOutput;
+
+								}
+							}
+
+						}
 					}
+				
 				}
-
-
-				wp_reset_query();
-
-
-
-
 
 				$presentationSesion=$sessionId;
 				$presentationLink = get_permalink();
@@ -576,7 +584,28 @@ function summits_shortcode_func( $atts ) {
 				$presentationsHtmlOutput.='<a href="'.$presentationLink.'">';
 				$presentationsHtmlOutput.=$presentationTitle.'<br>';
 				$presentationsHtmlOutput.='</a>';
-				//$presentationsHtmlOutput.=$SpeakerHtmlOutput;
+
+				foreach ($roles as $rolesToshow) {
+					
+					if(count($arrayByRole[$rolesToshow])>1){
+						$roleLabel=$rolesToshow.'s';
+					}else{$roleLabel=$rolesToshow;}
+
+					if(!empty($arrayByRole[$rolesToshow])){
+						$presentationsHtmlOutput.='<div><span>'.ucwords($roleLabel).'</span>';
+
+						foreach ($arrayByRole[$rolesToshow] as $speakerData) {
+							$presentationsHtmlOutput.=$speakerData;
+						}
+
+						$presentationsHtmlOutput.='</div>';
+					}
+
+
+				}
+
+
+			
 
 			}
 		}

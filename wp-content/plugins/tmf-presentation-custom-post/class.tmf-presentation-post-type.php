@@ -47,7 +47,7 @@ if (!class_exists('tmf_presentation_Post_Type')) {
             );
             $args = array(
                 'label'               => __( 'Presentations_type', 'text_domain' ),
-                'menu_icon'           => 'dashicons-book',//ADD_PRESENTATION_POST_TYPE__PLUGIN_DIR.'/assets/img/Presentation_icon_16x16.png',
+                'menu_icon'           => 'dashicons-microphone',//ADD_PRESENTATION_POST_TYPE__PLUGIN_DIR.'/assets/img/Presentation_icon_16x16.png',
                 'description'         => __( 'Presentations', 'text_domain' ),
                 'public'              => true,
                 'show_ui'             => true,

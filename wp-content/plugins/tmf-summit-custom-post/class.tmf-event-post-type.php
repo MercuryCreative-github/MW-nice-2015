@@ -66,7 +66,7 @@ if (!class_exists('TMF_Summit_Post_Type')) {
                 'exclude_from_search' => false,
                 'publicly_queryable'  => true,
                 'capability_type'     => 'page',
-                'menu_icon'           => ADD_SUMMIT_POST_TYPE__PLUGIN_URL.'/assets/img/Summit_icon_16x16.png',
+                'menu_icon'           => 'dashicons-calendar-alt',//ADD_SUMMIT_POST_TYPE__PLUGIN_URL.'/assets/img/summit_icon_16x16.png',
                 'map_meta_cap' => true, // Set to false, if users are not allowed to edit/delete existing posts
                 'capabilities' => array(
                     // meta caps (don't assign these to roles)
