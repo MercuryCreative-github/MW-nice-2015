@@ -212,6 +212,12 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'sanitization_cb' => 'pw_select2_sanitise',
 
                     ),
+                    array(
+                        'name' => __('Revolution slider', 'cmb2'),
+                        'id'  => 'revolution_slider',
+                        'desc' => 'Please add the slider alis here.',
+                        'type' => 'text',
+                    ),
 
                     /*array(
                         'name' => 'Summit',
