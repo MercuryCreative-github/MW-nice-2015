@@ -215,8 +215,14 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                     array(
                         'name' => __('Revolution slider', 'cmb2'),
                         'id'  => 'revolution_slider',
-                        'desc' => 'Please add the slider alis here.',
+                        'desc' => 'Please add the slider alis here. Most used sliders: slider-internet-of-things, slider-customer-centricity-analytics, slider-managing-nfv-sdn, slider-business-innovation, slider-digital-operations',
                         'type' => 'text',
+                    ),
+                    array(
+                        'name' => 'Summit Color Picker',
+                        'id'   => $prefix . 'summit_colorpicker',
+                        'type' => 'colorpicker',
+                        'default'  => '#aa1c78',
                     ),
 
                     /*array(
