@@ -1102,6 +1102,12 @@
 }
 
 @media screen and (max-width: 675px){
+    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 675px){
     .section01-sponsors{display: none;}
 }
 
@@ -1784,6 +1790,13 @@
         padding: 12px 15px !important;
     }
 }
+
+@media only screen and (min-width: 700px) and (max-width: 760px){
+    #ui-id-1, #ui-id-2, #ui-id-3, #ui-id-4, #ui-id-5, #ui-id-6{
+        padding: 12px 10px !important;
+    }
+}
+
 @media screen and (max-width: 767px) {
     /*--------------*/
     /*---- HOME ----*/
@@ -3317,7 +3330,7 @@
 }
 @media screen and (max-width: 477px) {
     .ui-tabs .ui-tabs-nav li {
-        width: 20% !important;
+        /*width: 20% !important;*/
     }
 }
 @media screen and (max-width: 380px) {
@@ -3623,6 +3636,9 @@
     .call-to-action li.register-btn {
         float: right;
     }
+
+    #rev-slider-widget-126{margin-top: 64px;}
+
     /*.ui-tabs .ui-tabs-nav li {
         width: 20% !important;
     }*/

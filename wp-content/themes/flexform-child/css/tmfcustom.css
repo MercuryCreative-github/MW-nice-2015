@@ -76,10 +76,10 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .networking.page .networking-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #ee7630 !important;}
 .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
 	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 16px;
 	letter-spacing: 1px;
-	padding: 0 20px;
-	line-height: 44px;
+	padding: 12px 15px;
+	line-height: 32px;
 	margin: 0;
 }
 
