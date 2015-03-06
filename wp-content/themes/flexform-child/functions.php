@@ -487,6 +487,7 @@ if (!function_exists('custom_post_submission_newsletters_subscribe')) {
 function summits_shortcode_func( $atts ) {
 
     // OutPut functions START HERE. Please read last.
+    if (!function_exists('get_presentations')) {  
     function get_presentations($sessionStarts,$summit_slug,$sessionId){
 
     	// variables set
@@ -579,12 +580,11 @@ function summits_shortcode_func( $atts ) {
 				$presentationLink = get_permalink();
 
 				//Presentations output
-				$presentationsHtmlOutput.=$presentationStart.' - ';
+				$presentationsHtmlOutput.='<div class="summit-presentation">'.$presentationStart.' - ';
 				$presentationsHtmlOutput.=$presentationEnd.'<br>';
 				$presentationsHtmlOutput.='<a href="'.$presentationLink.'">';
 				$presentationsHtmlOutput.=$presentationTitle.'<br>';
 				$presentationsHtmlOutput.='</a>';
-
 				foreach ($roles as $rolesToshow) {
 					
 					if(count($arrayByRole[$rolesToshow])>1){
@@ -600,9 +600,8 @@ function summits_shortcode_func( $atts ) {
 
 						$presentationsHtmlOutput.='</div>';
 					}
-
-
 				}
+				$presentationsHtmlOutput.='</div>';
 
 
 			
@@ -614,12 +613,15 @@ function summits_shortcode_func( $atts ) {
 
 
 		return $presentationsHtmlOutput;
-	} // end get_presentations
+	}} // end get_presentations
 
+	if (!function_exists('get_chair')) {  
 	function get_chair($sessionChair){
 
 		// variables set
 		$chairHtmlOutput='';
+
+		if(is_string($sessionChair) && $sessionChair!=='')
 
 		// User query to get Chair
 		$user_query = new WP_User_Query( array( 'include' => $sessionChair ) );
@@ -644,8 +646,9 @@ function summits_shortcode_func( $atts ) {
 
 		wp_reset_query();
 		return $chairHtmlOutput;
-	}  // end get_chair
+	}}  // end get_chair
 
+	if (!function_exists('get_sponsors')) {  
 	function get_sponsors($sessionSponsors){
 
 		// variables set
@@ -665,7 +668,7 @@ function summits_shortcode_func( $atts ) {
 			wp_reset_query();
 			return $sponsorsHtmlOutput;
 
-	} // end get_sponsors
+	}} // end get_sponsors
 
     // OutPut functions FINISH HERE
    
@@ -725,8 +728,9 @@ function summits_shortcode_func( $atts ) {
 	$sessions.= '<div class="session-name">'.$sessionTitle.'</div>';
 	$sessions.= '<div class="session-chair">'.get_chair($sessionChair).'</div>';
 	$sessions.= '</div>';
-	$sessions.= '<div class="session-sponsor">'.get_sponsors($sessionSponsors).'</div><div class="clear"></div>';
-	$sessions.= '<div class="summit-presentation">'.get_presentations($sessionStarts,$summit_slug,$sessionId).'</div>';
+	$sessions.= '<div class="session-sponsor">'.get_sponsors($sessionSponsors).'</div>';
+	$sessions.= '<div class="clear"></div>';
+	$sessions.= '<div>'.get_presentations($sessionStarts,$summit_slug,$sessionId).'</div>';
 
 	$i++;
 	endwhile;
