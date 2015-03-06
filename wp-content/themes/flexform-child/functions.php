@@ -559,11 +559,10 @@ function summits_shortcode_func( $atts ) {
 
 								if($hasThisRole){
 									//speaker output to store
-									$SpeakerHtmlOutput ='<div class"singe-speaker">';
-									$SpeakerHtmlOutput.=$user->display_name;
-									$SpeakerHtmlOutput.=($userJobRole);
-									$SpeakerHtmlOutput.=' at '.$userCompanyName;
-									$SpeakerHtmlOutput.='</div>';
+									$SpeakerHtmlOutput.='<p>- '.$user->display_name.', ';
+									$SpeakerHtmlOutput.='<em>'.($userJobRole).'</em>, ';
+									$SpeakerHtmlOutput.=$userCompanyName;
+									$SpeakerHtmlOutput.='</p>';
 
 									// this array contains inside one array per role and inside each of them, the speakers data.
 									$arrayByRole[$role_to_update][]=$SpeakerHtmlOutput;
@@ -580,28 +579,31 @@ function summits_shortcode_func( $atts ) {
 				$presentationLink = get_permalink();
 
 				//Presentations output
-				$presentationsHtmlOutput.='<div class="summit-presentation">'.$presentationStart.' - ';
-				$presentationsHtmlOutput.=$presentationEnd.'<br>';
-				$presentationsHtmlOutput.='<a href="'.$presentationLink.'">';
-				$presentationsHtmlOutput.=$presentationTitle.'<br>';
-				$presentationsHtmlOutput.='</a>';
-				foreach ($roles as $rolesToshow) {
-					
-					if(count($arrayByRole[$rolesToshow])>1){
-						$roleLabel=$rolesToshow.'s';
-					}else{$roleLabel=$rolesToshow;}
-
-					if(!empty($arrayByRole[$rolesToshow])){
-						$presentationsHtmlOutput.='<div><span>'.ucwords($roleLabel).'</span>';
-
-						foreach ($arrayByRole[$rolesToshow] as $speakerData) {
-							$presentationsHtmlOutput.=$speakerData;
-						}
-
+				$presentationsHtmlOutput.='<div class="summit-presentation">';
+					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.get_sponsors($sessionColor).';">'.$presentationStart.'</div>';
+					$presentationsHtmlOutput.='<div class="presentation-info">';
+						$presentationsHtmlOutput.='<div class="presentation-title">';
+						$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
 						$presentationsHtmlOutput.='</div>';
-					}
-				}
-				$presentationsHtmlOutput.='</div>';
+						$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
+						foreach ($roles as $rolesToshow) {
+					
+							if(count($arrayByRole[$rolesToshow])>1){
+							$roleLabel=$rolesToshow.'s';
+							}else{$roleLabel=$rolesToshow;}
+
+								if(!empty($arrayByRole[$rolesToshow])){
+									$presentationsHtmlOutput.='<div class="presentation-speaker"><strong>'.ucwords($roleLabel).'</strong>';
+
+									foreach ($arrayByRole[$rolesToshow] as $speakerData) {
+										$presentationsHtmlOutput.=$speakerData;
+									}
+
+									$presentationsHtmlOutput.='</div>';
+							}
+						}
+					$presentationsHtmlOutput.='</div>'; //close presentation-info
+				$presentationsHtmlOutput.='</div>'; //close summit-presentation
 
 
 			
@@ -654,6 +656,8 @@ function summits_shortcode_func( $atts ) {
 		// variables set
 		$sponsorsHtmlOutput='';
 
+		if(is_array($sessionSponsors) && !empty($sessionSponsors) )
+
 		// sponsors get
 		foreach ($sessionSponsors as $sponsorId) {
 
@@ -664,10 +668,10 @@ function summits_shortcode_func( $atts ) {
 
 			//Sponsors output
 			$sponsorsHtmlOutput.='<a href="'.$sponsorUrl.'" target="_blank">'.$sponsorLogo.'</a>';
+
 		}
 			wp_reset_query();
 			return $sponsorsHtmlOutput;
-
 	}} // end get_sponsors
 
     // OutPut functions FINISH HERE
@@ -715,18 +719,19 @@ function summits_shortcode_func( $atts ) {
 	$sessionStarts = get_post_meta( $sessionId, $prefix . 'session_start_date',true);
 	$sessionChair = get_post_meta( $sessionId, $prefix . 'chair',true);
 	$sessionSponsors = get_post_meta( $sessionId, $prefix . 'sponsors',true);
-
+	$sessionColor = get_post_meta ( $sessionId, $prefix . 'summit_colorpicker',true);
+	$sessionIcon = get_post_meta ( $sessionId, $prefix . 'summit_image',true);
 
 	// If a new day stars, we write the DAY
 	if($storedDay!==date('l',$sessionStarts)){
 		$storedDay=date('l',$sessionStarts);
-		$sessions.= '<div class="summit-day"><p><img src="/wp-content/uploads/2015/02/icon-header-iot.png"/>'.$storedDay.'</p></div>';
+		$sessions.= '<div class="summit-day"><p><img src="'.$sessionIcon.'"/>'.$storedDay.'</p></div>';
 	}
 
 	// Sessions output depends on functions
 	$sessions.= '<div class="summit-session">';
 	$sessions.= '<div class="session-name">'.$sessionTitle.'</div>';
-	$sessions.= '<div class="session-chair">'.get_chair($sessionChair).'</div>';
+	$sessions.= '<div class="session-chair" style="color:'.$sessionColor.';">'.get_chair($sessionChair).'</div>';
 	$sessions.= '</div>';
 	$sessions.= '<div class="session-sponsor">'.get_sponsors($sessionSponsors).'</div>';
 	$sessions.= '<div class="clear"></div>';

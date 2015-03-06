@@ -230,11 +230,12 @@ a.sf-button.standard.register-agenda {
 .session-sponsor {float: right;}
 .session-sponsor img { height: 40px;}
 .session-name {margin-bottom: 0;text-transform: uppercase;font-weight: bold;}
-.session-chair {font-weight: bold;color: #8C1D81;}
+.session-chair {font-weight: bold;}
 .presentation-time {float: left;border-left: 3px solid #8C1C8F;padding-left: 20px;margin-right: 30px;}
 .presentation-info {float: left;width: 80%;}
 .presentation-title {font-weight: bold;font-size: 19px;}
 .presentation-subtitle {text-transform: uppercase;color: #B2B2B2;font-size: 15px;margin-bottom: 10px;}
+.page-content  .presentation-speaker p {margin-bottom: 5px;}
 
 /**************************/
 /******* HOME PAGE ********/
