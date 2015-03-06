@@ -525,6 +525,7 @@ function summits_shortcode_func( $atts ) {
 				$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
 				$presentationStart=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
 				$presentationEnd=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
+				$role_to_update='';
 
 
 				$roles=array('speaker','panelist','collaborator','facilitator','moderator');
