@@ -580,12 +580,11 @@ function summits_shortcode_func( $atts ) {
 				$presentationLink = get_permalink();
 
 				//Presentations output
-				$presentationsHtmlOutput.=$presentationStart.' - ';
+				$presentationsHtmlOutput.='<div class="summit-presentation">'.$presentationStart.' - ';
 				$presentationsHtmlOutput.=$presentationEnd.'<br>';
 				$presentationsHtmlOutput.='<a href="'.$presentationLink.'">';
 				$presentationsHtmlOutput.=$presentationTitle.'<br>';
 				$presentationsHtmlOutput.='</a>';
-
 				foreach ($roles as $rolesToshow) {
 					
 					if(count($arrayByRole[$rolesToshow])>1){
@@ -601,9 +600,8 @@ function summits_shortcode_func( $atts ) {
 
 						$presentationsHtmlOutput.='</div>';
 					}
-
-
 				}
+				$presentationsHtmlOutput.='</div>';
 
 
 			
@@ -730,8 +728,9 @@ function summits_shortcode_func( $atts ) {
 	$sessions.= '<div class="session-name">'.$sessionTitle.'</div>';
 	$sessions.= '<div class="session-chair">'.get_chair($sessionChair).'</div>';
 	$sessions.= '</div>';
-	$sessions.= '<div class="session-sponsor">'.get_sponsors($sessionSponsors).'</div><div class="clear"></div>';
-	$sessions.= '<div class="summit-presentation">'.get_presentations($sessionStarts,$summit_slug,$sessionId).'</div>';
+	$sessions.= '<div class="session-sponsor">'.get_sponsors($sessionSponsors).'</div>';
+	$sessions.= '<div class="clear"></div>';
+	$sessions.= '<div>'.get_presentations($sessionStarts,$summit_slug,$sessionId).'</div>';
 
 	$i++;
 	endwhile;
