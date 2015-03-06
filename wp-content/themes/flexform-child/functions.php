@@ -487,6 +487,7 @@ if (!function_exists('custom_post_submission_newsletters_subscribe')) {
 function summits_shortcode_func( $atts ) {
 
     // OutPut functions START HERE. Please read last.
+    if (!function_exists('get_presentations')) {  
     function get_presentations($sessionStarts,$summit_slug,$sessionId){
 
     	// variables set
@@ -614,7 +615,7 @@ function summits_shortcode_func( $atts ) {
 
 
 		return $presentationsHtmlOutput;
-	} // end get_presentations
+	}} // end get_presentations
 
 	function get_chair($sessionChair){
 
