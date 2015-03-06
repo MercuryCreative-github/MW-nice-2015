@@ -10,7 +10,7 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 									'posts_per_page' 	 => -1,
 									'orderby'          => 'post_date',
 									'order'            => 'DESC',
-									'post_type'        => 'presentations',
+									'post_type'        => 'agenda_tracks',
 									'post_status'      => 'publish'
 								);									
 	$presentations = get_posts( $args );
