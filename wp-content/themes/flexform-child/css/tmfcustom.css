@@ -238,6 +238,10 @@ a.sf-button.standard.register-agenda {
 .presentation-subtitle {text-transform: uppercase;color: #B2B2B2;font-size: 15px;margin-bottom: 10px;}
 .page-content  .presentation-speaker p {margin-bottom: 5px;}
 
+/*Presentation Page*/
+
+.single-presentation {margin-top: 45px;}
+
 /**************************/
 /******* HOME PAGE ********/
 /**************************/

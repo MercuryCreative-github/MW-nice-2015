@@ -222,7 +222,7 @@
 								?>
 
 
-								<h2><?php the_title(); echo '<br> <small>'.$subtitle.'</small>'; ?> </h2>
+								<div class="single-presentation"><?php '<h3>'.the_title(); echo '</h3> <div class="presentation-subtitle">'.$subtitle.'</div>'; ?> </div>
 
 
 								<?php the_content();?>
@@ -262,9 +262,9 @@
 					foreach ( $user_query->results as $user ) {
 						$sid = $user->ID;
 						$avatar = $user->image;
-						$avatar = '<hr><a href="/speaker-profile/?id='.$sid.'">'.wp_get_attachment_image($avatar).'</a>';
+						$avatar = '<hr>'.wp_get_attachment_image($avatar);
 						//$avatar = ''; // borra esta linea para que aparezca el avatar
-						$nameSp = '<div class="speakerSidebar">' . $user->first_name.' '.$user->last_name;
+						$nameSp = '<div class="speakerSidebar"><a href="/speaker-profile/?id='.$sid.'">' . $user->first_name.' '.$user->last_name.'</a>';
 						
 						// New mapping of user and companies with job role
 						// Get companies and job role
@@ -449,7 +449,7 @@
 			<aside class="sidebar right-sidebar span4">
 
 				<div id="calendar_widget" class="widget calendar_widget">
-				<?php echo '<div class="widget-heading clearfix"style="margin-top:45px"><h4>Also in this session</h4></div>'.$sidebarSchedule; ?>
+				<?php echo '<div class="widget-heading clearfix"style="margin-top:45px"><h4>Also in this <strong>session</strong></h4></div>'.$sidebarSchedule; ?>
 				</div>
 
 				
