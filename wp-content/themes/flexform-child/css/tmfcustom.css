@@ -225,8 +225,9 @@ a.sf-button.standard.register-agenda {
 	padding-top: 5px;
 }
 .summit-day img {height: 40px; margin-right: 15px;}
-.summit-session {margin-bottom: 30px;float: left;width: 65%;}
-.summit-presentation {border-bottom: 1px solid #797979; margin-bottom: 20px;;padding: 10px;display: table;width: 100%;}
+.summit-day p {margin-bottom: 5px;}
+.summit-session {margin-bottom: 30px;padding: 10px;background-color: #F2F2F2;}
+.summit-presentation {border-bottom: 1px solid #ADADAD; margin-bottom: 20px;;padding: 10px;display: table;width: 100%;}
 .summit-presentation:last-child{border-bottom: none;}
 .session-sponsor {float: right; width: 35%; text-align: right;}
 .session-sponsor img { width: 70px;}

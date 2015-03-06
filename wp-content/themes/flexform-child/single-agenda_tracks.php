@@ -451,7 +451,7 @@
 			<aside class="sidebar right-sidebar span4">
 
 				<div id="calendar_widget" class="widget calendar_widget">
-				<?php echo '<div class="widget-heading clearfix"style="margin-top:45px"><h4>Also in this <strong>session</strong></h4></div>'.$sidebarSchedule; ?>
+				<?php echo '<div class="widget-heading clearfix"style="margin-top:45px"><h4><strong>Presentation</strong> Schedule</h4></div>'.$sidebarSchedule; ?>
 				</div>
 
 				
