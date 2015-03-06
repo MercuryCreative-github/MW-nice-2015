@@ -523,8 +523,8 @@ function summits_shortcode_func( $atts ) {
 				$presentationToCheckId=get_the_ID();
 				$presentationTitle=get_the_title();
 				$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
-				$presentationStart=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
-				$presentationEnd=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
+				$presentationStart=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+				$presentationEnd=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
 				$role_to_update='';
 
 
