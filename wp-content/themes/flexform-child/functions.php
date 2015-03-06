@@ -488,7 +488,7 @@ function summits_shortcode_func( $atts ) {
 
     // OutPut functions START HERE. Please read last.
     if (!function_exists('get_presentations')) {  
-    function get_presentations($sessionStarts,$summit_slug,$sessionId){
+    function get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor){
 
     	// variables set
     	$presentationsHtmlOutput='';
@@ -583,7 +583,7 @@ function summits_shortcode_func( $atts ) {
 
 				//Presentations output
 				$presentationsHtmlOutput.='<div class="summit-presentation">';
-					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.get_sponsors($sessionColor).';">'.$presentationStart.'</div>';
+					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
 					$presentationsHtmlOutput.='<div class="presentation-info">';
 						$presentationsHtmlOutput.='<div class="presentation-title">';
 						$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
@@ -738,7 +738,7 @@ function summits_shortcode_func( $atts ) {
 	$sessions.= '</div>';
 	$sessions.= '<div class="session-sponsor">'.get_sponsors($sessionSponsors).'</div>';
 	$sessions.= '<div class="clear"></div>';
-	$sessions.= '<div>'.get_presentations($sessionStarts,$summit_slug,$sessionId).'</div>';
+	$sessions.= '<div>'.get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor).'</div>';
 
 	$i++;
 	endwhile;
