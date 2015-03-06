@@ -109,6 +109,13 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'sanitization_cb' => 'pw_select2_sanitise',
                     ),
                     array(
+                        'name' => 'Summit Color Picker',
+                        'id'   => $prefix . 'summit_colorpicker',
+                        'desc' => 'Please add the summit main color. Customer Centricity & Analytics: #F3A626; Internet of Things: #AA1C78; Managing NFV-SDN: #7DB342; Business Innovation: #225F91; Digital Operations: #27ABB2',
+                        'type' => 'colorpicker',
+                        'default'  => '#AA1C78',
+                    ),
+                    array(
                         'name' => 'Summit icon',
                         'desc' => 'Upload the summit icon image.',
                         'id' => $prefix . 'summit_image',
@@ -226,13 +233,6 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'id'  => 'revolution_slider',
                         'desc' => 'Please add the slider alis here. Most used sliders: slider-internet-of-things, slider-customer-centricity-analytics, slider-managing-nfv-sdn, slider-business-innovation, slider-digital-operations',
                         'type' => 'text',
-                    ),
-                    array(
-                        'name' => 'Summit Color Picker',
-                        'id'   => $prefix . 'summit_colorpicker',
-                        'desc' => 'Please add the summit main color. Customer Centricity & Analytics: #F3A626; Internet of Things: #AA1C78; Managing NFV-SDN: #7DB342; Business Innovation: #225F91; Digital Operations: #27ABB2',
-                        'type' => 'colorpicker',
-                        'default'  => '#AA1C78',
                     ),
                     /*array(
                         'name' => 'Summit',

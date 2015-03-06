@@ -717,7 +717,7 @@ function summits_shortcode_func( $atts ) {
 	// If a new day stars, we write the DAY
 	if($storedDay!==date('l',$sessionStarts)){
 		$storedDay=date('l',$sessionStarts);
-		$sessions.= '<div class="summit-day"><img src="/wp-content/uploads/2015/02/icon-header-iot.png"/><p>'.$storedDay.'</p></div>';
+		$sessions.= '<div class="summit-day"><p><img src="/wp-content/uploads/2015/02/icon-header-iot.png"/>'.$storedDay.'</p></div>';
 	}
 
 	// Sessions output depends on functions
@@ -725,7 +725,7 @@ function summits_shortcode_func( $atts ) {
 	$sessions.= '<div class="session-name">'.$sessionTitle.'</div>';
 	$sessions.= '<div class="session-chair">'.get_chair($sessionChair).'</div>';
 	$sessions.= '</div>';
-	$sessions.= '<div class="session-sponsor">'.get_sponsors($sessionSponsors).'</div>';
+	$sessions.= '<div class="session-sponsor">'.get_sponsors($sessionSponsors).'</div><div class="clear"></div>';
 	$sessions.= '<div class="summit-presentation">'.get_presentations($sessionStarts,$summit_slug,$sessionId).'</div>';
 
 	$i++;
