@@ -47,13 +47,13 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 					$filter = $filter->name;
 			};
 			if ($filter == 'Monday') {
-				$filter = '12/08/2014';
+				$filter = '06/01/2015';
 			}elseif ($filter == 'Tuesday') {
-				$filter = '12/09/2014';
+				$filter = '06/02/2015';
 			}elseif ($filter == 'Wednesday') {
-				$filter = '12/10/2014';
+				$filter = '06/03/2015';
 			}elseif ($filter == 'Thursday') {
-				$filter = '12/11/2014';
+				$filter = '06/04/2015';
 			};
 			$session .= '<startTime>' . $filter . ' ' . $startTime . '</startTime>';
 			$session .= '<endTime>' . $filter . ' ' . $endTime . '</endTime>';
