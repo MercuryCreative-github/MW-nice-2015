@@ -493,6 +493,8 @@ function summits_shortcode_func( $atts ) {
     	// variables set
     	$presentationsHtmlOutput='';
 
+    	$arrayByRole=array();
+
     	$args = array(
 			'post_type'  => 'agenda_tracks',
 			'meta_key'	 => '_TMF_presentations_start_date',
