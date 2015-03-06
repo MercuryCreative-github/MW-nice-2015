@@ -157,6 +157,8 @@
 								<?php
 
 
+
+
 									$forumId = get_post_meta(get_the_ID(), '_TMF_presentation_session', true);
 									$forumLink = get_permalink($forumId);
 
@@ -262,7 +264,7 @@
 					foreach ( $user_query->results as $user ) {
 						$sid = $user->ID;
 						$avatar = $user->image;
-						$avatar = '<hr>'.wp_get_attachment_image($avatar);
+						$avatar = wp_get_attachment_image($avatar);
 						//$avatar = ''; // borra esta linea para que aparezca el avatar
 						$nameSp = '<div class="speakerSidebar"><a href="/speaker-profile/?id='.$sid.'">' . $user->first_name.' '.$user->last_name.'</a>';
 						
@@ -327,15 +329,15 @@
 				} 
 
 				if($speakerCount>1){$s='s';}else{$s='';}
-				if($speakersDisplay!==''){$speakersDisplay='<div class="home-titles"><h4>Speaker'.$s.':</h4></div>'.$speakersDisplay.'</br>';}; // cambiar strong por h1
+				if($speakersDisplay!==''){$speakersDisplay='<h4>Speaker'.$s.':</h4>'.$speakersDisplay.'</br>';}; // cambiar strong por h1
 				if($moderatorcount>1){$s='s';}else{$s='';};
-				if($moderatorsDisplay!==''){$moderatorsDisplay='<div class="home-titles"><h4>Moderator'.$s.':</h4></div>'.$moderatorsDisplay.'</br>';};// cambiar strong por h1
+				if($moderatorsDisplay!==''){$moderatorsDisplay='<h4>Moderator'.$s.':</h4>'.$moderatorsDisplay.'</br>';};// cambiar strong por h1
 				if($panelistCount>1){$s='s';}else{$s='';};
-				if($panelistsDisplay!==''){$panelistsDisplay='<div class="home-titles"><h4>Panelist'.$s.':</h4></div>'.$panelistsDisplay.'</br>';};// cambiar strong por h1
+				if($panelistsDisplay!==''){$panelistsDisplay='<h4>Panelist'.$s.':</h4>'.$panelistsDisplay.'</br>';};// cambiar strong por h1
 				if($facilitatorCount>1){$s='s';}else{$s='';};
-				if($facilitatorDisplay!==''){$facilitatorDisplay='<div class="home-titles"><h4>Facilitator'.$s.':</h4></div>'.$facilitatorDisplay.'</br>';};// cambiar strong por h1
+				if($facilitatorDisplay!==''){$facilitatorDisplay='<h4>Facilitator'.$s.':</h4>'.$facilitatorDisplay.'</br>';};// cambiar strong por h1
 				if($collaboratorCount>1){$s='s';}else{$s='';};
-				if($collaboratorDisplay!==''){$collaboratorDisplay='<div class="home-titles"><h4>Collaborator'.$s.':</h4></div>'.$collaboratorDisplay.'</br>';};// cambiar strong por h1
+				if($collaboratorDisplay!==''){$collaboratorDisplay='<h4>Collaborator'.$s.':</h4>'.$collaboratorDisplay.'</br>';};// cambiar strong por h1
 
 				echo $speakersDisplay.$moderatorsDisplay.$panelistsDisplay.$facilitatorDisplay.$collaboratorDisplay;
 

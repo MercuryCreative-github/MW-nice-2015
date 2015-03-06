@@ -1663,7 +1663,7 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 .fluid-width-video-wrapper{border-bottom:4px solid #b2b2b2;}
 .flare-horizontal.flare-position-bottom{position:absolute;bottom:40px;right:5%;}
 .single-agenda_tracks .flare-horizontal.flare-position-bottom{bottom:0px;right:0;position: relative;}
-.seeMoreForum{font-weight: bold;font-size: 85%;bottom: 40px;z-index: 1;position: relative;display: inline-block;}
+.seeMoreForum{font-weight: bold;font-size: 85%;z-index: 1;position: relative;display: inline-block;}
 .news-coverage .flare-horizontal.flare-position-bottom{position:relative;bottom:0;right:0;}
 .article-body-wrap{position:relative;}
 .video-player-page .related-wrap h4{font-family:"Titillium Web",sans-serif;border:none;font-size:26px;padding-bottom:30px;font-weight:600;}
