@@ -617,10 +617,13 @@ function summits_shortcode_func( $atts ) {
 		return $presentationsHtmlOutput;
 	}} // end get_presentations
 
+	if (!function_exists('get_chair')) {  
 	function get_chair($sessionChair){
 
 		// variables set
 		$chairHtmlOutput='';
+
+		if(is_string($sessionChair) && $sessionChair!=='')
 
 		// User query to get Chair
 		$user_query = new WP_User_Query( array( 'include' => $sessionChair ) );
@@ -645,8 +648,9 @@ function summits_shortcode_func( $atts ) {
 
 		wp_reset_query();
 		return $chairHtmlOutput;
-	}  // end get_chair
+	}}  // end get_chair
 
+	if (!function_exists('get_sponsors')) {  
 	function get_sponsors($sessionSponsors){
 
 		// variables set
@@ -666,7 +670,7 @@ function summits_shortcode_func( $atts ) {
 			wp_reset_query();
 			return $sponsorsHtmlOutput;
 
-	} // end get_sponsors
+	}} // end get_sponsors
 
     // OutPut functions FINISH HERE
    
