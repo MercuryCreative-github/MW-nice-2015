@@ -1,8 +1,8 @@
 @charset"utf-8";
 @media screen and (min-width: 1200px) {
-    body > #container #mini-header > .container {
+    /*body > #container #mini-header > .container {
         width: 1140px !important;
-    }
+    }*/
     body [class*="span"] {
         margin-left: 20px;
     }
@@ -124,7 +124,7 @@
     }
     nav .menu li a {
         margin: 0 10px 0 10px;
-        padding: 3px 3px;
+        padding: 4px 15px;
     }
 }
 @media screen and (min-width: 1250px) {
@@ -145,6 +145,7 @@
 
     /*footer*/
     .container #footer-widgets .span3:first-child {margin-left: 0;}
+    
 }
 @media screen and (max-width: 1200px) {
 
@@ -254,7 +255,14 @@
     .textwidget a.sf-button.standard.download-agenda.a-glance {width: 100%;padding: 15px 0 15px 0;}
     .textwidget a.sf-button.standard.register-agenda span, .textwidget a.download-agenda.a-glance span {margin-left: 10px;}
     .textwidget a.sf-button.medium.yellow.register-agenda {width: 100%;padding: 10px 0;}
+
+    #mini-header .container{width: 85%;}
 }
+
+@media screen and (max-width: 1120px){
+    #mini-header .container{width: 88%;}
+}
+
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
         padding-left: 10px;
@@ -292,6 +300,10 @@
     .section01-info {padding: 10px;margin: auto;}
     .section01 .cell {background: rgba(0, 7, 11, 0.62);}
     .section03-bottom ul {padding: 15px 10px;}
+    #mini-header .container{
+        width: 96%;
+        margin: 0 2%;
+    }
 }
 @media screen and (max-width: 1024px) {
     /*uber menu
@@ -1250,6 +1262,7 @@
     nav#agenda-navigation .menu li {
         width: 49.6%;
     }
+
     nav#mediacenter-navigation .menu li {
         width: 49.6%;
     }

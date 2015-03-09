@@ -1724,7 +1724,7 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 .logo-left.clearfix nav .menu li.registerOnMenu:hover{background-color: #E2740B;}
 .logo-left.clearfix nav .menu li.registerOnMenu:hover a{background-color: transparent;}
 .logo-left.clearfix nav .menu li.registerOnMenu a {color: #fff;}
-.logo-left.clearfix nav .menu li:last-child a {margin-right: 0;height: 25px;}
+.logo-left.clearfix nav .menu li:last-child a {margin-right: 0;/*height: 25px*/;}
 .home-page-at-the-event .inner-page-wrap{position:relative;margin-top:0;}
 .home-page-at-the-event .view-all-videos{position:absolute;top:32px;right:0;z-index:10;}
 .view-all-videos a.view-all-button.span3, .view-all-videos a.view-all-button.span4{float:right;}
@@ -2930,3 +2930,30 @@ line-height: 1.4em;
 
 .cell{display:table-cell;vertical-align: middle;}
 .section01 .cell{vertical-align: top;}
+
+.mini-nav-wrap{
+	margin: 0;
+	padding: 18px 0;
+	width: auto !important;
+	float: right;
+}
+
+#mini-logo{
+	width: 14%;
+}
+
+#logo a, #mini-logo a{
+	margin-right: 0;
+	width: 190px;
+}
+
+#mini-navigation a{
+	padding: 4px 15px;
+}
+
+#mini-logo img{
+	width: 180px !important;
+}
+
+#mini-header .mini-nav-wrap{float: right;}
+#mini-header .container{margin: 0 50px;}
