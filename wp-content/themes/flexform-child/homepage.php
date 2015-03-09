@@ -118,7 +118,7 @@ Template Name: Home Page
 	</div>
 </section>
 
-<section id="hp-section">
+<section id="hp-section" class="hp-section02">
 	<div class="cell">
 		<div class="sec-main-content">
 			<div class="section02">
@@ -148,6 +148,7 @@ Template Name: Home Page
 				</ul>
 			</div>
 		</div>
+		<div class="to-remove-position-absolute"></div>
 		<div class="pricing-call-out">
 			<a class="pricing-call-out-content" href="/passes-pricing/">
 				<div class="pricing-call-text"><span class="call-text-big">DON’T DELAY!</span><br/>Registration prices increase March 13!</div>
