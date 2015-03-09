@@ -490,11 +490,6 @@ function summits_shortcode_func( $atts ) {
     if (!function_exists('get_presentations')) {  
     function get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor){
 
-    	// variables set
-    	$presentationsHtmlOutput='';
-
-    	$arrayByRole=array();
-
     	$args = array(
 			'post_type'  => 'agenda_tracks',
 			'meta_key'	 => '_TMF_presentations_start_date',
@@ -518,6 +513,13 @@ function summits_shortcode_func( $atts ) {
 
 			while ( $presentationToCheck->have_posts() ) {
 
+				// variables unset
+				unset($arrayByRole);
+				$arrayByRole = array();
+				$presentationsHtmlOutput='';
+				$SpeakerHtmlOutput='';
+				$speacificArray='';
+
 				// needed variables				
 				$presentationToCheck->the_post();
 				$presentationToCheckId=get_the_ID();
@@ -530,17 +532,16 @@ function summits_shortcode_func( $atts ) {
 
 				$roles=array('speaker','panelist','collaborator','facilitator','moderator');
 
-				$SpeakerHtmlOutput='';
-				
+
 				foreach ($roles as $role_to_update) {
 
 					$role_to_fetch=	$role_to_update.'s_meta';
-
 					$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
 
 
 					if(count($presentationSpeakers)>1){
 					
+						$speacificArray=$role_to_update;
 
 						foreach ( $presentationSpeakers as $presentationSpeaker ) {
 
@@ -560,6 +561,8 @@ function summits_shortcode_func( $atts ) {
 							if(is_array($userMeta)){
 								$hasThisRole=in_array($presentationToCheckId,$userMeta);
 
+								$SpeakerHtmlOutput='';
+
 								if($hasThisRole){
 									//speaker output to store
 									$SpeakerHtmlOutput.='<p>- '.$user->display_name.', ';
@@ -568,7 +571,7 @@ function summits_shortcode_func( $atts ) {
 									$SpeakerHtmlOutput.='</p>';
 
 									// this array contains inside one array per role and inside each of them, the speakers data.
-									$arrayByRole[$role_to_update][]=$SpeakerHtmlOutput;
+									$arrayByRole[$speacificArray][]=$SpeakerHtmlOutput;
 
 								}
 							}
@@ -607,9 +610,6 @@ function summits_shortcode_func( $atts ) {
 						}
 					$presentationsHtmlOutput.='</div>'; //close presentation-info
 				$presentationsHtmlOutput.='</div>'; //close summit-presentation
-
-
-			
 
 			}
 		}
