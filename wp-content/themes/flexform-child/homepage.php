@@ -118,37 +118,44 @@ Template Name: Home Page
 	</div>
 </section>
 
-<section id="hp-section">
+<section id="hp-section" class="hp-section02">
 	<div class="cell">
-	<div class="sec-main-content">
-	<div class="section02">
-		<div class="title-green"><h1>The Event</h1></div>
-		<div class="section02-info">
-			<div class="section02-text">Connect and network with the who’s who of the digital ecosystem in a unique, collaborative environment to develop solutions to key digital business challenges and put profitable strategies into play. Focused on actionable outcomes, you’ll experience essential case studies, live proof-of-concept demos, and thought-provoking discussion and debate with your business and IT peers. Make it real!
-				<br/><a href="/passes-pricing/" class="sf-button large orange standard">Register Now</a>
+		<div class="sec-main-content">
+			<div class="section02">
+				<div class="title-green"><h1>The Event</h1></div>
+				<div class="section02-info">
+					<div class="section02-text">Connect and network with the who’s who of the digital ecosystem in a unique, collaborative environment to develop solutions to key digital business challenges and put profitable strategies into play. Focused on actionable outcomes, you’ll experience essential case studies, live proof-of-concept demos, and thought-provoking discussion and debate with your business and IT peers. Make it real!
+						<br/><a href="/passes-pricing/" class="sf-button large orange standard">Register Now</a>
+					</div>
+					<div class="section02-list">
+						<ul>
+							<li><img src="/wp-content/uploads/2015/02/event-icon02.png"><p class="list-text"><strong>6 SUMMITS</strong></p></li>
+							<li><img src="/wp-content/uploads/2015/02/event-icon01.png"><p class="list-text"><strong>100+</strong> SESSIONS, WORKSHOPS AND DEMOS</p></li>
+							<li><img src="/wp-content/uploads/2015/02/event-icon03.png"><p class="list-text"><strong>30+ HOURS</strong> OF NETWORKING</p></li>
+							<li><img src="/wp-content/uploads/2015/02/event-icon04.png"><p class="list-text"><strong>200+</strong> SPEAKERS</p></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
 			</div>
-			<div class="section02-list">
+			<div class="section02-companies">
 				<ul>
-					<li><img src="/wp-content/uploads/2015/02/event-icon02.png"><p class="list-text"><strong>6 SUMMITS</strong></p></li>
-					<li><img src="/wp-content/uploads/2015/02/event-icon01.png"><p class="list-text"><strong>100+</strong> SESSIONS, WORKSHOPS AND DEMOS</p></li>
-					<li><img src="/wp-content/uploads/2015/02/event-icon03.png"><p class="list-text"><strong>30+ HOURS</strong> OF NETWORKING</p></li>
-					<li><img src="/wp-content/uploads/2015/02/event-icon04.png"><p class="list-text"><strong>200+</strong> SPEAKERS</p></li>
+					<li><img src="/wp-content/uploads/2015/02/icon-speaker-squard.png"><p>Companies currently <br/>speaking at <strong>TM Forum Live!</strong></p></li>
+					<li><img src="/wp-content/uploads/2015/02/British-Gas-logo.png"></li>
+					<li><img src="/wp-content/uploads/2015/02/Telefonica-Logo.png"></li>
+					<li><img src="/wp-content/uploads/2015/02/logo-google-hp.png"></li>
+					<li><img src="/wp-content/uploads/2015/02/vodafone-mobile-logo.png"></li>
 				</ul>
 			</div>
-			<div class="clear"></div>
+		</div>
+		<div class="to-remove-position-absolute"></div>
+		<div class="pricing-call-out">
+			<a class="pricing-call-out-content" href="/passes-pricing/">
+				<div class="pricing-call-text"><span class="call-text-big">DON’T DELAY!</span><br/>Registration prices increase March 13!</div>
+				<div class="pricing-call-icon"><img src="/wp-content/uploads/2015/03/icon-register-banner.png"/></div>			
+			</a>
 		</div>
 	</div>
-		<div class="section02-companies">
-			<ul>
-				<li><img src="/wp-content/uploads/2015/02/icon-speaker-squard.png"><p>Companies currently <br/>speaking at <strong>TM Forum Live!</strong></p></li>
-				<li><img src="/wp-content/uploads/2015/02/British-Gas-logo.png"></li>
-				<li><img src="/wp-content/uploads/2015/02/Telefonica-Logo.png"></li>
-				<li><img src="/wp-content/uploads/2015/02/logo-google-hp.png"></li>
-				<li><img src="/wp-content/uploads/2015/02/vodafone-mobile-logo.png"></li>
-			</ul>
-		</div>
-		</div>
-		</div>
 </section>
 
 <section id="hp-section" class="section03">
