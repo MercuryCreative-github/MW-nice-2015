@@ -488,6 +488,7 @@ function summits_shortcode_func( $atts ) {
 
 	// var set and unset
 	$SpeakerHtmlOutput='';
+	$presentationsHtmlOutput='';
 
     // OutPut functions START HERE. Please read last.
     if (!function_exists('get_presentations')) {  
@@ -519,7 +520,6 @@ function summits_shortcode_func( $atts ) {
 				// variables unset
 				unset($arrayByRole);
 				$arrayByRole = array();
-				$presentationsHtmlOutput='';
 				$speacificArray='';
 
 				// needed variables				
