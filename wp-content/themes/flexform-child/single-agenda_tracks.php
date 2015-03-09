@@ -221,6 +221,15 @@
 
 									// define subtitle
 									$subtitle= get_post_meta(get_the_ID(),'_TMF_presentations_subtitle',true);
+
+									// needed variables
+									$sessionId = get_the_ID();
+									$prefix = '_TMF_';
+									$sessionColor = get_post_meta ( $sessionId, $prefix . 'summit_colorpicker',true);
+									$sessionsColorOnPresentations = get_presentations($sessionColor);
+
+									return $sessionsColorOnPresentations;
+
 								?>
 
 
@@ -229,37 +238,6 @@
 								<?php the_content();?>
 								
 								<?php //get color of the session
-
-								function select_color($sessionColor){
-								$args = array(
-									'post_type' 	=> 'tmf_sessions',
-									'tax_query'		=> array(
-											array(
-												'taxonomy' => 'tmf_summit_category',
-												'value'   => $sessionId,
-												'field'    => 'slug',
-											),
-										), 
-									);
-									// WP Query
-									$loop = new WP_Query( $args );
-
-									// Variables set
-									$sessions='';
-								
-									while ( $loop->have_posts() ) : $loop->the_post();
-									
-									// needed variables
-									$sessionId = get_the_ID();
-									$prefix = '_TMF_';
-									$sessionColor = get_post_meta ( $sessionId, $prefix . 'summit_colorpicker',true);
-									$sessions = get_presentations($sessionColor);
-
-									$i++;
-									endwhile;
-									wp_reset_query();
-									return $sessions;
-								}
 
 								?>
 
