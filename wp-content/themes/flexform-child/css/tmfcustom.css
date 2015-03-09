@@ -361,7 +361,7 @@ p.list-text, .section02-companies li {
 
 /*banner pricing*/
 .pricing-call-out {background: #F8AE1E;}
-.pricing-call-out-content {width: 1230px;margin: 0 auto;padding: 20px 0;}
+a .pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display: block;}
 .pricing-call-text {
 	float: left;
 	margin-right: 70px;
