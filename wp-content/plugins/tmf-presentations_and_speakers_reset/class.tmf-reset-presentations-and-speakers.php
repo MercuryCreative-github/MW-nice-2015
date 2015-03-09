@@ -43,39 +43,39 @@ if (!class_exists('tmf_reset_presentations_and_speakers')) {
 
         	if ( $presentationToAdd->have_posts() ) {
 
-			while ( $presentationToAdd->have_posts() ) {
+				while ( $presentationToAdd->have_posts() ) {
 
-				$presentationToAdd->the_post();
-				$presentationToAddId=get_the_ID();
+					$presentationToAdd->the_post();
+					$presentationToAddId=get_the_ID();
 
-				foreach ($roles as $role_to_update) {
+					foreach ($roles as $role_to_update) {
 
-				delete_post_meta( $presentationToAddId, $role_to_update.'s_meta');
-				add_post_meta( $presentationToAddId, $role_to_update.'s_meta',  $emptyArray);
+					delete_post_meta( $presentationToAddId, $role_to_update.'s_meta');
+					add_post_meta( $presentationToAddId, $role_to_update.'s_meta',  $emptyArray);
+
+					}
+
 
 				}
 
-
 			}
 
-		}
+	       	// Reset Users
+	        	$user_query = new WP_User_Query( array( 'role' => 'Speaker' ) );
 
-       	// Reset Users
-        	$user_query = new WP_User_Query( array( 'role' => 'Speaker' ) );
-
-		
-        	if ( ! empty( $user_query->results ) ) {
-					foreach ( $user_query->results as $user ) {
-
-						foreach ($roles as $role_to_update) {
-							delete_user_meta( $user->ID, $role_to_update.'_at');
-							add_user_meta( $user->ID, $role_to_update.'_at', $emptyArray);
-
-						}
 			
-					}
+	        	if ( ! empty( $user_query->results ) ) {
+						foreach ( $user_query->results as $user ) {
+
+							foreach ($roles as $role_to_update) {
+								delete_user_meta( $user->ID, $role_to_update.'_at');
+								add_user_meta( $user->ID, $role_to_update.'_at', $emptyArray);
+
+							}
+				
+						}
+				}
 			}
-		}
 
         
     }
