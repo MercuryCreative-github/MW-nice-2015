@@ -157,12 +157,14 @@
 								<?php
 
 
-
-
 									$forumId = get_post_meta(get_the_ID(), '_TMF_presentation_session', true);
+									echo $forumId;
 									$forumLink = get_permalink($forumId);
 
 									$forum = '<a href="'.$forumLink.'">'.get_the_title( $forumId ).'</a>';
+
+									// define color of the session
+									$sessionColor= get_post_meta($forumId,'_TMF_summit_colorpicker',true);
 
 									//manage time of the presentation
 									$sessionId= get_post_meta(get_the_ID(), '_TMF_presentation_session', true);
@@ -221,8 +223,6 @@
 
 									// define subtitle
 									$subtitle= get_post_meta(get_the_ID(),'_TMF_presentations_subtitle',true);
-									// define color of the session
-									$sessionColor= get_post_meta($forumId,'_TMF_summit_colorpicker',true);
 
 								?>
 
@@ -235,7 +235,7 @@
 
 								?>
 
-								<p class="seeMoreForum">> See more from <span style="color:<?php $sessionColor ?>;"><?php echo $forum; echo $sessionColor; echo $forumId; ?></span></p>
+								<p class="seeMoreForum">> See more from <span style="color:<?php $sessionColor; ?>;"><?php echo $forum; echo $sessionColor; echo $forumId; ?></span></p>
 								
 
 								<div class="link-pages"><?php wp_link_pages(); ?></div>
