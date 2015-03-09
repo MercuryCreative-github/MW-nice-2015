@@ -138,21 +138,23 @@ Template Name: Home Page
 			<div class="clear"></div>
 		</div>
 	</div>
-		<div class="section02-companies">
-			<ul>
-				<li><img src="/wp-content/uploads/2015/02/icon-speaker-squard.png"><p>Companies currently <br/>speaking at <strong>TM Forum Live!</strong></p></li>
-				<li><img src="/wp-content/uploads/2015/02/British-Gas-logo.png"></li>
-				<li><img src="/wp-content/uploads/2015/02/Telefonica-Logo.png"></li>
-				<li><img src="/wp-content/uploads/2015/02/logo-google-hp.png"></li>
-				<li><img src="/wp-content/uploads/2015/02/vodafone-mobile-logo.png"></li>
-			</ul>
-		</div>
-		<div class="pricing-call-out"><a href="/passes-pricing/">
+	<div class="section02-companies">
+		<ul>
+			<li><img src="/wp-content/uploads/2015/02/icon-speaker-squard.png"><p>Companies currently <br/>speaking at <strong>TM Forum Live!</strong></p></li>
+			<li><img src="/wp-content/uploads/2015/02/British-Gas-logo.png"></li>
+			<li><img src="/wp-content/uploads/2015/02/Telefonica-Logo.png"></li>
+			<li><img src="/wp-content/uploads/2015/02/logo-google-hp.png"></li>
+			<li><img src="/wp-content/uploads/2015/02/vodafone-mobile-logo.png"></li>
+		</ul>
+	</div>
+	</div>
+	<div class="pricing-call-out">
+		<a class="pricing-call-out-content" href="/passes-pricing/">
 			<div class="pricing-call-text"><span class="call-text-big">DON’T DELAY!</span><br/>Registration prices increase March 13!</div>
 			<div class="pricing-call-icon"><img src="/wp-content/uploads/2015/03/icon-register-banner.png"/></div>			
-		</a></div>
-		</div>
-		</div>
+		</a>
+	</div>
+	</div>
 </section>
 
 <section id="hp-section" class="section03">
