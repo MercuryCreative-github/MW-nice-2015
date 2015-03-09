@@ -227,8 +227,12 @@
 								<div class="single-presentation"><?php '<h3>'.the_title(); echo '</h3> <div class="presentation-subtitle">'.$subtitle.'</div>'; ?> </div>
 
 								<?php the_content();?>
+								
+								<?php //get color of the session
+								$sessionColor = get_post_meta ( $sessionId, $prefix . 'summit_colorpicker',true);
+								?>
 
-								<p class="seeMoreForum">> See more from <?php echo $forum ?> </p>
+								<p class="seeMoreForum">> See more from <span style="color:<?php $sessionColor ?>;"><?php echo $forum ?></span></p>
 								
 
 								<div class="link-pages"><?php wp_link_pages(); ?></div>
@@ -372,9 +376,9 @@
 					foreach ( $user_query->results as $user ) {
 						$sid = $user->ID;
 						$avatar = $user->image;
-						$avatar = wp_get_attachment_image($avatar);
+						$avatar = '<hr><a href="/speaker-profile/?id='.$sid.'">' . wp_get_attachment_image($avatar).'</a>';
 						//$avatar = ''; // borra esta linea para que aparezca el avatar
-						$nameSp = '<div class="speakerSidebar"><a href="/speaker-profile/?id='.$sid.'">' . $user->first_name.' '.$user->last_name.'</a>';
+						$nameSp = '<div class="speakerSidebar">' . $user->first_name.' '.$user->last_name;
 						
 						// New mapping of user and companies with job role
 						// Get companies and job role
