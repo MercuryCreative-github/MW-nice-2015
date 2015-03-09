@@ -221,7 +221,7 @@
 
 									// define subtitle
 									$subtitle= get_post_meta(get_the_ID(),'_TMF_presentations_subtitle',true);
-									$sessionColor = get_post_meta ( get_the_ID(), '_TMF_summit_colorpicker',true);
+									$sessionColor= get_post_meta ( get_the_ID(), '_TMF_summit_colorpicker',true);
 
 								?>
 
@@ -234,7 +234,7 @@
 
 								?>
 
-								<p class="seeMoreForum">> See more from <span style="color:<?php $sessionColor ?>;"><?php echo $forum ?></span></p>
+								<p class="seeMoreForum">> See more from <span style="color:<?php $sessionColor ?>;"><?php echo $forum; echo $sessionColor ?></span></p>
 								
 
 								<div class="link-pages"><?php wp_link_pages(); ?></div>
