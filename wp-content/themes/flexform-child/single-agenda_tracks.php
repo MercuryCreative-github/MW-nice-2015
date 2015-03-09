@@ -221,7 +221,7 @@
 
 									// define subtitle
 									$subtitle= get_post_meta(get_the_ID(),'_TMF_presentations_subtitle',true);
-									$sessionColor = get_post_meta ( get_the_ID();, '_TMF_summit_colorpicker',true);
+									$sessionColor = get_post_meta ( get_the_ID(), '_TMF_summit_colorpicker',true);
 
 								?>
 
