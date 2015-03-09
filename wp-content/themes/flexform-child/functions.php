@@ -486,6 +486,9 @@ if (!function_exists('custom_post_submission_newsletters_subscribe')) {
 // [summits_shortcode summit-slug="summit-slug-value"]
 function summits_shortcode_func( $atts ) {
 
+	// var set and unset
+	$SpeakerHtmlOutput='';
+
     // OutPut functions START HERE. Please read last.
     if (!function_exists('get_presentations')) {  
     function get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor){
@@ -517,7 +520,6 @@ function summits_shortcode_func( $atts ) {
 				unset($arrayByRole);
 				$arrayByRole = array();
 				$presentationsHtmlOutput='';
-				$SpeakerHtmlOutput='';
 				$speacificArray='';
 
 				// needed variables				
