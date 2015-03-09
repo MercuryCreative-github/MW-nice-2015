@@ -392,7 +392,8 @@ function create_company_on_user_save($user_id){
         	$post_ID = wp_insert_post($post);
 
         update_usermeta( $user_id, 'new_company','' );
-        update_usermeta( $user_id, 'company', $post_ID  );
+        $new_company[]= $post_ID;
+        update_usermeta( $user_id, 'company', $new_company  );
 
     	}
 }
@@ -871,6 +872,10 @@ function update_presentation_on_user_save($user_id){
 				// this is the new data sumbitted
 				$role_at = $speaker_role.'_at';
 				$new_data=($user->$role_at); 
+
+				if(is_string($new_data)){
+					$new_data[]=$new_data;
+				}
 
 	
 				if(in_array($presentationToAddId,$new_data)){

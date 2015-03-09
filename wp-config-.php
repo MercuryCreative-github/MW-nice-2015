@@ -103,9 +103,9 @@ $wpe_special_ips=array ( 0 => '66.175.209.28', );
 
 $wpe_netdna_domains_secure=array ( );
 
-define( 'WP_SITEURL', 'http://ameba_server/devsanjose2014/' );
+define( 'WP_SITEURL', 'http://local.tmflive2015.com/' );
 
-define( 'WP_HOME', 'http://ameba_server/devsanjose2014/' );
+define( 'WP_HOME', 'http://local.tmflive2015.com/' );
 
 define( 'WPE_CACHE_TYPE', 'generational' );
 
