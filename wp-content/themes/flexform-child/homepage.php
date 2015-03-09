@@ -147,6 +147,10 @@ Template Name: Home Page
 				<li><img src="/wp-content/uploads/2015/02/vodafone-mobile-logo.png"></li>
 			</ul>
 		</div>
+		<div class="pricing-call-out"><a href="/passes-pricing/">
+			<div class="pricing-call-text"><span class="call-text-big">DON’T DELAY!</span><br/>Registration prices increase March 13!</div>
+			<div class="pricing-call-icon"><img src="/wp-content/uploads/2015/03/icon-register-banner.png"/></div>			
+		</a></div>
 		</div>
 		</div>
 </section>
