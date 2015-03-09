@@ -152,7 +152,7 @@ Template Name: Home Page
 </section>
 
 <section id="hp-section" class="section03">
-	<a href="/networking/"><div class="cell">
+	<div class="cell">
 	<div class="sec-main-content">
 		<div class="section03-infobox01">
 			<h1>NETWORK AT <br/>TM FORUM <br/>LIVE!</h1>
@@ -180,7 +180,7 @@ Template Name: Home Page
 			</div>
 		</div>
 	</div>
-	</div></a>
+	</div>
 </section>
 
 <section id="hp-section" class="section04">
