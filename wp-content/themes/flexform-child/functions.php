@@ -49,8 +49,6 @@ function hide_menu_items() {
 		  return $t;
 	}
 
-
-
 	function sfs_enqueue_styles() {
 		wp_dequeue_style('main-css');
          	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '8.3', 'all');
