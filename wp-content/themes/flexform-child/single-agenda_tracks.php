@@ -82,6 +82,7 @@
 			$media_height = NULL;
 			$video_height = 658;
 		}
+		
 		$figure_output = '';
 
 		if ($full_width_display) {
