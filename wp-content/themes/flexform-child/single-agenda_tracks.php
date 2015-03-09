@@ -159,11 +159,10 @@
 
 									$forumId = get_post_meta(get_the_ID(), '_TMF_presentation_session', true);
 									$forumLink = get_permalink($forumId);
-
-									$forum = '<a href="'.$forumLink.'" style="color:'.$sessionColor.';">'.get_the_title( $forumId ).'</a>';
-
+									$currentPresentation=get_the_ID();
 									// define color of the session
 									$sessionColor= get_post_meta($forumId,'_TMF_summit_colorpicker',true);
+									$forum = '<a href="'.$forumLink.'" style="color:'.$sessionColor.';">'.get_the_title( $forumId ).'</a>';
 
 									//manage time of the presentation
 									$sessionId= get_post_meta(get_the_ID(), '_TMF_presentation_session', true);
@@ -206,14 +205,22 @@
 												$dmonth=date('M',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
 												$displayTime=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
 												$presentationLink = get_permalink();
+												
+												if($currentPresentation==$presentationToCheckId){
+													$highlightCurrent='style="border-color:'.$sessionColor.';"';
+												}else{
+													$highlightCurrent='';
+												}
 
 												$sidebarSchedule.= '<div>';
-												$sidebarSchedule.= '<div class="dday-table dday01-table">';
+												$sidebarSchedule.= '<div class="dday-table dday01-table" '.$highlightCurrent.'>';
 												$sidebarSchedule.= '<p>'.$dmonth.'<span class="number-day">'.$dnumber.'</span></p>';
 												$sidebarSchedule.= '</div>';
 												$sidebarSchedule.= '<div class="fday">';
 												$sidebarSchedule.='<a href="'.$presentationLink .'">'.$presentationTitle.'</a><br>';
 												$sidebarSchedule.= $displayTime.'</div></div></br>';
+
+
 												
 											}
 										}
