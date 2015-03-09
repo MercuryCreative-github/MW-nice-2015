@@ -156,28 +156,28 @@ Template Name: Home Page
 	<div class="sec-main-content">
 		<div class="section03-infobox01">
 			<h1>NETWORK AT <br/>TM FORUM <br/>LIVE!</h1>
-			<!--<a href="" class="sf-button large green standard">Learn More</a>-->
+			<a href="/networking/" class="sf-button large green standard">Learn More</a>
 		</div>
 		<div class="section03-infobox02">
-		<div class="section03-top">
-			<h1>THE PEOPLE</h1>
-			<p><strong>2014 ATTENDEES DETAIL:</strong></p>
+			<div class="section03-top">
+				<h1>THE PEOPLE</h1>
+				<p><strong>2014 ATTENDEES:</strong></p>
+				<ul>
+					<li><span>80+</span><br/>Countries Represented</li>
+					<li><span>296</span><br/>CxOs</li>
+					<li><span>540+</span><br/>Companies In attendance</li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="section03-bottom">
 			<ul>
-				<li><span>80+</span><br/>Countries Represented</li>
-				<li><span>296</span><br/>CxOs</li>
-				<li><span>540+</span><br/>Companies In attendance</li>
+				<li><img src="/wp-content/uploads/2015/02/logo-microsoft-small.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/logo-google-small.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/logo-orange-small.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/logo-bt-small.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/logo-att-hp.png"></li>
 			</ul>
-			<div class="clear"></div>
-		</div>
-		<div class="section03-bottom">
-		<ul>
-			<li><img src="/wp-content/uploads/2015/02/logo-microsoft-small.png"></li>
-			<li><img src="/wp-content/uploads/2015/02/logo-google-small.png"></li>
-			<li><img src="/wp-content/uploads/2015/02/logo-orange-small.png"></li>
-			<li><img src="/wp-content/uploads/2015/02/logo-bt-small.png"></li>
-			<li><img src="/wp-content/uploads/2015/02/logo-att-hp.png"></li>
-		</ul>
-		</div>
+			</div>
 		</div>
 	</div>
 	</div>
@@ -186,7 +186,7 @@ Template Name: Home Page
 <section id="hp-section" class="section04">
 	<div class="cell">
 	<div class="sec-main-content">
-	<div class="section04-title"><h1>THE ANALYSIS</h1></div>
+	<div class="section04-title"><h1>THE BUZZ</h1></div>
 	<div class="section04-info">
 		<div class="inform-feed">
 

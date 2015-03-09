@@ -157,12 +157,12 @@
 								<?php
 
 
-
-
 									$forumId = get_post_meta(get_the_ID(), '_TMF_presentation_session', true);
 									$forumLink = get_permalink($forumId);
-
-									$forum = '<a href="'.$forumLink.'">'.get_the_title( $forumId ).'</a>';
+									$currentPresentation=get_the_ID();
+									// define color of the session
+									$sessionColor= get_post_meta($forumId,'_TMF_summit_colorpicker',true);
+									$forum = '<a href="'.$forumLink.'" style="color:'.$sessionColor.';">'.get_the_title( $forumId ).'</a>';
 
 									//manage time of the presentation
 									$sessionId= get_post_meta(get_the_ID(), '_TMF_presentation_session', true);
@@ -205,14 +205,24 @@
 												$dmonth=date('M',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
 												$displayTime=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
 												$presentationLink = get_permalink();
+												
+												if($currentPresentation==$presentationToCheckId){
+													$highlightCurrent='style="border-color:'.$sessionColor.';"';
+													$linkColorCurrent='style="color:'.$sessionColor.';"';
+												}else{
+													$highlightCurrent='style="border-color:#AEACAC;"';
+													$linkColorCurrent='style="color:#AEACAC;"';
+												}
 
 												$sidebarSchedule.= '<div>';
-												$sidebarSchedule.= '<div class="dday-table dday01-table">';
+												$sidebarSchedule.= '<div class="dday-table dday01-table" '.$highlightCurrent.'>';
 												$sidebarSchedule.= '<p>'.$dmonth.'<span class="number-day">'.$dnumber.'</span></p>';
 												$sidebarSchedule.= '</div>';
 												$sidebarSchedule.= '<div class="fday">';
-												$sidebarSchedule.='<a href="'.$presentationLink .'">'.$presentationTitle.'</a><br>';
+												$sidebarSchedule.='<a href="'.$presentationLink .'" '.$linkColorCurrent.'>'.$presentationTitle.'</a><br>';
 												$sidebarSchedule.= $displayTime.'</div></div></br>';
+
+
 												
 											}
 										}
@@ -221,131 +231,19 @@
 
 									// define subtitle
 									$subtitle= get_post_meta(get_the_ID(),'_TMF_presentations_subtitle',true);
+
 								?>
 
 
-								<div class="single-presentation"><?php '<h3>'.the_title(); echo '</h3> <div class="presentation-subtitle">'.$subtitle.'</div>'; ?> </div>
-
+								<div class="single-presentation"><h3><?php the_title(); ?></h3> <div class="presentation-subtitle"><?php echo $subtitle; ?>'</div> </div>
 
 								<?php the_content();?>
+								
+								<?php //get color of the session
 
-								<div class="speakerTrack">
-					<?php
+								?>
 
-					//print_r(get_field('speakers'));
-					$speakersDisplay='';
-					$moderatorsDisplay='';
-					$panelistsDisplay='';
-					$facilitatorDisplay='';
-					$collaboratorDisplay='';
-					$speakerCount=0;
-					$moderatorcount=0;
-					$panelistCount=0;
-					$facilitatorCount=0;
-					$collaboratorCount=0;
-
-					$presentationId=  get_the_ID();
-
-				$args = array(
-					'role'=>'speaker',
-					'meta_query' =>array(array('value' => $presentationId ,'compare' => 'LIKE'),) // en algun meta tiene el ID de este usuario (speaker, moderator, facilitator, panelist)
-				);// meta_query);
-
-				// The Query
-				add_action( 'pre_user_query', function( $user_query ) {
-					$user_query->query_fields = 'DISTINCT ' . $user_query->query_fields;
-				} );
-
-				$user_query = new WP_User_Query( $args );
-
-				// User Loop
-				if ( ! empty( $user_query->results ) ) {
-					
-					foreach ( $user_query->results as $user ) {
-						$sid = $user->ID;
-						$avatar = $user->image;
-						$avatar = wp_get_attachment_image($avatar);
-						//$avatar = ''; // borra esta linea para que aparezca el avatar
-						$nameSp = '<div class="speakerSidebar"><a href="/speaker-profile/?id='.$sid.'">' . $user->first_name.' '.$user->last_name.'</a>';
-						
-						// New mapping of user and companies with job role
-						// Get companies and job role
-						$companyIds = getUserCompanies( esc_html( $user->ID ), true );
-						
-						if( (int)$companyIds > 0 ) {
-							$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyIds );
-							if( empty( $jobRole ) ) {
-								$jobRole = esc_html( $user->role );
-							}
-							$role = ' - <em>'.$jobRole.'</em>';
-							$company = ', <strong>'. get_the_title( $companyIds ).'</strong></div><div class="clear" style="margin:0"></div>';  // cambia , por </br> 
-						} 
-						
-						//$role = ' - <em>'.$user->role.'</em>'; // cambia - por </br>
-						// company is a post object so the method to get the value is longer
-						// first we get the ID from the custom field
-						/*$companyId = $user->company;
-						$companyId = $companyId[0];
-						// then we GET the post data
-						$companyObj = get_post($companyId);
-						// from that object we use the title
-						$companyTitle = $companyObj->post_title;
-						$company = ', <strong>'.$companyTitle.'</strong></div><div class="clear" style="margin:0"></div>';  // cambia , por </br>*/ 
-
-						if($role==' - <em></em>'){$role='';} // cambia - por </br>
-						if($company==', <strong></strong>'){$company='';} // cambia , por </br>
-
-						if(($user->speaker_at)) {
-							if (in_array($presentationId, $user->speaker_at)) {						
-								$speakersDisplay.= $avatar.$nameSp.$role.$company;
-								$speakerCount++;
-							}
-						}
-
-						if(($user->moderator_at))
-						if (in_array($presentationId, $user->moderator_at)) {						
-						$moderatorsDisplay.= $avatar.$nameSp.$role.$company;
-						$moderatorcount++;
-						}
-
-						if(($user->panelist_at))
-						if (in_array($presentationId, $user->panelist_at)) {						
-						$panelistsDisplay.= $avatar.$nameSp.$role.$company;
-						$panelistCount++;
-						}
-
-						if(($user->facilitator_at))
-						if (in_array($presentationId, $user->facilitator_at)) {						
-						$facilitatorDisplay.= $avatar.$nameSp.$role.$company;
-						$facilitatorCount++;
-						}
-
-						if(($user->collaborator_at))
-						if (in_array($presentationId, $user->collaborator_at)) {						
-						$collaboratorDisplay.= $avatar.$nameSp.$role.$company;
-						$collaboratorCount++;
-						}
-					}
-				} 
-
-				if($speakerCount>1){$s='s';}else{$s='';}
-				if($speakersDisplay!==''){$speakersDisplay='<h4>Speaker'.$s.':</h4>'.$speakersDisplay.'</br>';}; // cambiar strong por h1
-				if($moderatorcount>1){$s='s';}else{$s='';};
-				if($moderatorsDisplay!==''){$moderatorsDisplay='<h4>Moderator'.$s.':</h4>'.$moderatorsDisplay.'</br>';};// cambiar strong por h1
-				if($panelistCount>1){$s='s';}else{$s='';};
-				if($panelistsDisplay!==''){$panelistsDisplay='<h4>Panelist'.$s.':</h4>'.$panelistsDisplay.'</br>';};// cambiar strong por h1
-				if($facilitatorCount>1){$s='s';}else{$s='';};
-				if($facilitatorDisplay!==''){$facilitatorDisplay='<h4>Facilitator'.$s.':</h4>'.$facilitatorDisplay.'</br>';};// cambiar strong por h1
-				if($collaboratorCount>1){$s='s';}else{$s='';};
-				if($collaboratorDisplay!==''){$collaboratorDisplay='<h4>Collaborator'.$s.':</h4>'.$collaboratorDisplay.'</br>';};// cambiar strong por h1
-
-				echo $speakersDisplay.$moderatorsDisplay.$panelistsDisplay.$facilitatorDisplay.$collaboratorDisplay;
-
-					?>
-					</div>
-
-								<p class="seeMoreForum">> See more from <?php echo $forum ?> </p>
-
+								<p class="seeMoreForum">> See more from <?php echo $forum; ?></p>
 								
 
 								<div class="link-pages"><?php wp_link_pages(); ?></div>
@@ -451,8 +349,123 @@
 			<aside class="sidebar right-sidebar span4">
 
 				<div id="calendar_widget" class="widget calendar_widget">
-				<?php echo '<div class="widget-heading clearfix"style="margin-top:45px"><h4>Also in this <strong>session</strong></h4></div>'.$sidebarSchedule; ?>
+				<?php echo '<div class="widget-heading clearfix"style="margin-top:45px"><h4><strong>Presentation</strong> Schedule</h4></div>'.$sidebarSchedule; ?>
 				</div>
+
+				<div class="speakerTrack">
+					<?php
+
+					//print_r(get_field('speakers'));
+					$speakersDisplay='';
+					$moderatorsDisplay='';
+					$panelistsDisplay='';
+					$facilitatorDisplay='';
+					$collaboratorDisplay='';
+					$speakerCount=0;
+					$moderatorcount=0;
+					$panelistCount=0;
+					$facilitatorCount=0;
+					$collaboratorCount=0;
+
+					$presentationId=  get_the_ID();
+
+				$args = array(
+					'role'=>'speaker',
+					'meta_query' =>array(array('value' => $presentationId ,'compare' => 'LIKE'),) // en algun meta tiene el ID de este usuario (speaker, moderator, facilitator, panelist)
+				);// meta_query);
+
+				// The Query
+				add_action( 'pre_user_query', function( $user_query ) {
+					$user_query->query_fields = 'DISTINCT ' . $user_query->query_fields;
+				} );
+
+				$user_query = new WP_User_Query( $args );
+
+				// User Loop
+				if ( ! empty( $user_query->results ) ) {
+					
+					foreach ( $user_query->results as $user ) {
+						$sid = $user->ID;
+						$avatar = $user->image;
+						$avatar = '<hr><a href="/speaker-profile/?id='.$sid.'">' . wp_get_attachment_image($avatar).'</a>';
+						//$avatar = ''; // borra esta linea para que aparezca el avatar
+						$nameSp = '<div class="speakerSidebar">' . $user->first_name.' '.$user->last_name;
+						
+						// New mapping of user and companies with job role
+						// Get companies and job role
+						$companyIds = getUserCompanies( esc_html( $user->ID ), true );
+						
+						if( (int)$companyIds > 0 ) {
+							$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyIds );
+							if( empty( $jobRole ) ) {
+								$jobRole = esc_html( $user->role );
+							}
+							$role = ' - <em>'.$jobRole.'</em>';
+							$company = ', <strong>'. get_the_title( $companyIds ).'</strong></div><div class="clear" style="margin:0"></div>';  // cambia , por </br> 
+						} 
+						
+						//$role = ' - <em>'.$user->role.'</em>'; // cambia - por </br>
+						// company is a post object so the method to get the value is longer
+						// first we get the ID from the custom field
+						/*$companyId = $user->company;
+						$companyId = $companyId[0];
+						// then we GET the post data
+						$companyObj = get_post($companyId);
+						// from that object we use the title
+						$companyTitle = $companyObj->post_title;
+						$company = ', <strong>'.$companyTitle.'</strong></div><div class="clear" style="margin:0"></div>';  // cambia , por </br>*/ 
+
+						if($role==' - <em></em>'){$role='';} // cambia - por </br>
+						if($company==', <strong></strong>'){$company='';} // cambia , por </br>
+
+						if(($user->speaker_at)) {
+							if (in_array($presentationId, $user->speaker_at)) {						
+								$speakersDisplay.= $avatar.$nameSp.$role.$company;
+								$speakerCount++;
+							}
+						}
+
+						if(($user->moderator_at))
+						if (in_array($presentationId, $user->moderator_at)) {						
+						$moderatorsDisplay.= $avatar.$nameSp.$role.$company;
+						$moderatorcount++;
+						}
+
+						if(($user->panelist_at))
+						if (in_array($presentationId, $user->panelist_at)) {						
+						$panelistsDisplay.= $avatar.$nameSp.$role.$company;
+						$panelistCount++;
+						}
+
+						if(($user->facilitator_at))
+						if (in_array($presentationId, $user->facilitator_at)) {						
+						$facilitatorDisplay.= $avatar.$nameSp.$role.$company;
+						$facilitatorCount++;
+						}
+
+						if(($user->collaborator_at))
+						if (in_array($presentationId, $user->collaborator_at)) {						
+						$collaboratorDisplay.= $avatar.$nameSp.$role.$company;
+						$collaboratorCount++;
+						}
+					}
+				} 
+
+				if($speakerCount>1){$s='s';}else{$s='';}
+				if($speakersDisplay!==''){$speakersDisplay='<h4>Speaker'.$s.':</h4>'.$speakersDisplay.'</br>';}; // cambiar strong por h1
+				if($moderatorcount>1){$s='s';}else{$s='';};
+				if($moderatorsDisplay!==''){$moderatorsDisplay='<h4>Moderator'.$s.':</h4>'.$moderatorsDisplay.'</br>';};// cambiar strong por h1
+				if($panelistCount>1){$s='s';}else{$s='';};
+				if($panelistsDisplay!==''){$panelistsDisplay='<h4>Panelist'.$s.':</h4>'.$panelistsDisplay.'</br>';};// cambiar strong por h1
+				if($facilitatorCount>1){$s='s';}else{$s='';};
+				if($facilitatorDisplay!==''){$facilitatorDisplay='<h4>Facilitator'.$s.':</h4>'.$facilitatorDisplay.'</br>';};// cambiar strong por h1
+				if($collaboratorCount>1){$s='s';}else{$s='';};
+				if($collaboratorDisplay!==''){$collaboratorDisplay='<h4>Collaborator'.$s.':</h4>'.$collaboratorDisplay.'</br>';};// cambiar strong por h1
+
+				echo $speakersDisplay.$moderatorsDisplay.$panelistsDisplay.$facilitatorDisplay.$collaboratorDisplay;
+
+					?>
+					</div>
 
 				
 			</aside>

@@ -392,7 +392,8 @@ function create_company_on_user_save($user_id){
         	$post_ID = wp_insert_post($post);
 
         update_usermeta( $user_id, 'new_company','' );
-        update_usermeta( $user_id, 'company', $post_ID  );
+        $new_company[]= $post_ID;
+        update_usermeta( $user_id, 'company', $new_company  );
 
     	}
 }
@@ -486,14 +487,13 @@ if (!function_exists('custom_post_submission_newsletters_subscribe')) {
 // [summits_shortcode summit-slug="summit-slug-value"]
 function summits_shortcode_func( $atts ) {
 
+	// var set and unset
+	$SpeakerHtmlOutput='';
+	$presentationsHtmlOutput='';
+
     // OutPut functions START HERE. Please read last.
     if (!function_exists('get_presentations')) {  
     function get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor){
-
-    	// variables set
-    	$presentationsHtmlOutput='';
-
-    	$arrayByRole=array();
 
     	$args = array(
 			'post_type'  => 'agenda_tracks',
@@ -518,6 +518,11 @@ function summits_shortcode_func( $atts ) {
 
 			while ( $presentationToCheck->have_posts() ) {
 
+				// variables unset
+				unset($arrayByRole);
+				$arrayByRole = array();
+				$speacificArray='';
+
 				// needed variables				
 				$presentationToCheck->the_post();
 				$presentationToCheckId=get_the_ID();
@@ -530,17 +535,16 @@ function summits_shortcode_func( $atts ) {
 
 				$roles=array('speaker','panelist','collaborator','facilitator','moderator');
 
-				$SpeakerHtmlOutput='';
-				
+
 				foreach ($roles as $role_to_update) {
 
 					$role_to_fetch=	$role_to_update.'s_meta';
-
 					$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
 
 
 					if(count($presentationSpeakers)>1){
 					
+						$speacificArray=$role_to_update;
 
 						foreach ( $presentationSpeakers as $presentationSpeaker ) {
 
@@ -560,6 +564,8 @@ function summits_shortcode_func( $atts ) {
 							if(is_array($userMeta)){
 								$hasThisRole=in_array($presentationToCheckId,$userMeta);
 
+								$SpeakerHtmlOutput='';
+
 								if($hasThisRole){
 									//speaker output to store
 									$SpeakerHtmlOutput.='<p>- '.$user->display_name.', ';
@@ -568,7 +574,7 @@ function summits_shortcode_func( $atts ) {
 									$SpeakerHtmlOutput.='</p>';
 
 									// this array contains inside one array per role and inside each of them, the speakers data.
-									$arrayByRole[$role_to_update][]=$SpeakerHtmlOutput;
+									$arrayByRole[$speacificArray][]=$SpeakerHtmlOutput;
 
 								}
 							}
@@ -607,9 +613,6 @@ function summits_shortcode_func( $atts ) {
 						}
 					$presentationsHtmlOutput.='</div>'; //close presentation-info
 				$presentationsHtmlOutput.='</div>'; //close summit-presentation
-
-
-			
 
 			}
 		}
@@ -869,6 +872,10 @@ function update_presentation_on_user_save($user_id){
 				// this is the new data sumbitted
 				$role_at = $speaker_role.'_at';
 				$new_data=($user->$role_at); 
+
+				if(is_string($new_data)){
+					$new_data[]=$new_data;
+				}
 
 	
 				if(in_array($presentationToAddId,$new_data)){
