@@ -224,7 +224,7 @@
 								?>
 
 
-								<div class="single-presentation"><?php '<h3>'.the_title(); echo '</h3> <div class="presentation-subtitle">'.$subtitle.'</div>'; ?> </div>
+								<div class="single-presentation"><?php .'<h3>'.the_title(); echo .'</h3> <div class="presentation-subtitle">'.$subtitle.'</div>'; ?> </div>
 
 								<?php the_content();?>
 								
