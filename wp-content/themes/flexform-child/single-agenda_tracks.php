@@ -208,8 +208,10 @@
 												
 												if($currentPresentation==$presentationToCheckId){
 													$highlightCurrent='style="border-color:'.$sessionColor.';"';
+													$linkColorCurrent='style="color:'.$sessionColor.';"';
 												}else{
-													$highlightCurrent='';
+													$highlightCurrent='style="border-color:#AEACAC;"';
+													$linkColorCurrent='style="color:#AEACAC;"';
 												}
 
 												$sidebarSchedule.= '<div>';
@@ -217,7 +219,7 @@
 												$sidebarSchedule.= '<p>'.$dmonth.'<span class="number-day">'.$dnumber.'</span></p>';
 												$sidebarSchedule.= '</div>';
 												$sidebarSchedule.= '<div class="fday">';
-												$sidebarSchedule.='<a href="'.$presentationLink .'">'.$presentationTitle.'</a><br>';
+												$sidebarSchedule.='<a href="'.$presentationLink .'" '.$linkColorCurrent.'>'.$presentationTitle.'</a><br>';
 												$sidebarSchedule.= $displayTime.'</div></div></br>';
 
 
