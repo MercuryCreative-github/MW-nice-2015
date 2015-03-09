@@ -221,12 +221,13 @@
 
 									// define subtitle
 									$subtitle= get_post_meta(get_the_ID(),'_TMF_presentations_subtitle',true);
-									$sessionColor= get_post_meta ( get_the_ID(), '_TMF_summit_colorpicker',true);
+									// define color of the session
+									$sessionColor= get_post_meta($forumId,'_TMF_summit_colorpicker',true);
 
 								?>
 
 
-								<div class="single-presentation"><h3><?php the_title(); ?></h3> <div class="presentation-subtitle"><?php echo $subtitle ?>'</div> </div>
+								<div class="single-presentation"><h3><?php the_title(); ?></h3> <div class="presentation-subtitle"><?php echo $subtitle; ?>'</div> </div>
 
 								<?php the_content();?>
 								
@@ -234,7 +235,7 @@
 
 								?>
 
-								<p class="seeMoreForum">> See more from <span style="color:<?php $sessionColor ?>;"><?php echo $forum; echo $sessionColor ?></span></p>
+								<p class="seeMoreForum">> See more from <span style="color:<?php $sessionColor ?>;"><?php echo $forum; echo $sessionColor; echo $forumId; ?></span></p>
 								
 
 								<div class="link-pages"><?php wp_link_pages(); ?></div>
