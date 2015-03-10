@@ -245,7 +245,7 @@
         font-size: 14px;
     }
 
-    .summit #header-section .container {
+    .summit #header-section .container, .summit #header-scroll .container {
         width: 94%!important;
         margin-right: auto;
         margin-left: auto;
@@ -457,6 +457,8 @@
     .container .moveDiv h2 {
         margin: 0 0 10px;
     }
+
+    #header-scroll{width: 100% !important;}
 }
 @media screen and (max-width: 980px) {
     .page-content .questions ul li:after {
@@ -746,13 +748,22 @@
     .passes-prices .text-box p {
         top: 20px;
     }
+
+    #header-scroll{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 840px) and (max-width: 990px){
-    .summit #header-section .container {
+    .summit #header-section .container, .summit #header-scroll .container {
         width: 100%!important;
         margin-right: auto;
         margin-left: auto;
+    }
+
+    #logo a{
+        width: 142px;
+        padding-top: 3px;
     }
 }
 
@@ -1348,7 +1359,7 @@
     nav#main-navigation nav .menu li {
         font-size: 14px;
     }
-    div#header-section .container {
+    div#header-section .container, div#header-scroll .container {
         width: 100%;
     }
     .head .menu > li > a {
@@ -1622,7 +1633,7 @@
     nav#agenda-navigation ul.menu {
         display: block;
     }
-    div#header-section #logo {
+    div#header-section #logo, div#header-scroll #logo {
     display: block;
     text-align: center;
     margin: auto;
@@ -1630,8 +1641,8 @@
     #logo img{margin: auto;}
     #main-navigation {
         float: none;
-
-        float: none;  box-shadow: 1px 3px 5px #ccc;  background: white;
+        float: none;
+        background: white;
     }
     nav#main-navigation .menu>li {
         float: none;
@@ -1695,7 +1706,7 @@
         margin: 0 auto;
         width: 80%
     }
-    #header-section {
+    #header-section, #header-scroll {
         padding: 15px 0 0 0;
         /* height: 110px; */
     }
@@ -2001,7 +2012,7 @@
     }
     /*HEADER*/
 
-    #header-section {
+    #header-section, #header-scroll {
         padding: 15px 0 0 0;
     }
     /*header #main-navigation {
@@ -2655,7 +2666,7 @@
     .call-to-action {
         display: none;
     }
-    #header-section .container .head header > div.span6:nth-child(2) {
+    #header-section .container .head header > div.span6:nth-child(2), #header-scroll .container .head header > div.span6:nth-child(2) {
         display: none;
     }
     .mobile-navigation {
@@ -2736,7 +2747,7 @@
     header {
         height: 100px;
     }
-    #header-section {
+    #header-section, #header-scroll {
         padding: 0!important;
     }
     .nav-wrap {
