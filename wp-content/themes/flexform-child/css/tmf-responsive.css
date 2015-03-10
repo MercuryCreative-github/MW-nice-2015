@@ -947,8 +947,9 @@
     .pricing-call-text span{
         line-height: 50px;
         display: inline-block;
+        text-align: center;
     }
-
+    .pricing-call-text{text-align: center;}
     .pricing-call-text{border: none;}
     a.pricing-call-out-content{padding: 0; display: inline;}
 
