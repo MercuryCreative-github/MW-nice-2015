@@ -564,7 +564,7 @@ nav .menu > li:first-child > a{
 
 /*'15*/
 /*.social-icon{display:-webkit-inline-box;display:-moz-inline-box;display:inline-box;}*/
-.menu .social-icon a span {vertical-align: middle;}
+/*.menu .social-icon a span {vertical-align: middle;}*/
 
 #mini-navigation .menu li.social-icon a {margin: 3px 8px;padding: 0;}
 .navbar-collapse .social-icon {display: block;}
