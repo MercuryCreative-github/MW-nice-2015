@@ -102,7 +102,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	margin-left: auto;
 }
 
-.summit #header-section .container {
+.summit #header-section .container, .summit #header-scroll .container {
 	width: 1108px!important;
 	margin-right: auto;
 	margin-left: auto;
@@ -564,7 +564,7 @@ nav .menu > li:first-child > a{
 
 /*'15*/
 /*.social-icon{display:-webkit-inline-box;display:-moz-inline-box;display:inline-box;}*/
-.menu .social-icon a span {vertical-align: middle;}
+/*.menu .social-icon a span {vertical-align: middle;}*/
 
 #mini-navigation .menu li.social-icon a {margin: 3px 8px;padding: 0;}
 .navbar-collapse .social-icon {display: block;}
@@ -2972,3 +2972,16 @@ line-height: 1.4em;
 	width: 180px !important;
 }
 #mini-header .mini-nav-wrap{float: right;}
+
+#header-scroll{
+	position: fixed;
+	z-index: 999;
+	top: -80px;
+	border-bottom: 1px solid #efefef !important;
+	background: #fff;
+	padding-top: 5px;
+}
+
+.header-scroll-home{
+	width: 100%;
+}

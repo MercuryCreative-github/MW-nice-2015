@@ -16,6 +16,29 @@ function ini() {
     homepageSectionsResize();
     acordion();
     registerBtnLink();
+    scrolledMenu();
+}
+
+function scrolledMenu(){
+    var scrollStatus = 1;
+    var headerContent = jQuery('#header-section').html();
+    jQuery('#header-scroll').html(headerContent);
+
+    jQuery(window).scroll(function(){
+       
+        var vpScroll = window.pageYOffset;
+      
+        if(vpScroll > 200 && scrollStatus == 1){
+            scrollStatus = 0;
+            jQuery('#header-scroll').animate({top: '0px'}, 450); 
+            
+        }
+
+        if(vpScroll <= 200 && scrollStatus==0){
+            scrollStatus = 1;
+            jQuery('#header-scroll').animate({top: '-80px'}, 400); 
+        }        
+    });
 }
 
 function homepageSectionsResize(){

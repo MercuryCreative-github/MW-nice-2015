@@ -236,7 +236,7 @@
 								?>
 
 
-								<div class="single-presentation"><h3><?php the_title(); ?></h3> <div class="presentation-subtitle"><?php echo $subtitle; ?>'</div> </div>
+								<div class="single-presentation"><h3><?php the_title(); ?></h3> <div class="presentation-subtitle"><?php echo $subtitle; ?></div> </div>
 
 								<?php the_content();?>
 								

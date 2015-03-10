@@ -423,47 +423,13 @@
 				</div>
 			</div>
 
+			<!--// OPEN Scrolled header section //-->
 			<?php if ($enable_mini_header) { ?>
-
-			<!--// OPEN #mini-header //-->
-			<div id="mini-header" class="<?php echo $header_layout; ?> clearfix">
-				<div class="container">
-					<div class="nav-wrap row-fluid clearfix">
-
-						<div id="mini-logo" class="span3 clearfix">
-							<a href="<?php echo home_url(); ?>">
-								<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
-								<img class="retina" src="<?php echo $retina_logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
-							</a>
-						</div>
-
-						<div class="mini-nav-wrap span9 clearfix">
-
-							<div class="nav-wrap clearfix">
-
-								<!--// OPEN #main-navigation //-->
-								<nav id="mini-navigation">
-																		<?php
-									if(function_exists('wp_nav_menu')) {
-									wp_nav_menu(array(
-									'theme_location' => 'main_navigation',
-									'fallback_cb' => ''
-									)); }
-									?>
-
-								<!--// OPEN #main-navigation //-->
-								</nav>
-
-							</div>
-
-						</div>
-
-					</div>
-				</div>
-			<!--// CLOSE #mini-header //-->
-			</div>
+			
+			<div id="header-scroll" class="<?php if(!is_home() && !is_front_page()){echo "boxed-layout";} if(is_home() || is_front_page()){echo "header-scroll-home";}?> <?php echo $header_layout; ?> <?php echo $logo_class; ?> clearfix"></div>
 
 			<?php } ?>
+			<!--CLOSE Scrolled header section-->
 
 			<!--// OPEN #main-container //-->
 			<div id="main-container" class="clearfix">
