@@ -581,6 +581,8 @@
         margin-left: 80px;
     }
 
+    .discount-circle{float: none;}
+
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -718,6 +720,10 @@
     }
     .main-video-name.SKL {
         width: 220px;
+    }
+
+    .passes-prices .color-box{
+        padding-right: 25px;
     }
 }
 
@@ -912,8 +918,11 @@
         max-width:350px;
         margin:auto;
     }
-   
 
+    .pricing-call-text{
+        margin-right: 8%;
+        padding-right: 8%;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 800px) {
     #footer .social-contact img {
@@ -922,8 +931,35 @@
     .social-contact .span8 h3 {
         padding: 0 30px 0 0;
     }
+
 }
 @media screen and (max-width: 767px) {
+    .pricing-call-text{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    a.pricing-call-out-content, .pricing-call-text span{
+        width: 100%;
+    }
+
+    .pricing-call-out{
+    padding: 10px;
+    box-sizing: border-box;
+    }
+
+    .to-remove-position-absolute{height: 98px;}
+    .pricing-call-text span{
+        line-height: 50px;
+        display: inline-block;
+        text-align: center;
+    }
+    .pricing-call-text{text-align: center;}
+    .pricing-call-text{border: none;}
+    a.pricing-call-out-content{padding: 0; display: inline;}
+
+    .pricing-call-icon img{display: none;}
     /*erase !!! */
     #menu-item-18996 {
       display: block !important;
@@ -1188,8 +1224,8 @@
 
     /*'15*/
     .section02-companies li {margin-bottom: 30px;}
-    .feed-related-posts .feed-author {font-size: 12px;line-height: 16px;margin-bottom: 5px;}
-    .feed-related-posts h4 {margin-left: 0;font-size: 14px;}
+    .feed-related-posts .feed-author {font-size: 12px;line-height: 16px;margin-bottom: 5px; padding: 10px 10px 0 10px;}
+    .feed-related-posts h4 {margin-left: 0;font-size: 14px; padding: 0 10px 10px 10px;}
     .review-photo {display: none;}
     #page-wrap{padding: 0px !important;}
     .sec-main-content{
@@ -2709,7 +2745,7 @@
         width: 35px;
 
         right: 0;
-}
+    }
     header {
         height: auto !important;
     }
@@ -3274,6 +3310,12 @@
     .feed-image {
         display: table-cell;
     }
+
+    .feed-image img{
+        height: auto;
+        max-height: none;
+    }
+
     .feed-image, .feed-content {
         width: 100%;
         float: none;
@@ -3285,7 +3327,7 @@
         padding-top: 0;
     }
     .feed-related-posts h4 {
-        margin-bottom: 25px;
+        margin-bottom: 0px;
     }
     /** end feed hp **/
     /* iPhone fixes 20140828 */

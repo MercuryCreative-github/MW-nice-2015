@@ -2792,6 +2792,11 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 		color: #abaaaa !important;
 		padding: 15px;
 }
+
+.passes-prices .color-box{
+	padding-right: 57px;
+	width: auto;
+}
 .discount-circle {
 		background-color: #84d4eb;
 		border: 2px solid #e6e5e4;
@@ -2800,6 +2805,7 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 		margin: 0 auto;
 		padding-top: 5px;
 		width: 90px;
+		float: left;
 }
 .discount-circle p {
 		color: #fff;
@@ -2985,3 +2991,4 @@ line-height: 1.4em;
 .header-scroll-home{
 	width: 100%;
 }
+
