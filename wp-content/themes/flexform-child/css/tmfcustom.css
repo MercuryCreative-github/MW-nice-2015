@@ -102,7 +102,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	margin-left: auto;
 }
 
-.summit #header-section .container {
+.summit #header-section .container, .summit #header-scroll .container {
 	width: 1108px!important;
 	margin-right: auto;
 	margin-left: auto;
@@ -2972,3 +2972,16 @@ line-height: 1.4em;
 	width: 180px !important;
 }
 #mini-header .mini-nav-wrap{float: right;}
+
+#header-scroll{
+	position: fixed;
+	z-index: 999;
+	top: -80px;
+	border-bottom: 1px solid #efefef !important;
+	background: #fff;
+	padding-top: 5px;
+}
+
+.header-scroll-home{
+	width: 100%;
+}
