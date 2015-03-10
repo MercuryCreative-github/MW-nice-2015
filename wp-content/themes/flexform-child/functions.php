@@ -539,9 +539,6 @@ function summits_shortcode_func( $atts ) {
 					$role_to_fetch=	$role_to_update.'s_meta';
 					$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
 
-
-
-
 					if(is_array($presentationSpeakers) && !empty($presentationSpeakers)){
 					
 						$speacificArray=$role_to_update;
