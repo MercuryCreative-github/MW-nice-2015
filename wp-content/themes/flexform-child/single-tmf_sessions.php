@@ -84,10 +84,7 @@
 
 								<?php the_content();?>
 								
-								<?php
-								$categories = get_the_category($post->ID);
-								print_r($categories);								
-								?>
+							
 
 								<div class="link-pages"><?php wp_link_pages(); ?></div>
 							</div>
