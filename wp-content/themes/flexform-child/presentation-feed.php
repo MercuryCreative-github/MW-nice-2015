@@ -8,7 +8,7 @@ $presentations = array();
 if(isset($_GET['id'])){$id=$_GET['id'];}else{
 	$args = array(
 									'posts_per_page' 	 => -1,
-									'orderby'          => 'post_date',
+									'orderby'          => 'meta_value',
 									'order'            => 'DESC',
 									'post_type'        => 'agenda_tracks',
 									'post_status'      => 'publish'
@@ -17,55 +17,24 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 	foreach ( $presentations as $presentation ) {
 		$session  = '<presentation>';
 			$session .= '<name>' . (htmlspecialchars($presentation->post_title)) . '</name>';
-			$time= get_field( "time", $presentation->ID );
-			$time= explode(':', $time);
-			$hour = $time[0];
-			$mins = $time[1];
-			if ($hour>12) {
-				$startTime=($hour-12).':'.$mins.':00 PM';
-			} elseif ($hour==12) {
-				$startTime=($hour).':'.$mins.':00 PM';
-			} else {
-				$startTime=($hour).':'.$mins.':00 AM';
-			};
-			$time02= get_field( "end_time", $presentation->ID );
-			$time02= explode(":", $time02);
-			$hour = $time02[0];
-			$mins = $time02[1];
-			if ($hour>12) {
-				$endTime=($hour-12).':'.$mins.':00 PM';
-			} elseif ($hour==12) {
-				$endTime=($hour).':'.$mins.':00 PM';
-			} else {
-				$endTime=($hour).':'.$mins.':00 AM';
-			};
-			$filter = '';
-			$fieldId = get_field( "day", $presentation->ID );			
-			if( !empty( $fieldId ) ) {
-				$filter =  get_term_by( 'id', $fieldId[0], 'events_category' );
-				if( !empty( $filter ))
-					$filter = $filter->name;
-			};
-			if ($filter == 'Monday') {
-				$filter = '06/01/2015';
-			}elseif ($filter == 'Tuesday') {
-				$filter = '06/02/2015';
-			}elseif ($filter == 'Wednesday') {
-				$filter = '06/03/2015';
-			}elseif ($filter == 'Thursday') {
-				$filter = '06/04/2015';
-			};
-			$session .= '<startTime>' . $filter . ' ' . $startTime . '</startTime>';
-			$session .= '<endTime>' . $filter . ' ' . $endTime . '</endTime>';
+			
+			$presentationId=$presentation->ID;
+			$startTime=date('g:i a',get_post_meta($presentationId,'_TMF_presentations_start_date',true));
+			$endTime=date('g:i a',get_post_meta($presentationId,'_TMF_presentations_end_date',true));
+
+			$session .= '<startTime>' . $startTime . '</startTime>';
+			$session .= '<endTime>' . $endTime . '</endTime>';
 			$session .= '<description>' . htmlspecialchars( $presentation->post_content ) . '</description>';
-			$session .= '<location>' . get_field( "location", $presentation->ID ) . '</location>';
+			$location = get_post_meta($presentationId,'_TMF_presentations_location',true);
+			$session .= '<location>' . $location . '</location>';
 			$field = get_field( "forum", $presentation->ID );
 			$fieldId = '';
 			if( !empty( $field )) {
 				$fieldId = $field->ID;
 				$fn = get_the_title( $fieldId );
 			}
-			$session .= '<sessionTrack>' . $fn . '</sessionTrack>';
+			$sessionTitle = get_post_meta($presentationId,'_TMF_presentation_session',true);
+			$session .= '<sessionTrack>' . $sessionTitle . '</sessionTrack>';
 			$userArgs = array(	
 													'meta_key'     => 'speaker_at',
 													'meta_value'   => $presentation->ID,

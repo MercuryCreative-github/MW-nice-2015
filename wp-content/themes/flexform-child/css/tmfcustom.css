@@ -787,6 +787,7 @@ nav .menu ul{background-color:transparent !important;}
 .dday span{font-size:20px;}
 .dday p, .dday-table p{font-size:15px;line-height:18px;}
 .dday-table{border-left:#ee7813 5px solid;color:#444444;border-radius:initial;}
+.single-agenda_tracks .dday-table {border: none;}
 
 /* FEED INFORM **/
 .feed-related-posts .home-titles { padding-bottom: 10px; border-bottom: 2px solid lightgray;}

@@ -204,20 +204,20 @@
 												$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
 												$dnumber=date('d',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
 												$dmonth=date('M',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
-												$displayTime=date('h:i',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+												$displayTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
 												$presentationLink = get_permalink();
 												
 												if($currentPresentation==$presentationToCheckId){
-													$highlightCurrent='style="border-color:'.$sessionColor.';"';
+													$highlightCurrent='style="border-left:'.$sessionColor.' 5px solid;"';
 													$linkColorCurrent='style="color:'.$sessionColor.';"';
 												}else{
-													$highlightCurrent='style="border-color:#AEACAC;"';
+													$highlightCurrent='style="border-left:#AEACAC 5px solid;"';
 													$linkColorCurrent='style="color:#AEACAC;"';
 												}
 
 												$sidebarSchedule.= '<div>';
-												$sidebarSchedule.= '<div class="dday-table dday01-table" '.$highlightCurrent.'>';
-												$sidebarSchedule.= '<p>'.$dmonth.'<span class="number-day">'.$dnumber.'</span></p>';
+												$sidebarSchedule.= '<div class="dday-table dday01-table">';
+												$sidebarSchedule.= '<p '.$highlightCurrent.'>'.$dmonth.'<span class="number-day">'.$dnumber.'</span></p>';
 												$sidebarSchedule.= '</div>';
 												$sidebarSchedule.= '<div class="fday">';
 												$sidebarSchedule.='<a href="'.$presentationLink .'" '.$linkColorCurrent.'>'.$presentationTitle.'</a><br>';
