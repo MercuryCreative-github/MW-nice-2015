@@ -760,6 +760,11 @@
         margin-right: auto;
         margin-left: auto;
     }
+
+    #logo a{
+        width: 142px;
+        padding-top: 3px;
+    }
 }
 
 @media screen and (min-width: 840px) and (max-width: 945px){
@@ -1637,7 +1642,7 @@
     #main-navigation {
         float: none;
 
-        float: none;  box-shadow: 1px 3px 5px #ccc;  background: white;
+        float: none;  box-shadow: 1px -1px 5px #ccc;  background: white;
     }
     nav#main-navigation .menu>li {
         float: none;
