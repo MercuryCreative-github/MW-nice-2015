@@ -1641,8 +1641,8 @@
     #logo img{margin: auto;}
     #main-navigation {
         float: none;
-
-        float: none;  box-shadow: 1px -1px 5px #ccc;  background: white;
+        float: none;
+        background: white;
     }
     nav#main-navigation .menu>li {
         float: none;
