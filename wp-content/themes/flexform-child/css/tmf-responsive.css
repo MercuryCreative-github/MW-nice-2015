@@ -581,6 +581,8 @@
         margin-left: 80px;
     }
 
+    .discount-circle{float: none;}
+
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -718,6 +720,10 @@
     }
     .main-video-name.SKL {
         width: 220px;
+    }
+
+    .passes-prices .color-box{
+        padding-right: 25px;
     }
 }
 
