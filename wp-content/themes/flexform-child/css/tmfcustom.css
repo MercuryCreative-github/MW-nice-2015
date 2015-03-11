@@ -787,6 +787,7 @@ nav .menu ul{background-color:transparent !important;}
 .dday span{font-size:20px;}
 .dday p, .dday-table p{font-size:15px;line-height:18px;}
 .dday-table{border-left:#ee7813 5px solid;color:#444444;border-radius:initial;}
+.single-agenda_tracks .dday-table {border: none;}
 
 /* FEED INFORM **/
 .feed-related-posts .home-titles { padding-bottom: 10px; border-bottom: 2px solid lightgray;}
@@ -2794,7 +2795,7 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 }
 
 .passes-prices .color-box{
-	padding-right: 57px;
+	padding-right: 78px;
 	width: auto;
 }
 .discount-circle {
@@ -2802,7 +2803,8 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 		border: 2px solid #e6e5e4;
 		border-radius: 50px;
 		height: 83px;
-		margin: 0 auto;
+		margin: 26px 40px;
+		/*margin: 0 auto;*/
 		padding-top: 5px;
 		width: 90px;
 		float: left;

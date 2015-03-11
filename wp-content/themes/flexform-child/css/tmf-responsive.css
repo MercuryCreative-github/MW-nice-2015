@@ -581,7 +581,20 @@
         margin-left: 80px;
     }
 
-    .discount-circle{float: none;}
+    .discount-circle{
+        float: none;
+        margin: 26px auto;
+    }
+
+    .passes-prices .color-box{
+        padding:0 15px;
+    }
+
+    .discount-text-box{
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0;
+    }
 
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
