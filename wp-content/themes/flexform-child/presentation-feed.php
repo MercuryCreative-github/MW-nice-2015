@@ -33,8 +33,18 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 				$fieldId = $field->ID;
 				$fn = get_the_title( $fieldId );
 			}
-			$sessionTitle = get_post_meta($presentationId,'_TMF_presentation_session',true);
-			$session .= '<sessionTrack>' . $sessionTitle . '</sessionTrack>';
+			$sessionId = get_post_meta($presentation->ID, '_TMF_presentation_session', true);
+			
+
+			$summits = get_the_terms($sessionId, 'tmf_summit_category' );
+
+			foreach ($summits as $summitTitle) {
+				
+			$session .= '<sessionTrack>' . ( $summitTitle->name ) . '</sessionTrack>';
+			}
+
+			
+
 			$userArgs = array(	
 													'meta_key'     => 'speaker_at',
 													'meta_value'   => $presentation->ID,

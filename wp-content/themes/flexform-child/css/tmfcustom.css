@@ -73,8 +73,15 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .networking .page-content .networking-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-3,  
 .networking.page .networking-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1,
 .networking.page .networking-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2,
-.networking.page .networking-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #ee7630 !important;}
-.networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
+.networking.page .networking-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3,.theater .page-content .theater-tab .ui-widget-header li:hover a#ui-id-1, .theater .page-content .theater-tab .ui-widget-header li:hover a#ui-id-2,
+.theater .page-content .theater-tab .ui-widget-header li:hover a#ui-id-3,   
+.theater .page-content .theater-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-1,
+.theater .page-content .theater-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-2, 
+.theater .page-content .theater-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-3,  
+.theater.page .theater-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1,
+.theater.page .theater-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2,
+.theater.page .theater-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #ee7630 !important;}
+.networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .theater.page .theater-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
 	text-transform: uppercase;
 	font-size: 16px;
 	letter-spacing: 1px;
@@ -83,10 +90,12 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	margin: 0;
 }
 
-.networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
-.networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
-.networking-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
-
+.networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel, .theater-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
+.networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
+.networking-tab.wpb_content_element .ui-widget-header .ui-state-default, .theater-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
+.theater .summit-day {
+	display: none;
+}
 /**************************/
 /******* SUBMIT PAGE ******/
 /**************************/
@@ -2138,7 +2147,7 @@ div.wpcf7 br {display: none}
 	max-width: 450px;
 	min-height: 80px;
 	margin-bottom: 50px;
-	max-height: 112px;
+	max-height: 88px;
 }
 /*.speaker-item.span6:nth-child(even) {margin-right: 20px}*/
 
@@ -2289,9 +2298,6 @@ div.wpcf7 br {display: none}
 	background-position: center;
 
 }
-
-/*turn off the speakers menu, including the search input*/
-.span12.speakers-actions{display: none;}
 
 /* Speaker Profile page */
 

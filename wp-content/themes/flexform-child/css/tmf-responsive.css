@@ -237,7 +237,7 @@
     /*#menu-event-main-menu{ width: 805px;}*/
 
     .ml30{ margin-left: 0px;    }
-    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
+    .networking-tab .wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab .wpb_content_element .ui-tabs .ui-tabs-nav{
         width: 100vw;
     }
 
@@ -596,6 +596,9 @@
         padding: 0;
     }
 
+    .speaker-item.span6{max-height: none;}
+    .speaker-item .speaker-info .role{max-height: none;}
+    .company{padding-left:100px;}
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -1174,7 +1177,7 @@
 }
 
 @media screen and (max-width: 675px){
-    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
+    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
         width: 100%;
     }
 }
@@ -1854,7 +1857,7 @@
         padding: 10px 20px !important;
     }
 
-    .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
+    .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .theater.page .theater-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
         padding: 0 20px 0 0 !important;
     }
 
@@ -2540,7 +2543,7 @@
     }
 
     /*custom-tabs class it's for select the tabs btns of pages summit & networking*/
-    .summit-tabs li, .networking-tab li{
+    .summit-tabs li, .networking-tab li, .theater-tab li{
         width: 100%;
     }
 }

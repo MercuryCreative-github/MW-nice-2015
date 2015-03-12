@@ -109,10 +109,12 @@ Template Name: Speakers
 		<?php } else { ?>
 
 		<div class="page-content clearfix">
+		<!--//
 		<div class="speaker-description">
-		<h2>Here is just a small selection of the experts presenting at TM Forum Live!</h2>
-		<p style="margin-bottom: 50px;">Watch this space for the full speaker list coming very soon.</p>
+			<h2>Here is just a small selection of the experts presenting at TM Forum Live!</h2>
+			<p style="margin-bottom: 50px;">Watch this space for the full speaker list coming very soon.</p>
 		</div>
+		//-->
 			<div class="span12 speakers-actions">
 				<div class="filters span9">
 					<button type="button" class="high">Highlighted</button>
@@ -130,7 +132,7 @@ Template Name: Speakers
 					$avatar = get_user_meta($sid, 'image',1);
 					foreach ( $blogusers as $user ) {
 						echo '<div class="speaker-item span6">';
-						//echo '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
+						echo '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
 						echo '<span class="speaker-info">';
 						echo '<span class="thumb">' . wp_get_attachment_image($user->image) . '</span>';
 						echo '<span class="name">' . esc_html( $user->display_name ) . '</span>';
@@ -152,7 +154,7 @@ Template Name: Speakers
 						//echo '<strong class="company">' . get_the_title($user->company[0]) . '</strong>';
 						echo '<i class="highlighted">' . esc_html( $user->speaker_attribs[0] ) . '</i><i class="keynote">' . esc_html( $user->speaker_attribs[1] ) . '</i>';
 						echo '</span>';
-						//echo '</a>';
+						echo '</a>';
 						echo '</div> <!-- End Speaker -->';
 				}
 			?>
