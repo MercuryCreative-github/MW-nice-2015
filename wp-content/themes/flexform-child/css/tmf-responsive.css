@@ -596,6 +596,9 @@
         padding: 0;
     }
 
+    .speaker-item.span6{max-height: none;}
+    .speaker-item .speaker-info .role{max-height: none;}
+    .company{padding-left:100px;}
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
