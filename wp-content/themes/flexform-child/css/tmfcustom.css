@@ -2252,13 +2252,7 @@ div.wpcf7 br {display: none}
 .speaker-item .speaker-info span {
 	display: block;
 }
-.speaker-item .speaker-info .thumb {
-	float: left;
-	margin-right: 10px;
-	height: 90px;
-	width: 90px;
-	overflow: hidden;
-}
+
 
 .speaker-item .speaker-info .name {
 	color: #ee7630;
@@ -2310,17 +2304,13 @@ div.wpcf7 br {display: none}
 	background-image: url(../images/SpeakersPlus.png);
 	background-size: 100% 100%;
 	background-position: center;
-
+	height: 90px;
+	width: 90px;
+	overflow: hidden;
 }
 
 /* Speaker Profile page */
 
-.speaker-profile .speaker-info .thumb {
-	margin-right: 20px;
-	margin-bottom: 20px;
-	width: 150px;
-	float: left;
-}
 .speaker-profile .speaker-info li {
 	list-style: disc;
 	color: #444;
