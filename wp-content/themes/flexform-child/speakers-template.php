@@ -148,7 +148,7 @@ Template Name: Speakers
 						echo '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
 						echo '<div class="thumb">' . wp_get_attachment_image($user->image) . '</div>';
 						echo '<div class="speaker-info-mini">';
-						echo '<span class="name">' . esc_html( $user->display_name ) . '</span>';
+						echo '<p class="name">' . esc_html( $user->display_name ) . '</p>';
 						
 						// New mapping of user and companies with job role
 						// Get companies and job role
@@ -159,8 +159,8 @@ Template Name: Speakers
 							if( empty( $jobRole ) ) {
 								$jobRole = esc_html( $user->role );
 							}
-							echo '<span class="role">' . esc_html( $jobRole ) . '</span>';
-							echo '<strong class="company">' . get_the_title( $companyIds ) . '</strong>';
+							echo '<p class="role">' . esc_html( $jobRole ) . '</p>';
+							echo '<p><strong class="company">' . get_the_title( $companyIds ) . '</strong></p>';
 						} 
 						
 

@@ -1553,6 +1553,22 @@ ul#wprssmi_rss_list li.item:nth-child(3) .title-rss{background:#B0B53F;}
 /*HP-button*/
 .homepage a.sf-button.red{background-color:#E4252F;float:none;margin: 0px;}
 .homepage a.sf-button.large{line-height: 20px;padding: 10px 50px;}
+
+.speaker-item .speaker-info-mini .name {
+	color: #ee7630;
+	font-size: 20px;
+	line-height: 22px;
+	font-weight: 500;
+	padding-bottom: 5px;
+}
+
+.speaker-info-mini .role{
+	font-style: italic;
+	font-size: 14px;
+	line-height: 17px;
+	max-height: 46px;
+}
+}
 /********************/
 /***** NEW HP  *****/
 /******************/
@@ -2216,6 +2232,18 @@ div.wpcf7 br {display: none}
 		height: 36px;
 		border-color: #eee;
 }
+.speaker-info-mini p{
+	font-weight: 300;
+	margin: 0;
+}
+/*
+.speaker-item-mini{
+float: left;
+margin: 0px 7px 5px 7px;
+max-width: 540px;
+text-rendering: optimizelegibility;
+width: 45%;
+}*/
 
 /* Bootsrap was altered on tmf-responsive.css so I need to add max-width to solve this */
 @media screen and (max-width: 500px) {
@@ -2241,7 +2269,7 @@ div.wpcf7 br {display: none}
 	}
 	.speakers-actions.span12 {margin-left: 10px}
 	.speakers-actions .form {margin-left: 2px}
-	.speaker-item.span6 {margin: 0 7px 40px}
+	.speaker-item.span6 {margin: 0 7px 5px 7px}
 }
 
 .speaker-item a {
@@ -2318,6 +2346,7 @@ div.wpcf7 br {display: none}
 	overflow: hidden;
 	display: inline-block;
 	vertical-align: top;
+	margin-bottom: 20px;
 }
 
 .speaker-info-mini{
