@@ -390,7 +390,7 @@
 						$avatar = $user->image;
 						$avatar = '<hr><a href="/speaker-profile/?id='.$sid.'">' . wp_get_attachment_image($avatar).'</a>';
 						//$avatar = ''; // borra esta linea para que aparezca el avatar
-						$nameSp = '<div class="speakerSidebar">' . $user->first_name.' '.$user->last_name;
+						$nameSp = '<div class="speakerSidebar"><a href="/speaker-profile/?id='.$sid.'"'.$linkColorCurrent.' >' . $user->first_name.' '.$user->last_name.'</a>';
 						
 						// New mapping of user and companies with job role
 						// Get companies and job role

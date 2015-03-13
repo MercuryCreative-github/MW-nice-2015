@@ -350,10 +350,18 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                     'name' => __('Head shot', 'cmb2'),
                                     'id' => 'image',
                                     'type' => 'file',
-                                ),
+                                ),   
 
-
-                               
+                                array(
+                                    'name' => 'Speakers Categories',
+                                    'id' => $prefix . 'speakers_categories',
+                                    'desc' => 'Mark if the Speaker is Highlighted and/or Keynote.',
+                                    'type' => 'multicheck',
+                                    'options' => array(
+                                        'check1' => 'Highlighted',
+                                        'check2' => 'Keynote',
+                                    )
+                                ), 
                             )
                         );
             return $meta_boxes;
