@@ -148,8 +148,8 @@ Template Name: Home Page
 				</ul>
 			</div>
 		</div>
-		<div class="to-remove-position-absolute"></div>
-		<div class="pricing-call-out">
+		<div class="to-remove-position-absolute" style="display: none;"></div>
+		<div class="pricing-call-out" style="display: none;">
 			<a class="pricing-call-out-content" href="/passes-pricing/">
 				<div class="pricing-call-text"><span class="call-text-big">DON’T DELAY!</span><br/>Registration prices increase March 13!</div>
 				<div class="pricing-call-icon"><img src="/wp-content/uploads/2015/03/icon-register-banner.png"/></div>			
