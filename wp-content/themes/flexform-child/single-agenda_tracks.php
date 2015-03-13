@@ -278,7 +278,7 @@
 						$args=array(
 							'category__in' => $category_ids,
 							'post__not_in' => array($post->ID),
-							'showposts'=> 4, // Number of related posts that will be shown.
+							'numberposts'=> 2, // Number of related posts that will be shown.
 							'orderby' => 'rand'
 						);
 					}

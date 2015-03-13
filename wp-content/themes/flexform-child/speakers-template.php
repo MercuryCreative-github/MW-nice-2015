@@ -131,7 +131,20 @@ Template Name: Speakers
 					$user_id = esc_html( $user->ID );
 					$avatar = get_user_meta($sid, 'image',1);
 					foreach ( $blogusers as $user ) {
-						echo '<div class="speaker-item span6">';
+
+
+						$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
+						$categoryDisplay='';
+
+						if(is_array($categorySpeakers)){
+
+							foreach ($categorySpeakers as $categorySpeaker) {
+								if($categorySpeaker=='check1'){$categoryDisplay.=' highlighted';}
+									else{$categoryDisplay.=' keynote';};
+							}
+						}
+
+						echo '<div class="speaker-item span6 '.$categoryDisplay.'">';
 						echo '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
 						echo '<span class="speaker-info">';
 						echo '<span class="thumb">' . wp_get_attachment_image($user->image) . '</span>';
@@ -150,10 +163,8 @@ Template Name: Speakers
 							echo '<strong class="company">' . get_the_title( $companyIds ) . '</strong>';
 						} 
 						
-						//echo '<span class="role">' . esc_html( $user->role ) . '</span>';
-						//echo '<strong class="company">' . get_the_title($user->company[0]) . '</strong>';
-						//echo get_post_meta($user->ID, 'speakers_categories', true);
-						echo '<i class="highlighted">' . get_post_meta($user->ID, '_TMF_speakers_categories', true) . '</i><i class="keynote">' . get_post_meta($user->ID, 'speakers_categories', true) . '</i>';
+
+
 						echo '</span>';
 						echo '</a>';
 						echo '</div> <!-- End Speaker -->';
@@ -183,31 +194,25 @@ Template Name: Speakers
 	            }
 	        });
 	    });
+
 		/* Filtering Highlited, Keynotes Speakers */
 		jQuery('.filters .all').click(function() {
-			jQuery('.find-speaker').val('');
-	        jQuery('.speaker-item').each(function() {
-	            jQuery(this).show();
-	        });
+			jQuery('.speaker-item').fadeIn();
+
 	    });
+
 		jQuery('.filters .high').click(function() {
-			jQuery('.find-speaker').val('');
-	        jQuery('.speaker-item .highlighted').each(function() {
-	            jQuery(this).parent().parent().parent().fadeOut();
-	            if (jQuery(this).text().indexOf("Highlighted") >= 0) {
-	                jQuery(this).parent().parent().parent().fadeIn();
-	            }
-	        });
+			jQuery('.speaker-item').stop(true,true).fadeOut(function(){
+	        	jQuery('.speaker-item.highlighted').fadeIn();				
+			});
 	    });
+
 		jQuery('.filters .key').click(function() {
-			jQuery('.find-speaker').val('');
-	        jQuery('.speaker-item .keynote').each(function() {
-	            jQuery(this).parent().parent().parent().fadeOut();
-	            if (jQuery(this).text().indexOf("Keynote") >= 0 || jQuery(this).prev().text().indexOf("Keynote") >= 0 ) {
-	                jQuery(this).parent().parent().parent().fadeIn();
-	            }
+	        jQuery('.speaker-item').stop(true,true).fadeOut(function(){
+	       		jQuery('.speaker-item.keynote').fadeIn();	        	
 	        });
 	    });
+
 	    /* Higlighting selected option */
 		jQuery('.filters button').click(function() {
 			jQuery('.find-speaker').val('');
