@@ -237,7 +237,7 @@
     /*#menu-event-main-menu{ width: 805px;}*/
 
     .ml30{ margin-left: 0px;    }
-    .networking-tab .wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab .wpb_content_element .ui-tabs .ui-tabs-nav, .takeaway-tab .wpb_content_element .ui-tabs .ui-tabs-nav{
+    .networking-tab .wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab .wpb_content_element .ui-tabs .ui-tabs-nav, .takeaway-tab .wpb_content_element .ui-tabs .ui-tabs-nav, .workshops-tab .wpb_content_element .ui-tabs .ui-tabs-nav{
         width: 100vw;
     }
 
@@ -1177,7 +1177,7 @@
 }
 
 @media screen and (max-width: 675px){
-    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
+    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
         width: 100%;
     }
 }
@@ -1857,7 +1857,7 @@
         padding: 10px 20px !important;
     }
 
-    .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .theater.page .theater-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .takeaway.page .takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
+    .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .theater.page .theater-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .takeaway.page .takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .workshops.page .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
         padding: 0 20px 0 0 !important;
     }
 
@@ -2543,7 +2543,7 @@
     }
 
     /*custom-tabs class it's for select the tabs btns of pages summit & networking*/
-    .summit-tabs li, .networking-tab li, .theater-tab li, .takeaway-tab li{
+    .summit-tabs li, .networking-tab li, .theater-tab li, .takeaway-tab li, .workshops-tab li{
         width: 100%;
     }
 }
