@@ -208,7 +208,7 @@ function callPresentations($userId,$user,$day){
 // The Vars to run the Query that gets all the Agenda Tracks (presentations) with the speaker asociated
 $args = array(
 	'post_type' => 'agenda_tracks',
-	'meta_key' => 'day', // para ordenar por dia asc primero defino meta_key
+	'meta_key' => '_TMF_presentations_start_date', // para ordenar por dia asc primero defino meta_key
     'orderby'   => 'meta_value', // luego el order orderby
 	'order' => 'ASC', // finalmente si es asc o desc
 	'meta_query' =>array(
@@ -240,9 +240,9 @@ foreach ($presentationsIDsArray as $arr) {
 }
 
 
-/*echo '<pre>';
+echo '<pre>';
 print_r($presentationsIDs);
-echo '</pre>';*/
+echo '</pre>';
 
 
 	$args = array(
@@ -262,7 +262,9 @@ echo '</pre>';*/
 	$presentations='';
 	$presentations.='<div class="wpb_wrapper clearfix"><h4>' . esc_html( $user->display_name ) . '&#39;s <strong>Schedule</strong></h4></div>';
 
-if (count($presentationsIDs)>0){
+
+
+/*if (count($presentationsIDs)>0){
 	while ( $loop->have_posts() ) : $loop->the_post();
 
 	// get the selected day
@@ -337,7 +339,9 @@ if (count($presentationsIDs)>0){
 	$sidebarSchedule .='<div class="nday" style="margin-bottom:10px;"><div class="dday" style="background:#ffffff"><p>DEC<br><span>'.$dnumber.'</span></p></div>';
 	$sidebarSchedule .='<div class="fday"><strong><span style="text-transform:capitalize">' .$title. '</span></strong></br><strong>'.$forum. '<!-- at '. $showStartTime.'--></strong></div></div><div class="clear"></div>';
 	endwhile;
-}
+}*/
+
+
 
 	// Reset Post Data
 	wp_reset_postdata();

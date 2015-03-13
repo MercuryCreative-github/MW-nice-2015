@@ -152,7 +152,8 @@ Template Name: Speakers
 						
 						//echo '<span class="role">' . esc_html( $user->role ) . '</span>';
 						//echo '<strong class="company">' . get_the_title($user->company[0]) . '</strong>';
-						echo '<i class="highlighted">' . esc_html( $user->speaker_attribs[0] ) . '</i><i class="keynote">' . esc_html( $user->speaker_attribs[1] ) . '</i>';
+						//echo get_post_meta($user->ID, 'speakers_categories', true);
+						echo '<i class="highlighted">' . get_post_meta($user->ID, '_TMF_speakers_categories', true) . '</i><i class="keynote">' . get_post_meta($user->ID, 'speakers_categories', true) . '</i>';
 						echo '</span>';
 						echo '</a>';
 						echo '</div> <!-- End Speaker -->';
