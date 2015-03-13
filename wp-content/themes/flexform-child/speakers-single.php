@@ -204,20 +204,8 @@ echo $speakerItem;
 
 
 // old call to the Db where we look for the presentations with userId on their meta
-function callPresentations($userId,$user,$day){
+function callPresentations($user){
 // The Vars to run the Query that gets all the Agenda Tracks (presentations) with the speaker asociated
-$args = array(
-	'post_type' => 'agenda_tracks',
-	'meta_key' => 'day', // para ordenar por dia asc primero defino meta_key
-    'orderby'   => 'meta_value', // luego el order orderby
-	'order' => 'ASC', // finalmente si es asc o desc
-	'meta_query' =>array(
-		array('value' => $userId,'compare' => 'LIKE'), // en algun meta tiene el ID de este usuario (speaker, moderator, facilitator, panelist)
-		array('key' =>'day','compare' => 'EXISTS'), // existe el "day"
-	),// meta_query
-); // args
-
-
 
 $presentationsToSpeak = get_user_meta($user->ID, 'speaker_at' );
 $presentationsToModerate = get_user_meta($user->ID, 'moderator_at' );
@@ -239,33 +227,36 @@ foreach ($presentationsIDsArray as $arr) {
 	}
 }
 
-
-/*echo '<pre>';
-print_r($presentationsIDs);
-echo '</pre>';*/
-
-
-	$args = array(
-	'post_type' => 'agenda_tracks',
-	'meta_key' => 'day', // para ordenar por dia asc primero defino meta_key
-	'orderby'   => 'meta_value', // luego el order orderby
-	'order' => 'ASC', // finalmente si es asc o desc
-	'post__in'      => $presentationsIDs
-	);
-
-	
-
-
-	$loop = new WP_Query( $args );
-
-
 	$presentations='';
 	$presentations.='<div class="wpb_wrapper clearfix"><h4>' . esc_html( $user->display_name ) . '&#39;s <strong>Schedule</strong></h4></div>';
 
-if (count($presentationsIDs)>0){
-	while ( $loop->have_posts() ) : $loop->the_post();
+foreach ($presentationsIDs as $presentationToCheck ) {
 
-	// get the selected day
+		$presentationToCheck = get_post( $presentationToCheck );
+
+		if ( $presentationToCheck  !== NULL && $presentationToCheck->post_type =='agenda_tracks'){
+
+			$presentationToCheckId=$presentationToCheck->ID;
+
+			$presentationTitle=get_the_title($presentationToCheckId);
+			$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
+
+			$dmonth=date('D j',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+			$startTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+			$endTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
+			$presentationLink = get_permalink($presentationToCheckId);
+
+			$presentations.='<div class="speaking-schedule">';
+			$presentations.='<p><strong><a href="'.$presentationLink.'">'.$presentationTitle.'</a></strong><br/>';
+			$presentations.='<span style="text-transform: capitalize;">'.$dmonth.'</span> - '.$startTime.' - '.$endTime.'</p>';
+			$presentations.='</div>';
+
+		}
+
+
+}
+
+/*	// get the selected day
 	$day=get_field('day');
 	$dayAtt='';
 	$speakersDisplay='';
@@ -337,16 +328,15 @@ if (count($presentationsIDs)>0){
 	$sidebarSchedule .='<div class="nday" style="margin-bottom:10px;"><div class="dday" style="background:#ffffff"><p>DEC<br><span>'.$dnumber.'</span></p></div>';
 	$sidebarSchedule .='<div class="fday"><strong><span style="text-transform:capitalize">' .$title. '</span></strong></br><strong>'.$forum. '<!-- at '. $showStartTime.'--></strong></div></div><div class="clear"></div>';
 	endwhile;
-}
+}*/
 
-	// Reset Post Data
-	wp_reset_postdata();
+
 
 	if($presentations!=='<div class="wpb_wrapper clearfix"><h2>' . esc_html( $user->display_name ) . '&#39;s schedule</h2></div>'){echo $presentations;}
 	return $sidebarSchedule;
 	}
 
-	//$sidebarSchedule = callPresentations($userId,$user,'monday');
+	$sidebarSchedule = callPresentations($user);
 
 ?>
 
