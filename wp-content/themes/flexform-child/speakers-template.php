@@ -146,8 +146,8 @@ Template Name: Speakers
 
 						echo '<div class="speaker-item span6 '.$categoryDisplay.'">';
 						echo '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
-						echo '<span class="speaker-info">';
-						echo '<span class="thumb">' . wp_get_attachment_image($user->image) . '</span>';
+						echo '<div class="thumb">' . wp_get_attachment_image($user->image) . '</div>';
+						echo '<div class="speaker-info-mini">';
 						echo '<span class="name">' . esc_html( $user->display_name ) . '</span>';
 						
 						// New mapping of user and companies with job role
@@ -165,7 +165,7 @@ Template Name: Speakers
 						
 
 
-						echo '</span>';
+						echo '</div>';
 						echo '</a>';
 						echo '</div> <!-- End Speaker -->';
 				}
