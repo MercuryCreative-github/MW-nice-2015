@@ -257,6 +257,14 @@
     .textwidget a.sf-button.medium.yellow.register-agenda {width: 100%;padding: 10px 0;}
 
     #mini-header .container{width: 85%;}
+
+    .speaker-data{
+        width: 75%;
+    }
+
+    .thumb{
+        margin-bottom: 23px;
+    }
 }
 
 @media screen and (max-width: 1120px){
@@ -438,9 +446,9 @@
     .position {
         margin-left: 17px;
     }
-    .company {
+    /*.company {
         margin-left: 16px;
-    }
+    }*/
     .homespeakers img {
         width: 37%;
         margin: 5px 11px 0px 0 !important;
@@ -598,7 +606,10 @@
 
     .speaker-item.span6{max-height: none;}
     .speaker-item .speaker-info .role{max-height: none;}
-    .company{padding-left:100px;}
+
+    .speaker-box {
+        width: 100%;
+    }
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -1257,6 +1268,19 @@
 
     .title-green, .section02-info{
         padding: 0 20px !important;
+    }
+
+    .speaker-data{
+        width: 70%;
+    }
+
+    .speaker-box{
+        padding-left: 6%;
+        box-sizing: border-box;
+    }
+
+    .speaker-box a{
+        padding: 15px 0; 
     }
 }
 @media screen and (max-width: 320px) {
