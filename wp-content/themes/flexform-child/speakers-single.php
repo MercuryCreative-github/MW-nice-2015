@@ -156,11 +156,11 @@ Template Name: Speaker Profile
 
 // User data from
 $speakerItem= '<div class="speaker-info">';
-	$speakerItem.= '<div class="thumb">'; 
+	$speakerItem.= '<div class="thumb-single thumb">'; 
 		$speakerItem.= wp_get_attachment_image($user->image);
 		$speakerItem.= '<div style="margin-top: 20px;"><a href="'.$companyURL.'" target="_blank">'.$companyThumb.'</a></div>';
 	$speakerItem.= '</div>';
-	$speakerItem.= '<div class="subtitle" style="display:table-cell;vertical-align: top;">';
+	$speakerItem.= '<div class="subtitle" style="display:inline-block;vertical-align: top;">';
 		$speakerItem.= '<h4>' . esc_html( $user->display_name ). $twitter . '</h4>';
 		
 		// Get companies and job role

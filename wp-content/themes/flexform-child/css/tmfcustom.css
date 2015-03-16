@@ -126,7 +126,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 
 .networking-tab.wpb_content_element .ui-widget-header .ui-state-default, .theater-tab.wpb_content_element .ui-widget-header .ui-state-default, .takeaway-tab.wpb_content_element .ui-widget-header .ui-state-default, .workshops-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
 
-.theater .summit-day {
+.theater .summit-day, .theater .summit-session{
 	display: none;
 }
 /**************************/
@@ -183,6 +183,7 @@ p.list-title {font-weight: bold;font-size: 20px;border-width: 2px; border-style:
 
 /*sidebar*/
 p.summit-sidebar-title {border: none;margin-bottom: 0px;}
+.page-content .summit-sidebar-tabs ul{margin:0;}
 .page-content .summit-sidebar-tabs ul li {list-style-type: none;border-bottom: #E4E4E4 1px solid;padding: 15px 0;}
 .page-content .summit-sidebar-tabs ul li:last-child {border:none;}
 .page-content .summit-sidebar-tabs ul li:before {content:"\f00c";font-family:FontAwesome;font-size:14px;padding-right:10px;}
@@ -192,6 +193,7 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .page-content .summit-sidebar-tabs.business-innovation ul li:before {color: #225f91;}
 .page-content .summit-sidebar-tabs.digital-operations ul li:before {color: #27abb2;}
 .page-content .summit-sidebar-tabs.executive ul li:before {color: #201e20;}
+.gform_wrapper input[type=text]{padding: 5px 2px 5px 13px !important;}
 
 /*sidebar form*/
 input[type="text"], input[type="password"], input[type="email"], textarea, select, input[type="tel"] { background:#FFFFFF; border-radius:0; padding-left:10px; }
@@ -771,6 +773,10 @@ li.recent-posts-extended .rpwe-block ul.rpwe-ul li.rpwe-clearfix{border-bottom:#
 .fullName hr{margin:5px 0;border:1px dashed #D9DADB;height:0;}
 .feautered h1{font-size:27px;font-weight:bold;color:#575757;}
 .speakers-home{width:12.5%;float:left;margin-right:5%;}
+
+.key, .high, .speakers-actions .all{
+	display: none;
+}
 /*end keynotes*/
 
 #footer{background:#4D4D4D !important;}
@@ -2351,6 +2357,32 @@ div.wpcf7 br {display: none}
 .speaker-box{
 	width: 49.5%;
 	float: left;
+}
+
+.find-speaker{
+	border-radius: 0 !important;
+}
+
+.thumb-single{
+	border-radius: 50%;
+	background-size: 100% 100%;
+	background-image: none;
+	background-position: center;
+	height: 150px;
+	width: 150px;
+	margin-right: 20px;
+}
+
+.speaker-info .subtitle{
+	width: 75%;
+}
+
+.speaker-info .subtitle p{margin-bottom: 10px;}
+
+.speaker-info .subtitle p:last-child{
+	font-size: 14px;
+	line-height: 23px;
+	margin-bottom: 20px;
 }
 
 /* Speaker Profile page */
