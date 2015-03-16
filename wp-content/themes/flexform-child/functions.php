@@ -337,21 +337,13 @@ function modify_contact_methods($profile_fields) {
 	unset($profile_fields['facebook']);
 	unset($profile_fields['twitter']);
 
-	if (!current_user_can(‘edit_posts’)) {
+	if (!current_user_can('edit_posts')) {
 		show_admin_bar(false);
 	}
 	return $profile_fields;
 }
 add_filter('user_contactmethods', 'modify_contact_methods');
 // End Remove Hide color options for users
-
-
-// Avoid Yoast/SEO add OG metadata
-// ** Please do ** check this is not affecting any other SEO feature before moving onto staging site
-add_filter('wpseo_pre_analysis_post_content', 'mysite_opengraph_content');
-function mysite_opengraph_content($val) {
-    return '';
-}
 
 
 function remove_plain_bio($buffer) {
@@ -1019,6 +1011,19 @@ function save_presentation( $post_id, $post, $update ) {
 }
 
 add_action( 'save_post', 'save_presentation', 10, 3 );
+
+
+
+
+// Enable qTranslate for WordPress SEO
+function qtranslate_filter($text){
+  return __($text);
+}
+
+add_filter('wpseo_title', 'qtranslate_filter', 10, 1);
+add_filter('wpseo_metadesc', 'qtranslate_filter', 10, 1);
+add_filter('wpseo_metakey', 'qtranslate_filter', 10, 1);
+add_filter('wpseo_opengraph_title', 'qtranslate_filter', 10, 1);
 
 
 ?>
