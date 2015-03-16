@@ -11,7 +11,7 @@
  *               Bill Erickson (@billerickson / billerickson.net)
  *               Andrew Norcross (@norcross / andrewnorcross.com)
  *
- * Version:      2.0.3
+ * Version:      2.0.4
  *
  * Text Domain:  cmb2
  * Domain Path:  languages
@@ -42,19 +42,19 @@
                   or things might explode!
 *************************************************************************/
 
-if ( ! class_exists( 'cmb2_bootstrap_203', false ) ) {
+if ( ! class_exists( 'cmb2_bootstrap_204', false ) ) {
 
 	/**
 	 * Check for newest version of CMB
 	 */
-	class cmb2_bootstrap_203 {
+	class cmb2_bootstrap_204 {
 
 		/**
 		 * Current version number
 		 * @var   string
 		 * @since 1.0.0
 		 */
-		const VERSION = '2.0.3';
+		const VERSION = '2.0.4';
 
 		/**
 		 * Current version hook priority
@@ -63,7 +63,7 @@ if ( ! class_exists( 'cmb2_bootstrap_203', false ) ) {
 		 * @var   int
 		 * @since 2.0.0
 		 */
-		const PRIORITY = 9996;
+		const PRIORITY = 9995;
 
 		public static $single = null;
 
@@ -128,6 +128,6 @@ if ( ! class_exists( 'cmb2_bootstrap_203', false ) ) {
 		}
 
 	}
-	cmb2_bootstrap_203::go();
+	cmb2_bootstrap_204::go();
 
 } // class exists check
