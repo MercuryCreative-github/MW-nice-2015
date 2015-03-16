@@ -111,10 +111,6 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2,
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #ee7630 !important;}
 
-.theater .summit-session {
-  display: none;
-}
-
 .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .workshops.page .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .theater.page .theater-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .takeaway.page .takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
 	text-transform: uppercase;
 	font-size: 16px;
@@ -130,7 +126,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 
 .networking-tab.wpb_content_element .ui-widget-header .ui-state-default, .theater-tab.wpb_content_element .ui-widget-header .ui-state-default, .takeaway-tab.wpb_content_element .ui-widget-header .ui-state-default, .workshops-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
 
-.theater .summit-day {
+.theater .summit-day, .theater .summit-session{
 	display: none;
 }
 /**************************/
