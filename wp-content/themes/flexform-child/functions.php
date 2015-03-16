@@ -730,7 +730,14 @@ function summits_shortcode_func( $atts ) {
 	// If a new day stars, we write the DAY
 	if($storedDay!==date('l',$sessionStarts)){
 		$storedDay=date('l',$sessionStarts);
-		$sessions.= '<div class="summit-day"><p><img src="'.$sessionIcon.'"/>'.$storedDay.'</p></div>';
+		
+		if(isset($sessionIcon) && $sessionIcon != null){
+			$sessions.= '<div class="summit-day"><p>';
+			$sessions.= '<img src="'.$sessionIcon.'"/>';
+		}else{
+			$sessions.= '<div class="summit-day"><p style="padding: 0 0 5px 15px;">';
+		}
+		$sessions.= $storedDay.'</p></div>';
 	}
 
 	// Sessions output depends on functions
