@@ -144,10 +144,10 @@ Template Name: Speakers
 							}
 						}
 
-						echo '<div class="speaker-item span6 '.$categoryDisplay.'">';
+						echo '<div class="speaker-box speaker-item'.$categoryDisplay.'">';
 						echo '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
 						echo '<div class="thumb">' . wp_get_attachment_image($user->image) . '</div>';
-						echo '<div class="speaker-info-mini">';
+						echo '<div class="speaker-data">';
 						echo '<p class="name">' . esc_html( $user->display_name ) . '</p>';
 						
 						// New mapping of user and companies with job role

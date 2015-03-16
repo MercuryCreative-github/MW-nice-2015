@@ -1554,15 +1554,15 @@ ul#wprssmi_rss_list li.item:nth-child(3) .title-rss{background:#B0B53F;}
 .homepage a.sf-button.red{background-color:#E4252F;float:none;margin: 0px;}
 .homepage a.sf-button.large{line-height: 20px;padding: 10px 50px;}
 
-.speaker-item .speaker-info-mini .name {
+.speaker-item .speaker-data .name {
 	color: #ee7630;
 	font-size: 20px;
 	line-height: 22px;
 	font-weight: 500;
-	padding-bottom: 5px;
+	padding-bottom: 4px;
 }
 
-.speaker-info-mini .role{
+.speaker-data .role{
 	font-style: italic;
 	font-size: 14px;
 	line-height: 17px;
@@ -2232,18 +2232,14 @@ div.wpcf7 br {display: none}
 		height: 36px;
 		border-color: #eee;
 }
-.speaker-info-mini p{
+.speaker-data p{
 	font-weight: 300;
 	margin: 0;
 }
-/*
+
 .speaker-item-mini{
-float: left;
-margin: 0px 7px 5px 7px;
-max-width: 540px;
-text-rendering: optimizelegibility;
-width: 45%;
-}*/
+	width: 540px !important;
+}
 
 /* Bootsrap was altered on tmf-responsive.css so I need to add max-width to solve this */
 @media screen and (max-width: 500px) {
@@ -2291,21 +2287,18 @@ width: 45%;
 }
 
 
-.speaker-item .speaker-info .name {
+.speaker-data .name {
 	color: #ee7630;
 	font-size: 20px;
 	line-height: 22px;
-	margin-bottom: 3px;
-	padding-bottom: 10px;
 }
-.speaker-item .speaker-info .role {
+.speaker-data .role {
 	font-style: italic;
 	font-size: 14px;
-	line-height: 18px;
-	margin-left: 90px;
-	max-height: 36px;
+	line-height: 15px;
+	max-height: 58px;
 }
-.speaker-item .speaker-info .company {
+.speaker-data .company {
 	font-size: 14px;
 	line-height: 18px;
 	font-weight: bold;
@@ -2313,7 +2306,7 @@ width: 45%;
 	margin-top: 2px;
 }
 
-.speaker-info img{
+.speaker-box img{
 	display: block;
 	border-radius: 50%;
 	transition: all 0.2s;
@@ -2323,15 +2316,15 @@ width: 45%;
 	border: none;
 }
 
-.speaker-item a:hover{
+.speaker-box a:hover{
 	background: none;
 }
 
-.speaker-item a:hover .thumb img{
+.speaker-box a:hover .thumb img{
 	opacity: 0;
 }
 
-.speaker-item a:hover .thumb{
+.speaker-box a:hover .thumb{
 	background-color: #ee7630;
 }
 
@@ -2349,10 +2342,15 @@ width: 45%;
 	margin-bottom: 20px;
 }
 
-.speaker-info-mini{
+.speaker-data{
 	display: inline-block;
-	width: 80%;
 	padding:10px 0 0 10px;
+	width: 80%;
+}
+
+.speaker-box{
+	width: 49.5%;
+	float: left;
 }
 
 /* Speaker Profile page */
