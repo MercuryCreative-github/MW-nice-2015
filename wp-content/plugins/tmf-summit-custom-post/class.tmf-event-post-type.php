@@ -28,8 +28,6 @@ if (!class_exists('TMF_Summit_Post_Type')) {
         
         private static function init_hooks() {
             self::$initiated = true;
-            add_action('admin_head', array( 'TMF_Summit_Post_Type', 'hd_add_buttons' ) );
-            add_action('admin_init', array( 'TMF_Summit_Post_Type', 'add_edit_Summit_caps') );
             add_filter( 'single_template', array( 'TMF_Summit_Post_Type','get_custom_post_type_template'), 10,1);
         }
         
@@ -67,31 +65,6 @@ if (!class_exists('TMF_Summit_Post_Type')) {
                 'publicly_queryable'  => true,
                 'capability_type'     => 'page',
                 'menu_icon'           => 'dashicons-calendar-alt',//ADD_SUMMIT_POST_TYPE__PLUGIN_URL.'/assets/img/summit_icon_16x16.png',
-                'map_meta_cap' => true, // Set to false, if users are not allowed to edit/delete existing posts
-                'capabilities' => array(
-                    // meta caps (don't assign these to roles)
-                    'edit_post' => 'edit_tmf_Summit',
-                    'read_post' => 'read_tmf_Summit',
-                    'delete_post' => 'delete_tmf_Summit',
-                     
-                    // primitive/meta caps
-                    'create_posts' => 'create_tmf_summit',
-                     
-                    // primitive caps used outside of map_meta_cap()
-                    'edit_posts' => 'edit_tmf_sessions',
-                    'edit_others_posts' => 'manage_tmf_sessions',
-                    'publish_posts' => 'edit_tmf_sessions',
-                    'read_private_posts' => 'read',
-                     
-                    // primitive caps used inside of map_meta_cap()
-                    'read' => 'read',
-                    'delete_posts' => 'delete_tmf_sessions',
-                    'delete_private_posts' => 'delete_tmf_sessions',
-                    'delete_published_posts' => 'delete_tmf_sessions',
-                    'delete_others_posts' => 'delete_tmf_sessions',
-                    'edit_private_posts' => 'edit_tmf_sessions',
-                    'edit_published_posts' => 'edit_tmf_sessions'
-                ),                
                 'supports'          => array(
                     'title',
 					/*'editor',*/
@@ -136,31 +109,6 @@ if (!class_exists('TMF_Summit_Post_Type')) {
                 //'public'=> false,
             ); 
 
-            /*$taxonomies['tmf_summit_day']=array(
-                'hierarchical'=> false,
-                'query_var'=>'tmfsessionday',
-                'show_admin_column' => false,
-                'rewrite'  =>array(
-                    'slug'=>'tmforum-session-day'
-                ),
-                'labels'=> array(
-                    'name'                       => _x( 'Session Days', 'Session Days General Name', 'text_domain' ),
-                    'singular_name'              => _x( 'Session Day', 'Taxonomy Singular Name', 'text_domain' ),
-                    'menu_name'                  => __( 'Session Days', 'text_domain' ),
-                    'all_items'                  => __( 'All Days', 'text_domain' ),
-                    'new_item_name'              => __( 'New Day', 'text_domain' ),
-                    'add_new_item'               => __( 'Add New Day', 'text_domain' ),
-                    'edit_item'                  => __( 'Edit Day', 'text_domain' ),
-                    'update_item'                => __( 'Update Day', 'text_domain' ),
-                    'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
-                    'search_items'               => __( 'Search Days', 'text_domain' ),
-                    'add_or_remove_items'        => __( 'Add or remove Days', 'text_domain' ),
-                    'choose_from_most_used'      => __( 'Choose from the most used Days', 'text_domain' ),
-                    'not_found'                  => __( 'Not Found', 'text_domain' ),                
-                ),
-                //'public'=> false,
-            ); */
-
             self::register_all_taxonomies($taxonomies);
         }
         
@@ -170,32 +118,6 @@ if (!class_exists('TMF_Summit_Post_Type')) {
                     register_taxonomy($name, array('tmf_sessions'), $arr);    
                 }
             }
-        }
-        
-        public static function hd_add_buttons() {
-            global $pagenow;
-            if(is_admin()){
-                ?>
-                    <style>
-                    #menu-posts-tmf_sessions_type .current img{
-                        opacity: 1;} 
-                    </style>
-                <?php
-            }  
-        }
-        
-        public static function add_edit_Summit_caps(){
-            $admin_role = get_role( 'administrator' );
-                $admin_role  ->add_cap( 'edit_tmf_sessions' );
-                $admin_role  ->add_cap( 'manage_tmf_sessions' );
-                $admin_role  ->add_cap( 'create_tmf_summit' );
-                
-            
-            $editor_role = get_role( 'editor' );
-                $editor_role ->add_cap( 'edit_tmf_sessions' );
-                $editor_role ->add_cap( 'manage_tmf_sessions' );
-                $admin_role  ->add_cap( 'create_tmf_summit' );
-
         }
 
         private function is_Summit_post_type(){
