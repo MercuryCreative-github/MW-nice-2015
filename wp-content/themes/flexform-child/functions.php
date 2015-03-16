@@ -1014,16 +1014,63 @@ add_action( 'save_post', 'save_presentation', 10, 3 );
 
 
 
+/**
+ * Add custom fields to Yoast SEO analysis
+ */
 
-// Enable qTranslate for WordPress SEO
-function qtranslate_filter($text){
-  return __($text);
+add_filter('wpseo_pre_analysis_post_content', 'add_custom_to_yoast');
+
+function add_custom_to_yoast( $content ) {
+	global $post;
+	$pid = $post->ID;
+
+	$custom = get_post_custom($pid);
+	unset($custom['_yoast_wpseo_focuskw']); // Don't count the keyword in the Yoast field!
+
+	foreach( $custom as $key => $value ) {
+
+		if($key=='_TMF_presentation_session'){
+
+			$custom_content .= 'Session Title: '.get_the_title($value[0]). '</br>';
+
+		}
+		else if($key=='speakers_meta' ||$key=='panelists_meta' ||$key=='collaborators_meta' ||$key=='facilitators_meta' ||$key=='moderators_meta' ){
+			
+			$title= substr($key,0,-6);
+				foreach (unserialize($value[0]) as $speaker) {
+						$custom_content .= $title . ' : ' . get_user_meta($speaker,'first_name',true) . ' ' . get_user_meta($speaker,'last_name',true). '</br>';
+				}
+		}
+		else if($key=='_TMF_presentations_start_date'){
+
+			$custom_content .= 'Presentation Starts: '.date('F j, Y, g:i a',$value[0]). '</br>';
+
+		}
+		else if($key=='_TMF_presentations_end_date'){
+
+			$custom_content .= 'Presentation Ends: '.date('F j, Y, g:i a',$value[0]). '</br>';
+
+		}
+		
+		else{
+		  if (is_array($value)){
+		  	$custom_content .= implode ( ',' , $value) . '</br>';
+		  }else{
+		  	$custom_content .=$value. '</br>';
+		  }
+		}
+	
+		
+
+	}
+
+	$content = $content . ' ' . $custom_content;
+
+	//var_dump($content);
+	return $content;
+
+	remove_filter('wpseo_pre_analysis_post_content', 'add_custom_to_yoast'); // don't let WP execute this twice
 }
-
-add_filter('wpseo_title', 'qtranslate_filter', 10, 1);
-add_filter('wpseo_metadesc', 'qtranslate_filter', 10, 1);
-add_filter('wpseo_metakey', 'qtranslate_filter', 10, 1);
-add_filter('wpseo_opengraph_title', 'qtranslate_filter', 10, 1);
 
 
 ?>
