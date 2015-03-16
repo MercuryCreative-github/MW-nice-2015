@@ -46,7 +46,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             $meta_boxes['redirect_url']  = array(
                 'id' => 'redirect_url',
                 'title' => __('TMF - Page Settings', 'cmb2'),
-                'object_types' => array('page','tmf_sessions','tmf_presentations', 'post'),
+                'object_types' => array('page','tmf_sessions','agenda_tracks', 'post'),
                 'context' => 'normal',
                 'priority' => 'high',
                 'show_names' => true, // Show field names on the left
