@@ -193,6 +193,7 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .page-content .summit-sidebar-tabs.business-innovation ul li:before {color: #225f91;}
 .page-content .summit-sidebar-tabs.digital-operations ul li:before {color: #27abb2;}
 .page-content .summit-sidebar-tabs.executive ul li:before {color: #201e20;}
+.gform_wrapper input[type=text]{padding: 5px 2px 5px 13px !important;}
 
 /*sidebar form*/
 input[type="text"], input[type="password"], input[type="email"], textarea, select, input[type="tel"] { background:#FFFFFF; border-radius:0; padding-left:10px; }
