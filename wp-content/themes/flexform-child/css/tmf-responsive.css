@@ -265,6 +265,10 @@
     .thumb{
         margin-bottom: 23px;
     }
+
+    .speaker-info .subtitle{
+    width: 70%;
+    }
 }
 
 @media screen and (max-width: 1120px){
@@ -608,6 +612,10 @@
     .speaker-item .speaker-info .role{max-height: none;}
 
     .speaker-box {
+        width: 100%;
+    }
+
+    .speaker-info .subtitle{
         width: 100%;
     }
 }
@@ -1159,6 +1167,9 @@
 
     /*footer*/
     #footer-widgets div.span3:first-child { width: 100%; float: none; }
+    .speaker-info .subtitle{
+        width: 69%;
+    }
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -1191,10 +1202,12 @@
     .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
         width: 100%;
     }
-}
 
-@media screen and (max-width: 675px){
     .section01-sponsors{display: none;}
+
+    .speaker-info .subtitle{
+        width: 67%;
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -1208,6 +1221,10 @@
     .section03-top ul {margin: 0; font-size: 0.9em;}
     .section03-infobox01, .section03-infobox02 {width: 100%;}
     .review-photo {display: none;}
+
+    .speaker-info .subtitle{
+        width: 100%;
+    }
 }
 @media screen and (max-width: 480px) {
     #megaMenu #megaMenuToggle {
@@ -1281,6 +1298,12 @@
 
     .speaker-box a{
         padding: 15px 0; 
+    }
+
+    .speaker-info .subtitle{
+        width: 100%;
+        padding: 2%;
+        box-sizing: border-box;
     }
 }
 @media screen and (max-width: 320px) {

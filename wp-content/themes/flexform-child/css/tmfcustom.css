@@ -2363,6 +2363,28 @@ div.wpcf7 br {display: none}
 	border-radius: 0 !important;
 }
 
+.thumb-single{
+	border-radius: 50%;
+	background-size: 100% 100%;
+	background-image: none;
+	background-position: center;
+	height: 150px;
+	width: 150px;
+	margin-right: 20px;
+}
+
+.speaker-info .subtitle{
+	width: 75%;
+}
+
+.speaker-info .subtitle p{margin-bottom: 10px;}
+
+.speaker-info .subtitle p:last-child{
+	font-size: 14px;
+	line-height: 23px;
+	margin-bottom: 20px;
+}
+
 /* Speaker Profile page */
 
 .speaker-profile .speaker-info li {
