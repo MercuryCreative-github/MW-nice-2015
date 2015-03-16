@@ -111,6 +111,10 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2,
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #ee7630 !important;}
 
+.theater .summit-session {
+  display: none;
+}
+
 .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .workshops.page .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .theater.page .theater-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, .takeaway.page .takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
 	text-transform: uppercase;
 	font-size: 16px;
