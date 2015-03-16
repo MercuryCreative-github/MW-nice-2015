@@ -774,7 +774,7 @@ li.recent-posts-extended .rpwe-block ul.rpwe-ul li.rpwe-clearfix{border-bottom:#
 .feautered h1{font-size:27px;font-weight:bold;color:#575757;}
 .speakers-home{width:12.5%;float:left;margin-right:5%;}
 
-.key, .high{
+.key, .high, .speakers-actions .all{
 	display: none;
 }
 /*end keynotes*/
