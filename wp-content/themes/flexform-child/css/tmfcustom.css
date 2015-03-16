@@ -771,6 +771,10 @@ li.recent-posts-extended .rpwe-block ul.rpwe-ul li.rpwe-clearfix{border-bottom:#
 .fullName hr{margin:5px 0;border:1px dashed #D9DADB;height:0;}
 .feautered h1{font-size:27px;font-weight:bold;color:#575757;}
 .speakers-home{width:12.5%;float:left;margin-right:5%;}
+
+.key{
+	display: none;
+}
 /*end keynotes*/
 
 #footer{background:#4D4D4D !important;}
@@ -2351,6 +2355,10 @@ div.wpcf7 br {display: none}
 .speaker-box{
 	width: 49.5%;
 	float: left;
+}
+
+.find-speaker{
+	border-radius: 0 !important;
 }
 
 /* Speaker Profile page */
