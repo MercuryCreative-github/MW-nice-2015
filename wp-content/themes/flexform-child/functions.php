@@ -1124,7 +1124,7 @@ function add_custom_to_yoast( $content ) {
 	$content = $content . ' ' . $custom_content;
 
 	// comment this line to hide results after finishing.
-	var_dump($content);
+	//var_dump($content);
 	return $content;
 
 	remove_filter('wpseo_pre_analysis_post_content', 'add_custom_to_yoast'); // don't let WP execute this twice
