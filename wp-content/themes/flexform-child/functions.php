@@ -1029,44 +1029,59 @@ function add_custom_to_yoast( $content ) {
 
 	foreach( $custom as $key => $value ) {
 
-		if($key=='_TMF_presentation_session'){
-
-			$custom_content .= 'Session Title: '.get_the_title($value[0]). '</br>';
-
-		}
-		else if($key=='speakers_meta' ||$key=='panelists_meta' ||$key=='collaborators_meta' ||$key=='facilitators_meta' ||$key=='moderators_meta' ){
-			
-			$title= substr($key,0,-6);
-				foreach (unserialize($value[0]) as $speaker) {
-						$custom_content .= $title . ' : ' . get_user_meta($speaker,'first_name',true) . ' ' . get_user_meta($speaker,'last_name',true). '</br>';
-				}
-		}
-		else if($key=='_TMF_presentations_start_date'){
-
-			$custom_content .= 'Presentation Starts: '.date('F j, Y, g:i a',$value[0]). '</br>';
-
-		}
-		else if($key=='_TMF_presentations_end_date'){
-
-			$custom_content .= 'Presentation Ends: '.date('F j, Y, g:i a',$value[0]). '</br>';
-
-		}
 		
-		else{
-		  if (is_array($value)){
-		  	$custom_content .= implode ( ',' , $value) . '</br>';
-		  }else{
-		  	$custom_content .=$value. '</br>';
-		  }
-		}
+		if ( 'agenda_tracks' == get_post_type($pid) ) {
+		// Returns true when 'agenda_tracks.php' is being used.
+
+			if($key=='_TMF_presentation_session'){
+
+				$custom_content .= 'Session Title: '.get_the_title($value[0]). '</br>';
+
+			}
+			else if($key=='speakers_meta' ||$key=='panelists_meta' ||$key=='collaborators_meta' ||$key=='facilitators_meta' ||$key=='moderators_meta' ){
+				
+				$title= substr($key,0,-6);
+					foreach (unserialize($value[0]) as $speaker) {
+							$custom_content .= $title . ' : ' . get_user_meta($speaker,'first_name',true) . ' ' . get_user_meta($speaker,'last_name',true). '</br>';
+					}
+			}
+			else if($key=='_TMF_presentations_start_date'){
+
+				$custom_content .= 'Presentation Starts: '.date('F j, Y, g:i a',$value[0]). '</br>';
+
+			}
+			else if($key=='_TMF_presentations_end_date'){
+
+				$custom_content .= 'Presentation Ends: '.date('F j, Y, g:i a',$value[0]). '</br>';
+
+			}
+			
+			else{
+			  if (is_array($value)){
+			  	$custom_content .= implode ( ',' , $value) . '</br>';
+			  }else{
+			  	$custom_content .=$value[0]. '</br>';
+			  }
+			}
 	
+		}
+		else if ( is_home($pid)) {
+			// we need code here
+			$custom_content .=$value[0]. '1 1 </br>';
+
+		} else {
+
+			// we may need code here
+			$custom_content .=$value[0]. '</br>';
+		}
 		
 
 	}
 
 	$content = $content . ' ' . $custom_content;
 
-	//var_dump($content);
+	// comment this line to hide results after finishing.
+	var_dump($content);
 	return $content;
 
 	remove_filter('wpseo_pre_analysis_post_content', 'add_custom_to_yoast'); // don't let WP execute this twice
