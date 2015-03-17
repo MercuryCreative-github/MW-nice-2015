@@ -2320,6 +2320,11 @@ div.wpcf7 br {display: none}
 	background: none;
 }
 
+.speaker-box .thumb img{
+	width: 100%;
+	max-width: none;
+}
+
 .speaker-box a:hover .thumb img{
 	opacity: 0;
 }
