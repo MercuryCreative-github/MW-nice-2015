@@ -126,16 +126,16 @@ Template Name: Speakers
 				</div>
 			</div>
 			<?php
+
 			function create_page_content(){
 
-				
 				$page_content='';
 				$blogusers = get_users( 'orderby=name&role=speaker' );
-					// Save user ID to pass on data to Speaker page
-					$user_id = esc_html( $user->ID );
-					$avatar = get_user_meta($sid, 'image',1);
-					foreach ( $blogusers as $user ) {
+				// Save user ID to pass on data to Speaker page
+				$user_id = esc_html( $user->ID );
+				$avatar = get_user_meta($sid, 'image',1);
 
+				foreach ( $blogusers as $user ) {
 
 						$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
 						$categoryDisplay='';
@@ -151,6 +151,11 @@ Template Name: Speakers
 						$page_content.= '<div class="speaker-box speaker-item'.$categoryDisplay.'">';
 						$page_content.= '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
 						$userMetaImage = get_user_meta($user->ID,'image',true);
+
+						if(empty($userMetaImage)){
+						$userMetaImage ='/wp-content/uploads/2014/09/default_speaker.png';
+						}
+
 						$page_content.= '<div class="thumb"><img src="'.$userMetaImage.'"/></div>';
 						$page_content.= '<div class="speaker-data">';
 						$page_content.= '<p class="name">' . esc_html( $user->display_name ) . '</p>';
@@ -173,32 +178,26 @@ Template Name: Speakers
 						$page_content.= '</div>';
 						$page_content.= '</a>';
 						$page_content.= '</div> <!-- End Speaker -->';
-				}
+				} // ends foreach $blogusers as $user
 
 				return $page_content;
-			}
+
+			} // ends function create page content
 
 			echo create_page_content();
 
 			?>
 
-		<?php } ?>
+		<?php } // ends else of $sidebar_config == "both-sidebars" ?>
 
 	<script>
-		/* Using a generic thumb when the user doesn't have a picture assigned 
-		<?php if(empty($userMetaImage)){ ?>
-			jQuery('.speaker-box.speaker-item .thumb img').each(function(){
-				jQuery(this).attr('src', "/wp-content/uploads/2014/09/default_speaker.png");
-			});
-		<?php } ?>*/
-
 		
 		/* Search Speaker function */
 		jQuery('.find-speaker').keyup(function() {
 	        jQuery('.speaker-item .name').each(function() {
 	            jQuery(this).parent().parent().parent().hide();
 	            if (jQuery(this).text().toUpperCase().indexOf(jQuery('.find-speaker').val().toUpperCase()) >= 0) {
-	                jQuery(this).parent().parent().parent().show();
+	                jQuery('.speaker-item').show();
 	            }
 	            if (jQuery('.find-speaker').val() === '') {
 	                jQuery(this).parent().parent().parent().show();
