@@ -126,12 +126,16 @@ Template Name: Speakers
 				</div>
 			</div>
 			<?php
-				$blogusers = get_users( 'orderby=name&role=speaker' );
-					// Save user ID to pass on data to Speaker page
-					$user_id = esc_html( $user->ID );
-					$avatar = get_user_meta($sid, 'image',1);
-					foreach ( $blogusers as $user ) {
 
+			function create_page_content(){
+
+				$page_content='';
+				$blogusers = get_users( 'orderby=name&role=speaker' );
+				// Save user ID to pass on data to Speaker page
+				$user_id = esc_html( $user->ID );
+				$avatar = get_user_meta($sid, 'image',1);
+
+				foreach ( $blogusers as $user ) {
 
 						$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
 						$categoryDisplay='';
@@ -144,11 +148,17 @@ Template Name: Speakers
 							}
 						}
 
-						echo '<div class="speaker-box speaker-item'.$categoryDisplay.'">';
-						echo '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
-						echo '<div class="thumb">' . wp_get_attachment_image($user->image) . '</div>';
-						echo '<div class="speaker-data">';
-						echo '<p class="name">' . esc_html( $user->display_name ) . '</p>';
+						$page_content.= '<div class="speaker-box speaker-item'.$categoryDisplay.'">';
+						$page_content.= '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
+						$userMetaImage = get_user_meta($user->ID,'image',true);
+
+						if(empty($userMetaImage)){
+						$userMetaImage ='/wp-content/uploads/2014/09/default_speaker.png';
+						}
+
+						$page_content.= '<div class="thumb"><img src="'.$userMetaImage.'"/></div>';
+						$page_content.= '<div class="speaker-data">';
+						$page_content.= '<p class="name">' . esc_html( $user->display_name ) . '</p>';
 						
 						// New mapping of user and companies with job role
 						// Get companies and job role
@@ -159,28 +169,28 @@ Template Name: Speakers
 							if( empty( $jobRole ) ) {
 								$jobRole = esc_html( $user->role );
 							}
-							echo '<p class="role">' . esc_html( $jobRole ) . '</p>';
-							echo '<p><strong class="company">' . get_the_title( $companyIds ) . '</strong></p>';
+							$page_content.= '<p class="role">' . esc_html( $jobRole ) . '</p>';
+							$page_content.= '<p><strong class="company">' . get_the_title( $companyIds ) . '</strong></p>';
 						} 
 						
 
 
-						echo '</div>';
-						echo '</a>';
-						echo '</div> <!-- End Speaker -->';
-				}
+						$page_content.= '</div>';
+						$page_content.= '</a>';
+						$page_content.= '</div> <!-- End Speaker -->';
+				} // ends foreach $blogusers as $user
+
+				return $page_content;
+
+			} // ends function create page content
+
+			echo create_page_content();
+
 			?>
 
-		<?php } ?>
+		<?php } // ends else of $sidebar_config == "both-sidebars" ?>
 
 	<script>
-		/* Using a generic thumb when the user doesn't have a picture assigned */
-		jQuery('.speaker-item .thumb').each(function(){
-			if (jQuery('img',this).length == 0) {
-				jQuery(this).append('<img src="/wp-content/uploads/2014/09/default_speaker.png"/>');
-			}
-		});
-
 		
 		/* Search Speaker function */
 		jQuery('.find-speaker').keyup(function() {
