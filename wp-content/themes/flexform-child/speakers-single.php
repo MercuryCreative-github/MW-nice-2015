@@ -130,8 +130,8 @@ Template Name: Speaker Profile
 				<div class="span8 speaker-profile">
 	<?php
 	$user = get_userdata($_GET["id"]);
-	$avatar = get_user_meta($sid, 'image',1);
 	$userId = '"'.$_GET["id"].'"';
+	$avatar = get_user_meta($user->ID,'cmb2-upload-file',true);
 	$companies=$user->company;
 	$companyId = $companies[0];
 	// then we GET the post data
@@ -150,14 +150,14 @@ Template Name: Speaker Profile
 
 		$twitter ='<div style="float:right"><a href="http://www.twitter.com/'.( $user->twitter_alias ).'" target="_blank"><i class="icon icon-twitter" style="vertical-align: bottom;"></i> '.( $user->twitter_alias ).'</a></div>';
 
-
 	};
 
 
 // User data from
 $speakerItem= '<div class="speaker-info">';
 	$speakerItem.= '<div class="thumb-single thumb">'; 
-		$speakerItem.= wp_get_attachment_image($user->image);
+	$userMetaImage=get_user_meta($user->ID,'image',true);
+		$speakerItem.='<img src="'.$userMetaImage.'"/>';
 		$speakerItem.= '<div style="margin-top: 20px;"><a href="'.$companyURL.'" target="_blank">'.$companyThumb.'</a></div>';
 	$speakerItem.= '</div>';
 	$speakerItem.= '<div class="subtitle" style="display:inline-block;vertical-align: top;">';
@@ -255,82 +255,6 @@ foreach ($presentationsIDs as $presentationToCheck ) {
 
 
 }
-
-/*	// get the selected day
-	$day=get_field('day');
-	$dayAtt='';
-	$speakersDisplay='';
-	$moderatorsDisplay='';
-	$panelistsDisplay='';
-	$daytag='';
-	$time='';
-	$hour='';
-	$mins='';
-	$endTime='';
-	$endHour='';
-	$endMins='';
-	$showStartTime='';
-	$showEndTime='';
-	$subtitle='';
-	$content='';
-
-	for($j=0;$j<count($day);$j++){
-		$dayAtt = $day[$j];
-		$term = get_term_by('id', $dayAtt,'events_category');
-		$daytag.= ($term -> slug);
-	}
-
-	$forumId = get_field('forum');
-	$forumId = $forumId->ID;
-	$forumLink = get_post_meta($forumId,'timetable_custom_url',1);
-
-	$forum = '<a href="'.$forumLink.'">'.get_the_title( $forumId ).'</a>';
-
-	$time= get_field('time');
-	echo $time;
-	$time= split(":", $time);
-	$hour = $time[0];
-	$mins = $time[1];
-	$time=$hour.'.'.$mins;
-	if($hour>12){$showStartTime=($hour-12).':'.$mins.' pm';}
-	else{$showStartTime=($hour).':'.$mins.' am';};
-
-	$endTime= get_field('end_time');
-	echo $endTime;
-	$endTime= split(":", $endTime);
-	$endHour = $endTime[0];
-	$endMins = $endTime[1];
-	$endTime=$endHour.'.'.$endMins;
-	if($endHour>12){$showEndTime=($endHour-12).':'.$endMins.' pm';}
-	else{$showEndTime=($endHour).':'.$endMins.' am';};
-
-	if($daytag=='monday'){$dnumber='01';}
-	else if($daytag=='tuesday'){$dnumber='02';}
-	else if($daytag=='wednesday'){$dnumber='03';}
-	else if($daytag=='thursday'){$dnumber='04';}
-	else {$dnumber='';}
-
-	// define subtitle
-	$subtitle= get_field('sub_title').' - ';
-	if($subtitle==' - '){$subtitle='';}
-	$content = apply_filters( 'the_content', get_the_content() );
-	$content = str_replace( ']]>', ']]&gt;', $content );
-	$linkToForum = get_permalink();
-
-	$presentations.='<div class="speaking-schedule">';
-	$presentations.='<p><strong><a href="'.$linkToForum.'">'.get_the_title().'</a></strong><br/>';
-	$presentations.='<span style="text-transform: capitalize;">'.$daytag.'</span> - '.$showStartTime.' - '.$showEndTime.'</p>';
-	$presentations.='</div>';
-
-	$title= explode(' – ',get_the_title());
-	$title= get_the_title();
-
-	$sidebarSchedule .='<div class="nday" style="margin-bottom:10px;"><div class="dday" style="background:#ffffff"><p>DEC<br><span>'.$dnumber.'</span></p></div>';
-	$sidebarSchedule .='<div class="fday"><strong><span style="text-transform:capitalize">' .$title. '</span></strong></br><strong>'.$forum. '<!-- at '. $showStartTime.'--></strong></div></div><div class="clear"></div>';
-	endwhile;
-}*/
-
-
 
 	if($presentations!=='<div class="wpb_wrapper clearfix"><h2>' . esc_html( $user->display_name ) . '&#39;s schedule</h2></div>'){echo $presentations;}
 	return $sidebarSchedule;
