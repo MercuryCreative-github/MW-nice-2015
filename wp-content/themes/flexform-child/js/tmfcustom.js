@@ -17,6 +17,7 @@ function ini() {
     acordion();
     registerBtnLink();
     scrolledMenu();
+    
 }
 
 function scrolledMenu(){
@@ -39,6 +40,17 @@ function scrolledMenu(){
             jQuery('#header-scroll').animate({top: '-80px'}, 400); 
         }        
     });
+}
+
+function speakerImgSize(speakerImg){
+    var imgWidth = jQuery(speakerImg).width();
+    var imgHeight = jQuery(speakerImg).height();
+    var imgProp = imgWidth/imgHeight;
+    var imgNewW = imgProp*90;
+    if(imgWidth > imgHeight)
+    {
+        jQuery(speakerImg).css({"width" : imgNewW, "height":"100%"});
+    }
 }
 
 function homepageSectionsResize(){

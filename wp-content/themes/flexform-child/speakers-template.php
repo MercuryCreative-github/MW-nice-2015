@@ -156,7 +156,7 @@ Template Name: Speakers
 						$userMetaImage ='/wp-content/uploads/2014/09/default_speaker.png';
 						}
 
-						$page_content.= '<div class="thumb"><img src="'.$userMetaImage.'"/></div>';
+						$page_content.= '<div class="thumb"><img src="'.$userMetaImage.'" onload="speakerImgSize(this);"/></div>';
 						$page_content.= '<div class="speaker-data">';
 						$page_content.= '<p class="name">' . esc_html( $user->display_name ) . '</p>';
 						
