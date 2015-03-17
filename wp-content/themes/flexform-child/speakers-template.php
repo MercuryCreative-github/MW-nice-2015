@@ -185,12 +185,12 @@ Template Name: Speakers
 		<?php } ?>
 
 	<script>
-		/* Using a generic thumb when the user doesn't have a picture assigned */
-		jQuery('.speaker-item .thumb').each(function(){
-			if (jQuery('img',this).length == 0) {
-				jQuery(this).append('<img src="/wp-content/uploads/2014/09/default_speaker.png"/>');
-			}
-		});
+		/* Using a generic thumb when the user doesn't have a picture assigned 
+		<?php if(empty($userMetaImage)){ ?>
+			jQuery('.speaker-box.speaker-item .thumb img').each(function(){
+				jQuery(this).attr('src', "/wp-content/uploads/2014/09/default_speaker.png");
+			});
+		<?php } ?>*/
 
 		
 		/* Search Speaker function */

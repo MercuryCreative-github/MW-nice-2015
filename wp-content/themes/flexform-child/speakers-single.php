@@ -276,13 +276,12 @@ foreach ($presentationsIDs as $presentationToCheck ) {
 				jQuery(this).css("visibility","hidden");
 			}
 		});
-		
 
-		jQuery('.speaker-info .thumb').each(function(){
-			if (jQuery('img',this).length == 0) {
-				jQuery(this).append('<img src="/wp-content/uploads/2014/09/default_speaker.png"/>');
-			}
-		});
+		<?php if(empty($userMetaImage)){ ?>
+			jQuery('.speaker-info .thumb img').each(function(){
+				jQuery(this).attr('src', "/wp-content/uploads/2014/09/default_speaker.png");
+			});
+		<?php } ?>
 
 	</script>
 	<!-- CLOSE page -->
