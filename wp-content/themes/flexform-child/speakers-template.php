@@ -150,7 +150,8 @@ Template Name: Speakers
 
 						$page_content.= '<div class="speaker-box speaker-item'.$categoryDisplay.'">';
 						$page_content.= '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
-						$page_content.= '<div class="thumb">' . wp_get_attachment_image($user->image) . '</div>';
+						$userMetaImage = get_user_meta($user->ID,'image',true);
+						$page_content.= '<div class="thumb"><img src="'.$userMetaImage.'"/></div>';
 						$page_content.= '<div class="speaker-data">';
 						$page_content.= '<p class="name">' . esc_html( $user->display_name ) . '</p>';
 						
