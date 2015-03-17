@@ -197,7 +197,7 @@ Template Name: Speakers
 	        jQuery('.speaker-item .name').each(function() {
 	            jQuery(this).parent().parent().parent().hide();
 	            if (jQuery(this).text().toUpperCase().indexOf(jQuery('.find-speaker').val().toUpperCase()) >= 0) {
-	                jQuery('.speaker-item').show();
+	                jQuery(this).parent().parent().parent().show();
 	            }
 	            if (jQuery('.find-speaker').val() === '') {
 	                jQuery(this).parent().parent().parent().show();
