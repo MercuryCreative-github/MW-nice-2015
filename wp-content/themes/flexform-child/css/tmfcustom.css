@@ -153,6 +153,18 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	margin-left: auto;
 }
 
+.summit .list-title{
+	margin-bottom: 40px;
+}
+
+.summit .summit-day{
+	margin-top: 40px;
+}
+
+.summit .summit-buttons{
+	margin-top: 25px;
+}
+
 /*tabs-content*/
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].summit-inner-tabs {margin: 0 0 20px 0;padding: 0 40px;}
 .summit h1 {
@@ -2420,6 +2432,8 @@ div.wpcf7 br {display: none}
 	color: #fff;
 	padding: 5px 10px;
 }
+
+.speaker-profile .speaker-info{margin: 22px 0;}
 .article-body-wrap .body-text div.timeTrack, .speaker-profile p.time{ padding: 10px; line-height: 100%; background: #f3f3f3; font-size: 16px; color: #434343; }
 .speaking-schedule{ margin:15px 0;border-left: #ee7813 4px solid;padding-left: 20px;}
 .speaking-schedule a {color: #444; border: none;}
