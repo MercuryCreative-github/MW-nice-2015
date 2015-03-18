@@ -153,6 +153,14 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	margin-left: auto;
 }
 
+.summit .list-title{
+	margin-bottom: 40px;
+}
+
+.summit .summit-buttons{
+	margin-top: 25px;
+}
+
 /*tabs-content*/
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].summit-inner-tabs {margin: 0 0 20px 0;padding: 0 40px;}
 .summit h1 {
