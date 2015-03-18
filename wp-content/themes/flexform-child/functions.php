@@ -1067,33 +1067,35 @@ function add_custom_to_yoast( $content ) {
 		} else if( basename( get_page_template() ) == 'speakers-template.php') {
 			
 			// we may need code here
-			$custom_content .=$key. '</br>';
 
-					$blogusers = get_users( 'role=Speaker' );
-					// Save user ID to pass on data to Speaker page
-					$user_id = esc_html( $user->ID );
-					$avatar = get_user_meta($sid, 'image',1);
+			$blogusers = get_users( 'role=Speaker' );
+			// Save user ID to pass on data to Speaker page
+			$user_id = esc_html( $user->ID );
+			$avatar = get_user_meta($sid, 'image',1);
 
-					//var_dump ($blogusers);
+			foreach ( $blogusers as $user ) {
 
-					foreach ( $blogusers as $user ) {
-
-					 	$custom_content.= wp_get_attachment_image($user->image) . '<br/>';
-					 	$custom_content.= esc_html( $user->display_name ) . '<br/>';
+				$custom_content.= wp_get_attachment_image($user->image) . '<br/>';
+				$custom_content.= esc_html( $user->display_name ) . '<br/>';
 						
-					 	// New mapping of user and companies with job role
-					 	// Get companies and job role
-					 	$companyIds = getUserCompanies( esc_html( $user->ID ), true );
+				// New mapping of user and companies with job role
+				// Get companies and job role
+				$companyIds = getUserCompanies( esc_html( $user->ID ), true );
 						
-					 	if( (int)$companyIds > 0 ) {
-					 		$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyIds );
-					 		if( empty( $jobRole ) ) {
-					 			$jobRole = esc_html( $user->role );
-					 		}
-					 		$custom_content.= esc_html( $jobRole ) . '<br/>';
-					 		$custom_content.= get_the_title( $companyIds );
-					 	} 
+				if( (int)$companyIds > 0 ) {
+					$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyIds );
+					if( empty( $jobRole ) ) {
+					 	$jobRole = esc_html( $user->role );
 					}
+					$custom_content.= esc_html( $jobRole ) . '<br/>';
+					$custom_content.= get_the_title( $companyIds );
+				} 
+
+			}
+
+		} else if( basename( get_page_template() ) == 'homepage.php') {
+
+
 		} else {
 		 	$custom_content.= '';
 		}
