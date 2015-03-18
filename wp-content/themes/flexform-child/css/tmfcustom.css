@@ -777,8 +777,17 @@ li.recent-posts-extended .rpwe-block ul.rpwe-ul li.rpwe-clearfix{border-bottom:#
 .feautered h1{font-size:27px;font-weight:bold;color:#575757;}
 .speakers-home{width:12.5%;float:left;margin-right:5%;}
 
-.key, .high, .speakers-actions .all{
+.high{
 	display: none;
+}
+
+.keynotes-page .summit-presentation a {
+	color: #000;
+	transition: all 0.2s ease-in-out;
+}
+
+.keynotes-page .summit-presentation a:hover{
+	color: #ee7630;
 }
 /*end keynotes*/
 
