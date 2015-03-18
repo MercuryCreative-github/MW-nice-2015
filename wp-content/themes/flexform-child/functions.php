@@ -1064,58 +1064,38 @@ function add_custom_to_yoast( $content ) {
 			  }
 			}
 	
-		}
-		else if ($custom = get_pages(array('meta_key' => '_wp_page_template','meta_value' => 'speakers-template.php'))) {
-
-			//$custom['_wp_page_template']=='speakers-template.php'
+		} else if( basename( get_page_template() ) == 'speakers-template.php') {
 			
 			// we may need code here
 			$custom_content .=$key. '</br>';
 
-					$blogusers = get_users( 'orderby=name&role=speaker' );
+					$blogusers = get_users( 'role=Speaker' );
 					// Save user ID to pass on data to Speaker page
 					$user_id = esc_html( $user->ID );
 					$avatar = get_user_meta($sid, 'image',1);
+
+					//var_dump ($blogusers);
+
 					foreach ( $blogusers as $user ) {
 
-
-						$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
-						$categoryDisplay='';
-
-						if(is_array($categorySpeakers)){
-
-							foreach ($categorySpeakers as $categorySpeaker) {
-								if($categorySpeaker=='check1'){$categoryDisplay.=' highlighted';}
-									else{$categoryDisplay.=' keynote';};
-							}
-						}
-
-						$custom_content.= '<div class="speaker-box speaker-item'.$categoryDisplay.'">';
-						$custom_content.= '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
-						$custom_content.= '<div class="thumb">' . wp_get_attachment_image($user->image) . '</div>';
-						$custom_content.= '<div class="speaker-data">';
-						$custom_content.= '<p class="name">' . esc_html( $user->display_name ) . '</p>';
+					 	$custom_content.= wp_get_attachment_image($user->image) . '<br/>';
+					 	$custom_content.= esc_html( $user->display_name ) . '<br/>';
 						
-						// New mapping of user and companies with job role
-						// Get companies and job role
-						$companyIds = getUserCompanies( esc_html( $user->ID ), true );
+					 	// New mapping of user and companies with job role
+					 	// Get companies and job role
+					 	$companyIds = getUserCompanies( esc_html( $user->ID ), true );
 						
-						if( (int)$companyIds > 0 ) {
-							$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyIds );
-							if( empty( $jobRole ) ) {
-								$jobRole = esc_html( $user->role );
-							}
-							$custom_content.= '<p class="role">' . esc_html( $jobRole ) . '</p>';
-							$custom_content.= '<p><strong class="company">' . get_the_title( $companyIds ) . '</strong></p>';
-						} 
-
-						$custom_content.= '</div>';
-						$custom_content.= '</a>';
-						$custom_content.= '</div> <!-- End Speaker -->';
-				}
-		}
-		else {
-			$custom_content.= '';
+					 	if( (int)$companyIds > 0 ) {
+					 		$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyIds );
+					 		if( empty( $jobRole ) ) {
+					 			$jobRole = esc_html( $user->role );
+					 		}
+					 		$custom_content.= esc_html( $jobRole ) . '<br/>';
+					 		$custom_content.= get_the_title( $companyIds );
+					 	} 
+					}
+		} else {
+		 	$custom_content.= '';
 		}
 		
 
@@ -1124,7 +1104,7 @@ function add_custom_to_yoast( $content ) {
 	$content = $content . ' ' . $custom_content;
 
 	// comment this line to hide results after finishing.
-	//var_dump($content);
+	var_dump($content);
 	return $content;
 
 	remove_filter('wpseo_pre_analysis_post_content', 'add_custom_to_yoast'); // don't let WP execute this twice
