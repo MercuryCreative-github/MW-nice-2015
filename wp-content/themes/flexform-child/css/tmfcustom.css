@@ -2229,6 +2229,7 @@ div.wpcf7 br {display: none}
 .speakers-actions .filters,
 .speakers-actions .form {margin-left: 0}
 
+.page-template-speakers-single .speakers-actions .filters {display: none;}
 .speakers-actions .filters {visibility: hidden; overflow: hidden}
 .speakers-actions .filters a,
 .speakers-actions .filters button {
