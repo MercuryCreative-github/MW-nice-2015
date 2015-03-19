@@ -129,7 +129,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 
 .networking-tab.wpb_content_element .ui-widget-header .ui-state-default, .theater-tab.wpb_content_element .ui-widget-header .ui-state-default, .takeaway-tab.wpb_content_element .ui-widget-header .ui-state-default, .workshops-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
 
-.theater .summit-day, .theater .summit-session{
+.theater .summit-day, .theater .summit-session, .keynotes-page .summit-day{
 	display: none;
 }
 /**************************/

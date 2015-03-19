@@ -579,11 +579,17 @@ function summits_shortcode_func( $atts ) {
 				$presentationLink = get_permalink();
 
 				//Presentations output
+
 				$presentationsHtmlOutput.='<div class="summit-presentation">';
 					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
 					$presentationsHtmlOutput.='<div class="presentation-info">';
 						$presentationsHtmlOutput.='<div class="presentation-title">';
-						$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
+						if($summit_slug == 'keynotes')
+						{
+							$presentationsHtmlOutput.= $presentationTitle;
+						}else{
+							$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
+						}
 						$presentationsHtmlOutput.='</div>';
 						$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
 						foreach ($roles as $rolesToshow) {
