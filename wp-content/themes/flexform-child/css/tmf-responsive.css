@@ -273,6 +273,10 @@
     .home .sponsors_logo{
         margin-left: 55px;
     }
+
+    .home .sponsors_logo:first-child{
+        margin-left: 0px;
+    }
 }
 
 @media screen and (max-width: 1120px){

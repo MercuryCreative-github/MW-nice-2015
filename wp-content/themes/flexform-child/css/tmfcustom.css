@@ -364,7 +364,18 @@ a.sf-button.standard.register-agenda {
 .logo_4 img {height: 33px;}
 .logo_5 img {height: 40px;}
 p.image-caption{margin:10px 0 0 0;line-height:100%;}
-.sponsors_logo {text-align:center; position: relative; display: inline-block; max-width: 30%; margin-left: 85px;}
+.sponsors_logo {
+	text-align:center; 
+	position: relative; 
+	display: inline-block; 
+	max-width: 30%; 
+	margin-left: 85px;
+}
+
+.sponsors_logo:first-child{
+	margin-left: 0px;
+}
+
 .sponsors_logo a {display: block; margin: auto; height: 60px; line-height: 60px;}
 
 /*section02*/
@@ -508,6 +519,18 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 	line-height: 23px;
 	color: #FFF;
 	font-weight: 100;
+}
+
+.home .page-content ul, .page-content ol {
+	margin: 0 0 10px 25px;
+}
+
+.home .page-content ul li{
+	line-height: 20px;
+}
+
+.home .page-content p {
+	margin-bottom: 10px;
 }
 
 .twfollow {display: none;}
