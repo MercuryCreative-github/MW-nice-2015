@@ -803,6 +803,9 @@ li.recent-posts-extended .rpwe-block ul.rpwe-ul li.rpwe-clearfix{border-bottom:#
 .keynotes-page .summit-presentation a:hover{
 	color: #ee7630;
 }
+
+.keynotes-page .presentation-time{display: none;}
+.keynotes-page .presentation-info{width: 100%;}
 /*end keynotes*/
 
 #footer{background:#4D4D4D !important;}
