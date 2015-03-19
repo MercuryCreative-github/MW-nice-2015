@@ -2229,7 +2229,7 @@ div.wpcf7 br {display: none}
 .speakers-actions .filters,
 .speakers-actions .form {margin-left: 0}
 
-.speakers-actions .filters {overflow: hidden}
+.speakers-actions .filters {visibility: hidden; overflow: hidden}
 .speakers-actions .filters a,
 .speakers-actions .filters button {
 	float: left;
