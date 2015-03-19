@@ -269,6 +269,10 @@
     .speaker-info .subtitle{
     width: 70%;
     }
+
+    .home .sponsors_logo{
+        margin-left: 55px;
+    }
 }
 
 @media screen and (max-width: 1120px){
@@ -589,8 +593,12 @@
         height: 2.444vw;
     }
 
+    .logo_5 img{
+        height: 3.444vw;
+    }
+
     .sponsors_logo{
-        margin-left: 80px;
+        margin-left: 40px;
     }
 
     .discount-circle{
@@ -3887,6 +3895,10 @@
         width: 60px
     }
     .top-sponsors-logos .sponsors_logo.logo_4 a {
+        margin-top: 12px;
+        width: 120px
+    }
+    .top-sponsors-logos .sponsors_logo.logo_5 a {
         margin-top: 12px;
         width: 120px
     }
