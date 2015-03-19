@@ -81,83 +81,114 @@ Template Name: Home Page
 <!-- Full-width block re-using styles -->
 <div class="inner-page-wrap has-right-sidebar has-one-sidebar row clearfix" style="padding: 0;margin: 0;">
 
-
-<?php if (have_posts()) : the_post(); ?>
-
-<?php if ($show_page_title) { ?>
-	<div class="row">
-		<div class="page-heading span12 clearfix alt-bg <?php echo $page_title_bg; ?>">
-			<?php if ($page_title_one) { ?>
-			<h1><?php echo $page_title_one; ?></h1>
-			<?php } else { ?>
-			<h1><?php the_title(); ?></h1>
-			<?php } ?>
-			<?php if ($page_title_one) { ?>
-			<h3><?php echo $page_title_two; ?></h3>
-			<?php } ?>
-		</div>
-	</div>
-<?php } ?>
-
-<?php
-	// BREADCRUMBS
-	if(!$remove_breadcrumbs) {
-		echo sf_breadcrumbs();
-} ?>
-
-<div class="inner-page-wrap <?php echo $page_wrap_class; ?> clearfix">
-
-	<!-- OPEN page -->
-	<?php if (($sidebar_config == "left-sidebar") || ($sidebar_config == "right-sidebar")) { ?>
-	<div <?php post_class('clearfix span8'); ?> id="<?php the_ID(); ?>">
-	<?php } else if ($sidebar_config == "both-sidebars") { ?>
-	<div <?php post_class('clearfix row'); ?> id="<?php the_ID(); ?>">
-	<?php } else { ?>
-	<div <?php post_class('clearfix'); ?> id="<?php the_ID(); ?>">
-	<?php } ?>
-
-		<?php if ($sidebar_config == "both-sidebars") { ?>
-
-			<div class="page-content span6">
-				<?php the_content(); ?>
+<section id="hp-section" class="section01">
+	<div class="cell">
+		<div class="sec-main-content">
+			<div class="section01-info">
+				<div class="section01-logo" style="text-align:center;"><img src="/wp-content/uploads/2015/02/Slider01-logo.png" width="250" /></div>
+				<div class="section01-slogan">DIGITAL BUSINESS:<br/><span>MAKING IT REAL</span></div>
+				<div class="section01-date">JUNE 1 - 4, 2015<br/><span>NICE - FRANCE</span></div>
+				<div class="section01-buttons">
+					<a href="/passes-pricing/" class="sf-button large orange standard">Register</a>
+					<a id="updated" class="sf-button large green standard" href="#modal-1" data-toggle="modal">Keep updated</a>
+					<div class="clear"></div>
+				</div>
 			</div>
-
-			<aside class="sidebar left-sidebar span3">
-				<?php dynamic_sidebar($left_sidebar); ?>
-			</aside>
-
-		<?php } else { ?>
-
-		<div class="page-content clearfix">
-			<?php the_content(); ?>
-
-
-			<div class="link-pages"><?php wp_link_pages(); ?></div>
 		</div>
-
-		<?php } ?>
-
-	<!-- CLOSE page -->
+		<div class="section01-sponsors">
+			<div class="sponsors-logos">
+				<div class="sponsors_logo logo_1">
+					<a href="/sponsors/"><img src="/wp-content/uploads/2014/01/netcraker1.png"></a>
+					<p class="image-caption">Platinum Sponsor</p>
+				</div>
+				<div class="sponsors_logo logo_2">
+					<a href="/sponsors/"><img src="/wp-content/uploads/2015/02/genE_250-2012.gif"></a>
+					<p class="image-caption">Gold Sponsor</p>
+				</div>
+				<div class="sponsors_logo logo_3">
+					<a href="/sponsors/"><img src="/wp-content/uploads/2015/02/Exhibitor-resource1.png"></a>
+					<p class="image-caption">Gold Sponsor</p>
+				</div>
+				<div class="sponsors_logo logo_4">
+					<a href="/sponsors/"><img src="/wp-content/uploads/2014/01/SevOneLogo.png"></a>
+					<p class="image-caption">Gold Sponsor</p>
+				</div>
+			</div>
+		</div>
 	</div>
+</section>
 
-	<?php if ($sidebar_config == "left-sidebar") { ?>
+<section id="hp-section" class="hp-section02">
+	<div class="cell">
+		<div class="sec-main-content">
+			<div class="section02">
+				<div class="title-green"><h1>The Event</h1></div>
+				<div class="section02-info">
+					<div class="section02-text">Connect and network with the who’s who of the digital ecosystem in a unique, collaborative environment to develop solutions to key digital business challenges and put profitable strategies into play. Focused on actionable outcomes, you’ll experience essential case studies, live proof-of-concept demos, and thought-provoking discussion and debate with your business and IT peers. Make it real!
+						<br/><a href="/passes-pricing/" class="sf-button large orange standard">Register Now</a>
+					</div>
+					<div class="section02-list">
+						<ul>
+							<li><img src="/wp-content/uploads/2015/02/event-icon02.png"><p class="list-text"><strong>6 SUMMITS</strong></p></li>
+							<li><img src="/wp-content/uploads/2015/02/event-icon01.png"><p class="list-text"><strong>100+</strong> SESSIONS, WORKSHOPS AND DEMOS</p></li>
+							<li><img src="/wp-content/uploads/2015/02/event-icon03.png"><p class="list-text"><strong>30+ HOURS</strong> OF NETWORKING</p></li>
+							<li><img src="/wp-content/uploads/2015/02/event-icon04.png"><p class="list-text"><strong>200+</strong> SPEAKERS</p></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="section02-companies">
+				<ul>
+					<li><img src="/wp-content/uploads/2015/02/icon-speaker-squard.png"><p>Companies currently <br/>speaking at <strong>TM Forum Live!</strong></p></li>
+					<li><img src="/wp-content/uploads/2015/02/British-Gas-logo.png"></li>
+					<li><img src="/wp-content/uploads/2015/02/Telefonica-Logo.png"></li>
+					<li><img src="/wp-content/uploads/2015/02/logo-google-hp.png"></li>
+					<li><img src="/wp-content/uploads/2015/02/vodafone-mobile-logo.png"></li>
+				</ul>
+			</div>
+		</div>
+		<div class="to-remove-position-absolute" style="display: none;"></div>
+		<div class="pricing-call-out" style="display: none;">
+			<a class="pricing-call-out-content" href="/passes-pricing/">
+				<div class="pricing-call-text"><span class="call-text-big">DON’T DELAY!</span><br/>Registration prices increase March 13!</div>
+				<div class="pricing-call-icon"><img src="/wp-content/uploads/2015/03/icon-register-banner.png"/></div>			
+			</a>
+		</div>
+	</div>
+</section>
 
-		<aside class="sidebar left-sidebar span4">
-			<?php dynamic_sidebar($left_sidebar); ?>
-		</aside>
-
-	<?php } else if ($sidebar_config == "right-sidebar") { ?>
-	<?php } else if ($sidebar_config == "both-sidebars") { ?>
-
-		<aside class="sidebar right-sidebar span3">
-			<?php dynamic_sidebar($right_sidebar); ?>
-		</aside>
-
-	<?php } ?>
-
-</div>
-
-<?php endif; ?>
+<section id="hp-section" class="section03">
+	<div class="cell">
+	<div class="sec-main-content">
+		<div class="section03-infobox01">
+			<h1>NETWORK AT <br/>TM FORUM <br/>LIVE!</h1>
+			<a href="/networking/" class="sf-button large green standard">Learn More</a>
+		</div>
+		<div class="section03-infobox02">
+			<div class="section03-top">
+				<h1>THE PEOPLE</h1>
+				<p><strong>2014 ATTENDEES:</strong></p>
+				<ul>
+					<li><span>80+</span><br/>Countries Represented</li>
+					<li><span>296</span><br/>CxOs</li>
+					<li><span>540+</span><br/>Companies In attendance</li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="section03-bottom">
+			<ul>
+				<li><img src="/wp-content/uploads/2015/02/logo-microsoft-small.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/logo-google-small.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/logo-orange-small.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/logo-bt-small.png"></li>
+				<li><img src="/wp-content/uploads/2015/02/logo-att-hp.png"></li>
+			</ul>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
 
 <section id="hp-section" class="section04">
 	<div class="cell">
@@ -316,8 +347,82 @@ Template Name: Home Page
 </div>
 </section>
 
+<?php if (have_posts()) : the_post(); ?>
+
+<?php if ($show_page_title) { ?>
+	<div class="row">
+		<div class="page-heading span12 clearfix alt-bg <?php echo $page_title_bg; ?>">
+			<?php if ($page_title_one) { ?>
+			<h1><?php echo $page_title_one; ?></h1>
+			<?php } else { ?>
+			<h1><?php the_title(); ?></h1>
+			<?php } ?>
+			<?php if ($page_title_one) { ?>
+			<h3><?php echo $page_title_two; ?></h3>
+			<?php } ?>
+		</div>
+	</div>
+<?php } ?>
+
+<?php
+	// BREADCRUMBS
+	if(!$remove_breadcrumbs) {
+		echo sf_breadcrumbs();
+} ?>
+
+<div class="inner-page-wrap <?php echo $page_wrap_class; ?> clearfix">
+
+	<!-- OPEN page -->
+	<?php if (($sidebar_config == "left-sidebar") || ($sidebar_config == "right-sidebar")) { ?>
+	<div <?php post_class('clearfix span8'); ?> id="<?php the_ID(); ?>">
+	<?php } else if ($sidebar_config == "both-sidebars") { ?>
+	<div <?php post_class('clearfix row'); ?> id="<?php the_ID(); ?>">
+	<?php } else { ?>
+	<div <?php post_class('clearfix'); ?> id="<?php the_ID(); ?>">
+	<?php } ?>
+
+		<?php if ($sidebar_config == "both-sidebars") { ?>
+
+			<div class="page-content span6">
+				<?php the_content(); ?>
+			</div>
+
+			<aside class="sidebar left-sidebar span3">
+				<?php dynamic_sidebar($left_sidebar); ?>
+			</aside>
+
+		<?php } else { ?>
+
+		<div class="page-content clearfix">
+			<?php the_content(); ?>
 
 
+			<div class="link-pages"><?php wp_link_pages(); ?></div>
+		</div>
+
+		<?php } ?>
+
+	<!-- CLOSE page -->
+	</div>
+
+	<?php if ($sidebar_config == "left-sidebar") { ?>
+
+		<aside class="sidebar left-sidebar span4">
+			<?php dynamic_sidebar($left_sidebar); ?>
+		</aside>
+
+	<?php } else if ($sidebar_config == "right-sidebar") { ?>
+	<?php } else if ($sidebar_config == "both-sidebars") { ?>
+
+		<aside class="sidebar right-sidebar span3">
+			<?php dynamic_sidebar($right_sidebar); ?>
+		</aside>
+
+	<?php } ?>
+
+</div>
+
+<?php endif; ?>
 
 <!--// WordPress Hook //-->
 <?php get_footer(); ?>
