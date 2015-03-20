@@ -1219,6 +1219,29 @@
     .speaker-info .subtitle{
         width: 67%;
     }
+
+    .home .modal-body{
+        max-height: 400px;
+        overflow-y: auto;
+        overflow-x: hidden; 
+        width: 475px; 
+    }
+
+    .mailing-list-form #field_5_8 .ginput_container ul li{
+        width: 100%;
+    }
+
+    .mailing-list-form #field_5_8 > label{
+        margin: 8px 0 !important;
+    }
+
+    #gform_wrapper_5 .gform_footer input[type="submit"]{
+        float: left;
+    }
+
+    .home .modal-header{
+        padding-bottom: 10px !important;
+    }
 }
 
 @media screen and (max-width: 550px) {
