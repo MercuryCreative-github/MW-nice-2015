@@ -525,7 +525,7 @@ if(!function_exists('join_the_mailing_list')){
         $ao_gf5 -> setPostItems('Sponsorship Opportunities', $sponsorship);
         $ao_gf5 -> setPostItems('Event Registration Offers', $eventRegistration);
         $ao_gf5 -> setPostItems('TM Forum Membership Details', $membershipDetails);
-        $ao_gf5 -> processConnection('http://marketing.tmforum.org/acton/form/1332/00e6:d-0001/0/index.htm');
+        $ao_gf5 -> processConnection('http://marketing.tmforum.org/acton/eform/1332/00e6/d-ext-0001');
 		// $values = array(
 		// 	'Salutation' => $entry['1'],
 		// 	'First Name' => $entry['2.3'],
