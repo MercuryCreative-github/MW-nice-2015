@@ -479,53 +479,50 @@ add_action("gform_after_submission_5", "join_the_mailing_list", 10, 2);
 if(!function_exists('join_the_mailing_list')){
 	function join_the_mailing_list($entry, $form) {
 
-		if($entry['7.1'] == true){
-	      $upcomingEvents = $entry['7.1'];
-	    }else{
-	      $upcomingEvents = 'false';
+	    $check_boxes = array();
+
+		if($entry['8.0'] !== ''){
+	      $check_boxes[] = $entry['8.0'];
 	    }
-	    if($entry['7.2'] == true){
-	      $updatesEvents = $entry['7.2'];
-	    }else{
-	      $updatesEvents = 'false';
+	    if($entry['8.1'] !== ''){
+	     $check_boxes[]  = $entry['8.1'];
 	    }
-	    if($entry['7.3'] == true){
-	      $eventPapers = $entry['7.3'];
-	    }else{
-	      $eventPapers = 'false';
+	    if($entry['8.2'] !== ''){
+	      $check_boxes[]  = $entry['8.2'];
 	    }
-	    if($entry['7.4'] == true){
-	      $sponsorship = $entry['7.4'];
-	    }else{
-	      $sponsorship = 'false';
+	    if($entry['8.3'] !== ''){
+	      $check_boxes[]  = $entry['8.3'];
 	    }
-	    if($entry['7.5'] == true){
-	      $eventRegistration = $entry['7.5'];
-	    }else{
-	      $eventRegistration = 'false';
+	    if($entry['8.4'] !== ''){
+	      $check_boxes[]  = $entry['8.4'];
 	    }
-	    if($entry['7.6'] == true){
-	      $membershipDetails = $entry['7.6'];
-	    }else{
-	      $membershipDetails = 'false';
+	    if($entry['8.5'] !== ''){
+	     $check_boxes[]  = $entry['8.5'];
 	    }
+
+	   
+
+	     $check_boxes =  implode(', ',$check_boxes);
+
+
 
 	    //include ActonConnection class
         require_once (get_stylesheet_directory() .'/core/classes/class.Acton-WordPress-Connection.php');
-        $ao_gf5 = new ActonConnection;
-        $ao_gf5 -> setPostItems('Salutation', $entry['1']);
-        $ao_gf5 -> setPostItems('First Name', $entry['2.3']);
-        $ao_gf5 -> setPostItems('Last Name', $entry['2.6']);
-        $ao_gf5 -> setPostItems('Email Address', $entry['3']);
-        $ao_gf5 -> setPostItems('Phone Number', $entry['4']);
-        $ao_gf5 -> setPostItems('Job Title', $entry['5']);
-        $ao_gf5 -> setPostItems('All Upcoming Events', $upcomingEvents);
-        $ao_gf5 -> setPostItems('Updates On This Event', $updatesEvents);
-        $ao_gf5 -> setPostItems('Event Call for Papers', $eventPapers);
-        $ao_gf5 -> setPostItems('Sponsorship Opportunities', $sponsorship);
-        $ao_gf5 -> setPostItems('Event Registration Offers', $eventRegistration);
-        $ao_gf5 -> setPostItems('TM Forum Membership Details', $membershipDetails);
-        $ao_gf5 -> processConnection('http://marketing.tmforum.org/acton/eform/1332/00e6/d-ext-0001');
+        $ao_gf1 = new ActonConnection;
+        $ao_gf1 -> setPostItems('salutation', $entry['1']);
+        $ao_gf1 -> setPostItems('fname', $entry['9']);
+        $ao_gf1 -> setPostItems('lname', $entry['9']);
+        $ao_gf1 -> setPostItems('email', $entry['3']);
+        $ao_gf1 -> setPostItems('phone', $entry['4']);
+        $ao_gf1 -> setPostItems('jobtitle', $entry['5']);
+        $ao_gf1 -> setPostItems('company', $entry['6']);
+        $ao_gf1 -> setPostItems('information', $check_boxes);/*
+        $ao_gf1 -> setPostItems('information', $updatesEvents);
+        $ao_gf1 -> setPostItems('information', $eventPapers);
+        $ao_gf1 -> setPostItems('information', $sponsorship);
+        $ao_gf1 -> setPostItems('information', $eventRegistration);
+        $ao_gf1 -> setPostItems('information', $membershipDetails);*/
+        $ao_gf1 -> processConnection('http://marketing.tmforum.org/acton/eform/1332/00e6/d-ext-0001');
 		// $values = array(
 		// 	'Salutation' => $entry['1'],
 		// 	'First Name' => $entry['2.3'],
