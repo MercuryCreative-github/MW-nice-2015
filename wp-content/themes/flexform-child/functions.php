@@ -473,6 +473,79 @@ if (!function_exists('custom_post_submission_newsletters_subscribe')) {
     }
 }
 
+//Keep updated / join the mailing list
+add_action("gform_after_submission_5", "join_the_mailing_list", 10, 2);
+
+if(!function_exists('join_the_mailing_list')){
+	function join_the_mailing_list($entry, $form) {
+
+		if($entry['7.1'] == true){
+	      $upcomingEvents = $entry['7.1'];
+	    }else{
+	      $upcomingEvents = 'false';
+	    }
+	    if($entry['7.2'] == true){
+	      $updatesEvents = $entry['7.2'];
+	    }else{
+	      $updatesEvents = 'false';
+	    }
+	    if($entry['7.3'] == true){
+	      $eventPapers = $entry['7.3'];
+	    }else{
+	      $eventPapers = 'false';
+	    }
+	    if($entry['7.4'] == true){
+	      $sponsorship = $entry['7.4'];
+	    }else{
+	      $sponsorship = 'false';
+	    }
+	    if($entry['7.5'] == true){
+	      $eventRegistration = $entry['7.5'];
+	    }else{
+	      $eventRegistration = 'false';
+	    }
+	    if($entry['7.6'] == true){
+	      $membershipDetails = $entry['7.6'];
+	    }else{
+	      $membershipDetails = 'false';
+	    }
+
+	    //include ActonConnection class
+        require_once (get_stylesheet_directory() .'/core/classes/class.Acton-WordPress-Connection.php');
+        $ao_gf5 = new ActonConnection;
+        $ao_gf5 -> setPostItems('Salutation', $entry['1']);
+        $ao_gf5 -> setPostItems('First Name', $entry['2.3']);
+        $ao_gf5 -> setPostItems('Last Name', $entry['2.6']);
+        $ao_gf5 -> setPostItems('Email Address', $entry['3']);
+        $ao_gf5 -> setPostItems('Phone Number', $entry['4']);
+        $ao_gf5 -> setPostItems('Job Title', $entry['5']);
+        $ao_gf5 -> setPostItems('All Upcoming Events', $upcomingEvents);
+        $ao_gf5 -> setPostItems('Updates On This Event', $updatesEvents);
+        $ao_gf5 -> setPostItems('Event Call for Papers', $eventPapers);
+        $ao_gf5 -> setPostItems('Sponsorship Opportunities', $sponsorship);
+        $ao_gf5 -> setPostItems('Event Registration Offers', $eventRegistration);
+        $ao_gf5 -> setPostItems('TM Forum Membership Details', $membershipDetails);
+        $ao_gf5 -> processConnection('http://marketing.tmforum.org/acton/form/1332/00e6:d-0001/0/index.htm');
+		// $values = array(
+		// 	'Salutation' => $entry['1'],
+		// 	'First Name' => $entry['2.3'],
+		// 	'Last Name' => $entry['2.6'],
+		// 	'Email Address' => $entry['3'],
+		// 	'Phone Number' => $entry['4'],
+		// 	'Job Title' => $entry['5'],
+		// 	'Company' => $entry['6'], 
+		// 	'All Upcoming Events' => $entry['7.1'],
+		// 	'Updates On This Event' => $entry['7.2'],
+		// 	'Event Call for Papers' => $entry['7.3'],
+		// 	'Sponsorship Opportunities' => $entry['7.4'],
+		// 	'Event Registration Offers' => $entry['7.5'],
+		// 	'TM Forum Membership Details' => $entry['7.6'],
+		// );
+		// $url = 'http://marketing.tmforum.org/acton/form/1332/00e6:d-0001/0/index.htm';
+		// send_values_to_acton($values, $url);
+	}
+}
+
 
 // [summits_shortcode summit-slug="summit-slug-value"]
 function summits_shortcode_func( $atts ) {
