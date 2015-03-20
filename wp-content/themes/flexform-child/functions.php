@@ -1143,6 +1143,33 @@ function add_custom_to_yoast( $content ) {
 	remove_filter('wpseo_pre_analysis_post_content', 'add_custom_to_yoast'); // don't let WP execute this twice
 }
 
+//Gravity form integration with acton
 
+if(!function_exists('join_the_mailing_list')){
+	function join_the_mailing_list($entry, $form) {
+
+		$values = array(
+			'Salutation' => $entry['1'],
+			'First Name' => $entry['2.3'],
+			'Last Name' => $entry['2.6'],
+			'Email Address' => $entry['3'],
+			'Phone Number' => $entry['4'],
+			'Job Title' => $entry['5'],
+			'Company' => $entry['6'], 
+			'All Upcoming Events' => $entry['7.1'],
+			'Updates On This Event' => $entry['7.2'],
+			'Event Call for Papers' => $entry['7.3'],
+			'Sponsorship Opportunities' => $entry['7.4'],
+			'Event Registration Offers' => $entry['7.5'],
+			'TM Forum Membership Details' => $entry['7.6'],
+		);
+
+		$url = 'http://marketing.tmforum.org/acton/form/1332/00e6:d-0001/0/index.htm';
+
+		send_values_to_acton($values, $url);
+
+	}
+	add_action("gform_after_submission_23", "join_the_mailing_list", 10, 2);
+}
 
 ?>
