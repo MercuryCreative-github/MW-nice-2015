@@ -273,6 +273,10 @@
     .home .sponsors_logo{
         margin-left: 55px;
     }
+
+    .home .sponsors_logo:first-child{
+        margin-left: 0px;
+    }
 }
 
 @media screen and (max-width: 1120px){
@@ -1153,7 +1157,6 @@
     .section02-list {float: none;width: 100%;border-left: none;padding-left: 0px;margin-top: 50px;}
     .section03-top span {font-size: 2.1em;}
 
-    .section01-sponsors{position: relative;}
     .sponsors_logo{margin-left: 35px;}
 
     .catalyst-demo .row{margin-left: 0px;}

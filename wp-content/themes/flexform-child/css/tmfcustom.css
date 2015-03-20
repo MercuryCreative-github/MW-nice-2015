@@ -129,7 +129,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 
 .networking-tab.wpb_content_element .ui-widget-header .ui-state-default, .theater-tab.wpb_content_element .ui-widget-header .ui-state-default, .takeaway-tab.wpb_content_element .ui-widget-header .ui-state-default, .workshops-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
 
-.theater .summit-day, .theater .summit-session{
+.theater .summit-day, .theater .summit-session, .keynotes-page .summit-day{
 	display: none;
 }
 /**************************/
@@ -364,7 +364,18 @@ a.sf-button.standard.register-agenda {
 .logo_4 img {height: 33px;}
 .logo_5 img {height: 40px;}
 p.image-caption{margin:10px 0 0 0;line-height:100%;}
-.sponsors_logo {text-align:center; position: relative; display: inline-block; max-width: 30%; margin-left: 85px;}
+.sponsors_logo {
+	text-align:center; 
+	position: relative; 
+	display: inline-block; 
+	max-width: 30%; 
+	margin-left: 85px;
+}
+
+.sponsors_logo:first-child{
+	margin-left: 0px;
+}
+
 .sponsors_logo a {display: block; margin: auto; height: 60px; line-height: 60px;}
 
 /*section02*/
@@ -446,7 +457,8 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 .section03-infobox01 h1 {margin-top: 20%;}
 .section03-infobox01 .sf-button.large {border-radius: 5px;margin-top: 20px;}
 
-.section03-top {border-top: 4px #5dc261 solid;margin-bottom: 40px;}
+.section03-top {border-top: 4px #5dc261 solid;margin-bottom: 15px;}
+.section03-top p {margin-bottom: 10px;}
 .section03-top h1 {margin: 20px 0 0;}
 .section03-top span {
 	font-size: 37px;
@@ -508,6 +520,18 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 	line-height: 23px;
 	color: #FFF;
 	font-weight: 100;
+}
+
+.home .page-content ul, .page-content ol {
+	margin: 0 0 10px 25px;
+}
+
+.home .page-content ul li{
+	line-height: 20px;
+}
+
+.home .page-content p {
+	margin-bottom: 10px;
 }
 
 .twfollow {display: none;}

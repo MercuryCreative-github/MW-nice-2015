@@ -51,43 +51,43 @@ function hide_menu_items() {
 
 	function sfs_enqueue_styles() {
 		wp_dequeue_style('main-css');
-         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '8.6', 'all');
+         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '8.7', 'all');
             wp_enqueue_style('main-css'); // Enqueue it!
 
 		// Exhibitors pages
 		if ( is_page_template( 'exhibitors-template.php' ) ) {
-		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '8.6', 'all');
+		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '8.7', 'all');
     		wp_enqueue_style('aidesigns'); // Enqueue it!
 		}
 
 		// Pricing css
 		if ( is_page_template( 'pricing-tables.php' ) ) {
-		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '8.6', 'all');
+		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '8.7', 'all');
     		wp_enqueue_style('pricing-tables-css'); // Enqueue it!
 		}
 
 		// Speakers special css
 		if ( is_page_template( 'speakers.php' ) || is_page_template( 'speakers-with-thumbs.php' )) {
-		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '8.6', 'all');
+		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '8.7', 'all');
     		wp_enqueue_style('speakers-css'); // Enqueue it!
 		}
 
 		// Platinum Program
 		if ( is_page_template( 'platinum-program.php' ) ) {
-		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '8.6', 'all');
+		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '8.7', 'all');
     		wp_enqueue_style('platinum-program-css'); // Enqueue it!
 		}
 
 		// TMF custom styles
-		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '8.6', 'all');
+		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '8.7', 'all');
     	wp_enqueue_style('tmf-custom-css'); // Enqueue it!
 
     	// Responsive fixes
-		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '8.6', 'all');
+		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '8.7', 'all');
     	wp_enqueue_style('tmf-responsive-css'); // Enqueue it!
 
     	// Print Styles
-		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '8.6', 'all');
+		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '8.7', 'all');
     	wp_enqueue_style('tmf-print-css'); // Enqueue it!
 
 	}
@@ -579,11 +579,17 @@ function summits_shortcode_func( $atts ) {
 				$presentationLink = get_permalink();
 
 				//Presentations output
+
 				$presentationsHtmlOutput.='<div class="summit-presentation">';
 					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
 					$presentationsHtmlOutput.='<div class="presentation-info">';
 						$presentationsHtmlOutput.='<div class="presentation-title">';
-						$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
+						if($summit_slug == 'keynotes')
+						{
+							$presentationsHtmlOutput.= $presentationTitle;
+						}else{
+							$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
+						}
 						$presentationsHtmlOutput.='</div>';
 						$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
 						foreach ($roles as $rolesToshow) {
@@ -1136,6 +1142,7 @@ function add_custom_to_yoast( $content ) {
 
 	remove_filter('wpseo_pre_analysis_post_content', 'add_custom_to_yoast'); // don't let WP execute this twice
 }
+
 
 
 ?>
