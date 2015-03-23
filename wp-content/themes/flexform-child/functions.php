@@ -473,6 +473,53 @@ if (!function_exists('custom_post_submission_newsletters_subscribe')) {
     }
 }
 
+//Keep updated / join the mailing list
+add_action("gform_after_submission_5", "join_the_mailing_list", 10, 2);
+
+if(!function_exists('join_the_mailing_list')){
+	function join_the_mailing_list($entry, $form) {
+
+	    $check_boxes = array();
+
+		if($entry['8.0'] !== ''){
+	      $check_boxes[] = $entry['8.0'];
+	    }
+	    if($entry['8.1'] !== ''){
+	     $check_boxes[]  = $entry['8.1'];
+	    }
+	    if($entry['8.2'] !== ''){
+	      $check_boxes[]  = $entry['8.2'];
+	    }
+	    if($entry['8.3'] !== ''){
+	      $check_boxes[]  = $entry['8.3'];
+	    }
+	    if($entry['8.4'] !== ''){
+	      $check_boxes[]  = $entry['8.4'];
+	    }
+	    if($entry['8.5'] !== ''){
+	     $check_boxes[]  = $entry['8.5'];
+	    }
+	    if($entry['8.6'] !== ''){
+	     $check_boxes[]  = $entry['8.6'];
+	    }
+
+	    $check_boxes =  implode(", ",$check_boxes);
+
+	    //include ActonConnection class
+        require_once (get_stylesheet_directory() .'/core/classes/class.Acton-WordPress-Connection.php');
+        $ao_gf1 = new ActonConnection;
+        $ao_gf1 -> setPostItems('salutation', $entry['1']);
+        $ao_gf1 -> setPostItems('fname', $entry['9']);
+        $ao_gf1 -> setPostItems('lname', $entry['10']);
+        $ao_gf1 -> setPostItems('email', $entry['4']);
+        $ao_gf1 -> setPostItems('phone', $entry['5']);
+        $ao_gf1 -> setPostItems('jobtitle', $entry['6']);
+        $ao_gf1 -> setPostItems('company', $entry['7']);
+        $ao_gf1 -> setPostItems('information', $check_boxes);
+        $ao_gf1 -> processConnection('http://marketing.tmforum.org/acton/eform/1332/00e6/d-ext-0001');
+	}
+}
+
 
 // [summits_shortcode summit-slug="summit-slug-value"]
 function summits_shortcode_func( $atts ) {
@@ -1142,7 +1189,5 @@ function add_custom_to_yoast( $content ) {
 
 	remove_filter('wpseo_pre_analysis_post_content', 'add_custom_to_yoast'); // don't let WP execute this twice
 }
-
-
 
 ?>

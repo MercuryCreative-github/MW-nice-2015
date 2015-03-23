@@ -2117,12 +2117,11 @@ div.wpcf7{padding:0;width:475px;margin:0 auto;}
 div.wpcf7 br {display: none}
 .modal-body {padding: 5px 15px}
 .textwidget .form-row{display:block;text-align:left;}
-.textwidget label{margin:0;line-height:12px;width:220px;display:table-cell;padding-right:25px;padding-left:1px;font:300 14px 'Open Sans', sans-serif; color:#666666;cursor: default;}
 .textwidget label span.company {margin-left:0}
 .textwidget label:nth-child(even){padding-right:0;}
 .textwidget span.salutation select{width:80px;margin-left:1px;font:300 14px 'Open Sans', sans-serif;color:#666666;border-radius:0;margin-bottom: 10px}
 .textwidget span.email input{height:20px;width:210px;}
-.textwidget input:not([type="checkbox"]){width:210px;margin:4px 0 8px;}
+.textwidget input:not([type="checkbox"]), .mailing-list-form input:not([type="checkbox"]){width:210px !important;margin:4px 0 8px;}
 .textwidget fieldset label {
 	display:block;
 	font:300 17px 'Open Sans', sans-serif;
@@ -2133,6 +2132,104 @@ div.wpcf7 br {display: none}
 	width:64%;
 	padding:0;
 }
+
+.textwidget label, .mailing-list-form label{
+	margin:0;
+	line-height:12px;
+	width:220px;
+	display:table-cell;
+	padding-right:25px;padding-left:1px;
+	font:300 14px 'Open Sans', sans-serif !important; 
+	color:#666666;
+	cursor: default;
+}
+
+/*******************mailing list*************************/
+
+.mailing-list-form label{font-weight: normal;}
+
+.mailing-list-form .gfield .ginput_container input{
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	height: 20px;
+	line-height: 20px;
+	margin: 4px 0 8px 0;
+	padding: 4px 6px !important;
+	background-color: #F7F7F7;
+}
+
+.mailing-list-form .gform_body ul li > label{
+	margin: 0 !important;
+}
+
+.mailing-list-form_wrapper ul li.gfield{
+	clear: none;
+	display: inline-block;
+}
+.mailing-list-form_wrapper ul li:first-child{
+	clear: both;
+	display: block;
+}
+
+.mailing-list-form_wrapper .gform_body ul li:first-child select{
+	background: #F7F7F7;
+	width: 83px;
+	border-radius: 0px;
+}
+
+.mailing-list-form_wrapper{
+	position: relative;
+	left: 21px;
+	top: -25px;
+}
+
+.mailing-list-form{margin-bottom: 0px;}
+
+.mailing-list-form .gform_body ul li:last-child{
+	width: 475px;
+}
+
+.mailing-list-form .gform_body .gform_fields > li:last-child > label {
+	display: block;
+	font: 300 17px 'Open Sans', sans-serif !important;
+	text-align: center;
+	color: #666666;
+	border-bottom: 1px solid lightgray;
+	margin: 4px auto 8px auto!important;
+	width: 64%;
+	padding: 0;
+}
+
+.mailing-list-form .gform_body ul li .ginput_container ul li{
+	display: inline-block;
+	width: 50%;
+	height: 22px;
+	margin: 0;
+}
+
+.mailing-list-form .gform_body ul li .gfield_checkbox input{
+	margin: 2px 10px 0 10px !important;
+	height: 15px;
+	vertical-align: top;
+}
+
+.mailing-list-form_wrapper{margin-bottom: 0px;}
+
+.home .modal-body{max-height: none;}
+
+.mailing-list-form_wrapper .gform_footer{
+	padding: 0 !important;
+	margin: 0 auto !important;
+	text-align: center;
+}
+
+.mailing-list-form_wrapper .gform_footer input[type="submit"]{
+	margin: 0 auto;
+	padding: 8px 28px 7px 14px;
+	border-radius: 10px;
+}
+
 .textwidget fieldset span.wpcf7-list-item{width:50%;margin:0;float:left;text-align:left;font:300 14px 'Open Sans', sans-serif;color:#666666;}
 .textwidget input.wpcf7-submit{float:left;margin:20px auto 0 125px;text-transform:uppercase;}
 .wpcf7 span.wpcf7-not-valid-tip{top:3px;left:5px;background:transparent;color:red;border:0;margin-bottom:15px;font-size:12px;font-weight:normal;}
@@ -3132,3 +3229,6 @@ line-height: 1.4em;
 	width: 100%;
 }
 
+.footer-social-list li {
+	width: 14.9%;
+}

@@ -1219,6 +1219,31 @@
     .speaker-info .subtitle{
         width: 67%;
     }
+
+    .home .modal-body{
+        max-height: 400px;
+        overflow-y: auto;
+        overflow-x: hidden; 
+        width: 475px; 
+    }
+
+    .mailing-list-form .gform_body ul li .ginput_container ul li{
+        width: 100%;
+    }
+
+    .mailing-list-form .gform_body .gform_fields > li:last-child > label{
+        margin: 8px 0 !important;
+    }
+
+    .mailing-list-form_wrapper .gform_footer input[type="submit"]{
+        float: left;
+    }
+
+    .home .modal-header{
+        padding-bottom: 10px !important;
+        padding-left: 34px;
+        text-align: left !important;
+    }
 }
 
 @media screen and (max-width: 550px) {
