@@ -2144,6 +2144,8 @@ div.wpcf7 br {display: none}
 	cursor: default;
 }
 
+/*******************mailing list*************************/
+
 .mailing-list-form label{font-weight: normal;}
 
 .mailing-list-form .gfield .ginput_container input{
@@ -2161,10 +2163,6 @@ div.wpcf7 br {display: none}
 	margin: 0 !important;
 }
 
-.mailing-list-form #field_5_8 > label{
-	margin: 4px auto 8px auto!important;
-}
-
 .mailing-list-form_wrapper ul li.gfield{
 	clear: none;
 	display: inline-block;
@@ -2174,7 +2172,7 @@ div.wpcf7 br {display: none}
 	display: block;
 }
 
-.mailing-list-form_wrapper #field_5_1 select{
+.mailing-list-form_wrapper .gform_body ul li:first-child select{
 	background: #F7F7F7;
 	width: 83px;
 	border-radius: 0px;
@@ -2188,45 +2186,45 @@ div.wpcf7 br {display: none}
 
 .mailing-list-form{margin-bottom: 0px;}
 
-.mailing-list-form #field_5_8{
+.mailing-list-form .gform_body ul li:last-child{
 	width: 475px;
 }
 
-.mailing-list-form #field_5_8 > label {
+.mailing-list-form .gform_body .gform_fields > li:last-child > label {
 	display: block;
 	font: 300 17px 'Open Sans', sans-serif !important;
 	text-align: center;
 	color: #666666;
 	border-bottom: 1px solid lightgray;
-	margin: 5px auto 10px;
+	margin: 4px auto 8px auto!important;
 	width: 64%;
 	padding: 0;
 }
 
-.mailing-list-form #field_5_8 .ginput_container ul li{
+.mailing-list-form .gform_body ul li .ginput_container ul li{
 	display: inline-block;
 	width: 50%;
 	height: 22px;
 	margin: 0;
 }
 
-.mailing-list-form #field_5_8 .gfield_checkbox input{
+.mailing-list-form .gform_body ul li .gfield_checkbox input{
 	margin: 2px 10px 0 10px !important;
 	height: 15px;
 	vertical-align: top;
 }
 
-#gform_wrapper_5{margin-bottom: 0px;}
+.mailing-list-form_wrapper{margin-bottom: 0px;}
 
 .home .modal-body{max-height: none;}
 
-#gform_wrapper_5 .gform_footer{
+.mailing-list-form_wrapper .gform_footer{
 	padding: 0 !important;
 	margin: 0 auto !important;
 	text-align: center;
 }
 
-#gform_wrapper_5 .gform_footer input[type="submit"]{
+.mailing-list-form_wrapper .gform_footer input[type="submit"]{
 	margin: 0 auto;
 	padding: 8px 28px 7px 14px;
 	border-radius: 10px;

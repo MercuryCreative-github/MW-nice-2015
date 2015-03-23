@@ -1227,20 +1227,22 @@
         width: 475px; 
     }
 
-    .mailing-list-form #field_5_8 .ginput_container ul li{
+    .mailing-list-form .gform_body ul li .ginput_container ul li{
         width: 100%;
     }
 
-    .mailing-list-form #field_5_8 > label{
+    .mailing-list-form .gform_body .gform_fields > li:last-child > label{
         margin: 8px 0 !important;
     }
 
-    #gform_wrapper_5 .gform_footer input[type="submit"]{
+    .mailing-list-form_wrapper .gform_footer input[type="submit"]{
         float: left;
     }
 
     .home .modal-header{
         padding-bottom: 10px !important;
+        padding-left: 34px;
+        text-align: left !important;
     }
 }
 
