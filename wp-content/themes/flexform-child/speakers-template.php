@@ -130,12 +130,29 @@ Template Name: Speakers
 			function create_page_content(){
 
 				$page_content='';
-				$blogusers = get_users( 'orderby=name&role=speaker' );
+
+				  $args  = array(
+				    //'meta_key ' => 'last_name',
+				    'order ' => 'ASC',
+				    'orderby' => 'meta_value',
+				    'role' => 'speaker',
+				    // check for two meta_values
+					'meta_query' => array(
+							array(
+								'key'     => 'last_name',
+							),
+						)
+				    );
+
 				// Save user ID to pass on data to Speaker page
 				$user_id = esc_html( $user->ID );
 				$avatar = get_user_meta($sid, 'image',1);
 
-				foreach ( $blogusers as $user ) {
+				$user_query = new WP_User_Query( $args );
+
+				// User Loop
+				foreach ( $user_query->results as $user ) {
+				
 
 						$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
 						$categoryDisplay='';
