@@ -499,47 +499,24 @@ if(!function_exists('join_the_mailing_list')){
 	    if($entry['8.5'] !== ''){
 	     $check_boxes[]  = $entry['8.5'];
 	    }
+	    if($entry['8.6'] !== ''){
+	     $check_boxes[]  = $entry['8.6'];
+	    }
 
-	   
-
-	     $check_boxes =  implode(', ',$check_boxes);
-
-
+	    $check_boxes =  implode(", ",$check_boxes);
 
 	    //include ActonConnection class
         require_once (get_stylesheet_directory() .'/core/classes/class.Acton-WordPress-Connection.php');
         $ao_gf1 = new ActonConnection;
         $ao_gf1 -> setPostItems('salutation', $entry['1']);
         $ao_gf1 -> setPostItems('fname', $entry['9']);
-        $ao_gf1 -> setPostItems('lname', $entry['9']);
-        $ao_gf1 -> setPostItems('email', $entry['3']);
-        $ao_gf1 -> setPostItems('phone', $entry['4']);
-        $ao_gf1 -> setPostItems('jobtitle', $entry['5']);
-        $ao_gf1 -> setPostItems('company', $entry['6']);
-        $ao_gf1 -> setPostItems('information', $check_boxes);/*
-        $ao_gf1 -> setPostItems('information', $updatesEvents);
-        $ao_gf1 -> setPostItems('information', $eventPapers);
-        $ao_gf1 -> setPostItems('information', $sponsorship);
-        $ao_gf1 -> setPostItems('information', $eventRegistration);
-        $ao_gf1 -> setPostItems('information', $membershipDetails);*/
+        $ao_gf1 -> setPostItems('lname', $entry['10']);
+        $ao_gf1 -> setPostItems('email', $entry['4']);
+        $ao_gf1 -> setPostItems('phone', $entry['5']);
+        $ao_gf1 -> setPostItems('jobtitle', $entry['6']);
+        $ao_gf1 -> setPostItems('company', $entry['7']);
+        $ao_gf1 -> setPostItems('information', $check_boxes);
         $ao_gf1 -> processConnection('http://marketing.tmforum.org/acton/eform/1332/00e6/d-ext-0001');
-		// $values = array(
-		// 	'Salutation' => $entry['1'],
-		// 	'First Name' => $entry['2.3'],
-		// 	'Last Name' => $entry['2.6'],
-		// 	'Email Address' => $entry['3'],
-		// 	'Phone Number' => $entry['4'],
-		// 	'Job Title' => $entry['5'],
-		// 	'Company' => $entry['6'], 
-		// 	'All Upcoming Events' => $entry['7.1'],
-		// 	'Updates On This Event' => $entry['7.2'],
-		// 	'Event Call for Papers' => $entry['7.3'],
-		// 	'Sponsorship Opportunities' => $entry['7.4'],
-		// 	'Event Registration Offers' => $entry['7.5'],
-		// 	'TM Forum Membership Details' => $entry['7.6'],
-		// );
-		// $url = 'http://marketing.tmforum.org/acton/form/1332/00e6:d-0001/0/index.htm';
-		// send_values_to_acton($values, $url);
 	}
 }
 
