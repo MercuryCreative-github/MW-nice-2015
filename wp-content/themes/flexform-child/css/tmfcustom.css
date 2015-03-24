@@ -287,8 +287,13 @@ a.sf-button.standard.register-agenda {
 .presentation-subtitle {text-transform: uppercase;color: #B2B2B2;font-size: 15px;margin-bottom: 10px;}
 .page-content  .presentation-speaker p {margin-bottom: 5px;}
 
-/*Presentation Page*/
+/*sidebar*/
+.session-sponsored-by {margin: 30px 0 40px 0;}
+.session-sponsored-by p {text-align: center; margin-top: 20px;}
+.summit-buttons p {text-align: center;}
+.summit-buttons p a {margin-right: 0;}
 
+/*Presentation Page*/
 .single-presentation {margin-top: 45px;}
 
 /**************************/
@@ -394,8 +399,11 @@ p.image-caption{margin:10px 0 0 0;line-height:100%;}
 	border-left: 1px #e4e4e4 solid;
 	padding-left: 30px;
 }
-.section02-list ul li { margin-bottom: 10px; display: table; width: 100%;}
-.section02-list ul li img, .section02-companies li img { margin-right: 0; display: table-cell;}
+.page-content .section02-list ul li {list-style-type: none;}
+.section02-list ul li a { display: table; width: 100%;padding: 7px;}
+.section02-list ul li a:hover {text-decoration: none;background-color: #F6F7F7;padding: 7px;}
+.section02-list ul li a p {color: #444;}
+.section02-list ul li a img, .section02-companies li a img { margin-right: 0; display: table-cell;}
 .section02-companies li img {min-width: 60px;height: auto;width: 170px;margin-right: 30px;}
 .section02-companies li:first-child img {height: 70px;width: 70px;margin-right: 0;}
 p.list-text, .section02-companies li {
@@ -960,7 +968,7 @@ nav .menu ul{background-color:transparent !important;}
 /*** Exhibitors Nav ***/
 /**********************/
 #exhibitors-navigation{width:100%;display:inline-block;text-align:center;}
-nav#exhibitors-navigation .menu li{background:#fff;border:solid 1px #F2F2F2;width:218px;text-align:center;display:inline-block;}
+nav#exhibitors-navigation .menu li{background:#fff;border:solid 1px #F2F2F2;width:270px;text-align:center;display:inline-block;}
 nav#exhibitors-navigation .menu li a{margin:0; padding: 0; line-height: 44px; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;}
 nav#exhibitors-navigation .menu li.current-menu-item{background:#ee7630;}
 nav#exhibitors-navigation .menu li.current-menu-item a{color:#fff;background:#ee7630;}
@@ -2222,11 +2230,13 @@ div.wpcf7 br {display: none}
 	padding: 0 !important;
 	margin: 0 auto !important;
 	text-align: center;
+	width: 90%;
+	float: left;
 }
 
 .mailing-list-form_wrapper .gform_footer input[type="submit"]{
 	margin: 0 auto;
-	padding: 8px 28px 7px 14px;
+	padding: 8px 15px 7px 15px;
 	border-radius: 10px;
 }
 
