@@ -1181,6 +1181,20 @@
     .speaker-info .subtitle{
         width: 69%;
     }
+
+    .mailing-list-form_wrapper .gform_footer{
+        width: 460px;
+    }
+
+    .home .modal-header{
+        text-align: left !important;
+    }
+    .home .modal-header img{
+        margin: 20px 0 8px 180px !important;
+        max-height: 110px;
+        height: 110px;
+        width: auto !important;
+    }
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -1243,6 +1257,10 @@
         padding-bottom: 10px !important;
         padding-left: 34px;
         text-align: left !important;
+    }
+
+    .home .modal-header img{
+        margin: auto !important;
     }
 }
 

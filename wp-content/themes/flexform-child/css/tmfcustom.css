@@ -2222,11 +2222,13 @@ div.wpcf7 br {display: none}
 	padding: 0 !important;
 	margin: 0 auto !important;
 	text-align: center;
+	width: 90%;
+	float: left;
 }
 
 .mailing-list-form_wrapper .gform_footer input[type="submit"]{
 	margin: 0 auto;
-	padding: 8px 28px 7px 14px;
+	padding: 8px 15px 7px 15px;
 	border-radius: 10px;
 }
 
