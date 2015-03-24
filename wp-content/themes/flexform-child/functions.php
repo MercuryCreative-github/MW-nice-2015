@@ -370,8 +370,16 @@ add_action( 'user_register', 'create_company_on_user_save',10,1);
 if(!function_exists(create_company_on_user_save)){
 	function create_company_on_user_save($user_id){
 
-	        $user = get_user_meta($user_id);
 	        $new_company=array();
+
+	        $user_obj = wp_get_current_user();
+
+	        $user = get_user_meta($user_id);
+
+	        var_dump($user->ID);
+	        echo '<br>';
+	        var_dump($user_obj);
+
 
 	        if(isset($_POST['new_company'])){
 
