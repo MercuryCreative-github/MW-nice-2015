@@ -363,8 +363,8 @@ add_action('admin_summit-slugter', 'profile_admin_buffer_end');
 
 
 
-add_action('profile_update','create_company_on_user_save',10,1);
-add_action( 'user_register', 'create_company_on_user_save',10,1);
+add_action('profile_update','create_company_on_user_save',20,1);
+add_action( 'user_register', 'create_company_on_user_save',20,1);
 
 // Create New Company from user edit/create
 if(!function_exists(create_company_on_user_save)){
@@ -372,16 +372,9 @@ if(!function_exists(create_company_on_user_save)){
 
 	        $new_company=array();
 
-	        $user_obj = wp_get_current_user();
-
 	        $user = get_user_meta($user_id);
 
-	        var_dump($user->ID);
-	        echo '<br>';
-	        var_dump($user_obj);
-
-
-	        if(isset($_POST['new_company'])){
+	        if(!empty($_POST['new_company'])){
 
 	        	$args = array(
 	        	 'post_title'    => $_POST['new_company'],
@@ -815,54 +808,23 @@ function summits_shortcode_func( $atts ) {
 
 add_shortcode( 'summits_shortcode', 'summits_shortcode_func' );
 
+if(!function_exists(update_presentation_on_user_save)){
 
-function update_presentation_on_user_save($user_id){
-        if (!$user_id>0)
-                return;
+	function update_presentation_on_user_save($user_id){
+
+        if (!$user_id>0) return;
 
         $user = get_user_by('id', $user_id);
-
-
-        //var_dump($user); die;
-
 
         // remove the speaker from all the presentations that he/she not longer belongs.
         function removeSpeaker($speaker_role,$user,$user_id){
 
-        $role_to_update=$speaker_role.'s_meta';
+	        $role_to_update=$speaker_role.'s_meta';
+	        $justErasedFrom = array();
 
-        $args = array(
-			'post_type'  => 'agenda_tracks',
-			'meta_key'   => $role_to_update,
-			'meta_query' => array(
-				array(
-					'key'     => $role_to_update,
-					'value'   => $user_id,
-					'compare' => 'LIKE',
-				),
-			),
-		);
+	        if(!function_exists(eraseFromPresent)){
 
-
-		// This are all the presentations that have him/her listed as spekear/moderator/etc
-		$presentationToCheck = new WP_Query( $args );
-
-		// The Loop
-		if ( $presentationToCheck->have_posts() ) {
-
-			while ( $presentationToCheck->have_posts() ) {
-				
-				$presentationToCheck->the_post();
-				$presentationToCheckId=get_the_ID();
-
-
-
-				// this is the new data sumbitted
-				$role_at = $speaker_role.'_at';
-				$new_data=($user->$role_at); 
-
-	
-				if(!in_array($presentationToCheckId,$new_data)){
+				function eraseFromPresent($user_id,$presentationToCheckId,$role_to_update){
 
 					echo 'hay que borrar '.$user_id.' de '.$presentationToCheckId.'<br>'; //die;
 
@@ -870,48 +832,78 @@ function update_presentation_on_user_save($user_id){
 
 					$presentationMeta = get_post_meta($presentationToCheckId, $role_to_update,true);
 
-					$key = array_search($user_id, $presentationMeta);
+					if(is_array($presentationMeta)){
 
+						$key = array_search($user_id, $presentationMeta);
 
-					if(($key) !== false) {
-								unset($presentationMeta[$key]);
-								update_post_meta( $presentationToCheckId, $role_to_update, $presentationMeta );
-							}	
+						if(($key) !== false) {
+							unset($presentationMeta[$key]);
+							update_post_meta( $presentationToCheckId, $role_to_update, $presentationMeta );
+						}
+					}
 				}
 			}
-			
 
-		}
+	        $args = array(
+				'post_type'  => 'agenda_tracks',
+				'meta_key'   => $role_to_update,
+				'meta_query' => array(
+					array(
+						'key'     => $role_to_update,
+						'value'   => $user_id,
+						'compare' => 'LIKE',
+					),
+				),
+			);
 
-		/* Restore original Post Data */
-		wp_reset_postdata();
 
+			// This are all the presentations that have him/her listed as spekear/moderator/etc
+			$presentationToCheck = new WP_Query( $args );
 
-		return $justErasedFrom;
+			// The Loop
+			if ( $presentationToCheck->have_posts() ) {
+
+				while ( $presentationToCheck->have_posts() ) {
+					
+					$presentationToCheck->the_post();
+					$presentationToCheckId=get_the_ID();
+
+					// this is the new data sumbitted
+					$role_at = $speaker_role.'_at';
+					$new_data=($user->$role_at); 
+
+					if(!empty($new_data)){
+						eraseFromPresent($user_id,$presentationToCheckId,$role_to_update);
+					}
+					else if(is_array($new_data)){
+						if(!in_array($presentationToCheckId,$new_data)){
+							eraseFromPresent($user_id,$presentationToCheckId,$role_to_update);
+						}
+					}
+
+				}	
+
+			}
+
+			/* Restore original Post Data */
+			wp_reset_postdata();
+
+			return $justErasedFrom;
 
 		} // removeSpeaker ends
 
         // add the speaker from all the presentations that he/she does not yet belong.
-        function addSpeaker($speaker_role,$user,$user_id,$justErasedFrom=''){
+        function addSpeaker($speaker_role,$user,$user_id,$justErasedFrom){
 
         $role_to_update=$speaker_role.'s_meta';
 
         $args = array(
 			'post_type'  => 'agenda_tracks',
-			'meta_query' => array(
-				'relation' => 'OR',
-				array(
-					'key'     => $role_to_update,
-                    'compare' => 'NOT EXISTS',
-                    'value' => ''
-				),
-				array(
-					'key'     => $role_to_update,
-					'value'   => $user_id,
-					'compare' => '!=',
-				),
-			),
+			'post_status'=> 'publish',
 			'post__not_in'	 => $justErasedFrom,
+			'orderby' => 'ID',
+			'order' => 'ASC',
+			'posts_per_page'=>-1.
 		);
 	
 
@@ -928,42 +920,28 @@ function update_presentation_on_user_save($user_id){
 
 				// this is the new data sumbitted
 				$role_at = $speaker_role.'_at';
-				$new_data=($user->$role_at); 
+				$posted_data=$_POST[$role_at];
 
-				if(is_string($new_data)){
-					$new_data[]=$new_data;
-				}
+				$new_data= explode(',',$posted_data);
 
-	
+				if(!empty($posted_data))
 				if(in_array($presentationToAddId,$new_data)){
 
-					echo 'hay que agregar '.$user_id.' a '.$presentationToAddId.'<br>'; //die;
+					echo 'hay que agregar '.$user_id.' a '.$presentationToAddId.'<br>'; 
 					$presentationMeta = get_post_meta($presentationToAddId, $role_to_update,true);
 
+					$presentationMeta[]=$user_id;
+					$presentationMeta=array_unique($presentationMeta);
 
-					if(!$presentationMeta){
-						$presentationMeta[]=$user_id;
-						add_post_meta( $presentationToAddId, $role_to_update, $presentationMeta );
-					}
-
-					// check if not already in.
-					else if(!in_array($user_id,$presentationMeta)){
-						$presentationMeta[]=$user_id;
-						update_post_meta( $presentationToAddId, $role_to_update, $presentationMeta );
-					}
-
-					
-
-					
+					delete_post_meta($presentationToAddId, $role_to_update);
+					add_post_meta( $presentationToAddId, $role_to_update, $presentationMeta );	
+					$updatedMeta = get_post_meta( $presentationToAddId, $role_to_update, true);	
 				}
+
 			}
 			
-
 		}else { 
-
 			echo 'wrong query'; die;
-
-
 		}
 
 		/* Restore original Post Data */
@@ -975,15 +953,17 @@ function update_presentation_on_user_save($user_id){
 		$roles=array('speaker','panelist','collaborator','facilitator','moderator');
 
 		foreach ($roles as $role_to_update) {
-			$justErasedFrom = '';
-			addSpeaker($role_to_update,$user,$user_id,$justErasedFrom);
+			$justErasedFrom = array();
 			$justErasedFrom = removeSpeaker($role_to_update,$user,$user_id);
+			addSpeaker($role_to_update,$user,$user_id,$justErasedFrom);
+
 		}
 
+	}
 }
 
-add_action('profile_update','update_presentation_on_user_save',7,1);
-add_action('user_register', 'update_presentation_on_user_save',7,1);
+add_action('profile_update','update_presentation_on_user_save',10,1);
+add_action('user_register', 'update_presentation_on_user_save',10,1);
 
 
 /**
@@ -999,9 +979,6 @@ function save_presentation( $post_id, $post, $update ) {
 
 
 		    function update_speakers_by_role($role_to_update) {
-
-
-			//if( isset( $_POST[$role_to_update.'s_hidden'] ) ) {
 
 				$speakerIds = explode (',',$_POST[$role_to_update.'s_meta']);
 				$sizeSpeakers = count( $speakerIds );
@@ -1055,7 +1032,6 @@ function save_presentation( $post_id, $post, $update ) {
 						}
 					}
 				}
-			//}
 		};
 
 	};
