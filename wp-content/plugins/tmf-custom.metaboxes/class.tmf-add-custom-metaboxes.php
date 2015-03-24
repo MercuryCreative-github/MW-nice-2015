@@ -254,7 +254,6 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                             'priority' => 'high',
                             'show_names' => true, // Show field names on the left
                             'fields' => array(
-                               
                                 array(
                                     'name' => 'Speaker at',
                                     'id' =>  'speaker_at',
@@ -262,27 +261,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                     'options' => self::get_all_presentations(),
                                     'type' => 'pw_multiselect',
                                     'sanitization_cb' => 'pw_select2_sanitise',
-                                ),
-                               
-                                array(
-                                    'name' => 'Moderator at',
-                                    'id' =>  'moderator_at',
-                                    'desc' => 'Select the Presentations this user moderates at',
-                                    'options' => self::get_all_presentations(),
-                                    'type' => 'pw_multiselect',
-                                    'sanitization_cb' => 'pw_select2_sanitise',
-                                ),
-                               
-                                array(
-                                    'name' => 'Panelist at',
-                                    'id' =>  'panelist_at',
-                                    'desc' => 'Select the Presentations where this user is panelist',
-                                    'options' => self::get_all_presentations(),
-                                    'type' => 'pw_multiselect',
-                                    'sanitization_cb' => 'pw_select2_sanitise'
-                                ),
-
-                               
+                                ),                               
                                 array(
                                     'name' => 'Collaborator at',
                                     'id' =>  'collaborator_at',
@@ -291,6 +270,24 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                     'type' => 'pw_multiselect',
                                     'sanitization_cb' => 'pw_select2_sanitise',
 
+                                ), 
+ 
+                                array(
+                                    'name' => 'Panelist at',
+                                    'id' =>  'panelist_at',
+                                    'desc' => __('Select the Presentations this user is panelist'),
+                                    'options' => self::get_all_presentations(),
+                                    'type' => 'pw_multiselect',
+                                    'sanitization_cb' => 'pw_select2_sanitise',
+
+                                ),
+                                array(
+                                    'name' => 'Moderator at',
+                                    'id' =>  'moderator_at',
+                                    'desc' => 'Select the Presentations this user moderates at',
+                                    'options' => self::get_all_presentations(),
+                                    'type' => 'pw_multiselect',
+                                    'sanitization_cb' => 'pw_select2_sanitise',
                                 ),
 
                                 array(
@@ -303,20 +300,10 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
                                 ),
 
-                                /*array(
-                                    'name' => 'Chair at',
-                                    'id' =>  'chair_at',
-                                    'desc' => 'Select the Session this user is chair.',
-                                    'options' => self::get_all_sessions(),
-                                    'type' => 'pw_multiselect',
-                                    'sanitization_cb' => 'pw_select2_sanitise',
-
-                                ),*/
-
-                                 array(
+                                array(
                                     'name' => 'Company',
                                     'id' => 'company',
-                                    'desc' => 'Company',
+                                    'desc' => 'Please select the Company this user belongs',
                                     'options' => self::get_all_sponsors(),
                                     'type' => 'pw_multiselect',
                                     'sanitization_cb' => 'pw_select2_sanitise',
@@ -364,6 +351,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                 ), 
                             )
                         );
+
             return $meta_boxes;
         }
 
@@ -720,9 +708,10 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             global $post;
              
             $args = array(
-            //'post_type' => 'agenda_tracks', 
             'post_type' => 'agenda_tracks', 
             'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
             );
             
             $all_events = get_posts($args);

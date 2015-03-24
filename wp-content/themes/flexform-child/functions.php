@@ -362,34 +362,36 @@ add_action('admin_head', 'profile_admin_buffer_start');
 add_action('admin_summit-slugter', 'profile_admin_buffer_end');
 
 
-// Create New Company from user edit/create
-
-function create_company_on_user_save($user_id){
-        if (!$user_id>0)
-                return;
-
-        $user = get_user_by('id', $user_id);
-
-        if($user->new_company){
-
-        	$post = array(
-        	 'post_title'    => $user->new_company,
-        	 'post_type'  => 'companies',
-        	 'post_status'   => 'publish',
-
-        	 );
-
-        	$post_ID = wp_insert_post($post);
-
-        update_usermeta( $user_id, 'new_company','' );
-        $new_company[]= $post_ID;
-        update_usermeta( $user_id, 'company', $new_company  );
-
-    	}
-}
 
 add_action('profile_update','create_company_on_user_save',10,1);
 add_action( 'user_register', 'create_company_on_user_save',10,1);
+
+// Create New Company from user edit/create
+if(!function_exists(create_company_on_user_save)){
+	function create_company_on_user_save($user_id){
+
+	        $user = get_user_meta($user_id);
+	        $new_company=array();
+
+	        if(isset($_POST['new_company'])){
+
+	        	$args = array(
+	        	 'post_title'    => $_POST['new_company'],
+	        	 'post_type'  => 'companies',
+	        	 'post_status'   => 'publish',
+
+	        	 );
+
+	        	$post_ID = wp_insert_post($args);
+
+	        $new_company[]= $post_ID;
+	        delete_user_meta($user_id, 'company');
+	        add_user_meta($user_id, 'company', $new_company);
+	      	delete_user_meta($user_id, 'new_company');
+
+	    	}
+	}
+}
 
 function getUserCompanies( $userId = 0, $isSingle = false ) {
 	$unserializedArray = array();
@@ -806,10 +808,6 @@ function summits_shortcode_func( $atts ) {
 add_shortcode( 'summits_shortcode', 'summits_shortcode_func' );
 
 
-
-
-
-
 function update_presentation_on_user_save($user_id){
         if (!$user_id>0)
                 return;
@@ -886,7 +884,7 @@ function update_presentation_on_user_save($user_id){
 		} // removeSpeaker ends
 
         // add the speaker from all the presentations that he/she does not yet belong.
-        function addSpeaker($speaker_role,$user,$user_id,$justErasedFrom){
+        function addSpeaker($speaker_role,$user,$user_id,$justErasedFrom=''){
 
         $role_to_update=$speaker_role.'s_meta';
 
@@ -969,17 +967,15 @@ function update_presentation_on_user_save($user_id){
 		$roles=array('speaker','panelist','collaborator','facilitator','moderator');
 
 		foreach ($roles as $role_to_update) {
-			$justErasedFrom = removeSpeaker($role_to_update,$user,$user_id);
+			$justErasedFrom = '';
 			addSpeaker($role_to_update,$user,$user_id,$justErasedFrom);
+			$justErasedFrom = removeSpeaker($role_to_update,$user,$user_id);
 		}
 
 }
 
-add_action('profile_update','update_presentation_on_user_save',10,1);
-add_action('user_register', 'update_presentation_on_user_save',10,1);
-
-
-
+add_action('profile_update','update_presentation_on_user_save',7,1);
+add_action('user_register', 'update_presentation_on_user_save',7,1);
 
 
 /**
