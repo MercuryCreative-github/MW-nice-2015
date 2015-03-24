@@ -854,6 +854,7 @@ if(!function_exists(update_presentation_on_user_save)){
 						'compare' => 'LIKE',
 					),
 				),
+				'posts_per_page'=>-1,
 			);
 
 
@@ -903,7 +904,7 @@ if(!function_exists(update_presentation_on_user_save)){
 			'post__not_in'	 => $justErasedFrom,
 			'orderby' => 'ID',
 			'order' => 'ASC',
-			'posts_per_page'=>-1.
+			'posts_per_page'=>-1,
 		);
 	
 
