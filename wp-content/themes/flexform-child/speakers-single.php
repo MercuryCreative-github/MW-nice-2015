@@ -226,7 +226,6 @@ foreach ($presentationsIDsArray as $arr) {
 		}
 	}
 }
-
 	$presentations='';
 
 if(isset($presentationsIDs)){
