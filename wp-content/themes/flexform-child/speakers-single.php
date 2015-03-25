@@ -157,7 +157,7 @@ Template Name: Speaker Profile
 $speakerItem= '<div class="speaker-info">';
 	$speakerItem.= '<div class="thumb-single thumb">'; 
 	$userMetaImage=get_user_meta($user->ID,'image',true);
-		$speakerItem.='<img src="'.$userMetaImage.'"/>';
+		$speakerItem.='<img src="'.$userMetaImage.'" onload="speakerImgSize(this);"/>';
 		$speakerItem.= '<div style="margin-top: 20px;"><a href="'.$companyURL.'" target="_blank">'.$companyThumb.'</a></div>';
 	$speakerItem.= '</div>';
 	$speakerItem.= '<div class="subtitle" style="display:inline-block;vertical-align: top;">';
