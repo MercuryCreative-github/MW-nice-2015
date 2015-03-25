@@ -2479,7 +2479,7 @@ div.wpcf7 br {display: none}
 	background: none;
 }
 
-.speaker-box .thumb img{
+.speaker-box .thumb img, .thumb-single img{
 	width: 100%;
 	max-width: none;
 }
