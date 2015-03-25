@@ -873,14 +873,31 @@ if(!function_exists(update_presentation_on_user_save)){
 					$role_at = $speaker_role.'_at';
 					$new_data=($user->$role_at); 
 
-					if(!empty($new_data)){
-						eraseFromPresent($user_id,$presentationToCheckId,$role_to_update);
-					}
-					else if(is_array($new_data)){
-						if(!in_array($presentationToCheckId,$new_data)){
-							eraseFromPresent($user_id,$presentationToCheckId,$role_to_update);
-						}
-					}
+					// if(!empty($new_data)){
+					// 	eraseFromPresent($user_id,$presentationToCheckId,$role_to_update);
+					// }
+					// else if(is_array($new_data)){
+					// 	if(!in_array($presentationToCheckId,$new_data)){
+					// 		eraseFromPresent($user_id,$presentationToCheckId,$role_to_update);
+					// 	}
+					// }
+
+					if(!in_array($presentationToCheckId,$new_data)){
+
+					echo 'hay que borrar '.$user_id.' de '.$presentationToCheckId.'<br>'; //die;
+
+					$justErasedFrom[]=$presentationToCheckId;
+
+					$presentationMeta = get_post_meta($presentationToCheckId, $role_to_update,true);
+
+					$key = array_search($user_id, $presentationMeta);
+
+
+					if(($key) !== false) {
+								unset($presentationMeta[$key]);
+								update_post_meta( $presentationToCheckId, $role_to_update, $presentationMeta );
+							}	
+				}
 
 				}	
 

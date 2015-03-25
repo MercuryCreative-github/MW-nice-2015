@@ -226,34 +226,35 @@ foreach ($presentationsIDsArray as $arr) {
 		}
 	}
 }
-
 	$presentations='';
+
+if(isset($presentationsIDs)){
+
 	$presentations.='<div class="wpb_wrapper clearfix"><h4>' . esc_html( $user->display_name ) . '&#39;s <strong>Schedule</strong></h4></div>';
 
-foreach ($presentationsIDs as $presentationToCheck ) {
+	foreach ($presentationsIDs as $presentationToCheck) {
 
-		$presentationToCheck = get_post( $presentationToCheck );
+			$presentationToCheck = get_post( $presentationToCheck );
 
-		if ( $presentationToCheck  !== NULL && $presentationToCheck->post_type =='agenda_tracks'){
+			if ( $presentationToCheck  !== NULL && $presentationToCheck->post_type =='agenda_tracks'){
 
-			$presentationToCheckId=$presentationToCheck->ID;
+				$presentationToCheckId=$presentationToCheck->ID;
 
-			$presentationTitle=get_the_title($presentationToCheckId);
-			$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
+				$presentationTitle=get_the_title($presentationToCheckId);
+				$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
 
-			$dmonth=date('D j',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
-			$startTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
-			$endTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
-			$presentationLink = get_permalink($presentationToCheckId);
+				$dmonth=date('D j',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+				$startTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+				$endTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
+				$presentationLink = get_permalink($presentationToCheckId);
 
-			$presentations.='<div class="speaking-schedule">';
-			$presentations.='<p><strong><a href="'.$presentationLink.'">'.$presentationTitle.'</a></strong><br/>';
-			$presentations.='<span style="text-transform: capitalize;">'.$dmonth.'</span> - '.$startTime.' - '.$endTime.'</p>';
-			$presentations.='</div>';
+				$presentations.='<div class="speaking-schedule">';
+				$presentations.='<p><strong><a href="'.$presentationLink.'">'.$presentationTitle.'</a></strong><br/>';
+				$presentations.='<span style="text-transform: capitalize;">'.$dmonth.'</span> - '.$startTime.' - '.$endTime.'</p>';
+				$presentations.='</div>';
 
-		}
-
-
+			}
+	}
 }
 
 	if($presentations!=='<div class="wpb_wrapper clearfix"><h2>' . esc_html( $user->display_name ) . '&#39;s schedule</h2></div>'){echo $presentations;}
