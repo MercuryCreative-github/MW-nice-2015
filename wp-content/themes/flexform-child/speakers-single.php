@@ -255,11 +255,10 @@ if(isset($presentationsIDs)){
 
 			}
 	}
-}
-
 	if($presentations!=='<div class="wpb_wrapper clearfix"><h2>' . esc_html( $user->display_name ) . '&#39;s schedule</h2></div>'){echo $presentations;}
 	return $sidebarSchedule;
-	}
+}
+}
 
 	$sidebarSchedule = callPresentations($user);
 
