@@ -146,7 +146,6 @@ Template Name: Speakers
 
 				// Save user ID to pass on data to Speaker page
 				$user_id = esc_html( $user->ID );
-				$avatar = get_user_meta($sid, 'image',1);
 
 				$user_query = new WP_User_Query( $args );
 
@@ -167,13 +166,18 @@ Template Name: Speakers
 
 						$page_content.= '<div class="speaker-box speaker-item'.$categoryDisplay.'">';
 						$page_content.= '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
-						$userMetaImage = get_user_meta($user->ID,'image',true);
+						
+						// Get the user id of the user and the id of the image
+						$userMetaImageId = get_user_meta($user->ID,'image_id',true);
+						// Asign a size to the image
+						$userMetaImage =  wp_get_attachment_image_src( $userMetaImageId, 'thumbnail' ); 
 
-						if(empty($userMetaImage)){
-						$userMetaImage ='/wp-content/uploads/2014/09/default_speaker.png';
+						// if $userMetaImage (an array) is empty/false
+						if(!($userMetaImage)){
+						$userMetaImage[] ='/wp-content/uploads/2014/09/default_speaker.png';
 						}
-
-						$page_content.= '<div class="thumb"><img src="'.$userMetaImage.'" onload="speakerImgSize(this);"/></div>';
+						//the ferst element of the $userMetaImage array is the url of the image
+						$page_content.= '<div class="thumb"><img src="'.$userMetaImage[0].'" onload="speakerImgSize(this);"/></div>';
 						$page_content.= '<div class="speaker-data">';
 						$page_content.= '<p class="name">' . esc_html( $user->display_name ) . '</p>';
 						
