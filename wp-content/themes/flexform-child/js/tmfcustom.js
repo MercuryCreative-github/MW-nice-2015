@@ -17,8 +17,19 @@ function ini() {
     acordion();
     registerBtnLink();
     scrolledMenu();
-    
+   
 }
+
+function tabsControl(){
+   var $ = jQuery;
+    $('li.ui-state-default').click(function(e){
+        if(!$(this).parent().parent().parent().hasClass('dontChangePageTitle')){
+            pageTitle=$('a',this).text();
+           $('title').text(pageTitle);
+        }
+    })
+}
+
 
 function scrolledMenu(){
     var scrollStatus = 1;
@@ -321,6 +332,7 @@ jQuery(window).load(function() {
     resizeSponsors();
     scrollListener();
     homepageSectionsResize();
+    tabsControl();
 });
 
 function fullAgenda(){
@@ -421,6 +433,11 @@ function scrollListener() {
     var direccion=1;
     jQuery("html,body").stop().animate({scrollTop: where}, time*2);
     jQuery(".page-content").fadeTo(time,1);
+
+    activeTab = jQuery('li.ui-state-active').text();
+    jQuery('title').text(activeTab);
+
+
     }
 }
 
