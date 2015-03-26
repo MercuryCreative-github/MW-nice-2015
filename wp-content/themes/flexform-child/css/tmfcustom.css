@@ -132,6 +132,10 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .theater .summit-day, .theater .summit-session, .keynotes-page .summit-day{
 	display: none;
 }
+.takeaway-tab .row-fluid.tabs-summits-content {
+ margin: 0;
+ width: 100% !important;
+}
 /**************************/
 /******* SUBMIT PAGE ******/
 /**************************/
