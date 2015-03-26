@@ -95,15 +95,17 @@ function reRowIotTabs() {
 
    jQuery('.summit-tabs div[id|="tab"]').each(function(){
 
-    // save div content from last row
-    var newSpan4 =  jQuery('.row:eq(2) .span12', this);
+    var  lastRow = jQuery('.row .span12', this).length-1;
+    var prelastRow = lastRow-1;
 
+    // save div content from last row
+    var newSpan4 =  jQuery('.row:eq('+lastRow+') .span12', this);
     // remove last row
-    jQuery('.row:eq(2)', this).remove();
+    jQuery('.row:eq('+lastRow+')', this).remove();
 
     //rename second row to row-fluid and span12 to span8
-    jQuery('.row:eq(1) .span12', this).removeClass( "span12" ).addClass( "span8" );
-    jQuery('.row:eq(1)', this).removeClass( "row" ).addClass( "row-fluid tabs-summits-content");
+    jQuery('.row:eq('+prelastRow+') .span12', this).removeClass( "span12" ).addClass( "span8" );
+    jQuery('.row:eq('+prelastRow+')', this).removeClass( "row" ).addClass( "row-fluid tabs-summits-content");
 
     //append newSpan4 to Rowfluid
     jQuery('.row-fluid', this).append(newSpan4);
