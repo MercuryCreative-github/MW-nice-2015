@@ -610,10 +610,6 @@
         margin: 26px auto;
     }
 
-    .passes-prices .color-box{
-        padding:0 15px;
-    }
-
     .discount-text-box{
         width: 100% !important;
         margin: 0 !important;
@@ -769,9 +765,6 @@
         width: 220px;
     }
 
-    .passes-prices .color-box{
-        padding-right: 25px;
-    }
 }
 
 @media screen and (max-width: 1024px) {

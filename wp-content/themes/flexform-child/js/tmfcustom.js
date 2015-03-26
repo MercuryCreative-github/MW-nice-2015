@@ -46,7 +46,8 @@ function speakerImgSize(speakerImg){
     var imgWidth = jQuery(speakerImg).width();
     var imgHeight = jQuery(speakerImg).height();
     var imgProp = imgWidth/imgHeight;
-    var imgNewW = imgProp*90;
+    var imgParentWidth = jQuery(speakerImg).parent().width();
+    var imgNewW = imgProp*imgParentWidth;
     if(imgWidth > imgHeight)
     {
         jQuery(speakerImg).css({"width" : imgNewW, "height":"100%"});
