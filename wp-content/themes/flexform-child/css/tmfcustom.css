@@ -1740,11 +1740,12 @@ table.tt_timetable{text-decoration: none;margin-top: 0;}
 
 .agenda-ml p { margin-left: 20px; }
 #agenda-info { list-style: outside none none; margin: 0; padding: 0; }
+#agenda-info li a { color: #444; padding:0; }
+#agenda-info li:hover {background-color: #F6F7F7;}
 #agenda-info > li { border-bottom: 1px solid #e2e3e2; list-style: none; padding: 24px 0; line-height:28px; }
 #agenda-info img { display: block; float: left; margin-left: 20px; margin-right: 35px; }
 
 #agenda-info > li:first-child, #agenda-info > li:nth-child(2) { font-size: 25px; font-weight:400; }
-#agenda-info > li:first-child { padding-top:0px; }
 #agenda-info > li:first-child span { font-size: 28px; font-weight:600; }
 #agenda-info > li:nth-child(2) span, #agenda-info > li:nth-child(4) span { font-size: 30px; font-weight:600; }
 #agenda-info > li:nth-child(3) { font-size: 17px; line-height: 18px; }
