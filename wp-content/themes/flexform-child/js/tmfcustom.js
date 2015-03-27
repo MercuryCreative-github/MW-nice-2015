@@ -25,7 +25,7 @@ function tabsControl(){
     $('li.ui-state-default').click(function(e){
         if(!$(this).parent().parent().parent().hasClass('dontChangePageTitle')){
             pageTitle=$('a',this).text();
-           $('title').text(pageTitle);
+           $('title').text(pageTitle + ' - TM Forum Live! Nice 2015');
         }
     })
 }
@@ -421,23 +421,21 @@ function scrollListener() {
     offset=100;
 
     var hash = window.location.hash;
-    if(hash=="#tab-monday" || hash=="#tab-tuesday" || hash=="#tab-wednesday" || hash=="#tab-thursday"){
-        offset=200;
-    }
 
     if(hash!==''){
 
-    var screenTop = jQuery(document).scrollTop();
-    var where = jQuery(hash).offset().top-offset; // antes decía +200 y comentado "+160"
-    var time = 400;
-    var direccion=1;
-    jQuery("html,body").stop().animate({scrollTop: where}, time*2);
-    jQuery(".page-content").fadeTo(time,1);
+        var screenTop = jQuery(document).scrollTop();
+        var where = jQuery(hash).offset().top-offset; // antes decía +200 y comentado "+160"
+        var time = 400;
+        var direccion=1;
+        jQuery("html,body").stop().animate({scrollTop: where}, time*2);
+        jQuery(".page-content").fadeTo(time,1);
 
-    activeTab = jQuery('li.ui-state-active').text();
-    jQuery('title').text(activeTab);
-
-
+       
+        if(!jQuery(this).parent().parent().parent().hasClass('dontChangePageTitle')){
+             activeTab = jQuery('li.ui-state-active a').text();
+            jQuery('title').text(activeTab + ' - TM Forum Live! Nice 2015');
+        }
     }
 }
 

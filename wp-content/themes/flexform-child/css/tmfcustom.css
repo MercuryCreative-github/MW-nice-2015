@@ -3037,6 +3037,9 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 	background: #7EC579;
 		border-top: #ABAAAA 1px solid;
 }
+.tr-members.saving td p {
+	margin-bottom: 0;
+}
 .tr-members.saving td {
 	padding: 4px 8px;
 		color: #fff;
