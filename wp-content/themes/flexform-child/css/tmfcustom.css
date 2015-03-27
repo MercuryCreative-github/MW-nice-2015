@@ -141,15 +141,30 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
   color: #EE7630;
 }
 
-.networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel, .theater-tab.wpb_tabs .ui-tabs .ui-tabs-panel, .takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-panel, .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
+.networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
+.theater-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
+.takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
+.workshops-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
 
-.networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
+.networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+.theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+.takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+.workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
 
-.networking-tab.wpb_content_element .ui-widget-header .ui-state-default, .theater-tab.wpb_content_element .ui-widget-header .ui-state-default, .takeaway-tab.wpb_content_element .ui-widget-header .ui-state-default, .workshops-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
+.networking-tab.wpb_content_element .ui-widget-header .ui-state-default, 
+.theater-tab.wpb_content_element .ui-widget-header .ui-state-default, 
+.takeaway-tab.wpb_content_element .ui-widget-header .ui-state-default, 
+.workshops-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
 
-.theater .summit-day, .theater .summit-session, .keynotes-page .summit-day{
-	display: none;
+.theater .summit-day, 
+.theater .summit-session, 
+.keynotes-page .summit-day{display: none;}
+
+.takeaway-tab .row-fluid.tabs-summits-content {
+ margin: 0;
+ width: 100% !important;
 }
+
 /**************************/
 /******* SUBMIT PAGE ******/
 /**************************/
@@ -464,12 +479,12 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 .to-remove-position-absolute {height: 50px;}
 /*section03*/
 .section03 {
-	background-image: url('/wp-content/uploads/2015/02/networking-bg.png');
+	background-image: url('/wp-content/uploads/2015/02/networking-bg.jpg');
 	background-size: cover;
 	min-height: 785px;
 }
 .section03-infobox01{
-	background-image: url('/wp-content/uploads/2015/02/box-networking.png');
+	background-image: url('/wp-content/uploads/2015/02/box-networking.jpg');
 	background-size: cover;
 }
 .section03-infobox01, .section03-infobox02 {
