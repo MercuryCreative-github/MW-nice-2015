@@ -123,6 +123,24 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	margin: 0;
 }
 
+.takeaway-side-list li, .theater-side-list li {
+  list-style: none !important;
+}
+
+.theater-side-list li a, .theater-side-list li a {
+  color: #333;
+  display: inline !important;
+  line-height: 35px;
+}
+
+.takeaway-side-list li:before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 10px;
+  color: #EE7630;
+}
+
 .networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel, .theater-tab.wpb_tabs .ui-tabs .ui-tabs-panel, .takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-panel, .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
 
 .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
