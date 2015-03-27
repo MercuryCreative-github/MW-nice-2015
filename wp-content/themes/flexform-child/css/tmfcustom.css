@@ -123,19 +123,48 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	margin: 0;
 }
 
-.networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel, .theater-tab.wpb_tabs .ui-tabs .ui-tabs-panel, .takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-panel, .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
-
-.networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
-
-.networking-tab.wpb_content_element .ui-widget-header .ui-state-default, .theater-tab.wpb_content_element .ui-widget-header .ui-state-default, .takeaway-tab.wpb_content_element .ui-widget-header .ui-state-default, .workshops-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
-
-.theater .summit-day, .theater .summit-session, .keynotes-page .summit-day{
-	display: none;
+.takeaway-side-list li, .theater-side-list li {
+  list-style: none !important;
 }
+
+.theater-side-list li a, .theater-side-list li a {
+  color: #333;
+  display: inline !important;
+  line-height: 35px;
+}
+
+.takeaway-side-list li:before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  font-size: 14px;
+  padding-right: 10px;
+  color: #EE7630;
+}
+
+.networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
+.theater-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
+.takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
+.workshops-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
+
+.networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+.theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+.takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+.workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
+
+.networking-tab.wpb_content_element .ui-widget-header .ui-state-default, 
+.theater-tab.wpb_content_element .ui-widget-header .ui-state-default, 
+.takeaway-tab.wpb_content_element .ui-widget-header .ui-state-default, 
+.workshops-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
+
+.theater .summit-day, 
+.theater .summit-session, 
+.keynotes-page .summit-day{display: none;}
+
 .takeaway-tab .row-fluid.tabs-summits-content {
  margin: 0;
  width: 100% !important;
 }
+
 /**************************/
 /******* SUBMIT PAGE ******/
 /**************************/
@@ -450,12 +479,12 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 .to-remove-position-absolute {height: 50px;}
 /*section03*/
 .section03 {
-	background-image: url('/wp-content/uploads/2015/03/networking-bg.jpg');
+	background-image: url('/wp-content/uploads/2015/02/networking-bg.jpg');
 	background-size: cover;
 	min-height: 785px;
 }
 .section03-infobox01{
-	background-image: url('/wp-content/uploads/2015/03/box-networking.jpg');
+	background-image: url('/wp-content/uploads/2015/02/box-networking.jpg');
 	background-size: cover;
 }
 .section03-infobox01, .section03-infobox02 {
@@ -1744,12 +1773,11 @@ table.tt_timetable{text-decoration: none;margin-top: 0;}
 
 .agenda-ml p { margin-left: 20px; }
 #agenda-info { list-style: outside none none; margin: 0; padding: 0; }
-#agenda-info li a { color: #444; padding:0; }
-#agenda-info li:hover {background-color: #F6F7F7;}
 #agenda-info > li { border-bottom: 1px solid #e2e3e2; list-style: none; padding: 24px 0; line-height:28px; }
 #agenda-info img { display: block; float: left; margin-left: 20px; margin-right: 35px; }
 
 #agenda-info > li:first-child, #agenda-info > li:nth-child(2) { font-size: 25px; font-weight:400; }
+#agenda-info > li:first-child { padding-top:0px; }
 #agenda-info > li:first-child span { font-size: 28px; font-weight:600; }
 #agenda-info > li:nth-child(2) span, #agenda-info > li:nth-child(4) span { font-size: 30px; font-weight:600; }
 #agenda-info > li:nth-child(3) { font-size: 17px; line-height: 18px; }
@@ -3008,6 +3036,9 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 .no-members.saving {
 	background: #7EC579;
 		border-top: #ABAAAA 1px solid;
+}
+.tr-members.saving td p {
+	margin-bottom: 0;
 }
 .tr-members.saving td {
 	padding: 4px 8px;

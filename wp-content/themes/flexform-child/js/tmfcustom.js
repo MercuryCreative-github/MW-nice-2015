@@ -17,8 +17,19 @@ function ini() {
     acordion();
     registerBtnLink();
     scrolledMenu();
-    
+   
 }
+
+function tabsControl(){
+   var $ = jQuery;
+    $('li.ui-state-default').click(function(e){
+        if(!$(this).parent().parent().parent().hasClass('dontChangePageTitle')){
+            pageTitle=$('a',this).text();
+           $('title').text(pageTitle + ' - TM Forum Live! Nice 2015');
+        }
+    })
+}
+
 
 function scrolledMenu(){
     var scrollStatus = 1;
@@ -321,6 +332,7 @@ jQuery(window).load(function() {
     resizeSponsors();
     scrollListener();
     homepageSectionsResize();
+    tabsControl();
 });
 
 function fullAgenda(){
@@ -409,18 +421,21 @@ function scrollListener() {
     offset=100;
 
     var hash = window.location.hash;
-    if(hash=="#tab-monday" || hash=="#tab-tuesday" || hash=="#tab-wednesday" || hash=="#tab-thursday"){
-        offset=200;
-    }
 
     if(hash!==''){
 
-    var screenTop = jQuery(document).scrollTop();
-    var where = jQuery(hash).offset().top-offset; // antes decía +200 y comentado "+160"
-    var time = 400;
-    var direccion=1;
-    jQuery("html,body").stop().animate({scrollTop: where}, time*2);
-    jQuery(".page-content").fadeTo(time,1);
+        var screenTop = jQuery(document).scrollTop();
+        var where = jQuery(hash).offset().top-offset; // antes decía +200 y comentado "+160"
+        var time = 400;
+        var direccion=1;
+        jQuery("html,body").stop().animate({scrollTop: where}, time*2);
+        jQuery(".page-content").fadeTo(time,1);
+
+       
+        if(!jQuery(this).parent().parent().parent().hasClass('dontChangePageTitle')){
+             activeTab = jQuery('li.ui-state-active a').text();
+            jQuery('title').text(activeTab + ' - TM Forum Live! Nice 2015');
+        }
     }
 }
 
