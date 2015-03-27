@@ -151,10 +151,15 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .theater .summit-session, 
 .keynotes-page .summit-day{display: none;}
 
-.takeaway-tab .row-fluid.tabs-summits-content {
+.takeaway-tab .row-fluid.tabs-summits-content, 
+.workshops-tab .row-fluid.tabs-summits-content {
  margin: 0;
  width: 100% !important;
 }
+
+/*SIDEBAR WORKSHOP*/
+.workshops .tp-caption.grey-btn a {padding:0; font-size:15px; line-height: 0;}
+
 
 /**************************/
 /******* SUBMIT PAGE ******/
@@ -204,7 +209,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .summit-main-title.digital-operations {background: #27abb2;}
 .summit-main-title.executive {background: #201e20;}
 
-.page-content .summit-inner-tabs ul li, .page-content .summit-sidebar-tabs ul li {line-height: 2.0em;}
+.page-content .summit-inner-tabs ul li, .page-content .summit-sidebar-tabs ul li,.textwidget .summit-sidebar-tabs ul li {line-height: 2.0em;}
 p.list-title {font-weight: bold;font-size: 20px;border-width: 2px; border-style: solid;border-left: none;border-right: none;padding: 13px 0;margin-bottom: 30px;margin-top: 40px;}
 
 .cca p.list-title{ border-color:#f3a626; }
@@ -223,7 +228,10 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .page-content .summit-sidebar-tabs ul li:last-child,
 .textwidget .summit-sidebar-tabs ul li:last-child {border:none;}
 .page-content .summit-sidebar-tabs ul li:before,
-.textwidget .summit-sidebar-tabs ul li:before {content:"\f00c";font-family:FontAwesome;font-size:14px;padding-right:10px;color: #EE7630;}
+.textwidget .summit-sidebar-tabs ul li a:before {content:"\f00c";font-family:FontAwesome;font-size:14px;padding-right:10px;color: #EE7630;}
+
+.widget .summit-sidebar-tabs ul li > a {padding: 0;color: #444;}
+.widget .summit-sidebar-tabs ul li > a:hover {color: #EE7630;}
 
 .page-content .summit-sidebar-tabs.cca ul li:before {color: #f3a626;}
 .page-content .summit-sidebar-tabs.iot ul li:before {color: #8b1e88;}
@@ -1763,11 +1771,12 @@ table.tt_timetable{text-decoration: none;margin-top: 0;}
 
 .agenda-ml p { margin-left: 20px; }
 #agenda-info { list-style: outside none none; margin: 0; padding: 0; }
+#agenda-info li a { color: #444; padding:0; }
+#agenda-info li:hover {background-color: #F6F7F7;}
 #agenda-info > li { border-bottom: 1px solid #e2e3e2; list-style: none; padding: 24px 0; line-height:28px; }
 #agenda-info img { display: block; float: left; margin-left: 20px; margin-right: 35px; }
 
 #agenda-info > li:first-child, #agenda-info > li:nth-child(2) { font-size: 25px; font-weight:400; }
-#agenda-info > li:first-child { padding-top:0px; }
 #agenda-info > li:first-child span { font-size: 28px; font-weight:600; }
 #agenda-info > li:nth-child(2) span, #agenda-info > li:nth-child(4) span { font-size: 30px; font-weight:600; }
 #agenda-info > li:nth-child(3) { font-size: 17px; line-height: 18px; }
