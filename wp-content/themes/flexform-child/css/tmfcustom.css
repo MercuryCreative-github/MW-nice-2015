@@ -158,8 +158,10 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 }
 
 /*SIDEBAR WORKSHOP*/
-.workshops .tp-caption.grey-btn a {padding:0; font-size:15px; line-height: 0;}
-
+.workshops .tp-caption.grey-btn {padding: 2px 30px;}
+.workshops .tp-caption.slider-header {line-height: 20px;}
+.workshops .rev_slider_wrapper {margin: 20px 0px 10px -10px !important;}
+.workshops .page-content ul {margin: 0px;}
 
 /**************************/
 /******* SUBMIT PAGE ******/
