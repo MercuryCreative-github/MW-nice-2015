@@ -161,7 +161,8 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .workshops .tp-caption.grey-btn {padding: 2px 30px;}
 .workshops .tp-caption.slider-header {line-height: 20px;}
 .workshops .workshops-tab .rev_slider_wrapper {margin: 20px 0px 10px -10px !important;}
-
+.workshops .rev_slider_wrapper.fullwidthbanner-container { height: 185px !important; }
+.workshops .rev_slider.fullwidthabanner.revslider-initialised.tp-simpleresponsive { height: 185px !important; }
 /**************************/
 /******* SUBMIT PAGE ******/
 /**************************/
