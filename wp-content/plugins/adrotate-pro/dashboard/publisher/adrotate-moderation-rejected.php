@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -70,7 +70,7 @@
 			}
 			$grouplist = rtrim($grouplist, ", ");
 
-			$advertiser_id = $wpdb->get_var("SELECT `user` FROM `".$wpdb->prefix."adrotate_linkmeta` WHERE `ad` = ".$reject['id'].";");
+			$advertiser_id = $wpdb->get_var("SELECT `user` FROM `".$wpdb->prefix."adrotate_linkmeta` WHERE `ad` = ".$reject['id']." AND `block` = 0 AND `group` = 0 AND `schedule` = 0;");
 			$advertiser = get_user_by('id', $advertiser_id);
 			
 			if($class != 'alternate') {
@@ -84,7 +84,6 @@
 			} else {
 				$errorclass = '';
 			}
-
 			?>
 		    <tr id='adrotateindex' class='<?php echo $class.$errorclass; ?>'>
 				<th class="check-column"><input type="checkbox" name="rejectcheck[]" value="<?php echo $reject['id']; ?>" /></th>

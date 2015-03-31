@@ -1,18 +1,18 @@
 <?php
 /*
 Plugin Name: AdRotate Professional
-Plugin URI: https://www.adrotateplugin.com
-Description: The very best and most convenient way to publish your ads.
+Plugin URI: https://ajdg.solutions/products/adrotate-for-wordpress/
 Author: Arnan de Gans of AJdG Solutions
-Version: 3.11.9
 Author URI: http://ajdg.solutions/
-License: Limited License (See the readme.html in your account on adrotateplugin.com)
+Description: The very best and most convenient way to publish your ads.
+Version: 3.12.3
+License: Limited License (See the readme.html in your account on https://ajdg.solutions/)
 */
 
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -20,8 +20,8 @@ License: Limited License (See the readme.html in your account on adrotateplugin.
 ------------------------------------------------------------------------------------ */
 
 /*--- AdRotate values ---------------------------------------*/
-define("ADROTATE_DISPLAY", '3.11.9 Professional');
-define("ADROTATE_VERSION", 376);
+define("ADROTATE_DISPLAY", '3.12.3 Professional');
+define("ADROTATE_VERSION", 377);
 define("ADROTATE_DB_VERSION", 47);
 define("ADROTATE_FOLDER", 'adrotate-pro');
 /*-----------------------------------------------------------*/
@@ -47,6 +47,8 @@ $adrotate_roles = get_option('adrotate_roles');
 $adrotate_version = get_option("adrotate_version");
 $adrotate_db_version = get_option("adrotate_db_version");
 $adrotate_debug = get_option("adrotate_debug");
+$adrotate_advert_status	= get_option("adrotate_advert_status");
+$ajdg_solutions_domain = 'https://ajdg.solutions/';
 /*-----------------------------------------------------------*/
 
 /*--- Core --------------------------------------------------*/
@@ -59,16 +61,6 @@ add_action('adrotate_evaluate_ads', 'adrotate_evaluate_ads');
 add_action('widgets_init', create_function('', 'return register_widget("adrotate_widgets");'));
 /*-----------------------------------------------------------*/
 
-/*--- Cookies -----------------------------------------------*/
-// Geo Targeting
-if(get_option('adrotate_geo_required') > 0) {
-	add_action('init', 'adrotate_geolocation');
-	$adrotate_geo = adrotate_get_cookie('geo');
-} else {
-    $adrotate_geo = array( 'status' => 501, 'provider' => 'Disabled', 'geo_ip' => '', 'orig_ip' => '', 'city' => '', 'country' => '', 'countrycode' => '', 'state' => '', 'statecode' => '');
-}
-/*-----------------------------------------------------------*/
-
 /*--- Front end ---------------------------------------------*/
 if($adrotate_config['enable_stats'] == 'Y'){
 	add_action('wp_ajax_adrotate_impression', 'adrotate_impression_callback');
@@ -77,15 +69,18 @@ if($adrotate_config['enable_stats'] == 'Y'){
 	add_action('wp_ajax_nopriv_adrotate_click', 'adrotate_click_callback');
 }
 if(!is_admin()) {
+	if($adrotate_config['adminbar'] == 'Y') {
+		add_action('admin_bar_menu', 'adrotate_adminmenu', 100);
+	}
+	if(get_option('adrotate_geo_required') > 0) {
+		add_action('init', 'adrotate_geolocation');
+	}
 	add_shortcode('adrotate', 'adrotate_shortcode');
 	add_shortcode('adrotate_advertiser_dashboard', 'adrotate_front_end');
 	add_action('wp_enqueue_scripts', 'adrotate_custom_scripts');
 	add_action('wp_head', 'adrotate_custom_css');
 	add_filter('the_content', 'adrotate_inject_pages');
 	add_filter('the_content', 'adrotate_inject_posts');
-	if($adrotate_config['adminbar'] == 'Y') {
-		add_action('admin_bar_menu', 'adrotate_adminmenu', 100);
-	}
 }
 /*-----------------------------------------------------------*/
 
@@ -103,16 +98,11 @@ if(is_admin()) {
 	/*--- Update API --------------------------------------------*/
 	include_once(WP_CONTENT_DIR.'/plugins/'.ADROTATE_FOLDER.'/library/license-functions.php');
 	include_once(WP_CONTENT_DIR.'/plugins/'.ADROTATE_FOLDER.'/library/license-api.php');
-
-	$adrotate_license_domain = 'https://www.adrotateplugin.com';
-	$adrotate_api_url = $adrotate_license_domain.'/updates/2/';
 	add_action('admin_init', 'adrotate_licensed_update');
 
 	if(isset($_POST['adrotate_license_support_submit'])) add_action('init', 'adrotate_support_api_request');
 	if(isset($_POST['adrotate_license_activate'])) add_action('init', 'adrotate_license_activate');
 	if(isset($_POST['adrotate_license_deactivate'])) add_action('init', 'adrotate_license_deactivate');
-	if(isset($_POST['adrotate_license_network_activate'])) add_action('init', 'adrotate_license_activate');
-	if(isset($_POST['adrotate_license_network_deactivate'])) add_action('init', 'adrotate_license_deactivate');
 	if(isset($_POST['adrotate_license_reset'])) add_action('init', 'adrotate_license_reset');
 	/*--- Internal redirects ------------------------------------*/
 	if(isset($_POST['adrotate_ad_submit'])) add_action('init', 'adrotate_insert_input');
@@ -124,7 +114,6 @@ if(is_admin()) {
 	if(isset($_POST['adrotate_error_action_submit'])) add_action('init', 'adrotate_request_action');
 	if(isset($_POST['adrotate_notification_test_submit'])) add_action('init', 'adrotate_notifications');
 	if(isset($_POST['adrotate_options_submit'])) add_action('init', 'adrotate_options_submit');
-	if(isset($_POST['adrotate_server_save'])) add_action('init', 'adrotate_server_submit');
 	if(isset($_POST['adrotate_request_submit'])) add_action('init', 'adrotate_mail_message');
 	if(isset($_POST['adrotate_role_add_submit'])) add_action('init', 'adrotate_prepare_roles');
 	if(isset($_POST['adrotate_role_remove_submit'])) add_action('init', 'adrotate_prepare_roles');
@@ -146,26 +135,21 @@ if(is_admin()) {
  Return:    -none-
 -------------------------------------------------------------*/
 function adrotate_dashboard() {
-	global $adrotate_config, $adrotate_server;
+	global $adrotate_config;
 
+	$adrotate_page = $adrotate_adverts = $adrotate_groups = $adrotate_schedules = $adrotate_media = $adrotate_queue = $adrotate_settings =  '';
 	$adrotate_page = add_menu_page('AdRotate Pro', 'AdRotate Pro', 'adrotate_ad_manage', 'adrotate', 'adrotate_info', plugins_url('/images/icon.png', __FILE__), '25.8');
 	$adrotate_page = add_submenu_page('adrotate', 'AdRotate Pro > '.__('General Info', 'adrotate'), __('General Info', 'adrotate'), 'adrotate_ad_manage', 'adrotate', 'adrotate_info');
-	if($adrotate_server['adrotate_server_puppet'] == 0) {
-		$adrotate_adverts = add_submenu_page('adrotate', 'AdRotate Pro > '.__('Manage Ads', 'adrotate'), __('Manage Ads', 'adrotate'), 'adrotate_ad_manage', 'adrotate-ads', 'adrotate_manage');
-	}
-
+	$adrotate_adverts = add_submenu_page('adrotate', 'AdRotate Pro > '.__('Manage Ads', 'adrotate'), __('Manage Ads', 'adrotate'), 'adrotate_ad_manage', 'adrotate-ads', 'adrotate_manage');
 	$adrotate_groups = add_submenu_page('adrotate', 'AdRotate Pro > '.__('Manage Groups', 'adrotate'), __('Manage Groups', 'adrotate'), 'adrotate_group_manage', 'adrotate-groups', 'adrotate_manage_group');
-	if($adrotate_server['adrotate_server_puppet'] == 0) {
-		$adrotate_schedules = add_submenu_page('adrotate', 'AdRotate Pro > '.__('Manage Schedules', 'adrotate'), __('Manage Schedules', 'adrotate'), 'adrotate_schedule_manage', 'adrotate-schedules', 'adrotate_manage_schedules');
-		$adrotate_media = add_submenu_page('adrotate', 'AdRotate Pro > '.__('Manage Media', 'adrotate'), __('Manage Media', 'adrotate'), 'adrotate_ad_manage', 'adrotate-media', 'adrotate_manage_media');
-		if($adrotate_config['enable_advertisers'] == 'Y' AND $adrotate_config['enable_editing'] == 'Y') {
-			$adrotate_queue = add_submenu_page('adrotate', 'AdRotate Pro > '.__('Moderate', 'adrotate'), __('Moderate Adverts', 'adrotate'), 'adrotate_moderate', 'adrotate-moderate', 'adrotate_moderate');
-		}
+	$adrotate_schedules = add_submenu_page('adrotate', 'AdRotate Pro > '.__('Manage Schedules', 'adrotate'), __('Manage Schedules', 'adrotate'), 'adrotate_schedule_manage', 'adrotate-schedules', 'adrotate_manage_schedules');
+	$adrotate_media = add_submenu_page('adrotate', 'AdRotate Pro > '.__('Manage Media', 'adrotate'), __('Manage Media', 'adrotate'), 'adrotate_ad_manage', 'adrotate-media', 'adrotate_manage_media');
+	if($adrotate_config['enable_advertisers'] == 'Y' AND $adrotate_config['enable_editing'] == 'Y') {
+		$adrotate_queue = add_submenu_page('adrotate', 'AdRotate Pro > '.__('Moderate', 'adrotate'), __('Moderate Adverts', 'adrotate'), 'adrotate_moderate', 'adrotate-moderate', 'adrotate_moderate');
 	}
-//	add_submenu_page('adrotate', 'AdRotate Pro > '.__('AdRotate Server', 'adrotate'), __('AdRotate Server', 'adrotate'), 'manage_options', 'adrotate-server', 'adrotate_server');
 	$adrotate_settings = add_submenu_page('adrotate', 'AdRotate Pro > '.__('Settings', 'adrotate'), __('Settings', 'adrotate'), 'manage_options', 'adrotate-settings', 'adrotate_options');
 	
-	if($adrotate_config['enable_advertisers'] == 'Y' AND $adrotate_server['adrotate_server_puppet'] == 0) {
+	if($adrotate_config['enable_advertisers'] == 'Y') {
 		add_menu_page(__('Advertiser', 'adrotate'), __('Advertiser', 'adrotate'), 'adrotate_advertiser', 'adrotate-advertiser', 'adrotate_advertiser', plugins_url('/images/icon.png', __FILE__), '25.9');
 		add_submenu_page('adrotate-advertiser', 'AdRotate Pro > '.__('Advertiser', 'adrotate'), __('Advertiser', 'adrotate'), 'adrotate_advertiser', 'adrotate-advertiser', 'adrotate_advertiser');
 	}
@@ -847,103 +831,6 @@ function adrotate_advertiser() {
 }
 
 /*-------------------------------------------------------------
- Name:      adrotate_server
-
- Purpose:   Connect and manage AdRotate server
- Receive:   -none-
- Return:    -none-
--------------------------------------------------------------*/
-function adrotate_server() {
-	global $wpdb, $current_user, $userdata, $blog_id, $adrotate_config, $adrotate_debug;
-
-	$status = $file = $view = '';
-	if(isset($_GET['status'])) $status = esc_attr($_GET['status']);
-	if(isset($_GET['file'])) $file = esc_attr($_GET['file']);
-	if(isset($_GET['view'])) $view = esc_attr($_GET['view']);
-	$now 			= adrotate_now();
-	$today 			= adrotate_date_start('day');
-	$in2days 		= $now + 172800;
-	$in7days 		= $now + 604800;
-	?>
-	<div class="wrap">
-	  	<h2><?php _e('AdRotate Server', 'adrotate'); ?> (BETA)</h2>
-
-		<?php if($status > 0) adrotate_status($status, array('file' => $file)); ?>
-
-		<?php if($wpdb->get_var("SHOW TABLES LIKE '".$wpdb->prefix."adrotate';") AND $wpdb->get_var("SHOW TABLES LIKE '".$wpdb->prefix."adrotate_groups';") AND $wpdb->get_var("SHOW TABLES LIKE '".$wpdb->prefix."adrotate_schedule';") AND $wpdb->get_var("SHOW TABLES LIKE '".$wpdb->prefix."adrotate_linkmeta';")) { ?>
-			
-			<?php if($status > 0) adrotate_status($status); ?>
-			
-			<p style="color:#f00;">NOTICE: <?php _e('AdRotate server is currently in development and these menus are not functional yet.', 'adrotate'); ?></p>
-
-			<div class="tablenav">
-				<div class="alignleft actions">
-					<a class="row-title" href="<?php echo admin_url('/admin.php?page=adrotate-server&view=overview');?>"><?php _e('Overview', 'adrotate'); ?></a> | 
-					<a class="row-title" href="<?php echo admin_url('/admin.php?page=adrotate-server&view=settings');?>"><?php _e('Settings', 'adrotate'); ?></a> 
-				</div>
-			</div>
-
-			<?php
-	    	if ($view == "" OR $view == "overview") {
-				$allbanners = $wpdb->get_results("SELECT `id`, `title`, `thetime`, `updated`, `type`, `weight`, `cbudget`, `ibudget`, `crate`, `irate` FROM `".$wpdb->prefix."adrotate` WHERE `type` = 's_active' OR `type` = 's_error' OR `type` = 's_expired' OR `type` = 's_2days' OR `type` = 's_7days' ORDER BY `sortorder` ASC, `id` ASC;");
-				
-				$activebanners = $errorbanners = false;
-				foreach($allbanners as $singlebanner) {
-					$starttime = $stoptime = 0;
-					$starttime = $wpdb->get_var("SELECT `starttime` FROM `".$wpdb->prefix."adrotate_schedule`, `".$wpdb->prefix."adrotate_linkmeta` WHERE `ad` = '".$singlebanner->id."' AND `schedule` = `".$wpdb->prefix."adrotate_schedule`.`id` ORDER BY `starttime` ASC LIMIT 1;");
-					$stoptime = $wpdb->get_var("SELECT `stoptime` FROM `".$wpdb->prefix."adrotate_schedule`, `".$wpdb->prefix."adrotate_linkmeta` WHERE `ad` = '".$singlebanner->id."' AND  `schedule` = `".$wpdb->prefix."adrotate_schedule`.`id` ORDER BY `stoptime` DESC LIMIT 1;");
-		
-					$type = $singlebanner->type;
-					if($type == 's_active' AND $stoptime <= $now) $type = 's_expired'; 
-					if($type == 's_active' AND $stoptime <= $in2days) $type = 's_2days';
-					if($type == 's_active' AND $stoptime <= $in7days) $type = 's_7days';
-					if(($singlebanner->crate > 0 AND $singlebanner->cbudget < 1) OR ($singlebanner->irate > 0 AND $singlebanner->ibudget < 1)) $type = 's_expired';
-		
-					if($type == 's_active' OR $type == 's_7days') {
-						$activebanners[$singlebanner->id] = array(
-							'id' => $singlebanner->id,
-							'title' => $singlebanner->title,
-							'type' => $type,
-							'weight' => $singlebanner->weight,
-							'added' => $singlebanner->thetime,
-							'updated' => $singlebanner->updated,
-							'firstactive' => $starttime,
-							'lastactive' => $stoptime
-						);
-					}
-					
-					if($type == 's_error' OR $type == 's_expired' OR $type == 's_2days') {
-						$errorbanners[$singlebanner->id] = array(
-							'id' => $singlebanner->id,
-							'title' => $singlebanner->title,
-							'type' => $type,
-							'weight' => $singlebanner->weight,
-							'updated' => $singlebanner->updated,
-							'firstactive' => $starttime,
-							'lastactive' => $stoptime
-						);
-					}
-				}
-
-				include("dashboard/server/adrotate-active.php");
-				if ($errorbanners) {
-					include("dashboard/server/adrotate-error.php");
-				}
-		   	} else if($view == "settings") { 
-				include("dashboard/server/adrotate-settings.php");
-			}
-		} else {
-			echo adrotate_error('db_error');
-		}
-		?>
-		<br class="clear" />
-
-		<?php adrotate_credits(); ?>
-	</div>
-<?php 
-}
-
-/*-------------------------------------------------------------
  Name:      adrotate_options
 
  Purpose:   Admin options page
@@ -1022,7 +909,7 @@ function adrotate_options() {
 				<tr>
 					<th valign="top"><?php _e('License Email', 'adrotate'); ?></th>
 					<td>
-						<input name="adrotate_license_email" type="text" class="search-input" size="50" value="<?php echo $adrotate_activate['email']; ?>" autocomplete="off" <?php echo ($adrotate_activate['status'] == 1) ? 'disabled' : ''; ?> /> <span class="description"><?php _e('The email address you used on adrotateplugin.com.', 'adrotate'); ?></span>
+						<input name="adrotate_license_email" type="text" class="search-input" size="50" value="<?php echo $adrotate_activate['email']; ?>" autocomplete="off" <?php echo ($adrotate_activate['status'] == 1) ? 'disabled' : ''; ?> /> <span class="description"><?php _e('The email address you used in your purchase of AdRotate Pro.', 'adrotate'); ?></span>
 					</td>
 				</tr>
 				<tr>
@@ -1153,6 +1040,81 @@ function adrotate_options() {
 		      	<input type="submit" name="adrotate_options_submit" class="button-primary" value="<?php _e('Update Options', 'adrotate'); ?>" />
 		    </p>
 
+			<h3><?php _e('Geo Targeting', 'adrotate'); ?></h3>
+			<table class="form-table">
+				<tr>
+					<th valign="top"><?php _e('Which Geo Service', 'adrotate'); ?></th>
+					<td>
+						<select name="adrotate_enable_geo">
+							<option value="0" <?php if($adrotate_config['enable_geo'] == 0) { echo 'selected'; } ?>><?php _e('Disabled', 'adrotate'); ?></option>
+							<option value="4" <?php if($adrotate_config['enable_geo'] == 4) { echo 'selected'; } ?>>MaxMind City (Recommended)</option>
+							<option value="3" <?php if($adrotate_config['enable_geo'] == 3) { echo 'selected'; } ?>>MaxMind Country</option>
+							<option value="2" <?php if($adrotate_config['enable_geo'] == 2) { echo 'selected'; } ?>>GeoBytes IpLocator</option>
+							<option value="5" <?php if($adrotate_config['enable_geo'] == 5) { echo 'selected'; } ?>>AdRotate Geo (BETA)</option>
+							<option value="1" <?php if($adrotate_config['enable_geo'] == 1) { echo 'selected'; } ?>>Telize</option>
+						</select><br />
+						<span class="description">
+							<strong>MaxMind</strong> - <a href="https://www.maxmind.com/en/geoip2-precision-services?rId=ajdgnet" target="_blank">GeoIP2 Precision</a> - <?php _e('The most complete and accurate geo targeting you can get for only $20 USD per 50000 lookups.', 'adrotate'); ?> <a href="https://www.maxmind.com/en/geoip2-precision-city?rId=ajdgnet" target="_blank"><?php _e('Buy now', 'adrotate'); ?>.</a><br />
+							<em><strong>Supports:</strong> Countries, States, State ISO codes, Cities and DMA codes.</em><br /><br />
+							
+							<strong>GeoBytes</strong> - <a href="https://secure.geobytes.com/buy.htm" target="_blank">IpLocator</a> - <?php _e('Highly accurate geo targeting for $1 USD per 1000 lookups.', 'adrotate'); ?> <a href="https://secure.geobytes.com/buy.htm" target="_blank"><?php _e('Buy now', 'adrotate'); ?>.</a><br />
+							<em><strong>Supports:</strong> Countries, States, State ISO codes and Cities.</em><br /><br />
+							
+							<strong>AdRotate Geo (BETA)</strong> - <?php _e('14400 free lookups every day, uses GeoLite2 databases from MaxMind!', 'adrotate'); ?> <?php _e('Need more?', 'adrotate'); ?> - <a href="https://ajdg.solutions/products/adrotate-for-wordpress/adrotate-geo/" target="_blank"><?php _e('Buy more lookups', 'adrotate'); ?></a>.<br />
+							<em><strong>Supports:</strong> Countries, Cities, DMA codes, States and State ISO codes.</em><br /><br />
+							
+							<strong>Telize</strong> - <?php _e('Free service, uses GeoLite2 databases from MaxMind!', 'adrotate'); ?><br />
+							<em><strong>Supports:</strong> Countries, Cities and DMA codes.</em>
+						</span>
+					</td>
+				</tr>
+				<?php if($adrotate_config['enable_geo'] > 1) { ?>
+				<tr>
+					<th valign="top"><?php _e('Remaining Requests', 'adrotate'); ?></th>
+					<td><?php echo $adrotate_geo_requests; ?> <span class="description"><?php _e('This number is provided by the geo service and not checked for accuracy.', 'adrotate'); ?></span></td>
+				</tr>
+				<?php } ?>
+				<tr>
+					<th valign="top"><?php _e('Username/Email', 'adrotate'); ?></th>
+					<td><label for="adrotate_geo_email"><input name="adrotate_geo_email" type="text" class="search-input" size="50" value="<?php echo $adrotate_config['geo_email']; ?>" autocomplete="off" /> <?php _e('Only for premium/paid geo services.', 'adrotate'); ?></label></td>
+				</tr>
+				<tr>
+					<th valign="top"><?php _e('Password/License Key', 'adrotate'); ?></th>
+					<td><label for="adrotate_geo_pass"><input name="adrotate_geo_pass" type="text" class="search-input" size="50" value="<?php echo $adrotate_config['geo_pass']; ?>" autocomplete="off" /> <?php _e('Only for premium/paid geo services.', 'adrotate'); ?></label></td>
+				</tr>
+				<tr>
+					<th valign="top"><?php _e('Geo Cookie Lifespan', 'adrotate'); ?></th>
+					<td>
+						<label for="adrotate_geo_cookie_life"><select name="adrotate_geo_cookie_life">
+							<option value="24" <?php if($adrotate_config['geo_cookie_life'] == 86400) { echo 'selected'; } ?>>24 (<?php _e('Default', 'adrotate'); ?>)</option>
+							<option value="36" <?php if($adrotate_config['geo_cookie_life'] == 129600) { echo 'selected'; } ?>>36</option>
+							<option value="48" <?php if($adrotate_config['geo_cookie_life'] == 172800) { echo 'selected'; } ?>>48</option>
+							<option value="72" <?php if($adrotate_config['geo_cookie_life'] == 259200) { echo 'selected'; } ?>>72</option>
+							<option value="120" <?php if($adrotate_config['geo_cookie_life'] == 432000) { echo 'selected'; } ?>>120</option>
+							<option value="168" <?php if($adrotate_config['geo_cookie_life'] == 604800) { echo 'selected'; } ?>>168</option>
+						</select> <?php _e('Hours.', 'adrotate'); ?></label><br />
+						<span class="description"><?php _e('Geo Data is stored in a cookie to reduce lookups. How long should this cookie last? A longer period is less accurate for mobile users but may reduce the usage of your lookups drastically.', 'adrotate'); ?></span>
+
+					</td>
+				</tr>
+				<?php if($adrotate_debug['geo'] == true) { ?>
+				<tr>
+					<td colspan="2">
+						<?php
+						echo "<p><strong>Geo Targeting Data in YOUR cookie</strong><br />";
+						echo "<strong>CAUTION! When you change Geo Services the cookie needs to refresh. You may have to save the settings twice for that to happen.</strong><pre>";
+						print_r($adrotate_geo); 
+						echo "</pre></p>"; 
+						?>
+					</td>
+				</tr>
+				<?php } ?>
+			</table>
+
+		    <p class="submit">
+		      	<input type="submit" name="adrotate_options_submit" class="button-primary" value="<?php _e('Update Options', 'adrotate'); ?>" />
+		    </p>
+
 			<h3><?php _e('Advertisers', 'adrotate'); ?></h3>
 			<span class="description"><?php _e('Enable advertisers so they can review and manage their own ads.', 'adrotate'); ?></span>
 			<table class="form-table">
@@ -1166,6 +1128,12 @@ function adrotate_options() {
 					<th valign="top"><?php _e('Edit/update adverts', 'adrotate'); ?></th>
 					<td>
 						<label for="adrotate_enable_editing"><input type="checkbox" name="adrotate_enable_editing" <?php if($adrotate_config['enable_editing'] == 'Y') { ?>checked="checked" <?php } ?> /> <?php _e('Allow advertisers to add new or edit their adverts.', 'adrotate'); ?></label>
+					</td>
+				</tr>
+				<tr>
+					<th valign="top"><?php _e('Geo Targeting', 'adrotate'); ?></th>
+					<td>
+						<input type="checkbox" name="adrotate_enable_geo_advertisers" <?php if($adrotate_config['enable_geo_advertisers'] == 1) { ?>checked="checked" <?php } ?> /> <?php _e('Allow advertisers to specify where their ads will show. Geo Targeting has to be enabled, too.', 'adrotate'); ?>
 					</td>
 				</tr>
 				<tr>
@@ -1233,7 +1201,8 @@ function adrotate_options() {
 				<tr>
 					<th valign="top"><?php _e('Publishers', 'adrotate'); ?></th>
 					<td>
-						<input type="checkbox" name="adrotate_notification_push_status" <?php if($adrotate_notifications['notification_push_status'] == 'Y') { ?>checked="checked" <?php } ?> /> <?php _e('Daily digest of any advert status other than normal.', 'adrotate'); ?><br /><br />
+						<input type="checkbox" name="adrotate_notification_push_geo" <?php if($adrotate_notifications['notification_push_geo'] == 'Y') { ?>checked="checked" <?php } ?> /> <?php _e('When you are running out of Geo Targeting Lookups.', 'adrotate'); ?><br /><br />
+						<input type="checkbox" name="adrotate_notification_push_status" <?php if($adrotate_notifications['notification_push_status'] == 'Y') { ?>checked="checked" <?php } ?> /> <?php _e('Daily digest of any advert status other than normal.', 'adrotate'); ?><br />
 						<input type="checkbox" name="adrotate_notification_push_queue" <?php if($adrotate_notifications['notification_push_queue'] == 'Y') { ?>checked="checked" <?php } ?> /> <?php _e('Any advertiser saving an advert in your moderation queue.', 'adrotate'); ?><br />
 						<input type="checkbox" name="adrotate_notification_push_approved" <?php if($adrotate_notifications['notification_push_approved'] == 'Y') { ?>checked="checked" <?php } ?> /> <?php _e('A moderator approved an advert from the moderation queue.', 'adrotate'); ?><br />
 						<input type="checkbox" name="adrotate_notification_push_rejected" <?php if($adrotate_notifications['notification_push_rejected'] == 'Y') { ?>checked="checked" <?php } ?> /> <?php _e('A moderator rejected an advert from the moderation queue.', 'adrotate'); ?><br /><span class="description"><?php _e('If you have a lot of activity with many advertisers adding/changing adverts you may get a lot of messages!', 'adrotate'); ?></span>
@@ -1311,7 +1280,7 @@ function adrotate_options() {
 					<th valign="top"><?php _e('Impressions timer', 'adrotate'); ?></th>
 					<td>
 						<input name="adrotate_impression_timer" type="text" class="search-input" size="5" value="<?php echo $adrotate_config['impression_timer']; ?>" autocomplete="off" /> <?php _e('Seconds.', 'adrotate'); ?><br />
-						<span class="description"><?php _e('Default: 60.', 'adrotate'); ?><br /><?php _e('This number may not be empty, be lower than 60 or exceed 3600 (1 hour).', 'adrotate'); ?></span>
+						<span class="description"><?php _e('Default: 60.', 'adrotate'); ?><br /><?php _e('This number may not be empty, be lower than 10 or exceed 3600 (1 hour).', 'adrotate'); ?></span>
 					</td>
 				</tr>
 				<tr>
@@ -1341,64 +1310,8 @@ function adrotate_options() {
 		      	<input type="submit" name="adrotate_options_submit" class="button-primary" value="<?php _e('Update Options', 'adrotate'); ?>" />
 		    </p>
 
-			<h3><?php _e('Geo Targeting', 'adrotate'); ?></h3>
-			<table class="form-table">
-				<tr>
-					<th valign="top"><?php _e('Geographic Tracking', 'adrotate'); ?></th>
-					<td>
-						<select name="adrotate_enable_geo">
-							<option value="0" <?php if($adrotate_config['enable_geo'] == 0) { echo 'selected'; } ?>><?php _e('Disabled', 'adrotate'); ?></option>
-							<option value="4" <?php if($adrotate_config['enable_geo'] == 4) { echo 'selected'; } ?>>MaxMind City (Recommended)</option>
-							<option value="3" <?php if($adrotate_config['enable_geo'] == 3) { echo 'selected'; } ?>>MaxMind Country</option>
-							<option value="2" <?php if($adrotate_config['enable_geo'] == 2) { echo 'selected'; } ?>>GeoBytes IpLocator</option>
-							<option value="1" <?php if($adrotate_config['enable_geo'] == 1) { echo 'selected'; } ?>>FreegeoIP</option>
-						</select><br />
-						<span class="description">
-							<strong>MaxMind</strong> - <a href="https://www.maxmind.com/en/geoip2-precision-services?rId=ajdgnet" target="_blank">GeoIP2 Precision</a> - <?php _e('The most complete and accurate geo targeting you can get for only $20 per 50000 lookups.', 'adrotate'); ?> <a href="https://www.maxmind.com/en/geoip2-precision-city?rId=ajdgnet" target="_blank"><?php _e('Buy now', 'adrotate'); ?>.</a><br />
-							<strong>GeoBytes</strong> - <a href="https://secure.geobytes.com/buy.htm" target="_blank">IpLocator</a> - <?php _e('Highly accurate geo targeting for $1 per 1000 lookups.', 'adrotate'); ?> <a href="https://secure.geobytes.com/buy.htm" target="_blank"><?php _e('Buy now', 'adrotate'); ?>.</a><br />
-							<strong>Freegeoip</strong> - <?php _e('The free alternative. Slightly less accurate, using GeoLITE databases from MaxMind!', 'adrotate'); ?>
-						</span>
-					</td>
-				</tr>
-				<?php if($adrotate_config['enable_geo'] > 1) { ?>
-				<tr>
-					<th valign="top"><?php _e('Remaining Requests', 'adrotate'); ?></th>
-					<td><?php echo $adrotate_geo_requests; ?> <span class="description"><?php _e('This number is provided by the geo service and not checked for accuracy.', 'adrotate'); ?></span></td>
-				</tr>
-				<?php } ?>
-				<tr>
-					<th valign="top"><?php _e('Username/Email', 'adrotate'); ?></th>
-					<td><label for="adrotate_geo_email"><input name="adrotate_geo_email" type="text" class="search-input" size="50" value="<?php echo $adrotate_config['geo_email']; ?>" autocomplete="off" /> <?php _e('Only for premium/paid geo services.', 'adrotate'); ?></label></td>
-				</tr>
-				<tr>
-					<th valign="top"><?php _e('Password/License Key', 'adrotate'); ?></th>
-					<td><label for="adrotate_geo_pass"><input name="adrotate_geo_pass" type="text" class="search-input" size="50" value="<?php echo $adrotate_config['geo_pass']; ?>" autocomplete="off" /> <?php _e('Only for premium/paid geo services.', 'adrotate'); ?></label></td>
-				</tr>
-				<tr>
-					<th valign="top"><?php _e('Advertisers', 'adrotate'); ?></th>
-					<td>
-						<input type="checkbox" name="adrotate_enable_geo_advertisers" <?php if($adrotate_config['enable_geo_advertisers'] == 1) { ?>checked="checked" <?php } ?> /> <?php _e('Allow advertisers to specify where their ads will show.', 'adrotate'); ?>
-					</td>
-				</tr>
-				<?php if($adrotate_debug['dashboard'] == true OR $adrotate_debug['geo'] == true OR $adrotate_geo['status'] != 200) { ?>
-				<tr>
-					<td colspan="2">
-						<?php
-						echo "<p><strong>[DEBUG] Geo Location Data in Cookie (You!)</strong><pre>";
-						print_r($adrotate_geo); 
-						echo "</pre></p>"; 
-						?>
-					</td>
-				</tr>
-				<?php } ?>
-			</table>
-
-		    <p class="submit">
-		      	<input type="submit" name="adrotate_options_submit" class="button-primary" value="<?php _e('Update Options', 'adrotate'); ?>" />
-		    </p>
-
 			<h3><?php _e('Ad Blocker detection', 'adrotate'); ?></h3>
-			<span class="description"><?php _e('Detect ad blockers and show a message to those users. Make sure jQuery Ad Blocker Detection is enabled in Javascript Libraries', 'adrotate'); ?></span>
+			<span class="description"><?php _e('Detect ad blockers and show a message to those users. Make sure jQuery Ad Blocker Detection is enabled under Javascript', 'adrotate'); ?></span>
 			<table class="form-table">
 				<tr>
 					<th valign="top"><?php _e('Show nag for', 'adrotate'); ?></th>
@@ -1451,7 +1364,7 @@ function adrotate_options() {
 				</tr>
 				<tr>
 					<th valign="top"><?php _e('Dashboard Notifications', 'adrotate'); ?></th>
-					<td><label for="adrotate_dashboard_notifications"><input type="checkbox" name="adrotate_dashboard_notifications" <?php if($adrotate_config['dashboard_notifications'] == 'Y') { ?>checked="checked" <?php } ?> /> <?php _e('Disable Dashboard Notifications about advert statuses.', 'adrotate'); ?></label></td>
+					<td><label for="adrotate_dashboard_notifications"><input type="checkbox" name="adrotate_dashboard_notifications" <?php if($adrotate_config['dashboard_notifications'] == 'N') { ?>checked="checked" <?php } ?> /> <?php _e('Disable Dashboard Notifications.', 'adrotate'); ?></label></td>
 				</tr>
 				<tr>
 					<th valign="top"><?php _e('Hide Schedules', 'adrotate'); ?></th>
@@ -1485,7 +1398,7 @@ function adrotate_options() {
 				</tr>
 			</table>
 
-			<h3><?php _e('Javascript Libraries', 'adrotate'); ?></h3>
+			<h3><?php _e('Javascript', 'adrotate'); ?></h3>
 			<table class="form-table">			
 				<tr>
 					<th valign="top"><?php _e('Load jQuery', 'adrotate'); ?></th>
@@ -1579,7 +1492,7 @@ function adrotate_options() {
 						<input type="checkbox" name="adrotate_debug_userroles" <?php if($adrotate_debug['userroles'] == true) { ?>checked="checked" <?php } ?> /> User Roles - <span class="description"><?php _e('Show array of all userroles and capabilities.', 'adrotate'); ?></span><br />
 						<input type="checkbox" name="adrotate_debug_userstats" <?php if($adrotate_debug['userstats'] == true) { ?>checked="checked" <?php } ?> /> Userstats - <span class="description"><?php _e('Review saved advertisers! Visible to advertisers.', 'adrotate'); ?></span><br />
 						<input type="checkbox" name="adrotate_debug_stats" <?php if($adrotate_debug['stats'] == true) { ?>checked="checked" <?php } ?> /> Stats - <span class="description"><?php _e('Review Full Report, per ad/group stats. Visible only to publishers.', 'adrotate'); ?></span><br />
-						<input type="checkbox" name="adrotate_debug_geo" <?php if($adrotate_debug['geo'] == true) { ?>checked="checked" <?php } ?> /> Geo Location - <span class="description"><?php _e('Output retrieved Geo data or errors related to the retrieving of Geo Services.', 'adrotate'); ?></span><br />
+						<input type="checkbox" name="adrotate_debug_geo" <?php if($adrotate_debug['geo'] == true) { ?>checked="checked" <?php } ?> /> Geo Targeting - <span class="description"><?php _e('Output retrieved Geo data or errors related to the retrieving of Geo Services.', 'adrotate'); ?></span><br />
 						<input type="checkbox" name="adrotate_debug_timers" <?php if($adrotate_debug['timers'] == true) { ?>checked="checked" <?php } ?> /> Clicktracking - <span class="description"><?php _e('Disable timers for clicks and impressions and enable a alert window for clicktracking.', 'adrotate'); ?></span><br />
 						<input type="checkbox" name="adrotate_debug_track" <?php if($adrotate_debug['track'] == true) { ?>checked="checked" <?php } ?> /> Tracking Encryption - <span class="description"><?php _e('Temporarily disable encryption on the redirect url.', 'adrotate'); ?></span><br />
 					</td>
@@ -1637,7 +1550,7 @@ function adrotate_network_license() {
 				<tr>
 					<th valign="top"><?php _e('License Email', 'adrotate'); ?></th>
 					<td>
-						<input name="adrotate_license_email" type="text" class="search-input" size="50" value="<?php echo $adrotate_activate['email']; ?>" autocomplete="off" <?php echo ($adrotate_activate['status'] == 1) ? 'disabled' : ''; ?> /> <span class="description"><?php _e('The email address you used on adrotateplugin.com.', 'adrotate'); ?></span>
+						<input name="adrotate_license_email" type="text" class="search-input" size="50" value="<?php echo $adrotate_activate['email']; ?>" autocomplete="off" <?php echo ($adrotate_activate['status'] == 1) ? 'disabled' : ''; ?> /> <span class="description"><?php _e('The email address you used in your purchase of AdRotate Pro.', 'adrotate'); ?></span>
 					</td>
 				</tr>
 
@@ -1645,9 +1558,9 @@ function adrotate_network_license() {
 					<th valign="top">&nbsp;</th>
 					<td>
 						<?php if($adrotate_activate['status'] == 0) { ?>
-						<input type="submit" id="post-role-submit" name="adrotate_license_network_activate" value="<?php _e('Activate', 'adrotate'); ?>" class="button-primary" />
+						<input type="submit" id="post-role-submit" name="adrotate_license_activate" value="<?php _e('Activate', 'adrotate'); ?>" class="button-primary" />
 						<?php } else { ?>
-						<input type="submit" id="post-role-submit" name="adrotate_license_network_deactivate" value="<?php _e('De-activate', 'adrotate'); ?>" class="button-secondary" />
+						<input type="submit" id="post-role-submit" name="adrotate_license_deactivate" value="<?php _e('De-activate', 'adrotate'); ?>" class="button-secondary" />
 						<?php } ?>
 					</td>
 				</tr>

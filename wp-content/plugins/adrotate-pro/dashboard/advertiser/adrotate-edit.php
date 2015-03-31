@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -130,7 +130,7 @@ if($adrotate_config['enable_editing'] == 'Y') {
 			        <td width="40%">
 				        <p><?php _e('Copy your ad tag/code in this field if you have received ready to go adverts.', 'adrotate'); ?><br /><?php _e('Advertising and affiliate networks often use these.', 'adrotate'); ?></p>
 				        <p><strong><?php _e('Basic Examples:', 'adrotate'); ?></strong></p>
-				        <p>1. <em><a href="#" onclick="textatcursor('adrotate_bannercode','&lt;a href=&quot;http://www.adrotateplugin.com&quot;&gt;Buy AdRotate Pro here!&lt;/a&gt;');return false;">&lt;a href="http://www.adrotateplugin.com"&gt;Buy AdRotate Pro here!&lt;/a&gt;</a></em></p>
+				        <p>1. <em><a href="#" onclick="textatcursor('adrotate_bannercode','&lt;a href=&quot;https://ajdg.solutions/&quot;&gt;Buy AdRotate Pro here!&lt;/a&gt;');return false;">&lt;a href="https://ajdg.solutions/"&gt;Buy AdRotate Pro here!&lt;/a&gt;</a></em></p>
 						<p>2. <em><a href="#" onclick="textatcursor('adrotate_bannercode','&lt;a href=&quot;http://www.floatingcoconut.net&quot;&gt;&lt;img src=&quot;%image%&quot; /&gt;&lt;/a&gt;');return false;">&lt;a href="http://www.floatingcoconut.net"&gt;&lt;img src="%image%" /&gt;&lt;/a&gt;</a></em></p>
 				        <p>3. <em><a href="#" onclick="textatcursor('adrotate_bannercode','&lt;span class=&quot;ad-%id%&quot;&gt;&lt;a href=&quot;http://www.ajdg.net&quot;&gt;Text Link Ad!&lt;/a&gt;&lt;/span&gt;');return false;">&lt;span class="ad-%id%"&gt;&lt;a href="http://www.ajdg.net"&gt;Text Link Ad!&lt;/a&gt;&lt;/span&gt;</a></em></p>
 		
@@ -179,8 +179,8 @@ if($adrotate_config['enable_editing'] == 'Y') {
 			<?php if($adrotate_config['enable_geo'] > 0 AND $adrotate_config['enable_geo_advertisers'] == 1) { ?>
 				<?php $cities = unserialize(stripslashes($edit_banner->cities)); ?>
 				<?php $countries = unserialize(stripslashes($edit_banner->countries)); ?>
-				<h3><?php _e('GeoLocation', 'adrotate'); ?></h3>
-				<p><em><?php _e('Cities or countries configured do only/apply to groups with GeoLocation enabled and is ignored everywhere else.', 'adrotate'); ?><br /><?php _e('Check with your publisher if localized adverts are possible for you.', 'adrotate'); ?></em></p>
+				<h3><?php _e('Geo Targeting', 'adrotate'); ?></h3>
+				<p><em><?php _e('Cities or countries configured do only/apply to groups with geo targeting enabled and is ignored everywhere else.', 'adrotate'); ?><br /><?php _e('Check with your publisher if localized adverts are possible for you.', 'adrotate'); ?></em></p>
 					
 				<table class="widefat" style="margin-top: .5em">
 			
@@ -190,7 +190,7 @@ if($adrotate_config['enable_editing'] == 'Y') {
 						<td><textarea tabindex="8" name="adrotate_geo_cities" cols="65" rows="3"><?php echo (is_array($cities)) ? implode(', ', $cities) : ''; ?></textarea></td>
 						<td>
 					        <p><strong><?php _e('Usage:', 'adrotate'); ?></strong></p>
-					        <p><em><?php _e('A comma separated list of cities', 'adrotate'); ?> (Alkmaar, Philadelphia, Melbourne) <br /><?php _e('AdRotate does not check the validity of names so make sure you spell them correctly!', 'adrotate'); ?></em></p>
+							<p><em><?php _e('A comma separated list of cities (or the Metro ID) and/or states (Also the states ISO codes are supported)', 'adrotate'); ?> (Alkmaar, Philadelphia, Melbourne, ...)<br /><?php _e('AdRotate does not check the validity of names so make sure you spell them correctly!', 'adrotate'); ?></em></p>
 						</td>
 					</tr>
 				    <tr>

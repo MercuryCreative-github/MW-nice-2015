@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -198,6 +198,10 @@ function adrotate_group($group_ids, $fallback = 0, $weight = 0, $site = 0) {
 					if($group->modus == 1) { // Dynamic ads
 						$i = 1;
 
+						// Determine the amount of ads to show for the group
+						$amount = ($group->adspeed >= 10000) ? 5 : 10;
+						$selected = adrotate_shuffle($selected, $amount);
+
 						foreach($selected as $key => $banner) {
 							$image = str_replace('%folder%', $adrotate_config['banner_folder'], $banner->image);
 
@@ -325,8 +329,7 @@ function adrotate_inject_pages($post_content) {
 
 			if($adrotate_debug['general'] == true) {
 				echo "<p><strong>[DEBUG][adrotate_inject_posts()] Choices</strong><pre>"; 
-				echo "Paragraph count: ".$paragraph_count;
-				echo "<br />Group count: ".$group_count."</br>";
+				echo "Group count: ".$group_count."</br>";
 				print_r($group_choice); 
 				echo "</pre></p>"; 
 			}
@@ -722,7 +725,7 @@ function adrotate_custom_javascript() {
 function adrotate_custom_css() {
 	global $wpdb, $adrotate_config;
 	
-	$output = "\n<!-- This site is using AdRotate v".ADROTATE_DISPLAY." to display their advertisements - https://www.adrotateplugin.com/ -->\n";
+	$output = "\n<!-- This site is using AdRotate v".ADROTATE_DISPLAY." to display their advertisements - https://ajdg.solutions/products/adrotate-for-wordpress/ -->\n";
 
 	$groups = $wpdb->get_results("SELECT `id`, `modus`, `gridrows`, `gridcolumns`, `adwidth`, `adheight`, `admargin`, `admargin_bottom`, `admargin_left`, `admargin_right`, `align` FROM `".$wpdb->prefix."adrotate_groups` WHERE `name` != '' ORDER BY `id` ASC;");
 	if($groups) {
@@ -825,7 +828,7 @@ function adrotate_nonce_error() {
 	echo '	<h2 style="text-align: center;">'.__('Oh no! Something went wrong!', 'adrotate').'</h2>';
 	echo '	<p style="text-align: center;">'.__('WordPress was unable to verify the authenticity of the url you have clicked. Verify if the url used is valid or log in via your browser.', 'adrotate').'</p>';
 	echo '	<p style="text-align: center;">'.__('If you have received the url you want to visit via email, you are being tricked!', 'adrotate').'</p>';
-	echo '	<p style="text-align: center;">'.__('Contact support if the issue persists:', 'adrotate').' <a href="https://www.adrotateplugin.com/support/" title="AdRotate Support" target="_blank">AdRotate Support</a>.</p>';
+	echo '	<p style="text-align: center;">'.__('Contact support if the issue persists:', 'adrotate').' <a href="https://ajdg.solutions/forums/forum/adrotate-for-wordpress/support/" title="AdRotate Support" target="_blank">AdRotate Support</a>.</p>';
 }
 
 /*-------------------------------------------------------------
@@ -877,7 +880,7 @@ function adrotate_error($action, $arg = null) {
 
 		// Database
 		case "db_error" :
-			$result = '<span style="font-weight: bold; color: #f00;">'.__('There was an error locating the database tables for AdRotate. Please deactivate and re-activate AdRotate from the plugin page!!', 'adrotate').'<br />'.__('If this does not solve the issue please seek support at', 'adrotate').' <a href="https://www.adrotateplugin.com/support/">www.adrotateplugin.com/support/</a></span>';
+			$result = '<span style="font-weight: bold; color: #f00;">'.__('There was an error locating the database tables for AdRotate. Please deactivate and re-activate AdRotate from the plugin page!!', 'adrotate').'<br />'.__('If this does not solve the issue please seek support at', 'adrotate').' <a href="https://ajdg.solutions/forums/forum/adrotate-for-wordpress/">ajdg.solutions/forums/forum/adrotate-for-wordpress/</a></span>';
 			return $result;
 		break;
 
@@ -901,13 +904,15 @@ function adrotate_notifications_dashboard() {
 	global $adrotate_config, $adrotate_advert_status;
 
 	if(current_user_can('adrotate_ad_manage')) {
+		$license = get_option('adrotate_activate');
+
 		if($adrotate_config['dashboard_notifications'] == "Y") {
 			if(!is_array($adrotate_advert_status)) {
 				$data = unserialize($adrotate_advert_status);
 			} else {
 				$data = $adrotate_advert_status;
 			}
-	
+
 			if($data['total'] > 0) {
 				if($data['expired'] > 0 AND $data['expiressoon'] == 0 AND $data['error'] == 0) {
 					echo '<div class="error"><p>'.$data['expired'].' '.__('active ad(s) expired.', 'adrotate').' <a href="admin.php?page=adrotate-ads">'.__('Take action now', 'adrotate').'</a>!</p></div>';
@@ -919,11 +924,23 @@ function adrotate_notifications_dashboard() {
 					echo '<div class="error"><p>'.$data['expired'].' '.__('ad(s) expired.', 'adrotate').' '.$data['expiressoon'].' '.__('ad(s) are about to expire.', 'adrotate').' There are '.$data['error'].' '.__('ad(s) with configuration errors.', 'adrotate').' <a href="admin.php?page=adrotate-ads">'.__('Fix this as soon as possible', 'adrotate').'</a>!</p></div>';
 				}
 			}
+
+			if($adrotate_config['enable_geo'] > 2) {
+				$lookups = get_option('adrotate_geo_requests');
+				if($license['status'] == 0 AND $adrotate_config['enable_geo'] == 5) {
+					echo '<div class="updated"><p>' . __('The AdRotate Geo service can only be used after you activate your license for this website.', 'adrotate').'</p></div>';
+				}
+				if($lookups > 0 AND $lookups < 1000) {
+					echo '<div class="updated"><p>' . sprintf(__('You are running out of Geo Lookups for AdRotate. You have less than %d remaining lookups. If this reaches 0, Geo Targeting will stop working.', 'adrotate'), $lookups).'</p></div>';
+				}
+				if($lookups == 0) {
+					echo '<div class="updated"><p>' . __('AdRotate Geo Targeting is no longer working because you have no more lookups.', 'adrotate').'</p></div>';
+				}
+			}
 		}
 	
-		$license = get_option('adrotate_activate');
 		if($license['firstrun'] == 1) {
-			echo '<div class="updated"><p>' . __('Register your copy of AdRotate. This will enable ticket support and update notifications right from your dashboard.', 'adrotate').' <a href="admin.php?page=adrotate-settings#register" class="button">'.__('Register AdRotate', 'adrotate').'</a></p></div>';
+			echo '<div class="updated"><p>' . __('Register your copy of AdRotate. This will enable ticket support and update notifications right from your dashboard.', 'adrotate').' <a href="admin.php?page=adrotate-settings" class="button">'.__('Register AdRotate', 'adrotate').'</a></p></div>';
 			update_option('adrotate_activate', array('status' => 0, 'instance' => '', 'activated' => '', 'deactivated' => '', 'type' => '', 'key' => '', 'email' => '', 'version' => '', 'firstrun' => 0));
 		}
 	}
@@ -939,7 +956,7 @@ function adrotate_notifications_dashboard() {
 -------------------------------------------------------------*/
 function adrotate_welcome_pointer() {
     $pointer_content = '<h3>AdRotate '.ADROTATE_DISPLAY.'</h3>';
-    $pointer_content .= '<p>'.__('Welcome, and thanks for using AdRotate Pro. Everything related to AdRotate Pro is in this menu. Check out the', 'adrotate').' <a href="http:\/\/www.adrotateplugin.com\/support\/knowledgebase\/" target="_blank">'.__('knowledgebase', 'adrotate').'</a> '.__('and', 'adrotate').' <a href="http:\/\/www.adrotateplugin.com\/support\/forums\/" target="_blank">'.__('forums', 'adrotate').'</a> '.__('if you get stuck with something. You can also use', 'adrotate').' <a href="admin.php?page=adrotate">'.__('ticket support', 'adrotate').'</a> '.__('if you have a valid license.', 'adrotate').'</p>';
+    $pointer_content .= '<p>'.__('Welcome, and thanks for using AdRotate Pro. Everything related to AdRotate Pro is in this menu. Check out the', 'adrotate').' <a href="http:\/\/ajdg.solutions\/manuals\/adrotate\/" target="_blank">'.__('manuals', 'adrotate').'</a> '.__('and', 'adrotate').' <a href="https:\/\/ajdg.solutions\/forums\/forum\/adrotate-for-wordpress\/" target="_blank">'.__('forums', 'adrotate').'</a> '.__('if you get stuck with something. You can also use', 'adrotate').' <a href="admin.php?page=adrotate">'.__('ticket support', 'adrotate').'</a> '.__('if you have a valid license.', 'adrotate').'</p>';
 ?>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
@@ -977,10 +994,10 @@ function adrotate_help_info() {
         'title' => __('Useful Links'),
         'content' => '<h4>'.__('Useful links to learn more about AdRotate', 'adrotate').'</h4>'.
 			'<ul>'.
-			'<li><a href="https://www.adrotateplugin.com" target="_blank">'.__('AdRotate Website', 'adrotate').'</a>.</li>'.
-			'<li><a href="https://www.adrotateplugin.com/support/knowledgebase/getting-started-with-adrotate/" target="_blank">'.__('Getting Started With AdRotate', 'adrotate').'</a>.</li>'.
-			'<li><a href="https://www.adrotateplugin.com/support/knowledgebase/" target="_blank">'.__('AdRotate Knowledge base and manuals', 'adrotate').'</a>.</li>'.
-			'<li><a href="https://www.adrotateplugin.com/support/forums/" target="_blank">'.__('AdRotate Support Forum', 'adrotate').'</a>.</li>'.
+			'<li><a href="https://ajdg.solutions/products/adrotate-for-wordpress/" target="_blank">'.__('AdRotate Page', 'adrotate').'</a>.</li>'.
+			'<li><a href="https://ajdg.solutions/manuals/adrotate/getting-started-with-adrotate/" target="_blank">'.__('Getting Started With AdRotate', 'adrotate').'</a>.</li>'.
+			'<li><a href="https://ajdg.solutions/manuals/adrotate/" target="_blank">'.__('AdRotate manuals', 'adrotate').'</a>.</li>'.
+			'<li><a href="https://ajdg.solutions/forums/forum/adrotate-for-wordpress/" target="_blank">'.__('AdRotate Support Forum', 'adrotate').'</a>.</li>'.
 			'<li><a href="http://wordpress.org/support/plugin/adrotate" target="_blank">'.__('WordPress.org Forum', 'adrotate').'</a>.</li>'.
 			'</ul>'
 		) 
@@ -989,7 +1006,7 @@ function adrotate_help_info() {
         'id' => 'adrotate_thanks',
         'title' => 'Thank You',
         'content' => '<h4>Thank you for using AdRotate</h4><p>AdRotate is growing to be one of the most popular WordPress plugins for Advertising and is a household name for many companies around the world. AdRotate wouldn\'t be possible without your support and my life wouldn\'t be what it is today without your help.</p><p><em>- Arnan from AJdG Solutions</em></p>'.
-        '<p><strong>Add me:</strong> <a href="http://twitter.com/ajdgsolutions/" target="_blank">Twitter</a>, <a href="https://www.facebook.com/adrotate" target="_blank">Facebook</a>. <strong>Read me:</strong> <a href="https://ajdg.solutions/" target="_blank">ajdg.solutions</a>, <a href="http://meandmymac.net/" target="_blank">meandmymac.net</a> and <a href="http://www.floatingcoconut.net/" target="_blank">floatingcoconut.net</a>.</p>'
+        '<p><strong>Add me:</strong> <a href="http://twitter.com/ajdgsolutions/" target="_blank">Twitter</a>, <a href="https://www.facebook.com/adrotate" target="_blank">Facebook</a>. <strong>Business:</strong> <a href="https://ajdg.solutions/" target="_blank">ajdg.solutions</a> <strong>Blog:</strong> <a href="http://meandmymac.net/" target="_blank">meandmymac.net</a> and <strong>adventure:</strong> <a href="http://www.floatingcoconut.net/" target="_blank">floatingcoconut.net</a>.</p>'
 		)
     );
 }
@@ -1014,7 +1031,7 @@ function adrotate_credits() {
 
 	echo '<tbody>';
 	echo '<tr>';
-	echo '<td><center><a href="https://www.adrotateplugin.com/?utm_source=adrotate_free&utm_medium=adrotate_credits&utm_campaign=adrotatefree" title="AdRotate plugin for WordPress"><img src="'.plugins_url('/images/adrotate-logo-60x60.png', __FILE__).'" alt="adrotate-logo-60x60" width="60" height="60" /></a></center></td>';
+	echo '<td><center><a href="https://ajdg.solutions/products/adrotate-for-wordpress/?utm_source=adrotate_free&utm_medium=adrotate_credits&utm_campaign=adrotatefree" title="AdRotate plugin for WordPress"><img src="'.plugins_url('/images/adrotate-logo-60x60.png', __FILE__).'" alt="adrotate-logo-60x60" width="60" height="60" /></a></center></td>';
 	echo '<td>'.__("A lot of users only think to review AdRotate when something goes wrong while thousands of people use AdRotate satisfactory. Don't let this go unnoticed.", 'adrotate').' <strong>'. __("If you find AdRotate useful please leave your honest", 'adrotate').' <a href="https://wordpress.org/support/view/plugin-reviews/adrotate?rate=5#postform" target="_blank">'.__('rating','adrotate').'</a> '.__('and','adrotate').' <a href="https://wordpress.org/support/view/plugin-reviews/adrotate" target="_blank">'.__('review','adrotate').'</a> '.__('on WordPress.org to help AdRotate grow in a positive way', 'adrotate').'!</strong></td>';
 
 	echo '<td><center><a href="https://ajdg.solutions/" title="AJdG Solutions"><img src="'.plugins_url('/images/ajdg-logo-100x60.png', __FILE__).'" alt="ajdg-logo-100x60" width="100" height="60" /></a></center></td>';
@@ -1046,10 +1063,10 @@ function adrotate_user_notice() {
 
 	echo '<tbody>';
 	echo '<tr>';
-	echo '<td><center><a href="https://www.adrotateplugin.com" title="AdRotate plugin for WordPress"><img src="'.plugins_url('/images/adrotate-logo-60x60.png', __FILE__).'" alt="adrotate-logo-60x60" width="60" height="60" /></a></center></td>';
+	echo '<td><center><a href="https://ajdg.solutions/products/adrotate-for-wordpress/" title="AdRotate plugin for WordPress"><img src="'.plugins_url('/images/adrotate-logo-60x60.png', __FILE__).'" alt="adrotate-logo-60x60" width="60" height="60" /></a></center></td>';
 	echo '<td>	'.__('The overall stats do not take ads from other advertisers into account.', 'adrotate').'<br />';
 	echo '	'.__('All statistics are indicative. They do not nessesarily reflect results counted by other parties.', 'adrotate').'<br />';
-	echo '	'.__('Your ads are published with', 'adrotate').' <a href="https://www.adrotateplugin.com" target="_blank">AdRotate</a> '.__('for WordPress. Created by', 'adrotate').' <a href="https://ajdg.solutions/" target="_blank">AJdG Solutions</a>.</td>';
+	echo '	'.__('Your ads are published with', 'adrotate').' <a href="https://ajdg.solutions/products/adrotate-for-wordpress/" target="_blank">AdRotate</a> '.__('for WordPress. Created by', 'adrotate').' <a href="https://ajdg.solutions/" target="_blank">AJdG Solutions</a>.</td>';
 	echo '</tr>';
 	echo '</tbody>';
 

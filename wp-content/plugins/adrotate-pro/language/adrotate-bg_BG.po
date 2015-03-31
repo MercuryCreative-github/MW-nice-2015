@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AdRotate\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-15 01:12+0100\n"
-"PO-Revision-Date: 2014-12-15 01:12+0100\n"
+"POT-Creation-Date: 2015-02-15 02:58+0100\n"
+"PO-Revision-Date: 2015-02-15 02:58+0100\n"
 "Last-Translator: Arnan de Gans <info@ajdg.net>\n"
 "Language-Team: Nedko Ivanov <cocacoli4ko@gmail.com>\n"
 "Language: bg_BG\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -21,7 +21,8 @@ msgstr ""
 msgid "[AdRotate] CSV Report!"
 msgstr "[AdRotate] CSV Доклад!"
 
-#: adrotate-export.php:177 adrotate-functions.php:1285
+#: adrotate-export.php:177 adrotate-functions.php:1308
+#: adrotate-functions.php:1325 adrotate-functions.php:1347
 msgid "Hello"
 msgstr "Добър ден"
 
@@ -32,273 +33,291 @@ msgstr ""
 "Като прикачен файл към този email ще откриете експортирания CSV файл, който "
 "генерирахте на "
 
-#: adrotate-export.php:179 adrotate-functions.php:1297
-#: adrotate-functions.php:1359
+#: adrotate-export.php:179 adrotate-functions.php:1312
+#: adrotate-functions.php:1334 adrotate-functions.php:1354
+#: adrotate-functions.php:1413
 msgid "Have a nice day!"
 msgstr "Хубав ден!"
 
-#: adrotate-export.php:180 adrotate-functions.php:1299
-#: adrotate-functions.php:1360
+#: adrotate-export.php:180 adrotate-functions.php:1313
+#: adrotate-functions.php:1335 adrotate-functions.php:1355
+#: adrotate-functions.php:1414
 msgid "Your AdRotate Notifier"
 msgstr "Вашият AdRotate Известител"
 
-#: adrotate-functions.php:1220
+#: adrotate-functions.php:1242
 msgid "ad(s) with errors!"
 msgstr "реклама/и с грешки!"
 
-#: adrotate-functions.php:1221
+#: adrotate-functions.php:1243
 msgid "ad(s) expired!"
 msgstr "изтекла(и) реклама(и)!"
 
-#: adrotate-functions.php:1222 adrotate-functions.php:1293
+#: adrotate-functions.php:1244 adrotate-functions.php:1330
 msgid "ad(s) will expire in less than 2 days."
 msgstr "изтичаща(и) след по-малко от 2 дни."
 
-#: adrotate-functions.php:1223
+#: adrotate-functions.php:1245
 msgid "ad(s) have an unknown status."
 msgstr "реклама(и) е/са с неизвестен статус."
 
-#: adrotate-functions.php:1283
-msgid "[AdRotate Alert] Your ads need your help!"
-msgstr "[AdRotate Известие] Рекламите ви се нуждаят от помощ!"
+#: adrotate-functions.php:1306
+msgid "[AdRotate Alert] Test message!"
+msgstr ""
 
-#: adrotate-functions.php:1286
-#, fuzzy
-msgid "This is a test notification!"
-msgstr "Изпратено е тестово известие"
-
-#: adrotate-functions.php:1287
+#: adrotate-functions.php:1309 adrotate-functions.php:1326
+#: adrotate-functions.php:1348
 msgid "This notification is sent to you from your website"
 msgstr "Това известие е изпратено до вас от вашия уеб сайт"
 
-#: adrotate-functions.php:1288
-msgid ""
-"You will receive a notification approximately every 24 hours until the "
-"listed issues are resolved."
-msgstr ""
-"Ще получавате известие приблизително на всеки 24 часа, докато изброените "
-"проблеми не бъдат разрешени."
+#: adrotate-functions.php:1310
+msgid "This is a test notification!"
+msgstr "Изпратено е тестово известие!"
 
-#: adrotate-functions.php:1290
+#: adrotate-functions.php:1323
+msgid "[AdRotate Alert] Your ads need your help!"
+msgstr "[AdRotate Известие] Рекламите ви се нуждаят от помощ!"
+
+#: adrotate-functions.php:1327
 msgid "Current issues:"
 msgstr "Текущи проблеми:"
 
-#: adrotate-functions.php:1291
+#: adrotate-functions.php:1328
 msgid "ad(s) have configuration errors. This needs your immediate attention!"
 msgstr ""
 "реклама(и) има(т) грешни настройки. Това се нуждае от незабавното ви "
 "внимание!"
 
-#: adrotate-functions.php:1292
+#: adrotate-functions.php:1329
 msgid "ad(s) expired. This needs your immediate attention!"
 msgstr "изтекла(и) реклама(и).  Това се нуждае от незабавното ви внимание!"
 
-#: adrotate-functions.php:1294
+#: adrotate-functions.php:1331
 msgid "A total of"
 msgstr "Общо"
 
-#: adrotate-functions.php:1294
+#: adrotate-functions.php:1331
 msgid "ad(s) are in need of your care!"
 msgstr "реклама(и) се нуждае(ят) от вниманието ви!"
 
-#: adrotate-functions.php:1296
+#: adrotate-functions.php:1333 adrotate-functions.php:1353
 msgid "Access your dashboard here:"
 msgstr "Влезте в таблото си от тук:"
 
-#: adrotate-functions.php:1341
+#: adrotate-functions.php:1345
+msgid "[AdRotate Alert] Geo Targeting is running out of lookups!"
+msgstr ""
+
+#: adrotate-functions.php:1349
+msgid ""
+"Your website has less than 1000 lookups left for Geo Targeting. If you run "
+"out of lookups, Geo Targeting will stop working."
+msgstr ""
+
+#: adrotate-functions.php:1350
+msgid ""
+"Your website has no lookups for Geo Targeting. Geo Targeting is currently "
+"not working."
+msgstr ""
+
+#: adrotate-functions.php:1351
+msgid ""
+"If you keep running out of lookups regularly consider buying more lookups for"
+msgstr ""
+
+#: adrotate-functions.php:1395
 msgid "[AdRotate] An advertiser has put in a request for renewal!"
 msgstr "[AdRotate] Рекламодател е изпратил заявка за подновяване!"
 
-#: adrotate-functions.php:1342
+#: adrotate-functions.php:1396
 msgid "[AdRotate] An advertiser wants his ad removed."
 msgstr "[AdRotate] Рекламодател иска рекламата му да бъде премахната."
 
-#: adrotate-functions.php:1343
+#: adrotate-functions.php:1397
 msgid "[AdRotate] An advertiser wrote a comment on his ad!"
 msgstr "[AdRotate] Рекламодател е написал коментар към своя обява!"
 
-#: adrotate-functions.php:1344
+#: adrotate-functions.php:1398
 msgid "[AdRotate] An advertiser has a problem!"
 msgstr "[AdRotate] Рекламодател има проблем!"
 
-#: adrotate-functions.php:1348 adrotate-functions.php:1349
-#, fuzzy
+#: adrotate-functions.php:1402 adrotate-functions.php:1403
 msgid "requests ad"
-msgstr "реклама"
+msgstr "изисква реклама"
 
-#: adrotate-functions.php:1348
+#: adrotate-functions.php:1402
 msgid "renewed!"
 msgstr "подновено!"
 
-#: adrotate-functions.php:1349
+#: adrotate-functions.php:1403
 msgid "removed."
 msgstr "премахнато."
 
-#: adrotate-functions.php:1350
+#: adrotate-functions.php:1404
 msgid "has something to say about ad"
 msgstr "има да каже нещо относно реклама"
 
-#: adrotate-functions.php:1351
+#: adrotate-functions.php:1405
 msgid "has a problem with AdRotate."
 msgstr "има проблем с AdRotate."
 
-#: adrotate-functions.php:1353
+#: adrotate-functions.php:1407
 msgid "Attached message:"
 msgstr "Прикачено съобщение."
 
-#: adrotate-functions.php:1355
+#: adrotate-functions.php:1409
 msgid "You can reply to this message to contact"
 msgstr "Можете да отговорите на това съощение за контакт"
 
-#: adrotate-functions.php:1356
+#: adrotate-functions.php:1410
 msgid "Review the ad here:"
 msgstr "Преглед на рекламата тук:"
 
-#: adrotate-functions.php:1456 dashboard/publisher/adrotate-media-main.php:72
+#: adrotate-functions.php:1510 dashboard/publisher/adrotate-media-main.php:72
 msgid "No files found"
 msgstr "Няма намерени файлове"
 
-#: adrotate-functions.php:1459
+#: adrotate-functions.php:1513
 msgid "Folder not found or not accessible"
 msgstr "Папката не е намерена или не е достъпна"
 
-#: adrotate-functions.php:1527
+#: adrotate-functions.php:1581
 msgid "Ad saved"
 msgstr "Рекламата е запазена"
 
-#: adrotate-functions.php:1531
+#: adrotate-functions.php:1585
 msgid "Group saved"
 msgstr "Групата е запазена"
 
-#: adrotate-functions.php:1535
+#: adrotate-functions.php:1589
 msgid "Banner image saved"
 msgstr "Картинката на банера е записана"
 
-#: adrotate-functions.php:1539
+#: adrotate-functions.php:1593
 msgid "Ad(s) deleted"
 msgstr "Успешно изтриване"
 
-#: adrotate-functions.php:1543
+#: adrotate-functions.php:1597
 msgid "Group deleted"
 msgstr "Групата е изтрита"
 
-#: adrotate-functions.php:1547
+#: adrotate-functions.php:1601
 msgid "Banner image deleted"
 msgstr "Картинката на банера е изтрита"
 
-#: adrotate-functions.php:1551
+#: adrotate-functions.php:1605
 msgid "Something went wrong deleting the file"
 msgstr "О не! Нещо се обърка при изтриването на файла"
 
-#: adrotate-functions.php:1555
+#: adrotate-functions.php:1609
 msgid "Ad(s) statistics reset"
 msgstr "Статистиката е нулирана"
 
-#: adrotate-functions.php:1559
+#: adrotate-functions.php:1613
 msgid "Ad(s) renewed"
 msgstr "Успешно подновяване"
 
-#: adrotate-functions.php:1563
+#: adrotate-functions.php:1617
 msgid "Ad(s) deactivated"
 msgstr "Успешно деактивиране"
 
-#: adrotate-functions.php:1567
+#: adrotate-functions.php:1621
 msgid "Ad(s) activated"
 msgstr "Успешно активиране"
 
-#: adrotate-functions.php:1571 adrotate-functions.php:1612
+#: adrotate-functions.php:1625 adrotate-functions.php:1666
 msgid "Email(s) with reports successfully sent"
 msgstr "Email съобщение(я) с доклад е/са изпратено(и) успешно"
 
-#: adrotate-functions.php:1575
+#: adrotate-functions.php:1629
 msgid "Group including it's Ads deleted"
 msgstr "Групата и съдържащите се в нея реклами са изтрити"
 
-#: adrotate-functions.php:1579
+#: adrotate-functions.php:1633
 msgid "Weight changed"
 msgstr "Тежестта е променена"
 
-#: adrotate-functions.php:1583
+#: adrotate-functions.php:1637
 msgid "Export created"
 msgstr "Експорт е завършен"
 
-#: adrotate-functions.php:1587
+#: adrotate-functions.php:1641
 msgid "Ads imported"
 msgstr "Рекламите са импортирани"
 
-#: adrotate-functions.php:1591
+#: adrotate-functions.php:1645
 msgid "Schedule saved"
 msgstr "Графика е записан"
 
-#: adrotate-functions.php:1595
+#: adrotate-functions.php:1649
 msgid "Schedule(s) deleted"
 msgstr "Графиците са изтрити"
 
-#: adrotate-functions.php:1600
+#: adrotate-functions.php:1654
 msgid "Your message has been sent. Someone will be in touch shortly."
 msgstr "Съобщението е изпратено. Нялкой ще се свтрже с вас скоро."
 
-#: adrotate-functions.php:1604
+#: adrotate-functions.php:1658
 msgid "Advert submitted for review"
 msgstr "Рекламите са изпратени за одобрение"
 
-#: adrotate-functions.php:1608
+#: adrotate-functions.php:1662
 msgid "Advert updated and awaiting review"
 msgstr "Рекламата е обновена и очаква одобрение"
 
-#: adrotate-functions.php:1616
+#: adrotate-functions.php:1670
 msgid "Ad approved"
 msgstr "Рекламата е одобрена"
 
-#: adrotate-functions.php:1620
+#: adrotate-functions.php:1674
 msgid "Ad(s) rejected"
 msgstr "Отхвърлена(и) реклама(и)"
 
-#: adrotate-functions.php:1624
+#: adrotate-functions.php:1678
 msgid "Ad(s) queued"
 msgstr "Реклама(и) е/са на опашката"
 
-#: adrotate-functions.php:1629
+#: adrotate-functions.php:1683
 msgid "Settings saved"
 msgstr "Настройките са запазени"
 
-#: adrotate-functions.php:1633
+#: adrotate-functions.php:1687
 msgid "AdRotate client role added"
 msgstr "AdRotate клиентска роля е добавена"
 
-#: adrotate-functions.php:1637
+#: adrotate-functions.php:1691
 msgid "AdRotate client role removed"
 msgstr "AdRotate клиентска роля е премахната"
 
-#: adrotate-functions.php:1641
+#: adrotate-functions.php:1695
 msgid "Database optimized"
 msgstr "Базата данни е оптимизирана"
 
-#: adrotate-functions.php:1645
+#: adrotate-functions.php:1699
 msgid "Database repaired"
 msgstr "Базата данни е поправена"
 
-#: adrotate-functions.php:1649
+#: adrotate-functions.php:1703
 msgid "Ads evaluated and statuses have been corrected where required"
 msgstr "Рекламите са оценени и статусите им са обновени, където е необходимо"
 
-#: adrotate-functions.php:1653
+#: adrotate-functions.php:1707
 msgid "Empty database records removed"
 msgstr "Празните записи в базата данни са премахнати"
 
-#: adrotate-functions.php:1657
+#: adrotate-functions.php:1711
 msgid "Test notification sent"
 msgstr "Изпратено е тестово известие"
 
-#: adrotate-functions.php:1661
+#: adrotate-functions.php:1715
 msgid "Test mailing sent"
 msgstr "Изпратен е тестов email"
 
-#: adrotate-functions.php:1666
+#: adrotate-functions.php:1720
 msgid "Action prohibited"
 msgstr "Забранено действие"
 
-#: adrotate-functions.php:1670
+#: adrotate-functions.php:1724
 msgid ""
 "The ad was saved but has an issue which might prevent it from working "
 "properly. Review the colored ad."
@@ -306,7 +325,7 @@ msgstr ""
 "Рекламата е запазена, но има проблеми, които могат да ѝ попречат да работи "
 "нормално. Прегледайте маркираната реклама."
 
-#: adrotate-functions.php:1674
+#: adrotate-functions.php:1728
 msgid ""
 "The ad was saved but has an issue which might prevent it from working "
 "properly. Please contact staff."
@@ -314,106 +333,115 @@ msgstr ""
 "Рекламата е запазена, но има проблеми, които могат да ѝ попречат да работи "
 "нормално. Моля, свържете се с администратор."
 
-#: adrotate-functions.php:1678
+#: adrotate-functions.php:1732
 msgid "No data found in selected time period"
 msgstr "Не е намерена информация за избрания период"
 
-#: adrotate-functions.php:1682
+#: adrotate-functions.php:1736
 msgid "Database can only be optimized or cleaned once every hour"
 msgstr "Базата данни може да бъде почиствана или оптимизирана веднъж на час"
 
-#: adrotate-functions.php:1686
+#: adrotate-functions.php:1740
 msgid "Form can not be (partially) empty!"
 msgstr "Формата не може да бъде (частично) празна!"
 
-#: adrotate-functions.php:1690 adrotate-manage-advertiser.php:73
+#: adrotate-functions.php:1744 adrotate-manage-advertiser.php:73
 msgid "No file uploaded."
 msgstr "Не са качени файлове."
 
-#: adrotate-functions.php:1694
+#: adrotate-functions.php:1748
 msgid "The file could not be read."
 msgstr "Файла не може да бъде прочетен."
 
-#: adrotate-functions.php:1698
-#, fuzzy
+#: adrotate-functions.php:1752
 msgid "Wrong file type."
-msgstr "Грешен вид файл. Не са качени файлове."
+msgstr "Грешен тип файл."
 
-#: adrotate-functions.php:1702
+#: adrotate-functions.php:1756
 msgid "No ads found."
 msgstr "Не са намерени реклами."
 
-#: adrotate-functions.php:1706
+#: adrotate-functions.php:1760
 msgid "Wrong file type. No file uploaded."
 msgstr "Грешен вид файл. Не са качени файлове."
 
-#: adrotate-functions.php:1710
+#: adrotate-functions.php:1764
 msgid "File is too large."
 msgstr "Файла е твърде голям."
 
-#: adrotate-functions.php:1716
-#, fuzzy
+#: adrotate-functions.php:1770
 msgid "Invalid request"
-msgstr "Невалидно ID на рекламата."
+msgstr "Невалидна заявка"
 
-#: adrotate-functions.php:1720
+#: adrotate-functions.php:1774
 msgid "No license key or email provided"
-msgstr ""
+msgstr "Не е зададен регистрационен ключ или email"
 
-#: adrotate-functions.php:1724
+#: adrotate-functions.php:1778
 msgid "No valid response from license server. Contact support."
-msgstr ""
+msgstr "Въведения код НЕ Е приет. Свържете се с поддръжката."
 
-#: adrotate-functions.php:1728
+#: adrotate-functions.php:1782
 msgid ""
 "The email provided is invalid. If you think this is not true please contact "
 "support."
 msgstr ""
+"Въведения emai не е валиден. Ако смятате, че е станала грешка, можете да се "
+"свържете с поддръжката."
 
-#: adrotate-functions.php:1732
+#: adrotate-functions.php:1786
 msgid ""
 "Invalid license key. If you think this is not true please contact support."
 msgstr ""
+"Невалиден регистрационен ключ. Ако смятате, че е станала грешка, можете да "
+"се свържете с поддръжката."
 
-#: adrotate-functions.php:1736
+#: adrotate-functions.php:1790
 msgid "The purchase matching this product is not complete. Contact support."
-msgstr ""
+msgstr "Поръчката на този продукт не е завършена. Свържете се с поддръжката."
 
-#: adrotate-functions.php:1740
+#: adrotate-functions.php:1794
 msgid ""
 "No remaining activations for this license. If you think this is not true "
 "please contact support."
 msgstr ""
+"Нямате останали активации за този ключ. Ако смятате, че е станала грешка, "
+"можете да се свържете с поддръжката."
 
-#: adrotate-functions.php:1744
+#: adrotate-functions.php:1798
 msgid "Could not (de)activate key. Contact support."
-msgstr ""
+msgstr "Неуспешно (де)активиране на ключа. Свържете се с поддръжката."
 
-#: adrotate-functions.php:1748
+#: adrotate-functions.php:1802
 msgid "Thank you. Your license is now active"
-msgstr ""
+msgstr "Благодарим Ви. Лицензът е активиран"
 
-#: adrotate-functions.php:1752
+#: adrotate-functions.php:1806
 msgid "Thank you. Your license is now de-activated"
-msgstr ""
+msgstr "Благодарим Ви. Лицензът е деактивиран"
 
-#: adrotate-functions.php:1756
+#: adrotate-functions.php:1810
 msgid "Thank you. Your licenses have been reset"
-msgstr ""
+msgstr "Благодарим Ви. Лицензът е нулиран"
 
-#: adrotate-functions.php:1760
+#: adrotate-functions.php:1814
 msgid ""
 "This license can not be activated for networks. Please purchase a Developer "
 "or Network license."
 msgstr ""
+"Този лиценз не може да бъде използван за мрежи. Моля, поръчайте лиценз за "
+"Разработчици или Мрежи."
 
-#: adrotate-functions.php:1769
+#: adrotate-functions.php:1823
+#, fuzzy
 msgid ""
 "Support request could not be sent! Please try again - If the issue persists "
-"write to support@adrotateplugin.com!"
+"write to adrotate-support@ajdg.net!"
 msgstr ""
+"Заявката за помощ не може да бъде изпратена! Моля, опитайте отново - ако "
+"проблема продължава, пишете на support@adrotateplugin.com!"
 
-#: adrotate-functions.php:1773
+#: adrotate-functions.php:1827
 msgid "Unexpected error"
 msgstr "Неочаквана грешка"
 
@@ -447,15 +475,15 @@ msgstr ""
 msgid "The file was either too large or not in the right format."
 msgstr "Файла е с грешен формат или е прекалено голям. "
 
-#: adrotate-manage-publisher.php:1408
+#: adrotate-manage-publisher.php:1310
 msgid "AdRotate Advertiser"
 msgstr "AdRotate Рекламодател"
 
-#: adrotate-output.php:793
+#: adrotate-output.php:828
 msgid "Oh no! Something went wrong!"
 msgstr "О не! Нещо се случи!"
 
-#: adrotate-output.php:794
+#: adrotate-output.php:829
 msgid ""
 "WordPress was unable to verify the authenticity of the url you have clicked. "
 "Verify if the url used is valid or log in via your browser."
@@ -464,17 +492,17 @@ msgstr ""
 "кликнал. Проверете дали адреса е валиден или се впишете посредством браузъра "
 "си."
 
-#: adrotate-output.php:795
+#: adrotate-output.php:830
 msgid ""
 "If you have received the url you want to visit via email, you are being "
 "tricked!"
 msgstr "Ако сте получили този адрес по email, то някой ви е изиграл!"
 
-#: adrotate-output.php:796
+#: adrotate-output.php:831
 msgid "Contact support if the issue persists:"
 msgstr "Свържете се с поддръжката, ако този проблем продължави да се появява:"
 
-#: adrotate-output.php:814
+#: adrotate-output.php:849
 msgid ""
 "Error, Ad is not available at this time due to schedule/budgeting/"
 "geolocation restrictions or does not exist!"
@@ -482,7 +510,7 @@ msgstr ""
 "Грешка, рекламата не е налична в момента, поради ограничения в графика/"
 "геолокацията или не съществува!"
 
-#: adrotate-output.php:816
+#: adrotate-output.php:851
 msgid ""
 "Error, Ad is not available at this time due to schedule/budgeting/"
 "geolocation restrictions!"
@@ -490,26 +518,26 @@ msgstr ""
 "Грешка, рекламата не е налична в момента, поради ограничения в графика/"
 "бюджета/геолокацията!"
 
-#: adrotate-output.php:823 adrotate-output.php:825
+#: adrotate-output.php:858 adrotate-output.php:860
 msgid ""
 "Either there are no banners, they are disabled or none qualified for this "
 "location!"
 msgstr ""
 "Няма налични банери, те са деактивирани или не са подходящи за това място!"
 
-#: adrotate-output.php:831
+#: adrotate-output.php:866
 msgid "Error, no Ad ID set! Check your syntax!"
 msgstr "Грешка, не е зададено ID на рекламата! Проверете синтаксиса!"
 
-#: adrotate-output.php:837
+#: adrotate-output.php:872
 msgid "Error, no group ID set! Check your syntax!"
 msgstr "Грешка, не е зададено ID на групата! Проверете синтаксиса!"
 
-#: adrotate-output.php:842
+#: adrotate-output.php:877
 msgid "Error, group does not exist! Check your syntax!"
 msgstr "Грешка, групата не съществува! Проверете синтаксиса!"
 
-#: adrotate-output.php:848
+#: adrotate-output.php:883
 msgid ""
 "There was an error locating the database tables for AdRotate. Please "
 "deactivate and re-activate AdRotate from the plugin page!!"
@@ -517,55 +545,73 @@ msgstr ""
 "Не могат да бъдат открити таблиците на AdRotate в базата данни. Моля, "
 "изключете и включете наново AdRotate от страницата с плъгините!!"
 
-#: adrotate-output.php:848
+#: adrotate-output.php:883
 msgid "If this does not solve the issue please seek support at"
 msgstr "Ако това не решава проблема, моля потърсете помощ на"
 
-#: adrotate-output.php:854
+#: adrotate-output.php:889
 msgid "An unknown error occured."
 msgstr "Възникна неизвестна грешка."
 
-#: adrotate-output.php:881
+#: adrotate-output.php:918
 msgid "active ad(s) expired."
 msgstr "изтекла/и активна/и реклама/и."
 
-#: adrotate-output.php:881
+#: adrotate-output.php:918
 msgid "Take action now"
 msgstr "Предприемане на действия"
 
-#: adrotate-output.php:883
+#: adrotate-output.php:920
 msgid "active ad(s) are about to expire."
 msgstr "изтичаща/и активна/и реклама/и."
 
-#: adrotate-output.php:883
+#: adrotate-output.php:920
 msgid "Check it out"
 msgstr "Проверете го"
 
-#: adrotate-output.php:885
+#: adrotate-output.php:922
 msgid "active ad(s) with configuration errors."
 msgstr "активна(и) реклама(и) с грешни настройки."
 
-#: adrotate-output.php:885
+#: adrotate-output.php:922
 msgid "Solve this"
 msgstr "Разреши това"
 
-#: adrotate-output.php:887
+#: adrotate-output.php:924
 msgid "ad(s) expired."
 msgstr "изтекла/и реклама/и."
 
-#: adrotate-output.php:887
+#: adrotate-output.php:924
 msgid "ad(s) are about to expire."
 msgstr "реклама/и изтича(т)."
 
-#: adrotate-output.php:887
+#: adrotate-output.php:924
 msgid "ad(s) with configuration errors."
 msgstr "реклама/и с грешни настройки."
 
-#: adrotate-output.php:887
+#: adrotate-output.php:924
 msgid "Fix this as soon as possible"
 msgstr "Поправка възможно най-скоро"
 
-#: adrotate-output.php:894
+#: adrotate-output.php:931
+msgid ""
+"The AdRotate Geo service can only be used after you activate your license "
+"for this website."
+msgstr ""
+
+#: adrotate-output.php:934
+#, php-format
+msgid ""
+"You are running out of Geo Lookups for AdRotate. You have less than %d "
+"remaining lookups. If this reaches 0, Geo Targeting will stop working."
+msgstr ""
+
+#: adrotate-output.php:937
+msgid ""
+"AdRotate Geo Targeting is no longer working because you have no more lookups."
+msgstr ""
+
+#: adrotate-output.php:943
 msgid ""
 "Register your copy of AdRotate. This will enable ticket support and update "
 "notifications right from your dashboard."
@@ -573,113 +619,107 @@ msgstr ""
 "Регистрирайте своето копие на AdRotate. Така ще имате достъп до ticket "
 "поддръжката и известията за обновления директно от таблото."
 
-#: adrotate-output.php:894
+#: adrotate-output.php:943
 msgid "Register AdRotate"
 msgstr "Регистриране на AdRotate"
 
-#: adrotate-output.php:910
+#: adrotate-output.php:959
 msgid ""
 "Welcome, and thanks for using AdRotate Pro. Everything related to AdRotate "
 "Pro is in this menu. Check out the"
 msgstr ""
+"Добре дошли! Благодарим Ви, че поръчахте AdRotate Pro. Всичко свързано с "
+"AdRotate Pro е в това меню. Прегледайте"
 
-#: adrotate-output.php:910
-msgid "knowledgebase"
-msgstr ""
+#: adrotate-output.php:959
+msgid "manuals"
+msgstr "ръководства"
 
-#: adrotate-output.php:910 adrotate-output.php:986
-#: dashboard/publisher/adrotate-ads-edit.php:255
-#, fuzzy
+#: adrotate-output.php:959 adrotate-output.php:1035
+#: dashboard/publisher/adrotate-ads-edit.php:256
 msgid "and"
-msgstr "реклама"
+msgstr "и"
 
-#: adrotate-output.php:910
-#, fuzzy
+#: adrotate-output.php:959
 msgid "forums"
-msgstr ""
-"Когато активирате вашия AdRotate Pro лиценз ще имате достъп до ticket "
-"системата за поддръжка. AdRotate премиум поддръжката е с приоритет спрямо "
-"форумите и дори Email съобщенията. В общия случай ще получите отговор до 1 "
-"ден."
+msgstr "форума"
 
-#: adrotate-output.php:910
+#: adrotate-output.php:959
 msgid "if you get stuck with something. You can also use"
-msgstr ""
+msgstr "ако имате нужда. Също така можете да използвате"
 
-#: adrotate-output.php:910
-#, fuzzy
+#: adrotate-output.php:959
 msgid "ticket support"
-msgstr "Ticket поддръжка"
+msgstr "поддръжка с билети"
 
-#: adrotate-output.php:910
+#: adrotate-output.php:959
 msgid "if you have a valid license."
-msgstr ""
+msgstr "ако имате валиден лиценз."
 
-#: adrotate-output.php:945
-#, fuzzy
+#: adrotate-output.php:994
 msgid "Useful Links"
 msgstr "Полезни връзки"
 
-#: adrotate-output.php:946
+#: adrotate-output.php:995
 msgid "Useful links to learn more about AdRotate"
-msgstr ""
+msgstr "Полезни връзки, за да научите повече за AdRotate"
 
-#: adrotate-output.php:948
+#: adrotate-output.php:997
 #, fuzzy
-msgid "AdRotate Website"
-msgstr "AdRotate Лиценз"
+msgid "AdRotate Page"
+msgstr "AdRotate"
 
-#: adrotate-output.php:949
-#, fuzzy
+#: adrotate-output.php:998
 msgid "Getting Started With AdRotate"
-msgstr "Получете по-голяма функционалност с AdRotate Pro"
+msgstr "Започнете от нулата с AdRotate"
 
-#: adrotate-output.php:950
-msgid "AdRotate Knowledge base and manuals"
-msgstr ""
-
-#: adrotate-output.php:951
+#: adrotate-output.php:999
 #, fuzzy
+msgid "AdRotate manuals"
+msgstr "AdRotate Info"
+
+#: adrotate-output.php:1000
 msgid "AdRotate Support Forum"
-msgstr "Магазин на AdRotate"
+msgstr "AdRotate форум за взаимопомощ"
 
-#: adrotate-output.php:952
+#: adrotate-output.php:1001
 msgid "WordPress.org Forum"
-msgstr ""
+msgstr "WordPress.org форум"
 
-#: adrotate-output.php:978
-#, fuzzy
+#: adrotate-output.php:1027
 msgid "Help AdRotate Grow"
-msgstr "AdRotate Blog"
+msgstr "Помогнете за развитието на AdRotate"
 
-#: adrotate-output.php:979
+#: adrotate-output.php:1028
 msgid "Brought to you by"
 msgstr "Достига до Вас благодарение на"
 
-#: adrotate-output.php:986
+#: adrotate-output.php:1035
 msgid ""
 "A lot of users only think to review AdRotate when something goes wrong while "
 "thousands of people use AdRotate satisfactory. Don't let this go unnoticed."
 msgstr ""
+"Много потребители се сещат да напишат мнение за AdRotate само, когато нещо "
+"се обърка, докато хиляди хора използват AdRotate безпроблемно. Не "
+"позволявайте това да остане незабелязано."
 
-#: adrotate-output.php:986
+#: adrotate-output.php:1035
 msgid "If you find AdRotate useful please leave your honest"
-msgstr ""
+msgstr "Ако намирате AdRotate за полезен, молим да оставите честна"
 
-#: adrotate-output.php:986
+#: adrotate-output.php:1035
 msgid "rating"
-msgstr ""
+msgstr "оцека"
 
-#: adrotate-output.php:986
-#, fuzzy
+#: adrotate-output.php:1035
 msgid "review"
-msgstr "Преглед"
+msgstr "и мнение"
 
-#: adrotate-output.php:986
+#: adrotate-output.php:1035
 msgid "on WordPress.org to help AdRotate grow in a positive way"
-msgstr ""
+msgstr "на WordPress.org, за да помогнете на AdRotate да се развива"
 
-#: adrotate-output.php:989
+#: adrotate-output.php:1038
 msgid ""
 "Your one stop for Webdevelopment, consultancy and anything WordPress! Find "
 "out more about what I can do for you!"
@@ -687,23 +727,23 @@ msgstr ""
 "Мястото, където да се консултирате и/или да поръчате разработка за "
 "WordPress! Открийте с какво мога да Ви бъда полезен!"
 
-#: adrotate-output.php:989
+#: adrotate-output.php:1038
 msgid "Visit the"
 msgstr "Посетете"
 
-#: adrotate-output.php:989
+#: adrotate-output.php:1038
 msgid "website"
 msgstr "уебсайт"
 
-#: adrotate-output.php:1011
+#: adrotate-output.php:1060
 msgid "AdRotate Notice"
 msgstr "AdRotate Известие"
 
-#: adrotate-output.php:1018
+#: adrotate-output.php:1067
 msgid "The overall stats do not take ads from other advertisers into account."
 msgstr "Общите статистики не включват данни от други рекламодатели."
 
-#: adrotate-output.php:1019 dashboard/advertiser/adrotate-report.php:148
+#: adrotate-output.php:1068 dashboard/advertiser/adrotate-report.php:148
 #: dashboard/publisher/adrotate-ads-report.php:104
 #: dashboard/publisher/adrotate-fullreport.php:103
 #: dashboard/publisher/adrotate-groups-report.php:110
@@ -714,19 +754,19 @@ msgstr ""
 "Статистиката е показателна. Възможно е резултатите от нея да не съвпадат с "
 "резултатите от преброяване на трети страни."
 
-#: adrotate-output.php:1020
+#: adrotate-output.php:1069
 msgid "Your ads are published with"
 msgstr "Вашите реклами са публикувани с"
 
-#: adrotate-output.php:1020
+#: adrotate-output.php:1069
 msgid "for WordPress. Created by"
 msgstr "за WordPress. Създаден от"
 
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:82
 #: dashboard/advertiser/adrotate-report.php:116
-#: dashboard/publisher/adrotate-ads-edit.php:387
-#: dashboard/publisher/adrotate-ads-edit.php:408
+#: dashboard/publisher/adrotate-ads-edit.php:388
+#: dashboard/publisher/adrotate-ads-edit.php:409
 #: dashboard/publisher/adrotate-ads-report.php:72
 #: dashboard/publisher/adrotate-fullreport.php:71
 #: dashboard/publisher/adrotate-groups-report.php:78
@@ -738,8 +778,8 @@ msgstr "Януари"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:83
 #: dashboard/advertiser/adrotate-report.php:117
-#: dashboard/publisher/adrotate-ads-edit.php:388
-#: dashboard/publisher/adrotate-ads-edit.php:409
+#: dashboard/publisher/adrotate-ads-edit.php:389
+#: dashboard/publisher/adrotate-ads-edit.php:410
 #: dashboard/publisher/adrotate-ads-report.php:73
 #: dashboard/publisher/adrotate-fullreport.php:72
 #: dashboard/publisher/adrotate-groups-report.php:79
@@ -751,8 +791,8 @@ msgstr "Февруари"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:84
 #: dashboard/advertiser/adrotate-report.php:118
-#: dashboard/publisher/adrotate-ads-edit.php:389
-#: dashboard/publisher/adrotate-ads-edit.php:410
+#: dashboard/publisher/adrotate-ads-edit.php:390
+#: dashboard/publisher/adrotate-ads-edit.php:411
 #: dashboard/publisher/adrotate-ads-report.php:74
 #: dashboard/publisher/adrotate-fullreport.php:73
 #: dashboard/publisher/adrotate-groups-report.php:80
@@ -764,8 +804,8 @@ msgstr "Март"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:85
 #: dashboard/advertiser/adrotate-report.php:119
-#: dashboard/publisher/adrotate-ads-edit.php:390
-#: dashboard/publisher/adrotate-ads-edit.php:411
+#: dashboard/publisher/adrotate-ads-edit.php:391
+#: dashboard/publisher/adrotate-ads-edit.php:412
 #: dashboard/publisher/adrotate-ads-report.php:75
 #: dashboard/publisher/adrotate-fullreport.php:74
 #: dashboard/publisher/adrotate-groups-report.php:81
@@ -777,8 +817,8 @@ msgstr "Април"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:86
 #: dashboard/advertiser/adrotate-report.php:120
-#: dashboard/publisher/adrotate-ads-edit.php:391
-#: dashboard/publisher/adrotate-ads-edit.php:412
+#: dashboard/publisher/adrotate-ads-edit.php:392
+#: dashboard/publisher/adrotate-ads-edit.php:413
 #: dashboard/publisher/adrotate-ads-report.php:76
 #: dashboard/publisher/adrotate-fullreport.php:75
 #: dashboard/publisher/adrotate-groups-report.php:82
@@ -790,8 +830,8 @@ msgstr "Май"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:87
 #: dashboard/advertiser/adrotate-report.php:121
-#: dashboard/publisher/adrotate-ads-edit.php:392
-#: dashboard/publisher/adrotate-ads-edit.php:413
+#: dashboard/publisher/adrotate-ads-edit.php:393
+#: dashboard/publisher/adrotate-ads-edit.php:414
 #: dashboard/publisher/adrotate-ads-report.php:77
 #: dashboard/publisher/adrotate-fullreport.php:76
 #: dashboard/publisher/adrotate-groups-report.php:83
@@ -803,8 +843,8 @@ msgstr "Юни"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:88
 #: dashboard/advertiser/adrotate-report.php:122
-#: dashboard/publisher/adrotate-ads-edit.php:393
-#: dashboard/publisher/adrotate-ads-edit.php:414
+#: dashboard/publisher/adrotate-ads-edit.php:394
+#: dashboard/publisher/adrotate-ads-edit.php:415
 #: dashboard/publisher/adrotate-ads-report.php:78
 #: dashboard/publisher/adrotate-fullreport.php:77
 #: dashboard/publisher/adrotate-groups-report.php:84
@@ -816,8 +856,8 @@ msgstr "Юли"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:89
 #: dashboard/advertiser/adrotate-report.php:123
-#: dashboard/publisher/adrotate-ads-edit.php:394
-#: dashboard/publisher/adrotate-ads-edit.php:415
+#: dashboard/publisher/adrotate-ads-edit.php:395
+#: dashboard/publisher/adrotate-ads-edit.php:416
 #: dashboard/publisher/adrotate-ads-report.php:79
 #: dashboard/publisher/adrotate-fullreport.php:78
 #: dashboard/publisher/adrotate-groups-report.php:85
@@ -829,8 +869,8 @@ msgstr "Август"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:90
 #: dashboard/advertiser/adrotate-report.php:124
-#: dashboard/publisher/adrotate-ads-edit.php:395
-#: dashboard/publisher/adrotate-ads-edit.php:416
+#: dashboard/publisher/adrotate-ads-edit.php:396
+#: dashboard/publisher/adrotate-ads-edit.php:417
 #: dashboard/publisher/adrotate-ads-report.php:80
 #: dashboard/publisher/adrotate-fullreport.php:79
 #: dashboard/publisher/adrotate-groups-report.php:86
@@ -842,8 +882,8 @@ msgstr "Септември"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:91
 #: dashboard/advertiser/adrotate-report.php:125
-#: dashboard/publisher/adrotate-ads-edit.php:396
-#: dashboard/publisher/adrotate-ads-edit.php:417
+#: dashboard/publisher/adrotate-ads-edit.php:397
+#: dashboard/publisher/adrotate-ads-edit.php:418
 #: dashboard/publisher/adrotate-ads-report.php:81
 #: dashboard/publisher/adrotate-fullreport.php:80
 #: dashboard/publisher/adrotate-groups-report.php:87
@@ -855,8 +895,8 @@ msgstr "Октомври"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:92
 #: dashboard/advertiser/adrotate-report.php:126
-#: dashboard/publisher/adrotate-ads-edit.php:397
-#: dashboard/publisher/adrotate-ads-edit.php:418
+#: dashboard/publisher/adrotate-ads-edit.php:398
+#: dashboard/publisher/adrotate-ads-edit.php:419
 #: dashboard/publisher/adrotate-ads-report.php:82
 #: dashboard/publisher/adrotate-fullreport.php:81
 #: dashboard/publisher/adrotate-groups-report.php:88
@@ -868,8 +908,8 @@ msgstr "Ноември"
 #: adrotate-statistics.php:226
 #: dashboard/advertiser/adrotate-main-summary.php:93
 #: dashboard/advertiser/adrotate-report.php:127
-#: dashboard/publisher/adrotate-ads-edit.php:398
-#: dashboard/publisher/adrotate-ads-edit.php:419
+#: dashboard/publisher/adrotate-ads-edit.php:399
+#: dashboard/publisher/adrotate-ads-edit.php:420
 #: dashboard/publisher/adrotate-ads-report.php:83
 #: dashboard/publisher/adrotate-fullreport.php:82
 #: dashboard/publisher/adrotate-groups-report.php:89
@@ -942,108 +982,108 @@ msgstr "Попълнете ID-то на типа, който искате да �
 msgid "Site ID:"
 msgstr "ID на сайта:"
 
-#: adrotate.php:154
+#: adrotate.php:142
 msgid "General Info"
 msgstr "Обща информация"
 
-#: adrotate.php:156
+#: adrotate.php:143
 msgid "Manage Ads"
 msgstr "Управление на реклами"
 
-#: adrotate.php:159 adrotate.php:203
+#: adrotate.php:144 adrotate.php:185
 #: dashboard/publisher/adrotate-groups-main.php:12
 msgid "Manage Groups"
 msgstr "Управление на групи"
 
-#: adrotate.php:161 adrotate.php:204
-#: dashboard/publisher/adrotate-ads-edit.php:457
+#: adrotate.php:145 adrotate.php:186
+#: dashboard/publisher/adrotate-ads-edit.php:458
 #: dashboard/publisher/adrotate-schedules-main.php:12
 msgid "Manage Schedules"
 msgstr "Управление на графици"
 
-#: adrotate.php:162
+#: adrotate.php:146
 msgid "Manage Media"
 msgstr "Управление на Медия"
 
-#: adrotate.php:164
+#: adrotate.php:148
 #, fuzzy
 msgid "Moderate"
-msgstr "Модериране на Реклами"
+msgstr "Модериране"
 
-#: adrotate.php:164 adrotate.php:206
+#: adrotate.php:148 adrotate.php:188
 msgid "Moderate Adverts"
 msgstr "Модериране на Реклами"
 
-#: adrotate.php:168 adrotate.php:884
+#: adrotate.php:150
 msgid "Settings"
 msgstr "Настройки"
 
-#: adrotate.php:171 adrotate.php:172 adrotate.php:725
+#: adrotate.php:153 adrotate.php:154 adrotate.php:707
 #: dashboard/advertiser/adrotate-front-end.php:40
 #: dashboard/publisher/adrotate-moderation-queue.php:39
 #: dashboard/publisher/adrotate-moderation-rejected.php:39
 msgid "Advertiser"
 msgstr "Рекламодател"
 
-#: adrotate.php:200
+#: adrotate.php:182
 msgid "AdRotate"
 msgstr "AdRotate"
 
-#: adrotate.php:201
+#: adrotate.php:183
 msgid "Add new Advert"
 msgstr "Добавяне на реклама"
 
-#: adrotate.php:202
+#: adrotate.php:184
 msgid "Manage Adverts"
 msgstr "Управление на реклами"
 
-#: adrotate.php:208 adrotate.php:365
+#: adrotate.php:190 adrotate.php:347
 #: dashboard/publisher/adrotate-fullreport.php:13
 msgid "Full Report"
 msgstr "Пълен доклад"
 
-#: adrotate.php:220
+#: adrotate.php:202
 msgid "License"
 msgstr "Лиценз"
 
-#: adrotate.php:251
+#: adrotate.php:233
 msgid "AdRotate Info"
 msgstr "AdRotate Info"
 
-#: adrotate.php:294
+#: adrotate.php:276
 msgid "Ad Management"
 msgstr "Управление на реклами"
 
-#: adrotate.php:362 adrotate.php:452 adrotate.php:522 adrotate.php:731
+#: adrotate.php:344 adrotate.php:434 adrotate.php:504 adrotate.php:713
 msgid "Manage"
 msgstr "Управление"
 
-#: adrotate.php:363 adrotate.php:453 adrotate.php:523 adrotate.php:733
+#: adrotate.php:345 adrotate.php:435 adrotate.php:505 adrotate.php:715
 msgid "Add New"
 msgstr "Добавяне"
 
-#: adrotate.php:364
+#: adrotate.php:346
 msgid "Import"
 msgstr "Импортиране"
 
-#: adrotate.php:445
+#: adrotate.php:427
 msgid "Group Management"
 msgstr "Управление на групи"
 
-#: adrotate.php:455 dashboard/publisher/adrotate-ads-main.php:93
+#: adrotate.php:437 dashboard/publisher/adrotate-ads-main.php:93
 #: dashboard/publisher/adrotate-groups-main.php:71
 msgid "Report"
 msgstr "Доклад"
 
-#: adrotate.php:513
+#: adrotate.php:495
 msgid "Schedule Management"
 msgstr "Управление на график"
 
-#: adrotate.php:577
+#: adrotate.php:559
 msgid "Media Management"
 msgstr "Управление на Медия"
 
-#: adrotate.php:581
+#: adrotate.php:563
 msgid ""
 "Upload images to the AdRotate Pro banners folder from here. This is "
 "especially useful if you use responsive adverts with multiple images."
@@ -1051,45 +1091,29 @@ msgstr ""
 "Качете картинки в папката за банери на AdRotate Pro от тук. Това е особено "
 "полезно, ако използвате responsive реклами с няколко картинки."
 
-#: adrotate.php:617
+#: adrotate.php:599
 msgid "Moderation queue"
 msgstr "Опашка за одобрение"
 
-#: adrotate.php:812 dashboard/advertiser/adrotate-edit.php:296
+#: adrotate.php:794 dashboard/advertiser/adrotate-edit.php:296
 #: dashboard/advertiser/adrotate-front-end.php:122
 #: dashboard/advertiser/adrotate-report.php:153
 msgid "Notice"
 msgstr "Забележка"
 
-#: adrotate.php:817 dashboard/advertiser/adrotate-front-end.php:127
+#: adrotate.php:799 dashboard/advertiser/adrotate-front-end.php:127
 msgid "No ads for user."
 msgstr "Този потребител няма реклами."
 
-#: adrotate.php:871
-msgid "AdRotate Server"
-msgstr "AdRotate Сървър"
-
-#: adrotate.php:879
-msgid ""
-"AdRotate server is currently in development and these menus are not "
-"functional yet."
-msgstr ""
-"AdRotate Server все още се разработва и тези менюта не функционират в "
-"момента."
-
 #: adrotate.php:883
-msgid "Overview"
-msgstr "Преглед"
-
-#: adrotate.php:997
 msgid "AdRotate Settings"
 msgstr "AdRotate Настройки"
 
-#: adrotate.php:1007
+#: adrotate.php:893
 msgid "AdRotate License"
 msgstr "AdRotate Лиценз"
 
-#: adrotate.php:1008 adrotate.php:1619
+#: adrotate.php:894 adrotate.php:1535
 msgid ""
 "Activate your AdRotate License here to receive automated updates and enable "
 "support via the fast and personal ticket system."
@@ -1098,36 +1122,37 @@ msgstr ""
 "обновления и да активирате бърза, индивидуална помощ чрез ticket системата "
 "за поддръжка."
 
-#: adrotate.php:1011 adrotate.php:1623
+#: adrotate.php:897 adrotate.php:1539
 msgid "License Type"
 msgstr "Вид на лиценза"
 
-#: adrotate.php:1013 adrotate.php:1625
+#: adrotate.php:899 adrotate.php:1541
 msgid "Not activated - Not eligible for support and updates."
 msgstr "Не е активиран - няма да получавате обновления и поддръжка."
 
-#: adrotate.php:1018 adrotate.php:1629
+#: adrotate.php:904 adrotate.php:1545
 msgid "License Key"
 msgstr "Лицензионен ключ"
 
-#: adrotate.php:1020 adrotate.php:1631
+#: adrotate.php:906 adrotate.php:1547
 msgid "You can find the license key in your order email."
 msgstr ""
 "Можете да намерите регистрационния ключ в email съобщението с поръчката ви."
 
-#: adrotate.php:1024 adrotate.php:1635
+#: adrotate.php:910 adrotate.php:1551
 msgid "License Email"
 msgstr "Лицензионен Email"
 
-#: adrotate.php:1026 adrotate.php:1637
-msgid "The email address you used on adrotateplugin.com."
+#: adrotate.php:912 adrotate.php:1553
+#, fuzzy
+msgid "The email address you used in your purchase of AdRotate Pro."
 msgstr "Email адреса, който използвате на adrotateplugin.com."
 
-#: adrotate.php:1030
+#: adrotate.php:916
 msgid "Hide License Details"
 msgstr "Скриване на детайли за лиценза"
 
-#: adrotate.php:1032
+#: adrotate.php:918
 msgid ""
 "If you have installed AdRotate Pro for a client or in a multisite setup and "
 "want to hide the License Key, Email and Mass-deactivation button (Duo, Multi "
@@ -1137,20 +1162,20 @@ msgstr ""
 "скриете лицензионните детайли - ключ, Email, както и Бутона за масова "
 "дективация (валидно за те за Duo, Multi и Developer лицензи) от тях."
 
-#: adrotate.php:1041 adrotate.php:1645
+#: adrotate.php:927 adrotate.php:1561
 #: dashboard/publisher/adrotate-ads-main-disabled.php:21
 msgid "Activate"
 msgstr "Активиране"
 
-#: adrotate.php:1043 adrotate.php:1647
+#: adrotate.php:929 adrotate.php:1563
 msgid "De-activate"
 msgstr "Деактивиране"
 
-#: adrotate.php:1045
+#: adrotate.php:931
 msgid "De-activate all active keys on all sites"
 msgstr "Деактивиране на всички регистрационни ключове, на всички сайтове."
 
-#: adrotate.php:1045
+#: adrotate.php:931
 msgid ""
 "You are about to de-activate your license on ALL sites currently using your "
 "AdRotate License. This can not be reversed!"
@@ -1158,17 +1183,17 @@ msgstr ""
 "На път сте да деактивирате лицензите на ВСИЧКИ сайтове, които в момента "
 "използват вашия AdRotate лиценз. Това не може да бъде отменено!"
 
-#: adrotate.php:1045 adrotate.php:1178 adrotate.php:1516 adrotate.php:1524
-#: adrotate.php:1533 dashboard/publisher/adrotate-groups-main.php:24
+#: adrotate.php:931 adrotate.php:1145 adrotate.php:1428 adrotate.php:1436
+#: adrotate.php:1445 dashboard/publisher/adrotate-groups-main.php:24
 #: dashboard/publisher/adrotate-media-main.php:67
 msgid "OK to continue, CANCEL to stop."
 msgstr "ОК, за да продължите, ОТКАЗ за стоп."
 
-#: adrotate.php:1053
+#: adrotate.php:939
 msgid "Access Rights"
 msgstr "Права на достъп"
 
-#: adrotate.php:1054
+#: adrotate.php:940
 msgid ""
 "Who has access to what? All but the \"advertiser page\" are usually for "
 "admins and moderators."
@@ -1176,143 +1201,238 @@ msgstr ""
 "Кой до какво има достъп? Попринцип всичко без  \"страницата за рекламодатели"
 "\" е достъпно единствено за администратори и модератори."
 
-#: adrotate.php:1057
+#: adrotate.php:943
 msgid "Advertiser page"
 msgstr "Страница на Рекламодателя"
 
-#: adrotate.php:1061
+#: adrotate.php:947
 msgid "Role to allow users/advertisers to see their advertisement page."
 msgstr ""
 "Роля, позволяваща на потребителите/рекламодателите да виждат тяхната "
 "страница за реклама."
 
-#: adrotate.php:1065
+#: adrotate.php:951
 msgid "Full report page"
 msgstr "Страница с пълен доклад"
 
-#: adrotate.php:1069
+#: adrotate.php:955
 msgid "Role to review the full report."
 msgstr "Роля, позволяваща преглед на пълния доклад."
 
-#: adrotate.php:1073
+#: adrotate.php:959
 msgid "Manage/Add/Edit adverts"
 msgstr "Управление/Добавяне/Редакция на обяви"
 
-#: adrotate.php:1077
+#: adrotate.php:963
 msgid "Role to see and add/edit ads."
 msgstr "Роля, позволяваща преглед, добавяне и редакция на реклами."
 
-#: adrotate.php:1081
+#: adrotate.php:967
 msgid "Delete/Reset adverts"
 msgstr "Изтриване/Нулиране на реклами"
 
-#: adrotate.php:1085
+#: adrotate.php:971
 msgid "Role to delete ads and reset stats."
 msgstr "Роля, позволяваща изтриване на реклами и нулиране на статистика."
 
-#: adrotate.php:1089
+#: adrotate.php:975
 msgid "Manage/Add/Edit groups"
 msgstr "Управление/Добавяне/Редакция на групи"
 
-#: adrotate.php:1093
+#: adrotate.php:979
 msgid "Role to see and add/edit groups."
 msgstr "Роля, позволяваща преглед, добавяне и редакция на групи."
 
-#: adrotate.php:1097
+#: adrotate.php:983
 msgid "Delete groups"
 msgstr "Изтриване на групи"
 
-#: adrotate.php:1101
+#: adrotate.php:987
 msgid "Role to delete groups."
 msgstr "Роля за изтриване на групи."
 
-#: adrotate.php:1105
+#: adrotate.php:991
 msgid "Manage/Add/Edit schedules"
 msgstr "Управление/Добавяне/Редакция на графици"
 
-#: adrotate.php:1109
+#: adrotate.php:995
 msgid "Role to see and add/edit schedules."
 msgstr "Роля, позволяваща преглед, добавяне и редакция на графици."
 
-#: adrotate.php:1113
+#: adrotate.php:999
 msgid "Delete schedules"
 msgstr "Изтриване на графици"
 
-#: adrotate.php:1117
+#: adrotate.php:1003
 msgid "Role to delete schedules."
 msgstr "Роля за изтриване на графици."
 
-#: adrotate.php:1121
+#: adrotate.php:1007
 msgid "Moderate new adverts"
 msgstr "Одобряване на нови реклами"
 
-#: adrotate.php:1125
+#: adrotate.php:1011
 msgid "Role to approve ads submitted by advertisers."
 msgstr "Роля да одобрява реклами, изпратени от рекламодатели."
 
-#: adrotate.php:1129
+#: adrotate.php:1015
 msgid "Approve/Reject adverts in Moderation Queue"
 msgstr "Одобряване/Отхвърляне на реклами от опашката за одобрение"
 
-#: adrotate.php:1133
+#: adrotate.php:1019
 msgid "Role to approve or reject ads submitted by advertisers."
 msgstr "Роля да одобрява или отхвърля реклами, изпратени от рекламодатели."
 
-#: adrotate.php:1154 adrotate.php:1208 adrotate.php:1288 adrotate.php:1342
-#: adrotate.php:1398 adrotate.php:1436 adrotate.php:1507 adrotate.php:1543
-#: adrotate.php:1587
+#: adrotate.php:1040 adrotate.php:1115 adrotate.php:1175 adrotate.php:1256
+#: adrotate.php:1310 adrotate.php:1348 adrotate.php:1419 adrotate.php:1455
+#: adrotate.php:1503
 msgid "Update Options"
 msgstr "Опции за обновяване"
 
-#: adrotate.php:1157 adrotate.php:1258 adrotate.php:1279 adrotate.php:1379
+#: adrotate.php:1043 adrotate.php:1134
+#: dashboard/advertiser/adrotate-edit.php:182
+#: dashboard/publisher/adrotate-ads-edit.php:289
+#: dashboard/publisher/adrotate-groups-edit.php:213
+msgid "Geo Targeting"
+msgstr "Таргетиране спрямо местоположението"
+
+#: adrotate.php:1046
+msgid "Which Geo Service"
+msgstr ""
+
+#: adrotate.php:1049 dashboard/publisher/adrotate-groups-edit.php:249
+#: dashboard/publisher/adrotate-groups-edit.php:290
+msgid "Disabled"
+msgstr "Изключено"
+
+#: adrotate.php:1057
+msgid ""
+"The most complete and accurate geo targeting you can get for only $20 USD "
+"per 50000 lookups."
+msgstr ""
+
+#: adrotate.php:1057 adrotate.php:1060
+msgid "Buy now"
+msgstr "Купи сега"
+
+#: adrotate.php:1060
+msgid "Highly accurate geo targeting for $1 USD per 1000 lookups."
+msgstr ""
+
+#: adrotate.php:1063
+msgid "14400 free lookups every day, uses GeoLite2 databases from MaxMind!"
+msgstr ""
+
+#: adrotate.php:1063
+msgid "Need more?"
+msgstr ""
+
+#: adrotate.php:1063
+msgid "Buy more lookups"
+msgstr ""
+
+#: adrotate.php:1066
+msgid "Free service, uses GeoLite2 databases from MaxMind!"
+msgstr ""
+
+#: adrotate.php:1073
+msgid "Remaining Requests"
+msgstr "Оставащи заявки"
+
+#: adrotate.php:1074
+msgid ""
+"This number is provided by the geo service and not checked for accuracy."
+msgstr ""
+"Този номер е предоставен от услугата за местоположение и не е проверен за "
+"точност."
+
+#: adrotate.php:1078
+msgid "Username/Email"
+msgstr "Потребителско име/Email"
+
+#: adrotate.php:1079 adrotate.php:1083
+msgid "Only for premium/paid geo services."
+msgstr "Само за премиум/платени гео услуги."
+
+#: adrotate.php:1082
+msgid "Password/License Key"
+msgstr "Парола/Регистрационен ключ"
+
+#: adrotate.php:1086
+msgid "Geo Cookie Lifespan"
+msgstr ""
+
+#: adrotate.php:1089 dashboard/publisher/adrotate-ads-edit.php:525
+#: dashboard/publisher/adrotate-groups-main.php:58
+msgid "Default"
+msgstr "По подразбиране"
+
+#: adrotate.php:1095
+msgid "Hours."
+msgstr ""
+
+#: adrotate.php:1096
+msgid ""
+"Geo Data is stored in a cookie to reduce lookups. How long should this "
+"cookie last? A longer period is less accurate for mobile users but may "
+"reduce the usage of your lookups drastically."
+msgstr ""
+
+#: adrotate.php:1118 adrotate.php:1226 adrotate.php:1247
 msgid "Advertisers"
 msgstr "Рекламодатели"
 
-#: adrotate.php:1158
+#: adrotate.php:1119
 msgid "Enable advertisers so they can review and manage their own ads."
 msgstr ""
 "Активирайте страницата за рекламодатели, за да могат сами да следят и "
 "управляват рекламите си."
 
-#: adrotate.php:1161
+#: adrotate.php:1122
 msgid "Enable Advertisers"
 msgstr "Активиране на страницата за рекламодатели"
 
-#: adrotate.php:1163
+#: adrotate.php:1124
 msgid "Allow adverts to be coupled to users (Advertisers)."
 msgstr "Позволи рекламите да бъдат свързвани с потребители (Рекламодатели)."
 
-#: adrotate.php:1167
+#: adrotate.php:1128
 msgid "Edit/update adverts"
 msgstr "Редакция/Обновяване на реклами"
 
-#: adrotate.php:1169
+#: adrotate.php:1130
 msgid "Allow advertisers to add new or edit their adverts."
 msgstr "Позволяване на рекламодателите да редактират или добавят реклами."
 
-#: adrotate.php:1173
+#: adrotate.php:1136
+msgid ""
+"Allow advertisers to specify where their ads will show. Geo Targeting has to "
+"be enabled, too."
+msgstr ""
+
+#: adrotate.php:1140
 msgid "Advertiser role"
 msgstr "Роля на рекламодатели"
 
-#: adrotate.php:1176
+#: adrotate.php:1143
 msgid "Create Role"
 msgstr "Създаване на роля"
 
-#: adrotate.php:1178
+#: adrotate.php:1145
 msgid "Remove Role"
 msgstr "Премахване на роля"
 
-#: adrotate.php:1178
+#: adrotate.php:1145
 msgid "You are about to remove the AdRotate Clients role."
 msgstr "На път сте да премахнете клиентската роля в AdRotate."
 
-#: adrotate.php:1178
+#: adrotate.php:1145
 msgid "This may lead to users not being able to access their ads statistics!"
 msgstr ""
 "Това може да доведе до невъзможност за потребителите да преглеждат "
 "статистиките!"
 
-#: adrotate.php:1180
+#: adrotate.php:1147
 msgid ""
 "This role has no capabilities unless you assign them using the above "
 "options. Obviously you should use this with care."
@@ -1320,7 +1440,7 @@ msgstr ""
 "Тази роля няма никакви правомощия, освен ако Вие не ги зададете чрез опциите "
 "по-горе. Бъдете внимателни при добавянето на правомощия."
 
-#: adrotate.php:1181
+#: adrotate.php:1148
 msgid ""
 "This type of user is NOT required to use AdRotate or any of it's features. "
 "It merely helps you to seperate advertisers from regular subscribers without "
@@ -1330,23 +1450,23 @@ msgstr ""
 "да различавате рекламодателите от обикновените абонати без да им давате "
 "особено голям достъп до таблото за управление."
 
-#: adrotate.php:1194
+#: adrotate.php:1161
 msgid "Banner Folder"
 msgstr "Папка с банери"
 
-#: adrotate.php:1195
+#: adrotate.php:1162
 msgid "Set a location where your banner images will be stored."
 msgstr "Задайте местоположение, където да се записват вашите банери."
 
-#: adrotate.php:1198
+#: adrotate.php:1165
 msgid "Location"
 msgstr "Местоположение"
 
-#: adrotate.php:1200
+#: adrotate.php:1167
 msgid "(Default: wp-content/banners/)."
 msgstr "(По подразбиране: wp-content/banners/)."
 
-#: adrotate.php:1201
+#: adrotate.php:1168
 msgid ""
 "To try and trick ad blockers you could set the folder to something crazy "
 "like:"
@@ -1354,7 +1474,7 @@ msgstr ""
 "Опитайте да заблудите AdBlocker-ите, като използвате шантаво име за папката, "
 "като например:"
 
-#: adrotate.php:1202
+#: adrotate.php:1169
 msgid ""
 "This folder will not be automatically created if it doesn't exist. AdRotate "
 "will show errors when the folder is missing."
@@ -1362,27 +1482,27 @@ msgstr ""
 "Папката няма да бъде създадена автоматично, ако не съществува. AdRotate ще "
 "показва грешки, ако папката не съществува."
 
-#: adrotate.php:1211
+#: adrotate.php:1178
 msgid "Notifications"
 msgstr "Известия"
 
-#: adrotate.php:1212
+#: adrotate.php:1179
 msgid "Set up who gets notifications if ads need your attention."
 msgstr "Изберете кой да получава известие, ако реклама се нуждае от внимание."
 
-#: adrotate.php:1215
+#: adrotate.php:1182
 msgid "Delivery method"
 msgstr "Метод на доставка"
 
-#: adrotate.php:1217
+#: adrotate.php:1184
 msgid "Push notifications to your smartphone."
 msgstr "Push известия към вашия смартфон."
 
-#: adrotate.php:1218
+#: adrotate.php:1185
 msgid "Email message."
 msgstr "Email съобщение."
 
-#: adrotate.php:1219
+#: adrotate.php:1186
 msgid ""
 "Push notifications are delivered through Pushover, a notification service "
 "for Android and iOS"
@@ -1390,7 +1510,7 @@ msgstr ""
 "Push известията се доставят чрез Pushover, услуга за известия за Android и "
 "iOS"
 
-#: adrotate.php:1219
+#: adrotate.php:1186
 msgid ""
 "The Pushover App is a one time purchase for either Android and/or iOS. More "
 "information can be found on the pushover website;"
@@ -1398,21 +1518,21 @@ msgstr ""
 "Приложението Pushover изисква еднократна поръчка за Android и/или iOS. "
 "Повече информация можете да намерите на сайта на разработчика;"
 
-#: adrotate.php:1223 adrotate.php:1225
+#: adrotate.php:1190 adrotate.php:1192
 msgid "Test"
 msgstr "Тест"
 
-#: adrotate.php:1226
+#: adrotate.php:1193
 msgid ""
 "This sends a test notification. Before you test, save the options first!"
 msgstr ""
 "Изпращане на тестово известие. Преди да кликнете тест, запазете настройките!"
 
-#: adrotate.php:1231
+#: adrotate.php:1198
 msgid "Push Notifications"
 msgstr "Push известия"
 
-#: adrotate.php:1232
+#: adrotate.php:1199
 msgid ""
 "Receive information about what is happening with your AdRotate setup on your "
 "smartphone via Pushover."
@@ -1420,28 +1540,32 @@ msgstr ""
 "Получавайте информация относно случващото се с вашата AdRotate инсталация "
 "директно на смартфона си чрез Pushover."
 
-#: adrotate.php:1235 adrotate.php:1271
+#: adrotate.php:1202 adrotate.php:1239
 msgid "Publishers"
 msgstr "Издатели"
 
-#: adrotate.php:1237
+#: adrotate.php:1204
+msgid "When you are running out of Geo Targeting Lookups."
+msgstr ""
+
+#: adrotate.php:1205
 msgid "Daily digest of any advert status other than normal."
 msgstr ""
 "Изпращане на дневен отчет с обявите, чийто статус е различен от нормален."
 
-#: adrotate.php:1238
+#: adrotate.php:1206
 msgid "Any advertiser saving an advert in your moderation queue."
 msgstr "Всеки рекламодател, записващ реклама в опашката за одобрение."
 
-#: adrotate.php:1239
+#: adrotate.php:1207
 msgid "A moderator approved an advert from the moderation queue."
 msgstr "Модератора е одобрил реклама от опашката за одобрение."
 
-#: adrotate.php:1240
+#: adrotate.php:1208
 msgid "A moderator rejected an advert from the moderation queue."
 msgstr "Модератора е отхвърлил реклама от опашката за одобрение."
 
-#: adrotate.php:1240
+#: adrotate.php:1208
 msgid ""
 "If you have a lot of activity with many advertisers adding/changing adverts "
 "you may get a lot of messages!"
@@ -1449,41 +1573,35 @@ msgstr ""
 "Ако имате множество дейности с много рекламодатели, които добавят/променят "
 "реклами, то ще получавате много съобщения!"
 
-#: adrotate.php:1245
+#: adrotate.php:1213
 msgid "User Key"
 msgstr "Потребителски ключ"
 
-#: adrotate.php:1247
+#: adrotate.php:1215
 msgid "Get your user token"
-msgstr ""
+msgstr "Вземете вашият потребителски token"
 
-#: adrotate.php:1247 adrotate.php:1253
-#, fuzzy
+#: adrotate.php:1215 adrotate.php:1221
 msgid "here"
-msgstr "Влезте в таблото си от тук:"
+msgstr "тук"
 
-#: adrotate.php:1251
+#: adrotate.php:1219
 msgid "Api Token"
 msgstr "Api Token"
 
-#: adrotate.php:1253
-#, fuzzy
+#: adrotate.php:1221
 msgid "Create your"
-msgstr "Създаване на роля"
+msgstr "Създайте свой"
 
-#: adrotate.php:1253
-#, fuzzy
+#: adrotate.php:1221
 msgid "App"
-msgstr ""
-"Приложението Pushover изисква еднократна поръчка за Android и/или iOS. "
-"Повече информация можете да намерите на сайта на разработчика;"
+msgstr "App"
 
-#: adrotate.php:1253
-#, fuzzy
+#: adrotate.php:1221
 msgid "and get your API token"
-msgstr "Api Token"
+msgstr "и вземете своя Api Token"
 
-#: adrotate.php:1261
+#: adrotate.php:1229
 msgid ""
 "Advertisers need their own account at Pushover and need to buy their own "
 "copy of the Pushover app for their smartphone. Your token is not shared with "
@@ -1493,15 +1611,15 @@ msgstr ""
 "собствено копие на Pushover приложението за техните смартфони. Вашият ключ "
 "няма да бъде споделян с тях."
 
-#: adrotate.php:1267
+#: adrotate.php:1235
 msgid "Email Notifications"
 msgstr "Email Известия"
 
-#: adrotate.php:1268
+#: adrotate.php:1236
 msgid "Set up who gets notification emails."
 msgstr "Задайте кой да получава известия по email."
 
-#: adrotate.php:1274
+#: adrotate.php:1242
 msgid ""
 "A comma separated list of email addresses. Maximum of 5 addresses. Keep this "
 "list to a minimum!"
@@ -1509,7 +1627,7 @@ msgstr ""
 "За разделител използвайте запетая. Максимум 5 адреса. Използвайте възможно "
 "най-малко адреси в този списък!"
 
-#: adrotate.php:1275
+#: adrotate.php:1243
 msgid ""
 "Messages are sent once every 24 hours when needed. If this field is empty no "
 "email notifications will be send."
@@ -1517,7 +1635,7 @@ msgstr ""
 "Съобщенията се изпращат когато е необходимо, но не по-често от веднъж на 24 "
 "часа. Ако полето е празно няма да се изпращат известия по email."
 
-#: adrotate.php:1282
+#: adrotate.php:1250
 msgid ""
 "Who gets email from advertisers. Maximum of 2 addresses. Comma seperated. "
 "This field may not be empty!"
@@ -1525,19 +1643,19 @@ msgstr ""
 "Кой да получава email съобщения от рекламодатели. Максимум 2 адреса, "
 "разделени със запетая. Полето не може да бъде празно!"
 
-#: adrotate.php:1291
+#: adrotate.php:1259
 msgid "Statistics"
 msgstr "Статистики"
 
-#: adrotate.php:1294
+#: adrotate.php:1262
 msgid "Enable stats"
 msgstr "Включване на статистиката"
 
-#: adrotate.php:1296
+#: adrotate.php:1264
 msgid "Track clicks and impressions."
 msgstr "Проследяване на кликове и импресии."
 
-#: adrotate.php:1296
+#: adrotate.php:1264
 msgid ""
 "Disabling this also disables click and impression limits on schedules and "
 "disables timeframes."
@@ -1545,72 +1663,69 @@ msgstr ""
 "Ако деактивирате тази опция, ще бъдат деактивирани и лимитите за кликове и "
 "импресии, както и сроковете за показване на рекламите."
 
-#: adrotate.php:1300
+#: adrotate.php:1268
 msgid "Logged in impressions"
 msgstr "Импресии от вписани потребители"
 
-#: adrotate.php:1302
+#: adrotate.php:1270
 msgid "Track impressions from logged in users (Recommended)."
 msgstr "Проследяване на импресии от вписани потребители (препоръчително)."
 
-#: adrotate.php:1302 adrotate.php:1308
+#: adrotate.php:1270 adrotate.php:1276
 msgid "Has no effect when click and impression tracking is disabled."
 msgstr "Няма ефект, ако проследяването на кликове и импресии е изключено."
 
-#: adrotate.php:1306
+#: adrotate.php:1274
 msgid "Logged in clicks"
 msgstr "Кликове от вписани потребители"
 
-#: adrotate.php:1308
+#: adrotate.php:1276
 msgid "Track clicks from logged in users."
 msgstr "Проследяване на кликове от вписани потребители."
 
-#: adrotate.php:1312
+#: adrotate.php:1280
 msgid "Impressions timer"
 msgstr "Таймер за импресии"
 
-#: adrotate.php:1314 adrotate.php:1321 adrotate.php:1419
+#: adrotate.php:1282 adrotate.php:1289 adrotate.php:1331
 msgid "Seconds."
 msgstr "Секудни."
 
-#: adrotate.php:1315
-#, fuzzy
+#: adrotate.php:1283
 msgid "Default: 60."
-msgstr "По подразбиране"
+msgstr "По подразбиране: 60."
 
-#: adrotate.php:1315
+#: adrotate.php:1283
 #, fuzzy
-msgid "This number may not be empty, be lower than 60 or exceed 3600 (1 hour)."
+msgid "This number may not be empty, be lower than 10 or exceed 3600 (1 hour)."
 msgstr ""
-"Полето не може да остава празно, да съдържа отрицателна стойност или "
-"стойността му да надвишава 3600 (1 час)."
+"Полето не може да остава празно, стойността му да бъде под 60 или над 3600 "
+"(1 час)."
 
-#: adrotate.php:1319
+#: adrotate.php:1287
 msgid "Clicks timer"
 msgstr "Таймер за кликове"
 
-#: adrotate.php:1322
-#, fuzzy
+#: adrotate.php:1290
 msgid "Default: 86400."
-msgstr "По подразбиране"
+msgstr "По подразбиране: 86400."
 
-#: adrotate.php:1322
-#, fuzzy
+#: adrotate.php:1290
 msgid ""
 "This number may not be empty, be lower than 60 or exceed 86400 (24 hours)."
 msgstr ""
-"Полето не може да остава празно, да съдържа отрицателна стойност или "
-"стойността му да надвишава 86400 (24 часа)."
+"Полето не може да остава празно, стойността му да бъде под 60 или над 86400 "
+"(24 часа)."
 
-#: adrotate.php:1327
+#: adrotate.php:1295
 msgid "Bot filter"
 msgstr "Филтър на ботове"
 
-#: adrotate.php:1330
+#: adrotate.php:1298
 msgid "User-Agent Filter"
 msgstr "Филтър за агенти"
 
-#: adrotate.php:1333
+#: adrotate.php:1301
 msgid ""
 "A comma separated list of keywords. Filter out bots/crawlers/user-agents. To "
 "prevent impressions and clicks counted on them."
@@ -1618,7 +1733,7 @@ msgstr ""
 "Списък с ключови думи, за разделител използвайте запетая. Филтриране на "
 "импресиите и кликовете от ботове/роботи/агенти."
 
-#: adrotate.php:1334
+#: adrotate.php:1302
 msgid ""
 "Keep in mind that this might give false positives. The word 'google' also "
 "matches 'googlebot', but not vice-versa. So be careful!"
@@ -1626,11 +1741,11 @@ msgstr ""
 "Имайте в предвид, че това може да даде фалшиви резултати. Думата 'google' ще "
 "включи и 'googlebot', но не и обратното. Бъдете внимателни!"
 
-#: adrotate.php:1334
+#: adrotate.php:1302
 msgid "Keep your list up-to-date"
 msgstr "Поддържайте списъка актуален"
 
-#: adrotate.php:1335
+#: adrotate.php:1303
 msgid ""
 "Use only words with alphanumeric characters, [ - _ ] are allowed too. All "
 "other characters are stripped out."
@@ -1638,99 +1753,35 @@ msgstr ""
 "Използвайте само думи с букви и цифри, тире и долно тире. Всички останали "
 "знаци са забранени."
 
-#: adrotate.php:1336
+#: adrotate.php:1304
 msgid ""
 "Additionally to the list specified here, empty User-Agents are blocked as "
 "well."
 msgstr "Освен този списък, празни Агенти също ще бъдат блокирани."
 
-#: adrotate.php:1336
+#: adrotate.php:1304
 msgid "Learn more about"
 msgstr "Научете повече за"
 
-#: adrotate.php:1336
+#: adrotate.php:1304
 msgid "user-agents"
 msgstr "агенти"
 
-#: adrotate.php:1345 dashboard/publisher/adrotate-groups-edit.php:199
-msgid "Geo Targeting"
-msgstr "Таргетиране спрямо местоположението"
-
-#: adrotate.php:1348
-msgid "Geographic Tracking"
-msgstr "Проследяване на местоположението"
-
-#: adrotate.php:1351 dashboard/publisher/adrotate-groups-edit.php:235
-#: dashboard/publisher/adrotate-groups-edit.php:276
-msgid "Disabled"
-msgstr "Изключено"
-
-#: adrotate.php:1358
-msgid ""
-"The most complete and accurate geo targeting you can get for only $20 per "
-"50000 lookups."
-msgstr ""
-
-#: adrotate.php:1358 adrotate.php:1359
-#, fuzzy
-msgid "Buy now"
-msgstr "Купи"
-
-#: adrotate.php:1359
-msgid "Highly accurate geo targeting for $1 per 1000 lookups."
-msgstr ""
-
-#: adrotate.php:1360
-msgid ""
-"The free alternative. Slightly less accurate, using GeoLITE databases from "
-"MaxMind!"
-msgstr ""
-
-#: adrotate.php:1366
-msgid "Remaining Requests"
-msgstr ""
-
-#: adrotate.php:1367
-msgid ""
-"This number is provided by the geo service and not checked for accuracy."
-msgstr ""
-
-#: adrotate.php:1371
-#, fuzzy
-msgid "Username/Email"
-msgstr "Email/Потребителско име"
-
-#: adrotate.php:1372 adrotate.php:1376
-msgid "Only for premium/paid geo services."
-msgstr "Само за премиум/платени гео услуги."
-
-#: adrotate.php:1375
-#, fuzzy
-msgid "Password/License Key"
-msgstr "Парола/API ключ"
-
-#: adrotate.php:1381
-msgid "Allow advertisers to specify where their ads will show."
-msgstr ""
-"Позволете на рекламодателите да определят къде да се показват рекламите им."
-
-#: adrotate.php:1401
+#: adrotate.php:1313
 msgid "Ad Blocker detection"
 msgstr "Детекция на Ad Blocker-и"
 
-#: adrotate.php:1402
+#: adrotate.php:1314
 msgid ""
 "Detect ad blockers and show a message to those users. Make sure jQuery Ad "
-"Blocker Detection is enabled in Javascript Libraries"
+"Blocker Detection is enabled under Javascript"
 msgstr ""
-"Засича ad blocker-и и показва съобщение на потребителите. Уверете се, че  "
-"jQuery Ad Blocker детекцията е включена, в раздел Javascript библиотеки"
 
-#: adrotate.php:1405
+#: adrotate.php:1317
 msgid "Show nag for"
 msgstr "Показвай досадно съобщение за"
 
-#: adrotate.php:1419
+#: adrotate.php:1331
 msgid ""
 "More seconds means you hinder your visitors more, which may drive them away. "
 "Use with caution!"
@@ -1738,11 +1789,11 @@ msgstr ""
 "Повече секунди, означават по-дълго показване на съобщението, което може да "
 "отблъсне посетителите. Използвайте с повишено внимание!"
 
-#: adrotate.php:1423
+#: adrotate.php:1335
 msgid "Message to show"
 msgstr "Текст на съобщението"
 
-#: adrotate.php:1425
+#: adrotate.php:1337
 msgid ""
 "Default: \"Ad blocker detected! Please wait %time% seconds or disable your "
 "ad blocker!\""
@@ -1750,7 +1801,7 @@ msgstr ""
 "По подразбиране: \"Намерен е Ad blocker! Моля, изчакайте %time% секунди или "
 "изключете разширението!\""
 
-#: adrotate.php:1426
+#: adrotate.php:1338
 msgid ""
 "No HTML/Javascript allowed. %time% will be replaced with a countdown in "
 "seconds."
@@ -1758,23 +1809,23 @@ msgstr ""
 "Не се позволява HTML/Javascript. %time% ще бъде заменено с обратен брояч в "
 "секунди."
 
-#: adrotate.php:1430
+#: adrotate.php:1342
 msgid "Logged in users"
 msgstr "Вписани потребители"
 
-#: adrotate.php:1431
+#: adrotate.php:1343
 msgid "Show the message to logged in users?"
 msgstr "Показване на съобщението на вписани в сайта потребители?"
 
-#: adrotate.php:1439
+#: adrotate.php:1351
 msgid "Miscellaneous"
 msgstr "Разни"
 
-#: adrotate.php:1442
+#: adrotate.php:1354
 msgid "Widget alignment"
 msgstr "Подравняване на джаджата"
 
-#: adrotate.php:1443
+#: adrotate.php:1355
 msgid ""
 "Check this box if your widgets do not align in your themes sidebar. (Does "
 "not always help!)"
@@ -1782,11 +1833,11 @@ msgstr ""
 "Сложете отметка, ако джаджите не са добре подравнени в страничната лента на "
 "темата Ви. (Не винаги помага)"
 
-#: adrotate.php:1446
+#: adrotate.php:1358
 msgid "Widget padding"
 msgstr "Padding за джаджата"
 
-#: adrotate.php:1447
+#: adrotate.php:1359
 msgid ""
 "Enable this to remove the padding (blank space) around ads in widgets. (Does "
 "not always work!)"
@@ -1794,41 +1845,39 @@ msgstr ""
 "Сложете отметка, за да премахнете празното пространство около рекламите в "
 "джаджата. (Не винаги работи!)"
 
-#: adrotate.php:1450
+#: adrotate.php:1362
 msgid "Admin Bar"
 msgstr "Администраторска лента"
 
-#: adrotate.php:1451
+#: adrotate.php:1363
 msgid "Enable the AdRotate Quickmenu in the Admin Bar"
 msgstr "Активиране на бързо меню AdRotate в Администраторската лента"
 
-#: adrotate.php:1454
+#: adrotate.php:1366
 msgid "Dashboard Notifications"
 msgstr "Известия на таблото"
 
-#: adrotate.php:1455
-msgid "Disable Dashboard Notifications about advert statuses."
-msgstr ""
-"Изключване на известията за статусите на рекламите върху Таблото на "
-"WordPress."
+#: adrotate.php:1367
+#, fuzzy
+msgid "Disable Dashboard Notifications."
+msgstr "Известия на таблото"
 
-#: adrotate.php:1458
+#: adrotate.php:1370
 msgid "Hide Schedules"
 msgstr "Скриване на графиците"
 
-#: adrotate.php:1459
+#: adrotate.php:1371
 msgid ""
 "When editing adverts; Hide schedules that are not in use by that advert."
 msgstr ""
 "При редакция на реклами; Скрий графиците, които не се използват от тази "
 "реклама."
 
-#: adrotate.php:1463 adrotate.php:1474
-#, fuzzy
+#: adrotate.php:1375 adrotate.php:1386
 msgid "NOTICE:"
-msgstr "Забележка"
+msgstr "ЗАБЕЛЕЖКА:"
 
-#: adrotate.php:1464
+#: adrotate.php:1376
 msgid ""
 "You have enabled W3 Total Caching support but not defined the security hash. "
 "You need to add the following line to your wp-config.php near the bottom or "
@@ -1840,15 +1889,15 @@ msgstr ""
 "до края или под ред 52. Също така функцията \"late init\" трябва да бъде "
 "включена в W3 Total Cache."
 
-#: adrotate.php:1468
+#: adrotate.php:1380
 msgid "W3 Total Caching"
 msgstr "W3 Total Caching"
 
-#: adrotate.php:1469
+#: adrotate.php:1381
 msgid "Check this box if you use W3 Total Caching on your site."
 msgstr "Сложете отметка ако използвате W3 Total Caching на сайта си."
 
-#: adrotate.php:1475
+#: adrotate.php:1387
 msgid ""
 "You have enabled WP Super Cache support. If you have version 1.4 or newer, "
 "this function will not work. WP Super Cache has discontinued support for "
@@ -1858,15 +1907,15 @@ msgstr ""
 "нова, тази функция няма да работи. WP Super Cache прекрати поддръжката за "
 "динамично съдържание."
 
-#: adrotate.php:1479
+#: adrotate.php:1391
 msgid "WP Super Cache"
 msgstr "WP Super Cache"
 
-#: adrotate.php:1480
+#: adrotate.php:1392
 msgid "Check this box if you use WP Super Cache on your site."
 msgstr "Сложете отметка ако използвате W3 Total Caching на сайта си."
 
-#: adrotate.php:1485
+#: adrotate.php:1397
 msgid ""
 "It may take a while for the ad to start rotating. The caching plugin needs "
 "to refresh the cache. This can take up to a week if not done manually."
@@ -1875,7 +1924,7 @@ msgstr ""
 "Кеширащото разширение трябва да обнови данните. Това може да отнеме до една "
 "седмица, ако не го направите ръчно."
 
-#: adrotate.php:1485
+#: adrotate.php:1397
 msgid ""
 "Caching support only works for [shortcodes] and the AdRotate Widget. If you "
 "use a PHP Snippet you need to wrap your PHP in the exclusion code yourself."
@@ -1884,15 +1933,15 @@ msgstr ""
 "на AdRotate. Ако използвате PHP кода, трябва да го поставите в изключващ код "
 "сами."
 
-#: adrotate.php:1489
-msgid "Javascript Libraries"
-msgstr "Javascript библиотеки"
+#: adrotate.php:1401
+msgid "Javascript"
+msgstr ""
 
-#: adrotate.php:1492
+#: adrotate.php:1404
 msgid "Load jQuery"
 msgstr "Зареди  jQuery"
 
-#: adrotate.php:1493
+#: adrotate.php:1405
 msgid ""
 "jQuery is required for all Javascript features below. Enable this if your "
 "theme does not load jQuery already."
@@ -1900,21 +1949,21 @@ msgstr ""
 " jQuery е необходим за всички Javascript опции по-долу. Включете го само ако "
 "темата ви вече не го е заредила."
 
-#: adrotate.php:1496
+#: adrotate.php:1408
 msgid "Load Ad Blocker Detection"
 msgstr "Зареждай детекция за Ad Blocker-и"
 
-#: adrotate.php:1497
+#: adrotate.php:1409
 msgid "Try to detect Ad Blockers and show your visitors a nag message."
 msgstr ""
 "Опит за засичане на AdBlocker-и и показване на досадно съобщение на "
 "посетителите."
 
-#: adrotate.php:1501
+#: adrotate.php:1413
 msgid "Load in footer?"
 msgstr "Зареди във футера?"
 
-#: adrotate.php:1502
+#: adrotate.php:1414
 msgid ""
 "Enable if you want to load the above libraries in the footer. Your theme "
 "needs to call wp_footer() for this to work."
@@ -1922,11 +1971,11 @@ msgstr ""
 "Включете, ако искате да заредите изброените по-горе библиотеки във футера. "
 "Необходимо е темата ви да извиква wp_footer(), за да проработи."
 
-#: adrotate.php:1510
+#: adrotate.php:1422
 msgid "Maintenance"
 msgstr "Поддръжка"
 
-#: adrotate.php:1511
+#: adrotate.php:1423
 msgid ""
 "NOTE: The below functions are intented to be used to OPTIMIZE your database. "
 "They only apply to your ads/groups and stats. Not to other settings or other "
@@ -1940,19 +1989,19 @@ msgstr ""
 "функции само когато забележите, че вашата база данни е бавна, мудна или не "
 "отговаря."
 
-#: adrotate.php:1514 adrotate.php:1516
+#: adrotate.php:1426 adrotate.php:1428
 msgid "Optimize Database"
 msgstr "Оптимизиране на базата данни"
 
-#: adrotate.php:1516
+#: adrotate.php:1428
 msgid "You are about to optimize the AdRotate database."
 msgstr "На път сте да оптимизирате базата данни на AdRotate."
 
-#: adrotate.php:1516
+#: adrotate.php:1428
 msgid "Did you make a backup of your database?"
 msgstr "Направихте ли резервно копие на своята база данни?"
 
-#: adrotate.php:1516
+#: adrotate.php:1428
 msgid ""
 "This may take a moment and may cause your website to respond slow "
 "temporarily!"
@@ -1960,11 +2009,11 @@ msgstr ""
 "Това ще отнеме малко време и може да накара сайта Ви да работи по-бавно за "
 "момент!"
 
-#: adrotate.php:1517
+#: adrotate.php:1429
 msgid "Cleans up overhead data in the AdRotate tables."
 msgstr "Почиста overhead данните в таблиците на AdRotate."
 
-#: adrotate.php:1518
+#: adrotate.php:1430
 msgid ""
 "Overhead data is accumulated garbage resulting from many changes you've "
 "made. This can vary from nothing to hundreds of KiB of data."
@@ -1972,11 +2021,11 @@ msgstr ""
 "Overhead данните са боклук, акумулиран в резултат на множеството промени, "
 "които правите. Те могар да варират от 0 до хиляди KB."
 
-#: adrotate.php:1522 adrotate.php:1524
+#: adrotate.php:1434 adrotate.php:1436
 msgid "Clean-up Database"
 msgstr "Почистване на базата данни"
 
-#: adrotate.php:1524
+#: adrotate.php:1436
 msgid ""
 "You are about to clean up your database. This may delete expired schedules "
 "and older statistics."
@@ -1984,25 +2033,25 @@ msgstr ""
 "На път сте да почистите базата с данни. Това може да изтрие истекли графици "
 "и стари статистики."
 
-#: adrotate.php:1524
+#: adrotate.php:1436
 msgid "Are you sure you want to continue?"
 msgstr "Сигурни ли сте, че искате да продължите?"
 
-#: adrotate.php:1524 adrotate.php:1533
+#: adrotate.php:1436 adrotate.php:1445
 msgid "This might take a while and may slow down your site during this action!"
 msgstr ""
 "Това действие ще отнеме време и може да забави сайта ви по време на "
 "изпълнението му!"
 
-#: adrotate.php:1525
+#: adrotate.php:1437
 msgid "Delete old (expired) schedules (Optional)."
 msgstr "Изтриване на стари(изтекли) графици (Не е задължително)."
 
-#: adrotate.php:1526
+#: adrotate.php:1438
 msgid "Delete stats older than 356 days (Optional)."
 msgstr "Изтриване на статистики по-стари от 365 дни (Не е задължително)."
 
-#: adrotate.php:1527
+#: adrotate.php:1439
 msgid ""
 "AdRotate creates empty records when you start making ads, groups or "
 "schedules. In rare occasions these records are faulty."
@@ -2010,7 +2059,7 @@ msgstr ""
 "AdRotate създава празни записи, когато започнете да създавате нова реклама, "
 "график или група. В редки случай тези записи са дефектни."
 
-#: adrotate.php:1527
+#: adrotate.php:1439
 msgid ""
 "If you made an ad, group or schedule that does not save when you make it use "
 "this button to delete those empty records."
@@ -2018,7 +2067,7 @@ msgstr ""
 "Ако създадете реклама, график или група, която не може да се запише, "
 "използвайте този бутон, за да изтриете празните полета."
 
-#: adrotate.php:1527
+#: adrotate.php:1439
 msgid ""
 "Additionally you can clean up old schedules and/or statistics. This will "
 "improve the speed of your site."
@@ -2026,19 +2075,19 @@ msgstr ""
 "Също така можете да изчистите остарелите графици и/или статистики. Това ще "
 "подобри скоростта на сайта Ви."
 
-#: adrotate.php:1531
+#: adrotate.php:1443
 msgid "Re-evaluate Ads"
 msgstr "Преоценка на реклами"
 
-#: adrotate.php:1533
+#: adrotate.php:1445
 msgid "Re-evaluate all ads"
 msgstr "Преоценка на всички реклами"
 
-#: adrotate.php:1533
+#: adrotate.php:1445
 msgid "You are about to check all ads for errors."
 msgstr "На път сте да проверите всички реклами за грешки."
 
-#: adrotate.php:1534
+#: adrotate.php:1446
 msgid ""
 "This will apply all evaluation rules to all ads to see if any error slipped "
 "in. Normally you should not need this feature."
@@ -2046,7 +2095,7 @@ msgstr ""
 "Това ще провери всички реклами за грешки. Попринцип не би трябвало да имате "
 "нужда от тази функция."
 
-#: adrotate.php:1538
+#: adrotate.php:1450
 msgid ""
 "DISCLAIMER: If for any reason your data is lost, damaged or otherwise "
 "becomes unusable in any way or by any means in whichever way I will not take "
@@ -2063,65 +2112,70 @@ msgstr ""
 "Отстояването на тезата, че всичко е работело нормално преди да кликнете на "
 "тези бутони е безсмислено."
 
-#: adrotate.php:1546
+#: adrotate.php:1458
 msgid "Troubleshooting"
 msgstr "Отстраняване на проблеми"
 
-#: adrotate.php:1549
+#: adrotate.php:1461
 msgid "Current version:"
 msgstr "Текуща версия:"
 
-#: adrotate.php:1550
+#: adrotate.php:1462
 msgid "Previous version:"
 msgstr "Предишна версия:"
 
-#: adrotate.php:1553
+#: adrotate.php:1465
 msgid "Current database version:"
 msgstr "Текуща верския на базата данни:"
 
-#: adrotate.php:1554
+#: adrotate.php:1466
 msgid "Previous database version:"
 msgstr "Предишна версия на базата данни:"
 
-#: adrotate.php:1557
+#: adrotate.php:1469
 #, fuzzy
 msgid "Ad evaluation next run:"
-msgstr "Добавяне на срок при следващо стартиране:"
+msgstr "Оценка на рекламата при следващо стартиране:"
 
-#: adrotate.php:1558 adrotate.php:1562
+#: adrotate.php:1470 adrotate.php:1474 adrotate.php:1478
 msgid "Not scheduled!"
 msgstr "Не е планирано!"
 
-#: adrotate.php:1561
+#: adrotate.php:1473
 #, fuzzy
 msgid "Ad Notifications next run:"
-msgstr "Добавяне на Известия за реклама при следващо стартиране:"
+msgstr "Известяване за рекламата при следващо стартиране:"
 
-#: adrotate.php:1565
+#: adrotate.php:1477
+#, fuzzy
+msgid "Clean Trackerdata next run:"
+msgstr "Изчистване на Trackerdata при следващо стартиране:"
+
+#: adrotate.php:1481
 msgid "Current status of adverts"
 msgstr "Настоящ статус на рекламите"
 
-#: adrotate.php:1566
+#: adrotate.php:1482
 msgid "Normal"
 msgstr "Нормално"
 
-#: adrotate.php:1566
+#: adrotate.php:1482
 msgid "Error"
 msgstr "Грешка"
 
-#: adrotate.php:1566
+#: adrotate.php:1482
 msgid "Expired"
 msgstr "Изтекло"
 
-#: adrotate.php:1566
+#: adrotate.php:1482
 msgid "Expires Soon"
 msgstr "Изтича скоро"
 
-#: adrotate.php:1566
+#: adrotate.php:1482
 msgid "Unknown Status"
 msgstr "Неизвестен статус"
 
-#: adrotate.php:1569
+#: adrotate.php:1485
 msgid ""
 "NOTE: The below options are not meant for normal use and are only there for "
 "developers to review saved settings or how ads are selected. These can be "
@@ -2134,33 +2188,33 @@ msgstr ""
 "проблем, който трябва да се разреши. При нормална употреба оставете опциите "
 "ИЗКЛЮЧЕНИ!!"
 
-#: adrotate.php:1572
+#: adrotate.php:1488
 msgid "Developer Debug"
 msgstr "Developer Debug"
 
-#: adrotate.php:1574
+#: adrotate.php:1490
 msgid "Troubleshoot ads and how (if) they are selected, has front-end output."
 msgstr ""
 "Проверк за грешки в рекламите и как (дали) са закачени. Има потребителски "
 "изглед."
 
-#: adrotate.php:1575
+#: adrotate.php:1491
 msgid "Show all settings, dashboard routines and related values."
 msgstr "Показване на всички настройки, рутинни процедури и свързани стойности."
 
-#: adrotate.php:1576
+#: adrotate.php:1492
 msgid "Show array of all userroles and capabilities."
 msgstr "Покажи масив с всички потребителски роли и възможности."
 
-#: adrotate.php:1577
+#: adrotate.php:1493
 msgid "Review saved advertisers! Visible to advertisers."
 msgstr "Преглед на записаните рекламодатели! Видимо за рекламодатели."
 
-#: adrotate.php:1578
+#: adrotate.php:1494
 msgid "Review Full Report, per ad/group stats. Visible only to publishers."
 msgstr "Преглед на Пълен доклад по реклама/група. Видимо само за автори."
 
-#: adrotate.php:1579
+#: adrotate.php:1495
 msgid ""
 "Output retrieved Geo data or errors related to the retrieving of Geo "
 "Services."
@@ -2168,7 +2222,7 @@ msgstr ""
 "Визуализация на събраната Гео информация или грешки, свързани с използването "
 "на локализационни услуги."
 
-#: adrotate.php:1580
+#: adrotate.php:1496
 msgid ""
 "Disable timers for clicks and impressions and enable a alert window for "
 "clicktracking."
@@ -2176,15 +2230,15 @@ msgstr ""
 "Изключване на брояча за кликове и импресии и активиране на напомнящ прозорец "
 "за проследяване на кликове."
 
-#: adrotate.php:1581
+#: adrotate.php:1497
 msgid "Temporarily disable encryption on the redirect url."
 msgstr "Временно изключване на криптирането на препращащия адрес."
 
-#: adrotate.php:1610
+#: adrotate.php:1526
 msgid "AdRotate Network License"
 msgstr "AdRotate Network лиценз"
 
-#: adrotate.php:1620
+#: adrotate.php:1536
 msgid ""
 "For network activated setups like this you need a Network or Developer "
 "License."
@@ -2260,14 +2314,12 @@ msgstr ""
 "този проблем."
 
 #: dashboard/adrotate-info.php:112
-#, fuzzy
 msgid "Your name:"
-msgstr "Име"
+msgstr "Вашето име:"
 
 #: dashboard/adrotate-info.php:113
-#, fuzzy
 msgid "Your Email Address:"
-msgstr "Email адреса, който използвате на adrotateplugin.com."
+msgstr "Вашият email адрес:"
 
 #: dashboard/adrotate-info.php:114
 msgid "Subject:"
@@ -2282,13 +2334,12 @@ msgid "When you send this form the following data will be submitted:"
 msgstr "Ще изпратите тази форма със следната информация:"
 
 #: dashboard/adrotate-info.php:118
-#, fuzzy
 msgid ""
 "Your name, Account email address, Your website url and some basic WordPress "
 "information will be included with the ticket."
 msgstr ""
-"Вашето име, Email адрес към акаунта ви, Вашия WEB сайт, версия на WordPress "
-"и език."
+"Вашето име, Email адрес към акаунта ви, URL адрес на вашия уебсайт и основна "
+"информация за WordPress инсталацията ще бъдат включени в заявката за помощ."
 
 #: dashboard/adrotate-info.php:118
 msgid "This information is treated as confidential and is mandatory."
@@ -2300,9 +2351,8 @@ msgid "Post Ticket"
 msgstr "Изпращане на Ticket"
 
 #: dashboard/adrotate-info.php:121
-#, fuzzy
 msgid "Please use english or dutch only!"
-msgstr "Моля, използвайте само английски език!"
+msgstr "Моля, използвайте само английски или холандски език!"
 
 #: dashboard/adrotate-info.php:129
 msgid "Please register your copy of AdRotate Professional."
@@ -2317,9 +2367,10 @@ msgid "Contact your site administrator if you do not know what this means."
 msgstr "Моля, свържете се с администратор, ако не знаете какво означава това."
 
 #: dashboard/adrotate-info.php:141
+#, fuzzy
 msgid ""
 "Your server doesn't support JSON Encode - The support form can not be used. "
-"If you need help please post your ticket through support@adrotateplugin.com."
+"If you need help please post your ticket through adrotate-support@ajdg.net."
 msgstr ""
 "Вашият сървър не поддържа JSON Encode - Формата за контакт не може да се "
 "използва. Ако имате нужда от помощ, моля, изпратете проблема си на "
@@ -2329,11 +2380,11 @@ msgstr ""
 msgid "AdRotate News and Developer Blog"
 msgstr "AdRotate блог за новини и разработка"
 
-#: dashboard/adrotate-info.php:171
+#: dashboard/adrotate-info.php:167
 msgid "AdRotate is brought to you by"
 msgstr "AdRotate достига до Вас, благодарение на"
 
-#: dashboard/adrotate-info.php:175
+#: dashboard/adrotate-info.php:171
 msgid ""
 "Your one stop for Webdevelopment, consultancy and anything WordPress! If you "
 "need a custom plugin. Theme customizations or have your site moved/migrated "
@@ -2344,7 +2395,7 @@ msgstr ""
 "искате сайта Ви да бъде мигриран? Посетете страницата ми за повече "
 "информация!"
 
-#: dashboard/adrotate-info.php:175
+#: dashboard/adrotate-info.php:171
 msgid "Find out more"
 msgstr "Научете повече"
 
@@ -2374,11 +2425,10 @@ msgstr "Моля, свържете се с администратор, ваша�
 
 #: dashboard/advertiser/adrotate-edit.php:62
 #: dashboard/publisher/adrotate-ads-edit.php:74
-#, fuzzy
 msgid "Clicktracking is enabled but no valid link was found in the adcode!"
 msgstr ""
-"jQuery проследяването на кликове е включено, но не е намерен валиден линк в "
-"кода на рекламата!"
+"Проследяването на кликове е включено, но не е намерен валиден линк в полето "
+"adcode!"
 
 #: dashboard/advertiser/adrotate-edit.php:65
 msgid ""
@@ -2436,12 +2486,12 @@ msgstr ""
 "опашката за одобрение!"
 
 #: dashboard/advertiser/adrotate-edit.php:107
-#: dashboard/publisher/adrotate-ads-edit.php:124
+#: dashboard/publisher/adrotate-ads-edit.php:125
 msgid "New Advert"
 msgstr "Нова реклама"
 
 #: dashboard/advertiser/adrotate-edit.php:109
-#: dashboard/publisher/adrotate-ads-edit.php:126
+#: dashboard/publisher/adrotate-ads-edit.php:127
 msgid "Edit Advert"
 msgstr "Редакция на реклама"
 
@@ -2454,7 +2504,7 @@ msgid "Advert ID:"
 msgstr "ID на реклама:"
 
 #: dashboard/advertiser/adrotate-edit.php:120
-#: dashboard/publisher/adrotate-ads-edit.php:134
+#: dashboard/publisher/adrotate-ads-edit.php:135
 msgid "Title:"
 msgstr "Заглавие:"
 
@@ -2463,34 +2513,36 @@ msgid "For your and the staffs reference."
 msgstr "За справка на вас и на администраторите."
 
 #: dashboard/advertiser/adrotate-edit.php:126
-#: dashboard/publisher/adrotate-ads-edit.php:140
+#: dashboard/publisher/adrotate-ads-edit.php:141
 msgid "AdCode:"
 msgstr "AdCode:"
 
 #: dashboard/advertiser/adrotate-edit.php:131
-#: dashboard/publisher/adrotate-ads-edit.php:145
+#: dashboard/publisher/adrotate-ads-edit.php:146
 msgid ""
 "Copy your ad tag/code in this field if you have received ready to go adverts."
 msgstr ""
+"Копирайте вашият етикет на рекламата/код в това поле ако сте получили готови "
+"за използване реклами."
 
 #: dashboard/advertiser/adrotate-edit.php:131
-#: dashboard/publisher/adrotate-ads-edit.php:145
+#: dashboard/publisher/adrotate-ads-edit.php:146
 msgid "Advertising and affiliate networks often use these."
-msgstr ""
+msgstr "Рекламните и партньорски мрежи често използват това."
 
 #: dashboard/advertiser/adrotate-edit.php:132
-#: dashboard/publisher/adrotate-ads-edit.php:146
+#: dashboard/publisher/adrotate-ads-edit.php:147
 msgid "Basic Examples:"
 msgstr "Основни примери:"
 
 #: dashboard/advertiser/adrotate-edit.php:137
-#: dashboard/publisher/adrotate-ads-edit.php:151
-#: dashboard/publisher/adrotate-groups-edit.php:344
+#: dashboard/publisher/adrotate-ads-edit.php:152
+#: dashboard/publisher/adrotate-groups-edit.php:358
 msgid "Options:"
 msgstr "Настройки:"
 
 #: dashboard/advertiser/adrotate-edit.php:139
-#: dashboard/publisher/adrotate-ads-edit.php:153
+#: dashboard/publisher/adrotate-ads-edit.php:154
 msgid ""
 "Place the cursor where you want to add a tag and click to add it to your "
 "AdCode."
@@ -2499,19 +2551,21 @@ msgstr ""
 "добавите към кода на рекламата."
 
 #: dashboard/advertiser/adrotate-edit.php:143
-#: dashboard/publisher/adrotate-ads-edit.php:226
+#: dashboard/publisher/adrotate-ads-edit.php:227
 msgid "Target URL:"
 msgstr "Целеви URL:"
 
 #: dashboard/advertiser/adrotate-edit.php:146
-#: dashboard/publisher/adrotate-ads-edit.php:229
+#: dashboard/publisher/adrotate-ads-edit.php:230
 msgid ""
 "This field is no longer required. You can place the URL directly in the "
 "adcode (above) instead of %link%."
 msgstr ""
+"Полето вече не е необходимо. Можете да поставите URL адрес директно в полето "
+"adcore (по-горе), вместо %link%."
 
 #: dashboard/advertiser/adrotate-edit.php:150
-#: dashboard/publisher/adrotate-ads-edit.php:243
+#: dashboard/publisher/adrotate-ads-edit.php:244
 msgid "Banner image:"
 msgstr "Картинка на банера:"
 
@@ -2534,31 +2588,31 @@ msgid "Desired Visibility:"
 msgstr "Желана видимост:"
 
 #: dashboard/advertiser/adrotate-edit.php:167
-#: dashboard/publisher/adrotate-ads-edit.php:262
+#: dashboard/publisher/adrotate-ads-edit.php:263
 #: dashboard/publisher/adrotate-ads-main.php:32
 msgid "Barely visible"
 msgstr "Почти видимо"
 
 #: dashboard/advertiser/adrotate-edit.php:168
-#: dashboard/publisher/adrotate-ads-edit.php:263
+#: dashboard/publisher/adrotate-ads-edit.php:264
 #: dashboard/publisher/adrotate-ads-main.php:33
 msgid "Less than average"
 msgstr "По-малко от нормалното"
 
 #: dashboard/advertiser/adrotate-edit.php:169
-#: dashboard/publisher/adrotate-ads-edit.php:264
+#: dashboard/publisher/adrotate-ads-edit.php:265
 #: dashboard/publisher/adrotate-ads-main.php:34
 msgid "Normal coverage"
 msgstr "Нормално покритие"
 
 #: dashboard/advertiser/adrotate-edit.php:170
-#: dashboard/publisher/adrotate-ads-edit.php:265
+#: dashboard/publisher/adrotate-ads-edit.php:266
 #: dashboard/publisher/adrotate-ads-main.php:35
 msgid "More than average"
 msgstr "Повече от нормалното"
 
 #: dashboard/advertiser/adrotate-edit.php:171
-#: dashboard/publisher/adrotate-ads-edit.php:266
+#: dashboard/publisher/adrotate-ads-edit.php:267
 #: dashboard/publisher/adrotate-ads-main.php:36
 msgid "Best visibility"
 msgstr "Най-добра видимост"
@@ -2575,17 +2629,11 @@ msgid ""
 msgstr ""
 "Модератора може да промени тази стойност в зависимост от договореното с вас."
 
-#: dashboard/advertiser/adrotate-edit.php:182
-msgid "GeoLocation"
-msgstr "Геолокация"
-
 #: dashboard/advertiser/adrotate-edit.php:183
 msgid ""
-"Cities or countries configured do only/apply to groups with GeoLocation "
+"Cities or countries configured do only/apply to groups with geo targeting "
 "enabled and is ignored everywhere else."
 msgstr ""
-"Въведените страни и градове се прилагат само за групи с включено Гео "
-"локализиране, в противен случай ще бъдат игнорирани."
 
 #: dashboard/advertiser/adrotate-edit.php:183
 msgid "Check with your publisher if localized adverts are possible for you."
@@ -2602,11 +2650,17 @@ msgid "Usage:"
 msgstr "Употреба:"
 
 #: dashboard/advertiser/adrotate-edit.php:193
-msgid "A comma separated list of cities"
-msgstr "Списък с градове, разделен със запетая"
+#: dashboard/publisher/adrotate-ads-edit.php:298
+#, fuzzy
+msgid ""
+"A comma separated list of cities (or the Metro ID) and/or states (Also the "
+"states ISO codes are supported)"
+msgstr ""
+"Списък с градове и/или щати, разделен със запетая (Поддържат се ISO кодове "
+"за щатите)"
 
 #: dashboard/advertiser/adrotate-edit.php:193
-#: dashboard/publisher/adrotate-ads-edit.php:297
+#: dashboard/publisher/adrotate-ads-edit.php:298
 msgid ""
 "AdRotate does not check the validity of names so make sure you spell them "
 "correctly!"
@@ -2619,19 +2673,19 @@ msgid "Countries"
 msgstr "Държави"
 
 #: dashboard/advertiser/adrotate-edit.php:202
-#: dashboard/publisher/adrotate-ads-edit.php:308
+#: dashboard/publisher/adrotate-ads-edit.php:309
 msgid "Select the countries you want the adverts to show in."
 msgstr "Изберете страните, в които искате да се показват рекламите."
 
 #: dashboard/advertiser/adrotate-edit.php:212
 #: dashboard/advertiser/adrotate-report.php:90
-#: dashboard/publisher/adrotate-ads-edit.php:181
+#: dashboard/publisher/adrotate-ads-edit.php:182
 msgid "Preview"
 msgstr "Преглед"
 
 #: dashboard/advertiser/adrotate-edit.php:219
 #: dashboard/advertiser/adrotate-report.php:96
-#: dashboard/publisher/adrotate-ads-edit.php:188
+#: dashboard/publisher/adrotate-ads-edit.php:189
 msgid ""
 "Note: While this preview is an accurate one, it might look different then it "
 "does on the website."
@@ -2647,7 +2701,7 @@ msgstr ""
 "Това се дължи на разлики в CSS. CSS файла на вашата тема не е активен тук!"
 
 #: dashboard/advertiser/adrotate-edit.php:231
-#: dashboard/publisher/adrotate-ads-edit.php:456
+#: dashboard/publisher/adrotate-ads-edit.php:457
 msgid "Choose Schedules"
 msgstr "Избор на графици"
 
@@ -2668,7 +2722,7 @@ msgstr "Поискайте нов график"
 #: dashboard/advertiser/adrotate-main-disabled.php:19
 #: dashboard/advertiser/adrotate-main-queue.php:19
 #: dashboard/advertiser/adrotate-main.php:19
-#: dashboard/publisher/adrotate-ads-edit.php:463
+#: dashboard/publisher/adrotate-ads-edit.php:464
 #: dashboard/publisher/adrotate-ads-main-disabled.php:35
 #: dashboard/publisher/adrotate-ads-main-error.php:39
 #: dashboard/publisher/adrotate-ads-main.php:46
@@ -2676,14 +2730,12 @@ msgstr "Поискайте нов график"
 #: dashboard/publisher/adrotate-moderation-queue.php:35
 #: dashboard/publisher/adrotate-moderation-rejected.php:35
 #: dashboard/publisher/adrotate-schedules-main.php:31
-#: dashboard/server/adrotate-active.php:18
-#: dashboard/server/adrotate-error.php:18 templates/adrotate-disabled.php:27
-#: templates/adrotate-queued.php:27
+#: templates/adrotate-disabled.php:27 templates/adrotate-queued.php:27
 msgid "ID"
 msgstr "ID"
 
 #: dashboard/advertiser/adrotate-edit.php:239
-#: dashboard/publisher/adrotate-ads-edit.php:464
+#: dashboard/publisher/adrotate-ads-edit.php:465
 msgid "From / Until"
 msgstr "От / До"
 
@@ -2709,14 +2761,14 @@ msgid "Spread"
 msgstr "Разпространение"
 
 #: dashboard/advertiser/adrotate-edit.php:281
-#: dashboard/publisher/adrotate-ads-edit.php:497
+#: dashboard/publisher/adrotate-ads-edit.php:498
 msgid "In use by this advert."
 msgstr "Използва се с тази реклама."
 
 #: dashboard/advertiser/adrotate-edit.php:282
-#: dashboard/publisher/adrotate-ads-edit.php:498
+#: dashboard/publisher/adrotate-ads-edit.php:499
 #: dashboard/publisher/adrotate-ads-main-error.php:73
-#: dashboard/publisher/adrotate-groups-edit.php:409
+#: dashboard/publisher/adrotate-groups-edit.php:423
 #: dashboard/publisher/adrotate-schedules-edit.php:197
 #: dashboard/publisher/adrotate-schedules-main.php:79
 msgid "Expires soon."
@@ -2728,14 +2780,14 @@ msgstr "Изпращане на реклама за преглед"
 
 #: dashboard/advertiser/adrotate-edit.php:288
 #: dashboard/advertiser/adrotate-message.php:70
-#: dashboard/publisher/adrotate-ads-edit.php:177
-#: dashboard/publisher/adrotate-ads-edit.php:282
-#: dashboard/publisher/adrotate-ads-edit.php:374
-#: dashboard/publisher/adrotate-ads-edit.php:503
-#: dashboard/publisher/adrotate-ads-edit.php:547
+#: dashboard/publisher/adrotate-ads-edit.php:178
+#: dashboard/publisher/adrotate-ads-edit.php:283
+#: dashboard/publisher/adrotate-ads-edit.php:375
+#: dashboard/publisher/adrotate-ads-edit.php:504
+#: dashboard/publisher/adrotate-ads-edit.php:548
 #: dashboard/publisher/adrotate-groups-edit.php:183
-#: dashboard/publisher/adrotate-groups-edit.php:331
-#: dashboard/publisher/adrotate-groups-edit.php:415
+#: dashboard/publisher/adrotate-groups-edit.php:345
+#: dashboard/publisher/adrotate-groups-edit.php:429
 #: dashboard/publisher/adrotate-moderation-message.php:75
 #: dashboard/publisher/adrotate-schedules-edit.php:144
 #: dashboard/publisher/adrotate-schedules-edit.php:203
@@ -2775,7 +2827,6 @@ msgstr ""
 #: dashboard/publisher/adrotate-ads-main-disabled.php:36
 #: dashboard/publisher/adrotate-ads-main-error.php:40
 #: dashboard/publisher/adrotate-ads-main.php:47
-#: dashboard/server/adrotate-active.php:20
 msgid "Start / End"
 msgstr "Начало / Край"
 
@@ -2786,9 +2837,7 @@ msgstr "Начало / Край"
 #: dashboard/publisher/adrotate-ads-main-disabled.php:37
 #: dashboard/publisher/adrotate-ads-main-error.php:41
 #: dashboard/publisher/adrotate-ads-main.php:48
-#: dashboard/server/adrotate-active.php:21
-#: dashboard/server/adrotate-error.php:22 templates/adrotate-disabled.php:28
-#: templates/adrotate-queued.php:28
+#: templates/adrotate-disabled.php:28 templates/adrotate-queued.php:28
 msgid "Title"
 msgstr "Заглавие"
 
@@ -2796,10 +2845,10 @@ msgstr "Заглавие"
 #: dashboard/advertiser/adrotate-main-disabled.php:21
 #: dashboard/advertiser/adrotate-main.php:23
 #: dashboard/advertiser/adrotate-report.php:38
-#: dashboard/publisher/adrotate-ads-edit.php:467
+#: dashboard/publisher/adrotate-ads-edit.php:468
 #: dashboard/publisher/adrotate-ads-main-disabled.php:38
 #: dashboard/publisher/adrotate-ads-report.php:34
-#: dashboard/publisher/adrotate-groups-edit.php:365
+#: dashboard/publisher/adrotate-groups-edit.php:379
 #: dashboard/publisher/adrotate-groups-main.php:35
 #: dashboard/publisher/adrotate-groups-report.php:40
 #: dashboard/publisher/adrotate-schedules-edit.php:153
@@ -2815,10 +2864,6 @@ msgstr "Импресии"
 #: dashboard/publisher/adrotate-ads-main.php:53
 #: dashboard/publisher/adrotate-groups-main.php:36
 #: dashboard/publisher/adrotate-groups-main.php:38
-#: dashboard/server/adrotate-active.php:24
-#: dashboard/server/adrotate-active.php:26
-#: dashboard/server/adrotate-error.php:25
-#: dashboard/server/adrotate-error.php:27
 msgid "Today"
 msgstr "Днес"
 
@@ -2826,17 +2871,15 @@ msgstr "Днес"
 #: dashboard/advertiser/adrotate-main-disabled.php:22
 #: dashboard/advertiser/adrotate-main.php:25
 #: dashboard/advertiser/adrotate-report.php:39
-#: dashboard/publisher/adrotate-ads-edit.php:466
+#: dashboard/publisher/adrotate-ads-edit.php:467
 #: dashboard/publisher/adrotate-ads-main-disabled.php:39
 #: dashboard/publisher/adrotate-ads-main.php:52
 #: dashboard/publisher/adrotate-ads-report.php:35
-#: dashboard/publisher/adrotate-groups-edit.php:366
+#: dashboard/publisher/adrotate-groups-edit.php:380
 #: dashboard/publisher/adrotate-groups-main.php:37
 #: dashboard/publisher/adrotate-groups-report.php:41
 #: dashboard/publisher/adrotate-schedules-edit.php:154
-#: dashboard/server/adrotate-active.php:25
-#: dashboard/server/adrotate-error.php:26 templates/adrotate-active.php:55
-#: templates/adrotate-disabled.php:30
+#: templates/adrotate-active.php:55 templates/adrotate-disabled.php:30
 msgid "Clicks"
 msgstr "Кликове"
 
@@ -2848,9 +2891,7 @@ msgstr "Кликове"
 #: dashboard/publisher/adrotate-ads-main.php:54
 #: dashboard/publisher/adrotate-ads-report.php:38
 #: dashboard/publisher/adrotate-groups-report.php:44
-#: dashboard/server/adrotate-active.php:27
-#: dashboard/server/adrotate-error.php:28 templates/adrotate-active.php:58
-#: templates/adrotate-disabled.php:31
+#: templates/adrotate-active.php:58 templates/adrotate-disabled.php:31
 msgid "CTR"
 msgstr "CTR"
 
@@ -2863,7 +2904,7 @@ msgstr "CTR"
 #: dashboard/publisher/adrotate-ads-main.php:93
 #: dashboard/publisher/adrotate-groups-main.php:71
 #: dashboard/publisher/adrotate-moderation-queue.php:84
-#: dashboard/publisher/adrotate-moderation-rejected.php:94
+#: dashboard/publisher/adrotate-moderation-rejected.php:93
 msgid "Edit"
 msgstr "Редакция"
 
@@ -2884,7 +2925,7 @@ msgstr "Е почти изтекла."
 #: dashboard/advertiser/adrotate-front-end.php:203
 #: dashboard/advertiser/adrotate-main.php:67
 #: dashboard/publisher/adrotate-ads-main-error.php:74
-#: dashboard/publisher/adrotate-groups-edit.php:410
+#: dashboard/publisher/adrotate-groups-edit.php:424
 #: dashboard/publisher/adrotate-schedules-edit.php:198
 #: dashboard/publisher/adrotate-schedules-main.php:80
 #: templates/adrotate-active.php:69
@@ -3098,14 +3139,12 @@ msgstr ""
 #: dashboard/advertiser/adrotate-main.php:20
 #: dashboard/publisher/adrotate-moderation-queue.php:36
 #: dashboard/publisher/adrotate-moderation-rejected.php:36
-#: dashboard/server/adrotate-error.php:20
 msgid "Show from"
 msgstr "Покажи от"
 
 #: dashboard/advertiser/adrotate-main.php:21
 #: dashboard/publisher/adrotate-moderation-queue.php:37
 #: dashboard/publisher/adrotate-moderation-rejected.php:37
-#: dashboard/server/adrotate-error.php:21
 msgid "Show until"
 msgstr "Покажи до"
 
@@ -3251,7 +3290,7 @@ msgid "Export options"
 msgstr "Опции за експорт"
 
 #: dashboard/advertiser/adrotate-report.php:148
-#: dashboard/publisher/adrotate-ads-edit.php:454
+#: dashboard/publisher/adrotate-ads-edit.php:455
 #: dashboard/publisher/adrotate-ads-report.php:104
 #: dashboard/publisher/adrotate-fullreport.php:103
 #: dashboard/publisher/adrotate-groups-report.php:110
@@ -3309,56 +3348,56 @@ msgstr "Тази реклама е изтекла и не се показва н
 msgid "This ad has been disabled and does not rotate on your site!"
 msgstr "Тази реклама е деактивирана и не се показва на сайта Ви!"
 
-#: dashboard/publisher/adrotate-ads-edit.php:129
+#: dashboard/publisher/adrotate-ads-edit.php:130
 #: dashboard/publisher/adrotate-groups-edit.php:48
 msgid "These are required."
 msgstr "Тези са задължителни."
 
-#: dashboard/publisher/adrotate-ads-edit.php:157
+#: dashboard/publisher/adrotate-ads-edit.php:158
 msgid "Activate:"
 msgstr "Активиране:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:161
+#: dashboard/publisher/adrotate-ads-edit.php:162
 msgid "Yes, this ad will be visible"
 msgstr "Да, тази реклама ще бъде видима"
 
-#: dashboard/publisher/adrotate-ads-edit.php:162
+#: dashboard/publisher/adrotate-ads-edit.php:163
 msgid "Disabled, do not show this ad anywhere"
 msgstr "Изключена, не показвай тази реклама никъде"
 
-#: dashboard/publisher/adrotate-ads-edit.php:164
+#: dashboard/publisher/adrotate-ads-edit.php:165
 msgid "Maybe, this ad is queued for review"
 msgstr "Може би тази реклама е изпратена за одобрение"
 
-#: dashboard/publisher/adrotate-ads-edit.php:165
+#: dashboard/publisher/adrotate-ads-edit.php:166
 msgid "No, this ad is rejected"
 msgstr "Не, тази реклама е отхвърнела"
 
-#: dashboard/publisher/adrotate-ads-edit.php:176
-#: dashboard/publisher/adrotate-ads-edit.php:281
-#: dashboard/publisher/adrotate-ads-edit.php:373
-#: dashboard/publisher/adrotate-ads-edit.php:502
-#: dashboard/publisher/adrotate-ads-edit.php:546
+#: dashboard/publisher/adrotate-ads-edit.php:177
+#: dashboard/publisher/adrotate-ads-edit.php:282
+#: dashboard/publisher/adrotate-ads-edit.php:374
+#: dashboard/publisher/adrotate-ads-edit.php:503
+#: dashboard/publisher/adrotate-ads-edit.php:547
 msgid "Save Advert"
 msgstr "Запиши рекламата"
 
-#: dashboard/publisher/adrotate-ads-edit.php:189
+#: dashboard/publisher/adrotate-ads-edit.php:190
 msgid ""
 "This is because of CSS differences. Your themes CSS file is not active here!"
 msgstr ""
 "Това се дължи на разлики в CSS. CSS файла на вашата тема не е активен тук!"
 
-#: dashboard/publisher/adrotate-ads-edit.php:197
-#: dashboard/publisher/adrotate-ads-edit.php:357
+#: dashboard/publisher/adrotate-ads-edit.php:198
+#: dashboard/publisher/adrotate-ads-edit.php:358
 #: dashboard/publisher/adrotate-groups-edit.php:168
-#: dashboard/publisher/adrotate-groups-edit.php:316
+#: dashboard/publisher/adrotate-groups-edit.php:330
 msgid "Usage"
 msgstr "Употреба"
 
-#: dashboard/publisher/adrotate-ads-edit.php:198
-#: dashboard/publisher/adrotate-ads-edit.php:358
+#: dashboard/publisher/adrotate-ads-edit.php:199
+#: dashboard/publisher/adrotate-ads-edit.php:359
 #: dashboard/publisher/adrotate-groups-edit.php:169
-#: dashboard/publisher/adrotate-groups-edit.php:317
+#: dashboard/publisher/adrotate-groups-edit.php:331
 msgid ""
 "Copy the shortcode in a post or page. The PHP code goes in a theme file "
 "where you want the advert to show up."
@@ -3367,38 +3406,38 @@ msgstr ""
 "използвате във файловете на темата си, за да показвате рекламни карета "
 "където са ви необходими."
 
-#: dashboard/publisher/adrotate-ads-edit.php:202
-#: dashboard/publisher/adrotate-ads-edit.php:363
+#: dashboard/publisher/adrotate-ads-edit.php:203
+#: dashboard/publisher/adrotate-ads-edit.php:364
 #: dashboard/publisher/adrotate-groups-edit.php:173
-#: dashboard/publisher/adrotate-groups-edit.php:321
+#: dashboard/publisher/adrotate-groups-edit.php:335
 msgid "In a post or page:"
 msgstr "И страница или публикация:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:204
-#: dashboard/publisher/adrotate-ads-edit.php:365
+#: dashboard/publisher/adrotate-ads-edit.php:205
+#: dashboard/publisher/adrotate-ads-edit.php:366
 #: dashboard/publisher/adrotate-groups-edit.php:175
-#: dashboard/publisher/adrotate-groups-edit.php:323
+#: dashboard/publisher/adrotate-groups-edit.php:337
 msgid "Directly in a theme:"
 msgstr "Директно в темата:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:210
+#: dashboard/publisher/adrotate-ads-edit.php:211
 #: dashboard/publisher/adrotate-groups-edit.php:186
 msgid "Advanced"
 msgstr "Разширени"
 
-#: dashboard/publisher/adrotate-ads-edit.php:211
+#: dashboard/publisher/adrotate-ads-edit.php:212
 msgid "Everything below is optional."
 msgstr "Всичко по-долу е по желание."
 
-#: dashboard/publisher/adrotate-ads-edit.php:217
+#: dashboard/publisher/adrotate-ads-edit.php:218
 msgid "Clicktracking:"
 msgstr "Проследяване на кликовете:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:219
+#: dashboard/publisher/adrotate-ads-edit.php:220
 msgid "Enable click tracking for this advert."
 msgstr "Активиране на проследяването на кликове за тази реклама."
 
-#: dashboard/publisher/adrotate-ads-edit.php:220
+#: dashboard/publisher/adrotate-ads-edit.php:221
 msgid ""
 "Note: Clicktracking does generally not work for Javascript adverts such as "
 "those provided by Google AdSense."
@@ -3406,19 +3445,19 @@ msgstr ""
 "Забележка: Проследяването на кликове не е съвместимо с Javascript реклами, "
 "като напр. Google AdSense."
 
-#: dashboard/publisher/adrotate-ads-edit.php:221
+#: dashboard/publisher/adrotate-ads-edit.php:222
 msgid "Place the target URL in your adcode - Similar to code example 1."
 msgstr "Поставете URL адрес в adcore полето - Вижте пример 1."
 
-#: dashboard/publisher/adrotate-ads-edit.php:234
+#: dashboard/publisher/adrotate-ads-edit.php:235
 msgid "Responsive:"
 msgstr "Responsive:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:236
+#: dashboard/publisher/adrotate-ads-edit.php:237
 msgid "Enable responsive support for this advert."
 msgstr "Активиране на responsive дизайн за тази реклама."
 
-#: dashboard/publisher/adrotate-ads-edit.php:237
+#: dashboard/publisher/adrotate-ads-edit.php:238
 msgid ""
 "Upload your images to the banner folder and make sure the filename is in the "
 "following format; \"imagename.full.ext\". A full set of sized images is "
@@ -3428,7 +3467,7 @@ msgstr ""
 "правилния формат: \"imagename.full.ext\". Пълен набор от правилно оразмерени "
 "картинки е строго препоръчителен."
 
-#: dashboard/publisher/adrotate-ads-edit.php:238
+#: dashboard/publisher/adrotate-ads-edit.php:239
 #: dashboard/publisher/adrotate-media-main.php:21
 msgid ""
 "For smaller size images use \".320\", \".480\", \".768\" or \".1024\" in the "
@@ -3438,14 +3477,14 @@ msgstr ""
 "използвайте \".320\", \".480\", \".768\" или \".1024\" в имената на "
 "файловете, вместо \".full\"."
 
-#: dashboard/publisher/adrotate-ads-edit.php:239
-#: dashboard/publisher/adrotate-groups-edit.php:343
-#: dashboard/publisher/adrotate-groups-edit.php:352
+#: dashboard/publisher/adrotate-ads-edit.php:240
+#: dashboard/publisher/adrotate-groups-edit.php:357
+#: dashboard/publisher/adrotate-groups-edit.php:366
 #: dashboard/publisher/adrotate-media-main.php:22
 msgid "Example:"
 msgstr "Пример:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:239
+#: dashboard/publisher/adrotate-ads-edit.php:240
 msgid ""
 "image.full.jpg, image.320.jpg and image.768.jpg will serve the same advert "
 "for different viewports. Requires jQuery."
@@ -3453,31 +3492,31 @@ msgstr ""
 "image.full.jpg, image.320.jpg и image.768.jpg ще се използват от една и съща "
 "реклама в различни резолюции на екрана. Изисква jQuery."
 
-#: dashboard/publisher/adrotate-ads-edit.php:246
+#: dashboard/publisher/adrotate-ads-edit.php:247
 msgid "Media:"
 msgstr "Медия:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:246
+#: dashboard/publisher/adrotate-ads-edit.php:247
 msgid "Select Banner"
 msgstr "Избор на банер"
 
-#: dashboard/publisher/adrotate-ads-edit.php:248
+#: dashboard/publisher/adrotate-ads-edit.php:249
 msgid "- OR -"
 msgstr "- ИЛИ -"
 
-#: dashboard/publisher/adrotate-ads-edit.php:250
+#: dashboard/publisher/adrotate-ads-edit.php:251
 msgid "Banner folder:"
 msgstr "Папка на банера:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:251
+#: dashboard/publisher/adrotate-ads-edit.php:252
 msgid "No image selected"
 msgstr "Не е избрана картинка"
 
-#: dashboard/publisher/adrotate-ads-edit.php:255
+#: dashboard/publisher/adrotate-ads-edit.php:256
 msgid "Use %image% in the code. Accepted files are:"
 msgstr "Използвайте %image% в кода. Допустимите файлове са:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:255
+#: dashboard/publisher/adrotate-ads-edit.php:256
 msgid ""
 "Use either the text field or the dropdown. If the textfield has content that "
 "field has priority."
@@ -3485,63 +3524,49 @@ msgstr ""
 "Използвайте падащото меню или текстовото поле. Ако текстовото поле е "
 "попълнено, то ще бъде с преоритет."
 
-#: dashboard/publisher/adrotate-ads-edit.php:259
+#: dashboard/publisher/adrotate-ads-edit.php:260
 msgid "Weight:"
 msgstr "Тежест:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:271
-#: dashboard/publisher/adrotate-groups-edit.php:220
+#: dashboard/publisher/adrotate-ads-edit.php:272
+#: dashboard/publisher/adrotate-groups-edit.php:234
 msgid "Sortorder:"
 msgstr "Сортиране:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:273
-#: dashboard/publisher/adrotate-groups-edit.php:222
+#: dashboard/publisher/adrotate-ads-edit.php:274
+#: dashboard/publisher/adrotate-groups-edit.php:236
 msgid "For administrative purposes set a sortorder."
 msgstr "За административни цели задайте критерий за сортиране."
 
-#: dashboard/publisher/adrotate-ads-edit.php:273
-#, fuzzy
+#: dashboard/publisher/adrotate-ads-edit.php:274
 msgid "Leave empty or 0 to skip this. Will default to ad id."
 msgstr ""
 "Оставете празно или въведете 0, за да пропуснете тази настройка. Ще бъде "
 "зададено ID на рекламата."
 
-#: dashboard/publisher/adrotate-ads-edit.php:288
-msgid "Geo Location"
-msgstr "Геолокация"
-
-#: dashboard/publisher/adrotate-ads-edit.php:289
+#: dashboard/publisher/adrotate-ads-edit.php:290
 msgid ""
 "This works if you assign the advert to a group and enable that group to use "
-"Geo Targeting."
+"Geo targeting."
 msgstr ""
-"Това работи ако закачите рекламата към група и включите таргетирането по "
-"местоположение за тази група."
 
-#: dashboard/publisher/adrotate-ads-edit.php:294
-#, fuzzy
+#: dashboard/publisher/adrotate-ads-edit.php:295
 msgid "Cities/States:"
-msgstr "Градове"
+msgstr "Градове/Щати:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:297
-msgid ""
-"A comma separated list of cities and/or states (Also the states ISO codes "
-"are supported)"
-msgstr ""
-
-#: dashboard/publisher/adrotate-ads-edit.php:301
+#: dashboard/publisher/adrotate-ads-edit.php:302
 msgid "Countries:"
 msgstr "Страни:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:308
+#: dashboard/publisher/adrotate-ads-edit.php:309
 msgid "Cities take priority and will be filtered first."
 msgstr "Градовете са с приоритет и ще бъдат филтрирани първи."
 
-#: dashboard/publisher/adrotate-ads-edit.php:317
+#: dashboard/publisher/adrotate-ads-edit.php:318
 msgid "Advertiser & Budget"
 msgstr "Рекламодател и Бюджет"
 
-#: dashboard/publisher/adrotate-ads-edit.php:318
+#: dashboard/publisher/adrotate-ads-edit.php:319
 msgid ""
 "Link your ad to an Advertiser and optionally set a budget for clicks and "
 "impressions."
@@ -3549,101 +3574,99 @@ msgstr ""
 "Свържете рекламата с Рекламодател и по желание заложете бюджет за кликове и "
 "импресии."
 
-#: dashboard/publisher/adrotate-ads-edit.php:323
+#: dashboard/publisher/adrotate-ads-edit.php:324
 #: dashboard/publisher/adrotate-ads-main-disabled.php:73
 #: dashboard/publisher/adrotate-ads-main-error.php:65
 #: dashboard/publisher/adrotate-ads-main.php:96
 msgid "Advertiser:"
 msgstr "Рекламодател:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:327
+#: dashboard/publisher/adrotate-ads-edit.php:328
 msgid "Not specified"
 msgstr "Неопределено"
 
-#: dashboard/publisher/adrotate-ads-edit.php:336
+#: dashboard/publisher/adrotate-ads-edit.php:337
 msgid "Must be a registered user on your site with appropriate access roles."
 msgstr ""
 "Трябва да е регистриран потребител на вашия сайт, с правилно зададени права "
 "на достъп."
 
-#: dashboard/publisher/adrotate-ads-edit.php:341
+#: dashboard/publisher/adrotate-ads-edit.php:342
 msgid "Ad Click Rate:"
 msgstr "Ad Click Rate:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:342
+#: dashboard/publisher/adrotate-ads-edit.php:343
 msgid "Cost per click"
 msgstr "Цена на клик"
 
-#: dashboard/publisher/adrotate-ads-edit.php:343
+#: dashboard/publisher/adrotate-ads-edit.php:344
 msgid "Ad Impression Rate:"
 msgstr "Ad Impression Rate:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:344
+#: dashboard/publisher/adrotate-ads-edit.php:345
 msgid "Cost per impression"
 msgstr "Цена на импресия"
 
-#: dashboard/publisher/adrotate-ads-edit.php:347
+#: dashboard/publisher/adrotate-ads-edit.php:348
 msgid "Ad Click Budget:"
 msgstr "Бюджет за клик върху реклама:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:349
+#: dashboard/publisher/adrotate-ads-edit.php:350
 msgid "Ad Impression Budget:"
 msgstr "Бюджет за импресии на реклама:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:378
+#: dashboard/publisher/adrotate-ads-edit.php:379
 msgid "Create a schedule"
 msgstr "Създаване на график"
 
-#: dashboard/publisher/adrotate-ads-edit.php:379
+#: dashboard/publisher/adrotate-ads-edit.php:380
 msgid "Create a schedule here if no appropriate one is listed below."
 msgstr "Създайте график от тук, ако няма подходящ в списъка по-долу."
 
-#: dashboard/publisher/adrotate-ads-edit.php:382
+#: dashboard/publisher/adrotate-ads-edit.php:383
 #: dashboard/publisher/adrotate-schedules-edit.php:60
 msgid "Start date (day/month/year):"
 msgstr "Начална дата (ден/месец/година):"
 
-#: dashboard/publisher/adrotate-ads-edit.php:403
+#: dashboard/publisher/adrotate-ads-edit.php:404
 #: dashboard/publisher/adrotate-schedules-edit.php:81
 msgid "End date (day/month/year):"
 msgstr "Крайна дата (ден/месец/година):"
 
-#: dashboard/publisher/adrotate-ads-edit.php:426
+#: dashboard/publisher/adrotate-ads-edit.php:427
 #: dashboard/publisher/adrotate-schedules-edit.php:104
 msgid "Start time (hh:mm):"
 msgstr "Начален час (hh:mm):"
 
-#: dashboard/publisher/adrotate-ads-edit.php:433
+#: dashboard/publisher/adrotate-ads-edit.php:434
 #: dashboard/publisher/adrotate-schedules-edit.php:111
 msgid "End time (hh:mm):"
 msgstr "Краен час (hh:mm):"
 
-#: dashboard/publisher/adrotate-ads-edit.php:443
+#: dashboard/publisher/adrotate-ads-edit.php:444
 #: dashboard/publisher/adrotate-schedules-edit.php:121
 msgid "Maximum Clicks:"
 msgstr "Максимален брой кликове:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:444
-#: dashboard/publisher/adrotate-ads-edit.php:446
+#: dashboard/publisher/adrotate-ads-edit.php:445
+#: dashboard/publisher/adrotate-ads-edit.php:447
 #: dashboard/publisher/adrotate-schedules-edit.php:122
 #: dashboard/publisher/adrotate-schedules-edit.php:124
 msgid "Leave empty or 0 to skip this."
 msgstr "Въведете 0 или оставете празно, за да пропуснете тази опция."
 
-#: dashboard/publisher/adrotate-ads-edit.php:445
+#: dashboard/publisher/adrotate-ads-edit.php:446
 #: dashboard/publisher/adrotate-schedules-edit.php:123
 msgid "Maximum Impressions:"
 msgstr "Максимален брой импресии:"
 
-#: dashboard/publisher/adrotate-ads-edit.php:449
+#: dashboard/publisher/adrotate-ads-edit.php:450
 #: dashboard/publisher/adrotate-schedules-edit.php:127
 #, fuzzy
 msgid "Spread Impressions"
-msgstr ""
-"Опитайте да разпределите импресиите по равно за всяка реклама за времето на "
-"графика. Това може да доведе до временно скриване на някои реклами."
+msgstr "Разпространение на импресии"
 
-#: dashboard/publisher/adrotate-ads-edit.php:450
+#: dashboard/publisher/adrotate-ads-edit.php:451
 #: dashboard/publisher/adrotate-schedules-edit.php:128
 msgid ""
 "Try to evenly spread impressions for each advert over the duraction of this "
@@ -3652,7 +3675,7 @@ msgstr ""
 "Опитайте да разпределите импресиите по равно за всяка реклама за времето на "
 "графика. Това може да доведе до временно скриване на някои реклами."
 
-#: dashboard/publisher/adrotate-ads-edit.php:454
+#: dashboard/publisher/adrotate-ads-edit.php:455
 #: dashboard/publisher/adrotate-schedules-edit.php:139
 msgid ""
 "Time uses a 24 hour clock. When you're used to the AM/PM system keep this in "
@@ -3663,7 +3686,7 @@ msgstr ""
 "или краен час след обяд, прибавете 12 часа. Напр. 2PM е 14:00 часа. 6AM e "
 "18:00 часа. "
 
-#: dashboard/publisher/adrotate-ads-edit.php:454
+#: dashboard/publisher/adrotate-ads-edit.php:455
 #: dashboard/publisher/adrotate-schedules-edit.php:139
 msgid ""
 "The maximum clicks and impressions are measured over the set schedule only "
@@ -3674,91 +3697,85 @@ msgstr ""
 "график и се отнася до всички реклами използващи този график заедно. Всеки "
 "график може да има собствен лимит!"
 
-#: dashboard/publisher/adrotate-ads-edit.php:457
+#: dashboard/publisher/adrotate-ads-edit.php:458
 msgid "You can add, edit or delete schedules from the"
 msgstr "Можете да триете, добавяте и редактирате графици от"
 
-#: dashboard/publisher/adrotate-ads-edit.php:457
+#: dashboard/publisher/adrotate-ads-edit.php:458
 msgid "dashboard. Save your advert first!"
 msgstr "табло. Първо запазете рекламата си!"
 
-#: dashboard/publisher/adrotate-ads-edit.php:487
+#: dashboard/publisher/adrotate-ads-edit.php:488
 msgid "impressions per hour"
 msgstr "импресии на час"
 
-#: dashboard/publisher/adrotate-ads-edit.php:496
+#: dashboard/publisher/adrotate-ads-edit.php:497
 msgid "Schedules not in use by this advert are hidden."
 msgstr "Графици, които не се използват от тази реклама са скрити."
 
-#: dashboard/publisher/adrotate-ads-edit.php:508
+#: dashboard/publisher/adrotate-ads-edit.php:509
 msgid "Select Groups"
 msgstr "Избор на групи"
 
-#: dashboard/publisher/adrotate-ads-edit.php:509
+#: dashboard/publisher/adrotate-ads-edit.php:510
 msgid "Optionally select the group(s) this ad belongs to."
 msgstr "По желание - изберете групата(ите) към които принадлежи рекламата."
 
-#: dashboard/publisher/adrotate-ads-edit.php:514
+#: dashboard/publisher/adrotate-ads-edit.php:515
 msgid "ID - Name"
 msgstr "ID - Име"
 
-#: dashboard/publisher/adrotate-ads-edit.php:515
+#: dashboard/publisher/adrotate-ads-edit.php:516
 #: dashboard/publisher/adrotate-groups-main.php:34
 #: dashboard/publisher/adrotate-schedules-main.php:33
 msgid "Ads"
 msgstr "Реклами"
 
-#: dashboard/publisher/adrotate-ads-edit.php:515
+#: dashboard/publisher/adrotate-ads-edit.php:516
 #: dashboard/publisher/adrotate-groups-main.php:34
 msgid "Active"
 msgstr "Активно"
 
-#: dashboard/publisher/adrotate-ads-edit.php:524
-#: dashboard/publisher/adrotate-groups-main.php:58
-msgid "Default"
-msgstr "По подразбиране"
-
-#: dashboard/publisher/adrotate-ads-edit.php:525
+#: dashboard/publisher/adrotate-ads-edit.php:526
 #: dashboard/publisher/adrotate-groups-main.php:59
 msgid "Dynamic"
 msgstr "Динамично"
 
-#: dashboard/publisher/adrotate-ads-edit.php:525
+#: dashboard/publisher/adrotate-ads-edit.php:526
 #: dashboard/publisher/adrotate-groups-main.php:59
 msgid "second rotation"
 msgstr "второ завъртане"
 
-#: dashboard/publisher/adrotate-ads-edit.php:526
+#: dashboard/publisher/adrotate-ads-edit.php:527
 #: dashboard/publisher/adrotate-groups-main.php:60
 msgid "Block"
 msgstr "Блок"
 
-#: dashboard/publisher/adrotate-ads-edit.php:526
+#: dashboard/publisher/adrotate-ads-edit.php:527
 #: dashboard/publisher/adrotate-groups-main.php:60
 msgid "grid"
 msgstr "решетка"
 
-#: dashboard/publisher/adrotate-ads-edit.php:527
-#: dashboard/publisher/adrotate-groups-edit.php:227
+#: dashboard/publisher/adrotate-ads-edit.php:528
+#: dashboard/publisher/adrotate-groups-edit.php:241
 #: dashboard/publisher/adrotate-groups-main.php:61
 msgid "Post Injection"
 msgstr "Вмъкване в публикации"
 
-#: dashboard/publisher/adrotate-ads-edit.php:528
+#: dashboard/publisher/adrotate-ads-edit.php:529
 #: dashboard/publisher/adrotate-groups-main.php:62
 msgid "Geolocation"
 msgstr "Геолокация"
 
-#: dashboard/publisher/adrotate-ads-edit.php:535
+#: dashboard/publisher/adrotate-ads-edit.php:536
 #: dashboard/publisher/adrotate-groups-edit.php:63
 #: dashboard/publisher/adrotate-groups-main.php:71
 msgid "Mode"
 msgstr "Режим"
 
 #: dashboard/publisher/adrotate-ads-import.php:17
-#, fuzzy
 msgid "Select a file to import"
-msgstr "Импортиране"
+msgstr "Изберете файл за импорт"
 
 #: dashboard/publisher/adrotate-ads-main-disabled.php:20
 #: dashboard/publisher/adrotate-ads-main-error.php:19
@@ -3799,9 +3816,8 @@ msgstr "Напред"
 #: dashboard/publisher/adrotate-ads-main-disabled.php:73
 #: dashboard/publisher/adrotate-ads-main-error.php:65
 #: dashboard/publisher/adrotate-ads-main.php:95
-#, fuzzy
 msgid "Groups:"
-msgstr "Групи"
+msgstr "Групи:"
 
 #: dashboard/publisher/adrotate-ads-main-error.php:12
 msgid "Ads that need attention"
@@ -3838,7 +3854,7 @@ msgid "For 7 days"
 msgstr "За 7 дни"
 
 #: dashboard/publisher/adrotate-ads-main-error.php:72
-#: dashboard/publisher/adrotate-groups-edit.php:408
+#: dashboard/publisher/adrotate-groups-edit.php:422
 #: dashboard/publisher/adrotate-schedules-edit.php:196
 msgid "Configuration errors."
 msgstr "Грешки при конфигурирането."
@@ -3848,9 +3864,8 @@ msgid "Active Ads"
 msgstr "Активиране на рекламите"
 
 #: dashboard/publisher/adrotate-ads-main.php:24
-#, fuzzy
 msgid "Export to XML"
-msgstr "Експорт"
+msgstr "Експорт в XML"
 
 #: dashboard/publisher/adrotate-ads-main.php:25
 msgid "Export to CSV"
@@ -3861,18 +3876,14 @@ msgid "-- Weight --"
 msgstr "-- Тежест --"
 
 #: dashboard/publisher/adrotate-ads-main.php:49
-#: dashboard/publisher/adrotate-groups-edit.php:367
+#: dashboard/publisher/adrotate-groups-edit.php:381
 #: dashboard/publisher/adrotate-moderation-queue.php:40
 #: dashboard/publisher/adrotate-moderation-rejected.php:40
 #: dashboard/publisher/adrotate-schedules-edit.php:155
-#: dashboard/server/adrotate-active.php:22
-#: dashboard/server/adrotate-error.php:23
 msgid "Weight"
 msgstr "Тежест"
 
 #: dashboard/publisher/adrotate-ads-main.php:50
-#: dashboard/server/adrotate-active.php:23
-#: dashboard/server/adrotate-error.php:24
 msgid "Shown"
 msgstr "Показана"
 
@@ -3924,11 +3935,10 @@ msgid "Block Mode - Show a block of ads"
 msgstr "Блоков режим - показва се блок от реклами"
 
 #: dashboard/publisher/adrotate-groups-edit.php:72
-#, fuzzy
 msgid "Dynamic mode requires jQuery. You can enable this in AdRotate Settings."
 msgstr ""
-"'Динамичен' и 'Блоков' режим изискват 'jQuery' и 'jQuery Showoff' да бъдат "
-"заредени. Можете да ги включите от настройките на AdRotate."
+"Динамичния режим изисква jQuery. Можете да го включите от настройките на "
+"AdRotate."
 
 #: dashboard/publisher/adrotate-groups-edit.php:78
 #: dashboard/publisher/adrotate-groups-edit.php:136
@@ -3976,13 +3986,12 @@ msgid "pixel(s) high."
 msgstr "пиксела височина."
 
 #: dashboard/publisher/adrotate-groups-edit.php:136
-#, fuzzy
 msgid ""
 "Define the maximum size of the ads in pixels. Size can be 'auto' (Not "
 "recommended). Default: 125/125."
 msgstr ""
-"Задайте максималния размер на рекламите в пиксели минус margin-а. Размера не "
-"може да е \"auto\" (Не е препоръчително). По подразбиране: 125/125."
+"Задайте максималния размер на рекламите в пиксели минус. Размера може да "
+"бъде 'auto' (Не е препоръчително). По подразбиране: 125/125."
 
 #: dashboard/publisher/adrotate-groups-edit.php:140
 msgid "Automated refresh"
@@ -4004,8 +4013,8 @@ msgstr ""
 "страницата. По подразбиране: 6."
 
 #: dashboard/publisher/adrotate-groups-edit.php:182
-#: dashboard/publisher/adrotate-groups-edit.php:330
-#: dashboard/publisher/adrotate-groups-edit.php:414
+#: dashboard/publisher/adrotate-groups-edit.php:344
+#: dashboard/publisher/adrotate-groups-edit.php:428
 msgid "Save Group"
 msgstr "Запис на групата"
 
@@ -4018,32 +4027,59 @@ msgid "pixel(s)"
 msgstr "пиксел(а)"
 
 #: dashboard/publisher/adrotate-groups-edit.php:194
-#, fuzzy
 msgid "A transparent area outside the advert in pixels. Default: 0/0/0/0."
-msgstr ""
-"Прозрачна зона около на рекламата, в пиксели. По подразбиране: 1/1/1/1."
+msgstr "Прозрачна зона около рекламата, в пиксели. По подразбиране: 0/0/0/0."
 
 #: dashboard/publisher/adrotate-groups-edit.php:194
 msgid "Set to 0 to disable."
 msgstr "Въведете 0 за деактивация."
 
-#: dashboard/publisher/adrotate-groups-edit.php:200
-msgid "Enable GeoTargeting for this group."
-msgstr "Включване на Геотаргетирането за тази група."
+#: dashboard/publisher/adrotate-groups-edit.php:198
+#, fuzzy
+msgid "Align the group"
+msgstr "Реклами в група"
 
 #: dashboard/publisher/adrotate-groups-edit.php:201
+#, fuzzy
+msgid "None (Default)"
+msgstr "По подразбиране"
+
+#: dashboard/publisher/adrotate-groups-edit.php:202
+msgid "Left"
+msgstr ""
+
+#: dashboard/publisher/adrotate-groups-edit.php:203
+#, fuzzy
+msgid "Right"
+msgstr "Тежест"
+
+#: dashboard/publisher/adrotate-groups-edit.php:204
+msgid "Center"
+msgstr ""
+
+#: dashboard/publisher/adrotate-groups-edit.php:208
+msgid ""
+"Align the group in your post or page. Using 'center' may affect your margin "
+"setting. Not every theme supports this feature."
+msgstr ""
+
+#: dashboard/publisher/adrotate-groups-edit.php:214
+msgid "Enable Geo Targeting for this group."
+msgstr ""
+
+#: dashboard/publisher/adrotate-groups-edit.php:215
 msgid "Do not forget to tell the adverts for which areas they should show."
 msgstr "Не забравяйте да кажете на рекламите в кои зони трябва да се показват."
 
-#: dashboard/publisher/adrotate-groups-edit.php:205
+#: dashboard/publisher/adrotate-groups-edit.php:219
 msgid "Fallback group"
 msgstr "Резервна група"
 
-#: dashboard/publisher/adrotate-groups-edit.php:209
+#: dashboard/publisher/adrotate-groups-edit.php:223
 msgid "No"
 msgstr "Не"
 
-#: dashboard/publisher/adrotate-groups-edit.php:217
+#: dashboard/publisher/adrotate-groups-edit.php:231
 msgid ""
 "Select another group to fall back on when all ads are expired, not in the "
 "visitors geographic area or are otherwise unavailable."
@@ -4052,153 +4088,153 @@ msgstr ""
 "изтекли, посетителя не попада в зададената географска зона или не са налични "
 "по друга причина."
 
-#: dashboard/publisher/adrotate-groups-edit.php:222
+#: dashboard/publisher/adrotate-groups-edit.php:236
 #, fuzzy
 msgid "Leave empty or 0 to skip this. Will default to group id."
 msgstr ""
 "Оставете празно или въведете 0, за да пропуснете тази настройка. Ще бъде "
 "зададено ID на групата."
 
-#: dashboard/publisher/adrotate-groups-edit.php:228
+#: dashboard/publisher/adrotate-groups-edit.php:242
 msgid "Insert ads to the begin or end of a post/page."
 msgstr "Вмъкване на реклами в началото или в края на публикация/страница."
 
-#: dashboard/publisher/adrotate-groups-edit.php:231
+#: dashboard/publisher/adrotate-groups-edit.php:245
 msgid "Include ads in categories?"
 msgstr "Включване на реклами в категориите?"
 
-#: dashboard/publisher/adrotate-groups-edit.php:236
-#: dashboard/publisher/adrotate-groups-edit.php:277
+#: dashboard/publisher/adrotate-groups-edit.php:250
+#: dashboard/publisher/adrotate-groups-edit.php:291
 msgid "Before content"
 msgstr "Преди съдържанието"
 
-#: dashboard/publisher/adrotate-groups-edit.php:237
-#: dashboard/publisher/adrotate-groups-edit.php:278
+#: dashboard/publisher/adrotate-groups-edit.php:251
+#: dashboard/publisher/adrotate-groups-edit.php:292
 msgid "After content"
 msgstr "След съдържанието"
 
-#: dashboard/publisher/adrotate-groups-edit.php:238
-#: dashboard/publisher/adrotate-groups-edit.php:279
+#: dashboard/publisher/adrotate-groups-edit.php:252
+#: dashboard/publisher/adrotate-groups-edit.php:293
 msgid "Before and after content"
 msgstr "Преди и след съдържанието"
 
-#: dashboard/publisher/adrotate-groups-edit.php:239
-#: dashboard/publisher/adrotate-groups-edit.php:280
+#: dashboard/publisher/adrotate-groups-edit.php:253
+#: dashboard/publisher/adrotate-groups-edit.php:294
 msgid "After..."
 msgstr "След..."
 
-#: dashboard/publisher/adrotate-groups-edit.php:245
-#: dashboard/publisher/adrotate-groups-edit.php:286
+#: dashboard/publisher/adrotate-groups-edit.php:259
+#: dashboard/publisher/adrotate-groups-edit.php:300
 msgid "the first paragraph"
 msgstr "първия параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:246
-#: dashboard/publisher/adrotate-groups-edit.php:287
+#: dashboard/publisher/adrotate-groups-edit.php:260
+#: dashboard/publisher/adrotate-groups-edit.php:301
 msgid "the 2nd paragraph"
 msgstr "2-рия параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:247
-#: dashboard/publisher/adrotate-groups-edit.php:288
+#: dashboard/publisher/adrotate-groups-edit.php:261
+#: dashboard/publisher/adrotate-groups-edit.php:302
 msgid "the 3rd paragraph"
 msgstr "3-тия параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:248
-#: dashboard/publisher/adrotate-groups-edit.php:289
+#: dashboard/publisher/adrotate-groups-edit.php:262
+#: dashboard/publisher/adrotate-groups-edit.php:303
 msgid "the 4th paragraph"
 msgstr "4-тия параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:250
-#: dashboard/publisher/adrotate-groups-edit.php:291
+#: dashboard/publisher/adrotate-groups-edit.php:264
+#: dashboard/publisher/adrotate-groups-edit.php:305
 msgid "every 2nd paragraph"
 msgstr "всеки 2-ри параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:251
-#: dashboard/publisher/adrotate-groups-edit.php:292
+#: dashboard/publisher/adrotate-groups-edit.php:265
+#: dashboard/publisher/adrotate-groups-edit.php:306
 msgid "every 3rd paragraph"
 msgstr "всеки 3-ти параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:252
-#: dashboard/publisher/adrotate-groups-edit.php:293
+#: dashboard/publisher/adrotate-groups-edit.php:266
+#: dashboard/publisher/adrotate-groups-edit.php:307
 msgid "every 4th paragraph"
 msgstr "всеки 4-ти параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:253
-#: dashboard/publisher/adrotate-groups-edit.php:294
+#: dashboard/publisher/adrotate-groups-edit.php:267
+#: dashboard/publisher/adrotate-groups-edit.php:308
 msgid "every 5th paragraph"
 msgstr "всеки 5-ти параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:254
-#: dashboard/publisher/adrotate-groups-edit.php:295
+#: dashboard/publisher/adrotate-groups-edit.php:268
+#: dashboard/publisher/adrotate-groups-edit.php:309
 msgid "every 6th paragraph"
 msgstr "всеки 6-ти параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:255
-#: dashboard/publisher/adrotate-groups-edit.php:296
+#: dashboard/publisher/adrotate-groups-edit.php:269
+#: dashboard/publisher/adrotate-groups-edit.php:310
 msgid "every 7th paragraph"
 msgstr "всеки 7-ми параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:256
-#: dashboard/publisher/adrotate-groups-edit.php:297
+#: dashboard/publisher/adrotate-groups-edit.php:270
+#: dashboard/publisher/adrotate-groups-edit.php:311
 msgid "every 8th paragraph"
 msgstr "всеки 8-ми параграф"
 
-#: dashboard/publisher/adrotate-groups-edit.php:262
+#: dashboard/publisher/adrotate-groups-edit.php:276
 msgid "Which categories?"
 msgstr "Кои категории?"
 
-#: dashboard/publisher/adrotate-groups-edit.php:267
+#: dashboard/publisher/adrotate-groups-edit.php:281
 msgid "Click the categories posts you want the adverts to show in."
 msgstr "Изберете категориите, на които искате да се показват рекламите."
 
-#: dashboard/publisher/adrotate-groups-edit.php:272
+#: dashboard/publisher/adrotate-groups-edit.php:286
 msgid "Include ads in pages?"
 msgstr "Включване на реклами в страниците?"
 
-#: dashboard/publisher/adrotate-groups-edit.php:303
+#: dashboard/publisher/adrotate-groups-edit.php:317
 msgid "Which pages?"
 msgstr "Кои страници?"
 
-#: dashboard/publisher/adrotate-groups-edit.php:308
+#: dashboard/publisher/adrotate-groups-edit.php:322
 msgid "Click the pages you want the adverts to show in."
 msgstr "Изберете страниците, на които искате да се показват рекламите."
 
-#: dashboard/publisher/adrotate-groups-edit.php:334
+#: dashboard/publisher/adrotate-groups-edit.php:348
 msgid "Wrapper code"
 msgstr "Код за обвивката"
 
-#: dashboard/publisher/adrotate-groups-edit.php:335
+#: dashboard/publisher/adrotate-groups-edit.php:349
 msgid "Wraps around each ad."
 msgstr "Обвивка около всяка реклама."
 
-#: dashboard/publisher/adrotate-groups-edit.php:340
+#: dashboard/publisher/adrotate-groups-edit.php:354
 msgid "Before ad"
 msgstr "Преди реклама"
 
-#: dashboard/publisher/adrotate-groups-edit.php:345
+#: dashboard/publisher/adrotate-groups-edit.php:359
 msgid "HTML/JavaScript allowed, use with care!"
 msgstr "HTML/JavaScript са позволени, използвайте внимателно!"
 
-#: dashboard/publisher/adrotate-groups-edit.php:349
+#: dashboard/publisher/adrotate-groups-edit.php:363
 msgid "After ad"
 msgstr "След реклама"
 
-#: dashboard/publisher/adrotate-groups-edit.php:359
+#: dashboard/publisher/adrotate-groups-edit.php:373
 #: dashboard/publisher/adrotate-schedules-edit.php:147
 msgid "Select Ads"
 msgstr "Избор на реклами"
 
-#: dashboard/publisher/adrotate-groups-edit.php:364
+#: dashboard/publisher/adrotate-groups-edit.php:378
 #: dashboard/publisher/adrotate-schedules-edit.php:152
 msgid "Choose the ads to use in this group"
 msgstr "Изберете рекламите, които тази група да използва"
 
-#: dashboard/publisher/adrotate-groups-edit.php:368
+#: dashboard/publisher/adrotate-groups-edit.php:382
 #: dashboard/publisher/adrotate-schedules-edit.php:156
 #: templates/adrotate-active.php:29
 msgid "Visible until"
 msgstr "Да се вижда до"
 
-#: dashboard/publisher/adrotate-groups-edit.php:401
+#: dashboard/publisher/adrotate-groups-edit.php:415
 #: dashboard/publisher/adrotate-schedules-edit.php:189
 msgid "No ads created!"
 msgstr "Няма създадени реклами!"
@@ -4231,7 +4267,7 @@ msgstr "Код"
 #: dashboard/publisher/adrotate-groups-main.php:63
 #, fuzzy
 msgid "Fallback"
-msgstr "Резервна група"
+msgstr "Резера"
 
 #: dashboard/publisher/adrotate-groups-main.php:84
 msgid "No groups created!"
@@ -4327,7 +4363,7 @@ msgid "Reject"
 msgstr "Отхвърляне"
 
 #: dashboard/publisher/adrotate-moderation-queue.php:92
-#: dashboard/publisher/adrotate-moderation-rejected.php:102
+#: dashboard/publisher/adrotate-moderation-rejected.php:101
 msgid "No ads in queue yet!"
 msgstr "Все още няма реклами на опашката!"
 
@@ -4374,163 +4410,26 @@ msgstr "Край"
 
 #: dashboard/publisher/adrotate-schedules-main.php:53
 #: dashboard/publisher/adrotate-schedules-main.php:54
-#, fuzzy
 msgid "unlimited"
-msgstr ""
-"Актвирайте AdRotate на неограничен брой Wordpress инсталации и/или мрежи."
+msgstr "неограничено"
 
 #: dashboard/publisher/adrotate-schedules-main.php:65
-#, fuzzy
 msgid "Spread:"
-msgstr "Разпространение"
+msgstr "Разпространение:"
 
 #: dashboard/publisher/adrotate-schedules-main.php:65
-#, fuzzy
 msgid "impressions per day"
-msgstr "импресии на час"
+msgstr "импресии на ден"
 
 #: dashboard/publisher/adrotate-schedules-main.php:73
 msgid "No schedules created yet!"
 msgstr "Все още няма създадени графици!"
 
-#: dashboard/server/adrotate-active.php:12
-msgid "Adverts received from server"
-msgstr "Реклами получени от сървър"
-
-#: dashboard/server/adrotate-active.php:13
-msgid ""
-"These adverts are circulating in the pool of active adverts, served from "
-"AdRotate server."
-msgstr ""
-"Тези реклами циркулират в басейна с активни реклами, предоставен от сървъра "
-"на AdRotate."
-
-#: dashboard/server/adrotate-active.php:19
-msgid "Added / Updated"
-msgstr "Добавени / Качени"
-
-#: dashboard/server/adrotate-active.php:74
-#: dashboard/server/adrotate-error.php:76
-msgid "No ads received yet!"
-msgstr "Все още няма получени реклами!"
-
-#: dashboard/server/adrotate-error.php:12
-#, fuzzy
-msgid "Erroneous ads from server"
-msgstr "Реклами от сървъра с проблеми"
-
-#: dashboard/server/adrotate-error.php:13
-msgid "Adverts served from AdRotate server but having some issues."
-msgstr "Реклами с проблеми, предоставени от сървъра на AdBlock."
-
-#: dashboard/server/adrotate-error.php:19
-msgid "Updated"
-msgstr "Обновен"
-
-#: dashboard/server/adrotate-settings.php:15
-msgid "AdRotate Server Settings"
-msgstr "Настройки на сървъра на AdRotate"
-
-#: dashboard/server/adrotate-settings.php:21
-msgid ""
-"Link this website to an AdRotate server so your adverts and stats are "
-"synchronised regularly."
-msgstr ""
-"Свържете този сайт със сървър на AdRotate, за да може рекламите и "
-"статистиката Ви да бъдат редовно синхронизирани."
-
-#: dashboard/server/adrotate-settings.php:24
-msgid "Status"
-msgstr "Статус"
-
-#: dashboard/server/adrotate-settings.php:27
-msgid "Linked - Adverts can be synced."
-msgstr "Свързани - Рекламите могат да се синхронизират."
-
-#: dashboard/server/adrotate-settings.php:27
-msgid "Not linked - No adverts will be synced."
-msgstr "Не е свързан - рекламите няма да се синхронизират."
-
-#: dashboard/server/adrotate-settings.php:40
-msgid "Server Key"
-msgstr "Ключ за сървъра"
-
-#: dashboard/server/adrotate-settings.php:41
-msgid ""
-"You can get your server key from your AdRotate Server installation or the "
-"AdRollr website."
-msgstr ""
-"Можете да получите свой Ключ за сървър от инсталацията на AdRotate Server "
-"или от сайта на AdRollr."
-
-#: dashboard/server/adrotate-settings.php:41
-msgid ""
-"You should not share your key with anyone you do not trust. Treat this key "
-"as a password!"
-msgstr ""
-"Не трябва да споделяте ключа си с никой. Приемайте този ключ като парола!"
-
-#: dashboard/server/adrotate-settings.php:44
-msgid "Make this site a puppet"
-msgstr "Направете този сайт марионетка"
-
-#: dashboard/server/adrotate-settings.php:46
-msgid "Have AdRotate use AdRotate Server adverts exclusively."
-msgstr "Имате AdRotate, използвайте ексклузивни реклами от AdRotate Server."
-
-#: dashboard/server/adrotate-settings.php:46
-msgid ""
-"Enabling this function will DISABLE ALL LOCAL MANAGEMENT and will make this "
-"installation of AdRotate a puppet for your AdRotate Server."
-msgstr ""
-"Включването на тази опция ще ИЗКЛЮЧИ ЦЯЛОТО ЛОКАЛНО УПРАВЛЕНИЕ и ще направи "
-"тази инсталация на AdRotate подвласна на вашия AdRotate Server."
-
-#: dashboard/server/adrotate-settings.php:50
-msgid "Hide Server Details"
-msgstr "Скриване на детайли за сървъра"
-
-#: dashboard/server/adrotate-settings.php:52
-msgid ""
-"If you have installed AdRotate Pro for a client or in a Multisite network "
-"and want to hide the server details from your users or client."
-msgstr ""
-"Ако сте инсталирали AdRotate Pro за клиент или в Мултисайт режим и искате да "
-"скриете детайлите за сървъра от клиентите или потребителите."
-
-#: dashboard/server/adrotate-settings.php:60
-msgid "Link to server"
-msgstr "Свързване със сървър"
-
-#: dashboard/server/adrotate-settings.php:62
-msgid "Unlink from server"
-msgstr "Прекъсване на връзката със сървъра"
-
-#: library/license-functions.php:75
-msgid ""
-"An Unexpected HTTP Error occurred during the API request.</p> <p><a href=\"?"
-"\" onclick=\"document.location.reload(); return false;\">Try again</a>"
-msgstr ""
-"Неочаквана HTTP грешка възникна по време на API заявката.</p> <p><a href=\"?"
-"\" onclick=\"document.location.reload(); return false;\">Опитайте отново</a>"
-
-#: library/license-functions.php:79
-msgid "An unknown error occurred"
-msgstr "Възникна неизвестна грешка"
-
-#: library/license-functions.php:135
-msgid "An Unexpected HTTP Error occurred during the Support API request.</p>"
-msgstr ""
-"Случи се неизвестна HTTP грешка при изпращането на заявката към API-то на "
-"поддръжката.</p>"
-
 #: templates/adrotate-active.php:27
-#, fuzzy
 msgid "ID - Title"
-msgstr "Заглавие:"
+msgstr "ID - Заглавие"
 
 #: templates/adrotate-active.php:28
-#, fuzzy
 msgid "Visible from"
 msgstr "Да се вижда до"
 
@@ -4538,12 +4437,221 @@ msgstr "Да се вижда до"
 msgid ""
 "No adverts found, if you feel this to be in error contact your publisher."
 msgstr ""
+"Не са открити реклами, ако смятате, че това е грешка можете да се свържете с "
+"издателя."
+
+#~ msgid ""
+#~ "You will receive a notification approximately every 24 hours until the "
+#~ "listed issues are resolved."
+#~ msgstr ""
+#~ "Ще получавате известие приблизително на всеки 24 часа, докато изброените "
+#~ "проблеми не бъдат разрешени."
+
+#~ msgid "AdRotate Server"
+#~ msgstr "AdRotate Сървър"
+
+#~ msgid ""
+#~ "AdRotate server is currently in development and these menus are not "
+#~ "functional yet."
+#~ msgstr ""
+#~ "AdRotate Server все още се разработва и тези менюта не функционират в "
+#~ "момента."
+
+#~ msgid "Overview"
+#~ msgstr "Преглед"
+
+#~ msgid "Geographic Tracking"
+#~ msgstr "Проследяване на местоположението"
+
+#~ msgid ""
+#~ "The most complete and accurate geo targeting you can get for only $20 per "
+#~ "50000 lookups."
+#~ msgstr ""
+#~ "Най-пълната и точна услуга за местоположение, която можете да получите "
+#~ "само за $20 за 50000 заявки."
+
+#~ msgid "Highly accurate geo targeting for $1 per 1000 lookups."
+#~ msgstr "Много точна услуга за местоположение за $1 на 1000 заявки"
+
+#, fuzzy
+#~ msgid ""
+#~ "The free alternative. Slightly less accurate, 14400 lookups per day and "
+#~ "uses GeoLite2 databases from MaxMind!"
+#~ msgstr ""
+#~ "Безплатната алтернатива. По-малко точна, използва GeoLITE база данни от "
+#~ "MaxMind!"
+
+#, fuzzy
+#~ msgid ""
+#~ "Another free alternative. Slightly less accurate, 300 lookups per hour "
+#~ "and uses GeoLite2 databases from MaxMind!"
+#~ msgstr ""
+#~ "Безплатната алтернатива. По-малко точна, използва GeoLITE база данни от "
+#~ "MaxMind!"
+
+#~ msgid "Allow advertisers to specify where their ads will show."
+#~ msgstr ""
+#~ "Позволете на рекламодателите да определят къде да се показват рекламите "
+#~ "им."
+
+#~ msgid ""
+#~ "Detect ad blockers and show a message to those users. Make sure jQuery Ad "
+#~ "Blocker Detection is enabled in Javascript Libraries"
+#~ msgstr ""
+#~ "Засича ad blocker-и и показва съобщение на потребителите. Уверете се, че  "
+#~ "jQuery Ad Blocker детекцията е включена, в раздел Javascript библиотеки"
+
+#~ msgid "Javascript Libraries"
+#~ msgstr "Javascript библиотеки"
+
+#~ msgid "GeoLocation"
+#~ msgstr "Геолокация"
+
+#~ msgid ""
+#~ "Cities or countries configured do only/apply to groups with GeoLocation "
+#~ "enabled and is ignored everywhere else."
+#~ msgstr ""
+#~ "Въведените страни и градове се прилагат само за групи с включено Гео "
+#~ "локализиране, в противен случай ще бъдат игнорирани."
+
+#~ msgid "Geo Location"
+#~ msgstr "Геолокация"
+
+#~ msgid ""
+#~ "This works if you assign the advert to a group and enable that group to "
+#~ "use Geo Targeting."
+#~ msgstr ""
+#~ "Това работи ако закачите рекламата към група и включите таргетирането по "
+#~ "местоположение за тази група."
+
+#~ msgid "Enable GeoTargeting for this group."
+#~ msgstr "Включване на Геотаргетирането за тази група."
+
+#~ msgid "Adverts received from server"
+#~ msgstr "Реклами получени от сървър"
+
+#~ msgid ""
+#~ "These adverts are circulating in the pool of active adverts, served from "
+#~ "AdRotate server."
+#~ msgstr ""
+#~ "Тези реклами циркулират в басейна с активни реклами, предоставен от "
+#~ "сървъра на AdRotate."
+
+#~ msgid "Added / Updated"
+#~ msgstr "Добавени / Качени"
+
+#~ msgid "No ads received yet!"
+#~ msgstr "Все още няма получени реклами!"
+
+#~ msgid "Erroneous ads from server"
+#~ msgstr "Неправилни реклами от сървъра"
+
+#~ msgid "Adverts served from AdRotate server but having some issues."
+#~ msgstr "Реклами с проблеми, предоставени от сървъра на AdBlock."
+
+#~ msgid "Updated"
+#~ msgstr "Обновен"
+
+#~ msgid "AdRotate Server Settings"
+#~ msgstr "Настройки на сървъра на AdRotate"
+
+#~ msgid ""
+#~ "Link this website to an AdRotate server so your adverts and stats are "
+#~ "synchronised regularly."
+#~ msgstr ""
+#~ "Свържете този сайт със сървър на AdRotate, за да може рекламите и "
+#~ "статистиката Ви да бъдат редовно синхронизирани."
+
+#~ msgid "Status"
+#~ msgstr "Статус"
+
+#~ msgid "Linked - Adverts can be synced."
+#~ msgstr "Свързани - Рекламите могат да се синхронизират."
+
+#~ msgid "Not linked - No adverts will be synced."
+#~ msgstr "Не е свързан - рекламите няма да се синхронизират."
+
+#~ msgid "Server Key"
+#~ msgstr "Ключ за сървъра"
+
+#~ msgid ""
+#~ "You can get your server key from your AdRotate Server installation or the "
+#~ "AdRollr website."
+#~ msgstr ""
+#~ "Можете да получите свой Ключ за сървър от инсталацията на AdRotate Server "
+#~ "или от сайта на AdRollr."
+
+#~ msgid ""
+#~ "You should not share your key with anyone you do not trust. Treat this "
+#~ "key as a password!"
+#~ msgstr ""
+#~ "Не трябва да споделяте ключа си с никой. Приемайте този ключ като парола!"
+
+#~ msgid "Make this site a puppet"
+#~ msgstr "Направете този сайт марионетка"
+
+#~ msgid "Have AdRotate use AdRotate Server adverts exclusively."
+#~ msgstr "Имате AdRotate, използвайте ексклузивни реклами от AdRotate Server."
+
+#~ msgid ""
+#~ "Enabling this function will DISABLE ALL LOCAL MANAGEMENT and will make "
+#~ "this installation of AdRotate a puppet for your AdRotate Server."
+#~ msgstr ""
+#~ "Включването на тази опция ще ИЗКЛЮЧИ ЦЯЛОТО ЛОКАЛНО УПРАВЛЕНИЕ и ще "
+#~ "направи тази инсталация на AdRotate подвласна на вашия AdRotate Server."
+
+#~ msgid "Hide Server Details"
+#~ msgstr "Скриване на детайли за сървъра"
+
+#~ msgid ""
+#~ "If you have installed AdRotate Pro for a client or in a Multisite network "
+#~ "and want to hide the server details from your users or client."
+#~ msgstr ""
+#~ "Ако сте инсталирали AdRotate Pro за клиент или в Мултисайт режим и искате "
+#~ "да скриете детайлите за сървъра от клиентите или потребителите."
+
+#~ msgid "Link to server"
+#~ msgstr "Свързване със сървър"
+
+#~ msgid "Unlink from server"
+#~ msgstr "Прекъсване на връзката със сървъра"
+
+#~ msgid ""
+#~ "An Unexpected HTTP Error occurred during the API request.</p> <p><a href="
+#~ "\"?\" onclick=\"document.location.reload(); return false;\">Try again</a>"
+#~ msgstr ""
+#~ "Неочаквана HTTP грешка възникна по време на API заявката.</p> <p><a href="
+#~ "\"?\" onclick=\"document.location.reload(); return false;\">Опитайте "
+#~ "отново</a>"
+
+#~ msgid "An unknown error occurred"
+#~ msgstr "Възникна неизвестна грешка"
+
+#~ msgid ""
+#~ "An Unexpected HTTP Error occurred during the Support API request.</p>"
+#~ msgstr ""
+#~ "Случи се неизвестна HTTP грешка при изпращането на заявката към API-то на "
+#~ "поддръжката.</p>"
+
+#~ msgid "knowledgebase"
+#~ msgstr "помощните статии"
+
+#~ msgid "AdRotate Website"
+#~ msgstr "AdRotate Уебсайт"
+
+#~ msgid "AdRotate Knowledge base and manuals"
+#~ msgstr "AdRotate помощни статии и упътвания"
+
+#~ msgid "Disable Dashboard Notifications about advert statuses."
+#~ msgstr ""
+#~ "Изключване на известията за статусите на рекламите върху Таблото на "
+#~ "WordPress."
+
+#~ msgid "A comma separated list of cities"
+#~ msgstr "Списък с градове, разделен със запетая"
 
 #~ msgid "Check out the"
 #~ msgstr "Прегледайте"
-
-#~ msgid "manuals"
-#~ msgstr "ръководства"
 
 #~ msgid "and have the most popular features explained."
 #~ msgstr "за да видите обяснения на най-популярните функции."
@@ -4650,10 +4758,6 @@ msgstr ""
 #~ "AJdG Solutions не е свързана с FreegeoIP или GeoSelect и не получава "
 #~ "комисионни или парични компенсации от тези улсуги."
 
-#, fuzzy
-#~ msgid "Clean Trackerdata next run:"
-#~ msgstr "Изчистване на Trackerdata при следващо стартиране:"
-
 #~ msgid "Load Dynamic Groups"
 #~ msgstr "Зареждай Динамични групи"
 
@@ -4690,9 +4794,6 @@ msgstr ""
 
 #~ msgid "CSV Importer"
 #~ msgstr "CSV Importer"
-
-#~ msgid "Ads in group"
-#~ msgstr "Реклами в група"
 
 #~ msgid "Like the plugin?"
 #~ msgstr "Харесвате ли този плъгин?"
