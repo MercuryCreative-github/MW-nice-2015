@@ -14,7 +14,15 @@ h1 {
 
 .noMarginContent .container {margin:0;}
 
-.page-content .subtitle h4{margin-bottom: 5px;font-weight: 600;color: #ee7630;}
+.page-content .subtitle h4 {
+	margin-bottom: 5px;
+	margin-top: 10px;
+	padding-bottom: 0px;
+	font-weight: 600;
+	color: #ee7630;
+	text-align: left;
+	border: none;
+}
 
 .ui-tabs-panel p {padding: 0;}
 .white-background { background:#FFF;}
@@ -112,7 +120,9 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .workshops .page-content .workshops-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-3,  
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1,
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2,
-.workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #ee7630 !important;}
+.workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3,
+.workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-4,
+.workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-5 {background: #ee7630 !important;}
 
 .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, 
 .workshops.page .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, 
@@ -151,10 +161,16 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .theater .summit-session, 
 .keynotes-page .summit-day{display: none;}
 
-.takeaway-tab .row-fluid.tabs-summits-content {
+.takeaway-tab .row-fluid.tabs-summits-content, 
+.workshops-tab .row-fluid.tabs-summits-content {
  margin: 0;
  width: 100% !important;
 }
+
+/*SIDEBAR WORKSHOP*/
+.workshops .tp-caption.grey-btn {padding: 2px 30px;}
+.workshops .tp-caption.slider-header {line-height: 20px;}
+.workshops .workshops-tab .rev_slider_wrapper {margin: 20px 0px 10px 0px !important;}
 
 /**************************/
 /******* SUBMIT PAGE ******/
@@ -204,7 +220,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .summit-main-title.digital-operations {background: #27abb2;}
 .summit-main-title.executive {background: #201e20;}
 
-.page-content .summit-inner-tabs ul li, .page-content .summit-sidebar-tabs ul li {line-height: 2.0em;}
+.page-content .summit-inner-tabs ul li, .page-content .summit-sidebar-tabs ul li,.textwidget .summit-sidebar-tabs ul li {line-height: 2.0em;}
 p.list-title {font-weight: bold;font-size: 20px;border-width: 2px; border-style: solid;border-left: none;border-right: none;padding: 13px 0;margin-bottom: 30px;margin-top: 40px;}
 
 .cca p.list-title{ border-color:#f3a626; }
@@ -223,7 +239,10 @@ p.summit-sidebar-title {border: none;margin-bottom: 0px;}
 .page-content .summit-sidebar-tabs ul li:last-child,
 .textwidget .summit-sidebar-tabs ul li:last-child {border:none;}
 .page-content .summit-sidebar-tabs ul li:before,
-.textwidget .summit-sidebar-tabs ul li:before {content:"\f00c";font-family:FontAwesome;font-size:14px;padding-right:10px;color: #EE7630;}
+.textwidget .summit-sidebar-tabs ul li a:before {content:"\f00c";font-family:FontAwesome;font-size:14px;padding-right:10px;color: #EE7630;}
+
+.widget .summit-sidebar-tabs ul li > a {padding: 0;color: #444;}
+.widget .summit-sidebar-tabs ul li > a:hover {color: #EE7630;}
 
 .page-content .summit-sidebar-tabs.cca ul li:before {color: #f3a626;}
 .page-content .summit-sidebar-tabs.iot ul li:before {color: #8b1e88;}
@@ -469,12 +488,12 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 .to-remove-position-absolute {height: 50px;}
 /*section03*/
 .section03 {
-	background-image: url('/wp-content/uploads/2015/02/networking-bg.jpg');
+	background-image: url('/wp-content/uploads/2015/03/networking-bg.jpg');
 	background-size: cover;
 	min-height: 785px;
 }
 .section03-infobox01{
-	background-image: url('/wp-content/uploads/2015/02/box-networking.jpg');
+	background-image: url('/wp-content/uploads/2015/03/box-networking.jpg');
 	background-size: cover;
 }
 .section03-infobox01, .section03-infobox02 {
@@ -1763,11 +1782,12 @@ table.tt_timetable{text-decoration: none;margin-top: 0;}
 
 .agenda-ml p { margin-left: 20px; }
 #agenda-info { list-style: outside none none; margin: 0; padding: 0; }
+#agenda-info li a { color: #444; padding:0; }
+#agenda-info li:hover {background-color: #F6F7F7;}
 #agenda-info > li { border-bottom: 1px solid #e2e3e2; list-style: none; padding: 24px 0; line-height:28px; }
 #agenda-info img { display: block; float: left; margin-left: 20px; margin-right: 35px; }
 
 #agenda-info > li:first-child, #agenda-info > li:nth-child(2) { font-size: 25px; font-weight:400; }
-#agenda-info > li:first-child { padding-top:0px; }
 #agenda-info > li:first-child span { font-size: 28px; font-weight:600; }
 #agenda-info > li:nth-child(2) span, #agenda-info > li:nth-child(4) span { font-size: 30px; font-weight:600; }
 #agenda-info > li:nth-child(3) { font-size: 17px; line-height: 18px; }
@@ -2000,7 +2020,7 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 
 .sponsors h4 {
 		border-bottom: 1px solid #bdbdbd;
-		font-size: 24px;
+		font-size: 20px;
 		padding-bottom: 10px;
 		text-align: center;
 		margin-top:30px;
