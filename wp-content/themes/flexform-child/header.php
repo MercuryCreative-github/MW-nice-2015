@@ -347,6 +347,7 @@
 							<div id="logo">
 								<a href="<?php echo home_url(); ?>">
 									<img class="standard" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
+									<img class="retina" src="<?php echo $retina_logo; ?>" alt="<?php bloginfo( 'name' ); ?>" />
 								</a>
 
 							</div>
