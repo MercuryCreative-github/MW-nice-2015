@@ -77,15 +77,16 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 
 /*navegation-tabs*/
 .page-content .ui-widget-header li:hover a, .page-content .ui-widget-header li.ui-tabs-active:hover a, .page .page-content .ui-tabs .ui-tabs-nav li.ui-tabs-active a {color: #fff;}
-.ui-widget-header li:hover a#ui-id-1, .ui-widget-header li.ui-tabs-active:hover a#ui-id-1, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1 {background: #f3a626 !important;}
-.ui-widget-header li:hover a#ui-id-2, .ui-widget-header li.ui-tabs-active:hover a#ui-id-2, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2 {background: #8b1e88 !important;}
-.ui-widget-header li:hover a#ui-id-3, .ui-widget-header li.ui-tabs-active:hover a#ui-id-3, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #7db342 !important;}
-.ui-widget-header li:hover a#ui-id-4, .ui-widget-header li.ui-tabs-active:hover a#ui-id-4, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-4 {background: #225f91 !important;}
-.ui-widget-header li:hover a#ui-id-5, .ui-widget-header li.ui-tabs-active:hover a#ui-id-5, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-5 {background: #27abb2 !important;}
-.ui-widget-header li:hover a#ui-id-6, .ui-widget-header li.ui-tabs-active:hover a#ui-id-6, .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-6 {background: #201e20 !important;}
+
+.summit .ui-widget-header li:hover a#ui-id-1, .summit .ui-widget-header li.ui-tabs-active:hover a#ui-id-1, .summit .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1 {background: #f3a626 !important;}
+.summit .ui-widget-header li:hover a#ui-id-2, .summit .ui-widget-header li.ui-tabs-active:hover a#ui-id-2, .summit .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2 {background: #8b1e88 !important;}
+.summit .ui-widget-header li:hover a#ui-id-3, .summit .ui-widget-header li.ui-tabs-active:hover a#ui-id-3, .summit .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3 {background: #7db342 !important;}
+.summit .ui-widget-header li:hover a#ui-id-4, .summit .ui-widget-header li.ui-tabs-active:hover a#ui-id-4, .summit .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-4 {background: #225f91 !important;}
+.summit .ui-widget-header li:hover a#ui-id-5, .summit .ui-widget-header li.ui-tabs-active:hover a#ui-id-5, .summit .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-5 {background: #27abb2 !important;}
+.summit .ui-widget-header li:hover a#ui-id-6, .summit .ui-widget-header li.ui-tabs-active:hover a#ui-id-6, .summit .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-6 {background: #201e20 !important;}
 
 /* NETWORKING */
-.networking .page-content .networking-tab .ui-widget-header li:hover a#ui-id-1,
+/* .networking .page-content .networking-tab .ui-widget-header li:hover a#ui-id-1,
 .networking .page-content .networking-tab .ui-widget-header li:hover a#ui-id-2,
 .networking .page-content .networking-tab .ui-widget-header li:hover a#ui-id-3,   
 .networking .page-content .networking-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-1,
@@ -108,21 +109,33 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .takeaway .page-content .takeaway-tab .ui-widget-header li:hover a#ui-id-3,   
 .takeaway .page-content .takeaway-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-1,
 .takeaway .page-content .takeaway-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-2, 
-.takeaway .page-content .takeaway-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-3,  
+.takeaway .page-content .takeaway-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-3, 
 .takeaway.page .takeaway-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1,
 .takeaway.page .takeaway-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2,
 .takeaway.page .takeaway-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3,
 .workshops .page-content .workshops-tab .ui-widget-header li:hover a#ui-id-1,
 .workshops .page-content .workshops-tab .ui-widget-header li:hover a#ui-id-2,
-.workshops .page-content .workshops-tab .ui-widget-header li:hover a#ui-id-3,   
+.workshops .page-content .workshops-tab .ui-widget-header li:hover a#ui-id-3,  
 .workshops .page-content .workshops-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-1,
 .workshops .page-content .workshops-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-2, 
-.workshops .page-content .workshops-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-3,  
+.workshops .page-content .workshops-tab .ui-widget-header li.ui-tabs-active:hover a#ui-id-3, 
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-1,
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-2,
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-3,
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-4,
-.workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-5 {background: #ee7630 !important;}
+.workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a#ui-id-5,*/
+.networking .page-content .networking-tab .ui-widget-header li:hover a,
+.networking .page-content .networking-tab .ui-widget-header li.ui-tabs-active:hover a,
+.networking.page .networking-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.theater .page-content .theater-tab .ui-widget-header li:hover a,
+.theater .page-content .theater-tab .ui-widget-header li.ui-tabs-active:hover a,
+.theater.page .theater-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.takeaway .page-content .takeaway-tab .ui-widget-header li:hover a,
+.takeaway .page-content .takeaway-tab .ui-widget-header li.ui-tabs-active:hover a,
+.takeaway.page .takeaway-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.workshops .page-content .workshops-tab .ui-widget-header li:hover a,
+.workshops .page-content .workshops-tab .ui-widget-header li.ui-tabs-active:hover a,
+.workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a {background: #ee7630 !important;}
 
 .networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, 
 .workshops.page .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, 
