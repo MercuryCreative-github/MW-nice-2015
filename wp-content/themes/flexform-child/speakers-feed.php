@@ -15,24 +15,33 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 		$speaker= '<speaker>';
 		$speaker.= '<first_name>' . esc_html( $user->first_name ) . '</first_name>' ;
 		$speaker.= '<last_name>' . esc_html( $user->last_name ) . '</last_name>' ;
-		$speaker.= '<title>' . esc_html( $user->role ) . '</title>';
-		
+		$speaker.= '<title>' . esc_html( $user->job_role ) . '</title>';
+
+		// Get companies and job role
+		$companies = $user->company;
+		$companyIds = $companies[0];
+
+		$speaker.= '<company>';
+
 		// Get companies and job role
 		$companyIds = getUserCompanies( esc_html( $user->ID ) );
-		
-		$speaker.= '<company>';
-		foreach( $companyIds as $company ) {
-			if( (int)$company == 0 ) continue;
+		$jobRole = '';
+
+		$i = 0;
+		foreach( $companyIds as $companyId ) {
+			if( (int)$companyId == 0 ) continue;
 			$speaker .= '<item>';
-				$jobRole = getUserJobRolesByCompanyId( $user->ID, $company );
-				if( empty( $jobRole ) ) {
-					$jobRole = esc_html( $user->role );
-				}
-				$speaker .= '<companyId>' . $company . '</companyId>';
-				$speaker .= '<companyName>' . get_the_title( $company ) . '</companyName>';
-				$speaker .= '<jobRole>' . $jobRole . '</jobRole>';
+			$company = '';
+
+			$company = get_the_title( $companyId );  // cambia , por </br> 
+
+			$speaker .= '<companyId>' . $companyId . '</companyId>';
+			$speaker .= '<companyName>' . $company . '</companyName>';
+			$speaker .= '<jobRole>' . esc_html( $user->job_role ) . '</jobRole>';
+
+			$i++;
 			$speaker .= '</item>';
-		} // foreach( $companyIds as $company )
+		}
 		$speaker.= '</company>';
 		
 		$speaker.= '<description>' . $user->description . '</description>';
@@ -89,6 +98,5 @@ $i++;
 
 	
 	  ?>
-
 </channel>
 </rss>
