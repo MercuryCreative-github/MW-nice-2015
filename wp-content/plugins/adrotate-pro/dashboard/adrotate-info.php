@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -138,7 +138,7 @@ $data = get_option("adrotate_advert_status");
 					<?php 
 						}
 					} else {
-						_e('Your server doesn\'t support JSON Encode - The support form can not be used. If you need help please post your ticket through support@adrotateplugin.com.', 'adrotate');
+						_e('Your server doesn\'t support JSON Encode - The support form can not be used. If you need help please post your ticket through adrotate-support@ajdg.net.', 'adrotate');
 					}
 					?>
 					</div>
@@ -154,11 +154,7 @@ $data = get_option("adrotate_advert_status");
 				<div class="postbox-adrotate">
 					<div class="inside">
 						<?php wp_widget_rss_output(array(
-							'url' => array(
-								'http://feeds.feedburner.com/AdrotatePluginForWordPress', 
-								'http://feeds.feedburner.com/meandmymacnet',
-								'http://ajdg.solutions/news/feed/'
-							), 
+							'url' => array('http://feeds.feedburner.com/meandmymacnet', 'http://ajdg.solutions/feed/',), 
 							'title' => 'AdRotate Development News', 
 							'items' => 4, 
 							'show_summary' => 1, 

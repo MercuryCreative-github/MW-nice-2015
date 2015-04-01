@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -165,7 +165,7 @@ function adrotate_export_stats() {
 		
 					$attachments = array(WP_CONTENT_DIR . '/reports/'.$filename);
 				 	$siteurl 	= get_option('siteurl');
-					$pluginurl	= "https://www.adrotateplugin.com";
+					$pluginurl	= "https://ajdg.solutions/products/adrotate-for-wordpress/";
 					$email 		= get_option('admin_email');
 		
 				    $headers = "MIME-Version: 1.0\n" .
@@ -233,6 +233,9 @@ function adrotate_export_ads($ids, $format) {
 			$starttime = $wpdb->get_var("SELECT `starttime` FROM `".$wpdb->prefix."adrotate_schedule`, `".$wpdb->prefix."adrotate_linkmeta` WHERE `ad` = '".$single['id']."' AND `schedule` = `".$wpdb->prefix."adrotate_schedule`.`id` ORDER BY `starttime` ASC LIMIT 1;");
 			$stoptime = $wpdb->get_var("SELECT `stoptime` FROM `".$wpdb->prefix."adrotate_schedule`, `".$wpdb->prefix."adrotate_linkmeta` WHERE `ad` = '".$single['id']."' AND  `schedule` = `".$wpdb->prefix."adrotate_schedule`.`id` ORDER BY `stoptime` DESC LIMIT 1;");
 
+			if(!is_array($single['cities'])) $single['cities'] = array();
+			if(!is_array($single['countries'])) $single['countries'] = array();
+			
 			$ads[$single['id']] = array(
 				'title' => $single['title'],
 				'bannercode' => stripslashes($single['bannercode']),

@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -18,14 +18,14 @@
  Since:		3.11
 -------------------------------------------------------------*/
 function adrotate_front_end($atts, $content = null) {
-	global $wpdb, $current_user, $adrotate_config, $adrotate_server;
+	global $wpdb, $current_user, $adrotate_config;
 
 	$output = '';
 	ob_start();
 
 	if(is_user_logged_in()) {
 		if(current_user_can('adrotate_advertiser')) {
-			if($adrotate_config['enable_advertisers'] == 'Y' && $adrotate_server['adrotate_server_puppet'] == 0) {
+			if($adrotate_config['enable_advertisers'] == 'Y') {
 
 				$pagename = 'full';
 				if(!empty($atts['page'])) {
@@ -52,7 +52,7 @@ function adrotate_front_end($atts, $content = null) {
 					if($pagename == 'full' OR $pagename == 'disabled') adrotate_get_template_part('adrotate', 'disabled');
 				}
 			} else {
-				echo 'Advertisers are not enabled or the website runs in puppet mode.';
+				echo 'Advertisers are not enabled.';
 			}
 		} else {
 			echo 'You do not have sufficient permissions to use this page.';

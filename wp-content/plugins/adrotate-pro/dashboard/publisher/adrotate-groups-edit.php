@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -211,7 +211,7 @@ if(!is_array($meta_array)) $meta_array = array();
 		<?php if($adrotate_config['enable_geo'] > 0) { ?>
 	    <tr>
 			<th width="15%"><?php _e('Geo Targeting', 'adrotate'); ?></th>
-			<td width="35%"><label for="adrotate_geo"><input tabindex="12" type="checkbox" name="adrotate_geo" value="1" <?php if($edit_group->geo == '1') { ?>checked="checked"<?php } ?> /> <?php _e('Enable GeoTargeting for this group.', 'adrotate'); ?></label></td>
+			<td width="35%"><label for="adrotate_geo"><input tabindex="12" type="checkbox" name="adrotate_geo" value="1" <?php if($edit_group->geo == '1') { ?>checked="checked"<?php } ?> /> <?php _e('Enable Geo Targeting for this group.', 'adrotate'); ?></label></td>
 			<td><p><em><?php _e('Do not forget to tell the adverts for which areas they should show.', 'adrotate'); ?></em></p></td>
 		</tr>
 		<?php } ?>

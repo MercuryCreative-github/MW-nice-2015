@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -132,7 +132,7 @@ function adrotate_insert_input() {
 			// Impression Spread
 			if(isset($spread) AND strlen($spread) != 0 AND $maxshown > 0) {
 				$spread = 'Y';
-				$dayimpressions = round($maxshown/((($enddate - $startdate)/86400)*24));
+				$dayimpressions = round($maxshown/(($enddate - $startdate)/86400));
 			} else {
 				$spread = 'N';
 				$dayimpressions = 0;
@@ -180,10 +180,12 @@ function adrotate_insert_input() {
 				}
 				unset($cities);
 				$cities = serialize($cities_clean);
+			} else {
+				$cities = serialize(array());
 			}
 
 			if(count($countries) == 0) {
-				$countries = '';
+				$countries = serialize(array());
 			} else {
 				foreach($countries as $key => $value) {
 					$countries_clean[] = trim($value);
@@ -504,7 +506,8 @@ function adrotate_insert_schedule() {
 			// Impression Spread
 			if(isset($spread) AND strlen($spread) != 0 AND $maxshown > 0) {
 				$spread = 'Y';
-				$dayimpressions = round($maxshown/((($enddate - $startdate)/86400)*24)+1);
+				$dayimpressions = round($maxshown/(($enddate - $startdate)/86400));
+				if($dayimpressions == 0) $dayimpressions = 1;
 			} else {
 				$spread = 'N';
 				$dayimpressions = 0;
@@ -1027,10 +1030,13 @@ function adrotate_options_submit() {
 		if(isset($_POST['adrotate_enable_loggedin_clicks'])) $config['enable_loggedin_clicks'] = 'Y';
 			else $config['enable_loggedin_clicks'] = 'N';
 
+		if(isset($_POST['adrotate_enable_geo_advertisers'])) $config['enable_geo_advertisers'] = 1;
+			else $config['enable_geo_advertisers'] = 0;
+
 		// GeoLocation
 		$config['enable_geo'] = $_POST['adrotate_enable_geo'];
+		$config['geo_cookie_life'] = $_POST['adrotate_geo_cookie_life'] * 3600;
 
-		// Filter and format the banner folder, reset if empty
 		$geo_email = trim($_POST['adrotate_geo_email']);
 		if(strlen($geo_email) > 0) {
 			$config['geo_email'] = $geo_email;
@@ -1045,38 +1051,6 @@ function adrotate_options_submit() {
 			$config['geo_pass'] = '';
 		}
 
-		$remote_ip = adrotate_get_remote_ip();
-		if($config['enable_geo'] == 3 OR $config['enable_geo'] == 4) {
-			if($config['enable_geo'] == 3) {
-				$service_type = 'country';
-			}
-			if($config['enable_geo'] == 4) {
-				$service_type = 'city';
-			}
-	
-			$args = array('headers' => array('Authorization' => 'Basic '.base64_encode($geo_email.':'.$geo_pass)));
-			$raw_response = wp_remote_get('https://geoip.maxmind.com/geoip/v2.1/'.$service_type.'/'.$remote_ip, $args);
-		    
-		    if(!is_wp_error($raw_response)) {	
-			    $response = json_decode($raw_response['body'], true);	
-			    if($raw_response['response']['code'] == 200) {
-					update_option('adrotate_geo_requests', $response['maxmind']['queries_remaining']);
-				} else { 			
-					update_option('adrotate_geo_requests', $response['code']);
-				}
-			}
-		}
-	
-		if($config['enable_geo'] == 2) {
-			$raw_response = get_meta_tags('http://www.geobytes.com/IpLocator.htm?GetLocation&template=php3.txt&IpAddress='.$remote_ip.'&pt_email='.$geo_email.'&pt_password='.$geo_pass);
-		    if(is_array($raw_response)) {	
-				update_option('adrotate_geo_requests', $raw_response['mapbytesremaining']);
-			}
-		}
-
-		if(isset($_POST['adrotate_enable_geo_advertisers'])) $config['enable_geo_advertisers'] = 1;
-			else $config['enable_geo_advertisers'] = 0;
-
 		// Filter and format the banner folder, reset if empty
 		$banner_folder = trim($_POST['adrotate_banner_folder']);
 		if(strlen($banner_folder) > 0) {
@@ -1086,6 +1060,104 @@ function adrotate_options_submit() {
 			$config['banner_folder'] = "wp-content/banners/";
 		}
 
+		// Set up impression tracker timer
+		$impression_timer = trim($_POST['adrotate_impression_timer']);
+		if(is_numeric($impression_timer) AND $impression_timer >= 10 AND $impression_timer <= 3600) {
+			$config['impression_timer'] = $impression_timer;
+		} else {
+			$config['impression_timer'] = 60;
+		}
+
+		// Set up click timer
+		$click_timer = trim($_POST['adrotate_click_timer']);
+		if(is_numeric($click_timer) AND $click_timer >= 60 AND $click_timer <= 86400) {
+			$config['click_timer'] = $click_timer;
+		} else {
+			$config['click_timer'] = 86400;
+		}
+		
+		// Miscellaneous Options
+		if(isset($_POST['adrotate_widgetalign'])) {
+			$config['widgetalign'] = 'Y';
+		} else {
+			$config['widgetalign'] = 'N';
+		}
+
+		if(isset($_POST['adrotate_widgetpadding'])) {
+			$config['widgetpadding'] = 'Y';
+		} else {
+			$config['widgetpadding'] = 'N';
+		}
+
+		if(isset($_POST['adrotate_adminbar'])) {
+			$config['adminbar'] = 'Y';
+		} else {
+			$config['adminbar'] = 'N';
+		}
+
+		if(isset($_POST['adrotate_dashboard_notifications'])) {
+			$config['dashboard_notifications'] = 'N';
+		} else {
+			$config['dashboard_notifications'] = 'Y';
+		}
+
+		if(isset($_POST['adrotate_hide_schedules'])) {
+			$config['hide_schedules'] = 'Y';
+		} else {
+			$config['hide_schedules'] = 'N';
+		}
+
+		if(isset($_POST['adrotate_w3caching'])) {
+			$config['w3caching'] = 'Y';
+		} else {
+			$config['w3caching'] = 'N';
+		}
+
+		if(isset($_POST['adrotate_supercache'])) {
+			$config['supercache'] = 'Y';
+		} else {
+			$config['supercache'] = 'N';
+		}
+
+		if(isset($_POST['adrotate_jquery'])) {
+			$config['jquery'] = 'Y';
+		} else {
+			$config['jquery'] = 'N';
+		}
+
+		if(isset($_POST['adrotate_adblock'])) {
+			$config['adblock'] = 'Y';
+		} else {
+			$config['adblock'] = 'N';
+		}
+
+		if(isset($_POST['adrotate_jsfooter'])) {
+			$config['jsfooter'] = 'Y';
+		} else {
+			$config['jsfooter'] = 'N';
+		}
+
+		$adblock_timer = trim($_POST['adrotate_adblock_timer']);
+		if(strlen($adblock_timer) > 0 AND (is_numeric($adblock_timer) AND $adblock_timer >= 1 AND $impression_timer <= 20)) {
+			$config['adblock_timer'] = $adblock_timer;
+		} else {
+			$config['adblock_timer'] = 5;
+		}
+	
+		$adblock_message = trim($_POST['adrotate_adblock_message']);
+		if(strlen($adblock_message) > 0) {
+			$config['adblock_message'] = strip_tags(htmlspecialchars(trim($adblock_message, "\t\n "), ENT_QUOTES));
+		} else {
+			$config['adblock_message'] = "Ad blocker detected! Please wait %time% seconds or disable your ad blocker!";
+		}
+
+		if(isset($_POST['adrotate_adblock_loggedin'])) {
+			$config['adblock_loggedin'] = 'Y';
+		} else {
+			$config['adblock_loggedin'] = 'N';
+		}
+		update_option('adrotate_config', $config);
+
 		// Notifications
 		if(isset($_POST['adrotate_notification_push'])) $notifications['notification_push'] = 'Y';
 			else $notifications['notification_push'] = 'N';
@@ -1094,6 +1166,9 @@ function adrotate_options_submit() {
 			else $notifications['notification_email'] = 'N';
 
 		// Push Notifications
+		if(isset($_POST['adrotate_notification_push_geo'])) $notifications['notification_push_geo'] = 'Y';
+			else $notifications['notification_push_geo'] = 'N';
+
 		if(isset($_POST['adrotate_notification_push_status'])) $notifications['notification_push_status'] = 'Y';
 			else $notifications['notification_push_status'] = 'N';
 
@@ -1158,105 +1233,6 @@ function adrotate_options_submit() {
 		}
 		update_option('adrotate_notifications', $notifications);
 
-		// Set up impression tracker timer
-		$impression_timer = trim($_POST['adrotate_impression_timer']);
-		if(is_numeric($impression_timer) AND $impression_timer >= 60 AND $impression_timer <= 3600) {
-			$config['impression_timer'] = $impression_timer;
-		} else {
-			$config['impression_timer'] = 60;
-		}
-
-		// Set up click timer
-		$click_timer = trim($_POST['adrotate_click_timer']);
-		if(is_numeric($click_timer) AND $click_timer >= 60 AND $click_timer <= 86400) {
-			$config['click_timer'] = $click_timer;
-		} else {
-			$config['click_timer'] = 86400;
-		}
-		
-		// Miscellaneous Options
-		if(isset($_POST['adrotate_widgetalign'])) {
-			$config['widgetalign'] = 'Y';
-		} else {
-			$config['widgetalign'] = 'N';
-		}
-
-		if(isset($_POST['adrotate_widgetpadding'])) {
-			$config['widgetpadding'] = 'Y';
-		} else {
-			$config['widgetpadding'] = 'N';
-		}
-
-		if(isset($_POST['adrotate_adminbar'])) {
-			$config['adminbar'] = 'Y';
-		} else {
-			$config['adminbar'] = 'N';
-		}
-
-		if(isset($_POST['adrotate_dashboard_notifications'])) {
-			$config['dashboard_notifications'] = 'Y';
-		} else {
-			$config['dashboard_notifications'] = 'N';
-		}
-
-		if(isset($_POST['adrotate_hide_schedules'])) {
-			$config['hide_schedules'] = 'Y';
-		} else {
-			$config['hide_schedules'] = 'N';
-		}
-
-		if(isset($_POST['adrotate_w3caching'])) {
-			$config['w3caching'] = 'Y';
-		} else {
-			$config['w3caching'] = 'N';
-		}
-
-		if(isset($_POST['adrotate_supercache'])) {
-			$config['supercache'] = 'Y';
-		} else {
-			$config['supercache'] = 'N';
-		}
-
-		if(isset($_POST['adrotate_jquery'])) {
-			$config['jquery'] = 'Y';
-		} else {
-			$config['jquery'] = 'N';
-		}
-
-		if(isset($_POST['adrotate_adblock'])) {
-			$config['adblock'] = 'Y';
-		} else {
-			$config['adblock'] = 'N';
-		}
-
-		if(isset($_POST['adrotate_jsfooter'])) {
-			$config['jsfooter'] = 'Y';
-		} else {
-			$config['jsfooter'] = 'N';
-		}
-
-		$adblock_timer = trim($_POST['adrotate_adblock_timer']);
-		if(strlen($adblock_timer) > 0 AND (is_numeric($adblock_timer) AND $adblock_timer >= 1 AND $impression_timer <= 20)) {
-			$config['adblock_timer'] = $adblock_timer;
-		} else {
-			$config['adblock_timer'] = 5;
-		}
-	
-		$adblock_message = trim($_POST['adrotate_adblock_message']);
-		if(strlen($adblock_message) > 0) {
-			$config['adblock_message'] = strip_tags(htmlspecialchars(trim($adblock_message, "\t\n "), ENT_QUOTES));
-		} else {
-			$config['adblock_message'] = "Ad blocker detected! Please wait %time% seconds or disable your ad blocker!";
-		}
-
-		if(isset($_POST['adrotate_adblock_loggedin'])) {
-			$config['adblock_loggedin'] = 'Y';
-		} else {
-			$config['adblock_loggedin'] = 'N';
-		}
-
-		update_option('adrotate_config', $config);
-	
 		// Sort out crawlers
 		$crawlers = explode(',', trim($_POST['adrotate_crawlers']));
 		$clean_crawler = array();
@@ -1285,90 +1261,13 @@ function adrotate_options_submit() {
 			else 											$debug['track']			= false;
 		update_option('adrotate_debug', $debug);
 
+		// Try to update the Geo Cookie for Admin
+		if($config['enable_geo'] > 0) {
+			adrotate_geolocation(true);
+		}
+	
 		// Return to dashboard
 		adrotate_return('adrotate-settings', 400);
-	} else {
-		adrotate_nonce_error();
-		exit;
-	}
-}
-
-/*-------------------------------------------------------------
- Name:      adrotate_server_submit
-
- Purpose:   Save server options from dashboard
- Receive:   $_POST
- Return:    -none-
- Since:		0.1
--------------------------------------------------------------*/
-function adrotate_server_submit() {
-	if(wp_verify_nonce($_POST['adrotate_nonce_server'],'adrotate_server')) {
-
-		$now = current_time('timestamp');
-		$server_deactivated = 0;
-		$server_key = strip_tags(trim($_POST['adrotate_server_key']));
-		$server_puppet = strip_tags(trim($_POST['adrotate_server_puppet'], "\t\n "));
-
-		$server_hide = strip_tags(trim($_POST['adrotate_server_hide'], "\t\n "));
-
-		// Set server visibility
-		if(isset($_POST['adrotate_server_hide'])) {
-			update_option('adrotate_server_hide', 'Y');
-		} else {
-			update_option('adrotate_server_hide', 'N');
-		}
-		
-		// Process server key
-		$server_key = unserialize(base64_decode($server_key));
-
-		// Check the data
-		if($server_key['url'] != '' AND $server_key['instance'] == '') {
-			if(stristr($server_key['url'], "http://") === false AND stristr($server_key['url'], "https://") === false) {
-				$server_key['url'] = "//".$server_key['url'];
-			}
-
-	        $params = array(
-	        	'body' 			=> $server_key,
-	        	'sslverify' 	=> false,
-	        	'timeout' 		=> 15,
-	        	'user-agent'	=> 'AdRotate/'.ADROTATE_DISPLAY
-	        );
-
-			$response = wp_remote_post($server_key['url'], $params);
-
-			// $data = array('status' => 1, 'instance' => 'a8f7a89fs', 'account' => 'someone@email.com', 'url' => '//serverurl', 'puppet' => 1);
-
-		    if(!is_wp_error($response) && $response['response']['code'] >= 200 && $response['response']['code'] < 300) {
-
-				$data = json_decode($response['body'], 1);
-
-				if(!empty($data['status']) OR $data['status'] != '' AND ($data['status'] == 0 OR $data['status'] == 1)) { 
-					$server_key['status'] = $data['status'];
-				}
-				if(!empty($data['instance']) OR $data['instance'] != '') { 
-					$server_key['instance'] = $data['instance'];
-				}
-				if(!empty($data['account']) OR $data['account'] != '') { 
-					$server_key['account'] = $data['account'];
-				}
-				$server_key['url'] = $data['url'];
-				$server_key['puppet'] = $data['puppet'];
-				$server_key['activated'] = $now;
-				$server_key['deactivated'] = false;
-			}
-		} else {
-			$server_key['status'] = 0;
-			$server_key['instance'] = '';
-			$server_key['account'] = '';
-			$server_key['url'] = '';
-			$server_key['puppet'] = 0;
-			$server_key['activated'] = false;
-			$server_key['deactivated'] = false;
-		}
-		update_option('adrotate_server', $server_key);
-
-		// Return to dashboard
-		adrotate_return('adrotate-server&view=settings', 400);
 	} else {
 		adrotate_nonce_error();
 		exit;

@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -32,12 +32,12 @@ class adrotate_widgets extends WP_Widget {
 	 Purpose:   Display the widget
 	-------------------------------------------------------------*/
 	function widget($args, $instance) {
-		global $adrotate_config;
+		global $adrotate_config, $blog_id;
 
 		extract($args);
         $title = apply_filters('widget_title', $instance['title']);
 		if(empty($instance['adid'])) $instance['adid'] = 0;
-		if(empty($instance['siteid'])) $instance['siteid'] = 0;
+		if(empty($instance['siteid'])) $instance['siteid'] = $blog_id;
 
 		echo $before_widget;
 		if($title) {

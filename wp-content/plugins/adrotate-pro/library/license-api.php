@@ -9,13 +9,9 @@
 *  liability that might arise from it's use.
 ------------------------------------------------------------------------------------ */
 
-/*  
-dev4: sales@ajdg.net / 104-S-4fc269c5-f56a-4355-a405-90fa4171d551
-*/
-
 /*-------------------------------------------------------------
  Name:      AJdG Solutions Licensing Library
- Version:	1.1
+ Version:	1.2
 -------------------------------------------------------------*/
 
 function adrotate_license_activate() {
@@ -30,36 +26,35 @@ function adrotate_license_activate() {
 			$redirect = 'adrotate-settings';
 		}
 
-		if(isset($_POST['adrotate_license_key'])) $a['k'] = trim($_POST['adrotate_license_key'], "\t\n ");
-		if(isset($_POST['adrotate_license_email'])) $a['e'] = trim($_POST['adrotate_license_email'], "\t\n ");
+		if(isset($_POST['adrotate_license_key'])) $a['key'] = trim($_POST['adrotate_license_key'], "\t\n ");
+		if(isset($_POST['adrotate_license_email'])) $a['email'] = trim($_POST['adrotate_license_email'], "\t\n ");
 		if(isset($_POST['adrotate_license_hide'])) {
 			$hide = 1;
 		} else {
 			$hide = 0;
 		}
 
-		if(!empty($a['k']) AND !empty($a['e'])) {
-			list($a['v'], $a['l'], $a['s']) = explode("-", $a['k'], 3);
-			if(!is_email($a['e'])) {
+		if(!empty($a['key']) AND !empty($a['email'])) {
+			list($a['version'], $a['type'], $a['serial']) = explode("-", $a['key'], 3);
+			if(!is_email($a['email'])) {
 				adrotate_return($redirect, 603);
 				exit();
 			}
-			$a['i'] = uniqid(rand(1000,9999));
-			$a['u'] = get_option('siteurl');
+			$a['instance'] = uniqid(rand(1000,9999));
+			$a['platform'] = get_option('siteurl');
 			
-			if(strtolower($a['l']) == "s") $a['l'] = "Single";
-			if(strtolower($a['l']) == "d") $a['l'] = "Duo";
-			if(strtolower($a['l']) == "m") $a['l'] = "Multi";
-			if(strtolower($a['l']) == "u") $a['l'] = "Developer";
-			if(strtolower($a['l']) == "n") $a['l'] = "Network";
+			if(strtolower($a['type']) == "s") $a['type'] = "Single";
+			if(strtolower($a['type']) == "d") $a['type'] = "Duo";
+			if(strtolower($a['type']) == "m") $a['type'] = "Multi";
+			if(strtolower($a['type']) == "u") $a['type'] = "Developer";
+			if(strtolower($a['type']) == "n") $a['type'] = "Network";
 	
-			if($network == 1 && $a['l'] != 'Network' && $a['l'] != 'Developer') {
+			if($network == 1 && $a['type'] != 'Network' && $a['type'] != 'Developer') {
 				adrotate_return($redirect, 611);
 				exit;
 			}
 
-			update_option('adrotate_hide_license', $hide);
-			if($a) adrotate_license_response('activation', $a, false, $network);
+			if($a) adrotate_license_response('activation', $a, false, $network, $hide);
 
 			adrotate_return($redirect, 604);
 			exit;
@@ -87,8 +82,6 @@ function adrotate_license_deactivate() {
 
 		if($a) adrotate_license_response('deactivation', $a, false, $network);
 
-		update_option('adrotate_hide_license', 0);
-
 		adrotate_return($redirect, 600);
 	} else {
 		adrotate_nonce_error();
@@ -99,16 +92,12 @@ function adrotate_license_deactivate() {
 function adrotate_license_deactivate_uninstall() {
 	$a = get_option('adrotate_activate');
 	if($a) adrotate_license_response('deactivation', $a, true);
-
-	update_option('adrotate_hide_license', 0);
 }
 
 function adrotate_license_reset() {
 	if(wp_verify_nonce($_POST['adrotate_nonce_license'], 'adrotate_license')) {
 		$a = get_option('adrotate_activate');
 		if($a) adrotate_license_response('activation_reset', $a);
-
-		update_option('adrotate_hide_license', 0);
 
 		adrotate_return('adrotate-settings', 600);
 	} else {
@@ -117,15 +106,20 @@ function adrotate_license_reset() {
 	}
 }
 
-function adrotate_license_response($request = '', $a = array(), $uninstall = false, $network = false) {
-	global $adrotate_license_domain;
+function adrotate_license_response($request = '', $a = array(), $uninstall = false, $network = false, $hide = 0) {
+	global $ajdg_solutions_domain;
 
 	$args = $license = array();
-	if($request == 'activation') $args = array('request' => 'activation', 'email' => $a['e'], 'licence_key' => $a['k'], 'product_id' => $a['l'], 'instance' => $a['i'], 'platform' => $a['u']);
-	if($request == 'deactivation') $args = array('request' => 'deactivation', 'email' => $a['email'], 'product_id' => $a['type'], 'licence_key' => $a['key'], 'instance' => $a['instance']);
-	if($request == 'activation_reset') $args = array('request' => 'activation_reset', 'email' => $a['email'], 'product_id' => $a['type'], 'licence_key' => $a['key']);
+	if($request == 'activation') $args = array('request' => 'activation', 'email' => $a['email'], 'licence_key' => $a['key'], 'product_id' => $a['type'], 'instance' => $a['instance'], 'platform' => $a['platform']);
+	if($request == 'deactivation') $args = array('request' => 'deactivation', 'email' => $a['email'], 'licence_key' => $a['key'], 'product_id' => $a['type'], 'instance' => $a['instance']);
+	if($request == 'activation_reset') $args = array('request' => 'activation_reset', 'email' => $a['email'], 'licence_key' => $a['key'], 'product_id' => $a['type']);
 
-	$response = wp_remote_get(add_query_arg('wc-api', 'software-api', $adrotate_license_domain) . '&' . http_build_query($args, '', '&'), array('timeout' => 15));
+	$http_args = array('timeout' => 15, 'sslverify' => false, 'headers' => array('user-agent' => 'AdRotate Pro;'));
+	if($a['version'] == '102') {
+		$response = wp_remote_get(add_query_arg('wc-api', 'software-api', $ajdg_solutions_domain) . '&' . http_build_query($args, '', '&'), $http_args);
+	} else {
+		$response = wp_remote_get($ajdg_solutions_domain.'api/license/?' . http_build_query($args, '', '&'), $http_args);
+	}
 
 	if($network) {
 		$redirect = 'adrotate';
@@ -139,38 +133,46 @@ function adrotate_license_response($request = '', $a = array(), $uninstall = fal
 		$data = json_decode($response['body'], 1);
 		
 		if(empty($data['code'])) $data['code'] = 0;
+		if(empty($data['activated'])) $data['activated'] = 0;
+		if(empty($data['reset'])) $data['reset'] = 0;
 
-		if($data['code'] == 100) {
+		if($data['code'] == 100) { // Invalid Request
 			adrotate_return($redirect, 600);
 			exit;
-		} else if($data['code'] == 101) {
+		} else if($data['code'] == 101) { // Invalid License
 			adrotate_return($redirect, 604);
 			exit;
-		} else if($data['code'] == 102) {
+		} else if($data['code'] == 102) { // Order is not complete
 			adrotate_return($redirect, 605);
 			exit;
-		} else if($data['code'] == 103) {
-			adrotate_return($redirect, 606);
+		} else if($data['code'] == 103) { // No activations remaining
+			adrotate_return($redirect, 606); 
 			exit;
-		} else if($data['code'] == 104) {
+		} else if($data['code'] == 104) { // Could not (de)activate
 			adrotate_return($redirect, 607);
 			exit;
 		} else if($data['code'] == 0 && $data['activated'] == 1) {
+			update_option('adrotate_hide_license', $hide);
 			if($network) {
-				update_site_option('adrotate_activate', array('status' => 1, 'instance' => $a['i'], 'activated' => current_time('timestamp'), 'deactivated' => '', 'type' => $a['l'], 'key' => $a['k'], 'email' => $a['e'], 'version' => $a['v'], 'firstrun' => 0));
+				update_site_option('adrotate_activate', array('status' => 1, 'instance' => $a['instance'], 'activated' => current_time('timestamp'), 'deactivated' => '', 'type' => $a['type'], 'key' => $a['key'], 'email' => $a['email'], 'version' => $a['version'], 'firstrun' => 0));
 			} else {
-				update_option('adrotate_activate', array('status' => 1, 'instance' => $a['i'], 'activated' => current_time('timestamp'), 'deactivated' => '', 'type' => $a['l'], 'key' => $a['k'], 'email' => $a['e'], 'version' => $a['v'], 'firstrun' => 0));
+				update_option('adrotate_activate', array('status' => 1, 'instance' => $a['instance'], 'activated' => current_time('timestamp'), 'deactivated' => '', 'type' => $a['type'], 'key' => $a['key'], 'email' => $a['email'], 'version' => $a['version'], 'firstrun' => 0));
 			}
+
 			unset($a, $args, $response, $data);
+
 			if($request == 'activation') adrotate_return($redirect, 608);
 			exit;
 		} else if($data['code'] == 0 && $data['reset'] == 1) {
+			update_option('adrotate_hide_license', 0);
 			if($network) {
 				update_site_option('adrotate_activate', array('status' => 0, 'instance' => '', 'activated' => $a['activated'], 'deactivated' => current_time('timestamp'), 'type' => '', 'key' => '', 'email' => '', 'version' => '', 'firstrun' => 1));
 			} else {
 				update_option('adrotate_activate', array('status' => 0, 'instance' => '', 'activated' => $a['activated'], 'deactivated' => current_time('timestamp'), 'type' => '', 'key' => '', 'email' => '', 'version' => '', 'firstrun' => 1));
 			}
+
 			unset($a, $args, $response, $data);
+
 			if($request == 'deactivation') adrotate_return($redirect, 609);
 			if($request == 'activation_reset') adrotate_return($redirect, 610);
 			exit;

@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -91,31 +91,41 @@ function adrotate_is_networked() {
 }
 
 /*-------------------------------------------------------------
- Name:      adrotate_pick_weight
+ Name:      adrotate_is_human
 
- Purpose:   Sort out and pick a random ad based on weight
- Receive:   $selected
- Return:    $ads[$key]
- Since:		3.8
+ Purpose:   Check if visitor is a bot
+ Receive:   -None-
+ Return:    Boolean
+ Since:		3.11.10
 -------------------------------------------------------------*/
-function adrotate_pick_weight($selected) { 
-    $ads = array_keys($selected); 
-    foreach($selected as $banner) {
-		$weight[] = $banner->weight;
-		unset($banner);
-	}
-     
-    $sum_of_weight = array_sum($weight)-1; 
-    $rnd = rand(0,$sum_of_weight); 
+function adrotate_is_human() {
+	global $adrotate_crawlers;
 
-    foreach($ads as $key => $var){ 
-        if($rnd<$weight[$key]){ 
-            return $ads[$key]; 
-        } 
-        $rnd  -= $weight[$key]; 
-    }
-    unset($ads, $weight, $sum_of_weight, $rnd);
-} 
+	if(is_array($adrotate_crawlers)) {
+		$crawlers = $adrotate_crawlers;
+	} else {
+		$crawlers = array();
+	}
+
+	if(isset($_SERVER['HTTP_USER_AGENT'])) {
+		$useragent = $_SERVER['HTTP_USER_AGENT'];
+		$useragent = trim($useragent, ' \t\r\n\0\x0B');
+	} else {
+		$useragent = '';
+	}
+
+	if(strlen($useragent) > 0) {
+		$nocrawler = true;
+		foreach($crawlers as $crawler) {
+			if(preg_match("/$crawler/i", $useragent)) $nocrawler = false;
+		}
+	} else {
+		$nocrawler = false;
+	}
+	
+	// Returns true if no bot.
+	return $nocrawler;
+}
 
 /*-------------------------------------------------------------
  Name:      adrotate_count_impression
@@ -125,8 +135,8 @@ function adrotate_pick_weight($selected) {
  Return:    -None-
  Since:		3.11.3
 -------------------------------------------------------------*/
-function adrotate_count_impression($ad, $group = 0, $blog_id = 0) { 
-	global $wpdb, $adrotate_config, $adrotate_crawlers, $adrotate_geo, $adrotate_debug;
+function adrotate_count_impression($ad, $group = 0, $blog_id = 0, $impression_timer = 0) { 
+	global $wpdb, $adrotate_config, $adrotate_debug;
 
 	if(($adrotate_config['enable_loggedin_impressions'] == 'Y' AND is_user_logged_in()) OR !is_user_logged_in()) {
 		$now = adrotate_now();
@@ -138,32 +148,14 @@ function adrotate_count_impression($ad, $group = 0, $blog_id = 0) {
 			switch_to_blog($blog_id);
 		}
 
-		if(is_array($adrotate_crawlers)) {
-			$crawlers = $adrotate_crawlers;
-		} else {
-			$crawlers = array();
-		}
-
-		if(isset($_SERVER['HTTP_USER_AGENT'])) {
-			$useragent = $_SERVER['HTTP_USER_AGENT'];
-			$useragent = trim($useragent, ' \t\r\n\0\x0B');
-		} else {
-			$useragent = '';
-		}
-
-		$nocrawler = true;
-		foreach($crawlers as $crawler) {
-			if(preg_match("/$crawler/i", $useragent)) $nocrawler = false;
-		}
-
 		if($adrotate_debug['timers'] == true) {
 			$impression_timer = $now;
 		} else {
-			$impression_timer = $now - $adrotate_config['impression_timer'];
+			$impression_timer = $now - $impression_timer;
 		}
 
 		$saved_timer = $wpdb->get_var($wpdb->prepare("SELECT `timer` FROM `".$wpdb->prefix."adrotate_tracker` WHERE `ipaddress` = '%s' AND `stat` = 'i' AND `bannerid` = %d ORDER BY `timer` DESC LIMIT 1;", $remote_ip, $ad));
-		if($saved_timer < $impression_timer AND $nocrawler == true AND strlen($useragent) > 0) {
+		if($saved_timer < $impression_timer AND adrotate_is_human()) {
 			$stats = $wpdb->get_var($wpdb->prepare("SELECT `id` FROM `".$wpdb->prefix."adrotate_stats` WHERE `ad` = %d AND `group` = %d AND `thetime` = $today;", $ad, $group));
 			if($stats > 0) {
 				$wpdb->query("UPDATE `".$wpdb->prefix."adrotate_stats` SET `impressions` = `impressions` + 1 WHERE `id` = $stats;");
@@ -171,9 +163,11 @@ function adrotate_count_impression($ad, $group = 0, $blog_id = 0) {
 				$wpdb->insert($wpdb->prefix.'adrotate_stats', array('ad' => $ad, 'group' => $group, 'block' => 0, 'thetime' => $today, 'clicks' => 0, 'impressions' => 1));
 			}
 
-			if(!isset($adrotate_geo['country'])) $adrotate_geo['country'] = '';
-			if(!isset($adrotate_geo['city'])) $adrotate_geo['city'] = '';
-			$wpdb->insert($wpdb->prefix."adrotate_tracker", array('ipaddress' => $remote_ip, 'timer' => $now, 'bannerid' => $ad, 'stat' => 'i', 'useragent' => '', 'country' => $adrotate_geo['country'], 'city' => $adrotate_geo['city']));
+			$adrotate_geo = adrotate_get_cookie('geo');
+			$country = (isset($adrotate_geo['country'])) ? $adrotate_geo['country']: '';
+			$city = (isset($adrotate_geo['city'])) ? $adrotate_geo['city'] : '';
+
+			$wpdb->insert($wpdb->prefix."adrotate_tracker", array('ipaddress' => $remote_ip, 'timer' => $now, 'bannerid' => $ad, 'stat' => 'i', 'useragent' => '', 'country' => $country, 'city' => $city));
 		}
 
 		if($blog_id > 0 AND adrotate_is_networked()) {
@@ -199,8 +193,8 @@ function adrotate_impression_callback() {
 	}
 		
 	$meta = esc_attr($meta);
-	list($ad, $group, $blog_id) = explode(",", $meta, 3);
-	adrotate_count_impression($ad, $group);
+	list($ad, $group, $blog_id, $impression_timer) = explode(",", $meta, 4);
+	adrotate_count_impression($ad, $group, $blog_id, $impression_timer);
 
 	die();
 }
@@ -214,7 +208,7 @@ function adrotate_impression_callback() {
  Since:		3.11.4
 -------------------------------------------------------------*/
 function adrotate_click_callback() {
-	global $wpdb, $adrotate_crawlers, $adrotate_config, $adrotate_geo, $adrotate_debug;
+	global $wpdb, $adrotate_config, $adrotate_debug;
 
 	$meta = $_POST['track'];
 
@@ -223,7 +217,7 @@ function adrotate_click_callback() {
 	}
 	
 	$meta = esc_attr($meta);
-	list($ad, $group, $blog_id) = explode(",", $meta, 3);
+	list($ad, $group, $blog_id, $impression_timer) = explode(",", $meta, 4);
 
 	if(is_numeric($ad) AND is_numeric($group) AND is_numeric($blog_id)) {
 
@@ -231,24 +225,11 @@ function adrotate_click_callback() {
 			$current_blog = $wpdb->blogid;
 			switch_to_blog($blog_id);
 		}
-
-		$useragent = trim($_SERVER['HTTP_USER_AGENT'], ' \t\r\n\0\x0B');
-		$remote_ip = adrotate_get_remote_ip();
 	
 		if(($adrotate_config['enable_loggedin_clicks'] == 'Y' AND is_user_logged_in()) OR !is_user_logged_in()) {
-
-			if(is_array($adrotate_crawlers)) {
-				$crawlers = $adrotate_crawlers;
-			} else {
-				$crawlers = array();
-			}
-		
-			$nocrawler = array(0);
-			foreach ($crawlers as $crawler) {
-				if(preg_match("/$crawler/i", $useragent)) $nocrawler[] = 1;
-			}
+			$remote_ip = adrotate_get_remote_ip();
 	
-			if(!in_array(1, $nocrawler) AND !empty($useragent) AND $remote_ip != "unknown" AND !empty($remote_ip)) {
+			if(adrotate_is_human() AND $remote_ip != "unknown" AND !empty($remote_ip)) {
 				$now = adrotate_now();
 				$today = adrotate_date_start('day');
 
@@ -266,22 +247,24 @@ function adrotate_click_callback() {
 					} else {
 						$wpdb->insert($wpdb->prefix.'adrotate_stats', array('ad' => $ad, 'group' => $group, 'block' => 0, 'thetime' => $today, 'clicks' => 1, 'impressions' => 1));
 					}
+					
+					$adrotate_geo = adrotate_get_cookie('geo');
+					$country = (isset($adrotate_geo['country'])) ? $adrotate_geo['country']: '';
+					$city = (isset($adrotate_geo['city'])) ? $adrotate_geo['city'] : '';
 
-					if(!isset($adrotate_geo['country'])) $adrotate_geo['country'] = '';
-					if(!isset($adrotate_geo['city'])) $adrotate_geo['city'] = '';
-					$wpdb->insert($wpdb->prefix.'adrotate_tracker', array('ipaddress' => $remote_ip, 'timer' => $now, 'bannerid' => $ad, 'stat' => 'c', 'useragent' => $useragent, 'country' => $adrotate_geo['country'], 'city' => $adrotate_geo['city']));
+					$wpdb->insert($wpdb->prefix.'adrotate_tracker', array('ipaddress' => $remote_ip, 'timer' => $now, 'bannerid' => $ad, 'stat' => 'c', 'useragent' => $useragent, 'country' => $country, 'city' => $city));
 				}
+
+				// Advertising budget
+				$wpdb->query("UPDATE `".$wpdb->prefix."adrotate` SET `cbudget` = `cbudget` - `crate` WHERE `id` = $ad AND `crate` > 0;");
 			}
 		}
-
-		// Advertising budget
-		$wpdb->query("UPDATE `".$wpdb->prefix."adrotate` SET `cbudget` = `cbudget` - `crate` WHERE `id` = $ad AND `crate` > 0;");
 
 		if($blog_id > 0 AND adrotate_is_networked()) {
 			switch_to_blog($current_blog);
 		}
 
-		unset($nocrawler, $crawlers, $remote_ip, $useragent, $track, $meta, $ad, $group, $remote, $banner);
+		unset($remote_ip, $track, $meta, $ad, $group, $remote, $banner);
 	}
 
 	die();
@@ -402,9 +385,17 @@ function adrotate_filter_budget($selected, $banner) {
  Since:		3.8.5.1
 -------------------------------------------------------------*/
 function adrotate_filter_location($selected, $banner) { 
-	global $adrotate_debug, $adrotate_geo;
+	global $adrotate_debug;
 
-	$geo = $adrotate_geo;
+	// Grab geo data from session or from cookie data
+	if(isset($_SESSION['adrotate-geo'])) {
+		$geo = $_SESSION['adrotate-geo'];
+		$geo_source = 'Session data';
+	} else {
+		$geo = adrotate_get_cookie('geo');
+		$geo_source = 'Cookie';
+	}
+
 	if(is_array($geo)) {
 		$cities = unserialize(stripslashes($banner->cities));
 		$countries = unserialize(stripslashes($banner->countries));
@@ -413,24 +404,20 @@ function adrotate_filter_location($selected, $banner) {
 		
 		if($adrotate_debug['general'] == true OR $adrotate_debug['geo'] == true) {
 			echo "<p><strong>[DEBUG][adrotate_filter_location] Ad (id: ".$banner->id.")</strong><pre>";
-			echo "Geo Response: ".$geo['status'];
-			echo "<br />Geo Provider: ".$geo['provider'];
-			echo "<br />Visitor IP: ".$geo['geo_ip'];
-			echo "<br />Actual Visitor IP: ".$geo['orig_ip'];
-			echo "<br />Visitor City and State: ".strtolower($geo['city']).", " .$geo['statecode']." (".$geo['state'].")";
+			echo "Cookie or _SESSION: ".$geo_source;
+			echo "<br />Geo Provider: ".$geo['provider']." (Code: ".$geo['status'].")";
+			echo "<br />Visitor City and State: ".$geo['city']." (DMA: ".$geo['dma']."), " .$geo['state']." (ISO: ".$geo['statecode'].")";
 			echo "<br />Advert Cities/States (".count($cities)."): ";
 			print_r($cities);
-			echo "<br />Visitor Country: ".$geo['countrycode']." (".$geo['country'].")";
+			echo "<br />Visitor Country: ".$geo['country']." (".$geo['countrycode'].")";
 			echo "<br />Advert Countries (".count($countries)."): ";
 			print_r($countries);
 			echo "</pre></p>";
 		}
 	
 		if($geo['status'] == 200) {
-			if(count($cities) > 0) {
-				if(!in_array(strtolower($geo['city']), $cities) AND !in_array(strtolower($geo['state']), $cities) AND !in_array(strtolower($geo['statecode']), $cities)) {
-					unset($selected[$banner->id]);
-				}
+			if(count($cities) > 0 AND count(array_intersect($cities, array($geo['city'], $geo['dma'], $geo['state'], $geo['statecode']))) == 0) {
+				unset($selected[$banner->id]);
 				return $selected;
 			}
 			if(count($countries) > 0 AND !in_array($geo['countrycode'], $countries)) {
@@ -441,111 +428,135 @@ function adrotate_filter_location($selected, $banner) {
 	} else {
 		if($adrotate_debug['general'] == true OR $adrotate_debug['geo'] == true) {
 			echo "<p><strong>[DEBUG][adrotate_filter_location] Ad (id: ".$banner->id.")</strong><pre>";
-			echo $geo;
+			print_r($geo);
 			echo "</pre></p>";
 		}
 	}
 
 	return $selected;
 } 
- 
+
 /*-------------------------------------------------------------
  Name:      adrotate_geolocation
 
  Purpose:   Find the location of the visitor
- Receive:   -None_
+ Receive:   $force_update
  Return:    $array
  Since:		3.8.5
 -------------------------------------------------------------*/
-function adrotate_geolocation() {
-	global $wpdb, $adrotate_config;
+function adrotate_geolocation($force_update = false) {
+	global $wpdb, $ajdg_solutions_domain;
 
-	$remote_ip = adrotate_get_remote_ip();
+	if((!adrotate_has_cookie('geo') AND adrotate_is_human()) OR $force_update) {
+		$adrotate_config = get_option('adrotate_config');
 
-    $geo_result = array(
-    	'status' => 403, 
-		'provider' => 'Forbidden',
-    	'geo_ip' => '', 
-    	'orig_ip' => $remote_ip, 
-    	'city' => '', 
-    	'country' => '', 
-    	'countrycode' => '',
-    	'state' => '', 
-    	'statecode' => '',
-    );
+		$remote_ip = adrotate_get_remote_ip();
+		$geo_result = array('status' => 403, 'provider' => 'Forbidden', 'city' => '', 'dma' => '', 'country' => '', 'countrycode' => '', 'state' => '', 'statecode' => '');
 
-	if(!adrotate_has_cookie('geo')) {
-		if($adrotate_config['enable_geo'] == 3 OR $adrotate_config['enable_geo'] == 4) {
-			$args = array('headers' => array('user-agent' => 'AdRotate/'.ADROTATE_DISPLAY, 'Authorization' => 'Basic '.base64_encode($adrotate_config["geo_email"].':'.$adrotate_config["geo_pass"])));
-			if($adrotate_config['enable_geo'] == 3) {
-				$service_type = 'country';
-			}
-			if($adrotate_config['enable_geo'] == 4) {
-				$service_type = 'city';
-			}
-	
-			$raw_response = wp_remote_get('https://geoip.maxmind.com/geoip/v2.1/'.$service_type.'/'.$remote_ip, $args);
-		    
-		    if(!is_wp_error($raw_response)) {	
-			    $response = json_decode($raw_response['body'], true);
-				$geo_result['status'] = $raw_response['response']['code'];
-				$geo_result['provider'] = 'MaxMind '.$service_type;
-	
-			    if($geo_result['status'] == 200) {
-					$geo_result['geo_ip'] = $response['traits']['ip_address'];
-					$geo_result['orig_ip'] = $remote_ip;
-					$geo_result['city'] = $response['city']['names']['en'];
-					$geo_result['country'] = $response['country']['names']['en'];
-					$geo_result['countrycode'] = $response['country']['iso_code'];
-					$geo_result['state'] = $response['subdivisions'][0]['names']['en'];
-					$geo_result['statecode'] = $response['subdivisions'][0]['iso_code'];
-					update_option('adrotate_geo_requests', $response['maxmind']['queries_remaining']);
-				} else { 			
-					$geo_result['error'] = $response['code'];
+		if(get_option('adrotate_geo_requests') > 0 OR $force_update) {
+			if($adrotate_config['enable_geo'] == 5) { // AdRotate Geo
+				if(adrotate_is_networked()) {
+					$adrotate_activate = get_site_option('adrotate_activate');
+				} else {
+					$adrotate_activate = get_option('adrotate_activate');
 				}
-			} else {
-				$adrotate_config['enable_geo'] == 1;
+	
+				$args = array('headers' => array('User-Agent' => 'AdRotate Pro;' . get_option('siteurl')), 'sslverify' => false);
+				$auth = base64_encode($adrotate_activate["instance"].':'.$adrotate_activate["key"]);
+				$raw_response = wp_remote_get($ajdg_solutions_domain.'api/geo/1/?auth='.$auth.'&ip='.$remote_ip, $args);
+			    
+			    if(!is_wp_error($raw_response)) {	
+				    $response = json_decode($raw_response['body'], true);
+					$geo_result['status'] = $raw_response['response']['code'];
+					$geo_result['provider'] = 'AdRotate Geo';
+		
+				    if($geo_result['status'] == 200 AND $response['code'] == 200) {
+						$geo_result['city'] = (isset($response['city'])) ? strtolower($response['city']) : '';
+						$geo_result['dma'] = (isset($response['dma'])) ? strtolower($response['dma']) : '';
+						$geo_result['country'] = (isset($response['country'])) ? strtolower($response['country']) : '';
+						$geo_result['countrycode'] = (isset($response['countrycode'])) ? $response['countrycode'] : '';
+						$geo_result['state'] = (isset($response['state'])) ? strtolower($response['state']) : '';
+						$geo_result['statecode'] = (isset($response['statecode'])) ? strtolower($response['statecode']) : '';
+					} else { 			
+						$geo_result['error'] = $response['code'].' '.$response['error'];
+					}
+					if(is_int($response['queries_remaining'])) update_option('adrotate_geo_requests', $response['queries_remaining']);
+				} else {
+					$adrotate_config['enable_geo'] == 1;
+				}
+			}
+	
+			if($adrotate_config['enable_geo'] == 3 OR $adrotate_config['enable_geo'] == 4) { // MaxMind
+				if($adrotate_config['enable_geo'] == 3) {
+					$service_type = 'country';
+				}
+				if($adrotate_config['enable_geo'] == 4) {
+					$service_type = 'city';
+				}
+		
+				$args = array('headers' => array('user-agent' => 'AdRotate Pro;', 'Authorization' => 'Basic '.base64_encode($adrotate_config["geo_email"].':'.$adrotate_config["geo_pass"])));
+				$raw_response = wp_remote_get('https://geoip.maxmind.com/geoip/v2.1/'.$service_type.'/'.$remote_ip, $args);
+			    
+			    if(!is_wp_error($raw_response)) {	
+				    $response = json_decode($raw_response['body'], true);
+					$geo_result['status'] = $raw_response['response']['code'];
+					$geo_result['provider'] = 'MaxMind '.$service_type;
+		
+				    if($geo_result['status'] == 200) {
+						$geo_result['city'] = (isset($response['city']['names']['en'])) ? $response['city']['names']['en'] : '';
+						$geo_result['dma'] = (isset($response['location']['metro_code'])) ? $response['location']['metro_code'] : '';
+						$geo_result['country'] = (isset($response['country']['names']['en'])) ? $response['country']['names']['en'] : '';
+						$geo_result['countrycode'] = (isset($response['country']['iso_code'])) ? $response['country']['iso_code'] : '';
+						$geo_result['state'] = (isset($response['subdivisions'][0]['names']['en'])) ? $response['subdivisions'][0]['names']['en'] : '';
+						$geo_result['statecode'] = (isset($response['subdivisions'][0]['iso_code'])) ? $response['subdivisions'][0]['iso_code'] : '';
+					} else { 			
+						$geo_result['error'] = $response['code'].' '.$response['error'];
+						if($response['code'] == 'OUT_OF_QUERIES') $response['maxmind']['queries_remaining'] = 0;
+					}
+					update_option('adrotate_geo_requests', $response['maxmind']['queries_remaining']);
+				} else {
+					$adrotate_config['enable_geo'] == 1;
+				}
+			}
+	
+			if($adrotate_config['enable_geo'] == 2) { // GeoBytes
+				$raw_response = get_meta_tags('http://www.geobytes.com/IpLocator.htm?GetLocation&template=php3.txt&IpAddress='.$remote_ip.'&pt_email='.$adrotate_config["geo_email"].'&pt_password='.$adrotate_config["geo_pass"]);
+			    if(is_array($raw_response)) {	
+				    $response = $raw_response;
+					$geo_result['status'] = '200';
+					$geo_result['provider'] = 'GeoSelect IpLocator';
+					$geo_result['city'] = (isset($response['city'])) ? $response['city'] : '';
+					$geo_result['dma'] = '';
+					$geo_result['country'] = (isset($response['country'])) ? $response['country'] : '';
+					$geo_result['countrycode'] = (isset($response['iso2'])) ? $response['iso2'] : '';
+					$geo_result['state'] = (isset($response['region'])) ? $response['region'] : '';
+					$geo_result['statecode'] = (isset($response['regioncode'])) ? $response['regioncode'] : '';
+					update_option('adrotate_geo_requests', $response['mapbytesremaining']);
+				} else {
+					$adrotate_config['enable_geo'] == 1;
+				}
 			}
 		}
 	
-		if($adrotate_config['enable_geo'] == 2) {
-			$raw_response = get_meta_tags('http://www.geobytes.com/IpLocator.htm?GetLocation&template=php3.txt&IpAddress='.$remote_ip.'&pt_email='.$adrotate_config["geo_email"].'&pt_password='.$adrotate_config["geo_pass"]);
-		    if(is_array($raw_response)) {	
-			    $response = $raw_response;
-				$geo_result['status'] = '200';
-				$geo_result['provider'] = 'GeoSelect IpLocator';
-				$geo_result['geo_ip'] = 'Not Provided';
-				$geo_result['orig_ip'] = $remote_ip;
-				$geo_result['city'] = $response['city'];
-				$geo_result['country'] = $response['country'];
-				$geo_result['countrycode'] = $response['iso2'];
-				$geo_result['state'] = $response['region'];
-				$geo_result['statecode'] = $response['regioncode'];
-				update_option('adrotate_geo_requests', $response['mapbytesremaining']);
-			} else {
-				$adrotate_config['enable_geo'] == 1;
-			}
-		}
-	
-		if($adrotate_config['enable_geo'] == 1) {
-			$args = array('headers' => array('user-agent' => 'AdRotate/'.ADROTATE_DISPLAY));
-			$raw_response = wp_remote_get('http://freegeoip.net/json/'.$remote_ip, $args);
+		if($adrotate_config['enable_geo'] == 1) { // Telize
+			$args = array('headers' => array('user-agent' => 'AdRotate Pro;'));
+			$raw_response = wp_remote_get('http://www.telize.com/geoip/'.$remote_ip, $args);
 		    if(!is_wp_error($raw_response)) {	
 			    $response = json_decode($raw_response['body'], true);
 				$geo_result['status'] = $raw_response['response']['code'];
-				$geo_result['provider'] = 'FreegeoIP';
-				$geo_result['geo_ip'] = $response['ip']; 
-				$geo_result['orig_ip'] = $remote_ip;
-				$geo_result['city'] = $response['city'];
-				$geo_result['country'] = $response['country_name'];
-				$geo_result['countrycode'] = $response['country_code'];
+				$geo_result['provider'] = 'Telize';
+				$geo_result['city'] = (isset($response['city'])) ? $response['city'] : '';
+				$geo_result['dma'] = (isset($response['dma_code']) AND $response['dma_code'] > 0) ? $response['dma_code'] : '';
+				$geo_result['country'] = (isset($response['country'])) ? $response['country'] : '';
+				$geo_result['countrycode'] = (isset($response['country_code'])) ? $response['country_code'] : '';
 				$geo_result['state'] = '';
 				$geo_result['statecode'] = '';
 			}
 		} 
 	    unset($raw_response, $response);
 
-		setcookie('adrotate-geo', serialize($geo_result), adrotate_now() + 86400, COOKIEPATH);
+		setcookie('adrotate-geo', serialize($geo_result), time() + $adrotate_config['geo_cookie_life'], COOKIEPATH, COOKIE_DOMAIN);
+		if(!isset($_SESSION['adrotate-geo'])) $_SESSION['adrotate-geo'] = $geo_result;
 	}	
 }
 
@@ -557,9 +568,9 @@ function adrotate_geolocation() {
  Return:    Boolean
  Since:		3.11.3
 -------------------------------------------------------------*/
-function adrotate_has_cookie($get, $ad_id = 0) {
-	if($get = 'geo') {
-		if(isset($_COOKIE['adrotate-geo'])) return true;
+function adrotate_has_cookie($get) {
+	if($get == 'geo') {
+		if(!empty($_COOKIE['adrotate-geo'])) return true;
 	}
 	return false;
 }
@@ -568,14 +579,15 @@ function adrotate_has_cookie($get, $ad_id = 0) {
  Name:      adrotate_get_cookie
 
  Purpose:   Get a certain AdRotate Cookie
- Receive:   $get, $ad_id
- Return:    $data, boolean
+ Receive:   $get
+ Return:    $data
  Since:		3.11.3
 -------------------------------------------------------------*/
-function adrotate_get_cookie($get, $ad_id = 0) {
+function adrotate_get_cookie($get) {
+
 	$data = false;
-	if($get = 'geo') {
-		$data = (isset($_COOKIE['adrotate-geo'])) ? $_COOKIE['adrotate-geo'] : '';
+	if($get == 'geo') {
+		if(!empty($_COOKIE['adrotate-geo'])) $data = $_COOKIE['adrotate-geo'];
 	}
 	return maybe_unserialize(stripslashes($data));
 }
@@ -644,27 +656,59 @@ function adrotate_rand($length = 8) {
 
 	$result = '';
 	for($i = 0; $i < $length; $i++) {
-		$result .= $available_chars[rand(0, 25)];
+		$result .= $available_chars[mt_rand(0, 25)];
 	}
 
 	return $result;
 }
 
 /*-------------------------------------------------------------
+ Name:      adrotate_pick_weight
+
+ Purpose:   Sort out and pick a random ad based on weight
+ Receive:   $selected
+ Return:    $ads[$key]
+ Since:		3.8
+-------------------------------------------------------------*/
+function adrotate_pick_weight($selected) { 
+    $ads = array_keys($selected); 
+    foreach($selected as $banner) {
+		$weight[] = $banner->weight;
+		unset($banner);
+	}
+     
+    $sum_of_weight = array_sum($weight)-1; 
+    $rnd = mt_rand(0,$sum_of_weight); 
+
+    foreach($ads as $key => $var){ 
+        if($rnd<$weight[$key]){ 
+            return $ads[$key]; 
+        } 
+        $rnd  -= $weight[$key]; 
+    }
+    unset($ads, $weight, $sum_of_weight, $rnd);
+} 
+
+/*-------------------------------------------------------------
  Name:      adrotate_shuffle
 
- Purpose:   Randomize an array but keep keys intact
- Receive:   $length
- Return:    $result
+ Purpose:   Randomize and slice an array but keep keys intact
+ Receive:   $array, $amount
+ Return:    $shuffle
  Since:		3.8.8.3
 -------------------------------------------------------------*/
-function adrotate_shuffle($array) { 
+function adrotate_shuffle($array, $amount = 0) { 
 	if(!is_array($array)) return $array; 
 	$keys = array_keys($array); 
-	shuffle($keys); 
+	shuffle($keys);
+	
+	$count = count($keys);
+	if($amount == 0 OR $amount > $count) $amount = $count;
+	$keys = array_slice($keys, 0, $amount, 1);
+	
 	$shuffle = array(); 
-	foreach($keys as $key) { 
-		$shuffle[$key] = $array[$key]; 
+	foreach($keys as $key) {
+		$shuffle[$key] = $array[$key];
 	}
 	return $shuffle; 
 }
@@ -841,20 +885,7 @@ function adrotate_prepare_evaluate_ads($return = true) {
 	global $wpdb;
 	
 	// Fetch ads
-	$ads = $wpdb->get_results("SELECT 
-								`id`
-							FROM 
-								`".$wpdb->prefix."adrotate` 
-							WHERE 
-								`type` != 'disabled' 
-								AND `type` != 'empty' 
-								AND `type` != 'a_empty' 
-								AND `type` != 'queue' 
-								AND `type` != 'reject' 
-								AND `type` NOT LIKE 's_%' 
-							ORDER BY 
-								`id` ASC;
-							");
+	$ads = $wpdb->get_results("SELECT `id` FROM `".$wpdb->prefix."adrotate` WHERE `type` != 'disabled' AND `type` != 'empty' AND `type` != 'a_empty' AND `type` != 'queue' AND `type` != 'reject' AND `type` NOT LIKE 's_%' ORDER BY `id` ASC;");
 
 	// Determine error states
 	$error = $expired = $expiressoon = $normal = $unknown = 0;
@@ -892,13 +923,7 @@ function adrotate_prepare_evaluate_ads($return = true) {
 	}
 
 	$count = $expired + $expiressoon + $error + $unknown;
-	$result = array('error' => $error,
-					'expired' => $expired,
-					'expiressoon' => $expiressoon,
-					'normal' => $normal,
-					'total' => $count,
-					'unknown' => $unknown
-					);
+	$result = array('error' => $error, 'expired' => $expired, 'expiressoon' => $expiressoon, 'normal' => $normal, 'total' => $count, 'unknown' => $unknown);
 	update_option('adrotate_advert_status', $result);
 	unset($ads, $result);
 	if($return) adrotate_return('adrotate-settings', 405);
@@ -1036,12 +1061,18 @@ function adrotate_ad_is_in_groups($id) {
  Since:		3.9.12
 -------------------------------------------------------------*/
 function adrotate_hash($ad, $group = 0, $blog_id = 0) {
-	global $adrotate_debug;
+	global $adrotate_debug, $adrotate_config;
 	
-	if($adrotate_debug['track'] == true) {
-		return "$ad,$group,$blog_id";
+	if($adrotate_debug['timers'] == true) {
+		$timer = 0;
 	} else {
-		return base64_encode("$ad,$group,$blog_id");
+		$timer = $adrotate_config['impression_timer'];
+	}
+		
+	if($adrotate_debug['track'] == true) {
+		return "$ad,$group,$blog_id,$timer";
+	} else {
+		return base64_encode("$ad,$group,$blog_id,$timer");
 	}
 }
 
@@ -1180,26 +1211,27 @@ function adrotate_notifications() {
  Name:      adrotate_push_notifications
 
  Purpose:   Email the manager that his ads need help
- Receive:   -None-
+ Receive:   $action, $adid
  Return:    -None-
  Since:		3.9.9
 -------------------------------------------------------------*/
 function adrotate_push_notifications($action = false, $adid = false) {
-	global $wpdb;
+	global $wpdb, $adrotate_config, $advert_status;
 
 	$notifications = get_option("adrotate_notifications");
-	$advert_status = get_option("adrotate_advert_status");
 
 	if($notifications['notification_push'] == 'Y') {
+		$geo_lookups = get_option('adrotate_geo_requests');
+
 		if(isset($_POST['adrotate_notification_test_submit'])) {
-			$advert_status['test'] = true;
+			$notification_test = true;
+		} else { 
+			$notification_test = false;
 		}
 
-		$blogname 		= get_option('blogname');
-		$siteurl 		= get_option('siteurl');
 		$title = $message = '';
 	
-		if($advert_status['test']) {
+		if($notification_test) {
 			$title = "AdRotate Test";
 			$message = "This is a test notification.\nHave a nice day!";
 			$advert_status['total'] = 0;
@@ -1213,6 +1245,13 @@ function adrotate_push_notifications($action = false, $adid = false) {
 			if($advert_status['unknown'] > 0) $message .= "\n".$advert_status['unknown']." ".__('ad(s) have an unknown status.', 'adrotate');
 		}
 	
+		if($adrotate_config['enable_geo'] > 2 AND $geo_lookups < 1000 AND $notifications['notification_push_geo'] == 'Y') { // Send notifications about Geo Targeting
+			$title = "AdRotate Geo Targeting";
+			if($geo_lookups > 0) $message = "Your website has less than 1000 lookups left for Geo Targeting. If you run out of lookups, Geo Targeting will stop working.";
+			if($geo_lookups == 0) $message = "Your website has no lookups for Geo Targeting. Geo Targeting is currently not working.";
+		}
+
+		// User (Advertiser) invoked actions
 		if(($action == 'approved' AND $notifications['notification_push_approved'] == 'Y') OR ($action == 'rejected' AND $notifications['notification_push_rejected'] == 'Y')) {
 			$name = $wpdb->get_var("SELECT `title` FROM `".$wpdb->prefix."adrotate` WHERE `id` = ".$adid.";");
 			$title = "AdRotate Advert";
@@ -1227,15 +1266,7 @@ function adrotate_push_notifications($action = false, $adid = false) {
 			$message = "An advertiser has just queued their advert.\nName '".$name."' (ID: ".$adid.")\nAwaiting moderation: ".$queued." adverts.";
 		}
 		
-		$args = array(
-			'token' => $notifications['notification_push_api'], 
-			'user' => $notifications['notification_push_user'], 
-			'title' => $title, 
-			'message' => $message,
-			'url' => $siteurl,
-			'url_title' => $blogname,
-			'priority' => 0,
-		);
+		$args = array('token' => $notifications['notification_push_api'], 'user' => $notifications['notification_push_user'], 'title' => $title, 'message' => $message, 'url' => get_option('siteurl'), 'url_title' => get_option('blogname'), 'priority' => 0);
 	
 		wp_remote_post('https://api.pushover.net/1/messages.json?' . http_build_query($args), array('timeout' => 15));
 	}
@@ -1250,14 +1281,17 @@ function adrotate_push_notifications($action = false, $adid = false) {
  Since:		3.0
 -------------------------------------------------------------*/
 function adrotate_mail_notifications() {
+	global $adrotate_config, $adrotate_advert_status;
+
 	$notifications = get_option("adrotate_notifications");
-	$advert_status = get_option("adrotate_advert_status");
 
 	if($notifications['notification_email'] == 'Y' AND $notifications['notification_email_switch'] == 'Y') {
+		$geo_lookups = get_option('adrotate_geo_requests');
+
 		if(isset($_POST['adrotate_notification_test_submit'])) {
-			 $advert_status['test'] = true;
+			$notification_test = true;
 		} else { 
-			 $advert_status['test'] = false;
+			$notification_test = false;
 		}
 	
 		$emails = $notifications['notification_email_publisher'];
@@ -1265,34 +1299,64 @@ function adrotate_mail_notifications() {
 		if($x == 0) $emails = array(get_option('admin_email'));
 		
 		$blogname 		= get_option('blogname');
-		$siteurl 		= get_option('siteurl');
-		$dashboardurl	= $siteurl."/wp-admin/admin.php?page=adrotate-ads";
-		$pluginurl		= "https://www.adrotateplugin.com";
+		$dashboardurl	= get_option('siteurl')."/wp-admin/admin.php?page=adrotate-ads";
+		$pluginurl		= "https://ajdg.solutions/products/adrotate-for-wordpress/";
 	
-		if($advert_status['total'] > 0 OR $advert_status['test']) {
-			$subject = __('[AdRotate Alert] Your ads need your help!', 'adrotate');
+		if($notification_test) { // Send test message
+			$subject = __('[AdRotate Alert] Test message!', 'adrotate');
 			
 			$message = "<p>".__('Hello', 'adrotate').",</p>";
-			if($advert_status['test']) $message .= "<p><strong>".__('This is a test notification!', 'adrotate')."</strong></p>";
 			$message .= "<p>".__('This notification is sent to you from your website', 'adrotate')." '$blogname'.<br />";
-			$message .= __('You will receive a notification approximately every 24 hours until the listed issues are resolved.', 'adrotate')."</p>";
-	
-			$message .= "<p>".__('Current issues:', 'adrotate')."<br />";
-			if($advert_status['error'] > 0) $message .= $advert_status['error']." ".__('ad(s) have configuration errors. This needs your immediate attention!', 'adrotate')."<br />";
-			if($advert_status['expired'] > 0) $message .= $advert_status['expired']." ".__('ad(s) expired. This needs your immediate attention!', 'adrotate')."<br />";
-			if($advert_status['expiressoon'] > 0) $message .= $advert_status['expiressoon']." ".__('ad(s) will expire in less than 2 days.', 'adrotate')."<br />";
-			$message .= __('A total of', 'adrotate')." ".$advert_status['total']." ".__('ad(s) are in need of your care!', 'adrotate')."</p>";
-	
-			$message .= "<p>".__('Access your dashboard here:', 'adrotate')." $dashboardurl<br />";
-			$message .= __('Have a nice day!', 'adrotate')."</p>";
-	
+			$message .= "<p><strong>".__('This is a test notification!', 'adrotate')."</strong></p>";
+
+			$message .= "<p>".__('Have a nice day!', 'adrotate')."</p>";
 			$message .= "<p>".__('Your AdRotate Notifier', 'adrotate')."<br />";
 			$message .= "$pluginurl</p>";
 	
 			for($i=0;$i<$x;$i++) {
-			    $headers = "Content-Type: text/html; charset=UTF-8" . "\r\n" .
-			      		  "From: AdRotate Plugin <".$emails[$i].">" . "\r\n";
+			    $headers = "Content-Type: text/html; charset=UTF-8\r\nFrom: AdRotate Plugin <".$emails[$i].">" . "\r\n";
+				wp_mail($emails[$i], $subject, $message, $headers);
+			}
+		}
+
+		if($advert_status['total'] > 0) { // Notifier for advert status
+			$subject = __('[AdRotate Alert] Your ads need your help!', 'adrotate');
+			
+			$message = "<p>".__('Hello', 'adrotate').",</p>";
+			$message .= "<p>".__('This notification is sent to you from your website', 'adrotate')." '$blogname'.<br />";
+			$message .= "<p><strong>".__('Current issues:', 'adrotate')."</strong><br />";
+			if($advert_status['error'] > 0) $message .= $advert_status['error']." ".__('ad(s) have configuration errors. This needs your immediate attention!', 'adrotate')."<br />";
+			if($advert_status['expired'] > 0) $message .= $advert_status['expired']." ".__('ad(s) expired. This needs your immediate attention!', 'adrotate')."<br />";
+			if($advert_status['expiressoon'] > 0) $message .= $advert_status['expiressoon']." ".__('ad(s) will expire in less than 2 days.', 'adrotate')."<br />";
+			$message .= __('A total of', 'adrotate')." ".$advert_status['total']." ".__('ad(s) are in need of your care!', 'adrotate')."</p>";
+
+			$message .= "<p>".__('Access your dashboard here:', 'adrotate')." $dashboardurl<br />";	
+			$message .= __('Have a nice day!', 'adrotate')."</p>";
+			$message .= "<p>".__('Your AdRotate Notifier', 'adrotate')."<br />";
+			$message .= "$pluginurl</p>";
 	
+			for($i=0;$i<$x;$i++) {
+			    $headers = "Content-Type: text/html; charset=UTF-8\r\nFrom: AdRotate Plugin <".$emails[$i].">" . "\r\n";
+				wp_mail($emails[$i], $subject, $message, $headers);
+			}
+		}
+
+		if($adrotate_config['enable_geo'] > 2 AND $geo_lookups < 1000) { // Send notifications about Geo Targeting
+			$subject = __('[AdRotate Alert] Geo Targeting is running out of lookups!', 'adrotate');
+			
+			$message = "<p>".__('Hello', 'adrotate').",</p>";
+			$message .= "<p>".__('This notification is sent to you from your website', 'adrotate')." '$blogname'.<br />";
+			if($geo_lookups > 0) $message .= "<p>".__('Your website has less than 1000 lookups left for Geo Targeting. If you run out of lookups, Geo Targeting will stop working.', 'adrotate')."</p>";
+			if($geo_lookups == 0) $message .= "<p>".__('Your website has no lookups for Geo Targeting. Geo Targeting is currently not working.', 'adrotate')."</p>";
+			if($adrotate_config['enable_geo'] == 5) $message .= "<p>".__('If you keep running out of lookups regularly consider buying more lookups for', 'adrotate')." <a href='https://ajdg.solutions/products/adrotate-geo/'>AdRotate Geo</a>.</p>";
+
+			$message .= "<p>".__('Access your dashboard here:', 'adrotate')." $dashboardurl<br />";	
+			$message .= __('Have a nice day!', 'adrotate')."</p>";
+			$message .= "<p>".__('Your AdRotate Notifier', 'adrotate')."<br />";
+			$message .= "$pluginurl</p>";
+	
+			for($i=0;$i<$x;$i++) {
+			    $headers = "Content-Type: text/html; charset=UTF-8\r\nFrom: AdRotate Plugin <".$emails[$i].">" . "\r\n";
 				wp_mail($emails[$i], $subject, $message, $headers);
 			}
 		}
@@ -1324,7 +1388,7 @@ function adrotate_mail_message() {
 		
 		$siteurl 		= get_option('siteurl');
 		$adurl			= $siteurl."/wp-admin/admin.php?page=adrotate-ads&view=edit&ad=".$id;
-		$pluginurl		= "https://www.adrotateplugin.com";
+		$pluginurl		= "https://ajdg.solutions/products/adrotate-for-wordpress/";
 	
 		$now 		= adrotate_now();
 		
@@ -1752,11 +1816,11 @@ function adrotate_status($status, $args = null) {
 
 		// Support
 		case '701' :
-			echo '<div id="message" class="updated"><p>Support request sent.<br />View and respond to your tickets on the <a href="https://ajdg.solutions/support/view.php" target="_blank">AJdG Solutions Support page</a> using your submitted email address and ticket number <strong>'.$arguments['ticket'].'</strong>.<br />You will receive a confirmation email from the ticket system in within a few minutes. Also check your spam folder!</p></div>';
+			echo '<div id="message" class="updated"><p><strong>Support request sent.</strong><br />View and respond to your tickets on the <a href="https://ajdg.solutions/support/view.php" target="_blank">AJdG Solutions Support page</a> using your submitted email address and ticket number <strong>'.$arguments['ticket'].'</strong>.<br />Due to spam concerns and auto-replies you will *not* receive a confirmation email from the ticket system!</p></div>';
 		break;
 		
 		case '702' :
-			echo '<div id="message" class="updated"><p>'. __('Support request could not be sent! Please try again - If the issue persists write to support@adrotateplugin.com!', 'adrotate') .'</p></div>';
+			echo '<div id="message" class="updated"><p>'. __('Support request could not be sent! Please try again - If the issue persists write to adrotate-support@ajdg.net!', 'adrotate') .'</p></div>';
 		break;
 		
 		default :

@@ -1,8 +1,8 @@
 <?php
 /* ------------------------------------------------------------------------------------
 *  COPYRIGHT AND TRADEMARK NOTICE
-*  Copyright 2008-2014 AJdG Solutions (Arnan de Gans). All Rights Reserved.
-*  ADROTATE is a trademark of Arnan de Gans.
+*  Copyright 2008-2015 AJdG Solutions (Arnan de Gans). All Rights Reserved.
+*  ADROTATE is a registered trademark of Arnan de Gans.
 
 *  COPYRIGHT NOTICES AND ALL THE COMMENTS SHOULD REMAIN INTACT.
 *  By using this code you agree to indemnify Arnan de Gans from any
@@ -75,10 +75,6 @@ function adrotate_activate_setup() {
 		add_option('adrotate_activate', array('status' => 0, 'instance' => '', 'activated' => '', 'deactivated' => '', 'type' => '', 'key' => '', 'email' => '', 'version' => '', 'firstrun' => 1));
 		add_option('adrotate_hide_license', 0);
 
-		// AdRotate Server
-		add_option('adrotate_server', array('status' => 0, 'instance' => '', 'account' => '', 'url' => '', 'puppet' => 0, 'activated' => false, 'deactivated' => false));
-		add_option('adrotate_server_hide', 'N');
-
 		adrotate_check_config();
 
 		// Set the capabilities for the administrator
@@ -99,9 +95,9 @@ function adrotate_activate_setup() {
 		update_option('adrotate_roles', '0');
 
 		// Set up some schedules
-		$firstrun = adrotate_date_start('day');
+		$firstrun = adrotate_now();
 		if(!wp_next_scheduled('adrotate_notification')) { // Ad notifications
-			wp_schedule_event($firstrun, 'daily', 'adrotate_notification');
+			wp_schedule_event($firstrun + 900, 'daily', 'adrotate_notification');
 		}
 
 		if(!wp_next_scheduled('adrotate_clean_trackerdata')) { // Periodically clean trackerdata
@@ -109,7 +105,7 @@ function adrotate_activate_setup() {
 		}
 
 		if(!wp_next_scheduled('adrotate_evaluate_ads')) { // Periodically check ads
-			wp_schedule_event($firstrun + 3600, 'twicedaily', 'adrotate_evaluate_ads');
+			wp_schedule_event($firstrun + 2700, 'twicedaily', 'adrotate_evaluate_ads');
 		}
 
 		// Attempt to make the some folders
@@ -215,8 +211,8 @@ function adrotate_uninstall_setup() {
 	delete_option('adrotate_responsive_required');
 	delete_option('adrotate_dynamic_required');
 	delete_option('adrotate_roles');
-	delete_option('adrotate_server');
-	delete_option('adrotate_server_hide');
+	delete_option('adrotate_server'); // Obsolete in 3.12.3
+	delete_option('adrotate_server_hide'); // Obsolete in 3.12.3
 	delete_option('adrotate_version');
 	delete_site_option('adrotate_multisite'); // Obsolete in 3.11.8
 
@@ -287,13 +283,13 @@ function adrotate_check_upgrade() {
 		    $schedule_id = $wpdb->insert_id;
 	
 			// Demo ad 1
-		    $wpdb->insert($wpdb->prefix."adrotate", array('title' => 'Demo ad 468x60', 'bannercode' => '&lt;a href=\&quot;http:\/\/www.adrotateforwordpress.com\&quot;&gt;&lt;img src=\&quot;http://cdn.adrotateplugin.com/b/adrotate-468x60.jpg\&quot; /&gt;&lt;/a&gt;', 'thetime' => $now, 'updated' => $now, 'author' => $current_user->user_login, 'imagetype' => '', 'image' => '', 'link' => '', 'tracker' => 'N', 'responsive' => 'N', 'type' => 'active', 'weight' => 6, 'sortorder' => 0, 'cbudget' => 0, 'ibudget' => 0, 'crate' => 0, 'irate' => 0, 'cities' => serialize(array()), 'countries' => serialize(array())));
+		    $wpdb->insert($wpdb->prefix."adrotate", array('title' => 'Demo ad 468x60', 'bannercode' => '&lt;a href=\&quot;https:\/\/ajdg.solutions\/products\/adrotate-for-wordpress\/\&quot;&gt;&lt;img src=\&quot;http://ajdg.solutions/assets/dummy-banners/adrotate-468x60.jpg\&quot; /&gt;&lt;/a&gt;', 'thetime' => $now, 'updated' => $now, 'author' => $current_user->user_login, 'imagetype' => '', 'image' => '', 'link' => '', 'tracker' => 'N', 'responsive' => 'N', 'type' => 'active', 'weight' => 6, 'sortorder' => 0, 'cbudget' => 0, 'ibudget' => 0, 'crate' => 0, 'irate' => 0, 'cities' => serialize(array()), 'countries' => serialize(array())));
 		    $ad_id = $wpdb->insert_id;
 			$wpdb->insert($wpdb->prefix.'adrotate_linkmeta', array('ad' => $ad_id, 'group' => 0, 'block' => 0, 'user' => 0, 'schedule' => $schedule_id));
 			unset($ad_id);
 	
 			// Demo ad 2
-		    $wpdb->insert($wpdb->prefix."adrotate", array('title' => 'Demo ad 200x200', 'bannercode' => '&lt;a href=\&quot;http:\/\/www.adrotateforwordpress.com\&quot;&gt;&lt;img src=\&quot;http://cdn.adrotateplugin.com/b/adrotate-200x200.jpg\&quot; /&gt;&lt;/a&gt;', 'thetime' => $now, 'updated' => $now, 'author' => $current_user->user_login, 'imagetype' => '', 'image' => '', 'link' => '', 'tracker' => 'N', 'responsive' => 'N', 'type' => 'active', 'weight' => 6, 'sortorder' => 0, 'cbudget' => 0, 'ibudget' => 0, 'crate' => 0, 'irate' => 0, 'cities' => serialize(array()), 'countries' => serialize(array())));
+		    $wpdb->insert($wpdb->prefix."adrotate", array('title' => 'Demo ad 200x200', 'bannercode' => '&lt;a href=\&quot;https:\/\/ajdg.solutions\/products\/adrotate-for-wordpress\/\&quot;&gt;&lt;img src=\&quot;http://ajdg.solutions/assets/dummy-banners/adrotate-200x200.jpg\&quot; /&gt;&lt;/a&gt;', 'thetime' => $now, 'updated' => $now, 'author' => $current_user->user_login, 'imagetype' => '', 'image' => '', 'link' => '', 'tracker' => 'N', 'responsive' => 'N', 'type' => 'active', 'weight' => 6, 'sortorder' => 0, 'cbudget' => 0, 'ibudget' => 0, 'crate' => 0, 'irate' => 0, 'cities' => serialize(array()), 'countries' => serialize(array())));
 		    $ad_id = $wpdb->insert_id;
 			$wpdb->insert($wpdb->prefix.'adrotate_linkmeta', array('ad' => $ad_id, 'group' => 0, 'block' => 0, 'user' => 0, 'schedule' => $schedule_id));
 			unset($ad_id, $schedule_id);
@@ -344,11 +340,12 @@ function adrotate_check_config() {
 	if(!isset($config['enable_geo'])) $config['enable_geo'] = 0;
 	if(!isset($config['geo_email'])) $config['geo_email'] = '';
 	if(!isset($config['geo_pass'])) $config['geo_pass'] = '';
+	if(!isset($config['geo_cookie_life'])) $config['geo_cookie_life'] = 86400;
 	if(!isset($config['enable_geo_advertisers'])) $config['enable_geo_advertisers'] = 0;
 	if(!isset($config['banner_folder'])) $config['banner_folder'] = "wp-content/banners/";
 	if(!isset($config['adminbar']) OR ($config['adminbar'] != 'Y' AND $config['adminbar'] != 'N')) $config['adminbar'] = 'Y';
 	if(!isset($config['dashboard_notifications']) OR ($config['dashboard_notifications'] != 'Y' AND $config['dashboard_notifications'] != 'N')) $config['dashboard_notifications'] = 'Y';
-	if(!isset($config['impression_timer']) OR $config['impression_timer'] < 60 OR $config['impression_timer'] > 3600) $config['impression_timer'] = 60;
+	if(!isset($config['impression_timer']) OR $config['impression_timer'] < 10 OR $config['impression_timer'] > 3600) $config['impression_timer'] = 60;
 	if(!isset($config['click_timer']) OR $config['click_timer'] < 60 OR $config['click_timer'] > 86400) $config['click_timer'] = 86400;
 	if(!isset($config['hide_schedules']) OR ($config['hide_schedules'] != 'Y' AND $config['hide_schedules'] != 'N')) $config['hide_schedules'] = 'N';
 	if(!isset($config['widgetalign']) OR ($config['widgetalign'] != 'Y' AND $config['widgetalign'] != 'N')) $config['widgetalign'] = 'N';
@@ -366,6 +363,7 @@ function adrotate_check_config() {
 	if(!isset($notifications['notification_push']) OR ($notifications['notification_push'] != 'Y' AND $notifications['notification_push'] != 'N')) $notifications['notification_push'] = 'N';
 	if(!isset($notifications['notification_email']) OR ($notifications['notification_email'] != 'Y' AND $notifications['notification_email'] != 'N')) $notifications['notification_email'] = 'Y';
 
+	if(!isset($notifications['notification_push_geo']) OR ($notifications['notification_push_geo'] != 'Y' AND $notifications['notification_push_geo'] != 'N')) $notifications['notification_push_geo'] = 'N';
 	if(!isset($notifications['notification_push_status']) OR ($notifications['notification_push_status'] != 'Y' AND $notifications['notification_push_status'] != 'N')) $notifications['notification_push_status'] = 'N';
 	if(!isset($notifications['notification_push_queue']) OR ($notifications['notification_push_queue'] != 'Y' AND $notifications['notification_push_queue'] != 'N')) $notifications['notification_push_queue'] = 'N';
 	if(!isset($notifications['notification_push_approved']) OR ($notifications['notification_push_approved'] != 'Y' AND $notifications['notification_push_approved'] != 'N')) $notifications['notification_push_approved'] = 'N';
@@ -866,13 +864,6 @@ function adrotate_core_upgrade() {
 		if(!wp_next_scheduled('adrotate_evaluate_ads')) wp_schedule_event($firstrun + 3600, 'twicedaily', 'adrotate_evaluate_ads');
 	}
 
-	// 3.9.14
-	if($adrotate_version['current'] < 372) {
-		// AdRotate Server
-		add_option('adrotate_server', array('status' => 0, 'instance' => '', 'account' => '', 'url' => '', 'puppet' => 0, 'activated' => false, 'deactivated' => false));
-		add_option('adrotate_server_hide', 'N');
-	}
-
 	// 3.10
 	if($adrotate_version['current'] < 373) {
 		add_option('adrotate_responsive_required', 0);
@@ -891,6 +882,12 @@ function adrotate_core_upgrade() {
 	// 3.11.4
 	if($adrotate_version['current'] < 376) {
 		adrotate_check_config();
+	}
+
+	// 3.12.3
+	if($adrotate_version['current'] < 377) {
+		delete_option('adrotate_server');
+		delete_option('adrotate_server_hide');
 	}
 
 	update_option("adrotate_version", array('current' => ADROTATE_VERSION, 'previous' => $adrotate_version['current']));
