@@ -26,6 +26,7 @@ function tabsControl(){
         if(!$(this).parent().parent().parent().hasClass('dontChangePageTitle')){
             pageTitle=$('a',this).text();
            $('title').text(pageTitle + ' - TM Forum Live! Nice 2015');
+           location.hash = $('a',this).attr('href')
         }
     })
 }
