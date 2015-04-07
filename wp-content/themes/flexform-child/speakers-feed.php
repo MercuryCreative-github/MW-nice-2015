@@ -12,10 +12,11 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 	$avatar = get_user_meta($sid, 'image',1);}
 
 	foreach ( $users as $user ) {
-		$speaker= '<speaker>';
+		$speaker= '<item>';
+		$speaker.= '<title>' . esc_html( $user->first_name ) . ' ' . esc_html( $user->last_name ) . '</title>' ;
 		$speaker.= '<first_name>' . esc_html( $user->first_name ) . '</first_name>' ;
 		$speaker.= '<last_name>' . esc_html( $user->last_name ) . '</last_name>' ;
-		$speaker.= '<title>' . esc_html( $user->job_role ) . '</title>';
+		$speaker.= '<job_role>' . esc_html( $user->job_role ) . '</job_role>';
 
 		// Get companies and job role
 		$companies = $user->company;
@@ -45,6 +46,7 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 		$speaker.= '</company>';
 		
 		$speaker.= '<description>' . $user->description . '</description>';
+		$speaker.= '<biography>' . $user->description . '</biography>';
 		$speaker.= '<imageurl>' . wp_get_attachment_image($user->image) . '</imageurl>';
 		$speaker.= '<website>' . esc_html( $user->website ) . '</website>';
 		$speaker.= '<twitter>' . $user->twitter_alias . '</twitter>';
@@ -60,13 +62,12 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 		$speaker .= '</SessionIDs>';
 		$speaker.= '<id>' . esc_html( $user->ID ) . '</id>' ;
     $speaker.= '<specification>' . esc_html( $user->speaker_attribs[0] ) . '</specification>';
-		$speaker.= '</speaker>';
+		$speaker.= '</item>';
 		array_push($arr,$speaker);
 	} 
 header('Content-Type: '.feed_content_type('rss-http').'; charset='.get_option('blog_charset'), true);
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 ?>
-
 <rss version="2.0"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
 	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
@@ -82,21 +83,11 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 	<link><?php bloginfo_rss('url') ?></link>
 	<description><?php bloginfo_rss("description") ?></description>
 	<lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></lastBuildDate>
-	<?php the_generator( 'rss2' ); ?>
-	<language><?php echo get_option('rss_language'); ?></language>
+	<language><?php echo substr(get_bloginfo('language'), 0, 2); ?></language>
 	<sy:updatePeriod><?php echo apply_filters( 'rss_update_period', 'hourly' ); ?></sy:updatePeriod>
 	<sy:updateFrequency><?php echo apply_filters( 'rss_update_frequency', '1' ); ?></sy:updateFrequency>
 	<?php do_action('rss2_head'); ?>
 	<?php
-
-	foreach ( $users as $user ) {
-echo $arr[$i]; 
-$i++;
-
-	}
-	
-
-	
-	  ?>
+	foreach ( $users as $user ) {echo $arr[$i]; $i++;}?>
 </channel>
 </rss>
