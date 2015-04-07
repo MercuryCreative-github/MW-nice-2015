@@ -53,43 +53,44 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 			if ( ! empty( $user_query->results ) ) {
 				foreach ( $user_query->results as $user ) {
 					$SpeakerRole = '<item>'. $user->first_name.' '.$user->last_name . '</item>';
+				
+					if(($user->speaker_at))
+					if (in_array($presentationId, $user->speaker_at)) {
+						$session .= '<speakerIds>';
+						$session .= $SpeakerRole;
+						$session .= '</speakerIds>';
+					}
+					
+					if(($user->moderator_at))
+					if (in_array($presentationId, $user->moderator_at)) {
+						$session .= '<moderatorIds>';
+						$session .= $SpeakerRole;
+						$session .= '</moderatorIds>';
+					}
+
+					if(($user->panelist_at))
+					if (in_array($presentationId, $user->panelist_at)) {
+						$session .= '<panelistIds>';
+						$session .= $SpeakerRole;
+						$session .= '</panelistIds>';
+					}
+
+					if(($user->facilitator_at))
+					if (in_array($presentationId, $user->facilitator_at)) {
+						$session .= '<facilitatorIds>';
+						$session .= $SpeakerRole;
+						$session .= '</facilitatorIds>';
+					}
+
+					if(($user->collaborator_at))
+					if (in_array($presentationId, $user->collaborator_at)) {
+						$session .= '<collaboratorIds>';
+						$session .= $SpeakerRole;
+						$session .= '</collaboratorIds>';
+					}
 				} //close foreach
-			} //close loop if
+			} //close if
 
-			if(($user->speaker_at))
-			if (in_array($presentationId, $user->speaker_at)) {
-				$session .= '<speakerIds>';
-				$session .= $SpeakerRole;
-				$session .= '</speakerIds>';
-			}
-			
-			if(($user->moderator_at))
-			if (in_array($presentationId, $user->moderator_at)) {
-				$session .= '<moderatorIds>';
-				$session .= $SpeakerRole;
-				$session .= '</moderatorIds>';
-			}
-
-			if(($user->panelist_at))
-			if (in_array($presentationId, $user->panelist_at)) {
-				$session .= '<panelistIds>';
-				$session .= $SpeakerRole;
-				$session .= '</panelistIds>';
-			}
-
-			if(($user->facilitator_at))
-			if (in_array($presentationId, $user->facilitator_at)) {
-				$session .= '<facilitatorIds>';
-				$session .= $SpeakerRole;
-				$session .= '</facilitatorIds>';
-			}
-
-			if(($user->collaborator_at))
-			if (in_array($presentationId, $user->collaborator_at)) {
-				$session .= '<collaboratorIds>';
-				$session .= $SpeakerRole;
-				$session .= '</collaboratorIds>';
-			}
 			$session .= '<linkUrls>' . get_permalink( $presentation->ID ) . '</linkUrls>';
 			$session .= '<sessionId>' . $presentation->ID . '</sessionId>';
 		$session .= '</item>';
