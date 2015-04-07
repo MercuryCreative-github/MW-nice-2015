@@ -37,84 +37,59 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 			$summits = get_the_terms($sessionId, 'tmf_summit_category' );
 			if(is_array($summits))
 			foreach ($summits as $summitTitle) {$session .= '<sessionTrack>' . ( $summitTitle->name ) . '</sessionTrack>';}
-			$userArgs = array(	
-				'meta_key'     => 'speaker_at',
-				'meta_value'   => $presentation->ID,
-				'meta_compare' => 'LIKE',
-				'fields'       => 'ID',
-				);
-			$users = get_users( $userArgs );			
-			$size = sizeof( $users );
-			$session .= '<speakerIds>';
-			if( $size > 0 ) {
-				for( $i = 0; $i < $size; $i++ )
-					$session .= '<item>' . $users[$i] . '</item>';
-			}
-			$session .= '</speakerIds>';			
-			$userArgs = array(	
-				'meta_key'     => 'moderator_at',
-				'meta_value'   => $presentation->ID,
-				'meta_compare' => 'LIKE',
-				'fields'       => 'ID',
-			);
-			$users = get_users( $userArgs );
-			
-			$size = sizeof( $users );
-			$session .= '<moderatorsIds>';
-			if( $size > 0 ) {
-				for( $i = 0; $i < $size; $i++ )
-					$session .= '<item>' . $users[$i] . '</item>';
-			}
-			$session .= '</moderatorsIds>';
-			
-			$userArgs = array(
-				'meta_key'     => 'facilitator_at',
-				'meta_value'   => $presentation->ID,
-				'meta_compare' => 'LIKE',
-				'fields'       => 'ID',
-			);
+			$args = array(
+				'role'=>'speaker',
+				'meta_query' =>array(array('value' => $presentationId ,'compare' => 'LIKE'),)
+				);// meta_query);
 
-			$users = get_users( $userArgs );
-			
-			$size = sizeof( $users );
-			$session .= '<facilitatorsIds>';
-			if( $size > 0 ) {
-				for( $i = 0; $i < $size; $i++ )
-					$session .= '<item>' . $users[$i] . '</item>';
+			add_action( 'pre_user_query', function( $user_query ) {
+				$user_query->query_fields = 'DISTINCT ' . $user_query->query_fields;
+			} );
+
+			// The Query
+			$user_query = new WP_User_Query( $args );
+
+			// User Loop
+			if ( ! empty( $user_query->results ) ) {
+				foreach ( $user_query->results as $user ) {
+					$SpeakerRole = '<item>'. $user->first_name.' '.$user->last_name . '</item>';
+				} //close foreach
+			} //close loop if
+
+			if(($user->speaker_at))
+			if (in_array($presentationId, $user->speaker_at)) {
+				$session .= '<speakerIds>';
+				$session .= $SpeakerRole;
+				$session .= '</speakerIds>';
 			}
-			$session .= '</facilitatorsIds>';
 			
-			$userArgs = array(	
-				'meta_key'     => 'panelist_at',
-				'meta_value'   => $presentation->ID,
-				'meta_compare' => 'LIKE',
-				'fields'       => 'ID',
-				);
-			$users = get_users( $userArgs );
-			
-			$size = sizeof( $users );
-			$session .= '<panelistsIds>';
-			if( $size > 0 ) {
-				for( $i = 0; $i < $size; $i++ )
-					$session .= '<item>' . $users[$i] . '</item>';
+			if(($user->moderator_at))
+			if (in_array($presentationId, $user->moderator_at)) {
+				$session .= '<moderatorIds>';
+				$session .= $SpeakerRole;
+				$session .= '</moderatorIds>';
 			}
-			$session .= '</panelistsIds>';
-			
-			$userArgs = array(	
-				'meta_key'     => 'collaborator_at',
-				'meta_value'   => $presentation->ID,
-				'meta_compare' => 'LIKE',
-				'fields'       => 'ID',
-				);
-			$users = get_users( $userArgs );
-			
-			$size = sizeof( $users );
-			$session .= '<collaboratorIds>';
-			if( $size > 0 ) {
-				for( $i = 0; $i < $size; $i++ )
-					$session .= '<item>' . $users[$i] . '</item>';
+
+			if(($user->panelist_at))
+			if (in_array($presentationId, $user->panelist_at)) {
+				$session .= '<panelistIds>';
+				$session .= $SpeakerRole;
+				$session .= '</panelistIds>';
 			}
-			$session .= '</collaboratorIds>';			
+
+			if(($user->facilitator_at))
+			if (in_array($presentationId, $user->facilitator_at)) {
+				$session .= '<facilitatorIds>';
+				$session .= $SpeakerRole;
+				$session .= '</facilitatorIds>';
+			}
+
+			if(($user->collaborator_at))
+			if (in_array($presentationId, $user->collaborator_at)) {
+				$session .= '<collaboratorIds>';
+				$session .= $SpeakerRole;
+				$session .= '</collaboratorIds>';
+			}
 			$session .= '<linkUrls>' . get_permalink( $presentation->ID ) . '</linkUrls>';
 			$session .= '<sessionId>' . $presentation->ID . '</sessionId>';
 		$session .= '</item>';
