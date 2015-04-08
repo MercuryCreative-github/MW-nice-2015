@@ -150,14 +150,7 @@
 @media screen and (max-width: 1200px) {
 
     #main-navigation .menu .menu-item.social-icon.twitter {display: none;}
-    /*uber menu
-    #main-navigation {
-        margin-top: -11px !important;
-        margin-left: -1069px !important;
-    }*/
 
-    /*nav .menu li.social-icon { display: none;}
-    .twitterhastag {display: none;}*/
     .agenda-top-block aside {
         margin-bottom: 0;
         padding-bottom: 1em;
@@ -216,8 +209,7 @@
         margin-left: 70px;
         margin-bottom: 32px;
     }
-    /*COMMENTED TO ADD THE 6TH LOGO*/
-    /*.top-sponsors-logos .sponsors_logo.logo_4 { margin-left: 350px; }*/
+
     /*ONLINE TRAINING*/
     .online-training .about-table .wpb_wrapper.clearfix {min-height: 800px;}
     p.welcome-contact {line-height: 20px;}
@@ -764,6 +756,12 @@
     .main-video-name.SKL {
         width: 220px;
     }
+
+    /*SIDEBAR WORKSHOP*/
+    .workshops .rev_slider ul li div.tp-caption-first {font-size: 23px;}
+    .workshops .rev_slider ul li div.tp-caption.grey-btn p {padding: 3px 2px;}
+    .workshops .rev_slider ul li div.tp-caption-third img {width: 292px;}
+    .workshops .rev_slider ul li div.tp-caption-fourth {left: 153px;}
 
 }
 
@@ -1371,6 +1369,14 @@
     }
 }
 @media screen and (min-width: 768px) and (max-width: 979px) {
+
+    /*SIDEBAR WORKSHOP*/
+    .workshops .rev_slider ul li div.tp-caption-first {font-size: 18px;}
+    .workshops .rev_slider ul li div.tp-caption.grey-btn {padding: 2px 9px;top:33px;}
+    .workshops .rev_slider ul li div.tp-caption.grey-btn p {padding: 3px 0px; font-size: 13px;}
+    .workshops .rev_slider ul li div.tp-caption-third {top: 75px;}
+    .workshops .rev_slider ul li div.tp-caption-third img {width: 231px;}
+    .workshops .rev_slider ul li div.tp-caption-fourth { left: 90px; top: 110px;}
 
     /*New HP*/
     .homePageClass .case-study-box:first-child {
@@ -3828,6 +3834,13 @@
     .section01-info{padding: 0;}
     .section02-companies ul{margin-left: 0;}
     .section02-companies ul li img{margin: 0 auto;}
+    /*SIDEBAR WORKSHOP*/
+    .workshops .rev_slider ul li div.tp-caption-first {font-size: 18px;}
+    .workshops .rev_slider ul li div.tp-caption.grey-btn {padding: 2px 9px;top:33px;}
+    .workshops .rev_slider ul li div.tp-caption.grey-btn p {padding: 3px 0px; font-size: 13px;}
+    .workshops .rev_slider ul li div.tp-caption-third {top: 75px;}
+    .workshops .rev_slider ul li div.tp-caption-third img {width: 231px;}
+    .workshops .rev_slider ul li div.tp-caption-fourth { left: 90px; top: 110px;}
 }
 
 @media only screen and (-webkit-min-width: 980px) and (-webkit-max-width: 1024px) {

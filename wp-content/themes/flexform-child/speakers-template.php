@@ -122,7 +122,7 @@ Template Name: Speakers
 					<button type="button" class="all active">Full Speakers List</button>
 				</div>
 				<div class="form span3">
-					<input type="search" class="find-speaker" placeholder="Search for Speaker Name">
+					<input type="search" class="find-speaker" placeholder="Search for Speakers">
 				</div>
 			</div>
 			<?php
@@ -215,15 +215,14 @@ Template Name: Speakers
 		
 		/* Search Speaker function */
 		jQuery('.find-speaker').keyup(function() {
-	        jQuery('.speaker-item .name').each(function() {
-	            jQuery(this).parent().parent().parent().hide();
-	            if (jQuery(this).text().toUpperCase().indexOf(jQuery('.find-speaker').val().toUpperCase()) >= 0) {
-	                jQuery(this).parent().parent().parent().show();
-	            }
-	            if (jQuery('.find-speaker').val() === '') {
-	                jQuery(this).parent().parent().parent().show();
-	            }
-	        });
+
+			jQuery('.speaker-item').each(function(){
+				// the value of the input field to toUpperCase
+				searchingFor=jQuery('.find-speaker').val().toUpperCase();
+				// if what we are searchingFor is part of any piece of text inside the speaker item, show it. Else hide it.
+				if(jQuery(this).text().toUpperCase().indexOf(searchingFor)>=0){jQuery(this).show();}else {jQuery(this).hide();}
+				
+			})
 	    });
 
 		/* Filtering Highlited, Keynotes Speakers */
