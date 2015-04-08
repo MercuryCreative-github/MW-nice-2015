@@ -122,7 +122,7 @@ Template Name: Speakers
 					<button type="button" class="all active">Full Speakers List</button>
 				</div>
 				<div class="form span3">
-					<input type="search" class="find-speaker" placeholder="Search for Speaker Name or Company">
+					<input type="search" class="find-speaker" placeholder="Search for Speaker Name">
 				</div>
 			</div>
 			<?php
@@ -222,15 +222,6 @@ Template Name: Speakers
 	            }
 	            if (jQuery('.find-speaker').val() === '') {
 	                jQuery(this).parent().parent().parent().show();
-	            }
-	        });
-	        jQuery('.speaker-item .company').each(function() {
-	            jQuery(this).parent().parent().parent().parent().hide();
-	            if (jQuery(this).text().toUpperCase().indexOf(jQuery('.find-speaker').val().toUpperCase()) >= 0) {
-	                jQuery(this).parent().parent().parent().parent().show();
-	            }
-	            if (jQuery('.find-speaker').val() === '') {
-	                jQuery(this).parent().parent().parent().parent().show();
 	            }
 	        });
 	    });
