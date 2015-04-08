@@ -215,20 +215,17 @@ Template Name: Speakers
 		
 		/* Search Speaker function */
 		jQuery('.find-speaker').keyup(function() {
-
 			jQuery('.speaker-item').each(function(){
 				// the value of the input field to toUpperCase
 				searchingFor=jQuery('.find-speaker').val().toUpperCase();
 				// if what we are searchingFor is part of any piece of text inside the speaker item, show it. Else hide it.
 				if(jQuery(this).text().toUpperCase().indexOf(searchingFor)>=0){jQuery(this).show();}else {jQuery(this).hide();}
-				
 			})
 	    });
 
 		/* Filtering Highlited, Keynotes Speakers */
 		jQuery('.filters .all').click(function() {
 			jQuery('.speaker-item').fadeIn();
-
 	    });
 
 		jQuery('.filters .high').click(function() {

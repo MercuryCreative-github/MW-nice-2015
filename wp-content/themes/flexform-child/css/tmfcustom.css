@@ -151,7 +151,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .workshops .tp-caption.slider-header {line-height: 20px;}
 .workshops .workshops-tab .rev_slider_wrapper {margin: 20px 0px 10px 0px !important;}
 
-.workshops .rev_slider{height: 185px; margin-top: 20px;}
+.workshops .wpb_wrapper .rev_slider{height: 185px; margin-top: 20px;}
 .workshops .rev_slider ul {display: block; overflow: hidden; width: 100%; height: 100%; max-height: none;}
 .workshops .rev_slider ul li {width: 100%; height: 100%; overflow: hidden; z-index: 20; visibility: inherit; opacity: 1;}
 .workshops .rev_slider ul li div.tp-caption-first {white-space: nowrap; font-size: 25px; color: #7e7e82;line-height: 30px;}
