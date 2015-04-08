@@ -151,12 +151,16 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .workshops .tp-caption.slider-header {line-height: 20px;}
 .workshops .workshops-tab .rev_slider_wrapper {margin: 20px 0px 10px 0px !important;}
 
-.workshops .rev_slider{height: 185px;}
+.workshops .rev_slider{height: 185px; margin-top: 20px;}
 .workshops .rev_slider ul {display: block; overflow: hidden; width: 100%; height: 100%; max-height: none;}
 .workshops .rev_slider ul li {width: 100%; height: 100%; overflow: hidden; z-index: 20; visibility: inherit; opacity: 1;}
-.workshops .rev_slider ul li div.tp-caption-first {z-index: 2; white-space: nowrap; min-height: 0px; min-width: 0px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; left: 0px; top: -2px; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1); font-size: 25px; color: #7e7e82;line-height: 30px;}
-.workshops .rev_slider ul li div.tp-caption.grey-btn {z-index: 3; white-space: nowrap; min-height: 0px; min-width: 0px; line-height: 32px; border-width: 0px; margin: 0px; padding: 2px 30px; letter-spacing: 0px; font-size: 14px; left: 0px; top: 43px; visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1); background: none repeat scroll 0% 0% gray;}
-
+.workshops .rev_slider ul li div.tp-caption-first {white-space: nowrap; font-size: 25px; color: #7e7e82;line-height: 30px;}
+.workshops .rev_slider ul li div.tp-caption.grey-btn {white-space: nowrap; line-height: 32px; padding: 2px 30px; top: 43px; visibility: visible;}
+.workshops .rev_slider ul li div.tp-caption.grey-btn p { color: #ffffff; padding: 3px 15px; margin:0; font-size: 14px; font-weight: bold;}
+.workshops .rev_slider ul li div.tp-caption-third {top: 85px; visibility: visible;}
+.workshops .rev_slider ul li div.tp-caption-third img {width: 314px;}
+.workshops .rev_slider ul li div.tp-caption-fourth {font-weight: 400; color: #ee7630;white-space: nowrap; font-size: 18px; left: 177px; top: 133px;}
+.workshops .rev_slider ul li div.tp-caption-fourth a {color: #ee7630;}
 
 /**************************/
 /******* SUBMIT PAGE ******/
