@@ -217,15 +217,11 @@ Template Name: Speakers
 		jQuery('.find-speaker').keyup(function() {
 
 			jQuery('.speaker-item').each(function(){
+				// the value of the input field to toUpperCase
 				searchingFor=jQuery('.find-speaker').val().toUpperCase();
-				jQuery(this).hide();
-
-				if(jQuery(this).text().toUpperCase().indexOf(searchingFor)>=0){
-					jQuery(this).show();
-				}
-				if (jQuery('.find-speaker').val() === '') {
-	                jQuery(this).show();
-	            }
+				// if what we are searchingFor is part of any piece of text inside the speaker item, show it. Else hide it.
+				if(jQuery(this).text().toUpperCase().indexOf(searchingFor)>=0){jQuery(this).show();}else {jQuery(this).hide();}
+				
 			})
 	    });
 
