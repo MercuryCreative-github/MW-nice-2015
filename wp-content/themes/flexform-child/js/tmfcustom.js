@@ -17,7 +17,6 @@ function ini() {
     acordion();
     registerBtnLink();
     scrolledMenu();
-   
 }
 
 function tabsControl(){
