@@ -806,42 +806,40 @@ function summits_shortcode_func( $atts ) {
 	wp_reset_query();
 
 	$script='
-<script>
+		<script>
 
-jQuery("document").ready(function(){
+		jQuery("document").ready(function(){
 
-	if(typeof declared == "undefined"){
+			if(typeof declared == "undefined"){
 
-		function hideShowContent(){
-			var $ = jQuery;
+				function hideShowContent(){
+					var $ = jQuery;
 
-			$(".presentation-info").each(function(){
+					$(".presentation-info").each(function(){
 
-				var here=$(this);
+						var here=$(this);
 
-				$(".presentation-title",here).click(function(e){
-					e.preventDefault();
-					$(".presentation-content",here).slideToggle()
-				});
+						$(".presentation-title",here).click(function(e){
+							e.preventDefault();
+							$(".presentation-content",here).slideToggle();
+						});
 
-				if($(".presentation-content",here).text()==""){
-					text=$(".presentation-title a",this).text();
-					$(".presentation-title a",this).before("<span>"+text+"</span>");
-					$(".presentation-title a",this).remove();
-				}
-			})
+						if($(".presentation-content",here).text()==""){
+							text=$(".presentation-title a",this).text();
+							$(".presentation-title a",this).before("<span>"+text+"</span>");
+							$(".presentation-title a",this).remove();
+						}
+					})
 
-			return true;
-		};
+					return true;
+				};
 
-		declared=hideShowContent();
-	}
+				declared=hideShowContent();
+			}
 
-})
+		})
 
-</script>';
-
-
+		</script>';
 
 	if($link_to_presentation=='no'){$sessions.=$script;}
 
