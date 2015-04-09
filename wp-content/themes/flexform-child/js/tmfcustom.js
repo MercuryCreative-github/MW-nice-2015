@@ -5,8 +5,6 @@ function ini() {
     genericSmoothScroll();
     masornyCall();
     megaMenu();
-    //if (!getParameterByName('testing')){agendaAtaGlance()};
-    //fullAgenda();
     openClose();
     modalListener();
     showHiddenMenuText();
