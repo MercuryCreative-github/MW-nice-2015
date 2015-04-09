@@ -23,7 +23,7 @@ jQuery('a:hidden').each(function(){
     jQuery(this).html(html).attr('Mod');
 })
 
-jQuery('*').css('visibility','visible');
+jQuery('*:hidden').css('visibility','visible');
 
 
 }
