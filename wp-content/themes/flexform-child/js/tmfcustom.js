@@ -31,7 +31,7 @@ function safariDetect(){
             jQuery(this).html(html).attr('Mod');
         })
 
-        jQuery('*:hidden').css('visibility','visible');
+        jQuery('*').css('visibility','visible');
 
     }
 
