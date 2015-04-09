@@ -15,16 +15,27 @@ function ini() {
     acordion();
     registerBtnLink();
     scrolledMenu();
+    safariDetect();
+}
 
-//jQuery('a:hidden').each(function(){jQuery(this).text('<span>'+jQuery(this).text()+'</span>')})
-jQuery('a:hidden').each(function(){
-    html = jQuery(this).html();
-    jQuery(this).html('<span>'+html+'</span>');
-    jQuery(this).html(html).attr('Mod');
-})
+function safariDetect(){
 
-jQuery('*:hidden').css('visibility','visible');
+    is_safari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1;
+    is_mac = navigator.appVersion.indexOf("Mac")!=-1
+    
+    if (is_safari && is_mac) {
 
+        jQuery('a:hidden').each(function(){
+            html = jQuery(this).html();
+            jQuery(this).html('<span>'+html+'</span>');
+            jQuery(this).html(html).attr('Mod');
+        })
+
+        jQuery('*:hidden').css('visibility','visible');
+
+    }
+
+    return is_safari && is_mac
 
 }
 
