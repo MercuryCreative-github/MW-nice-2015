@@ -181,24 +181,6 @@
 		<!--// WORDPRESS HEAD HOOK //-->
 		<?php wp_head(); ?>
 
-			<script>
-		adroll_adv_id = "PXFEQ6QHCFGPVIB5AJTC6L";
-		adroll_pix_id = "KNZBVVNN3NCQVM5IPGQGEN";
-		(function () {
-		var oldonload = window.onload;
-		window.onload = function(){
-			__adroll_loaded=true;
-			var scr = document.createElement("script");
-			var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
-			scr.setAttribute('async', 'true');
-			scr.type = "text/javascript";
-			scr.src = host + "/j/roundtrip.js";
-			((document.getElementsByTagName('head') || [null])[0] ||
-				document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
-			if(oldonload){oldonload()}};
-		}());
-		</script>
-
 	<!--// CLOSE HEAD //-->
 	<meta property="og:url" content="http://www.tmforumlive.org/">
 	<meta property="og:title" content="TM Forum Live! 2015">
@@ -426,7 +408,7 @@
 
 			<!--// OPEN Scrolled header section //-->
 			<?php if ($enable_mini_header) { ?>
-			
+
 			<div id="header-scroll" class="<?php if(!is_home() && !is_front_page()){echo "boxed-layout";} if(is_home() || is_front_page()){echo "header-scroll-home";}?> <?php echo $header_layout; ?> <?php echo $logo_class; ?> clearfix"></div>
 
 			<?php } ?>

@@ -121,6 +121,11 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
   line-height: 35px;
 }
 
+.workshops-tab .ui-tabs-anchor{
+	min-width: 165px;
+	text-align: center;
+}
+
 .networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
 .theater-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
 .takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 

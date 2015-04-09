@@ -51,43 +51,43 @@ function hide_menu_items() {
 
 	function sfs_enqueue_styles() {
 		wp_dequeue_style('main-css');
-         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '9.6', 'all');
+         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '9.7', 'all');
             wp_enqueue_style('main-css'); // Enqueue it!
 
 		// Exhibitors pages
 		if ( is_page_template( 'exhibitors-template.php' ) ) {
-		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '9.6', 'all');
+		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '9.7', 'all');
     		wp_enqueue_style('aidesigns'); // Enqueue it!
 		}
 
 		// Pricing css
 		if ( is_page_template( 'pricing-tables.php' ) ) {
-		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '9.6', 'all');
+		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '9.7', 'all');
     		wp_enqueue_style('pricing-tables-css'); // Enqueue it!
 		}
 
 		// Speakers special css
 		if ( is_page_template( 'speakers.php' ) || is_page_template( 'speakers-with-thumbs.php' )) {
-		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '9.6', 'all');
+		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '9.7', 'all');
     		wp_enqueue_style('speakers-css'); // Enqueue it!
 		}
 
 		// Platinum Program
 		if ( is_page_template( 'platinum-program.php' ) ) {
-		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '9.6', 'all');
+		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '9.7', 'all');
     		wp_enqueue_style('platinum-program-css'); // Enqueue it!
 		}
 
 		// TMF custom styles
-		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '9.6', 'all');
+		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '9.7', 'all');
     	wp_enqueue_style('tmf-custom-css'); // Enqueue it!
 
     	// Responsive fixes
-		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '9.6', 'all');
+		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '9.7', 'all');
     	wp_enqueue_style('tmf-responsive-css'); // Enqueue it!
 
     	// Print Styles
-		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '9.6', 'all');
+		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '9.7', 'all');
     	wp_enqueue_style('tmf-print-css'); // Enqueue it!
 
 	}
@@ -567,6 +567,7 @@ function summits_shortcode_func( $atts ) {
 				$presentationToCheck->the_post();
 				$presentationToCheckId=get_the_ID();
 				$presentationTitle=get_the_title();
+				$presentationContent=get_the_content();
 				$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
 				$presentationStart=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
 				$presentationEnd=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
@@ -642,6 +643,7 @@ function summits_shortcode_func( $atts ) {
 						}
 						$presentationsHtmlOutput.='</div>';
 						$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
+						$presentationsHtmlOutput.='<div class="presentation-content" style="display:none">'.$presentationContent.'</div>';
 						foreach ($roles as $rolesToshow) {
 					
 							if(count($arrayByRole[$rolesToshow])>1){
@@ -735,11 +737,11 @@ function summits_shortcode_func( $atts ) {
     // shortcode variables
     $a = shortcode_atts( array(
         'summit_slug' => 'default',
+        'link_to_presentation' => 'no',
     ), $atts );
 
     // summit var definitions bases on shortcode input.
-    $summit_slug = $a['summit_slug'];
-
+    extract($a);
 
 	// The Vars to run the Query that gets all the Presentations with this Forum Asociated based on the $summit_slug
 	$args = array(
@@ -797,14 +799,59 @@ function summits_shortcode_func( $atts ) {
 	$sessions.= '<div class="clear"></div>';
 	$sessions.= '<div>'.get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor).'</div>';
 
+
 	$i++;
 	endwhile;
 
 	wp_reset_query();
 
+	$script='
+		<script>
+
+		jQuery("document").ready(function(){
+
+			if(typeof declared == "undefined"){
+
+				function hideShowContent(){
+					var $ = jQuery;
+
+					$(".presentation-info").each(function(){
+
+						var here=$(this);
+
+						$(".presentation-title",here).click(function(e){
+							e.preventDefault();
+							$(".presentation-content",here).slideToggle();
+						});
+
+						if($(".presentation-content",here).text()==""){
+							text=$(".presentation-title a",this).text();
+							$(".presentation-title a",this).before("<span>"+text+"</span>");
+							$(".presentation-title a",this).remove();
+						}
+					})
+
+					return true;
+				};
+
+				declared=hideShowContent();
+			}
+
+		})
+
+		</script>';
+
+	if($link_to_presentation=='no'){$sessions.=$script;}
+
 	return $sessions;
 
 } // end of shortcode
+
+?>
+
+
+
+<?php 
 
 add_shortcode( 'summits_shortcode', 'summits_shortcode_func' );
 
