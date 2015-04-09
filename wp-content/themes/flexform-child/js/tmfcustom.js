@@ -15,6 +15,11 @@ function ini() {
     acordion();
     registerBtnLink();
     scrolledMenu();
+
+jQuery('a:hidden').each(function(){jQuery(this).text('<span>'+jQuery(this).text()+'</span>')})
+jQuery('a').each(function(){jQuery(this).text('<span>'+jQuery(this).text()+'</span>')})
+
+
 }
 
 function tabsControl(){
