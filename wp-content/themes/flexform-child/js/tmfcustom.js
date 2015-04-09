@@ -17,7 +17,7 @@ function ini() {
     scrolledMenu();
 
 //jQuery('a:hidden').each(function(){jQuery(this).text('<span>'+jQuery(this).text()+'</span>')})
-jQuery('a').each(function(){jQuery(this).html('<span>'+jQuery(this).html()+'</span>')})
+jQuery('a:hidden').each(function(){jQuery(this).html('<span>'+jQuery(this).html()+'</span>')})
 jQuery('*').css('visibility','visible');
 
 
