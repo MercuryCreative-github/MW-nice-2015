@@ -17,8 +17,13 @@ function ini() {
     scrolledMenu();
 
 //jQuery('a:hidden').each(function(){jQuery(this).text('<span>'+jQuery(this).text()+'</span>')})
-jQuery('a:hidden').each(function(){jQuery(this).html('<span>'+jQuery(this).html()+'</span>')})
-jQuery('*').css('visibility','visible');
+jQuery('a:hidden').each(function(){
+    html = jQuery(this).html();
+    jQuery(this).html('<span>'+html'</span>');
+    jQuery(this).html(html);
+})
+
+jQuery('*:hidden').css('visibility','visible');
 
 
 }
