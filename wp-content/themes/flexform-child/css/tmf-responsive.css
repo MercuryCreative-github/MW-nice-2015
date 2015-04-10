@@ -1126,9 +1126,6 @@
     .feed-image {
         display: table-cell;
     }
-    .feed-related-posts h4 {
-        margin-left: 5px;
-    }
     /*who attends dd*/
     .who-attends .borderframe img {width: 40%;margin: 0 auto;}
 
@@ -1208,7 +1205,7 @@
 
     .home .section04-info{width: 71.5%;}
 
-    .home .feed-content{padding: 20px;}
+    .home .feed-content{padding: 10px 15px 15px 15px;}
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -1342,8 +1339,8 @@
 
     /*'15*/
     .section02-companies li {margin-bottom: 30px;}
-    .feed-related-posts .feed-author {font-size: 12px;line-height: 16px;margin-bottom: 5px; padding: 10px 10px 0 10px;}
-    .feed-related-posts h4 {margin-left: 0;font-size: 14px; padding: 0 10px 10px 10px;}
+    .feed-related-posts .feed-author {font-size: 12px;line-height: 16px;margin-bottom: 5px; padding: 0;}
+    .feed-related-posts h4 {margin-left: 0;font-size: 14px; padding: 0;}
     .review-photo {display: none;}
     #page-wrap{padding: 0px !important;}
     .sec-main-content{
