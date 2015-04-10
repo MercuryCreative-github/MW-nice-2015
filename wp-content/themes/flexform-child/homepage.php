@@ -252,9 +252,9 @@ Template Name: Home Page
 											<h4 class="feed-title"><?php echo $item['title']; ?></h4>
 										</a>
 										<div class="feed-content-text">
-										<a href="<?php echo $item['link']; ?>" target="_blank">
+										<!--a href="<?php echo $item['link']; ?>" target="_blank">
 										<p><?php echo $item['description']; ?></p>
-										</a>
+										</a-->
 									</div>
 									</div>
 

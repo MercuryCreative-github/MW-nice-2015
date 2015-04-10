@@ -772,7 +772,7 @@
     .section02-companies li {padding-right: 10px;}
     .section02-companies li:first-child p, p.list-text {padding-left: 10px;}
     .section02-companies li {padding-right: 10px;}
-    .feed-related-posts .feed-item {width: 95%;display: table;min-height: 170px;}
+    .feed-related-posts .feed-item {width: 100%;display: table;min-height: 170px;}
     .feed-image{display: table-cell;}
     .feed-content{display: table-cell;vertical-align: top;padding: 3px 10px;}
     .feed-image {width: 230px;}
@@ -1186,6 +1186,26 @@
         height: 110px;
         width: auto !important;
     }
+
+    .home .feed-image {
+        display: block;
+        width: 100%;
+        height:auto;
+    }
+
+    .home .feed-image img{
+        max-height: none; 
+        height:auto;
+    }
+
+    .home .feed-content {
+        display: block;
+        width: 100%;
+        height:auto;
+        box-sizing: border-box;
+    }
+
+    .home .section04-info{width: 71.5%;}
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -1253,6 +1273,8 @@
     .home .modal-header img{
         margin: auto !important;
     }
+
+    .home .section04-info{width: 72%;}
 }
 
 @media screen and (max-width: 550px) {
@@ -1272,6 +1294,8 @@
     }
 
     .home .modal-body{width: 93%;}
+
+    .home .section04-info{width: 73%;}
 }
 @media screen and (max-width: 480px) {
     #megaMenu #megaMenuToggle {
