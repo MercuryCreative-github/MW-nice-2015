@@ -778,8 +778,8 @@ function summits_shortcode_func( $atts ) {
 	$sessionIcon = get_post_meta ( $sessionId, $prefix . 'summit_image',true);
 
 	// If a new day stars, we write the DAY
-	if($storedDay!==date('l',$sessionStarts)){
-		$storedDay=date('l',$sessionStarts);
+	if($storedDay!==date('l,  F j',$sessionStarts)){
+		$storedDay=date('l,  F j',$sessionStarts);
 		
 		if(isset($sessionIcon) && $sessionIcon != null){
 			$sessions.= '<div class="summit-day"><p>';
