@@ -932,7 +932,6 @@ function acordion(){
 function registerBtnLink(){
     var actualPage = window.location.pathname;
     if (actualPage == '/passes-pricing/') {
-        jQuery('.menu-register-btn a').attr('href', 'http://www.tmforum.org/EventRegistration/16477/home.html');
-        jQuery('.menu-register-btn a').attr('target', '_blank');
+        jQuery('.menu-register-btn a').attr('href', '/register/');
     };
 }
