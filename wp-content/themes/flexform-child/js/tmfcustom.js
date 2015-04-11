@@ -933,6 +933,5 @@ function registerBtnLink(){
     var actualPage = window.location.pathname;
     if (actualPage == '/passes-pricing/') {
         jQuery('.menu-register-btn a').attr('href', '/register/');
-        jQuery('.menu-register-btn a').attr('target', '_blank');
     };
 }
