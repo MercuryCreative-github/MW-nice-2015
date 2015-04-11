@@ -772,7 +772,7 @@
     .section02-companies li {padding-right: 10px;}
     .section02-companies li:first-child p, p.list-text {padding-left: 10px;}
     .section02-companies li {padding-right: 10px;}
-    .feed-related-posts .feed-item {width: 95%;display: table;min-height: 170px;}
+    .feed-related-posts .feed-item {width: 96%;display: table;min-height: 170px;}
     .feed-image{display: table-cell;}
     .feed-content{display: table-cell;vertical-align: top;padding: 3px 10px;}
     .feed-image {width: 230px;}
@@ -883,6 +883,7 @@
     .section04-title {text-align: center;}
     .twitter-feed{float: none;width: 66%;margin: 0 auto;}
     .review-photo img{width: 130px;}
+    .feed-related-posts .feed-item {width: 100%;}
 }
 @media screen and (max-width: 820px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -1125,9 +1126,6 @@
     .feed-image {
         display: table-cell;
     }
-    .feed-related-posts h4 {
-        margin-left: 5px;
-    }
     /*who attends dd*/
     .who-attends .borderframe img {width: 40%;margin: 0 auto;}
 
@@ -1186,6 +1184,28 @@
         height: 110px;
         width: auto !important;
     }
+
+    .home .feed-image {
+        display: block;
+        width: 100%;
+        height:auto;
+    }
+
+    .home .feed-image img{
+        max-height: none; 
+        height:auto;
+    }
+
+    .home .feed-content {
+        display: block;
+        width: 100%;
+        height:auto;
+        box-sizing: border-box;
+    }
+
+    .home .section04-info{width: 71.5%;}
+
+    .home .feed-content{padding: 10px 15px 15px 15px;}
 }
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
     #cuadro1 {
@@ -1253,6 +1273,8 @@
     .home .modal-header img{
         margin: auto !important;
     }
+
+    .home .section04-info{width: 72%;}
 }
 
 @media screen and (max-width: 550px) {
@@ -1272,6 +1294,8 @@
     }
 
     .home .modal-body{width: 93%;}
+
+    .home .section04-info{width: 73%;}
 }
 @media screen and (max-width: 480px) {
     #megaMenu #megaMenuToggle {
@@ -1315,8 +1339,8 @@
 
     /*'15*/
     .section02-companies li {margin-bottom: 30px;}
-    .feed-related-posts .feed-author {font-size: 12px;line-height: 16px;margin-bottom: 5px; padding: 10px 10px 0 10px;}
-    .feed-related-posts h4 {margin-left: 0;font-size: 14px; padding: 0 10px 10px 10px;}
+    .feed-related-posts .feed-author {font-size: 12px;line-height: 16px;margin-bottom: 5px; padding: 0;}
+    .feed-related-posts h4 {margin-left: 0;font-size: 14px; padding: 0;}
     .review-photo {display: none;}
     #page-wrap{padding: 0px !important;}
     .sec-main-content{
