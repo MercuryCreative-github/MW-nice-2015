@@ -133,6 +133,15 @@
     }
 }
 @media screen and (max-width: 1250px) {
+
+    .home .page-content ul li{margin-bottom: 10px;}
+    .summit-list a {
+      display: table-cell;
+      padding-right: 10px;
+      width: 60px;
+      text-align: center;
+    }
+    .summit-list a.summit-list-text {text-align: left; width: 200px;}
     nav .menu li a {
         margin: 0px 4px;
         padding: 3px 8px;
