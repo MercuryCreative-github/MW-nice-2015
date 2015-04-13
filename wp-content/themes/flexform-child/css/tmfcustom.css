@@ -400,7 +400,7 @@ a.sf-button.standard.register-agenda {
 .sponsors-logos p {text-align: center;}
 
 .logo_1 {margin-left: 0;}
-.logo_1 img {height: 40px;}
+.logo_1 img {height: 65px;}
 .logo_2 img {height: 53px;}
 .logo_3 img {height: 60px;}
 .logo_4 img {height: 33px;}
@@ -410,13 +410,12 @@ p.image-caption{margin:10px 0 0 0;line-height:100%;}
 	text-align:center; 
 	position: relative; 
 	display: inline-block; 
-	max-width: 30%; 
-	margin-left: 85px;
+	margin-left: 105px;
 }
 
-.sponsors_logo:first-child{
-	margin-left: 0px;
-}
+.sponsors_logo:first-child{	margin-left: 0px;}
+
+.sponsors_logo.logo_1 p.image-caption {background-color: #B2B2B2; color: #fff; padding: 5px;margin-top: -9px;}
 
 .sponsors_logo a {display: block; margin: auto; height: 60px; line-height: 60px;}
 
