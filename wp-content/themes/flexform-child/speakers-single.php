@@ -120,7 +120,7 @@ Template Name: Speaker Profile
 			<div class="row">
 				<div class="span12 speakers-actions">
 					<div class="filters span9">
-						<a href="/speakers/?filter=high" class="high">Highlighted</a>
+						<a href="/speakers/?filter=high" class="high">Featured</a>
 						<a href="/speakers/?filter=key" class="key">Keynotes</a>
 						<a href="/speakers/" class="all">Full Speakers List</a>
 					</div>
