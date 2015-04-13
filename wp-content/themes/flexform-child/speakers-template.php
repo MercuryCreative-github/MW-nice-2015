@@ -117,7 +117,7 @@ Template Name: Speakers
 		//-->
 			<div class="span12 speakers-actions">
 				<div class="filters span9">
-					<button type="button" class="high">Highlighted</button>
+					<button type="button" class="high">Featured</button>
 					<button type="button" class="key">Keynotes</button>
 					<button type="button" class="all active">Full Speakers List</button>
 				</div>
@@ -159,7 +159,7 @@ Template Name: Speakers
 						if(is_array($categorySpeakers)){
 
 							foreach ($categorySpeakers as $categorySpeaker) {
-								if($categorySpeaker=='check1'){$categoryDisplay.=' highlighted';}
+								if($categorySpeaker=='check1'){$categoryDisplay.=' featured';}
 									else{$categoryDisplay.=' keynote';};
 							}
 						}
@@ -230,7 +230,7 @@ Template Name: Speakers
 
 		jQuery('.filters .high').click(function() {
 			jQuery('.speaker-item').stop(true,true).fadeOut(function(){
-	        	jQuery('.speaker-item.highlighted').fadeIn();				
+	        	jQuery('.speaker-item.featured').fadeIn();				
 			});
 	    });
 
