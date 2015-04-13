@@ -142,7 +142,7 @@
     /*contacto footer '15*/
     #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
     .section03-bottom ul li:nth-child(4) {margin-left: 0;}
-
+    .sponsors_logo {margin-left: 70px;}
     /*footer*/
     .container #footer-widgets .span3:first-child {margin-left: 0;}
     
@@ -273,6 +273,7 @@
 
 @media screen and (max-width: 1120px){
     #mini-header .container{width: 88%;}
+    .home .sponsors_logo {margin-left: 40px;}
 }
 
 @media screen and (max-width: 1077px) {
@@ -323,6 +324,9 @@
         margin-top: -29px !important;
         margin-left: -1096px !important;
     }*/
+
+   /* .logo_1 img, .logo_2 img, .logo_3 img, .logo_4 img, .logo_5 img{height: auto;}*/
+    .sponsors_logo {max-width: 30%;}
 
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
         width: 100% !important;
@@ -573,29 +577,13 @@
     .visible-sponsor {padding-left: 0px;}
 
     /*fix responsive sponsors - one line*/
-    .logo_1 img{
-        height: 2.9vw;
-    }
+    .logo_1 img{ height: 5.9vw; }
+    .logo_2 img{ height: 4.9vw; }
+    .logo_3 img{ height: 7.1vw; }
+    .logo_4 img{ height: 2.9vw; }
+    .logo_5 img{ height: 3.9vw; }
 
-    .logo_2 img{
-        height: 3.9vw;
-    }
-    
-    .logo_3 img{
-        height: 4.444vw;
-    }
-
-    .logo_4 img{
-        height: 2.444vw;
-    }
-
-    .logo_5 img{
-        height: 3.444vw;
-    }
-
-    .sponsors_logo{
-        margin-left: 40px;
-    }
+    .home .sponsors_logo{ margin-left: 25px; }
 
     .discount-circle{
         float: none;
@@ -1239,11 +1227,11 @@
         width: 100%;
     }
 
+    #hp-section {padding-bottom:0;}
+
     .section01-sponsors{display: none;}
 
-    .speaker-info .subtitle{
-        width: 67%;
-    }
+    .speaker-info .subtitle{width: 67%;}
 
     .home .modal-body{
         max-height: 400px;
@@ -2005,6 +1993,15 @@
 }
 
 @media screen and (max-width: 767px) {
+
+    .home .sponsors_logo { margin-left: 15px;}
+    .logo_1 img { height: 4.6vw;}
+    .logo_2 img { height: 4.8vw;}
+    .logo_3 img { height: 6.1vw;}
+    .logo_4 img { height: 2.8vw;}
+    .logo_5 img { height: 3.9vw;}
+    p.image-caption {font-size: 14px;}
+
     /*--------------*/
     /*---- HOME ----*/
     /*--------------*/
