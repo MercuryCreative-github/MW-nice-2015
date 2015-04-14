@@ -3582,6 +3582,9 @@
     }
 }
 @media screen and (max-width: 380px) {
+
+    #hp-section.section03 { padding-bottom: 580px;}
+    
     .mailing-list-form .gform_body .gform_fields > li:last-child > label{
         width: 45%;
         border: none;
