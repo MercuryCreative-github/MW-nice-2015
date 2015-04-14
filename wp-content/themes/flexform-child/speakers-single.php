@@ -227,6 +227,7 @@ foreach ($presentationsIDsArray as $arr) {
 	}
 }
 	$presentations='';
+	$presentationsIDs=array_unique($presentationsIDs);
 
 if(isset($presentationsIDs)){
 
@@ -240,18 +241,23 @@ if(isset($presentationsIDs)){
 
 				$presentationToCheckId=$presentationToCheck->ID;
 
-				$presentationTitle=get_the_title($presentationToCheckId);
-				$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
+				$presentationStatus=get_post_status( $presentationToCheckId ) ;
 
-				$dmonth=date('D j',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
-				$startTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
-				$endTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
-				$presentationLink = get_permalink($presentationToCheckId);
 
-				$presentations.='<div class="speaking-schedule">';
-				$presentations.='<p><strong><a href="'.$presentationLink.'">'.$presentationTitle.'</a></strong><br/>';
-				$presentations.='<span style="text-transform: capitalize;">'.$dmonth.'</span> - '.$startTime.' - '.$endTime.'</p>';
-				$presentations.='</div>';
+				if('publish'==$presentationStatus){
+					$presentationTitle=get_the_title($presentationToCheckId);
+					$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
+
+					$dmonth=date('D j',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+					$startTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+					$endTime=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
+					$presentationLink = get_permalink($presentationToCheckId);
+
+					$presentations.='<div class="speaking-schedule">';
+					$presentations.='<p><strong><a href="'.$presentationLink.'">'.$presentationTitle.'</a></strong><br/>';
+					$presentations.='<span style="text-transform: capitalize;">'.$dmonth.'</span> - '.$startTime.' - '.$endTime.'</p>';
+					$presentations.='</div>';
+				}
 
 			}
 	}
