@@ -3584,7 +3584,7 @@
 @media screen and (max-width: 380px) {
 
     #hp-section.section03 { padding-bottom: 580px;}
-    
+
     .mailing-list-form .gform_body .gform_fields > li:last-child > label{
         width: 45%;
         border: none;
@@ -3882,7 +3882,8 @@
     .section01-buttons a:first-child{margin-right: 0; margin-top: 16px;}
     .section01-info{padding: 0;}
     .section02-companies ul{margin-left: 0;}
-    .section02-companies ul li img{margin: 0 auto;}
+    .section02-companies ul li img, .section02-companies li:last-child img{margin: 0 auto;}
+
     /*SIDEBAR WORKSHOP*/
     .workshops .rev_slider ul li div.tp-caption-first {font-size: 18px;}
     .workshops .rev_slider ul li div.tp-caption.grey-btn {padding: 2px 9px;top:33px;}
