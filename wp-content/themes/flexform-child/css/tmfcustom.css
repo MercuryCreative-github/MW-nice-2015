@@ -444,7 +444,7 @@ p.image-caption{margin:10px 0 0 0;line-height:100%;}
 .section02-companies li img {min-width: 60px;height: auto;width: 170px;}
 .section02-companies li:last-child img{margin-right: 0px;}
 .section02-companies li:first-child img {height: 70px;width: 70px;margin-right: 0;}
-p.list-text, {
+p.list-text {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: left;
