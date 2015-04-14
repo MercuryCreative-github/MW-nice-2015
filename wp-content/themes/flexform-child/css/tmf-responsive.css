@@ -822,6 +822,8 @@
 }
 
 @media screen and (max-width: 915px) {
+
+    #hp-section.section03 {padding-bottom: 240px;}
     div#top-bar-social {
         display: none;
     }
@@ -1287,7 +1289,7 @@
 }
 
 @media screen and (max-width: 550px) {
-
+    #hp-section.section03 {padding-bottom: 510px;}
     .home .page-content .section02-companies li { margin: 15px auto; width: 100%;  text-align: center; display: block;}
     .app14s .app14s_buttons ul li{
         float:none;
