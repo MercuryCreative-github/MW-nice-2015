@@ -134,6 +134,8 @@
 }
 @media screen and (max-width: 1250px) {
 
+    .page-content .section02-companies li {margin-right: 20px;}
+
     .home .page-content ul li{margin-bottom: 10px;}
     .summit-list a {
       display: table-cell;
@@ -283,7 +285,10 @@
 @media screen and (max-width: 1120px){
     #mini-header .container{width: 88%;}
     .home .sponsors_logo {margin-left: 40px;}
-}
+
+    .home .page-content .section02-companies ul {width: 100%;}
+    .home .page-content .section02-companies li:first-child {float: none; margin: 0 auto;}
+    .home .page-content .section02-companies li {margin: 40px 3% 0;}
 
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
@@ -486,6 +491,7 @@
     #header-scroll{width: 100% !important;}
 }
 @media screen and (max-width: 980px) {
+
     .page-content .questions ul li:after {
         margin-right: -7px;
     }
@@ -774,6 +780,7 @@
     .feed-content{display: table-cell;vertical-align: top;padding: 3px 10px;}
     .feed-image {width: 230px;}
     .feed-image img {max-height: 170px;height: 170px;}
+    .home .page-content .section02-companies li {margin: 40px 5px 0;}
 }
 
 /*@media screen and (max-width: 930px) { #main-navigation { left: 83%; } }*/
@@ -845,6 +852,8 @@
         width: 90% !important;
         margin-left: 8% !important;
     }
+    .home .page-content .section02-companies li {margin: 40px 9px 0; width: 20%;}
+    .home .page-content .section02-companies li:first-child {width: 50%;}
 }
 @media screen and (max-width: 865px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -970,6 +979,9 @@
 
 }
 @media screen and (max-width: 767px) {
+
+    .home .page-content .section02-companies li {margin: 30px 0px 0; width: 22%;}
+
     .pricing-call-text{
         margin: 0;
         padding: 0;
@@ -1275,6 +1287,8 @@
 }
 
 @media screen and (max-width: 550px) {
+
+    .home .page-content .section02-companies li { margin: 15px auto; width: 100%;  text-align: center; display: block;}
     .app14s .app14s_buttons ul li{
         float:none;
         margin:10px 0;
