@@ -1,11 +1,12 @@
-<?php /* Template Name: Speakers Feed */ 
+<?php /* Template Name: Speakers Feed */ ?>
+<?php header('Content-Type: '.feed_content_type('rss-http').'; charset='.get_option('blog_charset'), true);
+echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';?>
+<?php 
 $numposts = 10; // number of posts in feed
 $posts = query_posts('showposts='.$numposts.'&cat=-1'); // replace the number 1 with the ID of your tumblelog category
 $more = 1;
 $arr = array();
 $i=0;
-
-
 if(isset($_GET['id'])){$id=$_GET['id'];}else{
 	$users = get_users( 'orderby=name&role=speaker'.$id );
 	$user_id = esc_html( $user->ID );
@@ -64,9 +65,7 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
     $speaker.= '<specification>' . esc_html( $user->speaker_attribs[0] ) . '</specification>';
 		$speaker.= '</item>';
 		array_push($arr,$speaker);
-	} 
-header('Content-Type: '.feed_content_type('rss-http').'; charset='.get_option('blog_charset'), true);
-echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
+	}
 ?>
 <rss version="2.0"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
