@@ -133,6 +133,17 @@
     }
 }
 @media screen and (max-width: 1250px) {
+
+    .page-content .section02-companies li {margin-right: 20px;}
+
+    .home .page-content ul li{margin-bottom: 10px;}
+    .summit-list a {
+      display: table-cell;
+      padding-right: 10px;
+      width: 60px;
+      text-align: center;
+    }
+    .summit-list a.summit-list-text {text-align: left; width: 200px;}
     nav .menu li a {
         margin: 0px 4px;
         padding: 3px 8px;
@@ -142,7 +153,7 @@
     /*contacto footer '15*/
     #footer-widgets, .social-contact .span12.textwidget {width: 100%;}
     .section03-bottom ul li:nth-child(4) {margin-left: 0;}
-
+    .sponsors_logo {margin-left: 70px;}
     /*footer*/
     .container #footer-widgets .span3:first-child {margin-left: 0;}
     
@@ -273,7 +284,11 @@
 
 @media screen and (max-width: 1120px){
     #mini-header .container{width: 88%;}
-}
+    .home .sponsors_logo {margin-left: 40px;}
+
+    .home .page-content .section02-companies ul {width: 100%;}
+    .home .page-content .section02-companies li:first-child {float: none; margin: 0 auto;}
+    .home .page-content .section02-companies li {margin: 40px 3% 0;}
 
 @media screen and (max-width: 1077px) {
     .sponsors h2 {
@@ -323,6 +338,9 @@
         margin-top: -29px !important;
         margin-left: -1096px !important;
     }*/
+
+   /* .logo_1 img, .logo_2 img, .logo_3 img, .logo_4 img, .logo_5 img{height: auto;}*/
+    .sponsors_logo {max-width: 30%;}
 
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
         width: 100% !important;
@@ -473,6 +491,7 @@
     #header-scroll{width: 100% !important;}
 }
 @media screen and (max-width: 980px) {
+
     .page-content .questions ul li:after {
         margin-right: -7px;
     }
@@ -573,29 +592,13 @@
     .visible-sponsor {padding-left: 0px;}
 
     /*fix responsive sponsors - one line*/
-    .logo_1 img{
-        height: 2.9vw;
-    }
+    .logo_1 img{ height: 5.9vw; }
+    .logo_2 img{ height: 4.9vw; }
+    .logo_3 img{ height: 7.1vw; }
+    .logo_4 img{ height: 2.9vw; }
+    .logo_5 img{ height: 3.9vw; }
 
-    .logo_2 img{
-        height: 3.9vw;
-    }
-    
-    .logo_3 img{
-        height: 4.444vw;
-    }
-
-    .logo_4 img{
-        height: 2.444vw;
-    }
-
-    .logo_5 img{
-        height: 3.444vw;
-    }
-
-    .sponsors_logo{
-        margin-left: 40px;
-    }
+    .home .sponsors_logo{ margin-left: 25px; }
 
     .discount-circle{
         float: none;
@@ -777,6 +780,7 @@
     .feed-content{display: table-cell;vertical-align: top;padding: 3px 10px;}
     .feed-image {width: 230px;}
     .feed-image img {max-height: 170px;height: 170px;}
+    .home .page-content .section02-companies li {margin: 40px 5px 0;}
 }
 
 /*@media screen and (max-width: 930px) { #main-navigation { left: 83%; } }*/
@@ -818,6 +822,8 @@
 }
 
 @media screen and (max-width: 915px) {
+
+    #hp-section.section03 {padding-bottom: 240px;}
     div#top-bar-social {
         display: none;
     }
@@ -848,6 +854,8 @@
         width: 90% !important;
         margin-left: 8% !important;
     }
+    .home .page-content .section02-companies li {margin: 40px 9px 0; width: 20%;}
+    .home .page-content .section02-companies li:first-child {width: 50%;}
 }
 @media screen and (max-width: 865px) {
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -973,6 +981,9 @@
 
 }
 @media screen and (max-width: 767px) {
+
+    .home .page-content .section02-companies li {margin: 30px 0px 0; width: 22%;}
+
     .pricing-call-text{
         margin: 0;
         padding: 0;
@@ -1239,11 +1250,11 @@
         width: 100%;
     }
 
+    #hp-section {padding-bottom:0;}
+
     .section01-sponsors{display: none;}
 
-    .speaker-info .subtitle{
-        width: 67%;
-    }
+    .speaker-info .subtitle{width: 67%;}
 
     .home .modal-body{
         max-height: 400px;
@@ -1278,6 +1289,8 @@
 }
 
 @media screen and (max-width: 550px) {
+    #hp-section.section03 {padding-bottom: 510px;}
+    .home .page-content .section02-companies li { margin: 15px auto; width: 100%;  text-align: center; display: block;}
     .app14s .app14s_buttons ul li{
         float:none;
         margin:10px 0;
@@ -2005,6 +2018,15 @@
 }
 
 @media screen and (max-width: 767px) {
+
+    .home .sponsors_logo { margin-left: 15px;}
+    .logo_1 img { height: 4.6vw;}
+    .logo_2 img { height: 4.8vw;}
+    .logo_3 img { height: 6.1vw;}
+    .logo_4 img { height: 2.8vw;}
+    .logo_5 img { height: 3.9vw;}
+    p.image-caption {font-size: 14px;}
+
     /*--------------*/
     /*---- HOME ----*/
     /*--------------*/
@@ -3560,6 +3582,9 @@
     }
 }
 @media screen and (max-width: 380px) {
+
+    #hp-section.section03 { padding-bottom: 580px;}
+
     .mailing-list-form .gform_body .gform_fields > li:last-child > label{
         width: 45%;
         border: none;
@@ -3857,7 +3882,8 @@
     .section01-buttons a:first-child{margin-right: 0; margin-top: 16px;}
     .section01-info{padding: 0;}
     .section02-companies ul{margin-left: 0;}
-    .section02-companies ul li img{margin: 0 auto;}
+    .section02-companies ul li img, .section02-companies li:last-child img{margin: 0 auto;}
+
     /*SIDEBAR WORKSHOP*/
     .workshops .rev_slider ul li div.tp-caption-first {font-size: 18px;}
     .workshops .rev_slider ul li div.tp-caption.grey-btn {padding: 2px 9px;top:33px;}

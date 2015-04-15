@@ -342,10 +342,10 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                 array(
                                     'name' => 'Speakers Categories',
                                     'id' => $prefix . 'speakers_categories',
-                                    'desc' => 'Mark if the Speaker is Highlighted and/or Keynote.',
+                                    'desc' => 'Mark if the Speaker is Featured and/or Keynote.',
                                     'type' => 'multicheck',
                                     'options' => array(
-                                        'check1' => 'Highlighted',
+                                        'check1' => 'Featured',
                                         'check2' => 'Keynote',
                                     )
                                 ), 
