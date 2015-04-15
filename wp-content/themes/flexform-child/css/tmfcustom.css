@@ -292,6 +292,7 @@ a.download-agenda span.text-btn, a.sf-button.standard.register-agenda span.regis
 }
 a.download-agenda span.text-btn {font-size: 22px;}
 a.sf-button.standard.register-agenda span.register-text {font-size: 25px;}
+a.sf-button.standard.register-agenda.long-register span.register-text {font-size: 22px;}
 a.sf-button.standard.register-agenda span.register-text.light{font-weight: 300;}
 .summit-sidebar-tabs a.download-agenda span.small-text-btn{font-size: 20px;}
 a.sf-button.standard.register-agenda {
@@ -300,6 +301,7 @@ a.sf-button.standard.register-agenda {
 	background-position: right bottom;
 	padding: 19px 50px 13px;
 }
+a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-content/uploads/2015/02/icon-register-big.png');}
 .tabs-summits-content{width: 90%!important;margin-left: 4%;}
 
 .summit-day {
