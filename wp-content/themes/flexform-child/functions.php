@@ -565,6 +565,8 @@ function summits_shortcode_func( $atts ) {
 
 				// needed variables				
 				$presentationToCheck->the_post();
+				$post_data = get_post($post->ID, ARRAY_A);
+				$presentationSlug = $post_data['post_name'];
 				$presentationToCheckId=get_the_ID();
 				$presentationTitle=get_the_title();
 				$presentationContent=get_the_content();
@@ -633,8 +635,8 @@ function summits_shortcode_func( $atts ) {
 
 				$presentationsHtmlOutput.='<div class="summit-presentation">';
 					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
-					$presentationsHtmlOutput.='<div class="presentation-info">';
-						$presentationsHtmlOutput.='<div class="presentation-title">';
+					$presentationsHtmlOutput.='<div class="presentation-info" id="'.$presentationSlug.'">';
+						$presentationsHtmlOutput.='<div class="presentation-title" >';
 						if($summit_slug == 'keynotes')
 						{
 							$presentationsHtmlOutput.= $presentationTitle;
@@ -834,8 +836,19 @@ function summits_shortcode_func( $atts ) {
 					return true;
 				};
 
+				//after enter to the if call for the function, then run the function. 
+				//When the function run, it return true: now declared is not undefined so it is not going to run the function again.
+
 				declared=hideShowContent();
+
+				var hash = window.location.hash;
+
+				// it is talking to the child called: presentation-content
+				
+				jQuery(".presentation-content",hash).slideToggle();
+
 			}
+
 
 		})
 
