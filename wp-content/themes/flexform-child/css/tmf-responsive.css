@@ -1148,7 +1148,7 @@
 
     /*netcraker logos '15*/
     .section03-bottom ul{padding: 5px}
-    .section03-bottom ul li{margin-right: 5px;}
+    .section03-bottom ul li{margin-right: 0px;}
     .section03-bottom ul li img {width: 80%;}
 
     /*contact footer '15*/
@@ -1291,6 +1291,7 @@
 @media screen and (max-width: 550px) {
     #hp-section.section03 {padding-bottom: 510px;}
     .home .page-content .section02-companies li { margin: 15px auto; width: 100%;  text-align: center; display: block;}
+    .section02-companies li:nth-child(3) img, .section02-companies li:nth-child(5) img {margin-top: 0px;}
     .app14s .app14s_buttons ul li{
         float:none;
         margin:10px 0;
@@ -2018,6 +2019,8 @@
 }
 
 @media screen and (max-width: 767px) {
+
+    .home .page-content .section03-bottom ul { margin: 0; padding: 20px 0 0 0; }
 
     .home .sponsors_logo { margin-left: 15px;}
     .logo_1 img { height: 4.6vw;}

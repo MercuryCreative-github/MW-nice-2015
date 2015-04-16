@@ -467,6 +467,7 @@ p.list-text {
 .page-content .section02-companies li:last-child{margin-right: 0px;}
 .section02-companies li:first-child {display: table;}
 .home .page-content .section02-companies ul {display: table; margin: 0 auto;}
+.section02-companies li:nth-child(3) img, .section02-companies li:nth-child(5) img {margin-top: 20px;}
 
 .section02-companies li:first-child p {
 	display: table-cell;
