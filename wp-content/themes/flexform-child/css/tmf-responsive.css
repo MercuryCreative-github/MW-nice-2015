@@ -333,13 +333,9 @@
     }
 }
 @media screen and (max-width: 1024px) {
-    /*uber menu
-    #main-navigation {
-        margin-top: -29px !important;
-        margin-left: -1096px !important;
-    }*/
 
-   /* .logo_1 img, .logo_2 img, .logo_3 img, .logo_4 img, .logo_5 img{height: auto;}*/
+    .summit-list a.summit-list-text {width: 80%}
+
     .sponsors_logo {max-width: 30%;}
 
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
@@ -783,13 +779,8 @@
     .home .page-content .section02-companies li {margin: 40px 5px 0;}
 }
 
-/*@media screen and (max-width: 930px) { #main-navigation { left: 83%; } }*/
-
 @media screen and (max-width: 966px) {
-    /*
-.feed-image{display:none;}
-    .feed-related-posts h4{margin-left: -10px;}
-*/
+
     .passes-prices .text-box a.btn-readmore {
         top: 40px;
     }
@@ -862,6 +853,8 @@
         width: 87% !important;
         margin-left: 8% !important;
     }
+
+    .summit-list a.summit-list-text { width: 77%;}
 
     .ui-tabs-anchor{
         font-size: 1.8vw !important;
@@ -983,6 +976,9 @@
 @media screen and (max-width: 767px) {
 
     .home .page-content .section02-companies li {margin: 30px 0px 0; width: 22%;}
+    .home .page-content .section02-list ul {margin: 0;}
+    .summit-list a.section02-list-link {padding-right: 40px;}
+    .home .page-content ul li.summit-list {margin-bottom: 20px;}
 
     .pricing-call-text{
         margin: 0;
@@ -1246,9 +1242,18 @@
 }
 
 @media screen and (max-width: 675px){
-    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, .workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav{
-        width: 100%;
-    }
+
+    .section03 {background-image:none;}
+    .section03-infobox01, .section03-infobox02 {width: 100%;}
+    .sec-main-content {width: 100%;}
+    .section03-bottom {min-height: 170px;}
+    .home .page-content .section03-top ul { margin: 0;}
+    .home .page-content .section03-bottom ul {padding: 5px 0 0 0;}
+
+    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+    .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+    .takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+    .workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav{ width: 100%; }
 
     #hp-section {padding-bottom:0;}
 
@@ -1300,7 +1305,7 @@
     .section02-companies li {min-width: 100px;display: block;width: 100%;margin-bottom: 30px;}
     /*.section02-companies li:first-child img {margin-right: -25px;}*/
     .section03-top ul {margin: 0; font-size: 0.9em;}
-    .section03-infobox01, .section03-infobox02 {width: 100%;}
+    .section03-infobox01, .section03-infobox02 {width: 100%; padding-bottom: 50px;}
     .review-photo {display: none;}
 
     .speaker-info .subtitle{
@@ -1368,9 +1373,7 @@
     }
 
 
-    .title-green, .section02-info{
-        padding: 0 20px !important;
-    }
+    .title-green, .section02-info, .section02-summites { padding: 0 20px !important; }
 
     .speaker-data{
         width: 70%;
@@ -3173,13 +3176,14 @@
     }
 }
 @media screen and (max-width: 480px) {
+    
+    .summit-list a.section02-list-link { padding-right: 10px;}
+
     .conference-overview .text-box div div {
         display: block;
         text-align: left;
     }
-    /*///////////////////////////////////////////////////////////////////////
-                        TEMPORARY-GUILLERMO.css
-    ///////////////////////////////////////////////////////////////////////*/
+
     /********************/
     /*** Anchor Links ***/
     /********************/
@@ -3295,10 +3299,6 @@
     #cuadro7 .sombracuadro {
         margin-top: 33.3%;
     }
-    /**************************************/
-    /*** END OF TEMPORARY-GUILLERMO.css ***/
-    /**************************************/
-
     .cuadrochico li {
         font-size: 14px;
     }
@@ -3579,11 +3579,7 @@
         text-align: center;
     }
 }
-@media screen and (max-width: 477px) {
-    .ui-tabs .ui-tabs-nav li {
-        /*width: 20% !important;*/
-    }
-}
+
 @media screen and (max-width: 380px) {
 
     #hp-section.section03 { padding-bottom: 580px;}
@@ -3732,7 +3728,7 @@
     .section02-companies li:first-child img {margin: 0 auto;}
     .section02-companies li:first-child {margin: 0 auto 45px auto;}
     .section02-companies li {margin-bottom: 20px;display: block;}
-    .section03-infobox01, .section03-infobox02 {width: 100%;}
+    .section03-infobox01, .section03-infobox02 {width: 100%;padding-bottom: 0;}
     .feed-content {padding:10px 5px 0 10px;}
     .container h2.tw-title:before {top: 0;}
     .review-name img {display: none;}
