@@ -160,6 +160,13 @@
 }
 @media screen and (max-width: 1200px) {
 
+    /*banner summit*/
+    a.sf-button.medium.yellow.register-agenda {  width: 240px;}
+    a.sf-button.standard.register-agenda span.register-text { margin-right: 0;}
+    .banner-journey h4 { top: 144px; font-size: 24px; line-height: 29px;}
+    .cca .banner-journey h4 {top: 99px;}
+    .nfv .banner-journey h4 {top: 129px;}
+
     #main-navigation .menu .menu-item.social-icon.twitter {display: none;}
 
     .agenda-top-block aside {
@@ -487,6 +494,13 @@
     #header-scroll{width: 100% !important;}
 }
 @media screen and (max-width: 980px) {
+
+
+    /*banner summit*/
+    a.sf-button.medium.yellow.register-agenda {padding: 10px 19px;}
+    .nfv .banner-journey h4 {top: 117px;}
+    .banner-journey h4{top: 137px;}
+    .cca .banner-journey h4 {top: 90px;}
 
     .page-content .questions ul li:after {
         margin-right: -7px;
