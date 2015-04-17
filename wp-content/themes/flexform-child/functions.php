@@ -812,6 +812,8 @@ function summits_shortcode_func( $atts ) {
 
 		jQuery("document").ready(function(){
 
+			jQuery(".presentation-content").hide();
+
 			if(typeof declared == "undefined"){
 
 				function hideShowContent(){
