@@ -17,10 +17,12 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 		$session  = '<item>';
 			$session .= '<title>' . (htmlspecialchars($presentation->post_title)) . '</title>';
 			
-			$presentationId=$presentation->ID;
+			$presentationId=$presentation->ID; 
+			$date=date('Y-m-d H:i:s',get_post_meta($presentationId,'_TMF_presentations_start_date',true));
 			$startTime=date('g:i a',get_post_meta($presentationId,'_TMF_presentations_start_date',true));
 			$endTime=date('g:i a',get_post_meta($presentationId,'_TMF_presentations_end_date',true));
 
+			$session .= '<date>' . $date . ' +0200</date>';
 			$session .= '<startTime>' . $startTime . '</startTime>';
 			$session .= '<endTime>' . $endTime . '</endTime>';
 			$session .= '<description>' . htmlspecialchars( $presentation->post_content ) . '</description>';

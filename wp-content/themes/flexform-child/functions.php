@@ -51,43 +51,43 @@ function hide_menu_items() {
 
 	function sfs_enqueue_styles() {
 		wp_dequeue_style('main-css');
-         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '10.3', 'all');
+         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '10.4', 'all');
             wp_enqueue_style('main-css'); // Enqueue it!
 
 		// Exhibitors pages
 		if ( is_page_template( 'exhibitors-template.php' ) ) {
-		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '10.3', 'all');
+		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '10.4', 'all');
     		wp_enqueue_style('aidesigns'); // Enqueue it!
 		}
 
 		// Pricing css
 		if ( is_page_template( 'pricing-tables.php' ) ) {
-		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '10.3', 'all');
+		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '10.4', 'all');
     		wp_enqueue_style('pricing-tables-css'); // Enqueue it!
 		}
 
 		// Speakers special css
 		if ( is_page_template( 'speakers.php' ) || is_page_template( 'speakers-with-thumbs.php' )) {
-		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '10.3', 'all');
+		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '10.4', 'all');
     		wp_enqueue_style('speakers-css'); // Enqueue it!
 		}
 
 		// Platinum Program
 		if ( is_page_template( 'platinum-program.php' ) ) {
-		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '10.3', 'all');
+		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '10.4', 'all');
     		wp_enqueue_style('platinum-program-css'); // Enqueue it!
 		}
 
 		// TMF custom styles
-		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '10.3', 'all');
+		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '10.4', 'all');
     	wp_enqueue_style('tmf-custom-css'); // Enqueue it!
 
     	// Responsive fixes
-		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '10.3', 'all');
+		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '10.4', 'all');
     	wp_enqueue_style('tmf-responsive-css'); // Enqueue it!
 
     	// Print Styles
-		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '10.3', 'all');
+		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '10.4', 'all');
     	wp_enqueue_style('tmf-print-css'); // Enqueue it!
 
 	}
@@ -565,6 +565,8 @@ function summits_shortcode_func( $atts ) {
 
 				// needed variables				
 				$presentationToCheck->the_post();
+				$post_data = get_post($post->ID, ARRAY_A);
+				$presentationSlug = $post_data['post_name'];
 				$presentationToCheckId=get_the_ID();
 				$presentationTitle=get_the_title();
 				$presentationContent=get_the_content();
@@ -633,8 +635,8 @@ function summits_shortcode_func( $atts ) {
 
 				$presentationsHtmlOutput.='<div class="summit-presentation">';
 					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
-					$presentationsHtmlOutput.='<div class="presentation-info">';
-						$presentationsHtmlOutput.='<div class="presentation-title">';
+					$presentationsHtmlOutput.='<div class="presentation-info" id="'.$presentationSlug.'">';
+						$presentationsHtmlOutput.='<div class="presentation-title" >';
 						if($summit_slug == 'keynotes')
 						{
 							$presentationsHtmlOutput.= $presentationTitle;
@@ -834,8 +836,19 @@ function summits_shortcode_func( $atts ) {
 					return true;
 				};
 
+				//after enter to the if call for the function, then run the function. 
+				//When the function run, it return true: now declared is not undefined so it is not going to run the function again.
+
 				declared=hideShowContent();
+
+				var hash = window.location.hash;
+
+				// it is talking to the child called: presentation-content
+				
+				jQuery(".presentation-content",hash).slideToggle();
+
 			}
+
 
 		})
 

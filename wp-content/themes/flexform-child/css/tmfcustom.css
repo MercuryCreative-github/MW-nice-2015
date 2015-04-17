@@ -333,6 +333,18 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 .summit-buttons p {text-align: center;}
 .summit-buttons p a {margin-right: 0;}
 
+/*summit banners - 15*/
+.banner-journey {position: relative; margin: 50px 0;}
+.banner-journey h4{  
+	position: absolute;
+	top: 170px;
+	color: #fff;
+	left: 20px;
+	font-size: 27px;
+	line-height: 32px;
+}
+.cca .banner-journey h4{top: 120px;}
+
 /*Presentation Page*/
 .single-presentation {margin-top: 45px;}
 
@@ -467,6 +479,7 @@ p.list-text {
 .page-content .section02-companies li:last-child{margin-right: 0px;}
 .section02-companies li:first-child {display: table;}
 .home .page-content .section02-companies ul {display: table; margin: 0 auto;}
+.section02-companies li:nth-child(3) img, .section02-companies li:nth-child(5) img {margin-top: 20px;}
 
 .section02-companies li:first-child p {
 	display: table-cell;
@@ -1479,6 +1492,11 @@ div.summits.white .summit-img img{border-right:#F2F2F2 2px solid;}
 div.summits .summit-img h3{padding-top:20px;font-weight:400;}
 .summit-text{margin:0 15px;}
 .summit-link a{text-decoration:none;color:#444444;float:right;margin-right:20px;}
+
+
+
+
+
 
 /*****************************/
 /*** ONLINE TRAINING TABLE ***/
