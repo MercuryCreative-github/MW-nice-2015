@@ -47,7 +47,9 @@ function tabsControl(){
         if(!$(this).parent().parent().parent().hasClass('dontChangePageTitle')){
             pageTitle=$('a',this).text();
            $('title').text(pageTitle + ' - TM Forum Live! Nice 2015');
-           location.hash = $('a',this).attr('href')
+           location.hash = $('a',this).attr('href');
+           scrollListener(120,600,jQuery(document).scrollTop()-120);
+
         }
     })
 }
@@ -437,20 +439,18 @@ function fullAgenda(){
     } // end if
 }
 
-function scrollListener() {
+function scrollListener(offset,time,screenTop) {
 
-
-    offset=100;
-
-    var hash = window.location.hash;
+    offset = offset || 100;
+    hash = window.location.hash;
+    screenTop = screenTop || jQuery(document).scrollTop();
+    time = time || 800;
 
     if(hash!==''){
 
-        var screenTop = jQuery(document).scrollTop();
-        var where = jQuery(hash).offset().top-offset; // antes decía +200 y comentado "+160"
-        var time = 400;
-        var direccion=1;
-        jQuery("html,body").stop().animate({scrollTop: where}, time*2);
+        where = jQuery(hash).offset().top-offset; // antes decía +200 y comentado "+160"
+        jQuery("html,body").stop().animate({scrollTop: screenTop}, 0);
+        jQuery("html,body").stop().animate({scrollTop: where}, time);
         jQuery(".page-content").fadeTo(time,1);
 
        

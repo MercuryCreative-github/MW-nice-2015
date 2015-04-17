@@ -822,16 +822,15 @@ function summits_shortcode_func( $atts ) {
 					$(".presentation-info").each(function(){
 
 						var here=$(this);
-
-						$(".presentation-title",here).click(function(e){
-							e.preventDefault();
-							$(".presentation-content",here).slideToggle();
-						});
-
 						if($(".presentation-content",here).text()==""){
 							text=$(".presentation-title a",this).text();
 							$(".presentation-title a",this).before("<span>"+text+"</span>");
 							$(".presentation-title a",this).remove();
+						}else{					
+							$(".presentation-title",here).click(function(e){
+								e.preventDefault();
+								$(".presentation-content",here).slideToggle();
+							});
 						}
 					})
 
@@ -843,13 +842,14 @@ function summits_shortcode_func( $atts ) {
 
 				declared=hideShowContent();
 
-				var hash = window.location.hash;
+				var hash =  window.location.hash;
 
-				// it is talking to the child called: presentation-content
-				
+				// it is talking to the child called: presentation-content				
 				jQuery(".presentation-content",hash).slideToggle();
 
+
 			}
+
 
 
 		})
