@@ -337,13 +337,14 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 .banner-journey {position: relative; margin: 50px 0;}
 .banner-journey h4{  
 	position: absolute;
-	top: 170px;
+	top: 173px;
 	color: #fff;
 	left: 20px;
 	font-size: 27px;
 	line-height: 32px;
 }
 .cca .banner-journey h4{top: 120px;}
+.nfv .banner-journey h4{top: 152px;}
 
 /*Presentation Page*/
 .single-presentation {margin-top: 45px;}
