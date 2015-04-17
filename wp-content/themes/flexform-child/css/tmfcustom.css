@@ -645,7 +645,7 @@ a.sf-button.medium.purple{font-size:15px;line-height:20px;padding:10px 16px;back
 a.sf-button.purple:hover{background-color:#242A4E;}
 a.sf-button.medium.orange{font-size:15px;line-height:20px;padding:10px 16px;background-color:#ee7813;}
 a.sf-button.medium.yellow{font-size:15px;line-height:20px;padding:10px 16px;background-color:#f8ad13;}
-a.sf-button.medium.yellow.register-agenda{padding:10px 24px;}
+a.sf-button.medium.yellow.register-agenda{padding:10px 24px;width: 290px;}
 a.sf-button.orange:hover{background-color:#E2740B;}
 
 /**************************/
