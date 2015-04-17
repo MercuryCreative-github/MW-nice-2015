@@ -51,43 +51,43 @@ function hide_menu_items() {
 
 	function sfs_enqueue_styles() {
 		wp_dequeue_style('main-css');
-         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '10.4', 'all');
+         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '10.5', 'all');
             wp_enqueue_style('main-css'); // Enqueue it!
 
 		// Exhibitors pages
 		if ( is_page_template( 'exhibitors-template.php' ) ) {
-		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '10.4', 'all');
+		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '10.5', 'all');
     		wp_enqueue_style('aidesigns'); // Enqueue it!
 		}
 
 		// Pricing css
 		if ( is_page_template( 'pricing-tables.php' ) ) {
-		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '10.4', 'all');
+		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '10.5', 'all');
     		wp_enqueue_style('pricing-tables-css'); // Enqueue it!
 		}
 
 		// Speakers special css
 		if ( is_page_template( 'speakers.php' ) || is_page_template( 'speakers-with-thumbs.php' )) {
-		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '10.4', 'all');
+		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '10.5', 'all');
     		wp_enqueue_style('speakers-css'); // Enqueue it!
 		}
 
 		// Platinum Program
 		if ( is_page_template( 'platinum-program.php' ) ) {
-		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '10.4', 'all');
+		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '10.5', 'all');
     		wp_enqueue_style('platinum-program-css'); // Enqueue it!
 		}
 
 		// TMF custom styles
-		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '10.4', 'all');
+		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '10.5', 'all');
     	wp_enqueue_style('tmf-custom-css'); // Enqueue it!
 
     	// Responsive fixes
-		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '10.4', 'all');
+		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '10.5', 'all');
     	wp_enqueue_style('tmf-responsive-css'); // Enqueue it!
 
     	// Print Styles
-		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '10.4', 'all');
+		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '10.5', 'all');
     	wp_enqueue_style('tmf-print-css'); // Enqueue it!
 
 	}
@@ -612,9 +612,9 @@ function summits_shortcode_func( $atts ) {
 
 								if($hasThisRole){
 									//speaker output to store
-									$SpeakerHtmlOutput.='<p>- '.$user->display_name.', ';
+									$SpeakerHtmlOutput.='<p>- <a href="/speaker-profile/?id='.$user->ID.'">'.$user->display_name.'</a>, ';
 									$SpeakerHtmlOutput.='<em>'.($userJobRole).'</em>, ';
-									$SpeakerHtmlOutput.=$userCompanyName;
+									$SpeakerHtmlOutput.='<strong>'.$userCompanyName.'</strong>';
 									$SpeakerHtmlOutput.='</p>';
 
 									// this array contains inside one array per role and inside each of them, the speakers data.
