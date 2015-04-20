@@ -47,7 +47,12 @@ function tabsControl(){
         if(!$(this).parent().parent().parent().hasClass('dontChangePageTitle')){
             pageTitle=$('a',this).text();
            $('title').text(pageTitle + ' - TM Forum Live! Nice 2015');
-           location.hash = $('a',this).attr('href')
+           location.hash = $('a',this).attr('href');
+           mainTitleH = jQuery(".ui-tabs-active");
+           offset=63;
+           if(jQuery(document).width()<1200){mainTitleH=null;offset=100};
+           scrollListener(mainTitleH,offset,600,jQuery(document).scrollTop()-120);
+
         }
     })
 }
@@ -146,9 +151,6 @@ function reRowIotTabs() {
 
     })
 }
-
-
-
 
 function agendaAtaGlance() {
     // chequeo que sea solo las paginas que tienen un .tt_timetable
@@ -250,35 +252,6 @@ function agendaAtaGlance() {
         }
         jQuery('td.n',this).remove();
       });
-
-
-
-/*
-   // si me quedo una fila de 1 td y la fila siguiente tiene tmax-1 tds, copio el td solitario y lo agrego a la fila siguiente
-    jQuery('.tt_timetable tr').each(function() {
-        tmax= jQuery(this).attr('tmax');
-        nextTr= jQuery(this).next();
-        if(jQuery('td',this).length==1){
-            if(jQuery('td',nextTr).length==tmax-1){
-                cut = jQuery(this).html();
-                nextTr.append(cut);
-                jQuery(this).remove();
-            }
-        }
-    });
-
-   // si me quedo una fila de 1 td y la fila anterior tiene tmax-1 tds, copio el td solitario y lo agrego a la fila anterior
-    jQuery('.tt_timetable tr').each(function() {
-        tmax= jQuery(this).attr('tmax');
-        prevTr= jQuery(this).prev();
-        if(jQuery('td',this).length==1){
-            if(jQuery('td',prevTr).length==tmax-1){
-                cut = jQuery(this).html();
-                prevTr.append(cut);
-                jQuery(this).remove();
-            }
-        }
-    });*/
 
     // luego de todo este borrado, puede que quede algun td solo en un tr.
     jQuery('.tt_timetable tr').each(function(){
@@ -437,20 +410,21 @@ function fullAgenda(){
     } // end if
 }
 
-function scrollListener() {
+//scrollListener(mainTitleH,0,600,jQuery(document).scrollTop()-120);
 
+function scrollListener(hash,offset,time,screenTop) {
 
-    offset=100;
-
-    var hash = window.location.hash;
+    offset = offset || 120;
+    hash = hash || window.location.hash;
+    screenTop = screenTop || jQuery(document).scrollTop();
+    time = time || 800;
+   
 
     if(hash!==''){
 
-        var screenTop = jQuery(document).scrollTop();
-        var where = jQuery(hash).offset().top-offset; // antes decía +200 y comentado "+160"
-        var time = 400;
-        var direccion=1;
-        jQuery("html,body").stop().animate({scrollTop: where}, time*2);
+        where = jQuery(hash).offset().top-offset; 
+        jQuery("html,body").stop().animate({scrollTop: screenTop}, 0);
+        jQuery("html,body").stop().animate({scrollTop: where}, time);
         jQuery(".page-content").fadeTo(time,1);
 
        

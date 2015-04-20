@@ -134,6 +134,8 @@
 }
 @media screen and (max-width: 1250px) {
 
+    .video-promo iframe {width: 32.5%;height: 233px;}
+
     .page-content .section02-companies li {margin-right: 20px;}
 
     .home .page-content ul li{margin-bottom: 10px;}
@@ -156,6 +158,8 @@
     .sponsors_logo {margin-left: 70px;}
     /*footer*/
     .container #footer-widgets .span3:first-child {margin-left: 0;}
+
+
     
 }
 @media screen and (max-width: 1200px) {
@@ -883,6 +887,10 @@
 
 }
 @media screen and (max-width: 840px) {
+
+    .video-promo {float: none; width: 70%;margin: 0 auto 5px auto;}
+    .video-promo iframe {width: 100%; height: 270px;}
+
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
         width: 87% !important;
         margin-left: 8% !important;

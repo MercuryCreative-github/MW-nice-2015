@@ -560,14 +560,14 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 .section04-info {width: 52%;float: left;margin-left: 3.5%;}
 .section04-title h1 {text-align: center;}
 
-.twitter-feed {float: left;width: 30%;background: #fff;padding: 0 15px 10px;border-top: #76a9db 4px solid;}
+.twitter-feed {float: left;width: 30%;background: #fff;padding: 0 15px 5px;border-top: #76a9db 4px solid;margin-top: 5px;}
 .container h2.tw-title{
 	font-family: 'Open Sans' sans-serif;
 	font-weight: 600;
 	font-size: 1.1em;
 	text-transform: uppercase;
 	color: #444;
-	margin:20px 0 40px 0;
+	margin:0 0 15px 0;
 	max-width: 100%;
 	padding-right: 0;
 	border-bottom: none;
@@ -1139,12 +1139,6 @@ body [class*="span"].title-container{background-image:url('http://www.tmforumliv
 .lineDivider{border-bottom:1px solid #e5e5e5;}
 .noLineDivider{border:0;border-bottom-width:0;height:20px;}
 
-/***********************/
-/*** Exhibitors List ***/
-/***********************/
-.exhibitorslist .text-box {margin:50px auto -30px auto;}
-.exhibitorslist .text-box p {display: block; padding: 0 30px; text-align: center; margin-bottom: 0px;}
-
 /******************************/
 /*** HOME PAGE POSTS LAYOUT ***/
 /******************************/
@@ -1323,35 +1317,6 @@ ul.listoverview li a {color: #444;}
 .passes-prices .text-box p{ vertical-align: middle; text-align: center; font-size: 24px; padding: 0 20px;}
 .passes-prices .text-box a.btn-readmore {color: white; background-color: #ffaf00;  padding: 10px 20px;}
 .passes-prices .text-box img{margin-bottom: 28px; }
-
-
-/************************/
-/**********FAQs**********/
-/***********************/
-/*h3.faq-section-title{ border-bottom:1px solid #ccc; background-color:#D19E43; font-size:18px; line-height:1.5em; margin-bottom:0; color:#FFF; padding:5px 10px; margin-bottom:15px; position:relative;}*/
-.page ul.faqs-nav{ padding-bottom:20px; list-style:none; margin:0; border:0;}
-.page .faqs-nav li{ float:left; width:44%; padding:10px 10px 10px 10px; -webkit-border-radius:0; -moz-border-radius:2px; border-radius:0; margin:0 10px 10px 0; border:none; border-bottom:1px solid #ccc; list-style:none;}
-.faq-item h6{ margin-bottom:15px; font-size:15px;}
-.wpb_divider.go_to_top_icon1{ border-bottom:1px solid transparent;}
-h3.faq-section-title a.animate-top{position:absolute;top:5px;right:10px;font-size:0.6em;color:white;font-weight:normal;-webkit-text-stroke:0;}
-.page-content ul li.faq-item{list-style-type:none;}
-
-
-/*The style for the lists of questions or sub-menu*/
-.page-content .questions ul li {list-style-type: none; line-height: 26px; border-bottom: #CACACA 1px solid; padding: 10px;}
-.page-content .questions ul li:first-child { border-top: #CACACA 1px solid; }
-.page-content .questions ul {margin: 0 0 20px 0px;}
-.page-content .questions ul li a{color:#444444;}
-.page-content .questions ul li:hover{ background-color: #F6F7F7; cursor: pointer; }
-.page-content .questions ul li:after {content: "\f063"; float: right; color: #B4B4B4; margin-right: 0; font-family: FontAwesome; font-size: 14px;}
-.page-content .questions ul li:hover :after {color: #444;}
-
-/******************************/
-/****Became a Media Sponsor****/
-/******************************/
-.media-sponsor tr td{padding:1% 10%;font-size:0.9em;}
-.media-sponsor tr.st-title td{font-size:1em;background-color:rgba(209, 158, 67, 0.73);}
-
 
 /*********/
 /* HOME */

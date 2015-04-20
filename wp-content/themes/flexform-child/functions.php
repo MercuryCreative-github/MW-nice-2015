@@ -637,12 +637,7 @@ function summits_shortcode_func( $atts ) {
 					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
 					$presentationsHtmlOutput.='<div class="presentation-info" id="'.$presentationSlug.'">';
 						$presentationsHtmlOutput.='<div class="presentation-title" >';
-						if($summit_slug == 'keynotes')
-						{
-							$presentationsHtmlOutput.= $presentationTitle;
-						}else{
-							$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
-						}
+						$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
 						$presentationsHtmlOutput.='</div>';
 						$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
 						$presentationsHtmlOutput.='<div class="presentation-content" style="display:none">'.$presentationContent.'</div>';
@@ -822,16 +817,15 @@ function summits_shortcode_func( $atts ) {
 					$(".presentation-info").each(function(){
 
 						var here=$(this);
-
-						$(".presentation-title",here).click(function(e){
-							e.preventDefault();
-							$(".presentation-content",here).slideToggle();
-						});
-
 						if($(".presentation-content",here).text()==""){
 							text=$(".presentation-title a",this).text();
 							$(".presentation-title a",this).before("<span>"+text+"</span>");
 							$(".presentation-title a",this).remove();
+						}else{					
+							$(".presentation-title",here).click(function(e){
+								e.preventDefault();
+								$(".presentation-content",here).slideToggle();
+							});
 						}
 					})
 
@@ -843,13 +837,14 @@ function summits_shortcode_func( $atts ) {
 
 				declared=hideShowContent();
 
-				var hash = window.location.hash;
+				var hash =  window.location.hash;
 
-				// it is talking to the child called: presentation-content
-				
+				// it is talking to the child called: presentation-content				
 				jQuery(".presentation-content",hash).slideToggle();
 
+
 			}
+
 
 
 		})
