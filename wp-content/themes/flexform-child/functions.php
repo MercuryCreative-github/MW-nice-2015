@@ -637,12 +637,7 @@ function summits_shortcode_func( $atts ) {
 					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
 					$presentationsHtmlOutput.='<div class="presentation-info" id="'.$presentationSlug.'">';
 						$presentationsHtmlOutput.='<div class="presentation-title" >';
-						if($summit_slug == 'keynotes')
-						{
-							$presentationsHtmlOutput.= $presentationTitle;
-						}else{
-							$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
-						}
+						$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
 						$presentationsHtmlOutput.='</div>';
 						$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
 						$presentationsHtmlOutput.='<div class="presentation-content" style="display:none">'.$presentationContent.'</div>';
