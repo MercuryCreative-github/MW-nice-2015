@@ -861,9 +861,195 @@ add_shortcode( 'summits_shortcode', 'summits_shortcode_func' );
 
 ?>
 
+<?php
+
+//STAR FEATURE
+
+// [fetured_speaker_shortcode speaker_summit_slug="summit-slug-value"]
+function fetured_speaker_shortcode_func( $atts ) {
+
+	// var set and unset
+	$speakersDisplay='';
+
+    // OutPut functions START HERE. Please read last.
+    if (!function_exists('get_featured')) {  
+    function get_featured($speaker_summit_slug,$sessionID){
+
+    	$args = array(
+			'post_type'  => 'agenda_tracks',
+			'meta_key'	 => '_TMF_presentations_start_date',
+			'orderby'	 => 'meta_value_num',
+			'order' 		=> 'ASC',
+			'meta_query' => array(
+				array(
+					'key'     => '_TMF_presentation_session',
+					'value'   => $sessionID,
+					'compare' => 'LIKE',
+				),
+			),
+		);
+
+    	// This are all the presentations that have him/her listed as spekear/moderator/etc
+		$presentationToCheck = new WP_Query( $args );
+
+		// Presentation Loop
+		if ( $presentationToCheck->have_posts() ) {
+
+			while ( $presentationToCheck->have_posts() ) {
+
+		    	// Call the speakers
+		    	$presentationToCheck->the_post();
+		    	// Call the speakers
+				$presentationId = get_the_ID();
+
+				$args = array(
+				'order ' => 'ASC',
+				'role'=>'speaker',
+				'meta_query' =>array(
+					array(
+						'value' => $presentationId ,
+						'compare' => 'LIKE'),)
+				);// meta_query);
+
+				
+				// Save user ID to pass on data to Speaker page
+				$user_id = esc_html( $user->ID );
+
+				// The Query
+
+				$user_query = new WP_User_Query( $args );
+
+				// User Loop
+				if ( ! empty( $user_query->results ) ) {
+					foreach ( $user_query->results as $user ) {
+
+						$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
+						$categoryDisplay='';
+
+						if(is_array($categorySpeakers)){
+
+							foreach ($categorySpeakers as $categorySpeaker) {
+								if($categorySpeaker=='check1'){$categoryDisplay.=' featured';}
+							}
+						}
+
+						if($categoryDisplay == ' featured'){
+							// Get the user id of the user and the id of the image
+							$userMetaImageId = get_user_meta($user->ID,'image_id',true);
+							$userMetaImage =  wp_get_attachment_image_src( $userMetaImageId, 'thumbnail' ); 
+							// if $userMetaImage (an array) is empty/false
+							if(!($userMetaImage)){
+							$userMetaImage[] ='/wp-content/uploads/2014/09/default_speaker.png';
+							}
+
+							$speakersDisplay.= '<div class="speakerSidebar'.$categoryDisplay.'">';
+								$speakersDisplay.= '<a href="/speaker-profile/?id='.$user->ID.'">';
+									$speakersDisplay.='<img src="'.$userMetaImage[0].'">';
+								$speakersDisplay.= '</a>';
+								$speakersDisplay.= '<a href="/speaker-profile/?id='.$user->ID.'" style="color:#AEACAC;">' . $user->first_name.' '.$user->last_name.'</a>';
+
+							// Get companies and user mapping along with job role as per new conventions
+							// Get companies and job role
+							$companyIds = getUserCompanies( esc_html( $user->ID ) );
+
+							$i = 0;
+							foreach( $companyIds as $companyId ) {
+								if( (int)$companyId == 0 ) continue;
+								$role = '';
+								$company = '';
+
+								$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyId );
+								if( empty( $jobRole ) ) {
+									$jobRole = esc_html( $user->role );
+								}
+
+								if( !empty( $jobRole ) || (int)$companyId > 0 ) {
+									if( $i == 0 ) {
+										$role .= '<br>';
+									} else {
+										$role .= ' ';
+									}
+									$role .= '<em>'.$jobRole.'</em>';
+									$company = ', <strong>'.get_the_title( $companyId ).'</strong>';  // cambia , por </br>
+								}
+								$speakersDisplay .= $role . $company;
+								$i++;
+							} // end foreach( $companyIds as $company )
+
+							$speakersDisplay .= '</div><hr>';
+
+						} // end if categoryDisplay == featured
+					} // end foreach user_query->results as user
+				} //end if ! empty( $user_query->results )
+			} // end while ( $presentationToCheck->have_posts
+		} // end if ( $presentationToCheck->have_posts() )
+
+		return $speakersDisplay;
+
+	}} // end get_presentations
+
+    // OutPut functions FINISH HERE
+   
+
+    // Shortcode functionality HERE
+
+    // shortcode variables
+    $a = shortcode_atts( array(
+        'speaker_summit_slug' => 'default',
+    ), $atts );
+
+    // summit var definitions bases on shortcode input.
+    extract($a);
+
+	// The Vars to run the Query that gets all the Presentations with this Forum Asociated based on the $summit_slug
+	$args = array(
+	'post_type' 	=> 'tmf_sessions',
+	'order' 		=> 'ASC',
+	'meta_key'	 	=> '_TMF_session_start_date',
+	'orderby'	 	=> 'meta_value_num',
+	'tax_query'		=> array(
+			array(
+				'taxonomy' => 'tmf_summit_category',
+				'field'    => 'slug',
+				'terms'    => $speaker_summit_slug,
+			),
+		), 
+	);
+
+	// WP Query
+	$loop = new WP_Query( $args );
+
+	// Variables set
+	$theSessions='';
+	$theSessions.='<h4 class="light"><strong>Featured</strong> Speakers:</h4><hr>';
+
+	while ( $loop->have_posts() ) : $loop->the_post();
+	
+	// needed variables
+	$sessionID = get_the_ID();
+
+	// Sessions output depends on functions
+	
+	$theSessions.='<div class="speakerTrack">'.get_featured($speaker_summit_slug,$sessionID).'</div>';
+	
+	$i++;
+	endwhile;
+
+	wp_reset_query();
+
+	return $theSessions;
+
+} // end of shortcode
+
+add_shortcode( 'fetured_speaker_shortcode', 'fetured_speaker_shortcode_func' );
+
+//END FEATURE 
+
+?>
+
 <?php 
 
-if(!function_exists(update_presentation_on_user_save)){
+if(!function_exists('update_presentation_on_user_save')){
 
 	function update_presentation_on_user_save($user_id){
 
