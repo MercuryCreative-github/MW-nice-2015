@@ -188,7 +188,7 @@ Template Name: Exhibitors list
 	  <div id="speaker-${Id}" class="keynotes-panel">
 		<img alt="${Name}" src="${ImageUrl}">
 		<span class="Ehxdes">${Description}</span>
-		<span class="Ehxweb">{{if WebSite}}<a href="http://${WebSite}" target="_blank">${WebSite}</a>{{/if}}<br />{{if Booths!=='Sponsor'}}Booth Location: {{/if}}${Booths}</span>
+		<span class="Ehxweb">{{if WebSite}}<a href="${WebSite}" target="_blank">${WebSite}</a>{{/if}}<br />{{if Booths!=='Sponsor'}}Booth Location: {{/if}}${Booths}</span>
 	  </div>
 
 
@@ -245,6 +245,14 @@ Template Name: Exhibitors list
 
 					var activeSpeakerClass  = 'list-selected';
 					var className  = 'active-panel';
+
+					jQuery('.Ehxweb a').each(function(){
+						if(jQuery(this).attr('href').indexOf('http')<0){
+							link = 'http://'+jQuery(this).attr('href');
+							jQuery(this).attr('href',link);
+						};
+
+					})
 
 					jQuery('.exhibitors-list a').click(function(e){
 
@@ -326,6 +334,8 @@ Template Name: Exhibitors list
 						   jQuery('#divs-'+id).append(divs);divs='';
 
 						   }
+
+
 
 
 				 })
