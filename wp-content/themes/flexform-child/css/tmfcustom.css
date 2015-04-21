@@ -55,6 +55,7 @@ h1 {
 .visibleTitle {display: table;margin-bottom: 0;cursor: pointer;}
 .visibleTitle .nday {display: table-cell; min-height: initial; width: 250px;}
 .visibleTitle .title-place {display: table-cell;line-height: 22px;padding-right: 10px;}
+.visibleTitle .title-place.with-sponsor {width: 40%;}
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].gray-accordion, 
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].withe-accordion{padding: 20px 10px 20px 20px; position: relative;}
 .gray-accordion {background-color: #F0F0F0;}
@@ -150,6 +151,8 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
  margin: 0;
  width: 100% !important;
 }
+
+
 
 /*SIDEBAR WORKSHOP*/
 .workshops .tp-caption.grey-btn {padding: 2px 30px;}
