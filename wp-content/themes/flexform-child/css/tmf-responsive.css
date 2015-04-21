@@ -499,7 +499,8 @@
 }
 @media screen and (max-width: 980px) {
 
-
+    .visibleTitle .title-place.with-sponsor {width: auto;}
+    
     /*banner summit*/
     a.sf-button.medium.yellow.register-agenda {padding: 10px 19px;}
     .nfv .banner-journey h4 {top: 117px;}
