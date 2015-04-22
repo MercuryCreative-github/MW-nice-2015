@@ -46,11 +46,15 @@ h1 {
 
 .call-box p, .call-box p a {background: #ee7630;color: #FFF;text-align: center;padding: 10px 20px;}
 .call-box p a:hover {color: #FFF}
+.call-box.red p, .call-box.red p a {background: #CB3C2A;}
 
 
 .hackaton-prize li ul li:before {display: none;}
 .hackaton-prize li ul li{list-style-type: disc !important;}
 .hackaton-prize li ul{padding: 15px 0 0 45px;}
+.hackathon-members img {border-radius: 50%;width: 100px;}
+
+
 /*Accordion*/
 .visibleTitle {display: table;margin-bottom: 0;cursor: pointer;}
 .visibleTitle .nday {display: table-cell; min-height: initial; width: 250px;}
