@@ -911,10 +911,6 @@ function fetured_speaker_shortcode_func( $atts ) {
 						'compare' => 'LIKE'),)
 				);// meta_query);
 
-				
-				// Save user ID to pass on data to Speaker page
-				$user_id = esc_html( $user->ID );
-
 				// The Query
 
 				$user_query = new WP_User_Query( $args );
@@ -924,10 +920,9 @@ function fetured_speaker_shortcode_func( $atts ) {
 					foreach ( $user_query->results as $user ) {
 
 						$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
-						$categoryDisplay='';
+						$categoryDisplay = '';
 
 						if(is_array($categorySpeakers)){
-
 							foreach ($categorySpeakers as $categorySpeaker) {
 								if($categorySpeaker=='check1'){$categoryDisplay.=' featured';}
 							}
@@ -938,6 +933,7 @@ function fetured_speaker_shortcode_func( $atts ) {
 							$userMetaImageId = get_user_meta($user->ID,'image_id',true);
 							$userMetaImage =  wp_get_attachment_image_src( $userMetaImageId, 'thumbnail' ); 
 							// if $userMetaImage (an array) is empty/false
+							
 							if(!($userMetaImage)){
 							$userMetaImage[] ='/wp-content/uploads/2014/09/default_speaker.png';
 							}
@@ -953,6 +949,7 @@ function fetured_speaker_shortcode_func( $atts ) {
 							$companyIds = getUserCompanies( esc_html( $user->ID ) );
 
 							$i = 0;
+
 							foreach( $companyIds as $companyId ) {
 								if( (int)$companyId == 0 ) continue;
 								$role = '';
@@ -979,9 +976,13 @@ function fetured_speaker_shortcode_func( $atts ) {
 							$speakersDisplay .= '</div><hr>';
 
 						} // end if categoryDisplay == featured
+					
 					} // end foreach user_query->results as user
+					
 				} //end if ! empty( $user_query->results )
-			} // end while ( $presentationToCheck->have_posts
+
+			} // end while ( $presentationToCheck->have_posts	
+
 		} // end if ( $presentationToCheck->have_posts() )
 
 		return $speakersDisplay;
