@@ -51,43 +51,43 @@ function hide_menu_items() {
 
 	function sfs_enqueue_styles() {
 		wp_dequeue_style('main-css');
-         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '10.6', 'all');
+         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '10.7', 'all');
             wp_enqueue_style('main-css'); // Enqueue it!
 
 		// Exhibitors pages
 		if ( is_page_template( 'exhibitors-template.php' ) ) {
-		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '10.6', 'all');
+		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '10.7', 'all');
     		wp_enqueue_style('aidesigns'); // Enqueue it!
 		}
 
 		// Pricing css
 		if ( is_page_template( 'pricing-tables.php' ) ) {
-		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '10.6', 'all');
+		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '10.7', 'all');
     		wp_enqueue_style('pricing-tables-css'); // Enqueue it!
 		}
 
 		// Speakers special css
 		if ( is_page_template( 'speakers.php' ) || is_page_template( 'speakers-with-thumbs.php' )) {
-		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '10.6', 'all');
+		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '10.7', 'all');
     		wp_enqueue_style('speakers-css'); // Enqueue it!
 		}
 
 		// Platinum Program
 		if ( is_page_template( 'platinum-program.php' ) ) {
-		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '10.6', 'all');
+		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '10.7', 'all');
     		wp_enqueue_style('platinum-program-css'); // Enqueue it!
 		}
 
 		// TMF custom styles
-		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '10.6', 'all');
+		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '10.7', 'all');
     	wp_enqueue_style('tmf-custom-css'); // Enqueue it!
 
     	// Responsive fixes
-		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '10.6', 'all');
+		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '10.7', 'all');
     	wp_enqueue_style('tmf-responsive-css'); // Enqueue it!
 
     	// Print Styles
-		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '10.6', 'all');
+		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '10.7', 'all');
     	wp_enqueue_style('tmf-print-css'); // Enqueue it!
 
 	}
@@ -868,12 +868,11 @@ add_shortcode( 'summits_shortcode', 'summits_shortcode_func' );
 // [fetured_speaker_shortcode speaker_summit_slug="summit-slug-value"]
 function fetured_speaker_shortcode_func( $atts ) {
 
-	// var set and unset
-	$speakersDisplay='';
-
     // OutPut functions START HERE. Please read last.
     if (!function_exists('get_featured')) {  
     function get_featured($speaker_summit_slug,$sessionID){
+
+    	$speakersDisplayArray=array();
 
     	$args = array(
 			'post_type'  => 'agenda_tracks',
@@ -917,7 +916,7 @@ function fetured_speaker_shortcode_func( $atts ) {
 
 				// User Loop
 				if ( ! empty( $user_query->results ) ) {
-					foreach ( $user_query->results as $user ) {
+					foreach ( $user_query->results as $user ) {						
 
 						$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
 						$categoryDisplay = '';
@@ -929,6 +928,10 @@ function fetured_speaker_shortcode_func( $atts ) {
 						}
 
 						if($categoryDisplay == ' featured'){
+
+							// var set and unset
+							$speakersDisplay='<div class="speakerTrack">';
+
 							// Get the user id of the user and the id of the image
 							$userMetaImageId = get_user_meta($user->ID,'image_id',true);
 							$userMetaImage =  wp_get_attachment_image_src( $userMetaImageId, 'thumbnail' ); 
@@ -973,10 +976,13 @@ function fetured_speaker_shortcode_func( $atts ) {
 								$i++;
 							} // end foreach( $companyIds as $company )
 
-							$speakersDisplay .= '</div><hr>';
+							$speakersDisplay .= '</div><hr></div>';
 
 						} // end if categoryDisplay == featured
-					
+					if(!empty($speakersDisplay))
+						
+					$speakersDisplayArray[$user->ID]=$speakersDisplay;
+
 					} // end foreach user_query->results as user
 					
 				} //end if ! empty( $user_query->results )
@@ -985,7 +991,9 @@ function fetured_speaker_shortcode_func( $atts ) {
 
 		} // end if ( $presentationToCheck->have_posts() )
 
-		return $speakersDisplay;
+
+		return $speakersDisplayArray;
+
 
 	}} // end get_presentations
 
@@ -1024,17 +1032,23 @@ function fetured_speaker_shortcode_func( $atts ) {
 	$theSessions='';
 	$theSessions.='<h4 class="light"><strong>Featured</strong> Speakers:</h4><hr>';
 
+	$speakersDisplayArray=array();
+
 	while ( $loop->have_posts() ) : $loop->the_post();
 	
 	// needed variables
 	$sessionID = get_the_ID();
 
 	// Sessions output depends on functions
-	
-	$theSessions.='<div class="speakerTrack">'.get_featured($speaker_summit_slug,$sessionID).'</div>';
+	$speakersArray= get_featured($speaker_summit_slug,$sessionID);
+	$speakersDisplayArray=array_merge($speakersDisplayArray,$speakersArray);
+
 	
 	$i++;
 	endwhile;
+
+	$speakersDisplayArray=array_unique($speakersDisplayArray);
+	$theSessions.=implode('',$speakersDisplayArray);
 
 	wp_reset_query();
 
