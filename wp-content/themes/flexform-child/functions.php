@@ -980,7 +980,7 @@ function fetured_speaker_shortcode_func( $atts ) {
 
 						} // end if categoryDisplay == featured
 					if(!empty($speakersDisplay))
-						
+
 					$speakersDisplayArray[$user->ID]=$speakersDisplay;
 
 					} // end foreach user_query->results as user
@@ -1039,14 +1039,16 @@ function fetured_speaker_shortcode_func( $atts ) {
 	// needed variables
 	$sessionID = get_the_ID();
 
-	// Sessions output depends on functions
+	// save the array with the speakers in a var.
 	$speakersArray= get_featured($speaker_summit_slug,$sessionID);
+	// add the elements of the new array with the ones of the previous one.
 	$speakersDisplayArray=array_merge($speakersDisplayArray,$speakersArray);
 
 	
 	$i++;
 	endwhile;
 
+	//remove the element of the array that appear twice 
 	$speakersDisplayArray=array_unique($speakersDisplayArray);
 	$theSessions.=implode('',$speakersDisplayArray);
 
