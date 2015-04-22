@@ -46,11 +46,15 @@ h1 {
 
 .call-box p, .call-box p a {background: #ee7630;color: #FFF;text-align: center;padding: 10px 20px;}
 .call-box p a:hover {color: #FFF}
+.call-box.red p, .call-box.red p a {background: #CB3C2A;}
 
 
 .hackaton-prize li ul li:before {display: none;}
 .hackaton-prize li ul li{list-style-type: disc !important;}
 .hackaton-prize li ul{padding: 15px 0 0 45px;}
+.hackathon-members img {border-radius: 50%;width: 100px;}
+
+
 /*Accordion*/
 .visibleTitle {display: table;margin-bottom: 0;cursor: pointer;}
 .visibleTitle .nday {display: table-cell; min-height: initial; width: 250px;}
@@ -79,6 +83,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 /**************************/
 .sf-button.green.standard {color: #FFF}
 .sf-button.standard {text-transform: uppercase;}
+
 
 /*navegation-tabs*/
 .page-content .ui-widget-header li:hover a, .page-content .ui-widget-header li.ui-tabs-active:hover a, .page .page-content .ui-tabs .ui-tabs-nav li.ui-tabs-active a {color: #fff;}
@@ -647,8 +652,10 @@ a.button.btnviolet:hover{background-color:#242A4E;}
 a.sf-button.medium.purple{font-size:15px;line-height:20px;padding:10px 16px;background-color:#4E5577;}
 a.sf-button.purple:hover{background-color:#242A4E;}
 a.sf-button.medium.orange{font-size:15px;line-height:20px;padding:10px 16px;background-color:#ee7813;}
+a.sf-button.red{background-color:#CB3C2A;}
 a.sf-button.medium.yellow{font-size:15px;line-height:20px;padding:10px 16px;background-color:#f8ad13;}
-a.sf-button.medium.yellow.register-agenda{padding:10px 24px;width: 290px;}
+a.sf-button.medium.yellow.register-agenda,
+a.sf-button.medium.red.register-agenda {padding:10px 24px;width: 290px;}
 a.sf-button.orange:hover{background-color:#E2740B;}
 
 /**************************/
@@ -1588,7 +1595,6 @@ h3 img{margin-top:-5px;}
 /*contact us*/
 .social-net img{float:left;margin-bottom:110px;margin-right:15px;}
 a.sf-button.blue{background-color:#0B74B4;float:right; margin-top: 17px;}
-a.sf-button.red{background-color:#CB3C2A;float:right; margin-top: 17px;}
 /*aletr-box of media center*/
 .about-table p{padding:20px 30px 10px 30px;}
 .about-table h4{ padding: 20px 30px 0px 30px;}
