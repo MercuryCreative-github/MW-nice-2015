@@ -12,6 +12,8 @@ h1 {
 	font-size: 40px !important;
 }
 
+hr.hr-blank-space {border:none; height: 5px;}
+
 .noMarginContent .container {margin:0;}
 
 .page-content .subtitle h4 {
