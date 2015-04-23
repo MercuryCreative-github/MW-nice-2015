@@ -796,10 +796,6 @@ function summits_shortcode_func( $atts ) {
 	$sessions.= '<div class="clear"></div>';
 	$sessions.= '<div id="session-'.$sessionId.'">'.get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor).'</div>';
 
-
-	$i++;
-	endwhile;
-
 	wp_reset_query();
 
 	$script='
@@ -812,10 +808,8 @@ function summits_shortcode_func( $atts ) {
 
 			if(typeof declared == "undefined"){
 
-				function hideShowContent(where,items){
-					var $ = jQuery;
-
-					subtitleCheck = items.toLowerCase();
+				function hideShowContent(where,subtitleCheck){
+					var $ = jQuery;					
 					
 					// if in the link_to_presentation we write all it is not going to run the script
 					if("all"!==subtitleCheck)
@@ -849,18 +843,25 @@ function summits_shortcode_func( $atts ) {
 			//after enter to the if call for the function, then run the function. 
 			//When the function run, it return true: now declared is not undefined so it is not going to run the function again.
 
+
+			subtitleCheck = "'.$link_to_presentation.'".toLowerCase();
+
+			if("all"!==subtitleCheck){
 			jQuery(".presentation-content",where).hide();
 			declared=hideShowContent(where,"'.$link_to_presentation.'");
+			}
 
-			var hash =  window.location.hash;
-
+			/*var hash =  window.location.hash;
 			// it is talking to the child called: presentation-content
-			jQuery(".presentation-content",hash).slideToggle();
+			if(jQuery(hash).index()>0){jQuery(".presentation-content",hash).slideToggle()};*/
 		})
 
 		</script>';
 
 	$sessions.=$script;
+
+	$i++;
+	endwhile;
 
 	return $sessions;
 
