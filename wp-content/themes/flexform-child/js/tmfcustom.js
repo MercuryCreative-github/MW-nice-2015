@@ -423,8 +423,8 @@ function scrollListener(hash,offset,time,screenTop) {
     if(hash!==''){
 
         where = jQuery(hash).offset().top-offset; 
-        jQuery("html,body").stop().animate({scrollTop: screenTop}, 0);
-        jQuery("html,body").stop().animate({scrollTop: where}, time);
+        jQuery("html,body").stop(true,true).animate({scrollTop: screenTop}, 0);
+        jQuery("html,body").stop(true,true).animate({scrollTop: where}, time);
         jQuery(".page-content").fadeTo(time,1);
 
        
