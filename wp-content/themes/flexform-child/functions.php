@@ -794,7 +794,7 @@ function summits_shortcode_func( $atts ) {
 	$sessions.= '</div>';
 	$sessions.= '<div class="session-sponsor">'.get_sponsors($sessionSponsors).'</div>';
 	$sessions.= '<div class="clear"></div>';
-	$sessions.= '<div>'.get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor).'</div>';
+	$sessions.= '<div id="session-'.$sessionId.'">'.get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor).'</div>';
 
 
 	$i++;
@@ -807,21 +807,33 @@ function summits_shortcode_func( $atts ) {
 
 		jQuery("document").ready(function(){
 
-			jQuery(".presentation-content").hide();
+
+			where = jQuery("#session-'.$sessionId.'");
 
 			if(typeof declared == "undefined"){
 
-				function hideShowContent(){
+				function hideShowContent(where,items){
 					var $ = jQuery;
 
-					$(".presentation-info").each(function(){
+					subtitleCheck = items.toLowerCase();
+					
+					// if in the link_to_presentation we write all it is not going to run the script
+					if("all"!==subtitleCheck)
+
+					$(".presentation-info", where).each(function(){
 
 						var here=$(this);
+						subtitle = $(".presentation-subtitle",here).text().toLowerCase();
+
+						if(subtitle!==subtitleCheck)						
+
 						if($(".presentation-content",here).text()==""){
 							text=$(".presentation-title a",this).text();
 							$(".presentation-title a",this).before("<span>"+text+"</span>");
 							$(".presentation-title a",this).remove();
-						}else{					
+
+						}
+						else{					
 							$(".presentation-title",here).click(function(e){
 								e.preventDefault();
 								$(".presentation-content",here).slideToggle();
@@ -832,26 +844,23 @@ function summits_shortcode_func( $atts ) {
 					return true;
 				};
 
-				//after enter to the if call for the function, then run the function. 
-				//When the function run, it return true: now declared is not undefined so it is not going to run the function again.
-
-				declared=hideShowContent();
-
-				var hash =  window.location.hash;
-
-				// it is talking to the child called: presentation-content				
-				jQuery(".presentation-content",hash).slideToggle();
-
-
 			}
+			
+			//after enter to the if call for the function, then run the function. 
+			//When the function run, it return true: now declared is not undefined so it is not going to run the function again.
 
+			jQuery(".presentation-content",where).hide();
+			declared=hideShowContent(where,"'.$link_to_presentation.'");
 
+			var hash =  window.location.hash;
 
+			// it is talking to the child called: presentation-content
+			jQuery(".presentation-content",hash).slideToggle();
 		})
 
 		</script>';
 
-	if($link_to_presentation=='no'){$sessions.=$script;}
+	$sessions.=$script;
 
 	return $sessions;
 
