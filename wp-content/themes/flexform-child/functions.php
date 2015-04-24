@@ -367,7 +367,7 @@ add_action('profile_update','create_company_on_user_save',20,1);
 add_action( 'user_register', 'create_company_on_user_save',20,1);
 
 // Create New Company from user edit/create
-if(!function_exists(create_company_on_user_save)){
+if(!function_exists("create_company_on_user_save")){
 	function create_company_on_user_save($user_id){
 
 	        $new_company=array();

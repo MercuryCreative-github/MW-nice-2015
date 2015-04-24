@@ -354,7 +354,12 @@
 				$item_figure .= '</ul><div class="open-item"><a '.$link_config.'></a></div></div>';
 				
 			} else {
-			
+				
+				if ($thumb_img_url == "") {
+					$thumb_image = get_post_thumbnail_id($postID);
+					$thumb_img_url = wp_get_attachment_url( $thumb_image, 'full' );
+				}
+				
 				$image = aq_resize( $thumb_img_url, $thumb_width, $thumb_height, true, false);
 				
 				if ($image) {

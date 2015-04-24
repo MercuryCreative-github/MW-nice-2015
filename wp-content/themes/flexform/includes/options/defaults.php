@@ -746,14 +746,14 @@ if(!class_exists('Redux_Options') ){
                 echo '<p class="description">' . apply_filters('redux-opts-backup-description', __('Here you can copy/download your current option settings. Keep this safe as you can use it as a backup should anything go wrong, or you can use it to restore your settings on this site (or any other site).', Redux_TEXT_DOMAIN)).'</p>';
                 echo '</div>';
 
-                echo '<p><a href="javascript:void(0);" id="redux-opts-export-code-copy" class="button-secondary">' . __('Copy', Redux_TEXT_DOMAIN) . '</a> <a href="'.add_query_arg(array('feed' => 'reduxopts-'.$this->args['opt_name'], 'action' => 'download_options', 'secret' => md5(AUTH_KEY.SECURE_AUTH_KEY)), site_url()).'" id="redux-opts-export-code-dl" class="button-primary">Download</a> <a href="javascript:void(0);" id="redux-opts-export-link" class="button-secondary">' . __('Copy Link', Redux_TEXT_DOMAIN) . '</a></p>';
+                echo '<p><a href="javascript:void(0);" id="redux-opts-export-code-copy" class="button-secondary">' . __('Copy', Redux_TEXT_DOMAIN) . '</a> <a href="'.esc_url( add_query_arg(array('feed' => 'reduxopts-'.$this->args['opt_name'], 'action' => 'download_options', 'secret' => md5(AUTH_KEY.SECURE_AUTH_KEY)), site_url()) ).'" id="redux-opts-export-code-dl" class="button-primary">Download</a> <a href="javascript:void(0);" id="redux-opts-export-link" class="button-secondary">' . __('Copy Link', Redux_TEXT_DOMAIN) . '</a></p>';
                 $backup_options = $this->options;
                 $backup_options['redux-opts-backup'] = '1';
                 $encoded_options = '###' . serialize($backup_options) . '###';
                 echo '<textarea class="large-text" id="redux-opts-export-code" rows="8">';
                 print_r($encoded_options);
                 echo '</textarea>';
-                echo '<input type="text" class="large-text" id="redux-opts-export-link-value" value="' . add_query_arg(array('feed' => 'reduxopts-' . $this->args['opt_name'], 'secret' => md5(AUTH_KEY.SECURE_AUTH_KEY)), site_url()) . '" />';
+                echo '<input type="text" class="large-text" id="redux-opts-export-link-value" value="' . esc_url( add_query_arg(array('feed' => 'reduxopts-' . $this->args['opt_name'], 'secret' => md5(AUTH_KEY.SECURE_AUTH_KEY)), site_url()) ) . '" />';
 
                 echo '</div>';
             }

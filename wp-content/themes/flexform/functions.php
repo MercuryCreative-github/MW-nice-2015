@@ -27,7 +27,9 @@
 	require_once(SF_INCLUDES_PATH . '/plugins/aq_resizer.php');
 	
 	/* Include page builder */
+	if (!class_exists('Vc_Manager')) {
 	include(SF_INCLUDES_PATH . '/page-builder/js_composer.php');
+	}
 	
 	/* Add meta boxes */
 	include(SF_INCLUDES_PATH . '/meta-box/meta-box.php');
@@ -154,7 +156,7 @@
 		wp_register_script('sf-prettyPhoto', get_template_directory_uri() . '/js/jquery.prettyPhoto.js', 'jquery', NULL, TRUE);
 		wp_register_script('sf-viewjs', get_template_directory_uri() . '/js/view.min.js?auto', 'jquery', NULL, TRUE);
 	    wp_register_script('sf-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', 'jquery', NULL , TRUE);
-	    wp_register_script('sf-maps', 'http://maps.google.com/maps/api/js?sensor=false', 'jquery', NULL, TRUE);
+	    wp_register_script('sf-maps', '//maps.google.com/maps/api/js?sensor=false', 'jquery', NULL, TRUE);
 	    wp_register_script('sf-respond', get_template_directory_uri() . '/js/respond.min.js', 'jquery', NULL, TRUE);
 	    wp_register_script('sf-twitter-widgets', '//platform.twitter.com/widgets.js', NULL, NULL, TRUE);
 	    wp_register_script('sf-functions', get_template_directory_uri() . '/js/functions.js', 'jquery', NULL, TRUE);
@@ -581,19 +583,29 @@
 	    return $plugins;  
 	} 
 	
-	function custom_mce_styles( $init ) {
-	    $init['theme_advanced_buttons2_add_before'] = 'styleselect';
-	    $init['theme_advanced_styles'] = 'Impact Text=impact-text';
-	    return $init;
+	function sf_custom_mce_styles( $args ) {
+				
+		$style_formats = array (
+		    array( 'title' => 'Impact Text', 'selector' => 'p', 'classes' => 'impact-text' ),
+		);
+		
+		$args['style_formats'] = json_encode( $style_formats );
+		
+		return $args;
 	}
 	 
-	add_filter( 'tiny_mce_before_init', 'custom_mce_styles'  );
-	 
-	function sf_mce_css() {
-	    return SF_LOCAL_PATH . '/css/editor-style.css';
+	add_filter('tiny_mce_before_init', 'sf_custom_mce_styles');
+	
+	function sf_mce_add_buttons( $buttons ){
+	    array_splice( $buttons, 1, 0, 'styleselect' );
+	    return $buttons;
 	}
-	 
-	add_filter( 'mce_css', 'sf_mce_css' );
+	add_filter( 'mce_buttons_2', 'sf_mce_add_buttons' );
+	
+	function sf_add_editor_styles() {
+	    add_editor_style( '/css/editor-style.css' );
+	}
+	add_action( 'init', 'sf_add_editor_styles' );
 	
 
 	/* WORDPRESS GALLERY MODS
@@ -647,6 +659,22 @@
 		$output = str_replace(')',')</span></a> ',$output);
 		return $output;
 	}
+		
+	
+	/* WORDPRESS ADD CUSTOM POST TYPES TO ARCHIVE PAGE
+	================================================== */
+	function sf_add_cpt_tags_to_archive($query) {
+		 if ( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+			 
+			 // Get all your post types
+			 $post_types = get_post_types();
+			 
+			 $query->set( 'post_type', $post_types );
+			 
+			 return $query;
+		 }
+	}
+	add_filter('pre_get_posts', 'sf_add_cpt_tags_to_archive');
 	
 	
 	/* SUBSCRIBER WIDGET FUNCTIONS
@@ -717,7 +745,7 @@
 	/* GET CUSTOM POST TYPE TAXONOMY LIST
 	================================================== */
 
-	function get_category_list( $category_name, $filter=0 ){
+	function get_category_list( $category_name, $filter=0, $category_child = "" ){
 		
 		if (!$filter) { 
 		
@@ -729,7 +757,24 @@
 			}
 				
 			return $category_list;
-			
+		
+        } else if ( $category_child != "" && $category_child != "All" ) {
+
+            $childcategory = get_term_by( 'slug', $category_child, $category_name );
+            $get_category  = get_categories( array(
+                    'taxonomy' => $category_name,
+                    'child_of' => $childcategory->term_id
+                ) );
+            $category_list = array( '0' => 'All' );
+
+            foreach ( $get_category as $category ) {
+                if ( isset( $category->cat_name ) ) {
+                    $category_list[] = $category->cat_name;
+                }
+            }
+
+            return $category_list;
+		
 		} else {
 			
 			$get_category = get_categories( array( 'taxonomy' => $category_name	));
@@ -760,7 +805,7 @@
 	
 		preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $url, $video_id);
 		
-		return '<iframe src="http://www.youtube.com/embed/'. $video_id[1] .'?wmode=transparent" width="'. $width .'" height="'. $height .'" ></iframe>';
+		return '<iframe src="http://www.youtube.com/embed/'. $video_id[1] .'?wmode=transparent" allowfullscreen width="'. $width .'" height="'. $height .'" ></iframe>';
 				
 	}
 	
@@ -1226,6 +1271,7 @@
 		$footer_config = 'footer-1';
 		}
 	    register_sidebar(array(
+	    	'id' => 'sidebar-1',
 	        'name' => 'Sidebar One',
 	        'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 	        'after_widget' => '</section>',
@@ -1233,6 +1279,7 @@
 	        'after_title' => '</h4></div>',
 	    ));
 	    register_sidebar(array(
+	    	'id' => 'sidebar-2',
 	        'name' => 'Sidebar Two',
 	        'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 	        'after_widget' => '</section>',
@@ -1240,6 +1287,7 @@
 	        'after_title' => '</h4></div>',
 	    ));
 		register_sidebar(array(
+			'id' => 'sidebar-3',
 			'name' => 'Sidebar Three',
 			'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</section>',
@@ -1247,6 +1295,7 @@
 			'after_title' => '</h4></div>',
 		));
 		register_sidebar(array(
+			'id' => 'sidebar-4',
 			'name' => 'Sidebar Four',
 			'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</section>',
@@ -1254,6 +1303,7 @@
 			'after_title' => '</h4></div>',
 		));
 		register_sidebar(array(
+			'id' => 'sidebar-5',
 		    'name' => 'Sidebar Five',
 		    'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 		    'after_widget' => '</section>',
@@ -1261,6 +1311,7 @@
 		    'after_title' => '</h4></div>',
 		));
 		register_sidebar(array(
+			'id' => 'sidebar-6',
 		    'name' => 'Sidebar Six',
 		    'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 		    'after_widget' => '</section>',
@@ -1268,6 +1319,7 @@
 		    'after_title' => '</h4></div>',
 		));
 		register_sidebar(array(
+			'id' => 'sidebar-7',
 			'name' => 'Sidebar Seven',
 			'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</section>',
@@ -1275,6 +1327,7 @@
 			'after_title' => '</h4></div>',
 		));
 		register_sidebar(array(
+			'id' => 'sidebar-8',
 			'name' => 'Sidebar Eight',
 			'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 			'after_widget' => '</section>',
@@ -1282,6 +1335,7 @@
 			'after_title' => '</h4></div>',
 		));
 	    register_sidebar(array(
+	    	'id' => 'sidebar-9',
 	        'name' => 'Footer Column 1',
 	        'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 	        'after_widget' => '</section>',
@@ -1290,6 +1344,7 @@
 	    ));
 	    if ($footer_config != "footer-9") {
 	    register_sidebar(array(
+	    	'id' => 'sidebar-10',
 	        'name' => 'Footer Column 2',
 	        'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 	        'after_widget' => '</section>',
@@ -1297,6 +1352,7 @@
 	        'after_title' => '</h5></div>',
 	    ));
 	    register_sidebar(array(
+	    	'id' => 'sidebar-11',
 	        'name' => 'Footer Column 3',
 	        'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 	        'after_widget' => '</section>',
@@ -1305,6 +1361,7 @@
 	    ));
 	    if ($footer_config == "footer-1") {
 	    register_sidebar(array(
+	    	'id' => 'sidebar-12',
 	        'name' => 'Footer Column 4',
 	        'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
 	        'after_widget' => '</section>',

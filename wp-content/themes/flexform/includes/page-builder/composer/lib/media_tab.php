@@ -106,7 +106,7 @@ class WPBakeryImagesMediaTab extends WPBakeryMediaTab {
         <div style="clear:both;"></div>
         <?php
         $page_links = paginate_links( array(
-            'base' => add_query_arg( 'paged', '%#%' ),
+            'base' => esc_url( add_query_arg( 'paged', '%#%' ) ),
             'format' => '',
             'prev_text' => __('&laquo;'),
             'next_text' => __('&raquo;'),

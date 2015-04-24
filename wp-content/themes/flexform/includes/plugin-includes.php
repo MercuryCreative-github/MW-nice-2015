@@ -44,7 +44,7 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'     				=> 'Revolution Slider', // The plugin name
 			'slug'     				=> 'revslider', // The plugin slug (typically the folder name)
-			'source'   				=> get_stylesheet_directory() . '/includes/plugins/revslider.zip', // The plugin source
+			'source'   				=> 'http://swiftideas.com/extras/plugins/revslider.zip',
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch

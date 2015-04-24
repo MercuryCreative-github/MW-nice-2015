@@ -57,7 +57,6 @@ class WPBakeryShortCode_team extends WPBakeryShortCode {
 				
 				$member_name = get_the_title();
 				$member_position = get_post_meta($post->ID, 'sf_team_member_position', true);
-                $member_company = get_field('company', $post->ID);                
 				$member_bio = get_the_content_with_formatting();
 				$member_email = get_post_meta($post->ID, 'sf_team_member_email', true);
 				$member_phone = get_post_meta($post->ID, 'sf_team_member_phone_number', true);
@@ -82,13 +81,8 @@ class WPBakeryShortCode_team extends WPBakeryShortCode {
 				$items .= '</figure>';
 				
 				$items .= '<h4 class="team-member-name">'. $member_name .'</h4>';
-                $items .= '<h4 class="team-member-position position">'. $member_position .'</h4>';
-                
-                if($member_company && trim($member_company)!==''){
-                    $items .= '<h4 class="team-member-company">'. $member_company .'</h4>';    
-                }
-				
-                $items .= '<div class="team-member-details-wrap">';
+				$items .= '<h4 class="team-member-position">'. $member_position .'</h4>';
+				$items .= '<div class="team-member-details-wrap">';
 				$items .= '<div class="team-member-bio">'. do_shortcode($member_bio) .'</div>';
 				
 				if (($member_email) || ($member_phone)) {

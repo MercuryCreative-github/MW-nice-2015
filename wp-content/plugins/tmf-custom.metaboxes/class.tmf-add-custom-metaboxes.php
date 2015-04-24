@@ -26,7 +26,11 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
         private static function init_hooks() {
             self::$initiated = true;
-           // if (is_plugin_active('cmb2/init.php')) {
+
+            if ( ! function_exists( 'is_plugin_active' ) )
+            require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+        
+           if (is_plugin_active('cmb2/init.php')) {
                 add_filter('cmb2_meta_boxes', array('TMF_Add_Custom_metaboxes','cmb2_TMF_metaboxes'));
 
                 //replace permalink to redirect url page setting if exists
@@ -36,9 +40,9 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 add_filter('post_link', array('TMF_Add_Custom_metaboxes','return_dinamic_permalink_from_page_setting_post'), 5, 2);
                 add_filter('nav_menu_link_attributes', array('TMF_Add_Custom_metaboxes','custom_menu_item_url_from_page_setting'), 5, 3);
                 add_action('template_redirect', array('TMF_Add_Custom_metaboxes','redirect_from_settings'));
-           // }
+            }
         }
-        public function cmb2_TMF_metaboxes(array $meta_boxes) {
+        public static function cmb2_TMF_metaboxes(array $meta_boxes) {
 
             // Start with an underscore to hide fields from custom fields list
             $prefix = '_TMF_';
@@ -125,15 +129,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                             "url" => false
                             )
                     ),
-                    /*array(
-                        'name' => 'Summit',
-                        'id' => $prefix . 'session_summits',
-                        'desc' => 'Select the session this summit is included',
-                        'options' => self::get_summits(),
-                        'type' => 'pw_multiselect',
-                        'sanitization_cb' => 'pw_select2_sanitise',
-
-                    ),*/
+                 
                 )
             );
 
@@ -234,15 +230,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'desc' => 'Please add the slider alis here. Most used sliders: slider-internet-of-things, slider-customer-centricity-analytics, slider-managing-nfv-sdn, slider-business-innovation, slider-digital-operations',
                         'type' => 'text',
                     ),
-                    /*array(
-                        'name' => 'Summit',
-                        'id' => $prefix . 'session_summits',
-                        'desc' => 'Select the session this summit is included',
-                        'options' => self::get_summits(),
-                        'type' => 'pw_multiselect',
-                        'sanitization_cb' => 'pw_select2_sanitise',
-
-                    ),*/
+                  
                 )
             );
 
@@ -357,7 +345,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
 
 
-        public function all_pages_select_field_options() {
+        public static function all_pages_select_field_options() {
             global $post;
             $args = array(
                 'posts_per_page' => -1,
@@ -367,11 +355,9 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 'orderby' => 'ID',
                 'order' => 'DESC',
                 'include' => '',
-                //do not show current page
                 'exclude' => false,
                 'meta_key' => '',
                 'meta_value' => '',
-                //tmf_events, tmf_sessions, tmf_programs, post
                 'post_type' => array(
                     'page',
                     'tmf_sessions',
@@ -387,15 +373,16 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             foreach ($pages as $page) {
 
                 $post_type = get_post_type_object( get_post_type( $page->ID ) );
-
-                $front_end_value =  $page->post_title . " [" .  $post_type->label . "] ";
-                $option_pages[$page->ID] = __($front_end_value, 'cmb2');
+                if($post_type!==null){
+                    $front_end_value =  $page->post_title . " [" .  $post_type->label . "] ";
+                    $option_pages[$page->ID] = __($front_end_value, 'cmb2');
+                }
             }
             return $option_pages;
         }
 
         // return all training courses online
-        public function all_training_courses() {
+        public static function all_training_courses() {
             global $post;
             $args = array(
                 'posts_per_page' => -1,
@@ -412,7 +399,6 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 'number'       => 120,
                 'post_type' => array(
                     'page',
-                    //'tmf_programs',
                     ),
                 'post_mime_type' => '',
                 'post_parent' => 12250,
@@ -429,7 +415,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
         }
 
 
-        private function has_redirect_setting($postId){
+        private static function has_redirect_setting($postId){
 
             $internal_redirect = get_post_meta(absint($postId), '_TMF_redirect_url', true);
             $external_redirect = get_post_meta(absint($postId), '_TMF_redirect_external_url', true);
@@ -443,7 +429,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
         }
 
         //replace permalink to redirect url page setting if exists
-        public function return_dinamic_permalink_from_page_setting($url, $post) {
+        public static function return_dinamic_permalink_from_page_setting($url, $post) {
             $redirect_to = self::has_redirect_setting($post->ID);
             if($redirect_to){
                 if(is_numeric($redirect_to)){
@@ -457,7 +443,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return $url;
         }
 
-        public function return_dinamic_permalink_from_page_setting_page($url, $postId) {
+        public static function return_dinamic_permalink_from_page_setting_page($url, $postId) {
 
             $redirect_to = self::has_redirect_setting( $postId);
 
@@ -474,7 +460,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
         }
 
 
-        public function return_dinamic_permalink_from_page_setting_post($url, $post) {
+        public static function return_dinamic_permalink_from_page_setting_post($url, $post) {
             $redirect_to = self::has_redirect_setting($post->ID);
 
             if($redirect_to){
@@ -490,7 +476,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
         }
 
 
-        public function custom_menu_item_url_from_page_setting($atts, $item, $args) {
+        public static function custom_menu_item_url_from_page_setting($atts, $item, $args) {
             $redirect_to = self::has_redirect_setting($item->object_id);
             if($redirect_to){
                 if(is_numeric($redirect_to)){
@@ -504,7 +490,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
         }
 
 
-        public function redirect_from_settings(){
+        public static function redirect_from_settings(){
             
             if(!is_single() && !is_page())
             return;
@@ -522,12 +508,12 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             }
         }
 
-        public function show_if_is_page($field){
+        public static function show_if_is_page($field){
             $slug ='page';
             return (isset($_POST['post_type']) && $slug == $_POST['post_type'] ) || $slug == $GLOBALS['post_type'];
         }
 
-        public function get_all_speakers(){
+        public static function get_all_speakers(){
 
                 $args = array(
                 'role'=>'speaker',
@@ -544,13 +530,11 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return $speakers;
         }
 
-        public function get_all_sponsors(){
+        public static function get_all_sponsors(){
             global $post;
 
             // get all terms in the taxonomy
             $terms = get_terms( 'sponsorship-categories' ); 
-            // convert array of term objects to array of term IDs
-            $term_ids = wp_list_pluck( $terms, 'term_id' );
             
             $args = array(
             'post_type' => 'companies', 
@@ -568,7 +552,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return $sponsors;
         }
 
-        public function get_all_strategic_programs(){
+        public static function get_all_strategic_programs(){
             global $post;
              
             $args = array(
@@ -593,7 +577,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return $strategic_programs;
         }
 		
-		  public function get_all_related_programs(){
+		  public static function get_all_related_programs(){
             global $post;
              
             $args = array(
@@ -618,7 +602,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return $programs;
         }
 		
-		 public function get_all_related_publications(){
+		 public static function get_all_related_publications(){
             global $post;
              
             $args = array(
@@ -644,7 +628,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return $related_publication;
         }
         
-        public function get_related_webinars(){
+        public static function get_related_webinars(){
             global $post;
              
             $args = array(
@@ -669,7 +653,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return $related_webinars;
         }
         
-        public function get_all_events(){
+        public static function get_all_events(){
             global $post;
              
             $args = array(
@@ -687,7 +671,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return $tmf_events;
         }
         
-        public function get_all_sessions(){
+        public static function get_all_sessions(){
             global $post;
              
             $args = array(
@@ -704,7 +688,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
             return $tmf_events;
         }
-        public function get_all_presentations(){
+        public static function get_all_presentations(){
             global $post;
              
             $args = array(
@@ -728,7 +712,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
 
 		
-         public function get_event_categories(){
+         public static function get_event_categories(){
             
             $category_id = get_term_by( 'slug', 'webinar', 'tmf_event_category' );
             $webinar_cat = $category_id->term_id; 
@@ -748,7 +732,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return $event_categories;
         }
 
-        public function get_summits(){
+        public static function get_summits(){
             
         $taxonomies = array( 
             'tmf_summit_category',

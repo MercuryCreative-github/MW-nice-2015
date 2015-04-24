@@ -391,7 +391,7 @@ abstract class WPBakeryShortCode_UniversalAdmin extends WPBakeryShortCode {
         // Big Regular textarea
         else if ( $param['type'] == 'textarea_raw_html' ) {
             // $param_value = __($param_value, "js_composer");
-            $param_line .= '<textarea name="'.$param['param_name'].'" class="wpb_vc_param_value wpb-textarea_raw_html '.$param['param_name'].' '.$param['type'].'" rows="16">' . base64_decode($param_value) . '</textarea>';
+            $param_line .= '<textarea name="'.$param['param_name'].'" class="wpb_vc_param_value wpb-textarea_raw_html '.$param['param_name'].' '.$param['type'].'" rows="16">' . htmlentities( rawurldecode( base64_decode( $param_value ) ), ENT_COMPAT, 'UTF-8' ) . '</textarea>';
         }
         // Regular textarea
         else if ( $param['type'] == 'textarea' ) {

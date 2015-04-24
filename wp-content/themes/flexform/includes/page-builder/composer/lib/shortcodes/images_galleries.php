@@ -49,11 +49,6 @@ class WPBakeryShortCode_VC_gallery extends WPBakeryShortCode {
             $slides_wrap_end = '</ul>';
         }
 
-//        if ( $onclick == 'link_image' ) {
-//            wp_enqueue_script( 'prettyphoto' );
-//            wp_enqueue_style( 'prettyphoto' );
-//        }
-
         $flex_fx = '';
         if ( $type == 'flexslider' || $type == 'flexslider_fade' || $type == 'fading' ) {
             $type = ' wpb_flexslider flexslider_fade flexslider';
