@@ -38,7 +38,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 add_action('template_redirect', array('TMF_Add_Custom_metaboxes','redirect_from_settings'));
            // }
         }
-        public function cmb2_TMF_metaboxes(array $meta_boxes) {
+        public static function cmb2_TMF_metaboxes(array $meta_boxes) {
 
             // Start with an underscore to hide fields from custom fields list
             $prefix = '_TMF_';
@@ -357,7 +357,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
 
 
-        public function all_pages_select_field_options() {
+        public static function all_pages_select_field_options() {
             global $post;
             $args = array(
                 'posts_per_page' => -1,
@@ -527,7 +527,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return (isset($_POST['post_type']) && $slug == $_POST['post_type'] ) || $slug == $GLOBALS['post_type'];
         }
 
-        public function get_all_speakers(){
+        public static function get_all_speakers(){
 
                 $args = array(
                 'role'=>'speaker',
@@ -544,7 +544,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             return $speakers;
         }
 
-        public function get_all_sponsors(){
+        public static function get_all_sponsors(){
             global $post;
 
             // get all terms in the taxonomy

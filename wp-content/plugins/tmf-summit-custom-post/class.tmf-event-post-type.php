@@ -79,7 +79,7 @@ if (!class_exists('TMF_Summit_Post_Type')) {
             register_post_type( 'tmf_sessions', $args );
         }
         
-        public function taxonomies(){
+        public static function taxonomies(){
             
             $taxonomies = array();
             $taxonomies['tmf_summit_category']=array(
@@ -112,7 +112,7 @@ if (!class_exists('TMF_Summit_Post_Type')) {
             self::register_all_taxonomies($taxonomies);
         }
         
-        public function register_all_taxonomies($taxonomies){
+        public static function register_all_taxonomies($taxonomies){
             foreach($taxonomies as $name=>$arr){
                 if( ! taxonomy_exists( $name ) ){
                     register_taxonomy($name, array('tmf_sessions'), $arr);    
