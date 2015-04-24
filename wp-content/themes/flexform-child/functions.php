@@ -145,8 +145,6 @@ function hide_menu_items() {
         unregister_sidebar( 'sidebar-6' );
         unregister_sidebar( 'sidebar-7' );
         unregister_sidebar( 'sidebar-8' );
-        unregister_sidebar( 'sidebar-9' );
-
 	}
 	add_action( 'widgets_init', 'remove_some_widgets', 11 );
 
