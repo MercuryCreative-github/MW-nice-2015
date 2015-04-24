@@ -855,7 +855,7 @@ li.recent-posts-extended .rpwe-block ul.rpwe-ul li.rpwe-clearfix{border-bottom:#
 /***********************/
 /*** HOME (Sponsors) ***/
 /***********************/
-.home-sponsors{text-align:center;}
+/*.home-sponsors{text-align:center;}
 .home-sponsors #netcracker{margin-top:3.5%;margin-left:45px;width:70%;}
 .home-sponsors #atos{margin-top:-1%;width:68%;}
 .home-sponsors #cksoftware{margin-top:2%;margin-left:-21%;width:115%;}
@@ -864,7 +864,7 @@ li.recent-posts-extended .rpwe-block ul.rpwe-ul li.rpwe-clearfix{border-bottom:#
 .home-sponsors #p-atos{margin-left:25%;}
 .home-sponsors #p-cksoftware{margin-left:35%;}
 .home-sponsors #p-zte{margin-left:25%;}
-.home-sponsors #p-toa{margin-left:15%;}
+.home-sponsors #p-toa{margin-left:15%;}*/
 
 /* TMF KEYNOTES */
 .homespeakers h3{font-size:20px;margin-bottom:5px;}
@@ -1026,22 +1026,6 @@ nav .menu ul{background-color:transparent !important;}
 .feed-content{padding: 8px 20px;}
 /** END FEED INFORM **/
 
-/****************/
-/*** About Us ***/
-/****************/
-.about-us-title{position:relative;}
-.about-us-title h1{position:absolute;top:-148px;z-index:999;background-color:#fff;padding:20px 35px 20px 35px;left:-35px;margin:0;}
-.about-table{background-color:#fafafa;width:100%;border-top:4px solid #d19e43;border-left:1px solid #e4e4e4;border-right:1px solid #e4e4e4;border-bottom:1px solid #e4e4e4;}
-.about-title{background:url(../images/aboutitle.png) no-repeat left;height:64px;color:#6DBD45;font-weight:500;padding-left:30px;line-height:40px;font-size:18px;}
-.about-box{background:url(../images/aboutbox.png) no-repeat bottom right;padding:20px 0px 40px 0px;}
-.about-us .Top4Reasons ul{margin:0 !important;}
-/*sidebar*/
-.sidebar-about ul li{margin:10px 0;display:flex;}
-.sidebar-about ul li:before{content:"\2022";font-size:30px;color:#d19e43;float:left;margin:0 10px 0 0;}
-.sidebar-about p{color:#444;}
-.sidebar-who-attends{display:none;}
-.page-content .sidebar-who-attends ul li{list-style-type:none;}
-
 /**********************/
 /*** Exhibitors Nav ***/
 /**********************/
@@ -1062,9 +1046,8 @@ p#title{margin-left:0px;font-size:18px;line-height:1.5em;padding:0;}
 .wpb_box_text .box-content-wrap{padding:12px 15px;margin-top:20px;box-shadow:none;border-top:1px solid #EEEDEE;border-bottom:1px solid #EEEDEE;}
 .downloadsponsors{margin-bottom:35px;}
 
-/***********************/
-/***CALL FOR SPEAKERS***/
-/***********************/
+
+/*** CALL FOR SPEAKERS (page as draft/not in use anymore)***/
 .call4speakers .page-content h4{margin-bottom:10px;}
 .page-content .call4speakers-list ul li{list-style-type:disc;}
 .span12.full-width.open-submit{margin-left:20px;width:1108px;background-color:#fafafa;border:#e6e6e6 1px solid;border-top:#e6e6e6 4px solid;padding:20px 0;position:relative;}
@@ -1126,23 +1109,6 @@ body [class*="span"].title-container{background-image:url('http://www.tmforumliv
 #footer-widgets .widget_nav_menu .negative-margin{margin-top:-35px;}
 .hotelandtravel-text{margin-left:35px;}
 .hotel-and-travel .widget .home-list-icon ul li ul li{height:22px;color:#444;padding:0;border:0;font-size:13px;}
-
-/***************************/
-/*** CONFERENCE OVERVIEW ***/
-/***************************/
-.text-box{ background-color:#fafafa;border:#e6e6e6 1px solid;border-top:#e6e6e6 4px solid; padding:20px 0; display: table;}
-.text-box img{padding: 20px;}
-.text-box p{display:table-cell; padding: 0 45px;vertical-align: top;}
-.text-box div div {display:table-cell; }
-.key-topics-list h4{margin-bottom:20px;color:#505475;}
-.key-topics-list ul li{margin:5px 0;list-style-type:none;}
-.key-topics-list ul li:before{content:"\2022";font-size:30px;color:#505475;float:left;margin:0 10px 0 0;}
-.text-box-transp{padding: 20px 0;}
-.text-box-transp div{display: table-cell;padding-right: 20px; vertical-align: middle;}
-.conference-overview .text-box img { margin-bottom: 20px; max-width: none; }
-.conference-overview .text-box p {padding: 0px 45px 0 5px;}
-.conference-overview ul.listoverview li a {display: table;}
-.conference-overview ul.listoverview li a {display: table-cell; vertical-align: middle;}
 
 /****************/
 /*** DIVIDERS ***/
@@ -1306,21 +1272,6 @@ iframe#twitter-widget-0{width:100% !important;}
 .bio h1{padding:40px 23px 23px 23px;font-size:18px;line-height:21px;margin-top:19px;}
 .bio p{padding:5px 23px;text-align:justify;}
 
-/*************************/
-/* Conference Overiview */
-/***********************/
-.columnaleft ul{margin-left:0;}
-ul.listoverview{margin:0;}
-.post-29 .listoverview li{list-style-type:none;border-bottom:#CACACA 1px solid;padding:15px 0; cursor: pointer;}
-ul.listoverview li img{margin-right:20px;}
-ul.listoverview li:hover{background-color:#F6F7F7;}
-ul.listoverview li a {color: #444;}
-#principal {position:relative;background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/agenda-AAG-bloques-export2.png');background-repeat:no-repeat;background-size:100% 100%;padding-top:64.4%;}
-#principal ul{max-width:57%;padding-top:0%;max-width:57%;padding-bottom:16%;}
-#principal2{position:relative;background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/agenda-AAG-bloques-export-03.png');background-repeat:no-repeat;background-size:100%;margin-top:17px;padding-top:6%;}
-#principal2 ul{position:relative;max-width:53%;padding-bottom:16.4%;padding-left:36%;}
-#cinco{background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/01/agenda-AAG-bloques-export-17.png');background-repeat:no-repeat;background-size:100%;padding-top:31%;display:block;}
-.span12.full-width.masonry-conference{margin-left:0;}
 
 /************/
 /* Pricing */
@@ -1398,19 +1349,6 @@ a.linkbox:hover{text-decoration:none;color:black;}
 .hyt-infobox .wpb_wrapper{padding-left:60px;background-repeat:no-repeat;}
 .hotel-travel ul li{line-height:24px;}
 
-/*******************************/
-/*** JUSTIFY YOUR TRIP MENU ***/
-/*****************************/
-ul#justify{margin:0;}
-#justify-navigation{width:100%;display:inline-block;background:url(../images/ex-menu-shadow.png) center bottom no-repeat;padding-bottom:19px;background-size:contain;}
-nav#justify-navigation .menu li{background:#fff;border:solid 1px #F2F2F2;width:22%;text-align:center;font-size:14px;font-weight:bold;color:#666;text-transform:uppercase;}
-nav#justify-navigation .menu li a{margin:0px;color:inherit;font-family:"Helvetica", Arial, Helvetica, Tahoma, sans-serif;font-weight:100;transition:color 0.5s;}
-nav#justify-navigation .menu li a:hover{color:#fff;}
-nav#justify-navigation .menu li:hover{background:rgb(68, 171, 225);}
-.search-box{position:relative;}
-.glass-search{cursor:pointer;position:absolute;right:0px;top:3px;}
-#sjustify{border-radius:0;}
-
 /********************/
 /*TMF TABLES STYLES*/
 /******************/
@@ -1438,27 +1376,6 @@ ul.all-about-tmf li div{width:90px;height:55px;margin-right:10px;float:left;back
 ul.all-about-tmf li:after, .sidebar .widget_nav_menu .menu-catalyts-menu-container ul li:after{content:"\f105";font-family:FontAwesome;font-size:14px;position:absolute;top:25px;right:10px;}
 .sidebar .widget_nav_menu .menu-catalyts-menu-container ul li a:before{display:none;}
 
-/***********************/
-/*** ONLINE TRAINING ***/
-/***********************/
-div.online-training{position:relative;min-height:550px;}
-div.online-training.white{-webkit-box-shadow:0 0 3px 1px rgba(0,0,0,0.2);box-shadow:0 0 2px 3px rgba(0,0,0,0.1);min-height:522px;-webkit-transition:box-shadow 0.5s;transition:box-shadow 0.5s;}
-div.online-training.white:hover{box-shadow:0 0 4px 4px rgba(0,0,0,0.2);}
-div.online-training.gray{background-color:#F2F2F2;background-image:url('http://www.tmforumlive.org/wp-content/uploads/2014/02/online-training-shadow.jpg');background-repeat:no-repeat;background-position:left bottom;-webkit-transition:background-color 0.5s;transition:background-color 0.5s;}
-div.online-training.gray:hover{background-color:#e7e7e7;}
-div.online-training hr{border-color:#CCC -moz-use-text-color #CCC;}
-div.online-training h3{font-size:22px;font-weight:600;line-height:28px;}
-div.online-training .content{padding:25px;}
-div.online-training .footer{position:absolute;bottom:0;padding:15px 25px 48px;width:306px;}
-div.online-training .footer-icon a{text-decoration:none;color:#444444;float:left;margin-right:20px;}
-div.online-training .footer-icon img{padding-right:5px;}
-div.online-training .sf-button{padding-left:40px;padding-right:40px;margin-top:10px;font-size:15px;}
-div.online-training.white .footer{padding-bottom:20px;}
-div.online-training .footer span{padding-left:5px;}
-div.online-training .footer span#online{float:right;}
-/*modal*/
-.online-training .footer .modal-body{overflow-y:initial;}
-
 /*************/
 /***SUMMITS***/
 /*************/
@@ -1471,26 +1388,6 @@ div.summits .summit-img h3{padding-top:20px;font-weight:400;}
 .summit-text{margin:0 15px;}
 .summit-link a{text-decoration:none;color:#444444;float:right;margin-right:20px;}
 
-
-
-
-
-
-/*****************************/
-/*** ONLINE TRAINING TABLE ***/
-/*****************************/
-div.ot-table-container{width:33.3%;float:left;text-align:center;font-family:"Titillium Web",sans-serif;}
-div.ot-table-container.last{margin-bottom:0px;}
-div.ot-table-container.last-row{margin-bottom:20px;}
-div.ot-table-container div{border:1px solid #FFF;font-size:17px;background-color:#E8E8E8;color:#666666;}
-div.ot-table-container .title{color:#FFF;height:40px;font-size:18.5px;line-height:40px;background-color:#B3B3B3;}
-div.ot-table-container .title-invisible{display:none;color:#FFF;height:40px;font-size:18.5px;line-height:40px;background-color:#B3B3B3;}
-div.ot-table-container .info{height:40px;line-height:40px;background-color:#E8E8E8;color:#666666;padding:10px 0;}
-div.ot-table-container .price{font-size:25px;}
-div.ot-table-container .blue{background-color:#28759A;color:#FFF;}
-/************/
-/*** FAQ ***/
-/**********/
 
 /***************************************/
 /***  gala-dinner-excellence-awards ***/
@@ -1770,11 +1667,6 @@ div.aligncenter.post-event-signature{display:block;margin:-20px auto 5px auto;}
 .streming-blog-video .standard-post-author, .streming-blog-video ul li.blog-item h2{display:none;}
 .streming-blog-video ul.blog-items{margin:0;}
 
-/*********************************************/
-/*catalyst-uses-son-and-nfv-to-close-the-loop*/
-/*********************************************/
-.big-video-player{margin-left:7%;}
-
 /***********************/
 /******* AAG ***********/
 /***********************/
@@ -1818,117 +1710,9 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 
 .fix-row .row { margin-left:-20px;}
 
-/************************/
-/** AAG - SUMMITS LIST **/
-/************************/
-.summit-item-list{border-left:#EAEAEC 2px solid;padding-left:17px;}
-.summits-list-title p{font-size:21px;font-weight:normal;font-family:"Titillium Web",sans-serif;}
-.summits-list-title p a{color:#009fe3;}
-.summit-item-list img{margin-right:15px;margin-top:-17px;float:left;}
-.summit-item-list p{font-size:17px;margin-top:17px;}
-.summit-item-list p a{color:#444444;}
-
 /* END RSS ON HOME PAGE **/
 #wpcf7-f5-p13832-o1 input[type="email"]{-moz-box-sizing:content-box;}
 .wpcf7 input[type="email"]:focus{border-color:#44ABE1 !important;}
-
-/* VIDEOS */
-.video-player-page .tags-link-wrap{display:none;}
-.big-video-player{max-width:960px;text-align:center;}
-.big-video-player > .wpb_wrapper{margin:0 auto;}
-.big-video-player>.wpb_wrapper>code{background:none;border:none;padding:0;margin:0 auto;float:none;border-bottom:solid 4px #B2B2B2;}
-.main-video-shadow-big-video{background:url('../../../plugins/revslider/rs-plugin/assets/shadow3.png') no-repeat;height:25px;background-position:top center;margin-top:-10px;background-size:90%;}
-.post-video-container p{padding:0 5%;}
-.padding-video-elements{padding:0 5%;}
-.fluid-width-video-wrapper{border-bottom:4px solid #b2b2b2;}
-.flare-horizontal.flare-position-bottom{position:absolute;bottom:40px;right:5%;}
-.single-agenda_tracks .flare-horizontal.flare-position-bottom{bottom:0px;right:0;position: relative;}
-.seeMoreForum{font-weight: bold;font-size: 85%;z-index: 1;position: relative;display: inline-block;}
-.news-coverage .flare-horizontal.flare-position-bottom{position:relative;bottom:0;right:0;}
-.article-body-wrap{position:relative;}
-.video-player-page .related-wrap h4{font-family:"Titillium Web",sans-serif;border:none;font-size:26px;padding-bottom:30px;font-weight:600;}
-.video-player-page ul.related-items{padding:0;margin:0;}
-.video-player-page ul.related-items li.related-item{list-style-type:none;padding:0;margin:0;margin-right:10px;}
-.video-player-page ul.related-items li.related-item figure{min-height:68px;overflow:hidden;position:relative;width:100%;}
-.video-player-page ul.related-items li.related-item h5{width:95%;font-size:16px;margin-bottom:20px;min-height:50px;}
-.video-player-page .pagination-wrap{display:none;}
-.video-player-page #comment-area{border:solid 1px #C9C9C9;padding:20px;}
-.video-player-page #comment-area form#commentform.comment-form input#submit{background-color:#009FE3;border-radius:0;}
-.video-player-page #comment-area form#commentform.comment-form input#submit:hover{background-color:#999999;}
-.video-player-page h1{font-weight:400;font-size:35px;}
-.video-player-page .bottom-video-data .wpb_wrapper h5, .video-player-page .bottom-video-data .wpb_wrapper h6{font-family:'Titillium Web', sans-serif;font-weight:400;font-size:25px;display:table-cell;line-height:30px;padding-bottom:10px;}
-.video-player-page .bottom-video-data .wpb_wrapper h5 a{color:#69B276;z-index:10;position:relative;}
-.video-player-page .bottom-video-data .wpb_wrapper h5{z-index:10;}
-.video-player-page .bottom-video-data .wpb_wrapper h5:after{content:" |";margin-right:10px;margin-left:10px;}
-.video-player-page .bottom-video-data h1{font-size:28px;}
-
-/***********************************************************************************************/
-/*VIDEO BROWSING PAGE - *http://tmflive.staging.wpengine.com/tm-forum-live2014-session-videos/ */
-/***********************************************************************************************/
-
-.video-block{float:left;margin-bottom:0px;padding-bottom:20px;border-bottom:1px solid #CCC;margin-left:-40px;}
-.featured-video-post{position:relative;}
-.featured-caption{position:absolute;bottom:0px;padding:2% 5%;background:none repeat scroll 0% 0% rgba(80, 80, 80, 0.8);color:#FFF;width:90%;margin-left:0px !important;}
-.featured-caption h4{color:#FFF;}
-.featured-figure{position:relative;}
-.video-block .featured-caption .title{font-family:'Titillium Web', sans-serif !important;font-size:26px;font-weight:300;color:#fff;}
-.video-block h2{font-weight:400;color:#676767;padding:0 20px;margin-top:30px;margin-bottom:20px;background-repeat:no-repeat;background-position:0px 25px;border-left:4px solid black;margin-left:20px;}
-.video-block:nth-child(0) h2{border-left-color:#6F2B90;}
-.video-block:nth-child(1) h2{border-left-color:#F58A1E;}
-.video-block:nth-child(2) h2{border-left-color:#0C95D3;}
-.video-block:nth-child(3) h2{border-left-color:#AA208D;}
-.video-block:nth-child(4) h2{border-left-color:#1D4998;}
-.video-block:nth-child(5) h2{border-left-color:#B1D249;}
-.video-block:nth-child(6) h2{border-left-color:#44A03F;}
-.video-block:nth-child(7) h2{border-left-color:#6F2B90;}
-.video-block:nth-child(8) h2{border-left-color:#F58A1E;}
-.video-block:nth-child(9) h2{border-left-color:#0C95D3;}
-.video-block:nth-child(10) h2{border-left-color:#AA208D;}
-.video-block:nth-child(11) h2{border-left-color:#1D4998;}
-.video-block:nth-child(12) h2{border-left-color:#B1D249;}
-.video-block:nth-child(13) h2{border-left-color:#44A03F;}
-.video-block h2#featured-videos{border-left:0;}
-.video-block h4.title{font-family:'Titillium Web', sans-serif !important;font-size:16px;font-weight:600;color:#000;margin-bottom:3px;}
-.video-block p.date{font-family:'Titillium Web', sans-serif;font-size:16px;font-weight:600;color:#969696;}
-.video-block .featured-caption p.date{font-family:'Titillium Web', sans-serif;font-size:16px;font-weight:normal;color:#FFF;margin-top:8px;}
-.video-block a:hover{text-decoration:none;}
-.video-block.right{float:right;}
-.streaming-keynotes-live .speakers-list-name{font-weight:normal;font-size:1.3em;margin-top:22px!important;color:black;}
-.streaming-keynotes-live p a{color:black!important;}
-.streaming-keynotes-live p a:hover{color:#08c!important;text-decoration:none;}
-.streaming-keynotes-live p a img{opacity:0.7}
-.streaming-keynotes-live p a:hover > img{opacity:1}
-.streaming-keynotes-live .fday{float:left;font-size:24px;margin-left:18px;padding:24px 0px 11px 25px;line-height:18px;}
-/*Register for menu*/
-.logo-left.clearfix nav .menu li.registerOnMenu {background-color:#ffaf00;margin-left: 15px;}
-.logo-left.clearfix nav .menu li.registerOnMenu:hover{background-color: #E2740B;}
-.logo-left.clearfix nav .menu li.registerOnMenu:hover a{background-color: transparent;}
-.logo-left.clearfix nav .menu li.registerOnMenu a {color: #fff;}
-.logo-left.clearfix nav .menu li:last-child a {margin-right: 0;/*height: 25px*/;}
-.home-page-at-the-event .inner-page-wrap{position:relative;margin-top:0;}
-.home-page-at-the-event .view-all-videos{position:absolute;top:32px;right:0;z-index:10;}
-.view-all-videos a.view-all-button.span3, .view-all-videos a.view-all-button.span4{float:right;}
-.view-all-button{color:white;cursor:pointer;background-color:#009fe3;display:table;text-align:center;font-size:25px;margin-top:0;padding:20px 0;width:100%;margin:15px 0 0 0;float:right;}
-.view-all-button:hover{color:white;text-decoration:none;background:darkorange;}
-.download-presentations{padding:9px 0;font-size:22px;}
-.download-text-01{float:left;border-right:white 2px solid;text-align:left;padding:0 20px;}
-.download-text-02{font-size:15px;padding:0 10px;}
-
-/**********************/
-/*** category page ***/
-/********************/
-.comments-likes{display:none!important;}
-.alt-bg{padding-left:0;padding-right:0;}
-.watchAllVideos{float:right;position:absolute;right:0;bottom:0;padding:3px 10px;background:#08c;color:white;}
-.watchAllVideos:hover{background:darkorange;color:white;text-decoration:none;}
-.videoBack{position:relative;z-index:50;}
-.videoBack .watchAllVideos{padding:7px 10px;right:7px;}
-
-/*****************************/
-/*** news and coverage ******/
-/***************************/
-.news.watchAllVideos{position:relative;bottom:-17px}
-.news-and-coverage.alt-bg{background-image:url(../images/news-and-coverage.jpg);background-position:bottom;}
 
 /******************/
 /*** FOOTER ******/
@@ -2000,7 +1784,6 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 /***********************/
 /****EVENT SPONSORS*****/
 /***********************/
-/*.sponsors h2:before { left: 0; }*/
 .sponsors .has-no-sidebar{ margin-left: -11px; }
 .sponsor { margin-top: 50px; }
 .sponsor .sponsor-item {
@@ -2043,20 +1826,6 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 	float: none;
 	margin: 0 auto;
 }
-
-/******************************/
-/*** Agenda Tracks Template **/
-/****************************/
-.agenda-top-block{background-color:#f8f4f4;border:1px solid #eaeae9;border-top:4px solid #e8e7e6;padding:35px 0;position:relative;}
-.agenda-top-block img.icon{margin-right:20px;max-width:100px;}
-.agenda-top-block aside a.button.medium{font-size:18px;line-height:28px;position:absolute;top:50%;margin-top:-28px;}
-/* Virtualization page - <ol> */
-.page-id-18611 .page-content .Top4Reasons ul li{list-style-type:none;margin-bottom:20px;overflow:hidden;}
-/* Numbered List */
-.numbered-list{margin:40px 0}
-.numbered-list li{list-style-type:none;margin-bottom:30px;display:table;}
-.numbered-list li img{display:table-cell;vertical-align:middle;margin-right:20px;max-width:50px;}
-.numbered-list li span{display:table-cell;vertical-align:middle;}
 
 /* IE8 Logo fixes */
 #ie8 #logo a {float: none}
