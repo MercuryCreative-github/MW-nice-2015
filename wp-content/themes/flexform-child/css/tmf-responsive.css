@@ -164,6 +164,9 @@
 }
 @media screen and (max-width: 1200px) {
 
+    /*404*/
+    .error404 .page-404-box, .page-404-buttons {width: auto;}
+
     /*banner summit*/
     a.sf-button.medium.yellow.register-agenda {  width: 240px;}
     a.sf-button.standard.register-agenda span.register-text { margin-right: 0;}
@@ -498,6 +501,14 @@
     #header-scroll{width: 100% !important;}
 }
 @media screen and (max-width: 980px) {
+
+    /*404*/
+    .page-404-btn-home {float: none; margin-right: 0; margin: 0 auto 30px;}
+    .page-404-btn-video {float: none; margin: 0 auto;}
+    .error404 .page-404-box{display: block;}
+    .error404 .page-404-image {text-align: center; display: block; width: 100%; }
+    .error404 .page-404-text {display: block; margin-top: 40px; padding: 0;}
+    .error404 .page-404-text p {text-align: center;}
 
     .visibleTitle .title-place.with-sponsor {width: auto;}
     
@@ -1326,6 +1337,11 @@
 }
 
 @media screen and (max-width: 550px) {
+    /*404*/
+    .page-404-btn-home img.page-404-icon, .page-404-btn-video img.page-404-icon {display: none;}
+    .page-404-btn-home p, .page-404-btn-video p {text-align: center;}
+    .page-404-btn-video, .page-404-btn-home {width: 90%; padding:10px 20px; }
+
     #hp-section.section03 {padding-bottom: 510px;}
     .home .page-content .section02-companies li { margin: 15px auto; width: 100%;  text-align: center; display: block;}
     .section02-companies li:nth-child(3) img, .section02-companies li:nth-child(5) img {margin-top: 0px;}
