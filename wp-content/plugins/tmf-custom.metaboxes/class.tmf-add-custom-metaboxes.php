@@ -26,6 +26,10 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
         private static function init_hooks() {
             self::$initiated = true;
+
+            if ( ! function_exists( 'is_plugin_active' ) )
+            require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+        
            if (is_plugin_active('cmb2/init.php')) {
                 add_filter('cmb2_meta_boxes', array('TMF_Add_Custom_metaboxes','cmb2_TMF_metaboxes'));
 
