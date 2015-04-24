@@ -1153,6 +1153,21 @@ img.loading-image{width:285px;height:285px;margin:0 auto;display:block;-webkit-a
 .page-template-pricing-template-php .pricing-table-column ul{margin:0px;}
 .page-template-pricing-template-php .pricing-table-column ul li{padding:20px 30px;font-size:14px;text-align:center;list-style:none;}
 
+/*********************/
+/*404 NOT FOUND PAGE*/
+/*******************/
+div.page-heading.page404{width:100%;}
+input.page-404{background-image:url(http://www.tmforumlive.org/wp-content/uploads/2014/02/search_gray.png) !important;background-repeat:no-repeat !important;padding-left:30px !important;width:90%;}
+.page404{text-align:center;background:url('../images/bg404.png') no-repeat scroll center center / cover transparent;}
+a.sf-button.page-404 span.arrow{display:none;}
+h2.page-404{font-weight:100 !important;}
+article.page-404{font-size:14px;}
+.tw-title{font-size:20px;font-weight:200;max-width:245px;line-height:1.3em;display:inline-block;padding:0 10px 0 0;}
+.twitter_widget a.twfollow img {margin-left: 10px; }
+#twitter_widget img:hover{opacity:0.6;}
+iframe#twitter-widget-0{width:100% !important;}
+.twfollow img{margin-right:5px;}
+
 /******************/
 /*TMF-WIDGETS.css*/
 /****************/
@@ -2568,27 +2583,155 @@ line-height: 1.4em;
 	width: 14.9%;
 }
 
-/** PAGE 404 **/
+/**** APP14 PAGE (not in use, yet) ****/
 
-.error404 .page-404-box { display: table; background: #fbfbfb; padding: 30px 40px;   margin: 50px auto; width: 80%; border-bottom: #b1b1b1 1px solid;}
-.error404 .page-404-image {	display: table-cell; width: 45%;}
-.error404 .page-404-text { display: table-cell;	vertical-align: middle;	padding-left: 40px;}
-.error404 .page-404-text p { font-size: 17px; }
-.error404 .page-404-text p strong { font-size: 22px; color: #434343;}
-
-.page-404-buttons { width: 87%; margin: 50px auto;}
-.page-404-btn-home { background: #ee7630; float: left; display: table; padding: 10px 20px;}
-.page-404-btn-home img, .page-404-btn-video img { margin-right: 10px;}
-.page-404-btn-home p, .page-404-btn-video p { display: table-cell;vertical-align: middle;color: #fff;font-weight: bold;	font-size: 20px;line-height: 1.2em;}
-.page-404-btn-home p small { font-size: 16px; }
-.page-404-btn-home p img, .page-404-btn-video p img { margin: -6px 8px 0 4px; }
-.page-404-btn-video {float: right;display: table;background: #807f82;padding: 10px 130px 10px 20px;}
-
-.page-404-buttons a:hover .page-404-btn-home{background: #DD5A0D;}
-.page-404-buttons a:hover .page-404-btn-video{background: #707071;}
-
-/*body.error404 { background-color: #FFF;}*/
-/*.error404 footer { display: none;}*/
-
-/*::-webkit-scrollbar {border-left: none !important}
-::-webkit-scrollbar {border-left: none !important}*/
+.app14s{ background-color: #F5F5F5; padding-top:40px;}
+.app14s #container{ box-shadow:none; background:none !important;}
+.app14s #header-shadow{ display:none;}
+.app14s #main-container{background:none !important;}
+.app14s_blocks_alignment{
+	float: none !important;
+	vertical-align: middle;
+	display: table-cell !important;
+}
+.app14s .app14s_block1{
+		text-align:right;
+}
+.app14s .app14s_title{
+		border-bottom:solid 1px #A8AAAD;
+		padding-bottom:10px;
+		margin-bottom:15px;
+}
+.app14s .app14s_block1 h1{
+		margin:0;
+		color:#DD9A38;
+		font-size:40px;
+		font-family: "Roboto" !important;
+}
+.app14s .app14s_block1 h3{
+		line-height:35px;
+		font-size:35px;
+		font-weight: 100;
+		font-family: "Roboto" !important;
+		color:#39363B;
+}
+.app14s .app14s_block1 img{
+		float:right;
+		margin-top:6px;
+}
+.app14s .app14s_block1 .app14s_fecha{
+		float:right;
+		border-left:solid 1px #A8AAAD;
+		padding:5px;
+		margin:5px;
+}
+.app14s .app14s_block2{
+		text-align:center;
+}
+.app14s .app14s_block3{
+		max-width:445px;
+}
+.app14s .app14s_block3 h4{
+		font-size:24px;
+		font-weight: 100;
+		font-family: "Roboto" !important;
+		color:#39363B;
+		padding-bottom:15px;
+		border-bottom:solid 5px #DD9A38;
+		margin-bottom:15px;
+}
+.app14s .app14s_block3 ul{
+		font-size:16px;
+		color:#39363B;
+		margin:0px;
+}
+.app14s .app14s_block3 ul li{
+		list-style:none;
+		font-size:16px;
+		line-height:16px;
+		margin-bottom: 10px;
+		display:inline-block;
+}
+.app14s .app14s_block3 ul li img{
+		float:left;
+		margin-right:15px;
+}
+.app14s_listext{
+		margin-top:5px;
+}
+.app14s .app14s_app{
+		text-align:center;
+		margin-bottom:40px;
+}
+.app14s .app14s_get{
+		text-align:center;
+		width:300px;
+		padding-bottom:10px;
+		border-bottom: solid 1px #A8AAAD;
+		margin:25px auto;
+}
+.app14s .app14s_get p{
+		font-size:21px;
+		font-weight: 100;
+		font-family: "Roboto" !important;
+		color:#39363B;
+}
+.app14s .app14s_buttons ul{
+		display:inline-block;
+		margin-right: 20px;
+}
+.app14s .app14s_buttons ul li{
+		display:block;
+		float:left;
+		margin-left:15px;
+}
+.app14s .app14s_buttons ul li:first-child{
+		margin-left:0px;
+}
+.app14s a{
+		display:block;
+		background-color:#39363B;
+		height:40px;
+		width:140px;
+		border-radius:5px;
+}
+.app14s a:hover{
+		background-color:#666666;
+}
+.app14s .button_googleplay{
+		height:50px;
+}
+.app14s .button_appstore{
+		margin-top:5px;
+}
+.app14s .button_html5{
+		margin-top:5px;
+}
+.app14s .app14s_footer{
+		width:100%;
+		position:fixed;
+		bottom:0;
+		left:0;
+		right:0;
+		padding-top:10px;
+		height:40px;
+		background-color: #39363B;
+		text-align:center;
+		font-weight: 400;
+		color: #FFF;
+		font-size: 12px;
+}
+.app14s .app14s_footer a{
+		display:inline-block;
+		color:#FFF;
+		width:auto;
+		border-radius:0;
+}
+.app14s .app14s_footer a:hover{
+		display:inline-block;
+		color:#FFF;
+		width:auto;
+		background:none;
+		text-decoration:none;
+		color:#CCCCCC;
+}
