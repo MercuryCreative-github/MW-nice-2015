@@ -59,6 +59,7 @@ class WPBakeryShortCode_VC_Gmaps extends WPBakeryShortCode {
             'zoom' => 14,
             'pin_image' => '',
             'type' => 'm',
+            'pinlink' => '',
             'fullscreen' => 'no',
             'el_position' => '',
             'width' => '1/1',
@@ -82,7 +83,7 @@ class WPBakeryShortCode_VC_Gmaps extends WPBakeryShortCode {
         }
         $output .= "\n\t\t".'<div class="wpb_wrapper">';
         $output .= ($title != '' ) ? "\n\t\t\t".'<h3 class="wpb_heading"><span>'.$title.'</span></h3>' : '';
-        $output .= '<div class="wpb_map_wrapper"><div class="map-canvas" style="width:100%;height:'.$size.'px;" data-address="'.$address.'" data-zoom="'.$zoom.'" data-maptype="'.$type.'" data-pinimage="'.$img_url[0].'"></div></div>';
+        $output .= '<div class="wpb_map_wrapper"><div class="map-canvas" style="width:100%;height:'.$size.'px;" data-address="'.$address.'" data-zoom="'.$zoom.'" data-maptype="'.$type.'" data-pinimage="'.$img_url[0].'" data-pinlink="'.$pinlink.'"></div></div>';
         $output .= "\n\t\t".'</div> '.$this->endBlockComment('.wpb_wrapper');
         $output .= "\n\t".'</div> '.$this->endBlockComment($width);
 		if ($fullscreen != "yes" && $width != "span12") {

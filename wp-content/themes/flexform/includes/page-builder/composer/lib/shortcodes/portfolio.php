@@ -38,16 +38,23 @@ class WPBakeryShortCode_portfolio extends WPBakeryShortCode {
 	        $filter_wrap_bg = $options['filter_wrap_bg'];
 	        
 	        if ($portfolio_filter == "yes" && $sidebars == "no-sidebars") {
+	        	$tax_terms = "";
+	        	
+	        	if ( $category == "" || $category == "All" ) {
+	        	    $tax_terms = $tax_terms = get_category_list('portfolio-category', 1, "");
+	        	} else {
+	        	    $tax_terms = $tax_terms = get_category_list('portfolio-category', 1, $category);
+	        	}
+	        	
 		        $filter_output .= '<div class="filter-wrap row clearfix">'. "\n";
 		        $filter_output .= '<a href="#" class="select"><i class="icon-align-justify"></i>'. __("Filter our work", "swiftframework") .'</a>'. "\n";
 		        $filter_output .= '<div class="filter-slide-wrap span12 alt-bg '.$filter_wrap_bg.'">'. "\n";
 		        $filter_output .= '<ul class="portfolio-filter filtering row clearfix">'. "\n";
 		        $filter_output .= '<li class="all selected span2"><a data-filter="*" href="#"><span class="item-name">'. __("All", "swiftframework").'</span><span class="item-count">0</span></a></li>'. "\n";
-		        			$tax_terms = get_category_list('portfolio-category', 1);
-		        			foreach ($tax_terms as $tax_term) {
-		        				$term_slug = strtolower(str_replace(' ', '-', $tax_term));
-		        				$filter_output .= '<li class="span2"><a href="#" title="View all ' . $tax_term . ' items" class="' . $term_slug . '" data-filter=".' . $term_slug . '"><span class="item-name">' . $tax_term . '</span><span class="item-count">0</span></a></li>'. "\n";
-		        			}
+    			foreach ($tax_terms as $tax_term) {
+    				$term_slug = strtolower(str_replace(' ', '-', $tax_term));
+    				$filter_output .= '<li class="span2"><a href="#" title="View all ' . $tax_term . ' items" class="' . $term_slug . '" data-filter=".' . $term_slug . '"><span class="item-name">' . $tax_term . '</span><span class="item-count">0</span></a></li>'. "\n";
+    			}
 		        $filter_output .= '</ul></div></div>'. "\n";
 	        }
 	        

@@ -57,15 +57,8 @@ class WPBakeryVisualComposerSetup extends WPBakeryVisualComposerAbstract {
     }
 
     public function frontCss() {
-        //wp_register_style( 'bootstrap', $this->assetURL( 'bootstrap/css/bootstrap.css' ), false, WPB_VC_VERSION, 'screen' );
         wp_register_style( 'ui-custom-theme', $this->assetURL( 'ui-custom-theme/jquery-ui-' . WPB_JQUERY_UI_VERSION . '.custom.css' ), false, WPB_VC_VERSION, 'screen');
-        //wp_register_style( 'flexslider', $this->assetURL( 'js/flexslider/flexslider.css' ), false, WPB_VC_VERSION, 'screen' );
-
-        //wp_register_style( 'prettyphoto', $this->assetURL( 'js/prettyphoto/css/prettyPhoto.css' ), false, WPB_VC_VERSION, 'screen' );
-
         wp_register_style( 'js_composer_front', $this->assetURL( 'js_composer_front.css' ), false, WPB_VC_VERSION, 'screen' );
-
-        //wp_enqueue_style( 'bootstrap' );
         wp_enqueue_style( 'js_composer_front' );
     }
 
@@ -73,16 +66,6 @@ class WPBakeryVisualComposerSetup extends WPBakeryVisualComposerAbstract {
         wp_register_script( 'wpb_composer_front_js', $this->assetURL( 'js_composer_front.js' ), array( 'jquery' ), '', TRUE);
 
         wp_register_script( 'tweet', $this->assetURL( 'js/jquery.tweet.js' ), array( 'jquery' ));
-        //wp_register_script( 'isotope', $this->assetURL( 'js/jquery.isotope.min.js' ), array( 'jquery' ));
-        //wp_register_script( 'jcarousellite', $this->assetURL( 'js/jcarousellite_1.0.1.min.js' ), array( 'jquery' ));
-
-        //wp_register_script( 'cycle', $this->assetURL( 'js/jquery.cycle.all.js' ), array( 'jquery' ));
-        //wp_register_script( 'nivo-slider', $this->assetURL( 'js/jquery.nivo.slider.pack.js' ), array( 'jquery' ));
-        //wp_register_script( 'flexslider', $this->assetURL( 'js/flexslider/jquery.flexslider-min.js' ), array( 'jquery' ));
-        //wp_register_script( 'prettyphoto', $this->assetURL( 'js/prettyphoto/js/jquery.prettyPhoto.js' ), array( 'jquery' ));
-
-        //wp_register_script( 'jcarousellite', $this->assetURL( 'js/jcarousellite_1.0.1.min.js' ), array( 'jquery' ));
-        //wp_register_script( 'anythingslider', $this->assetURL 'js/jquery.anythingslider.min.js' ), array( 'jquery' ));
     }
 
     /* Activation hook for plugin */

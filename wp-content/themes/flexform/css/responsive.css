@@ -302,7 +302,7 @@
 	}
 	#top-bar .menu > li > a {
 		padding: 8px 10px;
-	} 
+	}
 	#top-bar-menu > div {
 		float: none;
 	}
@@ -315,12 +315,12 @@
 	#logo {
 		width: 80%;
 		margin: 0 auto;
-		float: none;
+		float: none!important;
 	}
 	#logo img {
 		margin: 0 auto 20px;
-		padding: 0;
-		float: none;
+		padding: 0!important;
+		float: none!important;
 	}
 	#nav-search {
 		margin: 0 auto!important;
@@ -523,6 +523,11 @@
 -------------------------------------------- */
 
 @media only screen and (max-width: 479px) {
+	
+	/* GENERAL */
+	body {
+		overflow-x: hidden;
+	}
 	
 	/* HEADER */
 	#header-login input, #header-subscribe input {

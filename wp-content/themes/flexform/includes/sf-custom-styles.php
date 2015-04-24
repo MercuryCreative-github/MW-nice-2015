@@ -373,7 +373,9 @@
 				display:none!important;
 			}
 			.alt-bg {
-				margin-left: -170px!important;
+				margin-left: -720px!important;
+				padding-left: 750px;
+				padding-right: 750px;
 			}
 			'."\n";
 		}

@@ -30,7 +30,7 @@ Custom jQuery functions.
 			}
 						
 			// FITVIDS
-			jQuery('.portfolio-items:not(.carousel-items),.blog-items:not(.carousel-items),.single-portfolio,article.type-post,article.type-team,.wpb_video_widget,.infocus-item,.recent-posts,.sidebar,.full-width-detail').fitVids();
+			jQuery('.portfolio-items:not(.carousel-items),.blog-items:not(.carousel-items),.single-portfolio,article.type-post,article.type-team,.wpb_video_widget,.infocus-item,.recent-posts,.sidebar,.full-width-detail').fitVids({ ignore: '.no-resize'});
 										
 			// FOOTER BEAM ME UP LINK
 			jQuery('.beam-me-up').on('click', 'a', function(e) {
@@ -847,9 +847,10 @@ Custom jQuery functions.
 					mapAddress = mapContainer.getAttribute('data-address'),
 					mapZoom = mapContainer.getAttribute('data-zoom'),
 					mapType = mapContainer.getAttribute('data-maptype'),
-					pinLogoURL = mapContainer.getAttribute('data-pinimage');
+					pinLogoURL = mapContainer.getAttribute('data-pinimage'),
+					pinLink = mapContainer.getAttribute('data-pinlink');
 				
-				map.getCoordinates(mapAddress, mapContainer, mapZoom, mapType, pinLogoURL);
+				map.getCoordinates(mapAddress, mapContainer, mapZoom, mapType, pinLogoURL, pinLink);
 								
 			});
 			
@@ -859,7 +860,7 @@ Custom jQuery functions.
 			});
 			
 		},
-		getCoordinates: function(address, mapContainer, mapZoom, mapType, pinLogoURL) {
+		getCoordinates: function(address, mapContainer, mapZoom, mapType, pinLogoURL, pinLink) {
 			var geocoder;
 			geocoder = new google.maps.Geocoder();			
 			geocoder.geocode({
@@ -916,7 +917,10 @@ Custom jQuery functions.
 						});
 					}
 					google.maps.event.addListener(companyMarker, 'click', function() {
-						window.location.href = 'http://maps.google.com/maps?q='+companyPos;
+						if (pinLink == "") {
+							pinLink = 'http://maps.google.com/maps?q='+companyPos, '_blank';
+						}
+						window.open(pinLink);
 					});
 					
 					google.maps.event.addDomListener(window, 'resize', function() {
@@ -932,7 +936,7 @@ Custom jQuery functions.
 			var fullscreenMap = jQuery('.fullscreen-map'),
 				container = jQuery('#page-wrap'),
 				mapOffset = container.offset().left,
-				windowWidth = jQuery(window).width();
+				windowWidth = jQuery('#main-container').width();
 
 			if (windowWidth > 768) {
 				mapOffset = mapOffset;
@@ -941,8 +945,11 @@ Custom jQuery functions.
 			}
 						
 			fullscreenMap.find('.map-canvas').css('width', windowWidth);
-			fullscreenMap.css('margin-left', '-' + mapOffset + 'px');
-			
+			if (jQuery('#container').hasClass('boxed-layout')) {
+				fullscreenMap.css('margin-left', '-' + 30 + 'px');
+			} else {
+				fullscreenMap.css('margin-left', '-' + mapOffset + 'px');
+			}
 		}
 	};
 	

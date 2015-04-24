@@ -21,7 +21,7 @@ class WPBakeryShortCode_VC_Raw_html extends WPBakeryShortCode {
         }
         else {
             if($param['type'] == 'textarea_raw_html')
-                $output .= '<'.$param['holder'].' class="wpb_vc_param_value ' . $param_name . ' ' . $type . ' ' . $class . '" name="' . $param_name . '">'.htmlentities(base64_decode(strip_tags($value))).'</'.$param['holder'].'><input type="hidden" name="' . $param_name . '_code" class="' . $param_name . '_code" value="' .strip_tags($value) . '" />';
+                $output .= '<'.$param['holder'].' class="wpb_vc_param_value ' . $param_name . ' ' . $type . ' ' . $class . '" name="' . $param_name . '">'.htmlentities( rawurldecode( base64_decode( strip_tags( $value ) ) ), ENT_COMPAT, 'UTF-8' ).'</'.$param['holder'].'><input type="hidden" name="' . $param_name . '_code" class="' . $param_name . '_code" value="' .strip_tags($value) . '" />';
             else
                 $output .= '<'.$param['holder'].' class="wpb_vc_param_value ' . $param_name . ' ' . $type . ' ' . $class . '" name="' . $param_name . '">'.$value.'</'.$param['holder'].'>';
         }
@@ -42,7 +42,7 @@ class WPBakeryShortCode_VC_Raw_html extends WPBakeryShortCode {
         $el_class = $this->getExtraClass($el_class);
         $width = wpb_translateColumnWidthToSpan($width);
         $el_class .= ' wpb_raw_html';
-        $content =  base64_decode(strip_tags($content));
+        $content = rawurldecode( base64_decode( strip_tags( $content ) ) );
         $output .= "\n\t".'<div class="wpb_content_element '.$width.$el_class.'">';
         $output .= "\n\t\t".'<div class="wpb_wrapper">';
         $output .= "\n\t\t\t".$content;

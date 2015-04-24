@@ -7,7 +7,7 @@ class WPBakeryShortCode_blog extends WPBakeryShortCode {
 			$options = get_option('sf_flexform_options');
 			$rss_feed_url = $options['rss_feed_url'];
 			
-		    $title = $width = $el_class = $output = $show_blog_aux = $blog_aux = $show_read_more = $items = $item_figure = $content_output = $el_position = '';
+		    $title = $width = $el_class = $output = $show_blog_aux = $blog_aux = $show_read_more = $items = $item_figure = $content_output = $el_position = $offset = '';
 			
 	        extract(shortcode_atts(array(
 	        	'title' => '',
@@ -21,6 +21,7 @@ class WPBakeryShortCode_blog extends WPBakeryShortCode {
 	        	'show_read_more' => 'no',
 	        	"item_count"	=> '5',
 	        	"category"		=> '',
+	        	"offset" => '0',
 	        	"content_output" => '',
 	        	'el_position' => '',
 	        	'width' => '1/1',
@@ -119,7 +120,8 @@ class WPBakeryShortCode_blog extends WPBakeryShortCode {
     			'post_status' => 'publish',
     			'paged' => $paged,
     			'category_name' => $category_slug,
-    			'posts_per_page' => $item_count
+    			'posts_per_page' => $item_count,
+    			'offset' => $offset
     			);
     			    		
     		$blog_items = new WP_Query( $blog_args );
@@ -266,6 +268,13 @@ WPBMap::map( 'blog', array(
             "param_name" => "category",
             "value" => get_category_list('category'),
             "description" => __("Choose the category for the blog items.", "js_composer")
+        ),
+        array(
+            "type" => "textfield",
+            "heading" => __("Posts offset", "swift-framework-admin"),
+            "param_name" => "offset",
+            "value" => "0",
+            "description" => __("The offset for the start of the posts that are displayed, e.g. enter 5 here to start from the 5th post.", "swift-framework-admin")
         ),
         array(
             "type" => "dropdown",

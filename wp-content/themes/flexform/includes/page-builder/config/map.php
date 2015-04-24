@@ -468,13 +468,6 @@ WPBMap::map( 'vc_single_image', array(
 		),
 		array(
 		    "type" => "dropdown",
-		    "heading" => __("Full width", "js_composer"),
-		    "param_name" => "full_width",
-		    "value" => array(__("No", "js_composer") => "no", __("Yes", "js_composer") => "yes"),
-		    "description" => __("Select if you want the image to be the full width of the page. (Make sure the element width is 1/1 too).", "js_composer")
-		),
-		array(
-		    "type" => "dropdown",
 		    "heading" => __("Enable lightbox link", "js_composer"),
 		    "param_name" => "lightbox",
 		    "value" => array(__("Yes", "js_composer") => "yes", __("No", "js_composer") => "no"),
@@ -1267,6 +1260,13 @@ WPBMap::map( 'vc_gmaps',  array(
         	"description" => "Choose an image to use as the custom pin for the address on the map. Upload your custom map pin, the image size must be 150px x 75px."
         ),
         array(
+            "type" => "textfield",
+            "heading" => __("Custom Pin Link", "swift-framework-admin"),
+            "param_name" => "pinlink",
+            "value" => "",
+            "description" => __('If you would like the map pin to link through to a custom URL, then please provide it here. Ensure that you include http:// at the start of the URL.', "swift-framework-admin")
+        ),
+        array(
             "type" => "dropdown",
             "heading" => __("Fullscreen Display", "js_composer"),
             "param_name" => "fullscreen",
@@ -1297,7 +1297,7 @@ WPBMap::map( 'vc_raw_html', array(
 			"class" => "",
 			"heading" => __("Raw HTML", "js_composer"),
 			"param_name" => "content",
-			"value" => base64_encode("<p>This is a raw html block.<br/>Click the edit button to change this html.</p>"),
+			"value" => base64_encode( "<p>This is a raw html block.<br/>Click the edit button to change this html.</p>" ),
 			"description" => __("Enter your HTML content.", "js_composer")
 		),
 	)

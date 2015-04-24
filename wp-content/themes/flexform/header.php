@@ -38,6 +38,7 @@
 			$show_account = $options['show_account'];
 			$show_cart = $options['show_cart'];
 			$sub_code = $options['sub_code'];
+			$myaccount_page_id = get_option( 'woocommerce_myaccount_page_id' );
 			
 			$enable_mini_header = $options['enable_mini_header'];
 			$enable_nav_indicator = $options['enable_nav_indicator'];
@@ -184,7 +185,7 @@
 		
 		<?php if (is_single()) { ?>
 		<!--// SOCIAL SCRIPTS //-->
-		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript" src="//ws.sharethis.com/button/buttons.js"></script>
 		<script type="text/javascript">stLight.options({publisher: "ur-72c8cf80-2647-2464-a894-abc33849d467", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>
 		<?php } ?>
 		
@@ -237,7 +238,7 @@
 										<ul class="sub-menu">
 											<li>
 												<div id="header-subscribe" class="clearfix">
-													<?php echo $sub_code; ?>
+													<?php echo do_shortcode($sub_code); ?>
 												</div>
 											</li>
 										</ul>
@@ -266,7 +267,11 @@
 											</li>
 											<?php } else { ?>
 											<li>
+												<?php if ( $myaccount_page_id ) { ?>
+												<a href="<?php echo get_permalink( $myaccount_page_id ); ?>" class="admin-link"><?php _e("My Account", "swiftframework"); ?></a>
+												<?php } else { ?>
 												<a href="<?php echo get_admin_url(); ?>" class="admin-link"><?php _e("WordPress Admin", "swiftframework"); ?></a>
+												<?php } ?>
 											</li>
 											<li>
 												<a href="<?php echo wp_logout_url( home_url() ); ?>" class="logout-link"><?php _e("Logout", "swiftframework"); ?></a>
