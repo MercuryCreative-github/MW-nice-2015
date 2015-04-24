@@ -192,7 +192,10 @@
 	</head>
 
 	<!--// OPEN BODY //-->
-	<body <?php body_class($page_class . ' ' . $is_responsive . ' ' . $extra_page_class. ' ' . get_field('custom_page_class')); ?>>
+
+	<?php if(function_exists('get_field')){ $custom_page_class=get_field('custom_page_class');}else{$custom_page_class='';} ?>
+
+	<body <?php body_class($page_class . ' ' . $is_responsive . ' ' . $extra_page_class. ' ' . $custom_page_class); ?>>
 
 	<img style="display:none;" src="/wp-content/uploads/2015/02/logo-footer.png" alt="TM Forum Live! 2015">
 

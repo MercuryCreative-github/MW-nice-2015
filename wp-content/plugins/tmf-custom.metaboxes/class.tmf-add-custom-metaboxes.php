@@ -125,15 +125,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                             "url" => false
                             )
                     ),
-                    /*array(
-                        'name' => 'Summit',
-                        'id' => $prefix . 'session_summits',
-                        'desc' => 'Select the session this summit is included',
-                        'options' => self::get_summits(),
-                        'type' => 'pw_multiselect',
-                        'sanitization_cb' => 'pw_select2_sanitise',
-
-                    ),*/
+                 
                 )
             );
 
@@ -174,7 +166,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'name' => 'Presentation Speakers',
                         'id' => 'speakers_meta',
                         'desc' => 'Select the Speakers',
-                        'options' => self::get_all_speakers(),
+                        //'options' => self::get_all_speakers(),
                         'type' => 'pw_multiselect',
                         'sanitization_cb' => 'pw_select2_sanitise',
                     ),
@@ -184,7 +176,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'name' => 'Presentation Collaborators',
                         'id' => 'collaborators_meta',
                         'desc' => 'Select the Collaborators',
-                        'options' => self::get_all_speakers(),
+                        //'options' => self::get_all_speakers(),
                         'type' => 'pw_multiselect',
                         'sanitization_cb' => 'pw_select2_sanitise',
                     ),
@@ -194,7 +186,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'name' => 'Presentations Panelists',
                         'id' => 'panelists_meta',
                         'desc' => 'Select the Panelists',
-                        'options' => self::get_all_speakers(),
+                        //'options' => self::get_all_speakers(),
                         'type' => 'pw_multiselect',
                         'sanitization_cb' => 'pw_select2_sanitise',
                     ),
@@ -204,7 +196,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'name' => 'Presentations Facilitators',
                         'id' => 'facilitators_meta',
                         'desc' => 'Select the Facilitators',
-                        'options' => self::get_all_speakers(),
+                        //'options' => self::get_all_speakers(),
                         'type' => 'pw_multiselect',
                         'sanitization_cb' => 'pw_select2_sanitise',
                     ),
@@ -214,7 +206,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'name' => 'Presentations Moderators',
                         'id' => 'moderators_meta',
                         'desc' => 'Select the Moderators',
-                        'options' => self::get_all_speakers(),
+                        //'options' => self::get_all_speakers(),
                         'type' => 'pw_multiselect',
                         'sanitization_cb' => 'pw_select2_sanitise',
                     ),
@@ -223,7 +215,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'name' => 'Session',
                         'id' => $prefix . 'presentation_session',
                         'desc' => 'Select the session this presentation is included',
-                        'options' => self::get_all_sessions(),
+                        //'options' => self::get_all_sessions(),
                         'type' => 'pw_select',
                         'sanitization_cb' => 'pw_select2_sanitise',
 
@@ -234,15 +226,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'desc' => 'Please add the slider alis here. Most used sliders: slider-internet-of-things, slider-customer-centricity-analytics, slider-managing-nfv-sdn, slider-business-innovation, slider-digital-operations',
                         'type' => 'text',
                     ),
-                    /*array(
-                        'name' => 'Summit',
-                        'id' => $prefix . 'session_summits',
-                        'desc' => 'Select the session this summit is included',
-                        'options' => self::get_summits(),
-                        'type' => 'pw_multiselect',
-                        'sanitization_cb' => 'pw_select2_sanitise',
-
-                    ),*/
+                  
                 )
             );
 
@@ -258,7 +242,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                     'name' => 'Speaker at',
                                     'id' =>  'speaker_at',
                                     'desc' => 'Select the Presentations this user speaks at',
-                                    'options' => self::get_all_presentations(),
+                                    //'options' => self::get_all_presentations(),
                                     'type' => 'pw_multiselect',
                                     'sanitization_cb' => 'pw_select2_sanitise',
                                 ),                               
@@ -266,7 +250,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                     'name' => 'Collaborator at',
                                     'id' =>  'collaborator_at',
                                     'desc' => 'Select the Presentations this user collaborates at',
-                                    'options' => self::get_all_presentations(),
+                                    //'options' => self::get_all_presentations(),
                                     'type' => 'pw_multiselect',
                                     'sanitization_cb' => 'pw_select2_sanitise',
 
@@ -276,7 +260,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                     'name' => 'Panelist at',
                                     'id' =>  'panelist_at',
                                     'desc' => __('Select the Presentations this user is panelist'),
-                                    'options' => self::get_all_presentations(),
+                                    //'options' => self::get_all_presentations(),
                                     'type' => 'pw_multiselect',
                                     'sanitization_cb' => 'pw_select2_sanitise',
 
@@ -285,7 +269,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                     'name' => 'Moderator at',
                                     'id' =>  'moderator_at',
                                     'desc' => 'Select the Presentations this user moderates at',
-                                    'options' => self::get_all_presentations(),
+                                    //'options' => self::get_all_presentations(),
                                     'type' => 'pw_multiselect',
                                     'sanitization_cb' => 'pw_select2_sanitise',
                                 ),
@@ -294,7 +278,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                     'name' => 'Facilitator at',
                                     'id' =>  'facilitator_at',
                                     'desc' => 'Select the Presentations this user faciliatates at',
-                                    'options' => self::get_all_presentations(),
+                                    //'options' => self::get_all_presentations(),
                                     'type' => 'pw_multiselect',
                                     'sanitization_cb' => 'pw_select2_sanitise',
 
@@ -304,7 +288,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                                     'name' => 'Company',
                                     'id' => 'company',
                                     'desc' => 'Please select the Company this user belongs',
-                                    'options' => self::get_all_sponsors(),
+                                    //'options' => self::get_all_sponsors(),
                                     'type' => 'pw_multiselect',
                                     'sanitization_cb' => 'pw_select2_sanitise',
                                 ),
@@ -387,9 +371,10 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
             foreach ($pages as $page) {
 
                 $post_type = get_post_type_object( get_post_type( $page->ID ) );
-
-                $front_end_value =  $page->post_title . " [" .  $post_type->label . "] ";
-                $option_pages[$page->ID] = __($front_end_value, 'cmb2');
+                if($post_type!==null){
+                    $front_end_value =  $page->post_title . " [" .  $post_type->label . "] ";
+                    $option_pages[$page->ID] = __($front_end_value, 'cmb2');
+                }
             }
             return $option_pages;
         }
@@ -549,8 +534,6 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
             // get all terms in the taxonomy
             $terms = get_terms( 'sponsorship-categories' ); 
-            // convert array of term objects to array of term IDs
-            $term_ids = wp_list_pluck( $terms, 'term_id' );
             
             $args = array(
             'post_type' => 'companies', 
