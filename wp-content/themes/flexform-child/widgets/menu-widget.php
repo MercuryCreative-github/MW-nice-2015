@@ -1,8 +1,6 @@
 <?php
 /**
-
  * Plugin Name: List Widget
-
  */
 
 
@@ -21,12 +19,8 @@ function tmf_list_load_widgets() {
 
 class tmf_list_widget extends WP_Widget {
 
-
-
 	/**
-
 	 * Widget setup.
-
 	 */
 
 	function tmf_list_widget() {
@@ -52,32 +46,20 @@ class tmf_list_widget extends WP_Widget {
 
 
 	/**
-
 	 * How to display the widget on the screen.
-
 	 */
 
 	function widget( $args, $instance ) {
 
 		extract( $args );
 
-
-
 		/* Our variables from the widget settings. */
-
 		$title = apply_filters('widget_title', $instance['title'] );
-
 		$categories = $instance['categories'];
-
 		$number = $instance['number'];
 
-
-
 		/* Before widget (defined by themes). */
-
 		echo $before_widget;
-
-
 
 		/* Display the widget title if one was input (before and after defined by themes). */
 
@@ -105,7 +87,6 @@ class tmf_list_widget extends WP_Widget {
     color:#<? echo $category_color ?>!important;
   
 }
-
 </style>
 
 
@@ -169,10 +150,8 @@ if ($categories == 164) { // Featured Videos
 	}
 
 /**
-
 	 * Update the widget settings.
-
-	 */
+ */
 
 	function update( $new_instance, $old_instance ) {
 
@@ -201,8 +180,6 @@ if ($categories == 164) { // Featured Videos
 
 
 	function form( $instance ) {
-
-
 
 		/* Set up some default widget settings. */
 
