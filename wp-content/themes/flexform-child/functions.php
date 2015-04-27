@@ -1,19 +1,5 @@
 <?php
 
-
-
-function hide_menu_items() {
-	//remove_menu_page( 'edit.php?post_type=team' );
-	remove_menu_page( 'edit.php?post_type=jobs' );
-	remove_menu_page( 'edit.php?post_type=clients' );
-	remove_menu_page( 'edit.php?post_type=portfolio' );
-	//remove_menu_page( 'edit.php?post_type=testimonials' );
-	remove_menu_page( 'edit.php?post_type=faqs' );
-	remove_menu_page( 'edit-comments.php' );
-}
-	add_action( 'admin_menu', 'hide_menu_items' );
-
-
 	/* TMF LOAD SCRIPTS
 	================================================== */
 
