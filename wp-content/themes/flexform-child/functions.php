@@ -145,8 +145,6 @@ function hide_menu_items() {
         unregister_sidebar( 'sidebar-6' );
         unregister_sidebar( 'sidebar-7' );
         unregister_sidebar( 'sidebar-8' );
-        unregister_sidebar( 'sidebar-9' );
-
 	}
 	add_action( 'widgets_init', 'remove_some_widgets', 11 );
 
@@ -1455,5 +1453,49 @@ function add_custom_to_yoast( $content ) {
 
 	remove_filter('wpseo_pre_analysis_post_content', 'add_custom_to_yoast'); // don't let WP execute this twice
 }
+
+/*---	Testimonial shortcode	---*/
+function scTestimonials()
+{
+	$testimonial_query = new WP_Query(array(
+			'post_type' => 'testimonials',
+  			'post_status' => 'publish',
+			'orderby' => 'rand',
+  			'posts_per_page' => 1
+		));
+
+
+	if( $testimonial_query->have_posts() )
+	{
+		while($testimonial_query->have_posts())
+		{
+			$testimonial_query->the_post();
+			$prefix = '_TMF_';
+			$testimonial_id = get_the_ID();
+			$testimonials_author_id = get_post_meta( $testimonial_id, $prefix . 'testimonial_author',true);
+
+			$authorData = get_user_meta($testimonials_author_id);
+
+			$authorName =  $authorData['first_name'][0].' '.$authorData['last_name'][0];
+			$testimonialQuote = get_the_content();
+
+			if($authorData['image'][0] != NULL){
+				$imgSRC = $authorData['image'][0];
+			}else{
+				$imgSRC = '/wp-content/uploads/2014/09/default_speaker.png';
+			}
+
+			$authorRole = $authorData['job_role'][0];
+			$companyId = getUserCompanies( $testimonials_author_id, true );
+			$companyName =  get_the_title( $companyId );
+			
+
+		}
+	}
+	wp_reset_query();
+
+	return $authorName.'-|-'.$testimonialQuote.'-|-'.$imgSRC.'-|-'.$authorRole.'-|-'.$companyName;
+}
+add_shortcode('show_testimonials','scTestimonials');
 
 ?>
