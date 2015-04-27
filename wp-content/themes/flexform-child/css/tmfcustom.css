@@ -576,7 +576,7 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 	padding-bottom: 20px;
 }
 .section05-title h1, .section03-infobox01 h1 {text-align: center;color: #FFF;}
-.review-photo {display: table-cell; width: 15%;padding-right: 30px;}
+.review-photo {display: table-cell; width: 15%;}
 .review-photo img {border-radius: 50%;width: 180px;border: 3px #e4e4e4 solid;}
 .review-content,.review-name p {display: table-cell; vertical-align: middle;}
 .review-text {

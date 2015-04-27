@@ -300,7 +300,7 @@ Template Name: Home Page
 		$testimonial = explode('-|-',do_shortcode('[show_testimonials]')); 
 		?>
 
-		<div class="review-photo" style="background-image: url(<?php echo $testimonial[2]?>); width: 156px; height: 156px; border-radius: 50%; background-size: cover; background-position: center; padding: 0; border: 3px #e4e4e4 solid;"></div>
+		<div class="review-photo"><div style="background-image: url(<?php echo $testimonial[2]?>); width: 156px; height: 156px; border-radius: 50%; background-size: cover; background-position: center; padding: 0; border: 3px #e4e4e4 solid;"></div></div>
 		<div class="review-content" style="padding:10px 0 0 30px;">
 			<div class="review-text"><?php echo $testimonial[1]?></div>
 			<div class="review-name"><img src="/wp-content/uploads/2015/02/icon-reviews.png"><p><strong><?php echo $testimonial[0]?></strong><br/><?php
