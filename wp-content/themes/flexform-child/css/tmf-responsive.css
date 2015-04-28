@@ -648,13 +648,7 @@
         width: 100%;
     }
 }
-/***** Main Slider fix ****/
-@media only screen and (min-width: 1078px) and (max-width: 1199px) {
-    .section01 {
-      background-position:-600px center !important;
-    }
 
-}
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
         height: 540px;
@@ -4111,4 +4105,12 @@
   #menu-event-main-menu li.menu-register-btn, #mini-navigation li.menu-register-btn { float: right; }
   #menu-event-main-menu li.menu-register-btn a, #mini-navigation li.menu-register-btn a { color:#FFF; background: none repeat scroll 0 0 #f8ae1e; }
   #menu-event-main-menu li.menu-register-btn a:hover, #mini-navigation li.menu-register-btn a:hover{background-color: #D88801}
+}
+
+/***** Main Slider fix ****/
+@media only screen and (min-width: 1078px) and (max-width: 1199px) {
+    .section01 {
+      background-position:-600px center;
+    }
+
 }
