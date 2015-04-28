@@ -651,7 +651,7 @@
 /***** Main Slider fix ****/
 @media only screen and (min-width: 1078px) and (max-width: 1199px) {
     .section01 {
-      background-position:-500px center;
+      background-position:-600px center !important;
     }
 
 }
