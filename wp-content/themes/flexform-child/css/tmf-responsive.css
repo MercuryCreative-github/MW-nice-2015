@@ -3,7 +3,7 @@
     /*body > #container #mini-header > .container {
         width: 1140px !important;
     }*/
-    
+
     body [class*="span"] {
         margin-left: 20px;
     }
@@ -71,7 +71,7 @@
         margin-left: 20px !important;
     }
     /* HOME */
-    
+
     .homeagenda img {
         margin-top: 14%;
         margin-bottom: -13px;
@@ -97,7 +97,7 @@
         text-align: center;
     }
     /*footer social icons*/
-    
+
     #menu-social li.social-icon {
         margin-right: 15px;
     }
@@ -108,7 +108,7 @@
         display: block;
     }
     /*tables size*/
-    
+
     .media_center_raw {
         width: 120%;
     }
@@ -118,7 +118,7 @@
 }
 @media all and (min-width: 1250px) {
     /*tables size*/
-    
+
     .media_center_raw {
         width: 120%;
     }
@@ -166,7 +166,7 @@
         margin-left: 0;
     }
     /*contacto footer '15*/
-    
+
     #footer-widgets, .social-contact .span12.textwidget {
         width: 100%;
     }
@@ -177,19 +177,19 @@
         margin-left: 70px;
     }
     /*footer*/
-    
+
     .container #footer-widgets .span3:first-child {
         margin-left: 0;
     }
 }
 @media screen and (max-width: 1200px) {
     /*404*/
-    
+
     .error404 .page-404-box, .page-404-buttons {
         width: auto;
     }
     /*banner summit*/
-    
+
     a.sf-button.medium.yellow.register-agenda {
         width: 240px;
     }
@@ -215,7 +215,7 @@
         padding-bottom: 1em;
     }
     /*home page contact footer*/
-    
+
     .email-img {
         margin: 50px 40px;
     }
@@ -248,18 +248,18 @@
         width: 46%;
     }
     /*HP - top soponsors logos*/
-    
+
     .span3.sponsors_title {
         text-align: center;
         width: 100%;
     }
     /*HP - White Papers Boxes*/
-    
+
     .homePageClass .case-study-box p {
         min-height: 220px;
     }
     /*HP - list of traks*/
-    
+
     .hp-journey-box a {
         font-size: 15px;
     }
@@ -270,12 +270,12 @@
     .top-sponsors-logos .sponsors_logo {
         /*COMMENTED TO ADD THE 6TH LOGO*/
         /*margin-left: 100px;*/
-        
+
         margin-left: 70px;
         margin-bottom: 32px;
     }
     /*ONLINE TRAINING*/
-    
+
     .online-training .about-table .wpb_wrapper.clearfix {
         min-height: 800px;
     }
@@ -283,7 +283,7 @@
         line-height: 20px;
     }
     /*contact footer '15*/
-    
+
     .section04-info {
         width: 65%;
     }
@@ -297,7 +297,7 @@
         padding: 15px 30px;
     }
     /*Accordion*/
-    
+
     .visible-sponsor {
         padding-left: 100px;
     }
@@ -305,7 +305,7 @@
         display: none;
     }
     /*#menu-event-main-menu{ width: 805px;}*/
-    
+
     .ml30 {
         margin-left: 0px;
     }
@@ -321,7 +321,7 @@
         margin-left: auto;
     }
     /*sidebar*/
-    
+
     .textwidget a.sf-button.standard.download-agenda.a-glance {
         width: 100%;
         padding: 15px 0 15px 0;
@@ -403,7 +403,7 @@
         float: none;
     }
     /*'15*/
-    
+
     .social-contact img {
         margin-left: 0;
     }
@@ -473,7 +473,7 @@
         width: 100% !important;
     }
     /*.tp-simpleresponsive .slotholder *, .tp-simpleresponsive img {width: 100%;height: auto;}*/
-    
+
     .page-content.tp-simpleresponsive img {
         width: 100% !important;
         height: auto !important;
@@ -493,7 +493,7 @@
         margin: 0 auto;
     }
     /*AGENDA FORUMS*/
-    
+
     .defTrack {
         width: 290px;
     }
@@ -501,7 +501,7 @@
         margin-top: 0;
     }
     /*'15*/
-    
+
     .section02-companies li img {
         margin-right: 10px;
         height: auto;
@@ -510,7 +510,7 @@
         margin-right: 0;
     }
     /*footer*/
-    
+
     .container #footer-widgets .span3 {
         margin-left: 0;
     }
@@ -537,13 +537,13 @@
         max-width: 91% !important;
     }
     /*new home*/
-    
+
     body [class*="span"].home-ribbon:after {
         visibility: hidden;
     }
     /* HOME */
     /*Speakers*/
-    
+
     .speakers-list-name {
         clear: both;
     }
@@ -565,7 +565,7 @@
     /*.company {
         margin-left: 16px;
     }*/
-    
+
     .homespeakers img {
         width: 37%;
         margin: 5px 11px 0px 0 !important;
@@ -578,7 +578,7 @@
         margin-left: -90px !important;
     }
     /* Agenda Single Pages */
-    
+
     .container .moveDiv h2 {
         margin: 0 0 10px;
     }
@@ -588,7 +588,7 @@
 }
 @media screen and (max-width: 980px) {
     /*404*/
-    
+
     .page-404-btn-home {
         float: none;
         margin-right: 0;
@@ -618,7 +618,7 @@
         width: auto;
     }
     /*banner summit*/
-    
+
     a.sf-button.medium.yellow.register-agenda {
         padding: 10px 19px;
     }
@@ -681,7 +681,7 @@
         width: 95%;
     }
     /* Homepage top sponsors logos */
-    
+
     .top-sponsors-logos .sponsors_title h3 br {
         display: none;
     }
@@ -692,7 +692,7 @@
         margin-left: 100px;
     }
     /* Homepage feeds */
-    
+
     .feed-related-posts .feed-date-category {
         margin-bottom: 0;
     }
@@ -703,12 +703,12 @@
         margin-left: 0;
     }
     /*HP - Speakers */
-    
+
     .slideshow_container .slideshow_content, .slideshow_container .slideshow_view {
         height: 300px !important;
     }
     /*HP - List of traks with icons*/
-    
+
     .hp-journey-box .wpb_wrapper.clearfix {
         text-align: left;
         margin-left: 70px;
@@ -720,14 +720,14 @@
         margin-left: 10px;
     }
     /*HP - White Papers Boxes*/
-    
+
     .homePageClass .case-study-box p {
         min-height: 20px;
         padding: 30px 20px 0px 20px;
         margin-bottom: 0px;
     }
     /*ONLINE TRAINING*/
-    
+
     .online-training .about-table .wpb_wrapper.clearfix {
         min-height: 0;
     }
@@ -741,7 +741,7 @@
         width: 90%
     }
     /*'15*/
-    
+
     .section02-companies ul {
         display: block;
         padding: 0;
@@ -756,7 +756,7 @@
         padding-right: 0px;
     }
     /*call to action - pricing page*/
-    
+
     .the-content td.call-to-action h3 {
         font-size: 1.8em;
     }
@@ -769,17 +769,17 @@
         background-color: transparent;
     }
     /*catalyst demo*/
-    
+
     .catalyst-logos img {
         margin-right: 40px;
     }
     /*Accordion*/
-    
+
     .visible-sponsor {
         padding-left: 0px;
     }
     /*fix responsive sponsors - one line*/
-    
+
     .logo_1 img {
         height: 5.9vw;
     }
@@ -837,7 +837,7 @@
         width: 49.6%;
     }
     /*new home*/
-    
+
     body [class*="span"].home-ribbon:after {
         margin-left: -30px;
         margin-bottom: 30px;
@@ -845,7 +845,7 @@
         visibility: visible;
     }
     /*HP AT THE EVENT*/
-    
+
     .hp-at-the-event img {
         max-width: 180%;
         margin-bottom: 10px;
@@ -853,12 +853,12 @@
     }
     /*HOME*/
     /*top sopnsors*/
-    
+
     .homePageClass .span3.sponsors_title {
         width: 100%;
     }
     /*homespeakers*/
-    
+
     div.homespeakers h1 {
         clear: both;
     }
@@ -866,7 +866,7 @@
         width: 90px;
     }
     /*home-sponsors*/
-    
+
     .wpb_content_element.span12.sponsors-home-box.wpb_text_column {
         width: 105%;
         margin-left: -12px;
@@ -875,7 +875,7 @@
         margin-left: 4%;
     }
     /*contact*/
-    
+
     .email-img {
         margin: 50px 65px;
     }
@@ -892,7 +892,7 @@
     /*JUSTIFY YOUR TRIP*/
     /*justify navigation*/
     /* EXHIBITORS RESOURCES */
-    
+
     nav#exhibitors-navigation .menu li {
         width: 310px;
     }
@@ -903,26 +903,26 @@
         width: 745px;
     }
     /*FOOTER*/
-    
+
     ul.social-footer li {
         margin-right: 2px;
     }
     /*404 not-found page*/
-    
+
     input.page-404 {
         width: 600px;
     }
     /****************************/
     /*** ONLINE TRAINING TABLE***/
     /****************************/
-    
+
     div.ot-table-container div {
         font-size: 15px;
     }
     /*******************************/
     /*** ONLINE TRAINING PROGRAMS***/
     /*******************************/
-    
+
     div.online-training h3 {
         font-size: 19px;
     }
@@ -946,7 +946,7 @@
         height: 73px !important;
     }
     /*video player page*/
-    
+
     .main-video-shadow-big-video {
         margin-top: -12px;
     }
@@ -960,7 +960,7 @@
         width: 220px;
     }
     /*SIDEBAR WORKSHOP*/
-    
+
     .workshops .rev_slider ul li div.tp-caption-first {
         font-size: 23px;
     }
@@ -1085,7 +1085,7 @@
         width: 100%;
     }
     /*Nice15-1st section*/
-    
+
     .section01-buttons {
         margin-top: 10px;
     }
@@ -1096,7 +1096,7 @@
         margin-left: 8% !important;
     }
     /*twitter feed '15*/
-    
+
     .container h2.tw-title:before {
         margin-right: 0px;
     }
@@ -1210,7 +1210,7 @@
         padding: 2% 8%;
     }
     /*sponsors*/
-    
+
     .homePageClass .span3.sponsors_title {
         width: 100%;
     }
@@ -1330,7 +1330,7 @@
         display: none;
     }
     /*erase !!! */
-    
+
     #menu-item-18996 {
         display: block !important;
         margin-left: 0 !important;
@@ -1412,7 +1412,7 @@
         margin-left: -333px !important;
     }
     /*** HOTEL & TRAVEL ***/
-    
+
     .hotel-travel iframe {
         display: block;
         margin: 0 auto;
@@ -1457,23 +1457,23 @@
         display: table-cell;
     }
     /*who attends dd*/
-    
+
     .who-attends .borderframe img {
         width: 40%;
         margin: 0 auto;
     }
     /*HP*/
-    
+
     .homePageClass .hp-journey-box {
         margin-left: 0px;
     }
     /*remove netcraker banner for mobile*/
-    
+
     .netcrack-banner {
         display: none;
     }
     /*netcraker logos '15*/
-    
+
     .section03-bottom ul {
         padding: 5px
     }
@@ -1484,7 +1484,7 @@
         width: 80%;
     }
     /*contact footer '15*/
-    
+
     .social-contact a#updated {
         margin: 25px auto;
         text-align: center;
@@ -1510,7 +1510,7 @@
         margin-left: 0px;
     }
     /*Accordion*/
-    
+
     .row [class*="span"].visibleTitle {
         margin-bottom: 0;
     }
@@ -1518,7 +1518,7 @@
         padding-left: 40px;
     }
     /*sponsors aligned*/
-    
+
     .section01-sponsors {
         margin-top: 11%;
     }
@@ -1530,7 +1530,7 @@
         text-align: center;
     }
     /*footer*/
-    
+
     #footer-widgets div.span3:first-child {
         width: 100%;
         float: none;
@@ -1658,7 +1658,7 @@
 }
 @media screen and (max-width: 550px) {
     /*404*/
-    
+
     .page-404-btn-home img.page-404-icon, .page-404-btn-video img.page-404-icon {
         display: none;
     }
@@ -1686,7 +1686,7 @@
         margin: 10px 0;
     }
     /*'15*/
-    
+
     .section02-companies li {
         min-width: 100px;
         display: block;
@@ -1694,7 +1694,7 @@
         margin-bottom: 30px;
     }
     /*.section02-companies li:first-child img {margin-right: -25px;}*/
-    
+
     .section03-top ul {
         margin: 0;
         font-size: 0.9em;
@@ -1731,7 +1731,7 @@
         padding-bottom: 28px;
     }
     /* Agenda Single Pages */
-    
+
     .container .moveDiv h2 {
         font-size: 26px;
         line-height: 32px;
@@ -1753,7 +1753,7 @@
         position: initial;
     }
     /*hp - speakers*/
-    
+
     .slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image img {
         width: 100px !important;
         height: 100px !important;
@@ -1762,7 +1762,7 @@
         top: 110px;
     }
     /*'15*/
-    
+
     .section02-companies li {
         margin-bottom: 30px;
     }
@@ -1828,7 +1828,7 @@
 }
 @media screen and (min-width: 768px) and (max-width: 979px) {
     /*SIDEBAR WORKSHOP*/
-    
+
     .workshops .rev_slider ul li div.tp-caption-first {
         font-size: 18px;
     }
@@ -1851,22 +1851,22 @@
         top: 110px;
     }
     /*New HP*/
-    
+
     .homePageClass .case-study-box:first-child {
         margin-left: 10px;
     }
     /*SIDEBAR*/
-    
+
     aside.sidebar .sidebar-about p, aside.sidebar .sidebar-about li {
         font-size: 14px;
     }
     /*remove padding bottom from revolution sliders*/
-    
+
     .sidebar .rev_slider_wrapper {
         padding-bottom: 0 !important;
     }
     /*custom main menu*/
-    
+
     nav.call-to-action {
         width: 380px !important;
     }
@@ -1877,7 +1877,7 @@
         height: 450px;
     }
     /*HP AT THE EVENT*/
-    
+
     .hp-at-the-event img {
         max-width: 180%;
         margin-top: -9px;
@@ -1911,7 +1911,7 @@
         width: 49%;
     }
     /*CONFERENCE OVERVIEW*/
-    
+
     .cuadrob {
         width: 225px;
         background-image: none;
@@ -1923,7 +1923,7 @@
     }
     /*HOME*/
     /*webniar-text*/
-    
+
     .webinar-text {
         margin: 0 30px 0 60px;
     }
@@ -1938,7 +1938,7 @@
         width: 150%;
     }
     /*footer- contact us*/
-    
+
     .contact-button {
         width: 50%;
     }
@@ -1948,27 +1948,27 @@
     }
     /*HOME AT THE EVENT*/
     /*menu sidebar news*/
-    
+
     ul.all-about-tmf.event-news li div {
         float: none;
     }
     /*about tmforum live*/
-    
+
     .networking-expo-box.testimonials img {
         visibility: hidden;
     }
     /*Speakers*/
-    
+
     .speakers-list-name {
         clear: both;
     }
     /*homespeakers*/
-    
+
     .homespeakers[class*="span"] {
         height: 200px;
     }
     /*3d gray cubes fix position*/
-    
+
     .cub-top {
         display: none;
     }
@@ -1976,7 +1976,7 @@
         font-size: 14px;
     }
     /*top-bar-menu*/
-    
+
     nav#top-bar-menu {
         width: 745px;
     }
@@ -1996,7 +1996,7 @@
         float: none !important;
     }
     /*the next line needs an important because style is given inline from the template options!*/
-    
+
     nav #menu-tmf-live li {
         font-size: 14px !important;
     }
@@ -2008,7 +2008,7 @@
         margin-left: -90px !important;
     }
     /*footer*/
-    
+
     ul.social-footer li {
         margin-right: 0;
         width: 30px;
@@ -2024,7 +2024,7 @@
     }
     /*JUSTIFY YOUR TRIP*/
     /*justify navigation*/
-    
+
     nav#justify-navigation .menu li {
         width: 44% !important;
     }
@@ -2032,7 +2032,7 @@
         padding-bottom: 14px !important;
     }
     /* EXHIBITORS RESOURCES */
-    
+
     nav#exhibitors-navigation .menu li {
         width: 238px;
     }
@@ -2040,7 +2040,7 @@
         padding-bottom: 30px;
     }
     /*RESPONSIVE STYLES GUILLERMO*/
-    
+
     #tres_bajar {
         margin-bottom: 57px !important;
     }
@@ -2063,7 +2063,7 @@
         max-width: 100% !important;
     }
     /* HOME */
-    
+
     .homeagenda img {
         margin-top: 19.3%;
     }
@@ -2083,7 +2083,7 @@
         margin-top: 64px;
     }
     /*home-sponsors*/
-    
+
     .sponsors-fifth {
         margin-right: 5%;
         margin-left: 5%;
@@ -2099,19 +2099,19 @@
         margin-left: -100px;
     }
     /*404 not-found page*/
-    
+
     input.page-404 {
         width: 450px;
     }
     /*pases & pricing*/
-    
+
     div.register-online img {
         max-width: 73%;
     }
     /****************************/
     /*** ONLINE TRAINING TABLE***/
     /****************************/
-    
+
     div.ot-table-container .title {
         font-size: 16px;
         font-size: 16.5px;
@@ -2125,7 +2125,7 @@
     /*******************************/
     /*** ONLINE TRAINING PROGRAMS***/
     /*******************************/
-    
+
     div.online-training {
         width: 100%;
         min-height: 0;
@@ -2146,7 +2146,7 @@
     /*******************************/
     /***  VIDEO PAGES may/30/14  ***/
     /*******************************/
-    
+
     body.page-template-video-posts-template-php .video-block:first-child li.featured-figure .featured-caption {
         padding: 0 5%;
     }
@@ -2157,7 +2157,7 @@
         margin-top: 0;
     }
     /*video player page*/
-    
+
     .main-video-shadow-big-video {
         margin-top: -12px;
         height: 48px;
@@ -2172,7 +2172,7 @@
         width: 190px;
     }
     /*sidebar*/
-    
+
     .textwidget a.sf-button.standard.download-agenda.a-glance, .textwidget a.sf-button.standard.register-agenda {
         background-image: none;
     }
@@ -2191,7 +2191,7 @@
 }
 @media only screen and (max-width: 840px) {
     /*Tablet menu*/
-    
+
     .keep-updated-btn {
         display: none !important;
     }
@@ -2211,14 +2211,14 @@
     #logo {
         /*width: 160px !important;
         float: left !important;*/
-        
+
         margin-left: 0px;
     }
     /*#logo a {
         margin: 0;
         float: left;
     }*/
-    
+
     #nav-section .nav-wrap {
         margin-top: 10px;
     }
@@ -2236,7 +2236,7 @@
     /* nav .menu > li:first-child > a {
         padding-left: 20px !important;
     }*/
-    
+
     .show-menu {
         color: #4476b3 !important;
     }
@@ -2251,7 +2251,7 @@
         margin-bottom: 0 !important;
     }
     /*end tablet menu*/
-    
+
     .s-speakers {
         position: static !important;
     }
@@ -2387,7 +2387,7 @@
         display: block;
     }
     /*video player page*/
-    
+
     .main-video-shadow-big-video {
         margin-top: -10px;
         height: 43px;
@@ -2395,7 +2395,7 @@
     /**********************************/
     /*** END OF TEMPORARY-ROHIT.css ***/
     /**********************************/
-    
+
     body [class*="span"].home-ribbon:after {
         visibility: hidden;
     }
@@ -2421,16 +2421,16 @@
     /*************/
     /***  AAG  ***/
     /*************/
-    
+
     .ui-tabs-nav {
         width: 100%;
     }
     .ui-tabs .ui-tabs-nav li {
         /*width: 20% !important;*/
-        
+
         float: left;
         /*box-sizing: border-box;*/
-        
+
         text-align: center;
     }
     .wpb_tabs .ui-tabs .ui-tabs-nav li a {
@@ -2459,7 +2459,7 @@
 }
 @media screen and (max-width: 767px) {
     /*summit banners - 15*/
-    
+
     .banner-journey {
         position: relative;
         margin: 50px 0;
@@ -2511,7 +2511,7 @@
     /*---- HOME ----*/
     /*--------------*/
     /*What you can expect at Digital Disruption 2014!*/
-    
+
     div.dd-expect-icon {
         float: left;
         width: auto;
@@ -2521,7 +2521,7 @@
     /*---- ABOUT ----*/
     /*---------------*/
     /*remove 'top 4 reasons blank_spacers'*/
-    
+
     .about-us .four-reasons h2 {
         margin-top: 0;
     }
@@ -2532,7 +2532,7 @@
         display: none;
     }
     /*---- AAG ----*/
-    
+
     #fullwidthcontent {
         padding: 0 18px;
     }
@@ -2551,13 +2551,13 @@
     /*--------------*/
     /*---- FAQS ----*/
     /*--------------*/
-    
+
     .faqs-page .registration-hours {
         float: left;
         width: 50%;
     }
     /*footer (announcements)*/
-    
+
     #footer .social-contact div:first-child {
         padding-bottom: 0;
     }
@@ -2615,7 +2615,7 @@
     }
     /*HOME AT THE EVENT*/
     /*webinar*/
-    
+
     .span12.full-width {
         margin-left: 0;
         width: 100%;
@@ -2638,17 +2638,17 @@
         margin: 40px 0 20px 0px;
     }
     /*home-news*/
-    
+
     .span4.home-news-section:first-child, .span4.home-news-section {
         margin-left: 0;
     }
     /*sidebar-conference*/
-    
+
     .widget .home-titles, .widget .home-list-icon, .widget .sidebar-blankspace {
         display: block;
     }
     /*contact us - footer*/
-    
+
     .email-img {
         display: none;
     }
@@ -2693,7 +2693,7 @@
         width: 100%;
     }
     /*HEADER*/
-    
+
     #header-section, #header-scroll {
         padding: 15px 0 0 0;
     }
@@ -2701,7 +2701,7 @@
         margin-bottom: 0;
         width: 11% !important;
     }*/
-    
+
     #nav-section.span9.clearfix {
         margin-bottom: 0;
     }
@@ -2709,7 +2709,7 @@
         margin-bottom: 0;
     }
     /*TOP MENUS*/
-    
+
     #top-bar {
         display: none;
     }
@@ -2721,13 +2721,13 @@
         background: white;
     }
     /*new home*/
-    
+
     body [class*="span"].home-ribbon:after {
         margin-left: 20px;
         visibility: visible;
     }
     /*HOME*/
-    
+
     .homelinks[class*="span"] {
         width: 50%;
         float: left;
@@ -2736,7 +2736,7 @@
         width: 100%;
     }
     /*home parallax*/
-    
+
     .spb_parallax_asset p#main-text {
         line-height: 46px;
     }
@@ -2744,7 +2744,7 @@
         display: block;
     }
     /*HOME AT THE EVENT*/
-    
+
     ul.all-about-tmf.event-news li div {
         display: none;
     }
@@ -2757,17 +2757,17 @@
         /*ul.all-about-tmf.event-news li { min-height: 40px;*/
     }
     /*Streaming Keynotes Live*/
-    
+
     .streaming-blank-space {
         display: none;
     }
     /*footer*/
-    
+
     ul.social-footer li {
         width: 32px;
     }
     /*homespeakers*/
-    
+
     .homespeakers[class*="span"] {
         width: 49%;
         float: left;
@@ -2782,17 +2782,17 @@
         display: none;
     }
     /*parallax*/
-    
+
     .spb_parallax_asset p#main-text {
         font-size: 38px;
     }
     /*3d gray cubes fix position*/
-    
+
     .cub-top {
         display: none;
     }
     /*home-sponsors*/
-    
+
     .sponsors-fifth-toa {
         margin-left: 25%;
     }
@@ -2800,7 +2800,7 @@
         margin-bottom: 0;
     }
     /*NEW HOME*/
-    
+
     .home-slider-text {
         margin-top: 0;
     }
@@ -2813,29 +2813,29 @@
     }
     /*JUSTIFY YOUR TRIP*/
     /*justify navigation dispay block*/
-    
+
     ul#justify.menu {
         display: block;
     }
     /* EXHIBITORS RESOURCES */
-    
+
     #exhibitors-navigation {
         padding-bottom: 23px;
     }
     /*404 not-found page*/
-    
+
     input.page-404 {
         width: 90%;
     }
     /*pases & pricing*/
-    
+
     div.register-online {
         display: none;
     }
     /***************/
     /***SUPPLIERS***/
     /***************/
-    
+
     .span4.suppliers, .span2.suppliers {
         float: left;
         width: 30%;
@@ -2846,7 +2846,7 @@
     }
     div.suppliers p, div.suppliers.contact p {
         /*width: 690px;*/
-        
+
         text-align: center;
     }
     div.suppliers.contact {
@@ -2855,14 +2855,14 @@
     /****************************/
     /*** ONLINE TRAINING TABLE***/
     /****************************/
-    
+
     div.ot-table-container div {
         font-size: 15px;
     }
     /*******************************/
     /*** ONLINE TRAINING PROGRAMS***/
     /*******************************/
-    
+
     div.online-training, div.online-training.white {
         min-height: 0;
         margin-bottom: 0;
@@ -2890,7 +2890,7 @@
         margin-bottom: 30px;
     }
     /*display main menu sub-ul under 768px*/
-    
+
     div#nav-section nav#main-navigation ul#menu-tmf-live li ul.sub-menu {
         display: block !important;
     }
@@ -2901,7 +2901,7 @@
     /*******************************/
     /***  VIDEO PAGES may/30/14  ***/
     /*******************************/
-    
+
     body.page-template-video-posts-template-php .video-block:first-child {
         float: none;
     }
@@ -2921,7 +2921,7 @@
         width: 48% !important;
     }
     /*video player page*/
-    
+
     .main-video-shadow-big-video {
         margin-top: -12px;
         height: 40px;
@@ -2958,14 +2958,14 @@
     /****************/
     /*** ABOUT US ***/
     /****************/
-    
+
     .sidebar-who-attends {
         display: block;
     }
     /****************/
     /*** Conference Overview ***/
     /****************/
-    
+
     .cuadroa {
         width: 470px !important;
         height: 541px !important;
@@ -3006,7 +3006,7 @@
         height: 1408px !important;
     }
     /* FOOTER */
-    
+
     .social-contact .span8, .social-contact .span4 {
         width: 100%;
         margin: 0;
@@ -3036,14 +3036,14 @@
         text-align: center;
     }
     /* Agenda Traks */
-    
+
     .defTrack, .textTrack {
         display: block;
         overflow: hidden;
         box-sizing: border-box;
     }
     /* .event_container{ border-bottom: 1px solid #e4e4e4;} */
-    
+
     .textTrack .body-text {
         border-bottom: none;
         padding-bottom: 0;
@@ -3061,12 +3061,12 @@
         padding: 0;
     }
     /*ONLINE TRAINING*/
-    
+
     .online-training .about-table {
         width: 100%;
     }
     /* Responsive Sponsors */
-    
+
     .responsive-sponsors .main-sponsors h3 br {
         display: none;
     }
@@ -3123,7 +3123,7 @@
         margin-bottom: 12px;
     }
     /*sidebar*/
-    
+
     .textwidget-btn {
         text-align: center;
     }
@@ -3148,7 +3148,7 @@
     }
     /*CONFERENCE OVERVIEW*/
     /*Masorny*/
-    
+
     .cuadrob {
         width: 225px;
         background-image: none;
@@ -3161,7 +3161,7 @@
     /**************/
     /*** FOOTER ***/
     /**************/
-    
+
     #footer-widgets .widget_nav_menu ul.sub-menu li:last-child {
         margin-bottom: 0px;
     }
@@ -3181,14 +3181,14 @@
         margin-top: 0px !important;
     }
     /*custom-tabs class it's for select the tabs btns of pages summit & networking*/
-    
+
     .summit-tabs li, .networking-tab li, .theater-tab li, .takeaway-tab li, .workshops-tab li {
         width: 100%;
     }
 }
 @media screen and (max-width: 680px) {
     /*HP AT THE EVENT*/
-    
+
     .box-filter {
         width: 100%;
         border: none !important;
@@ -3200,14 +3200,14 @@
         height: 140px;
     }
     /*parallax*/
-    
+
     .spb_parallax_asset p#main-text {
         font-size: 33px;
         padding: 10px;
         line-height: 45px;
     }
     /*home-sponsors*/
-    
+
     .sponsors-fifth {
         width: 100%;
     }
@@ -3223,7 +3223,7 @@
         margin-left: -38px;
     }
     /*webnair-hp*/
-    
+
     .webinar-text {
         text-align: center;
         float: none;
@@ -3241,7 +3241,7 @@
     /****************************/
     /*** ONLINE TRAINING TABLE***/
     /****************************/
-    
+
     div.ot-table-container .title-invisible {
         display: block;
     }
@@ -3261,7 +3261,7 @@
         margin-bottom: 20px;
     }
     /*video player page*/
-    
+
     .main-video-shadow-big-video {
         margin-top: -16px;
         height: 40px;
@@ -3286,7 +3286,7 @@
         clear: both;
     }
     /* Responsive Sponsors */
-    
+
     .responsive-sponsors .main-sponsors h3 br {
         display: none;
     }
@@ -3320,14 +3320,14 @@
         margin-bottom: 20px;
     }
     /*Accordion*/
-    
+
     .visible-sponsor {
         padding-left: 0px;
     }
 }
 @media screen and (max-width: 640px) {
     /*SUPPLIERS*/
-    
+
     div.suppliers p, div.suppliers.contact p {
         text-align: left;
     }
@@ -3336,7 +3336,7 @@
         width: 100%;
     }
     /* Hiding top Retina logo */
-    
+
     #logo > a > img.standard {
         display: none
     }
@@ -3352,7 +3352,7 @@
         padding: 0 5px;
     }
     /*Mobile Menu*/
-    
+
     #nav-section {
         padding-bottom: 0px;
         margin-bottom: 20px!important;
@@ -3411,7 +3411,7 @@
     }
     /*.current-menu-item > a {background-color: transparent !important;}*/
     /*Logo*/
-    
+
     .logo {
         display: none;
     }
@@ -3448,7 +3448,7 @@
     /* .standard {
         display: none !important;
     }*/
-    
+
     #footer .span4 h3 {
         text-align: center;
     }
@@ -3478,7 +3478,7 @@
 @media screen and (max-width: 600px) {
     /*HOME*/
     /*new home*/
-    
+
     .home-slider-text {
         position: relative;
         margin-top: 0;
@@ -3487,7 +3487,7 @@
         text-align: left;
     }
     /*homespeakers*/
-    
+
     .homespeakers[class*="span"] {
         width: 100%;
     }
@@ -3505,7 +3505,7 @@
         float: none;
     }
     /*EVENT SPONSORS*/
-    
+
     .logo-desc.event-sponsors {
         text-align: center;
     }
@@ -3514,7 +3514,7 @@
         margin: 0 auto;
     }
     /*video player page*/
-    
+
     .main-video-shadow-big-video {
         margin-top: -18px;
     }
@@ -3553,7 +3553,7 @@
         box-shadow: none !important;
     }
     /* FOOTER */
-    
+
     .social-contact {
         text-align: center;
     }
@@ -3573,7 +3573,7 @@
         text-align: center;
     }
     /* BOOK TODAY BANNER */
-    
+
     #book-today-bottom {
         height: 145px;
         margin-top: -145px;
@@ -3599,7 +3599,7 @@
         top: 0 !important;
     }
     /* Conference Overview Text Box */
-    
+
     .text-box {
         padding: 20px;
     }
@@ -3613,7 +3613,7 @@
         padding-right: 0;
     }
     /* Conference Overview Text Box Transp */
-    
+
     .text-box-transp {
         padding-top: 0px;
         margin-top: -20px;
@@ -3663,7 +3663,7 @@
     /********************/
     /*** Anchor Links ***/
     /********************/
-    
+
     .page-content .questions ul li:after {
         content: none;
     }
@@ -3673,7 +3673,7 @@
     /*------------*/
     /*--- HOME ---*/
     /*------------*/
-    
+
     .homepage .wpb_text_column.Top4Reasons h3 {
         text-align: center;
         font-size: 29px;
@@ -3695,7 +3695,7 @@
     /**************/
     /*** FOOTER ***/
     /**************/
-    
+
     #footer-widgets .widget_nav_menu ul.sub-menu li:last-child {
         margin-bottom: 0px;
     }
@@ -3714,7 +3714,7 @@
     /*------------*/
     /*--- FAQ ---*/
     /*------------*/
-    
+
     .faqs-page .registration-hours {
         float: none;
         width: 100%;
@@ -3722,7 +3722,7 @@
     /*-------------*/
     /*--- ABOUT ---*/
     /*-------------*/
-    
+
     .about-us .Top4Reasons li {
         text-align: center;
     }
@@ -3797,14 +3797,14 @@
         margin-left: 20px;
     }
     /*home parallax*/
-    
+
     .spb_parallax_asset p#main-text {
         font-size: 24px;
         padding: 17px;
         line-height: 30px;
     }
     /* EXHIBITORS RESOURCES */
-    
+
     nav#exhibitors-navigation .menu li {
         width: 100%;
         float: none;
@@ -3815,7 +3815,7 @@
     /*******************************/
     /*** ONLINE TRAINING PROGRAMS***/
     /*******************************/
-    
+
     div.online-training h3 {
         font-size: 19px;
     }
@@ -3831,7 +3831,7 @@
     /*******************************/
     /*** ONLINE TRAINING PROGRAMS***/
     /*******************************/
-    
+
     div.online-training h3 {
         font-size: 19px;
     }
@@ -3863,7 +3863,7 @@
     /*******************************/
     /***  VIDEO PAGES may/30/14  ***/
     /*******************************/
-    
+
     body.page-template-video-posts-template-php .video-block:first-child ul li.span3:nth-child(2), body.page-template-video-posts-template-php .video-block:first-child ul li.span3:nth-child(3) {
         float: none;
         width: 100% !important;
@@ -3876,7 +3876,7 @@
         text-align: center;
     }
     /*video player page*/
-    
+
     .main-video-shadow-big-video {
         margin-top: -20px;
     }
@@ -3884,7 +3884,7 @@
         margin-bottom: 0;
     }
     /* Conference Overview */
-    
+
     .cuadroa {
         width: 365px !important;
         height: 416px !important;
@@ -3937,7 +3937,7 @@
         width: 182px;
     }
     /*STATEMENT BOX*/
-    
+
     div.statement .statement_cite {
         text-align: center;
     }
@@ -3956,7 +3956,7 @@
         margin-left: -270px;
     }
     /** feed hp **/
-    
+
     .feed-image {
         display: table-cell;
     }
@@ -3979,14 +3979,14 @@
     }
     /** end feed hp **/
     /* iPhone fixes 20140828 */
-    
+
     .top-sponsors-logos {
         margin-top: 0;
     }
     /*************/
     /***  AAG  ***/
     /*************/
-    
+
     .ui-tabs-nav {
         width: 100%;
     }
@@ -4003,12 +4003,12 @@
         margin-bottom: 0px;
     }
     /* Exhibitor Resources Menu */
-    
+
     nav#exhibitors-navigation ul.menu {
         margin-top: 10px !important;
     }
     /* Responsive Sponsors */
-    
+
     .responsive-sponsors .main-sponsors h3 br {
         display: none;
     }
@@ -4063,12 +4063,12 @@
         width: 100% !important;
     }
     /*about tmforum live*/
-    
+
     .networking-expo-box.testimonials img {
         visibility: hidden;
     }
     /*video player page*/
-    
+
     .video-player-page h1 {
         font-size: 30px;
         font-weight: 400;
@@ -4085,7 +4085,7 @@
         height: auto;
     }
     /* Conference Overview */
-    
+
     .cuadroa {
         width: 280px !important;
         height: 322px !important;
@@ -4148,7 +4148,7 @@
     /*************/
     /***  AAG  ***/
     /*************/
-    
+
     .ui-tabs-nav {
         width: 100%;
     }
@@ -4186,7 +4186,7 @@
         margin-bottom: 0px;
     }
     /*'15*/
-    
+
     .section01-info {
         width: 100%;
     }
@@ -4362,7 +4362,7 @@
         margin-bottom: 5px !important;
     }
     /*video player page*/
-    
+
     .video-player-page .post-video-container {
         margin-bottom: 0;
     }
@@ -4407,7 +4407,7 @@
         margin: 0 auto;
     }
     /*SIDEBAR WORKSHOP*/
-    
+
     .workshops .rev_slider ul li div.tp-caption-first {
         font-size: 18px;
     }
@@ -4505,7 +4505,7 @@
         margin: 20px auto 10px;
     }
     /*hp-speakers*/
-    
+
     .slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image .slideshow_description_box {
         top: 130px;
     }
@@ -4577,7 +4577,7 @@
         width: 100%;
     }
     /*.summit #main-navigation .menu-event-main-menu-container { width:90%; }*/
-    
+
     #menu-event-main-menu li.menu-register-btn, #mini-navigation li.menu-register-btn {
         float: right;
     }
@@ -4591,7 +4591,7 @@
 }
 /***** Main Slider fix ****/
 
-@media only screen and (min-width: 1078px) and (max-width: 1199px) {
+@media only screen and (min-width: 1078px) and (max-width: 1299px) {
     .section01 {
         background-position: -600px center;
     }
