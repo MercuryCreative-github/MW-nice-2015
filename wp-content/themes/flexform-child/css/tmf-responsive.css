@@ -160,7 +160,7 @@
     .container #footer-widgets .span3:first-child {margin-left: 0;}
 
 
-    
+
 }
 @media screen and (max-width: 1200px) {
 
@@ -511,7 +511,7 @@
     .error404 .page-404-text p {text-align: center;}
 
     .visibleTitle .title-place.with-sponsor {width: auto;}
-    
+
     /*banner summit*/
     a.sf-button.medium.yellow.register-agenda {padding: 10px 19px;}
     .nfv .banner-journey h4 {top: 117px;}
@@ -647,6 +647,13 @@
     .speaker-info .subtitle{
         width: 100%;
     }
+}
+/***** Main Slider fix ****/
+@media only screen and (min-width: 1078px) and (max-width: 1199px) {
+    .section01 {
+      background-position:-500px center;
+    }
+
 }
 @media screen and (min-width: 980px) and (max-width: 1199px) {
     .space-news {
@@ -1242,7 +1249,7 @@
     }
 
     .home .feed-image img{
-        max-height: none; 
+        max-height: none;
         height:auto;
     }
 
@@ -1293,9 +1300,9 @@
     .home .page-content .section03-top ul { margin: 0;}
     .home .page-content .section03-bottom ul {padding: 5px 0 0 0;}
 
-    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
-    .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
-    .takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+    .networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav,
+    .theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav,
+    .takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav,
     .workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav{ width: 100%; }
 
     #hp-section {padding-bottom:0;}
@@ -1307,8 +1314,8 @@
     .home .modal-body{
         max-height: 400px;
         overflow-y: auto;
-        overflow-x: hidden; 
-        width: 94%; 
+        overflow-x: hidden;
+        width: 94%;
     }
 
     .mailing-list-form .gform_body ul li .ginput_container ul li{
@@ -1433,7 +1440,7 @@
     }
 
     .speaker-box a{
-        padding: 15px 0; 
+        padding: 15px 0;
     }
 
     .speaker-info .subtitle{
@@ -2073,7 +2080,7 @@
 
     /*summit banners - 15*/
     .banner-journey {position: relative; margin: 50px 0;}
-    .banner-journey h4{  
+    .banner-journey h4{
         position: absolute;
         top: 173px;
         color: #fff;
@@ -3242,7 +3249,7 @@
     }
 }
 @media screen and (max-width: 480px) {
-    
+
     .summit-list a.section02-list-link { padding-right: 10px;}
 
     .conference-overview .text-box div div {
@@ -3994,9 +4001,9 @@
 
 @media screen and (max-width: 641px){
     .footer-social-list{
-        width: 205px; 
-        margin: 0 auto; 
-        height: 50px; 
+        width: 205px;
+        margin: 0 auto;
+        height: 50px;
         padding-left: 23px;
     }
 }
