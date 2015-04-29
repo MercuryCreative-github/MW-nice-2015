@@ -47,7 +47,7 @@ hr.hr-blank-space {border:none; height: 5px;}
 .visibleTitle .nday {display: table-cell; min-height: initial; width: 250px;}
 .visibleTitle .title-place {display: table-cell;line-height: 22px;padding-right: 10px;}
 .visibleTitle .title-place.with-sponsor {width: 40%;}
-.wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].gray-accordion, 
+.wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].gray-accordion,
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].withe-accordion{padding: 20px 10px 20px 20px; position: relative;}
 .gray-accordion {background-color: #F0F0F0;}
 .row [class*="span"].hiddenContent {display: none;border-top: #A3A3A3 1px solid;}
@@ -96,9 +96,9 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .workshops .page-content .workshops-tab .ui-widget-header li.ui-tabs-active:hover a,
 .workshops.page .workshops-tab .ui-tabs .ui-tabs-nav li.ui-tabs-active a {background: #ee7630 !important;}
 
-.networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, 
-.workshops.page .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, 
-.theater.page .theater-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a, 
+.networking.page .networking-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a,
+.workshops.page .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a,
+.theater.page .theater-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a,
 .takeaway.page .takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-nav li a{
 	text-transform: uppercase;
 	font-size: 16px;
@@ -119,26 +119,26 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	text-align: center;
 }
 
-.networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
-.theater-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
-.takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-panel, 
+.networking-tab.wpb_tabs .ui-tabs .ui-tabs-panel,
+.theater-tab.wpb_tabs .ui-tabs .ui-tabs-panel,
+.takeaway-tab.wpb_tabs .ui-tabs .ui-tabs-panel,
 .workshops-tab.wpb_tabs .ui-tabs .ui-tabs-panel {border: none;}
 
-.networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
-.theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
-.takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav, 
+.networking-tab.wpb_content_element .ui-tabs .ui-tabs-nav,
+.theater-tab.wpb_content_element .ui-tabs .ui-tabs-nav,
+.takeaway-tab.wpb_content_element .ui-tabs .ui-tabs-nav,
 .workshops-tab.wpb_content_element .ui-tabs .ui-tabs-nav {margin-bottom: 40px;border: none;}
 
-.networking-tab.wpb_content_element .ui-widget-header .ui-state-default, 
-.theater-tab.wpb_content_element .ui-widget-header .ui-state-default, 
-.takeaway-tab.wpb_content_element .ui-widget-header .ui-state-default, 
+.networking-tab.wpb_content_element .ui-widget-header .ui-state-default,
+.theater-tab.wpb_content_element .ui-widget-header .ui-state-default,
+.takeaway-tab.wpb_content_element .ui-widget-header .ui-state-default,
 .workshops-tab.wpb_content_element .ui-widget-header .ui-state-default {border-bottom: 1px #e4e4e4 solid !important;}
 
-.theater .summit-day, 
-.theater .summit-session, 
+.theater .summit-day,
+.theater .summit-session,
 .keynotes-page .summit-day{display: none;}
 
-.takeaway-tab .row-fluid.tabs-summits-content, 
+.takeaway-tab .row-fluid.tabs-summits-content,
 .workshops-tab .row-fluid.tabs-summits-content {
  margin: 0;
  width: 100% !important;
@@ -330,7 +330,7 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 
 /*summit banners - 15*/
 .banner-journey {position: relative; margin: 50px 0;}
-.banner-journey h4{  
+.banner-journey h4{
 	position: absolute;
 	top: 173px;
 	color: #fff;
@@ -418,9 +418,9 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 .logo_5 img {height: 40px;}
 p.image-caption{margin:10px 0 0 0;line-height:100%;}
 .sponsors_logo {
-	text-align:center; 
-	position: relative; 
-	display: inline-block; 
+	text-align:center;
+	position: relative;
+	display: inline-block;
 	margin-left: 105px;
 }
 
@@ -489,7 +489,7 @@ p.list-text {
 .page-content .section02-summites ul li {list-style-type: none; float: left; display: table;margin-right: 7px;padding: 7px;}
 li.summit-list:first-child {margin-left: -7px;}
 .summit-list a {display: table-cell;padding-right: 10px;}
-.summit-list a.summit-list-text {width: 0; vertical-align: middle; color:#444;}
+.summit-list a.summit-list-text { vertical-align: middle; color:#444; }
 .summit-list a.summit-list-text:hover  {text-decoration: none;}
 .page-content .section02-summites ul li:hover {text-decoration: none; background-color: #F6F7F7;padding: 7px;}
 
@@ -576,7 +576,7 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 	padding-bottom: 20px;
 }
 .section05-title h1, .section03-infobox01 h1 {text-align: center;color: #FFF;}
-.review-photo {display: table-cell; width: 15%;padding-right: 30px;}
+.review-photo {display: table-cell; width: 15%;}
 .review-photo img {border-radius: 50%;width: 180px;border: 3px #e4e4e4 solid;}
 .review-content,.review-name p {display: table-cell; vertical-align: middle;}
 .review-text {
@@ -1820,7 +1820,7 @@ div.wpcf7 br {display: none}
 	width:220px;
 	display:table-cell;
 	padding-right:25px;padding-left:1px;
-	font:300 14px 'Open Sans', sans-serif !important; 
+	font:300 14px 'Open Sans', sans-serif !important;
 	color:#666666;
 	cursor: default;
 }

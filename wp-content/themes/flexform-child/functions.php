@@ -1,19 +1,5 @@
 <?php
 
-
-
-function hide_menu_items() {
-	//remove_menu_page( 'edit.php?post_type=team' );
-	remove_menu_page( 'edit.php?post_type=jobs' );
-	remove_menu_page( 'edit.php?post_type=clients' );
-	remove_menu_page( 'edit.php?post_type=portfolio' );
-	//remove_menu_page( 'edit.php?post_type=testimonials' );
-	remove_menu_page( 'edit.php?post_type=faqs' );
-	remove_menu_page( 'edit-comments.php' );
-}
-	add_action( 'admin_menu', 'hide_menu_items' );
-
-
 	/* TMF LOAD SCRIPTS
 	================================================== */
 
@@ -51,43 +37,43 @@ function hide_menu_items() {
 
 	function sfs_enqueue_styles() {
 		wp_dequeue_style('main-css');
-         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '10.8', 'all');
+         	wp_register_style('main-css', get_stylesheet_directory_uri() . '/style.css', array(), '11.01', 'all');
             wp_enqueue_style('main-css'); // Enqueue it!
 
 		// Exhibitors pages
 		if ( is_page_template( 'exhibitors-template.php' ) ) {
-		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '10.8', 'all');
+		  	wp_register_style('aidesigns', get_stylesheet_directory_uri() . '/css/exhibitors-template.css', array(), '11.01', 'all');
     		wp_enqueue_style('aidesigns'); // Enqueue it!
 		}
 
 		// Pricing css
 		if ( is_page_template( 'pricing-tables.php' ) ) {
-		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '10.8', 'all');
+		    wp_register_style('pricing-tables-css', get_stylesheet_directory_uri() . '/css/pricing-tables.css', array(), '11.01', 'all');
     		wp_enqueue_style('pricing-tables-css'); // Enqueue it!
 		}
 
 		// Speakers special css
 		if ( is_page_template( 'speakers.php' ) || is_page_template( 'speakers-with-thumbs.php' )) {
-		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '10.8', 'all');
+		    wp_register_style('speakers-css', get_stylesheet_directory_uri() . '/css/speakers-keynotes.css', array(), '11.01', 'all');
     		wp_enqueue_style('speakers-css'); // Enqueue it!
 		}
 
 		// Platinum Program
 		if ( is_page_template( 'platinum-program.php' ) ) {
-		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '10.8', 'all');
+		    wp_register_style('platinum-programme-css', get_stylesheet_directory_uri() . '/css/platinum-program.css', array(), '11.01', 'all');
     		wp_enqueue_style('platinum-program-css'); // Enqueue it!
 		}
 
 		// TMF custom styles
-		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '10.8', 'all');
+		wp_register_style('tmf-custom-css', get_stylesheet_directory_uri() . '/css/tmfcustom.css', array(), '11.01', 'all');
     	wp_enqueue_style('tmf-custom-css'); // Enqueue it!
 
     	// Responsive fixes
-		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '10.8', 'all');
+		wp_register_style('tmf-responsive-css', get_stylesheet_directory_uri() . '/css/tmf-responsive.css', array(), '11.01', 'all');
     	wp_enqueue_style('tmf-responsive-css'); // Enqueue it!
 
     	// Print Styles
-		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '10.8', 'all');
+		wp_register_style('tmf-print-css', get_stylesheet_directory_uri() . '/css/tmf-print.css', array(), '11.01', 'all');
     	wp_enqueue_style('tmf-print-css'); // Enqueue it!
 
 	}
@@ -426,7 +412,7 @@ function getUserJobRolesByCompanyId( $userId = 0, $companyId = 0 ) {
 	if( !empty( $jobRoleMeta )) {
 		$jobRoleMeta = $jobRoleMeta;
 		return ($jobRoleMeta);
-		
+
 	}
 	return $jobRole;
 }
@@ -530,7 +516,7 @@ function summits_shortcode_func( $atts ) {
 	$presentationsHtmlOutput='';
 
     // OutPut functions START HERE. Please read last.
-    if (!function_exists('get_presentations')) {  
+    if (!function_exists('get_presentations')) {
     function get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor){
 
     	$args = array(
@@ -561,7 +547,7 @@ function summits_shortcode_func( $atts ) {
 				$arrayByRole = array();
 				$speacificArray='';
 
-				// needed variables				
+				// needed variables
 				$presentationToCheck->the_post();
 				$post_data = get_post($post->ID, ARRAY_A);
 				$presentationSlug = $post_data['post_name'];
@@ -583,12 +569,12 @@ function summits_shortcode_func( $atts ) {
 					$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
 
 					if(is_array($presentationSpeakers) && !empty($presentationSpeakers)){
-					
+
 						$speacificArray=$role_to_update;
 
 						foreach ( $presentationSpeakers as $presentationSpeaker ) {
 
-							// needed variables				
+							// needed variables
 							$userMeta = get_user_meta( $presentationSpeaker, $role_to_update.'_at',true);
 							$userJobRole = get_user_meta( $presentationSpeaker, 'job_role',true);
 							$userCompanies = get_user_meta( $presentationSpeaker, 'company',true);
@@ -598,7 +584,7 @@ function summits_shortcode_func( $atts ) {
 
 							$userCompanyName= get_the_title($userCompanyId);
 
-							$user = get_user_by( 'id', $presentationSpeaker ); 
+							$user = get_user_by( 'id', $presentationSpeaker );
 
 							// if the user has the checked role in this presentation
 							if(is_array($userMeta)){
@@ -623,7 +609,7 @@ function summits_shortcode_func( $atts ) {
 
 						}
 					}
-				
+
 				}
 
 				$presentationSesion=$sessionId;
@@ -640,7 +626,7 @@ function summits_shortcode_func( $atts ) {
 						$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
 						$presentationsHtmlOutput.='<div class="presentation-content" style="display:none">'.$presentationContent.'</div>';
 						foreach ($roles as $rolesToshow) {
-					
+
 							if(count($arrayByRole[$rolesToshow])>1){
 							$roleLabel=$rolesToshow.'s';
 							}else{$roleLabel=$rolesToshow;}
@@ -667,7 +653,7 @@ function summits_shortcode_func( $atts ) {
 		return $presentationsHtmlOutput;
 	}} // end get_presentations
 
-	if (!function_exists('get_chair')) {  
+	if (!function_exists('get_chair')) {
 	function get_chair($sessionChair){
 
 		// variables set
@@ -679,10 +665,10 @@ function summits_shortcode_func( $atts ) {
 		$user_query = new WP_User_Query( array( 'include' => $sessionChair ) );
 
 			if ( ! empty( $user_query->results ) ) {
-				
+
 				foreach ( $user_query->results as $user ) {
 
-					// needed variables				
+					// needed variables
 					$userMeta = get_user_meta( $user->ID, $role_to_update.'_at' );
 
 					//Chair output
@@ -691,7 +677,7 @@ function summits_shortcode_func( $atts ) {
 					$chairHtmlOutput.='</div>';
 
 
-						
+
 				}
 			}
 
@@ -700,7 +686,7 @@ function summits_shortcode_func( $atts ) {
 		return $chairHtmlOutput;
 	}}  // end get_chair
 
-	if (!function_exists('get_sponsors')) {  
+	if (!function_exists('get_sponsors')) {
 	function get_sponsors($sessionSponsors){
 
 		// variables set
@@ -711,7 +697,7 @@ function summits_shortcode_func( $atts ) {
 		// sponsors get
 		foreach ($sessionSponsors as $sponsorId) {
 
-			// needed variables		
+			// needed variables
 			$sponsorLogo = get_the_post_thumbnail( $sponsorId, 'medium');
 			$sponsorUrl = get_post_meta( $sponsorId, 'url', true );
 			$sponsorName = get_the_title( $sponsorId );
@@ -725,7 +711,7 @@ function summits_shortcode_func( $atts ) {
 	}} // end get_sponsors
 
     // OutPut functions FINISH HERE
-   
+
 
     // Shortcode functionality HERE
 
@@ -750,7 +736,7 @@ function summits_shortcode_func( $atts ) {
 				'field'    => 'slug',
 				'terms'    => $summit_slug,
 			),
-		), 
+		),
 	);
 
 	// WP Query
@@ -761,7 +747,7 @@ function summits_shortcode_func( $atts ) {
 	$storedDay = '';
 
 	while ( $loop->have_posts() ) : $loop->the_post();
-	
+
 	// needed variables
 	$sessionId = get_the_ID();
 	$sessionTitle = get_the_title();
@@ -775,7 +761,7 @@ function summits_shortcode_func( $atts ) {
 	// If a new day stars, we write the DAY
 	if($storedDay!==date('l,  F j',$sessionStarts)){
 		$storedDay=date('l,  F j',$sessionStarts);
-		
+
 		if(isset($sessionIcon) && $sessionIcon != null){
 			$sessions.= '<div class="summit-day"><p>';
 			$sessions.= '<img src="'.$sessionIcon.'"/>';
@@ -807,8 +793,8 @@ function summits_shortcode_func( $atts ) {
 			if(typeof declared == "undefined"){
 
 				function hideShowContent(where,subtitleCheck){
-					var $ = jQuery;					
-					
+					var $ = jQuery;
+
 					// if in the link_to_presentation we write all it is not going to run the script
 					if("all"!==subtitleCheck)
 
@@ -817,7 +803,7 @@ function summits_shortcode_func( $atts ) {
 						var here=$(this);
 						subtitle = $(".presentation-subtitle",here).text().toLowerCase();
 
-						if(subtitle!==subtitleCheck)						
+						if(subtitle!==subtitleCheck)
 
 						if($(".presentation-content",here).text()==""){
 							text=$(".presentation-title a",this).text();
@@ -825,7 +811,7 @@ function summits_shortcode_func( $atts ) {
 							$(".presentation-title a",this).remove();
 
 						}
-						else{					
+						else{
 							$(".presentation-title",here).click(function(e){
 								e.preventDefault();
 								$(".presentation-content",here).slideToggle();
@@ -837,8 +823,8 @@ function summits_shortcode_func( $atts ) {
 				};
 
 			}
-			
-			//after enter to the if call for the function, then run the function. 
+
+			//after enter to the if call for the function, then run the function.
 			//When the function run, it return true: now declared is not undefined so it is not going to run the function again.
 
 
@@ -877,7 +863,7 @@ add_shortcode( 'summits_shortcode', 'summits_shortcode_func' );
 function fetured_speaker_shortcode_func( $atts ) {
 
     // OutPut functions START HERE. Please read last.
-    if (!function_exists('get_featured')) {  
+    if (!function_exists('get_featured')) {
     function get_featured($speaker_summit_slug,$sessionID){
 
     	$speakersDisplayArray=array();
@@ -924,7 +910,7 @@ function fetured_speaker_shortcode_func( $atts ) {
 
 				// User Loop
 				if ( ! empty( $user_query->results ) ) {
-					foreach ( $user_query->results as $user ) {						
+					foreach ( $user_query->results as $user ) {
 
 						$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
 						$categoryDisplay = '';
@@ -942,9 +928,9 @@ function fetured_speaker_shortcode_func( $atts ) {
 
 							// Get the user id of the user and the id of the image
 							$userMetaImageId = get_user_meta($user->ID,'image_id',true);
-							$userMetaImage =  wp_get_attachment_image_src( $userMetaImageId, 'thumbnail' ); 
+							$userMetaImage =  wp_get_attachment_image_src( $userMetaImageId, 'thumbnail' );
 							// if $userMetaImage (an array) is empty/false
-							
+
 							if(!($userMetaImage)){
 							$userMetaImage[] ='/wp-content/uploads/2014/09/default_speaker.png';
 							}
@@ -992,10 +978,10 @@ function fetured_speaker_shortcode_func( $atts ) {
 					$speakersDisplayArray[$user->ID]=$speakersDisplay;
 
 					} // end foreach user_query->results as user
-					
+
 				} //end if ! empty( $user_query->results )
 
-			} // end while ( $presentationToCheck->have_posts	
+			} // end while ( $presentationToCheck->have_posts
 
 		} // end if ( $presentationToCheck->have_posts() )
 
@@ -1006,7 +992,7 @@ function fetured_speaker_shortcode_func( $atts ) {
 	}} // end get_presentations
 
     // OutPut functions FINISH HERE
-   
+
 
     // Shortcode functionality HERE
 
@@ -1030,7 +1016,7 @@ function fetured_speaker_shortcode_func( $atts ) {
 				'field'    => 'slug',
 				'terms'    => $speaker_summit_slug,
 			),
-		), 
+		),
 	);
 
 	// WP Query
@@ -1043,7 +1029,7 @@ function fetured_speaker_shortcode_func( $atts ) {
 	$speakersDisplayArray=array();
 
 	while ( $loop->have_posts() ) : $loop->the_post();
-	
+
 	// needed variables
 	$sessionID = get_the_ID();
 
@@ -1052,11 +1038,11 @@ function fetured_speaker_shortcode_func( $atts ) {
 	// add the elements of the new array with the ones of the previous one.
 	$speakersDisplayArray=array_merge($speakersDisplayArray,$speakersArray);
 
-	
+
 	$i++;
 	endwhile;
 
-	//remove the element of the array that appear twice 
+	//remove the element of the array that appear twice
 	$speakersDisplayArray=array_unique($speakersDisplayArray);
 	$theSessions.=implode('',$speakersDisplayArray);
 
@@ -1068,11 +1054,11 @@ function fetured_speaker_shortcode_func( $atts ) {
 
 add_shortcode( 'fetured_speaker_shortcode', 'fetured_speaker_shortcode_func' );
 
-//END FEATURE 
+//END FEATURE
 
 ?>
 
-<?php 
+<?php
 
 if(!function_exists('update_presentation_on_user_save')){
 
@@ -1131,13 +1117,13 @@ if(!function_exists('update_presentation_on_user_save')){
 			if ( $presentationToCheck->have_posts() ) {
 
 				while ( $presentationToCheck->have_posts() ) {
-					
+
 					$presentationToCheck->the_post();
 					$presentationToCheckId=get_the_ID();
 
 					// this is the new data sumbitted
 					$role_at = $speaker_role.'_at';
-					$new_data=($user->$role_at); 
+					$new_data=($user->$role_at);
 
 					// if(!empty($new_data)){
 					// 	eraseFromPresent($user_id,$presentationToCheckId,$role_to_update);
@@ -1162,10 +1148,10 @@ if(!function_exists('update_presentation_on_user_save')){
 					if(($key) !== false) {
 								unset($presentationMeta[$key]);
 								update_post_meta( $presentationToCheckId, $role_to_update, $presentationMeta );
-							}	
+							}
 				}
 
-				}	
+				}
 
 			}
 
@@ -1189,7 +1175,7 @@ if(!function_exists('update_presentation_on_user_save')){
 			'order' => 'ASC',
 			'posts_per_page'=>-1,
 		);
-	
+
 
 		// This are all the presentations that DONT have him/her listed as spekear/moderator/etc
 		$presentationToAdd = new WP_Query( $args );
@@ -1198,7 +1184,7 @@ if(!function_exists('update_presentation_on_user_save')){
 		if ( $presentationToAdd->have_posts() ) {
 
 			while ( $presentationToAdd->have_posts() ) {
-				
+
 				$presentationToAdd->the_post();
 				$presentationToAddId=get_the_ID();
 
@@ -1211,20 +1197,20 @@ if(!function_exists('update_presentation_on_user_save')){
 				if(!empty($posted_data))
 				if(in_array($presentationToAddId,$new_data)){
 
-					echo 'hay que agregar '.$user_id.' a '.$presentationToAddId.'<br>'; 
+					echo 'hay que agregar '.$user_id.' a '.$presentationToAddId.'<br>';
 					$presentationMeta = get_post_meta($presentationToAddId, $role_to_update,true);
 
 					$presentationMeta[]=$user_id;
 					$presentationMeta=array_unique($presentationMeta);
 
 					delete_post_meta($presentationToAddId, $role_to_update);
-					add_post_meta( $presentationToAddId, $role_to_update, $presentationMeta );	
-					$updatedMeta = get_post_meta( $presentationToAddId, $role_to_update, true);	
+					add_post_meta( $presentationToAddId, $role_to_update, $presentationMeta );
+					$updatedMeta = get_post_meta( $presentationToAddId, $role_to_update, true);
 				}
 
 			}
-			
-		}else { 
+
+		}else {
 			echo 'wrong query'; die;
 		}
 
@@ -1270,7 +1256,7 @@ function save_presentation( $post_id, $post, $update ) {
 
 				// remove the presentation to the unselected users
 					$args = array(
-					'meta_query' =>array(array('meta_key' => $role_to_update.'_at' ,'value' => $presentationId ,'compare' => 'LIKE'),) 
+					'meta_query' =>array(array('meta_key' => $role_to_update.'_at' ,'value' => $presentationId ,'compare' => 'LIKE'),)
 					);
 
 					$user_query = new WP_User_Query( $args );
@@ -1289,7 +1275,7 @@ function save_presentation( $post_id, $post, $update ) {
 							if(($key = array_search($_POST['post_ID'], $presentationIds)) !== false) {
 								unset($presentationIds[$key]);
 								update_user_meta( $user->ID, $role_to_update.'_at', $presentationIds );
-							}							
+							}
 						}
 						}
 					}
@@ -1299,7 +1285,7 @@ function save_presentation( $post_id, $post, $update ) {
 				if( $sizeSpeakers > 0 ) {
 					for( $i = 0; $i < $sizeSpeakers; $i++ ) {
 						$userMeta = get_user_meta( $speakerIds[$i], $role_to_update.'_at' );
-						
+
 						if( !empty( $userMeta ) ) {
 							$presentationIds = $userMeta[0];
 							if(is_array ( $presentationIds ))
@@ -1346,7 +1332,7 @@ function add_custom_to_yoast( $content ) {
 
 	foreach( $custom as $key => $value ) {
 
-		
+
 		if ( 'agenda_tracks' == get_post_type($pid) ) {
 		// Returns true when 'agenda_tracks.php' is being used.
 
@@ -1356,7 +1342,7 @@ function add_custom_to_yoast( $content ) {
 
 			}
 			else if($key=='speakers_meta' ||$key=='panelists_meta' ||$key=='collaborators_meta' ||$key=='facilitators_meta' ||$key=='moderators_meta' ){
-				
+
 				$title= substr($key,0,-6);
 					foreach (unserialize($value[0]) as $speaker) {
 							$custom_content .= $title . ' : ' . get_user_meta($speaker,'first_name',true) . ' ' . get_user_meta($speaker,'last_name',true). '</br>';
@@ -1372,7 +1358,7 @@ function add_custom_to_yoast( $content ) {
 				$custom_content .= 'Presentation Ends: '.date('F j, Y, g:i a',$value[0]). '</br>';
 
 			}
-			
+
 			else{
 			  if (is_array($value)){
 			  	$custom_content .= implode ( ',' , $value) . '</br>';
@@ -1380,9 +1366,9 @@ function add_custom_to_yoast( $content ) {
 			  	$custom_content .=$value[0]. '</br>';
 			  }
 			}
-	
+
 		} else if( basename( get_page_template() ) == 'speakers-template.php') {
-			
+
 			// we may need code here
 
 			$blogusers = get_users( 'role=Speaker' );
@@ -1394,11 +1380,11 @@ function add_custom_to_yoast( $content ) {
 
 				$custom_content.= wp_get_attachment_image($user->image) . '<br/>';
 				$custom_content.= esc_html( $user->display_name ) . '<br/>';
-						
+
 				// New mapping of user and companies with job role
 				// Get companies and job role
 				$companyIds = getUserCompanies( esc_html( $user->ID ), true );
-						
+
 				if( (int)$companyIds > 0 ) {
 					$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyIds );
 					if( empty( $jobRole ) ) {
@@ -1406,7 +1392,7 @@ function add_custom_to_yoast( $content ) {
 					}
 					$custom_content.= esc_html( $jobRole ) . '<br/>';
 					$custom_content.= get_the_title( $companyIds );
-				} 
+				}
 
 			}
 
@@ -1441,7 +1427,7 @@ function add_custom_to_yoast( $content ) {
 
 		} else {
 		}
-		
+
 
 	}
 
@@ -1453,5 +1439,49 @@ function add_custom_to_yoast( $content ) {
 
 	remove_filter('wpseo_pre_analysis_post_content', 'add_custom_to_yoast'); // don't let WP execute this twice
 }
+
+/*---	Testimonial shortcode	---*/
+function scTestimonials()
+{
+	$testimonial_query = new WP_Query(array(
+			'post_type' => 'testimonials',
+  			'post_status' => 'publish',
+			'orderby' => 'rand',
+  			'posts_per_page' => 1
+		));
+
+
+	if( $testimonial_query->have_posts() )
+	{
+		while($testimonial_query->have_posts())
+		{
+			$testimonial_query->the_post();
+			$prefix = '_TMF_';
+			$testimonial_id = get_the_ID();
+			$testimonials_author_id = get_post_meta( $testimonial_id, $prefix . 'testimonial_author',true);
+
+			$authorData = get_user_meta($testimonials_author_id);
+
+			$authorName =  $authorData['first_name'][0].' '.$authorData['last_name'][0];
+			$testimonialQuote = get_the_content();
+
+			if($authorData['image'][0] != NULL){
+				$imgSRC = $authorData['image'][0];
+			}else{
+				$imgSRC = '/wp-content/uploads/2014/09/default_speaker.png';
+			}
+
+			$authorRole = $authorData['job_role'][0];
+			$companyId = getUserCompanies( $testimonials_author_id, true );
+			$companyName =  get_the_title( $companyId );
+
+
+		}
+	}
+	wp_reset_query();
+
+	return $authorName.'-|-'.$testimonialQuote.'-|-'.$imgSRC.'-|-'.$authorRole.'-|-'.$companyName;
+}
+add_shortcode('show_testimonials','scTestimonials');
 
 ?>

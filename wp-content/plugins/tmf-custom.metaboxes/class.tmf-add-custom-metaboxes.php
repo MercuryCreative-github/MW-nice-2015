@@ -234,6 +234,32 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                 )
             );
 
+/*--  Testimonial author  --*/
+
+$meta_boxes['testimonials'] = array(
+                'id' => 'testimonials',
+                'title' => __('TM Forum Presentations settings', 'cmb2'),
+                'object_types' => array('testimonials'), // Post type
+                'context' => 'normal',
+                'priority' => 'high',
+                'show_names' => true, // Show field names on the left
+                'fields' => array(
+                   
+
+                    array(
+                        'name' => 'Author',
+                        'id' => $prefix . 'testimonial_author',
+                        'desc' => 'Select author of the cite',
+                        'options' => self::get_all_speakers(),
+                        'type' => 'pw_select',
+                        'sanitization_cb' => 'pw_select2_sanitise',
+
+                    )
+                )
+            );
+
+/*--  END Testimonial author  --*/
+
             $meta_boxes['agenda_tracks_users'] = array(
                             'id' => 'agenda_tracks_users',
                             'title' => __('TM Forum Presentations', 'cmb2'),
@@ -342,6 +368,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
 
             return $meta_boxes;
         }
+
 
 
 
