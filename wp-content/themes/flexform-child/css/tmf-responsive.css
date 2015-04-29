@@ -174,7 +174,7 @@
         margin-left: 0;
     }
     .sponsors_logo {
-        margin-left: 70px;
+        margin-left: 50px;
     }
     /*footer*/
 
@@ -357,7 +357,14 @@
         width: 88%;
     }
     .home .sponsors_logo {
-        margin-left: 40px;
+        margin-left: 10px;
+    }
+    .logo_platinum_2 img {
+        width: 65px;
+    }
+    .sponsors_logo.logo_platinum_2 a {
+        height: 60px;
+        line-height: 60px;
     }
     .home .page-content .section02-companies ul {
         width: 100%;
@@ -783,6 +790,9 @@
     .logo_1 img {
         height: 5.9vw;
     }
+    .logo_platinum_2 img {
+        width: 7vw;
+    }
     .logo_2 img {
         height: 4.9vw;
     }
@@ -796,7 +806,10 @@
         height: 3.9vw;
     }
     .home .sponsors_logo {
-        margin-left: 25px;
+        margin-left: 70px;
+    }
+    .home .sponsors_logo:first-child {
+        margin-left: 40px;
     }
     .discount-circle {
         float: none;
@@ -1525,6 +1538,9 @@
     .sponsors_logo a {
         height: 6vw;
         line-height: auto;
+    }
+    .sponsors_logo.logo_platinum_2 a {
+        height: 7vw;
     }
     .span2 {
         text-align: center;

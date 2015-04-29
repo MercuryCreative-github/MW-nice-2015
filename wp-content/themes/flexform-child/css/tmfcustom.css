@@ -416,12 +416,13 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 .logo_3 img {height: 60px;}
 .logo_4 img {height: 33px;}
 .logo_5 img {height: 40px;}
+.logo_platinum_2 img {width: 75px;}
 p.image-caption{margin:10px 0 0 0;line-height:100%;}
 .sponsors_logo {
 	text-align:center;
 	position: relative;
 	display: inline-block;
-	margin-left: 105px;
+	margin-left: 58px;
 }
 
 .sponsors_logo:first-child{	margin-left: 0px;}
@@ -429,6 +430,7 @@ p.image-caption{margin:10px 0 0 0;line-height:100%;}
 .sponsors_logo.logo_1 p.image-caption {background-color: #B2B2B2; color: #fff; padding: 5px;margin-top: -9px;}
 
 .sponsors_logo a {display: block; margin: auto; height: 60px; line-height: 60px;}
+.sponsors_logo.logo_platinum_2 a {height: 75px; line-height: 75px;}
 
 /*section02*/
 .hp-section02{position: relative;}
