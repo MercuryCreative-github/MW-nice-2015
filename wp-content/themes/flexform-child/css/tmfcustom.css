@@ -378,10 +378,6 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 	margin: 15px 0;
 	padding: 15px 0;
 }
-.section01-slogan span {
-	font-weight: 400;
-	font-size: 38px;
-}
 .section01-date {
 	font-size: 32px;
 	line-height: 39px;
@@ -435,7 +431,7 @@ p.image-caption{margin:10px 0 0 0;line-height:100%;}
 
 .section01-slogan.section01-mayday {font-size: 23px;border-bottom: none;line-height: 30px;}
 .section01-slogan.section01-mayday small {font-size: 75%;}
-
+.section01-slogan.section01-mayday span {font-weight: 500; font-size: 27px;}
 /*section02*/
 .hp-section02{position: relative;}
 .title-green {}
