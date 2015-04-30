@@ -348,6 +348,9 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 /******* HOME PAGE ********/
 /**************************/
 
+/*pop up may day*/
+.home .wdpu-27171 .wdpu-text { padding: 0; background: transparent;}
+
 #hp-section {padding-bottom: 50px;}
 .sec-main-content {width: 1230px;margin: 0 auto;}
 .sf-button {cursor: pointer;}
