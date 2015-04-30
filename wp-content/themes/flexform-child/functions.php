@@ -517,141 +517,140 @@ function summits_shortcode_func( $atts ) {
 
     // OutPut functions START HERE. Please read last.
     if (!function_exists('get_presentations')) {
-    function get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor){
+    	function get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor){
 
-    	$args = array(
-			'post_type'  => 'agenda_tracks',
-			'meta_key'	 => '_TMF_presentations_start_date',
-			'orderby'	 => 'meta_value_num',
-			'order' 		=> 'ASC',
-			'meta_query' => array(
-				array(
-					'key'     => '_TMF_presentation_session',
-					'value'   => $sessionId,
-					'compare' => 'LIKE',
+	    	$args = array(
+				'post_type'  => 'agenda_tracks',
+				'meta_key'	 => '_TMF_presentations_start_date',
+				'orderby'	 => 'meta_value_num',
+				'order' 		=> 'ASC',
+				'meta_query' => array(
+					array(
+						'key'     => '_TMF_presentation_session',
+						'value'   => $sessionId,
+						'compare' => 'LIKE',
+					),
 				),
-			),
-		);
+			);
+
+			// This are all the presentations that have him/her listed as spekear/moderator/etc
+			$presentationToCheck = new WP_Query( $args );
+
+			// The Loop
+			if ( $presentationToCheck->have_posts() ) {
+
+				while ( $presentationToCheck->have_posts() ) {
+
+					// variables unset
+					unset($arrayByRole);
+					$arrayByRole = array();
+					$speacificArray='';
+
+					// needed variables
+					$presentationToCheck->the_post();
+					$post_data = get_post($post->ID, ARRAY_A);
+					$presentationSlug = $post_data['post_name'];
+					$presentationToCheckId=get_the_ID();
+					$presentationTitle=get_the_title();
+					$presentationContent=get_the_content();
+					$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
+					$presentationStart=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+					$presentationEnd=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
+					$role_to_update='';
+
+					$roles=array('speaker','panelist','collaborator','facilitator','moderator');
 
 
-		// This are all the presentations that have him/her listed as spekear/moderator/etc
-		$presentationToCheck = new WP_Query( $args );
+					foreach ($roles as $role_to_update) {
 
-		// The Loop
-		if ( $presentationToCheck->have_posts() ) {
+						$role_to_fetch=	$role_to_update.'s_meta';
+						$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
 
-			while ( $presentationToCheck->have_posts() ) {
+						if(is_array($presentationSpeakers) && !empty($presentationSpeakers)){
 
-				// variables unset
-				unset($arrayByRole);
-				$arrayByRole = array();
-				$speacificArray='';
+							$speacificArray=$role_to_update;
 
-				// needed variables
-				$presentationToCheck->the_post();
-				$post_data = get_post($post->ID, ARRAY_A);
-				$presentationSlug = $post_data['post_name'];
-				$presentationToCheckId=get_the_ID();
-				$presentationTitle=get_the_title();
-				$presentationContent=get_the_content();
-				$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
-				$presentationStart=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
-				$presentationEnd=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
-				$role_to_update='';
+							foreach ( $presentationSpeakers as $presentationSpeaker ) {
 
+								// needed variables
+								$userMeta = get_user_meta( $presentationSpeaker, $role_to_update.'_at',true);
+								$userJobRole = get_user_meta( $presentationSpeaker, 'job_role',true);
+								$userCompanies = get_user_meta( $presentationSpeaker, 'company',true);
 
-				$roles=array('speaker','panelist','collaborator','facilitator','moderator');
+								// we are using just the first company.
+								$userCompanyId = $userCompanies[0];
 
+								$userCompanyName= get_the_title($userCompanyId);
 
-				foreach ($roles as $role_to_update) {
+								$user = get_user_by( 'id', $presentationSpeaker );
 
-					$role_to_fetch=	$role_to_update.'s_meta';
-					$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
+								// if the user has the checked role in this presentation
+								if(is_array($userMeta)){
 
-					if(is_array($presentationSpeakers) && !empty($presentationSpeakers)){
+									$hasThisRole=in_array($presentationToCheckId,$userMeta);
 
-						$speacificArray=$role_to_update;
+									$SpeakerHtmlOutput='';
 
-						foreach ( $presentationSpeakers as $presentationSpeaker ) {
+									if($hasThisRole){
+										//speaker output to store
+										$SpeakerHtmlOutput.='<p>- <a href="/speaker-profile/?id='.$user->ID.'">'.$user->display_name.'</a>, ';
+										$SpeakerHtmlOutput.='<em>'.($userJobRole).'</em>, ';
+										$SpeakerHtmlOutput.='<strong>'.$userCompanyName.'</strong>';
+										$SpeakerHtmlOutput.='</p>';
 
-							// needed variables
-							$userMeta = get_user_meta( $presentationSpeaker, $role_to_update.'_at',true);
-							$userJobRole = get_user_meta( $presentationSpeaker, 'job_role',true);
-							$userCompanies = get_user_meta( $presentationSpeaker, 'company',true);
+										// this array contains inside one array per role and inside each of them, the speakers data.
+										$arrayByRole[$speacificArray][]=$SpeakerHtmlOutput;
+									
+									} //close if($hasThisRole)
 
-							// we are using just the first company.
-							$userCompanyId = $userCompanies[0];
+								} //close if(is_array($userMeta)
 
-							$userCompanyName= get_the_title($userCompanyId);
+							} //close foreach ( $presentationSpeakers as $presentationSpeaker )
+						
+						} //close if(is_array($presentationSpeakers) && !empty($presentationSpeakers))
 
-							$user = get_user_by( 'id', $presentationSpeaker );
+					} //close foreach ($roles as $role_to_update)
 
-							// if the user has the checked role in this presentation
-							if(is_array($userMeta)){
+					$presentationSesion=$sessionId;
+					$presentationLink = get_permalink();
 
-								$hasThisRole=in_array($presentationToCheckId,$userMeta);
+					//Presentations output
 
-
-								$SpeakerHtmlOutput='';
-
-								if($hasThisRole){
-									//speaker output to store
-									$SpeakerHtmlOutput.='<p>- <a href="/speaker-profile/?id='.$user->ID.'">'.$user->display_name.'</a>, ';
-									$SpeakerHtmlOutput.='<em>'.($userJobRole).'</em>, ';
-									$SpeakerHtmlOutput.='<strong>'.$userCompanyName.'</strong>';
-									$SpeakerHtmlOutput.='</p>';
-
-									// this array contains inside one array per role and inside each of them, the speakers data.
-									$arrayByRole[$speacificArray][]=$SpeakerHtmlOutput;
-
-								}
-							}
-
-						}
-					}
-
-				}
-
-				$presentationSesion=$sessionId;
-				$presentationLink = get_permalink();
-
-				//Presentations output
-
-				$presentationsHtmlOutput.='<div class="summit-presentation">';
+					$presentationsHtmlOutput.='<div class="summit-presentation">';
 					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
 					$presentationsHtmlOutput.='<div class="presentation-info" id="'.$presentationSlug.'">';
-						$presentationsHtmlOutput.='<div class="presentation-title" >';
-						$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
-						$presentationsHtmlOutput.='</div>';
-						$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
-						$presentationsHtmlOutput.='<div class="presentation-content" style="display:none">'.$presentationContent.'</div>';
-						foreach ($roles as $rolesToshow) {
+					$presentationsHtmlOutput.='<div class="presentation-title" >';
+					$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
+					$presentationsHtmlOutput.='</div>';
+					$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
+					$presentationsHtmlOutput.='<div class="presentation-content" style="display:none">'.$presentationContent.'</div>';
+					foreach ($roles as $rolesToshow) {
 
-							if(count($arrayByRole[$rolesToshow])>1){
+						if(count($arrayByRole[$rolesToshow])>1){
 							$roleLabel=$rolesToshow.'s';
-							}else{$roleLabel=$rolesToshow;}
+						}else{$roleLabel=$rolesToshow;}
 
-								if(!empty($arrayByRole[$rolesToshow])){
-									$presentationsHtmlOutput.='<div class="presentation-speaker"><strong>'.ucwords($roleLabel).'</strong>';
+						if(!empty($arrayByRole[$rolesToshow])){
+							$presentationsHtmlOutput.='<div class="presentation-speaker"><strong>'.ucwords($roleLabel).'</strong>';
 
-									foreach ($arrayByRole[$rolesToshow] as $speakerData) {
-										$presentationsHtmlOutput.=$speakerData;
-									}
-
-									$presentationsHtmlOutput.='</div>';
+							foreach ($arrayByRole[$rolesToshow] as $speakerData) {
+								$presentationsHtmlOutput.=$speakerData;
 							}
-						}
+
+							$presentationsHtmlOutput.='</div>';
+						} //close if
+					} //close foreach
+
 					$presentationsHtmlOutput.='</div>'; //close presentation-info
-				$presentationsHtmlOutput.='</div>'; //close summit-presentation
+					$presentationsHtmlOutput.='</div>'; //close summit-presentation
 
-			}
-		}
+			    }// close while ( $presentationToCheck->have_posts()
+			} // close THE LOOP if ( $presentationToCheck->have_posts() 
 
-    	wp_reset_query();
+    		wp_reset_query();
 
-
-		return $presentationsHtmlOutput;
-	}} // end get_presentations
+			return $presentationsHtmlOutput;
+	}} // end if get_presentations
 
 	if (!function_exists('get_chair')) {
 	function get_chair($sessionChair){
