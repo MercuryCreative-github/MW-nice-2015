@@ -1037,6 +1037,10 @@ ul.list-within-list{font-size:14px;margin-left:57px;}
 	text-decoration: none;
 	width: 335px;
 }
+.roadmap-ad a:hover {
+	color:#FFF;
+	text-decoration:none;
+}
 .roadmap-ad h2 {
     border-bottom: 0 none;
     color: #fff;
