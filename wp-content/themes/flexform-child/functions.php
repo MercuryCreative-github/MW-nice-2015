@@ -744,12 +744,10 @@ function summits_shortcode_func( $atts ) {
 	// Variables set
 	$sessions='';
 	$storedDay = '';
-	$i=0;
 
 	while ( $loop->have_posts() ) : $loop->the_post();
 
 	// needed variables
-	$i++;
 	$sessionId = get_the_ID();
 	$sessionTitle = get_the_title();
 	$prefix = '_TMF_';
@@ -781,18 +779,30 @@ function summits_shortcode_func( $atts ) {
 	$sessions.= '<div class="clear"></div>';
 	$sessions.= '<div id="session-'.$sessionId.'">'.get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor).'</div>';
 
-	if($i==1){
-		$sessions.='<script>
-		function hideShowContent(where,subtitleCheck){
-			var $ = jQuery;
+	wp_reset_query();
 
-			// if in the link_to_presentation we write all it is not going to run the script
-			if("all"!==subtitleCheck)
-				$(".presentation-info", where).each(function(){
-					var here=$(this);
-					subtitle = $(".presentation-subtitle",here).text().toLowerCase();
+	$script='
+		<script>
 
-					if(subtitle!==subtitleCheck)
+		jQuery("document").ready(function(){
+
+
+			where = jQuery("#session-'.$sessionId.'");
+
+			if(typeof declared == "undefined"){
+
+				function hideShowContent(where,subtitleCheck){
+					var $ = jQuery;
+
+					// if in the link_to_presentation we write all it is not going to run the script
+					if("all"!==subtitleCheck)
+
+					$(".presentation-info", where).each(function(){
+
+						var here=$(this);
+						subtitle = $(".presentation-subtitle",here).text().toLowerCase();
+
+						if(subtitle!==subtitleCheck)
 
 						if($(".presentation-content",here).text()==""){
 							text=$(".presentation-title a",this).text();
@@ -806,24 +816,16 @@ function summits_shortcode_func( $atts ) {
 								$(".presentation-content",here).slideToggle();
 							});
 						}
-				})
+					})
 
-			return true;
-		}</script>';
-	}
+					return true;
+				};
 
-	wp_reset_query();
-
-	$script='
-		<script>
-
-		jQuery("document").ready(function(){
-
-			var declared;
-			where = jQuery("#session-'.$sessionId.'");
+			}
 
 			//after enter to the if call for the function, then run the function.
 			//When the function run, it return true: now declared is not undefined so it is not going to run the function again.
+
 
 			subtitleCheck = "'.$link_to_presentation.'".toLowerCase();
 
