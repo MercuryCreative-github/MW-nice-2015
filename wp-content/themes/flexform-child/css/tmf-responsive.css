@@ -183,8 +183,13 @@
     }
 }
 @media screen and (max-width: 1200px) {
-    /*404*/
 
+    /*pricing*/
+    .color-box.mt60.convince-boss {  width: 98%; padding: 10px 0px;}
+    .color-box.mt60.convince-boss h3 a {padding: 21px 10px 19px; margin-left: 25px;}
+    .the-content td.call-to-action a.sf-button.standard.register-agenda.long-register {background-image:none; }
+
+    /*404*/
     .error404 .page-404-box, .page-404-buttons {
         width: auto;
     }
@@ -594,8 +599,13 @@
     }
 }
 @media screen and (max-width: 980px) {
-    /*404*/
 
+    /*pricing*/
+    .color-box.mt60.convince-boss h3 a{background-color: transparent; color: #6ab764;}
+    .color-box.mt60.convince-boss {padding: 10px 20px;}
+
+
+    /*404*/
     .page-404-btn-home {
         float: none;
         margin-right: 0;
@@ -767,14 +777,7 @@
     .the-content td.call-to-action h3 {
         font-size: 1.8em;
     }
-    .the-content td.call-to-action a {
-        color: #ee7630;
-        background-color: transparent;
-        padding: 0;
-    }
-    .the-content td.call-to-action a:hover {
-        background-color: transparent;
-    }
+
     /*catalyst demo*/
 
     .catalyst-logos img {
@@ -4608,12 +4611,12 @@
 /***** Main Slider fix ****/
 
 @media only screen and (min-width: 1078px) and (max-width: 1170px) {
-    .section01 {
+    /*.section01 {
         background-position: -600px center;
-    }
+    }*/
 }
 @media only screen and (min-width: 1171px) and (max-width: 1270px) {
-    .section01 {
+    /*.section01 {
         background-position: -550px center;
-    }
+    }*/
 }
