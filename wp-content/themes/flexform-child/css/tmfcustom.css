@@ -1038,7 +1038,7 @@ ul.list-within-list{font-size:14px;margin-left:57px;}
 	width: 335px;
 }
 .roadmap-ad a:hover p {
-	color:#FFF;
+	color:#FFF !important;
 	text-decoration:none;
 }
 .roadmap-ad h2 {
