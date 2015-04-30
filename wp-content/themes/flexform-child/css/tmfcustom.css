@@ -2333,7 +2333,7 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 
 .color-box.mt60.convince-boss { width: 93%; padding: 10px 30px; margin-top: 0; margin-bottom: 30px;}
 .color-box.mt60.convince-boss h3 { color: #aaa9a9; font-size: 2.0em;}
-.color-box.mt60.convince-boss h3 a {font-size: 0.7em; padding: 0 9%;}
+.color-box.mt60.convince-boss h3 a {  font-size: 0.7em; padding: 21px 7.7% 19px; margin-left: 30px; color: #fff; background-color: #6ab764;}
 
 .the-content .section-apply-keynote .wpb_column .float-left {
 	font-weight: bold;
