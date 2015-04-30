@@ -431,7 +431,7 @@ p.image-caption{margin:10px 0 0 0;line-height:100%;}
 
 .section01-slogan.section01-mayday {font-size: 23px;border-bottom: none;line-height: 30px;}
 .section01-slogan.section01-mayday small {font-size: 75%;}
-.section01-slogan.section01-mayday span {font-weight: 500; font-size: 27px;}
+.section01-slogan.section01-mayday span.offer-mayday {font-weight: 500; font-size: 27px;}
 /*section02*/
 .hp-section02{position: relative;}
 .title-green {}
@@ -2327,6 +2327,13 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 .the-content td.call-to-action h3 span.your-boss {font-size: 1.6em;}
 .the-content td.call-to-action a {color: #FFF;background-color: #ee7630;padding: 10px 29px;}
 .the-content td.call-to-action a:hover {background-color: #E2740B;border-bottom: none;}
+
+.the-content td.call-to-action a.sf-button.medium.yellow.register-agenda {padding: 20px 24px;}
+.the-content td.call-to-action a.sf-button.standard.register-agenda.long-register span.register-text{font-size: 25px; line-height: 25px;}
+
+.color-box.mt60.convince-boss { width: 93%; padding: 10px 30px; margin-top: 0; margin-bottom: 30px;}
+.color-box.mt60.convince-boss h3 { color: #aaa9a9; font-size: 2.0em;}
+.color-box.mt60.convince-boss h3 a {font-size: 0.7em; padding: 0 9%;}
 
 .the-content .section-apply-keynote .wpb_column .float-left {
 	font-weight: bold;
