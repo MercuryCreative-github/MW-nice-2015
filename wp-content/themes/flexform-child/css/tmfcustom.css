@@ -2331,9 +2331,12 @@ table.table-pricing-contaier tbody tr.exhibitor-price td {
 .the-content td.call-to-action a.sf-button.medium.yellow.register-agenda {padding: 20px 24px;}
 .the-content td.call-to-action a.sf-button.standard.register-agenda.long-register span.register-text{font-size: 25px; line-height: 25px;}
 
-.color-box.mt60.convince-boss { width: 93%; padding: 10px 30px; margin-top: 0; margin-bottom: 30px;}
-.color-box.mt60.convince-boss h3 { color: #aaa9a9; font-size: 2.0em;}
-.color-box.mt60.convince-boss h3 a {  font-size: 0.7em; padding: 21px 7.7% 19px; margin-left: 30px; color: #fff; background-color: #6ab764;}
+.passes-prices .convince-boss .color-box { padding: 0 25px; height: 50px; min-height: 50px; width: 45%;  float: left;}
+.passes-prices .convince-boss .color-box h3 {text-align: center;  text-transform: uppercase;   font-size: 1.3em; color: #9B9B9B;}
+.passes-prices .convince-boss .color-box h3 a {color: #fff; font-weight: 300;}
+.convince-boss .color-box.box-green {border-left: none;  background-color: #009BB4;}
+.convince-boss .color-box.box-green h3 {font-size: 1.1em;}
+.convince-boss {  margin-bottom: 50px; }
 
 .the-content .section-apply-keynote .wpb_column .float-left {
 	font-weight: bold;
