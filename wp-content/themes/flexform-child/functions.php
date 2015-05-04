@@ -849,9 +849,7 @@ function summits_shortcode_func( $atts ) {
 } // end of shortcode
 
 add_shortcode( 'summits_shortcode', 'summits_shortcode_func' );
-
 ?>
-
 <?php
 
 //STAR FEATURE
@@ -1054,7 +1052,6 @@ add_shortcode( 'fetured_speaker_shortcode', 'fetured_speaker_shortcode_func' );
 //END FEATURE
 
 ?>
-
 <?php
 
 if(!function_exists('update_presentation_on_user_save')){
@@ -1480,5 +1477,4 @@ function scTestimonials()
 	return $authorName.'-|-'.$testimonialQuote.'-|-'.$imgSRC.'-|-'.$authorRole.'-|-'.$companyName;
 }
 add_shortcode('show_testimonials','scTestimonials');
-
 ?>
