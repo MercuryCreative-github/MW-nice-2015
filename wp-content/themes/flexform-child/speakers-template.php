@@ -117,9 +117,9 @@ Template Name: Speakers
 		//-->
 			<div class="span12 speakers-actions">
 				<div class="filters span9">
-					<button type="button" class="high">Featured</button>
+					<button type="button" class="high active">Featured</button>
 					<button type="button" class="key">Keynotes</button>
-					<button type="button" class="all active">Full Speakers List</button>
+					<button type="button" class="all">Full Speakers List</button>
 				</div>
 				<div class="form span3">
 					<input type="search" class="find-speaker" placeholder="Search for Speakers">
