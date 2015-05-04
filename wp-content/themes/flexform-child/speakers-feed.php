@@ -46,8 +46,7 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 		}
 		$speaker.= '</company>';
 		
-		$speaker.= '<description>' . $user->description . '</description>';
-		$speaker.= '<biography>' . $user->description . '</biography>';
+		$speaker.= '<description>' . htmlspecialchars ($user->biography) . '</description>';
 		$speaker.= '<imageurl>' . wp_get_attachment_image($user->image) . '</imageurl>';
 		$speaker.= '<website>' . esc_html( $user->website ) . '</website>';
 		$speaker.= '<twitter>' . $user->twitter_alias . '</twitter>';
