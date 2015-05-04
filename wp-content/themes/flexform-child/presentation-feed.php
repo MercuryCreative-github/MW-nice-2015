@@ -2,7 +2,6 @@
 $arr = array();
 $i=0;
 $presentations = array();
-
 if(isset($_GET['id'])){$id=$_GET['id'];}else{
 	$args = array(
 		'posts_per_page'   => -1,
@@ -11,17 +10,14 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 		'post_type'        => 'agenda_tracks',
 		'post_status'      => 'publish',
 	);			
-
 	$presentations = get_posts( $args );
 	foreach ( $presentations as $presentation ) {
 		$session  = '<item>';
 			$session .= '<title>' . (htmlspecialchars($presentation->post_title)) . '</title>';
-			
 			$presentationId=$presentation->ID; 
 			$date=date('Y-m-d H:i:s',get_post_meta($presentationId,'_TMF_presentations_start_date',true));
 			$startTime=date('g:i a',get_post_meta($presentationId,'_TMF_presentations_start_date',true));
 			$endTime=date('g:i a',get_post_meta($presentationId,'_TMF_presentations_end_date',true));
-
 			$session .= '<date>' . $date . ' +0200</date>';
 			$session .= '<startTime>' . $startTime . '</startTime>';
 			$session .= '<endTime>' . $endTime . '</endTime>';
@@ -30,7 +26,6 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 			$session .= '<location>' . $location . '</location>';
 			$field = get_field( "forum", $presentation->ID );
 			$fieldId = '';
-
 			if( !empty( $field )) {
 				$fieldId = $field->ID;
 				$fn = get_the_title( $fieldId );
@@ -47,43 +42,36 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 			add_action( 'pre_user_query', function( $user_query ) {
 				$user_query->query_fields = 'DISTINCT ' . $user_query->query_fields;
 			} );
-
 			// The Query
 			$user_query = new WP_User_Query( $args );
-
 			// User Loop
 			if ( ! empty( $user_query->results ) ) {
 				foreach ( $user_query->results as $user ) {
-					$SpeakerRole = '<item>'. $user->first_name.' '.$user->last_name . '</item>';
-				
+					$SpeakerRole = '<item>'. $user->first_name.' '.$user->last_name . '</item>';	
 					if(($user->speaker_at))
 					if (in_array($presentationId, $user->speaker_at)) {
 						$session .= '<speakerIds>';
 						$session .= $SpeakerRole;
 						$session .= '</speakerIds>';
 					}
-					
 					if(($user->moderator_at))
 					if (in_array($presentationId, $user->moderator_at)) {
 						$session .= '<moderatorIds>';
 						$session .= $SpeakerRole;
 						$session .= '</moderatorIds>';
 					}
-
 					if(($user->panelist_at))
 					if (in_array($presentationId, $user->panelist_at)) {
 						$session .= '<panelistIds>';
 						$session .= $SpeakerRole;
 						$session .= '</panelistIds>';
 					}
-
 					if(($user->facilitator_at))
 					if (in_array($presentationId, $user->facilitator_at)) {
 						$session .= '<facilitatorIds>';
 						$session .= $SpeakerRole;
 						$session .= '</facilitatorIds>';
 					}
-
 					if(($user->collaborator_at))
 					if (in_array($presentationId, $user->collaborator_at)) {
 						$session .= '<collaboratorIds>';
@@ -92,7 +80,6 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 					}
 				} //close foreach
 			} //close if
-
 			$session .= '<linkUrls>' . get_permalink( $presentation->ID ) . '</linkUrls>';
 			$session .= '<sessionId>' . $presentation->ID . '</sessionId>';
 		$session .= '</item>';
