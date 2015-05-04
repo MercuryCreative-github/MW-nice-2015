@@ -109,12 +109,7 @@ Template Name: Speakers
 		<?php } else { ?>
 
 		<div class="page-content clearfix">
-		<!--//
-		<div class="speaker-description">
-			<h2>Here is just a small selection of the experts presenting at TM Forum Live!</h2>
-			<p style="margin-bottom: 50px;">Watch this space for the full speaker list coming very soon.</p>
-		</div>
-		//-->
+
 			<div class="span12 speakers-actions">
 				<div class="filters span9">
 					<button type="button" class="high">Featured</button>

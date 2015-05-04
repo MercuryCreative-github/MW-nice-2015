@@ -948,7 +948,7 @@ nav .menu ul{background-color:transparent !important;}
 		float: left;
 		padding-bottom: 2px;
 }
-.feed-related-posts .feed-item {max-height: 380px;float: left; width: 300px;min-height: 320px;background-color:#fff;color: #444;margin: 0 15px 15px 0;}
+.feed-related-posts .feed-item {max-height: 380px;float: left; width: 300px;min-height: 335px;background-color:#fff;color: #444;margin: 0 15px 15px 0;}
 .feed-related-posts .feed-item:nth-child(3) {background-color: #6da96f;color: #fff;}
 .feed-related-posts .feed-item:nth-child(2) {background-color: #5fa098;color: #fff;}
 .feed-related-posts .feed-item:hover {background-color: #F2F2F2;}
