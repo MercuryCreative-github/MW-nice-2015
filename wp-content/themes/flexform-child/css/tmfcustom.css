@@ -1689,6 +1689,17 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 
 .fix-row .row { margin-left:-20px;}
 
+/*summit list in AAG*/
+
+.agenda-summit ul {margin: 0;}
+.agenda-summit li.summit-list {display: table; width: 100%;padding: 20px 0;border-bottom: 1px solid #e2e3e2; padding-left: 10px;height: 45px;}
+.agenda-summit li.summit-list a.section02-list-link { width: 60px; min-width: 60px; text-align: center;}
+.agenda-summit li.summit-list a.summit-list-text {line-height: 21px;}
+.agenda-summit li.summit-list:first-child {margin-left: 0;}
+.agenda-summit li.summit-list:hover {background-color: #F6F7F7;}
+.agenda-summit li.no-hover:hover {background-color: transparent;}
+.agenda-journey a.summit-list-text:before {content: "\f019"; font: normal normal normal 19px/1 FontAwesome; margin-right: 5px;color: #5C5B5F;}
+
 /* END RSS ON HOME PAGE **/
 #wpcf7-f5-p13832-o1 input[type="email"]{-moz-box-sizing:content-box;}
 .wpcf7 input[type="email"]:focus{border-color:#44ABE1 !important;}
