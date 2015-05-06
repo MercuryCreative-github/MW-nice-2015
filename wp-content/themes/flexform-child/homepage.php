@@ -268,15 +268,12 @@ Template Name: Home Page
 		</div>
 	</div>
 	</div>	
-	<div class="video-promo">
-	<iframe width="398" height="250" src="https://www.youtube.com/embed/W8PTSVXiCyI" frameborder="0" allowfullscreen></iframe>
-	</div>	
 	<div class="twitter-feed">
 
 <div id='twitter_widget' class='widget twitter_widget'>
             <div class="widget-heading clearfix">
                         <h2 class="tw-title">Latest on Twitter</h2>
-                        <a class="twitter-timeline" width"100%" height="380" href="https://twitter.com/tmforumorg" data-widget-id="365265624051617792" data-chrome="noheader transparent" data-link-color="#338ECC" data-border-color="#ffffff" data-tweet-limit="2" data-src-2x="false" data-src="false" >
+                        <a class="twitter-timeline" width"100%" height="380" href="https://twitter.com/tmforumorg" data-widget-id="365265624051617792" data-chrome="noheader transparent" data-link-color="#338ECC" data-border-color="#ffffff" data-tweet-limit="4" data-src-2x="false" data-src="false" >
                             Tweets by @tmforumorg
                         </a>
                         <script>
