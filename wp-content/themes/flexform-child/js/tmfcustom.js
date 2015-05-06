@@ -96,7 +96,7 @@ function homepageSectionsResize(){
     var $ = jQuery;
     if($('.page-template-homepage-php').index()>0){
 
-        var sponsorsHeight  = 108;//$('.section01-sponsors').outerHeight();
+        var sponsorsHeight  = 135;//$('.section01-sponsors').outerHeight();
         var minHeight       = 760-sponsorsHeight;
         var screenHeight    = Math.max($(window).height(),minHeight);
         var menuHeight      = $('#header-section').outerHeight();
