@@ -2530,7 +2530,7 @@
     .home .sponsors_logo {
         margin-left: -4px; 
     }
-    .home .page-content p {visibility: hidden; margin: 0;}
+    .home .page-content .sponsors_logo p.image-caption {visibility: hidden; margin: 0;}
     .logo_1 img {
         height: 4.6vw;
     }
