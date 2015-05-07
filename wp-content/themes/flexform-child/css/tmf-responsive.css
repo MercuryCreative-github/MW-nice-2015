@@ -824,10 +824,10 @@
         height: 3.9vw;
     }
     .home .sponsors_logo {
-        margin-left: 70px;
+        margin-left: 15px;
     }
     .home .sponsors_logo:first-child {
-        margin-left: 40px;
+        margin-left: 30px;
     }
     .discount-circle {
         float: none;
@@ -2528,8 +2528,9 @@
         padding: 20px 0 0 0;
     }
     .home .sponsors_logo {
-        margin-left: 15px;
+        margin-left: -4px; 
     }
+    .home .page-content p {visibility: hidden; margin: 0;}
     .logo_1 img {
         height: 4.6vw;
     }
