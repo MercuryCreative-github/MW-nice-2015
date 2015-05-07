@@ -82,6 +82,9 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 			} //close if
 			$session .= '<linkUrls>' . get_permalink( $presentation->ID ) . '</linkUrls>';
 			$session .= '<sessionId>' . $presentation->ID . '</sessionId>';
+			$prefix = '_TMF_';
+			$sessionColor = get_post_meta ( $sessionId, $prefix . 'summit_colorpicker',true);
+			$session .= '<color>'. $sessionColor .'</color>';
 		$session .= '</item>';
 		array_push($arr,$session);
 	};
