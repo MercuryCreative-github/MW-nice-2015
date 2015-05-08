@@ -361,6 +361,7 @@ $meta_boxes['testimonials'] = array(
                                     'options' => array(
                                         'check1' => 'Featured',
                                         'check2' => 'Keynote',
+                                        'check3' => 'InHomePage',
                                     )
                                 ), 
                             )
