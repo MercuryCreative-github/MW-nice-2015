@@ -291,18 +291,6 @@ Companies In attendance</li>
 </div>
 </div>
 </div>
-<div class="section02-companies">
-<ul>
-	<li><img src="/wp-content/uploads/2015/02/icon-speaker-squard.png" alt="" />
-<p class="section02-companies-text">Over 200 speakers,
-including:</p>
-</li>
-	<li><img src="/wp-content/uploads/2015/02/British-Gas-logo.png" alt="" /></li>
-	<li><img src="/wp-content/uploads/2015/02/Telefonica-Logo.png" alt="" /></li>
-	<li><img src="/wp-content/uploads/2015/02/logo-google-hp.png" alt="" /></li>
-	<li><img src="/wp-content/uploads/2015/02/vodafone-mobile-logo.png" alt="" /></li>
-</ul>
-</div>
 </div>
 </section>
 
