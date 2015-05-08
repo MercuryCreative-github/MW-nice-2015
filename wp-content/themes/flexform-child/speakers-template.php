@@ -154,8 +154,13 @@ Template Name: Speakers
 						if(is_array($categorySpeakers)){
 
 							foreach ($categorySpeakers as $categorySpeaker) {
-								if($categorySpeaker=='check1'){$categoryDisplay.=' featured';}
-									else{$categoryDisplay.=' keynote';};
+								if($categorySpeaker=='check1') {
+									$categoryDisplay.=' featured';
+								} elseif($categorySpeaker=='check2') {
+									$categoryDisplay.=' keynote';
+								} else {
+									$categoryDisplay.=' in-home-page';
+								};
 							}
 						}
 

@@ -362,6 +362,8 @@
 }
 @media screen and (max-width: 1145px) { 
     .section01-info-left { width: 40%; padding: 0px 1% 0 0;}
+    .hp-speaker-item .speaker-data {width: 55%;}
+    .hp-speaker-item {width: 47%;}
 }
 @media screen and (max-width: 1120px) {
     #mini-header .container {
@@ -389,6 +391,7 @@
     }
 }
 @media screen and (max-width: 1077px) {
+    .hp-speaker-item .speaker-data {width: 54%;}
     .sponsors h2 {
         padding-left: 10px;
     }
@@ -1868,8 +1871,13 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
-    /*SIDEBAR WORKSHOP*/
 
+    /*hp - section - speaker logos*/
+    .hp-speaker-item .thumb-single {height: 100px; width: 100px; margin-right: 5px;}
+    .hp-speaker-item .speaker-data {height: 100px; padding: 5px 0 0 10px;}
+    .hp-speaker-item .speaker-data img {max-height: 30px; margin-top: 10px;}
+
+    /*SIDEBAR WORKSHOP*/
     .workshops .rev_slider ul li div.tp-caption-first {
         font-size: 18px;
     }
@@ -2499,8 +2507,11 @@
     }
 }
 @media screen and (max-width: 767px) {
-    /*summit banners - 15*/
+    
+    /*hp speakers logo*/
+    .hp-speaker-item {float: none; width: 90%;}
 
+    /*summit banners - 15*/
     .banner-journey {
         position: relative;
         margin: 50px 0;

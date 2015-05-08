@@ -513,6 +513,31 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 }
 .call-text-big {font-weight: 800;font-size: 45px;}
 .to-remove-position-absolute {height: 50px;}
+
+/*section-speakers*/
+.section-speakers .cell {
+	background-color: rgba(240, 241, 241, 0.43);
+}
+#hp-section.section-speakers { 
+  padding-bottom: 0px;
+}
+.section-speakers .title-green {
+	background: url('/wp-content/uploads/2015/05/bkg-speaker-logos.png') no-repeat;
+	background-position-x: 100%; 
+	height: 138px;
+	padding-top: 80px;
+	border-bottom: #DEDFE3 4px solid;
+}
+.hp-speaker-item  {
+	padding: 35px 0 15px 20px;
+	width: 48%;
+  	float: left;
+}
+.border-item {border-bottom: 4px #DEDFE3 solid;}
+.hp-speaker-item .speaker-data {border-left: #DEDFE3 1px solid; height: 130px; padding: 10px 0 0 24px;width: 59%;}
+.hp-speaker-item .speaker-data p {font-size: 15px; line-height: 22px; font-weight: 400; color: #333;}
+.hp-speaker-item .speaker-data img {max-height: 75px; margin-top: 5px;}
+
 /*section03*/
 .section03 {
 	background-image: url('/wp-content/uploads/2015/03/networking-bg.jpg');
@@ -598,23 +623,18 @@ a.pricing-call-out-content {width: 750px;margin: 0 auto;padding: 20px 0;display:
 	color: #FFF;
 	font-weight: 100;
 }
-
 .home .page-content ul, .page-content ol {
 	margin: 0 0 10px 25px;
 }
-
 .home .page-content ul li{
 	line-height: 20px;
 }
-
 .home .page-content p {
 	margin-bottom: 10px;
 }
-
 .twfollow {display: none;}
 /**/
 .exhibitorslist .widget.list_icons_widget a, .big-sidebar-list .widget.list_icons_widget a{font-size: 23px;}
-
 /* CATALYST DEMOSTRATION */
 .catalyst-demo .row {margin-left: -40px;}
 .catalyst-logos img {max-width: 130px;margin-right: 50px;margin-bottom: 25px;}
