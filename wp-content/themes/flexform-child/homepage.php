@@ -159,6 +159,104 @@ Template Name: Home Page
 
 <?php endif; ?>
 
+<section id="hp-section" class="section-speakers">
+	<div  class="cell">
+		<div class="sec-main-content">
+			<div class="title-green">
+				<h1>Over 200 speakers, <span style="text-transform: lowercase;">including:</h1>
+			</div>
+
+<!-- Dinamic content: -->
+
+<div class="hp-speaker-box">
+
+<?php
+
+function create_page_content(){
+
+	$page_content='';
+
+	$args  = array(
+		'order ' => 'ASC',
+		'orderby' => 'meta_value',
+		'role' => 'speaker',
+		'posts_per_page' => 4,		
+		// check for two meta_values
+		'meta_query' => array(
+			array( 'key'     => 'last_name', ),
+		)
+	);
+
+	// Save user ID to pass on data to Speaker page
+	$user_id = esc_html( $user->ID );
+	
+	$user_query = new WP_User_Query( $args );
+
+	// User Loop
+	$i=0;
+	foreach ( $user_query->results as $user ) {
+		 if($i==4) break;		
+		$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
+		$categoryDisplay='';
+
+		if(is_array($categorySpeakers)){
+			foreach ($categorySpeakers as $categorySpeaker) {
+				if($categorySpeaker=='check1') {
+					$categoryDisplay.=' featured';
+				} elseif($categorySpeaker=='check2') {
+					$categoryDisplay.=' keynote';
+				} else {
+					$categoryDisplay.=' in-home-page';
+				};
+			}
+		}
+	if ($categoryDisplay==' in-home-page' || $categoryDisplay==' featured in-home-page' || $categoryDisplay==' keynote in-home-page') {
+		$page_content.= '<div class="hp-speaker-item'.$categoryDisplay.'">';
+			$page_content.= '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
+						
+		$userMetaImageId = get_user_meta($user->ID,'image_id',true);
+		$userMetaImage =  wp_get_attachment_image_src( $userMetaImageId, 'thumbnail' ); 
+
+		if(!($userMetaImage)){ $userMetaImage[] ='/wp-content/uploads/2014/09/default_speaker.png';}
+						
+				$page_content.= '<div class="thumb-single thumb"><img src="'.$userMetaImage[0].'" onload="speakerImgSize(this);"/></div>';
+				$page_content.= '<div class="speaker-data">';
+					$page_content.= '<p><strong>' . esc_html( $user->display_name ) . '</strong></p>';
+						
+		$companyIds = getUserCompanies( esc_html( $user->ID ), true );
+						
+		if( (int)$companyIds > 0 ) {
+			$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyIds );
+			if( empty( $jobRole ) ) {
+				$jobRole = esc_html( $user->role );
+			}
+				$page_content.= '<p>' . esc_html( $jobRole ) . '</p>';
+				$page_content.= '<img src="' . wp_get_attachment_url( get_post_thumbnail_id($companyIds) ) . '"/>';
+		} 
+			$page_content.= '</div>';
+		$page_content.= '</a>';
+		$page_content.= '</div> <!-- End Speaker -->';
+		$i++;
+	}
+	} // ends foreach $blogusers as $user
+
+	
+		return $page_content;
+	
+
+} // ends function create page content
+
+echo create_page_content();
+
+?>
+
+<!-- End dinamic content. -->
+
+			</div>
+		</div>
+	</div>
+</section>
+
 <section id="hp-section" class="section03">
 <div class="cell">
 <div class="sec-main-content">
