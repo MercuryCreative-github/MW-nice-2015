@@ -188,6 +188,8 @@
 }
 @media screen and (max-width: 1200px) {
 
+    .section01-logo {padding-bottom: 20px;}
+
     /*pricing*/
     .the-content td.call-to-action a.sf-button.standard.register-agenda.long-register {background-image:none; }
     .passes-prices .convince-boss .color-box {padding: 0; width: 49%;}
