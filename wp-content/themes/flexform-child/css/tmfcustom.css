@@ -418,13 +418,14 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 .logo_3 img {height: 60px;}
 .logo_4 img {height: 33px;}
 .logo_5 img {height: 40px;}
+.logo_6 img {height: 47px;}
 .logo_platinum_2 img {width: 75px;}
 p.image-caption{margin:10px 0 0 0;line-height:100%;}
 .sponsors_logo {
 	text-align:center;
 	position: relative;
 	display: inline-block;
-	margin-left: 58px;
+	margin-left: 32px;
 }
 
 .sponsors_logo:first-child{	margin-left: 0px;}
