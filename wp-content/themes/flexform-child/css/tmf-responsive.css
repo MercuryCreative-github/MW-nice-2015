@@ -116,6 +116,10 @@
         width: 745px;
     }
 }
+@media all and (max-width: 1370px) {
+    .section01-logo {padding-bottom: 20px;}
+}
+
 @media all and (min-width: 1250px) {
     /*tables size*/
 
