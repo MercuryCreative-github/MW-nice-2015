@@ -392,7 +392,7 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 .section01-buttons a {
 	border-radius: 5px; padding: 10px 20px; width: 150px; text-align: center;
 }
-.section01-mayday-save {font-size: 35px; font-weight: 400; background: #fff; color: rgb(113, 88, 66); padding: 10px 0;}
+.section01-mayday-save {font-size: 30px; font-weight: 400; background: #fff; color: rgb(113, 88, 66); padding: 10px 0;}
 .section01-buttons {text-align: center;}
 .section01-buttons a.orange {
 	background-color: #ED7900;
@@ -433,7 +433,7 @@ p.image-caption{margin:10px 0 0 0;line-height:100%;}
 .sponsors_logo a {display: block; margin: auto; height: 60px; line-height: 60px;}
 .sponsors_logo.logo_platinum_2 a {height: 75px; line-height: 75px;}
 
-.section01-slogan.section01-mayday {font-size: 28px;border-bottom: none;line-height: 36px;}
+.section01-slogan.section01-mayday {font-size: 20px;line-height: 30px;}
 .section01-slogan.section01-mayday small {font-size: 75%;}
 .section01-slogan.section01-mayday span.offer-mayday {font-weight: 500; font-size: 34px;}
 /*section02*/
