@@ -2,15 +2,12 @@
 <?php header('Content-Type: '.feed_content_type('rss-http').'; charset='.get_option('blog_charset'), true);
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';?>
 <?php 
-$numposts = 10; // number of posts in feed
-$posts = query_posts('showposts='.$numposts.'&cat=-1'); // replace the number 1 with the ID of your tumblelog category
-$more = 1;
 $arr = array();
 $i=0;
-if(isset($_GET['id'])){$id=$_GET['id'];}else{
-	$users = get_users( 'orderby=name&role=speaker'.$id );
+
+	$users = get_users( 'role=speaker');
 	$user_id = esc_html( $user->ID );
-	$avatar = get_user_meta($sid, 'image',1);}
+	$avatar = get_user_meta($sid, 'image',1);
 
 	foreach ( $users as $user ) {
 		$speaker= '<item>';
@@ -51,11 +48,14 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 		$speaker.= '<website>' . esc_html( $user->website ) . '</website>';
 		$speaker.= '<twitter>' . $user->twitter_alias . '</twitter>';
 		$sessionIds = get_user_meta( $user->ID, "speaker_at" );
-		$speaker.= '<SessionIDs>'; // Kushal put the IDs here
+		$speaker.= '<SessionIDs>'; 
 			if( !empty( $sessionIds ) ) {
 				$ids = $sessionIds[0];
 				$size = sizeof( $ids );
 				for( $i = 0; $i < $size; $i++ ) {
+
+				$presentationStatus=get_post_status( $ids[$i] );
+				if('publish'==$presentationStatus)
 					$speaker .= '<item>' . $ids[$i] . '</item>';
 				}
 			}

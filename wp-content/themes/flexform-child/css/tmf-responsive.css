@@ -2565,6 +2565,10 @@
     }
 }
 @media screen and (max-width: 767px) {
+
+    /*EAG*/
+
+    .summit-list.no-hover {display: none;}
     
     /*hp speakers logo*/
     .hp-speaker-item {float: none; width: 90%;}
