@@ -380,20 +380,20 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 .section01-info-right { padding-top: 8px; display: table-cell; width: 15%;}
 .banner-border-bottom {
 	border-bottom: #d6d7dc 1px solid;
-	padding: 15px 0;
+	padding: 8px 0;
 }
 .section01-date {
 	font-size: 26px;
 	line-height: 39px;
 	font-weight: 500;
-	padding-top: 0;
+	padding: 0;
 }
 .section01-date span {font-weight: 100;}
 .section01-buttons a {
 	border-radius: 5px; padding: 10px 20px; width: 150px; text-align: center;
 }
 .section01-mayday-save {font-size: 30px; font-weight: 400; background: #fff; color: rgb(113, 88, 66); padding: 10px 0;}
-.section01-buttons {text-align: center;}
+.section01-buttons {text-align: center;  margin-top: 12px;}
 .section01-buttons a.orange {
 	background-color: #ED7900;
 }
