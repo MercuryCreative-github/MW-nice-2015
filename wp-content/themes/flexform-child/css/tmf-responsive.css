@@ -636,7 +636,7 @@
     .section01-slogan {  font-size: 14px; line-height: 20px;}
     .section01-logo {padding-bottom: 0px;width: 45%;}
     .section01-info-left {display: block; width: 50%; padding: 0; margin: 0 auto;}
-    .section01-info-right {display: block; width: 100%; padding-top: 10px; text-align: center;}
+    .section01-info span.cbc_content, .section01-info-right {display: block; width: 100%; padding-top: 10px; text-align: center;}
     .section01-date {font-size: 19px; font-weight: 400;line-height: 20px;}
     .section01-mayday-save {font-size: 26px;}
     .section01-slogan.section01-mayday {font-size: 20px;line-height: 25px;}
@@ -644,7 +644,7 @@
     .section01-buttons {text-align: center; margin-top: 10px;}
     .banner-border-bottom {padding: 7px 0;}
     .section01-buttons a {width: auto;}
-    .section01-info-right {padding: 0;}
+    .section01-info span.cbc_content, .section01-info-right {padding: 0;}
 
     /*404*/
     .page-404-btn-home {

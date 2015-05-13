@@ -377,7 +377,7 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 	.section01-info { height: 545px; }
 }
 .section01-info-left { display: table-cell; width: 30%; vertical-align: top; padding: 0px 4% 0 10%; }
-.section01-info-right { padding-top: 8px; display: table-cell; width: 15%;}
+.section01-info span.cbc_content, .section01-info-right { padding-top: 8px; display: table-cell; width: 15%;}
 .banner-border-bottom {
 	border-bottom: #d6d7dc 1px solid;
 	padding: 8px 0;
