@@ -48,49 +48,39 @@ foreach ( $users as $user ) {
 		$speaker.= '<imageurl>' . $user->image . '</imageurl>';
 		$speaker.= '<website>' . esc_html( $user->website ) . '</website>';
 		$speaker.= '<twitter>' . $user->twitter_alias . '</twitter>';
-		$sessionIds = array();
-
-		$speaker_at = get_user_meta( $user->ID, "speaker_at",true);
-		$moderator_at = get_user_meta( $user->ID, "moderator_at",true);
-		$panelist_at = get_user_meta( $user->ID, "panelist_at",true);
-		$collaborator_at = get_user_meta( $user->ID, "collaborator_at",true);
-		$facilitator_at = get_user_meta( $user->ID, "facilitator_at",true);
-
-		if(is_array($speaker_at))
-		$sessionIds = array_merge($sessionIds,$speaker_at);
-
-
-		if(is_array($moderator_at))
-		$sessionIds = array_merge($sessionIds,$moderator_at);
-
-
-		if(is_array($panelist_at))
-		$sessionIds = array_merge($sessionIds,$panelist_at);
-
-
-		if(is_array($collaborator_at))
-		$sessionIds = array_merge($sessionIds,$collaborator_at);
-
-
-		if(is_array($facilitator_at))
-		$sessionIds = array_merge($sessionIds,$facilitator_at);
 
 		$speaker.= '<SessionIDs>'; 
-		
-		foreach ($sessionIds as $sesionId) {
-			$presentationStatus=get_post_status( $sesionId,true );
-			if('publish'==$presentationStatus){$speaker .= '<item>' . $sesionId . '</item>';}
-		}
-				
+
+			$sessionIds = array();
+			$speaker_at = get_user_meta( $user->ID, "speaker_at",true);
+			$moderator_at = get_user_meta( $user->ID, "moderator_at",true);
+			$panelist_at = get_user_meta( $user->ID, "panelist_at",true);
+			$collaborator_at = get_user_meta( $user->ID, "collaborator_at",true);
+			$facilitator_at = get_user_meta( $user->ID, "facilitator_at",true);
+
+			if(is_array($speaker_at))
+			$sessionIds = array_merge($sessionIds,$speaker_at);
+			if(is_array($moderator_at))
+			$sessionIds = array_merge($sessionIds,$moderator_at);
+			if(is_array($panelist_at))
+			$sessionIds = array_merge($sessionIds,$panelist_at);
+			if(is_array($collaborator_at))
+			$sessionIds = array_merge($sessionIds,$collaborator_at);
+			if(is_array($facilitator_at))
+			$sessionIds = array_merge($sessionIds,$facilitator_at);
+			
+			foreach ($sessionIds as $sesionId) {
+				$presentationStatus=get_post_status( $sesionId,true );
+				if('publish'==$presentationStatus){$speaker .= '<item>' . $sesionId . '</item>';}
+			}
+					
 		$speaker.= '</SessionIDs>';
+
 		$speaker.= '<id>' . esc_html( $user->ID ) . '</id>' ;
 		$speaker.= '<specification>' . esc_html( $user->speaker_attribs[0] ) . '</specification>';
 		$speaker.= '<countNumber>' . $s . '</countNumber>';
 		$speaker.= '</item>';
-
-
 		array_push($arr,$speaker);
-		//array_push($arr,'<item>'.implode(',',$sessionIds).' - '. $user->first_name.' - '.$s.'</item>');
 		$s++;
 	}
 header('Content-Type: '.feed_content_type('rss-http').'; charset='.get_option('blog_charset'), true);
