@@ -267,13 +267,8 @@ Template Name: Exhibitors list
 							jQuery('.keynotes-panel').fadeOut(0)
 							jQuery(speakerPanel).addClass(className);
 							jQuery(speakerPanel).stop(true, true).fadeIn(500)
-
-
 							jQuery('.active-panel').parent().css({"background": "url(/wp-content/themes/flexform-child/images/transp.png)","position": "fixed"});
-
-
 						}
-
 
 						jQuery('.icon_close').click(function(){
 							jQuery('.keynotes-panel').fadeOut(0,function(){jQuery('.exh-panels').css({"background": "none","position": "relative"});});
@@ -281,11 +276,8 @@ Template Name: Exhibitors list
 
 					})
 
-
-
 				}
 				/* Exhibitors List END */
-
 
 				  logo = 0
 				  divs='';
@@ -334,20 +326,12 @@ Template Name: Exhibitors list
 						   jQuery('#divs-'+id).append(divs);divs='';
 
 						   }
-
-
-
-
 				 })
                }
             });
         }
 
-
-
-
     </script>
-
 
     <script id="basicContent" type="text/x-jQuery-tmpl">
          {{each Contents}}

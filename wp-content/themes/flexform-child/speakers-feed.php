@@ -5,9 +5,19 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';?>
 $arr = array();
 $i=0;
 
-	$users = get_users( 'role=speaker');
+
+	$args  = array(
+	    'order ' => 'DESC',
+	    'orderby' => 'id',
+	    'role' => 'speaker',
+		'meta_query' => array(array('key'=> 'last_name'))
+	);
+
+	// Save user ID to pass on data to Speaker page
 	$user_id = esc_html( $user->ID );
-	$avatar = get_user_meta($sid, 'image',1);
+
+	$user_query = new WP_User_Query( $args );
+	$users = $user_query->results;
 
 	foreach ( $users as $user ) {
 		$speaker= '<item>';
