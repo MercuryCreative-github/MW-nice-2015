@@ -4171,6 +4171,10 @@
     }
 }
 @media screen and (max-width: 380px) {
+
+    /*mobile app*/
+    .mobile-app .app-icon{float: none; display: block; margin: 0 auto;}
+
     #hp-section.section03 {
         padding-bottom: 580px;
     }

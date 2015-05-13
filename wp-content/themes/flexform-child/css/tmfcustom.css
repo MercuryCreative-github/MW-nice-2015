@@ -144,7 +144,8 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
  width: 100% !important;
 }
 
-
+/*mobile app*/
+.mobile-app .app-icon{float: right;}
 
 /*SIDEBAR WORKSHOP*/
 .workshops .tp-caption.grey-btn {padding: 2px 30px;}

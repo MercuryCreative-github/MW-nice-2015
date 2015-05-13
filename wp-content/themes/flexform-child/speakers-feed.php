@@ -1,22 +1,17 @@
-<?php /* Template Name: Speakers Feed */ ?>
-<?php header('Content-Type: '.feed_content_type('rss-http').'; charset='.get_option('blog_charset'), true);
-echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';?>
-<?php 
+<?php /* Template Name: Speakers Feed */ 
 $arr = array();
 $i=0;
 
 
-	$args  = array(
-	    'order ' => 'DESC',
-	    'orderby' => 'id',
-	    'role' => 'speaker',
-		'meta_query' => array(array('key'=> 'last_name'))
+	$args = array(
+	   'order' => 'ASC',
+	   'orderby' => 'id',
+	   'role' => 'Speaker',
+	//'meta_query' => array(array('key'=> 'last_name'))
 	);
 
-	// Save user ID to pass on data to Speaker page
-	$user_id = esc_html( $user->ID );
-
 	$user_query = new WP_User_Query( $args );
+	//$user_query = new WP_User_Query(  );
 	$users = $user_query->results;
 
 	foreach ( $users as $user ) {
@@ -75,6 +70,8 @@ $i=0;
 		$speaker.= '</item>';
 		array_push($arr,$speaker);
 	}
+header('Content-Type: '.feed_content_type('rss-http').'; charset='.get_option('blog_charset'), true);
+echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 ?>
 <rss version="2.0"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
