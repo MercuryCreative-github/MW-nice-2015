@@ -261,7 +261,7 @@ echo create_page_content();
 <div class="cell">
 <div class="sec-main-content">
 <div class="section03-infobox01">
-<h1>NETWORK AT
+<h1>NETWORK AT<br/>
 TM FORUM LIVE!</h1>
 <a class="sf-button large green standard" href="/networking/">Learn More</a>
 
@@ -272,11 +272,11 @@ TM FORUM LIVE!</h1>
 <strong>2014 ATTENDEES:</strong>
 <ul>
 	<li><span class="attendees-number">80+</span>
-Countries Represented</li>
+<br/>Countries Represented</li>
 	<li><span class="attendees-number">296</span>
-CxOs</li>
+<br/>CxOs</li>
 	<li><span class="attendees-number">540+</span>
-Companies In attendance</li>
+<br/>Companies In attendance</li>
 </ul>
 <div class="clear"></div>
 </div>
