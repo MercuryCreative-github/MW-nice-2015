@@ -1,20 +1,16 @@
 <?php /* Template Name: Speakers Feed */ 
 $arr = array();
-$i=0;
+$s=1;
+$args = array(
+	//'order' => 'ASC',
+	'orderby' => 'id',
+	'role' => 'speaker',
+);
 
+$user_query = new WP_User_Query( $args );
+$users = $user_query->results;
 
-	$args = array(
-	   'order' => 'ASC',
-	   'orderby' => 'id',
-	   'role' => 'Speaker',
-	//'meta_query' => array(array('key'=> 'last_name'))
-	);
-
-	$user_query = new WP_User_Query( $args );
-	//$user_query = new WP_User_Query(  );
-	$users = $user_query->results;
-
-	foreach ( $users as $user ) {
+foreach ( $users as $user ) {
 		$speaker= '<item>';
 		$speaker.= '<title>' . esc_html( $user->first_name ) . ' ' . esc_html( $user->last_name ) . '</title>' ;
 		$speaker.= '<first_name>' . esc_html( $user->first_name ) . '</first_name>' ;
@@ -31,7 +27,6 @@ $i=0;
 		$companyIds = getUserCompanies( esc_html( $user->ID ) );
 		$jobRole = '';
 
-		$i = 0;
 		foreach( $companyIds as $companyId ) {
 			if( (int)$companyId == 0 ) continue;
 			$speaker .= '<item>';
@@ -43,32 +38,50 @@ $i=0;
 			$speaker .= '<companyName>' . $company . '</companyName>';
 			$speaker .= '<jobRole>' . esc_html( $user->job_role ) . '</jobRole>';
 
-			$i++;
 			$speaker .= '</item>';
 		}
 		$speaker.= '</company>';
 		
+
+
 		$speaker.= '<description>' . htmlspecialchars ($user->biography) . '</description>';
 		$speaker.= '<imageurl>' . $user->image . '</imageurl>';
 		$speaker.= '<website>' . esc_html( $user->website ) . '</website>';
 		$speaker.= '<twitter>' . $user->twitter_alias . '</twitter>';
-		$sessionIds = get_user_meta( $user->ID, "speaker_at" );
-		$speaker.= '<SessionIDs>'; 
-			if( !empty( $sessionIds ) ) {
-				$ids = $sessionIds[0];
-				$size = sizeof( $ids );
-				for( $i = 0; $i < $size; $i++ ) {
 
-				$presentationStatus=get_post_status( $ids[$i] );
-				if('publish'==$presentationStatus)
-					$speaker .= '<item>' . $ids[$i] . '</item>';
-				}
+		$speaker.= '<SessionIDs>'; 
+
+			$sessionIds = array();
+			$speaker_at = get_user_meta( $user->ID, "speaker_at",true);
+			$moderator_at = get_user_meta( $user->ID, "moderator_at",true);
+			$panelist_at = get_user_meta( $user->ID, "panelist_at",true);
+			$collaborator_at = get_user_meta( $user->ID, "collaborator_at",true);
+			$facilitator_at = get_user_meta( $user->ID, "facilitator_at",true);
+
+			if(is_array($speaker_at))
+			$sessionIds = array_merge($sessionIds,$speaker_at);
+			if(is_array($moderator_at))
+			$sessionIds = array_merge($sessionIds,$moderator_at);
+			if(is_array($panelist_at))
+			$sessionIds = array_merge($sessionIds,$panelist_at);
+			if(is_array($collaborator_at))
+			$sessionIds = array_merge($sessionIds,$collaborator_at);
+			if(is_array($facilitator_at))
+			$sessionIds = array_merge($sessionIds,$facilitator_at);
+			
+			foreach ($sessionIds as $sesionId) {
+				$presentationStatus=get_post_status( $sesionId,true );
+				if('publish'==$presentationStatus){$speaker .= '<item>' . $sesionId . '</item>';}
 			}
-		$speaker .= '</SessionIDs>';
+					
+		$speaker.= '</SessionIDs>';
+
 		$speaker.= '<id>' . esc_html( $user->ID ) . '</id>' ;
-    $speaker.= '<specification>' . esc_html( $user->speaker_attribs[0] ) . '</specification>';
+		$speaker.= '<specification>' . esc_html( $user->speaker_attribs[0] ) . '</specification>';
+		$speaker.= '<countNumber>' . $s . '</countNumber>';
 		$speaker.= '</item>';
 		array_push($arr,$speaker);
+		$s++;
 	}
 header('Content-Type: '.feed_content_type('rss-http').'; charset='.get_option('blog_charset'), true);
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
@@ -92,7 +105,6 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 	<sy:updatePeriod><?php echo apply_filters( 'rss_update_period', 'hourly' ); ?></sy:updatePeriod>
 	<sy:updateFrequency><?php echo apply_filters( 'rss_update_frequency', '1' ); ?></sy:updateFrequency>
 	<?php do_action('rss2_head'); ?>
-	<?php
-	foreach ( $users as $user ) {echo $arr[$i]; $i++;}?>
+	<?php foreach ( $users as $user ) {echo $arr[$i]; $i++;}?>
 </channel>
 </rss>
