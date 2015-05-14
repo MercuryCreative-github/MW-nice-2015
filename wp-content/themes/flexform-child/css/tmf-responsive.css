@@ -225,7 +225,7 @@
         font-size: 24px;
         line-height: 29px;
     }
-    .cca .banner-journey h4 {
+    .business-innovation .banner-journey h4, .cca .banner-journey h4 {
         top: 99px;
     }
     .nfv .banner-journey h4 {
@@ -686,8 +686,8 @@
     .banner-journey h4 {
         top: 137px;
     }
-    .cca .banner-journey h4 {
-        top: 90px;
+    .cca .banner-journey h4, .business-innovation .banner-journey h4 {
+        top: 82px;
     }
     .page-content .questions ul li:after {
         margin-right: -7px;
@@ -1282,8 +1282,8 @@
     .nfv .banner-journey h4 {
         top: 74px;
     }
-    .cca .banner-journey h4 {
-        top: 74px;
+    .cca .banner-journey h4, .business-innovation .banner-journey h4 {
+        top: 70px;
     }
     .banner-journey h4 {
         top: 118px;
@@ -2591,7 +2591,7 @@
         font-size: 27px;
         line-height: 32px;
     }
-    .cca .banner-journey h4 {
+    .cca .banner-journey h4, .business-innovation .banner-journey h4 {
         top: 120px;
     }
     .nfv .banner-journey h4 {
