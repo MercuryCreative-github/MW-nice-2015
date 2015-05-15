@@ -670,14 +670,15 @@ function summits_shortcode_func( $atts ) {
 
 					// needed variables
 					$userMeta = get_user_meta( $user->ID, $role_to_update.'_at' );
+					$chairJobRole = get_user_meta( $user->ID, 'job_role',true);
+					$chairCompanies = get_user_meta( $user->ID, 'company',true);
+					$chairCompanyId = $chairCompanies[0];
+					$chairCompanyName= get_the_title($chairCompanyId);
 
 					//Chair output
 					$chairHtmlOutput.='<div>';
-					$chairHtmlOutput.='Chair: '.$user->display_name;
+					$chairHtmlOutput.='Chair: '.$user->display_name.', '.$chairJobRole.', '.$chairCompanyName;
 					$chairHtmlOutput.='</div>';
-
-
-
 				}
 			}
 
