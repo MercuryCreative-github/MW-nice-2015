@@ -1936,7 +1936,7 @@
 @media screen and (min-width: 768px) and (max-width: 979px) {
 
     /*mobile app - pag*/
-    .mobile-app .active-revslide {
+    .mobile-app .rev_slider {
         background: url('/wp-content/uploads/2015/05/bkg-banner-app02.jpg');
     }
 
@@ -3453,7 +3453,7 @@
 @media screen and (max-width: 640px) {
 
     /*mobile app - pag*/
-    .mobile-app .active-revslide {
+    .mobile-app .rev_slider {
         background: url('/wp-content/uploads/2015/05/bkg-banner-app02.jpg');
     }
 
