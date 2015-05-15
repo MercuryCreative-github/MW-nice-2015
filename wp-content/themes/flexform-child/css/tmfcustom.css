@@ -147,7 +147,7 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 /*mobile app*/
 .mobile-app .app-icon{float: right;}
 .mobile-app a.app-btns{margin-right: 20px}
-.mobile-app .active-revslide {
+.mobile-app .rev_slider {
 	background: url('/wp-content/uploads/2015/05/bkg-banner-app01.jpg');
 	width: 100%;
   	height: 100%;
