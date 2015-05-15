@@ -147,6 +147,16 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 /*mobile app*/
 .mobile-app .app-icon{float: right;}
 .mobile-app a.app-btns{margin-right: 20px}
+.mobile-app .active-revslide {
+	background: url('/wp-content/uploads/2015/05/bkg-banner-app01.jpg');
+	width: 100%;
+  	height: 100%;
+  	visibility: inherit;
+}
+
+.mobile-app-banner {margin-top: 45px; margin-left: -3px;}
+.mobile-app-banner a {padding: 26px 3px 30px 3px;}
+.mobile-app-banner a:hover {box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);}
 
 /*SIDEBAR WORKSHOP*/
 .workshops .tp-caption.grey-btn {padding: 2px 30px;}
