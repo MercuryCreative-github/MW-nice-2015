@@ -3773,6 +3773,10 @@
     }
 }
 @media screen and (max-width: 480px) {
+
+    /*mobile app page*/
+    .mobile-app a.app-btns{margin: 0 auto;}
+
     .summit-list a.section02-list-link {
         padding-right: 10px;
     }
@@ -4174,6 +4178,7 @@
 
     /*mobile app*/
     .mobile-app .app-icon{float: none; display: block; margin: 0 auto;}
+
 
     #hp-section.section03 {
         padding-bottom: 580px;
