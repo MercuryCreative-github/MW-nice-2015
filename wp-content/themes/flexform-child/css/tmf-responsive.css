@@ -1935,6 +1935,11 @@
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
 
+    /*mobile app - pag*/
+    .mobile-app .active-revslide {
+        background: url('/wp-content/uploads/2015/05/bkg-banner-app02.jpg');
+    }
+
     /*hp - section - speaker logos*/
     .hp-speaker-item .thumb-single {height: 100px; width: 100px; margin-right: 5px;}
     .hp-speaker-item .speaker-data {height: 100px; padding: 5px 0 0 10px;}
@@ -3446,6 +3451,12 @@
     }
 }
 @media screen and (max-width: 640px) {
+
+    /*mobile app - pag*/
+    .mobile-app .active-revslide {
+        background: url('/wp-content/uploads/2015/05/bkg-banner-app02.jpg');
+    }
+
     /*SUPPLIERS*/
 
     div.suppliers p, div.suppliers.contact p {
