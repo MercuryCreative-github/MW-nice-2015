@@ -536,6 +536,7 @@ function summits_shortcode_func( $atts ) {
 
 			// This are all the presentations that have him/her listed as spekear/moderator/etc
 			$presentationToCheck = new WP_Query( $args );
+			$presentationsHtmlOutput='';
 
 			// The Loop
 			if ( $presentationToCheck->have_posts() ) {
@@ -615,7 +616,7 @@ function summits_shortcode_func( $atts ) {
 					$presentationLink = get_permalink();
 
 					//Presentations output
-					$presentationsHtmlOutput='<div class="summit-presentation">';
+					$presentationsHtmlOutput.='<div class="summit-presentation">';
 					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
 					$presentationsHtmlOutput.='<div class="presentation-info" id="'.$presentationSlug.'">';
 					$presentationsHtmlOutput.='<div class="presentation-title" >';
