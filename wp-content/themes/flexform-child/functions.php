@@ -536,6 +536,7 @@ function summits_shortcode_func( $atts ) {
 
 			// This are all the presentations that have him/her listed as spekear/moderator/etc
 			$presentationToCheck = new WP_Query( $args );
+			$presentationsHtmlOutput='';
 
 			// The Loop
 			if ( $presentationToCheck->have_posts() ) {
@@ -549,8 +550,7 @@ function summits_shortcode_func( $atts ) {
 
 					// needed variables
 					$presentationToCheck->the_post();
-					$post_data = get_post($post->ID, ARRAY_A);
-					$presentationSlug = $post_data['post_name'];
+					$presentationSlug = $presentationToCheck->post_name;
 					$presentationToCheckId=get_the_ID();
 					$presentationTitle=get_the_title();
 					$presentationContent=get_the_content();
@@ -560,7 +560,6 @@ function summits_shortcode_func( $atts ) {
 					$role_to_update='';
 
 					$roles=array('speaker','panelist','collaborator','facilitator','moderator');
-
 
 					foreach ($roles as $role_to_update) {
 
@@ -578,10 +577,11 @@ function summits_shortcode_func( $atts ) {
 								$userJobRole = get_user_meta( $presentationSpeaker, 'job_role',true);
 								$userCompanies = get_user_meta( $presentationSpeaker, 'company',true);
 
-								// we are using just the first company.
-								$userCompanyId = $userCompanies[0];
-
-								$userCompanyName= get_the_title($userCompanyId);
+								if(!empty($userCompanies)){
+									// we are using just the first company.
+									$userCompanyId = $userCompanies[0];
+									$userCompanyName= get_the_title($userCompanyId);
+								}
 
 								$user = get_user_by( 'id', $presentationSpeaker );
 
@@ -592,11 +592,11 @@ function summits_shortcode_func( $atts ) {
 
 									$SpeakerHtmlOutput='';
 
-									if($hasThisRole){
+									if($hasThisRole && is_object($user)){
 										//speaker output to store
 										$SpeakerHtmlOutput.='<p>- <a href="/speaker-profile/?id='.$user->ID.'">'.$user->display_name.'</a>, ';
 										$SpeakerHtmlOutput.='<em>'.($userJobRole).'</em>, ';
-										$SpeakerHtmlOutput.='<strong>'.$userCompanyName.'</strong>';
+										if(!empty($userCompanies)){$SpeakerHtmlOutput.='<strong>'.$userCompanyName.'</strong>';}
 										$SpeakerHtmlOutput.='</p>';
 
 										// this array contains inside one array per role and inside each of them, the speakers data.
@@ -616,7 +616,6 @@ function summits_shortcode_func( $atts ) {
 					$presentationLink = get_permalink();
 
 					//Presentations output
-
 					$presentationsHtmlOutput.='<div class="summit-presentation">';
 					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
 					$presentationsHtmlOutput.='<div class="presentation-info" id="'.$presentationSlug.'">';
@@ -625,11 +624,14 @@ function summits_shortcode_func( $atts ) {
 					$presentationsHtmlOutput.='</div>';
 					$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
 					$presentationsHtmlOutput.='<div class="presentation-content" style="display:none">'.$presentationContent.'</div>';
+					
 					foreach ($roles as $rolesToshow) {
 
-						if(count($arrayByRole[$rolesToshow])>1){
-							$roleLabel=$rolesToshow.'s';
-						}else{$roleLabel=$rolesToshow;}
+						$roleLabel=$rolesToshow;
+						if(isset($arrayByRole[$rolesToshow]))
+								if(count($arrayByRole[$rolesToshow])>1)
+										$roleLabel=$rolesToshow.'s';
+						
 
 						if(!empty($arrayByRole[$rolesToshow])){
 							$presentationsHtmlOutput.='<div class="presentation-speaker"><strong>'.ucwords($roleLabel).'</strong>';
@@ -669,11 +671,13 @@ function summits_shortcode_func( $atts ) {
 				foreach ( $user_query->results as $user ) {
 
 					// needed variables
-					$userMeta = get_user_meta( $user->ID, $role_to_update.'_at' );
 					$chairJobRole = get_user_meta( $user->ID, 'job_role',true);
 					$chairCompanies = get_user_meta( $user->ID, 'company',true);
-					$chairCompanyId = $chairCompanies[0];
-					$chairCompanyName= get_the_title($chairCompanyId);
+					$chairCompanyName='';
+					if(!empty($chairCompanies)){
+						$chairCompanyId = $chairCompanies[0];
+						$chairCompanyName= get_the_title($chairCompanyId);
+					}
 
 					//Chair output
 					$chairHtmlOutput.='<div>';
@@ -1025,6 +1029,7 @@ function fetured_speaker_shortcode_func( $atts ) {
 
 	$speakersDisplayArray=array();
 
+	$i=0;
 	while ( $loop->have_posts() ) : $loop->the_post();
 
 	// needed variables

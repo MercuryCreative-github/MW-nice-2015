@@ -3265,6 +3265,12 @@
     }
 }
 @media screen and (max-width: 700px) {
+
+    /*excellence awards*/
+    .page-content .awards-logos ul, .page-content .awards-logos ul li {display: block;}
+    .page-content .awards-logos ul {text-align: center; margin-left: 0px;}
+    .page-content .awards-logos ul li {margin-bottom: 20px;}
+
     .page-content .questions ul li:after {
         margin-right: -14px;
     }
