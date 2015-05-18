@@ -418,6 +418,7 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 	background-color: #74a939;
 	margin-right: 0;
 }
+.section01-buttons a.red {margin-right: 0;}
 .section01-sponsors {
 	border-bottom: #d6d7dc 1px solid;
 	padding: 5px 0;
