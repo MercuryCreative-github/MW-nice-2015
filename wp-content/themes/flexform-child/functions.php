@@ -660,13 +660,17 @@ function summits_shortcode_func( $atts ) {
 
 		// variables set
 		$chairHtmlOutput='';
-
-		if(is_string($sessionChair) && $sessionChair!=='')
+			//is_string($sessionChair) && 
+		if($sessionChair!=='')
 
 		// User query to get Chair
 		$user_query = new WP_User_Query( array( 'include' => $sessionChair ) );
 
 			if ( ! empty( $user_query->results ) ) {
+
+			//Chair output
+				$chairHtmlOutput.='<div>';
+				$chairHtmlOutput.='Chair: ';
 
 				foreach ( $user_query->results as $user ) {
 
@@ -679,11 +683,10 @@ function summits_shortcode_func( $atts ) {
 						$chairCompanyName= get_the_title($chairCompanyId);
 					}
 
-					//Chair output
-					$chairHtmlOutput.='<div>';
-					$chairHtmlOutput.='Chair: '.$user->display_name.', '.$chairJobRole.', '.$chairCompanyName;
-					$chairHtmlOutput.='</div>';
+					$chairHtmlOutput.=$user->display_name.', '.$chairJobRole.', '.$chairCompanyName.'</br>';
+					
 				}
+				$chairHtmlOutput.='</div>';
 			}
 
 

@@ -100,7 +100,7 @@ if (!class_exists('TMF_Add_Custom_metaboxes')) {
                         'id' => $prefix . 'chair',
                         'desc' => 'Chair',
                         'options' => self::get_all_speakers(),
-                        'type' => 'pw_select',
+                        'type' => 'pw_multiselect',
                         'sanitization_cb' => 'pw_select2_sanitise',
                     ),
 
