@@ -867,6 +867,15 @@ li.recent-posts-extended .rpwe-block ul.rpwe-ul li.rpwe-clearfix{border-bottom:#
 .page-content .social-icon-list ul{width:100%;display:table;max-width:200px;margin:auto;min-width:250px;}
 .page-content .social-icon-list ul li{display:table-cell;width:25%;}
 
+/*FOOTER banner netcraker*/
+.netcraker-banner {  
+	margin: 0 auto;
+	text-align: center;
+	background-color: #4D4D4D;
+	padding: 25px 0;
+	border-top: #B1B1B1 1px solid;
+}
+
 /* TMF KEYNOTES */
 .homespeakers h3{font-size:20px;margin-bottom:5px;}
 .homespeakers .position{margin-bottom:5px;}

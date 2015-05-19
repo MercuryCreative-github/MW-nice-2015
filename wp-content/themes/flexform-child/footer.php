@@ -233,6 +233,7 @@
 						<?php } ?>
 					</div>
 				</div>
+				<div class="netcraker-banner"><?php echo adrotate_ad(5); ?></div>
 
 			<!--// CLOSE #footer //-->
 			</section>
