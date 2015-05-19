@@ -68,6 +68,7 @@
 			<div id="fullwidthcontent"></div>
 
 			<section id="footer" class="<?php echo $footer_class; ?>">
+				<div class="netcraker-banner"><?php echo adrotate_ad(6); ?></div>
 				<div class="social-contact row-fluid">
 				<div class="sec-main-content">
 					<div class="span12 textwidget">
@@ -87,6 +88,7 @@
 					</div>
 				</div>
 				</div>
+
 				<div class="container">
 					<div id="footer-widgets" class="row clearfix">
 						<?php if ($footer_config == "footer-1") { ?>
@@ -233,7 +235,7 @@
 						<?php } ?>
 					</div>
 				</div>
-				<div class="netcraker-banner"><?php echo adrotate_ad(6); ?></div>
+				
 
 			<!--// CLOSE #footer //-->
 			</section>
