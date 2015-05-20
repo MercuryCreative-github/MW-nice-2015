@@ -23,7 +23,7 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 			$session .= '<endTime>' . $endTime . '</endTime>';
 			$session .= '<description>' . htmlspecialchars( $presentation->post_content ) . '</description>';
 			$location = get_post_meta($presentationId,'_TMF_presentations_location',true);
-			$session .= '<location>' . $location . '</location>';
+			$session .= '<location>' . htmlspecialchars($location) . '</location>';
 			$field = get_field( "forum", $presentation->ID );
 			$fieldId = '';
 			if( !empty( $field )) {
