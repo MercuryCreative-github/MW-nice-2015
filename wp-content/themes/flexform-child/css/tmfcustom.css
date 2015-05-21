@@ -159,9 +159,8 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 .mobile-app-banner a:hover {box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);}
 
 .app-guide-btn {margin-top: 60px;}
-
 .app-guide-btn a {  
-	color: #fff;
+	color: #fff !important;
 	background-color: rgb(126, 126, 130);
 	text-transform: uppercase;
 	font-weight: 300;
@@ -169,6 +168,11 @@ p.sidebar-contact strong {font-size: 20px;border-bottom: 1px #939393 solid;color
 	padding: 20px;
 	font-size: 26px;
 	position: relative;
+}
+.app-guide-btn a:hover {
+	text-decoration: none;
+	background-color: rgb(74, 74, 74);
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.42);
 }
 .app-guide-btn a:after{
 	content:"\f0f6";
