@@ -53,7 +53,7 @@ class mvp_social_widget extends WP_Widget {
 						<?php } ?>
 						<?php if(get_option('mvp_twitter')) { ?>
 						<li class="twitter-item">
-							<a href="http://www.twitter.com/<?php echo get_option('mvp_twitter'); ?>" alt="Twitter" class="twitter-but" target="_blank"></a>
+							<script>[CBC country="cn" show="n"]</script><a href="http://www.twitter.com/<?php echo get_option('mvp_twitter'); ?>" alt="Twitter" class="twitter-but" target="_blank"></a><script> [/CBC] </script>
 						</li>
 						<?php } ?>
 						<?php if(get_option('mvp_pinterest')) { ?>

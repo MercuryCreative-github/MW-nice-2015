@@ -118,7 +118,7 @@ ul.split-columns.cat-<? echo $categories ?> li:hover h2,
  										<ul class="social-ul">
 				                            <li><a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&t=<?php the_title(); ?>" target="_blank"><img src="/wp-content/themes/braxton/images/fb.png" width="10" height="23" /></a></li>
 				                            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink($post->ID)); ?>&title=<?php the_title(); ?>&source=<?php echo urlencode(get_permalink($post->ID)); ?>" target="_blank"><img src="/wp-content/themes/braxton/images/linkedin.png" /></a></li>
-				                            <li><a href="http://twitter.com/home?status=<?php the_title(); ?> in <?php the_permalink(); ?>+%23tmforuminform+%23tmforumorg" target="_blank"><img src="/wp-content/themes/braxton/images/tw.png" width="19" height="23" /></a></li>
+				                            <script>[CBC country="cn" show="n"]</script><li><a href="http://twitter.com/home?status=<?php the_title(); ?> in <?php the_permalink(); ?>+%23tmforuminform+%23tmforumorg" target="_blank"><img src="/wp-content/themes/braxton/images/tw.png" width="19" height="23" /></a></li><script>[/CBC]</script>
 				                            <li><a href="https://plus.google.com/share?url=<?php the_title(); ?> in <?php the_permalink(); ?>+%23tmforuminform+%23tmforumorg" target="_blank" ><img src="/wp-content/themes/braxton/images/gmas.png" width="22" height="23" /></a></li>
 				                        </ul>
 				                    </div>

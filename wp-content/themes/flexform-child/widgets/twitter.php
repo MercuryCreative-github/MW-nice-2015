@@ -1,8 +1,10 @@
 <?php
- 
  /**
  * Plugin Name: Twitter for TMF
  */
+ ?>
+<script>[CBC country="cn" show="n"]</script>
+ <?php
 
 class twitter_widget extends WP_Widget {
  
@@ -28,12 +30,8 @@ class twitter_widget extends WP_Widget {
                 </div>
             </div>
             <div class="clear"></div>
-        
-        <?php
-       
     }
-
 } 
  
- 
 ?>
+<script> [/CBC] </script>
