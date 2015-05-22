@@ -148,7 +148,7 @@ Template Name: Speaker Profile
 	$twitter='';
 	if($user->twitter_alias!==''){
 
-		$twitter ='<div style="float:right"><script>[CBC country="cn" show="n"]</script><a href="http://www.twitter.com/'.( $user->twitter_alias ).'" target="_blank"><script> [/CBC] </script><i class="icon icon-twitter" style="vertical-align: bottom;"></i> <script>[CBC country="cn" show="n"]</script>'.( $user->twitter_alias ).'</a></div><script> [/CBC] </script>';
+		$twitter ='<script>[CBC country="cn" show="n"]</script><div style="float:right"><a href="http://www.twitter.com/'.( $user->twitter_alias ).'" target="_blank"><i class="icon icon-twitter" style="vertical-align: bottom;"></i> '.( $user->twitter_alias ).'</a></div><script> [/CBC] </script>';
 
 	};
 

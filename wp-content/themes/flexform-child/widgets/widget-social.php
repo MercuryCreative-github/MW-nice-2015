@@ -48,7 +48,7 @@ class mvp_social_widget extends WP_Widget {
 					<ul>
 						<?php if(get_option('mvp_facebook')) { ?>
 						<li class="fb-item">
-							<script>[CBC country="cn" show="n"]</script><a href="http://www.facebook.com/<?php echo get_option('mvp_facebook'); ?>" alt="Facebook" class="fb-but" target="_blank"></a><script> [/CBC] </script>
+							<a href="http://www.facebook.com/<?php echo get_option('mvp_facebook'); ?>" alt="Facebook" class="fb-but" target="_blank"></a>
 						</li>
 						<?php } ?>
 						<?php if(get_option('mvp_twitter')) { ?>
@@ -58,22 +58,22 @@ class mvp_social_widget extends WP_Widget {
 						<?php } ?>
 						<?php if(get_option('mvp_pinterest')) { ?>
 						<li class="pinterest-item">
-							<script>[CBC country="cn" show="n"]</script><a href="http://www.pinterest.com/<?php echo get_option('mvp_pinterest'); ?>" alt="Pinterest" class="pinterest-but" target="_blank"></a><script> [/CBC] </script>
+							<a href="http://www.pinterest.com/<?php echo get_option('mvp_pinterest'); ?>" alt="Pinterest" class="pinterest-but" target="_blank"></a>
 						</li>
 						<?php } ?>
 						<?php if(get_option('mvp_google')) { ?>
 						<li class="google-item">
-							<script>[CBC country="cn" show="n"]</script><a href="<?php echo get_option('mvp_google'); ?>" alt="Google Plus" class="google-but" target="_blank"></a><script> [/CBC] </script>
+							<a href="<?php echo get_option('mvp_google'); ?>" alt="Google Plus" class="google-but" target="_blank"></a>
 						</li>
 						<?php } ?>
 						<?php if(get_option('mvp_instagram')) { ?>
 						<li class="instagram-item">
-							<script>[CBC country="cn" show="n"]</script><a href="http://www.instagram.com/<?php echo get_option('mvp_instagram'); ?>" alt="Instagram" class="instagram-but" target="_blank"></a><script> [/CBC] </script>
+							<a href="http://www.instagram.com/<?php echo get_option('mvp_instagram'); ?>" alt="Instagram" class="instagram-but" target="_blank"></a>
 						</li>
 						<?php } ?>
 						<?php if(get_option('mvp_youtube')) { ?>
 						<li class="youtube-item">
-							<script>[CBC country="cn" show="n"]</script><a href="http://www.youtube.com/user/<?php echo get_option('mvp_youtube'); ?>" alt="YouTube" class="youtube-but" target="_blank"></a><script> [/CBC] </script>
+							<a href="http://www.youtube.com/user/<?php echo get_option('mvp_youtube'); ?>" alt="YouTube" class="youtube-but" target="_blank"></a>
 						</li>
 						<?php } ?>
 						<?php if(get_option('mvp_linkedin')) { ?>
