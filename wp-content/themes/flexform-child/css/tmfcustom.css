@@ -1,5 +1,12 @@
+<script>[CBC country="cn" show="n"]</script>
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,300italic,300);
+<script>[/CBC]</script>
+
+<script>[CBC country="cn" show="y"]</script>
 @import url(http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
 @import url(http://fonts.useso.com/css?family=Roboto:400,400italic,500,500italic,300italic,300);
+<script>[/CBC]</script>
 
 /*NICE 15*/
 /**************************/
@@ -47,7 +54,7 @@ hr.hr-blank-space {border:none; height: 5px;}
 .visibleTitle .nday {display: table-cell; min-height: initial; width: 250px;}
 .visibleTitle .title-place {display: table-cell;line-height: 22px;padding-right: 10px;}
 .visibleTitle .title-place.with-sponsor {width: 40%;}
-.two-logos.visibleTitle .title-place.with-sponsor {width: 35%;}
+.two-logos .title-place.with-sponsor {width: 35%;}
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].gray-accordion,
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].withe-accordion{padding: 20px 10px 20px 20px; position: relative;}
 .gray-accordion {background-color: #F0F0F0;}
