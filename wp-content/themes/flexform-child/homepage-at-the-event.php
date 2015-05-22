@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home Page At The Event
+Template Name: Home Page at the Event
 */
 ?>
 <?php get_header(); ?>
@@ -63,28 +63,24 @@ Template Name: Home Page At The Event
 	}
 ?>
 
+<style type="text/css">
+	.page-template-homepage-php #main-container .container{
+	    margin: 0;
+	    padding: 0;
+	    width: 100%!important;
+    }	.page-template-homepage-php #main-container section{
+	    display: table;  width:100%;
+    }
+    }.page-template-homepage-php #main-container section>div.cell{
+	    display: table-cell;
+	    vertical-align: middle;
+	    width:100%;
+    }
+
+</style>
 <!-- Full-width block re-using styles -->
-<div class="top-sponsors-logos inner-page-wrap has-right-sidebar has-one-sidebar row clearfix">
-	 <div class="span3 sponsors_title">
-		<h3>Sponsors <br>announced:</h3>
-	</div> 
-	<div class=" sponsors_logo logo_1">
-		<a target="_self" href="<?php the_field("sponsors_logo_1_link"); ?>"><img class="top-sponsor" src="<?php the_field("sponsors_logo_1"); ?>"></a>
-		<div class="image-caption" style="opacity: 1;"><?php the_field("sponsor_logo_1_type"); ?></div>
-	</div>
-	<div class=" sponsors_logo logo_2">
-		<a target="_self" href="<?php the_field("sponsors_logo_2_link"); ?>"><img class="top-sponsor" src="<?php the_field("sponsors_logo_2"); ?>"></a>
-		<div class="image-caption" style="opacity: 1;"><?php the_field("sponsor_logo_2_type"); ?></div>
-	</div>
-	<div class=" sponsors_logo logo_3">
-		<a target="_self" href="<?php the_field("sponsors_logo_3_link"); ?>"><img class="top-sponsor" src="<?php the_field("sponsors_logo_3"); ?>"></a>
-		<div class="image-caption" style="opacity: 1;"><?php the_field("sponsor_logo_3_type"); ?></div>
-	</div>
-	<div class=" sponsors_logo logo_4">
-		<a style="position:relative;" target="_self" href="<?php the_field("sponsors_logo_4_link"); ?>"><img class="top-sponsor" src="<?php the_field("sponsors_logo_4"); ?>"></a>
-		<div class="image-caption" style="opacity: 1;"><?php the_field("sponsor_logo_4_type"); ?></div>
-	</div>
-</div>
+<div class="inner-page-wrap has-right-sidebar has-one-sidebar row clearfix" style="padding: 0;margin: 0;">
+
 
 <?php if (have_posts()) : the_post(); ?>
 
@@ -112,7 +108,7 @@ Template Name: Home Page At The Event
 <div class="inner-page-wrap <?php echo $page_wrap_class; ?> clearfix">
 
 	<!-- OPEN page -->
-		<?php if (($sidebar_config == "left-sidebar") || ($sidebar_config == "right-sidebar")) { ?>
+	<?php if (($sidebar_config == "left-sidebar") || ($sidebar_config == "right-sidebar")) { ?>
 	<div <?php post_class('clearfix span8'); ?> id="<?php the_ID(); ?>">
 	<?php } else if ($sidebar_config == "both-sidebars") { ?>
 	<div <?php post_class('clearfix row'); ?> id="<?php the_ID(); ?>">
@@ -133,110 +129,6 @@ Template Name: Home Page At The Event
 		<?php } else { ?>
 
 		<div class="page-content clearfix">
-
-	<!-- Start Feed -->
-<div class="row"><div class="wpb_content_element span8 ">
-<div class="inner-wrap" id="home-feed-inform">
-	<?php
-		include_once( ABSPATH . WPINC . '/feed.php' );
-		/*** Recibo un item rss y limpia el formato para hacer más facil el print de los campos*/
-		function limpiar_formato_feed($rss_item){
-				$item = array();
-				$item['link'] = $rss_item->get_link();
-				$item['date'] = $rss_item->get_date('F j, Y');
-				$item['title'] = $rss_item->get_title();
-				$item['category'] = $rss_item->get_category()->get_label();
-				$item['image'] = null;
-				$DOM = new DOMDocument();
-				@$DOM->loadHTML($rss_item->get_description());
-	
-
-				$imagenes = $DOM->getElementsByTagName('img');
-				$parrafos = $DOM->getElementsByTagName('p');
-				$description = "";
-				foreach($parrafos as $parrafo){
-						$description = $description ."<p>".utf8_decode($parrafo->nodeValue)."</p>";
-				}
-				$pos = 80;
-				if(strlen($description) > $pos){
-					$pos = strpos($description, ' ', $pos);
-								}
-								$item['description'] = substr($description, 0, $pos)."...";
-
-								$images=array();
-
-								foreach ($imagenes as $element) {
-									$toPush=$element->getAttribute('src');
-									array_push($images,$toPush);
-								}
-
-								$item['image']=$images[0];
-
-								return $item;
-						}
-
-						$cantidad_posts_feed = 4;
-						$url_feed_inform = "http://tmforum.wpengine.com/feed/";
-						$feed_inform = fetch_feed($url_feed_inform);
-
-						/** FEED INFORM **/
-						if (!is_wp_error($feed_inform)) {
-								$maxitems = $feed_inform->get_item_quantity($cantidad_posts_feed);
-								$feed_items_inform = $feed_inform->get_items(0, $maxitems);
-						}
-						$items_feed = array();
-						if(count($feed_items_inform) > 0) {
-								foreach($feed_items_inform as $feed_item_inform) {
-										$items_inform[] = limpiar_formato_feed($feed_item_inform);
-								}
-						}
-
-				?>
-	<?php if(count($items_inform) > 0) { ?>
-	<section class="feed-posts-at-event">
-		<div class="home-feed-header">
-		<img src="/wp-content/uploads/2014/09/TMForumInform_logo2.png">
-		<p>Show Daily News</p>
-		</div>
-		<div class="feed-button">
-		<a class="sf-button large grey standard " href="http://inform.tmforum.org/tag/DD14/" target="_blank"><span>SEE ALL NEWS</span></a>
-		</div>
-		<div class="clear"></div>
-		<!--- FEED INFORM -->
-	<?php foreach($items_inform as $item){ ?>
-		<article class="feed-item">
-			<figure class="feed-image">
-			<?php if($item['image']){ ?>
-				<a href="<?php echo $item['link']; ?>" target="_blank">
-					<img width="100%" src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>" title="<?php echo $item['title']; ?>">
-				</a>
-			<?php } ?>
-			</figure>
-			<p class="feed-date-category">
-			<span class="category"><?php echo $item['category']; ?></span>
-			<span class="date"> / <?php echo $item['date']; ?></span>
-			</p>
-			<div class="feed-content">
-				<a href="<?php echo $item['link']; ?>" target="_blank">
-					<h4 class="feed-title"><?php echo $item['title']; ?></h4>
-				</a>
-			</div>
-			<div class="feed-content-text">
-				<a href="<?php echo $item['link']; ?>" target="_blank">
-					<p class="feed-text"><?php echo $item['description']; ?></p>
-				</a>
-			</div>
-		</article>
-		
-	<?php } ?>
-	</section>
-	<?php } ?>
-	<div style="clear:both"></div>
-</div>
-</div>
-</div>
-<!-- End Feed -->
-
 			<?php the_content(); ?>
 
 
@@ -255,12 +147,6 @@ Template Name: Home Page At The Event
 		</aside>
 
 	<?php } else if ($sidebar_config == "right-sidebar") { ?>
-
-		<aside class="sidebar right-sidebar span4">
-			
-			<?php dynamic_sidebar($right_sidebar); ?>
-		</aside>
-
 	<?php } else if ($sidebar_config == "both-sidebars") { ?>
 
 		<aside class="sidebar right-sidebar span3">
@@ -273,17 +159,308 @@ Template Name: Home Page At The Event
 
 <?php endif; ?>
 
-<div class="responsive-sponsors">
-	<!-- This block is used to move the Sponsors Logos on <768px-width screens.
-	It is hidden on bigger screens by default.
-	Uses a jQuery function called moveSponsors(); that you'll find in the /js/tmfcustom.js file. -->
-	<div class="main-sponsors"></div>
-	<div class="secondary-sponsors">
-		<div class="title"></div>
-		<div class="row1"></div>
-		<div class="row2"></div>
+<section id="hp-section" class="section-speakers">
+	<div  class="cell">
+		<div class="sec-main-content">
+			<div class="title-green">
+				<h1>Over 200 speakers, <span style="text-transform: lowercase;">including:</h1>
+			</div>
+
+<!-- Dinamic content: -->
+
+<div class="hp-speaker-box">
+
+<?php
+
+function create_page_content(){
+
+	$page_content='';
+
+	$args  = array(
+		'order ' => 'ASC',
+		'orderby' => 'meta_value',
+		'role' => 'speaker',
+		'posts_per_page' => 4,		
+		// check for two meta_values
+		'meta_query' => array(
+			array( 'key'     => 'last_name', ),
+		)
+	);
+
+	// Save user ID to pass on data to Speaker page
+	$user_id = esc_html( $user->ID );
+	
+	$user_query = new WP_User_Query( $args );
+
+	// User Loop
+	$i=0;
+	foreach ( $user_query->results as $user ) {
+		 if($i==4) break;		
+		$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
+		$categoryDisplay='';
+
+		if(is_array($categorySpeakers)){
+			foreach ($categorySpeakers as $categorySpeaker) {
+				if($categorySpeaker=='check1') {
+					$categoryDisplay.=' featured';
+				} elseif($categorySpeaker=='check2') {
+					$categoryDisplay.=' keynote';
+				} else {
+					$categoryDisplay.=' in-home-page';
+				};
+			}
+		}
+	if ($categoryDisplay==' in-home-page' || $categoryDisplay==' featured in-home-page' || $categoryDisplay==' keynote in-home-page') {
+		$page_content.= '<div class="hp-speaker-item'.$categoryDisplay.'">';
+			$page_content.= '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
+						
+		$userMetaImageId = get_user_meta($user->ID,'image_id',true);
+		$userMetaImage =  wp_get_attachment_image_src( $userMetaImageId, 'thumbnail' ); 
+
+		if(!($userMetaImage)){ $userMetaImage[] ='/wp-content/uploads/2014/09/default_speaker.png';}
+						
+				$page_content.= '<div class="thumb-single thumb"><img src="'.$userMetaImage[0].'" onload="speakerImgSize(this);"/></div>';
+				$page_content.= '<div class="speaker-data">';
+					$page_content.= '<p><strong>' . esc_html( $user->display_name ) . '</strong></p>';
+						
+		$companyIds = getUserCompanies( esc_html( $user->ID ), true );
+						
+		if( (int)$companyIds > 0 ) {
+			$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyIds );
+			if( empty( $jobRole ) ) {
+				$jobRole = esc_html( $user->role );
+			}
+				$page_content.= '<p>' . esc_html( $jobRole ) . '</p>';
+				$page_content.= '<img src="' . wp_get_attachment_url( get_post_thumbnail_id($companyIds) ) . '"/>';
+		} 
+			$page_content.= '</div>';
+		$page_content.= '</a>';
+		$page_content.= '</div> <!-- End Speaker -->';
+		$i++;
+	}
+	} // ends foreach $blogusers as $user
+
+	
+		return $page_content;
+	
+
+} // ends function create page content
+
+echo create_page_content();
+
+?>
+
+<!-- End dinamic content. -->
+
+			</div>
+		</div>
 	</div>
+</section>
+
+<section id="hp-section" class="section03">
+<div class="cell">
+<div class="sec-main-content">
+<div class="section03-infobox01">
+<h1>NETWORK AT<br/>
+TM FORUM LIVE!</h1>
+<a class="sf-button large green standard" href="/networking/">Learn More</a>
+
 </div>
+<div class="section03-infobox02">
+<div class="section03-top">
+<h1>THE PEOPLE</h1>
+<strong>2014 ATTENDEES:</strong>
+<ul>
+	<li><span class="attendees-number">80+</span>
+<br/>Countries Represented</li>
+	<li><span class="attendees-number">296</span>
+<br/>CxOs</li>
+	<li><span class="attendees-number">540+</span>
+<br/>Companies In attendance</li>
+</ul>
+<div class="clear"></div>
+</div>
+<div class="section03-bottom">
+<ul>
+	<li><img src="/wp-content/uploads/2015/02/logo-microsoft-small.png" alt="" /></li>
+	<li><img src="/wp-content/uploads/2015/02/logo-google-small.png" alt="" /></li>
+	<li><img src="/wp-content/uploads/2015/02/logo-orange-small.png" alt="" /></li>
+	<li><img src="/wp-content/uploads/2015/02/logo-bt-small.png" alt="" /></li>
+	<li><img src="/wp-content/uploads/2015/02/logo-att-hp.png" alt="" /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="hp-section" class="section04">
+	<div class="cell">
+	<div class="sec-main-content">
+	<div class="section04-title"><h1>THE BUZZ</h1></div>
+	<div class="section04-info">
+		<div class="inform-feed">
+
+						<!-- Start Feed -->
+			<div class="inner-wrap" id="home-feed-inform">
+					<?php
+							include_once( ABSPATH . WPINC . '/feed.php' );
+
+							/**
+							* Recibo un item rss y limpia el formato para hacer más facil el print de los campos
+							*/
+							function limpiar_formato_feed($rss_item){
+
+									$item = array();
+									$item['link'] 	= $rss_item->get_link();
+									$item['title'] 	= $rss_item->get_title();
+
+									if ($author = $rss_item->get_author()){
+											$item['author'] = $author->get_name();
+									}else {$item['author'] ="";}
+
+									$item['image'] 	= null;
+									$DOM = new DOMDocument();
+									@$DOM->loadHTML($rss_item->get_description());
+
+									$imagenes = $DOM->getElementsByTagName('img');
+									$parrafos = $DOM->getElementsByTagName('p');
+									$description = "";
+									foreach($parrafos as $parrafo){
+											$description = $description ."<p>".utf8_decode($parrafo->nodeValue)."</p>";
+									}
+									$pos = 80;
+									if(strlen($description) > $pos){
+											$pos = strpos($description, ' ', $pos);
+									}
+									$item['description'] = substr($description, 0, $pos)."...";
+
+									$images=array();
+
+									foreach ($imagenes as $element) {
+										$toPush=$element->getAttribute('src');
+										array_push($images,$toPush);
+									}
+
+									$item['image']=$images[0];
+
+									return $item;
+							}
+
+							$cantidad_posts_feed = 4;
+							$url_feed_inform = "http://inform.tmforum.org/tag/tm-forum-live-2015/feed/";
+							$feed_inform = fetch_feed($url_feed_inform);
+
+							/** FEED INFORM **/
+							if (!is_wp_error($feed_inform)) {
+									$maxitems = $feed_inform->get_item_quantity($cantidad_posts_feed);
+									$feed_items_inform = $feed_inform->get_items(0, $maxitems);
+							}
+
+							$items_feed = array();
+							if(count($feed_items_inform) > 0) {
+									foreach($feed_items_inform as $feed_item_inform) {
+											$items_inform[] = limpiar_formato_feed($feed_item_inform);
+									}
+							}
+
+					?>
+					<?php if(count($items_inform) > 0) { ?>
+						<section class="feed-related-posts">
+							<!--- FEED INFORM -->
+							<?php foreach($items_inform as $item){ ?>
+								<article class="feed-item">
+								<figure class="feed-image">
+										<?php if($item['image']){ ?>
+											<a href="<?php echo $item['link']; ?>" target="_blank">
+												<img width="100%" src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>" title="<?php echo $item['title']; ?>">
+											</a>
+										<?php } ?>
+									</figure>
+									<div class="feed-content">
+									<p class="feed-author">
+
+									<?php echo $item['author']; ?>
+
+									</p>
+										<a href="<?php echo $item['link']; ?>" target="_blank">
+											<h4 class="feed-title"><?php echo $item['title']; ?></h4>
+										</a>
+										<div class="feed-content-text">
+										<!--a href="<?php echo $item['link']; ?>" target="_blank">
+										<p><?php echo $item['description']; ?></p>
+										</a-->
+									</div>
+									</div>
+
+								</article>
+								<?php } ?>
+						</section>
+					<?php } ?>
+			<div style="clear:both"></div>
+			<!-- End Feed -->
+
+		</div>
+	</div>
+	</div>
+	
+	<div class="twitter-feed">	
+
+<div id='twitter_widget' class='widget twitter_widget'>
+        <div class="widget-heading clearfix">
+        
+            <h2 class="tw-title">Latest on Twitter</h2>
+            <script>[CBC country="cn" show="n"]</script>
+            <a class="twitter-timeline" width"100%" height="380" href="https://twitter.com/tmforumorg" data-widget-id="365265624051617792" data-chrome="noheader transparent" data-link-color="#338ECC" data-border-color="#ffffff" data-tweet-limit="4" data-src-2x="false" data-src="false" >
+                Tweets by @tmforumorg
+            </a> 
+            <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+            </script>
+            <script> [/CBC] </script>
+            <div class="clear"></div> 
+            
+		</div>
+</div>
+
+	</div>
+</section>
+
+<section id="hp-section" class="section05">
+<div class="sec-main-content">
+	<div class="section05-title"><h1>THE REVIEWS</h1></div>
+
+	<ul class="reviews">
+		<li>
+			<div class="review-photo"><img src="/wp-content/uploads/2015/02/wolfgang-gentzsch.png"></div>
+			<div class="review-content">
+				<div class="review-text">“I was very impressed by the large number of IT and business leaders, and many of the presentations have left a permanent impression. The large number of IT celebrities around the world stood out. I can’t wait to come to Nice again next year!”</div>
+				<div class="review-name"><img src="/wp-content/uploads/2015/02/icon-reviews.png"><p><strong>Wolfgang Gentzsch</strong><br/>CEO, The UberCloud</p></div>
+			</div>
+		</li>
+		<li>
+			<div class="review-photo"><img src="/wp-content/uploads/2015/02/ulf_sm.gif"></div>
+			<div class="review-content">
+				<div class="review-text">"This year at TM Forum Live!, there are more participants than ever from other industries wanting to know what telecom networks can do for them. And that is happening because cloud, mobility and broadband are transforming their businesses.”</div>
+				<div class="review-name"><img src="/wp-content/uploads/2015/02/icon-reviews.png"><p><strong>Ulf Ewaldsson</strong><br/>SVP and CTO, Ericsson</p></div>
+			</div>
+		</li>
+		<li>
+			<div class="review-photo"></div>
+			<div class="review-content">
+				<div class="review-text">“Congrats on the 2014 event, the thematic was very well received and the event meticulously organized, great feedback from attendees, vendors and industry icons alike. The future looks bright!”</div>
+				<div class="review-name"><img src="/wp-content/uploads/2015/02/icon-reviews.png"><p>CIO, Global Digital Service Provider</p></div>
+			</div>
+		</li>
+	</ul>
+
+
+
+</div>
+</section>
+
+
+
 
 <!--// WordPress Hook //-->
 <?php get_footer(); ?>
