@@ -149,12 +149,17 @@ function calendar_create_widget(){
     register_widget('calendar_widget');
 }
 add_action('widgets_init','calendar_create_widget');
-
+?>
+<script>[CBC country="cn" show="n"]</script>
+<?php 
 function twitter_create_widget(){
     include_once(plugin_dir_path( __FILE__ ).'/widgets/twitter.php');
     register_widget('twitter_widget');
 }
 add_action('widgets_init','twitter_create_widget');
+?>
+<script>[/CBC]</script>
+<?php 
 
 function menu_titles_create_widget(){
     include_once(plugin_dir_path( __FILE__ ).'/widgets/list_of_icons/menu_titles.php');
