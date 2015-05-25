@@ -54,7 +54,7 @@ hr.hr-blank-space {border:none; height: 5px;}
 .visibleTitle .nday {display: table-cell; min-height: initial; width: 250px;}
 .visibleTitle .title-place {display: table-cell;line-height: 22px;padding-right: 10px;}
 .visibleTitle .title-place.with-sponsor {width: 40%;}
-.two-logos .title-place.with-sponsor {width: 35%;}
+.two-logos .title-place.with-sponsor {width: 32%;}
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].gray-accordion,
 .wpb_tabs .ui-tabs .ui-tabs-panel .row [class*="span"].withe-accordion{padding: 20px 10px 20px 20px; position: relative;}
 .gray-accordion {background-color: #F0F0F0;}
@@ -396,6 +396,11 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 
 /*Presentation Page*/
 .single-presentation {margin-top: 45px;}
+
+
+/***** HOME PAGE AT THE EVENT *****/
+
+.home-page-event {}
 
 /**************************/
 /******* HOME PAGE ********/
