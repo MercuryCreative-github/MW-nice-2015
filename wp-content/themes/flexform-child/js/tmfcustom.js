@@ -94,7 +94,7 @@ function speakerImgSize(speakerImg){
 
 function homepageSectionsResize(){
     var $ = jQuery;
-    if($('.page-template-homepage-php').index()>0){
+    if($('.page-template-homepage-php').index()>0 || $('.page-template-homepageattheevent-php').index()>0){
 
         var sponsorsHeight  = 135;//$('.section01-sponsors').outerHeight();
         var minHeight       = 760-sponsorsHeight;

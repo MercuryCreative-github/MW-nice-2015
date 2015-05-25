@@ -397,10 +397,133 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 /*Presentation Page*/
 .single-presentation {margin-top: 45px;}
 
-
 /***** HOME PAGE AT THE EVENT *****/
 
-.home-page-event {}
+.home-page-event h1 {
+	font-weight: 300;
+}
+
+.home-page-event .section01-info {
+	text-align: center;
+	margin: 0 auto;
+}
+.home-page-event.home .page-content p.section01-slogan {
+	font-weight: 300;
+	font-size: 24px;
+}
+.home-page-event.home .page-content p.section01-slogan span.date-weight { font-weight: 500; }
+.home-page-event .section01-slogan {
+	font-size: 23px;
+    line-height: 35px;
+}
+.home-page-event .section01-slogan span.big-slogan {
+	font-size: 44px;
+	font-weight: 400;
+}
+.home-page-event .section01-buttons a.sf-button.red {
+	background-color: #B72122;
+	width: auto;
+	font-size: 25px;
+  	font-weight: 600;
+  	line-height: 30px;
+}
+.home-page-event .section01-buttons a.sf-button.red:hover {
+	background-color: #9B0203;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+}
+.home-page-event .section01-more {
+	margin-top: 15px;
+	border-top: #fff 1px solid;
+	padding-top: 12px;
+}
+.home-page-event .section01-info .section01-more p {
+	color: #fff;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 33px;
+}
+.home-page-event .hp-section02 {
+	background-color: rgba(248, 248, 248, 1);
+}
+.home-page-event .hp-section03 {
+	background-color: #e7e8e9;
+}
+.home-page-event .hp-section03 .inform-feed-videos {
+	width: 49%;
+	float: left;
+}
+.inform-all-videos{margin-top: 30px;}
+.inform-all-videos .inform-video {
+	float: left;
+	width: 45%;
+	margin-right: 5%;
+}
+.home-page-event .hp-section03 .twitter-feed {
+	width: 48%;
+  	float: left;
+}
+.inform-logo {
+	width: 290px;
+	float: left;
+}
+.btn-view-more {
+	float: right;
+	margin: 5px 11px 0 0;
+}
+.home-page-event .section04-info {
+	width: 100%;
+  	float: none;
+  	margin-left: 0;
+}
+.home-page-event .feed-related-posts .feed-item.feed-event {
+	width: 22%;
+	margin: 0 3% 15px 0;
+	background-color: #fff;
+	color: #444;
+	max-height: 310px;
+	min-height: 280px;
+	cursor: pointer;
+}
+.home-page-event .feed-related-posts .feed-item.feed-event:hover {
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+	background-color: #F6F6F6;
+	color: #444;
+}
+.home-page-event .feed-image {
+	width: auto;
+}
+.home-page-event .feed-image img {
+	max-height: 154px;
+	height: 154px;
+}
+.feed-event .feed-title-event {
+	color: #444;
+  	font-size: 17px;
+  	line-height: 25px;
+}
+.feed-press {display: table; margin-top: 20px;}
+.press-releases, .press-coverage {display: table-cell; width: 50%;}
+.home-page-event .feed-press .feed-related-posts .feed-item.feed-event {
+	width: 44%;
+  	margin-right: 6%;
+}
+.home-page-event .section05 {
+	background-image: url('/wp-content/uploads/2015/05/bkg-app-event.jpg');
+	background-repeat: no-repeat;
+  	background-size: cover;
+}
+.hp-banner-app {
+	display: table;
+	width: 100%;
+
+}
+.app-logo, .app-info {display: table-cell;}
+.app-info {vertical-align: middle;}
+.app-qr, .app-sponsor {text-align: center;}
+.app-sponsor {
+	margin-top: 10px;
+  	color: #FFF;
+}
 
 /**************************/
 /******* HOME PAGE ********/
