@@ -142,6 +142,24 @@
 }
 @media screen and (max-width: 1250px) {
 
+    /*HP at the event '15*/
+
+    .home-page-event .hp-section03 .twitter-feed {
+        width: 40%;
+    }
+    .home-page-event .hp-section03 .inform-feed-videos {
+        width: 57%;
+    }
+    .inform-feed-videos .btn-view-more {
+        margin: 20px 46px 0 0;
+    }
+    .btn-view-more a.sf-button.medium.orange.standard {
+        margin-right: 0;
+    }
+    .section04-header .btn-view-more {
+        margin: 20px 35px 0 0;
+    }
+
     /*slider hp*/
     .section01-info-left {width: 50%; padding: 0px 4%;}
 
@@ -379,6 +397,11 @@
     }
 }
 @media screen and (max-width: 1145px) { 
+
+    /*hp at the event '15*/
+
+    .home-page-event .hp-section03 .twitter-feed {width: 38%;}
+
     .section01-info-left { width: 40%; padding: 0px 1% 0 0;}
     .hp-speaker-item .speaker-data {width: 55%;}
     .hp-speaker-item {width: 47%;}
@@ -462,6 +485,25 @@
     }
 }
 @media screen and (max-width: 1024px) {
+
+    /*hp at the event '15*/
+
+    .home-page-event .feed-related-posts .feed-item.feed-event {
+        width: 47%;
+        max-height: 200px;
+        min-height: 150px;
+    }
+    .home-page-event .feed-image {width: 180px;}
+    .press-releases, .press-coverage {
+        display: block;
+        width: auto;
+    }
+    .home-page-event .feed-press .feed-related-posts .feed-item.feed-event {
+        width: 47%;
+        margin-right: 3%;   
+    }
+
+
     .summit-list a.summit-list-text {
         width: 80%
     }
@@ -1223,6 +1265,20 @@
     }
 }
 @media screen and (max-width: 840px) {
+
+    /*hp at the event*/
+    .home-page-event .feed-related-posts .feed-item.feed-event {
+        width: 70%;
+        max-height: 200px;
+        min-height: 150px;
+        float: none;
+        margin: 15px auto;
+    }
+    .home-page-event .feed-press .feed-related-posts .feed-item.feed-event {
+        width: 70%;
+        margin: 15px auto;
+    }
+
     .video-promo {
         float: none;
         width: 70%;
@@ -1376,6 +1432,24 @@
     }
 }
 @media screen and (max-width: 767px) {
+
+    /*hp at the event*/
+    .inform-logo, .section04-header .btn-view-more {float: none;}
+    .section04-header .btn-view-more, .feed-press h1, .press-coverage h1{ text-align: center; }
+    .home-page-event .section04-info {width: 100%;}
+    .home-page-event .feed-related-posts .feed-item.feed-event,
+    .home-page-event .feed-press .feed-related-posts .feed-item.feed-event {width: 60%;}
+    .app-logo {display: block;}
+    .app-info {display: table; margin: 0 auto;}
+    .app-qr, .app-sponsor {
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .app-qr img {
+        width: 100px;
+        margin-right: 20px;
+    }
 
     /*HP banner*/
     .section01-mayday-save {font-size: 23px;}
@@ -1706,6 +1780,17 @@
     /* .item.cuadrob.cuadrob1{ top: 652px !important; left: 0px !important;} */
 }
 @media screen and (max-width: 675px) {
+
+    /*hp at the event*/
+    .home-page-event .section04-info {
+        width: 100%;
+    }
+    .inform-logo h1, .inform-logo img {
+        float: none;
+        margin-top: 0;
+    }
+    .inform-logo {text-align: center;}
+
     .section03 {
         background-image: none;
     }
@@ -1764,6 +1849,12 @@
     }
 }
 @media screen and (max-width: 550px) {
+
+    /*hp at the event*/
+    .home.home-page-event .section04-info {
+        width: 100%;
+    }
+
     /*404*/
 
     .page-404-btn-home img.page-404-icon, .page-404-btn-video img.page-404-icon {

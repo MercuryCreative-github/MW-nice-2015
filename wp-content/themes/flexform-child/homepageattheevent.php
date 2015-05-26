@@ -159,8 +159,20 @@ Template Name: Home Page at the Event
 
 <?php endif; ?>
 
+<section id="hp-section" class="hp-section02">
+<div class="cell">
+<div class="sec-main-content">
+<div class="section02">
+<div>
+<h1>FEATURE VIDEO</h1>
+</div>
+<div class="feture-video-active"><iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="100%" height="550" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+</div>
+</div>
+</div>
+</section>
+
 <section id="hp-section" class="hp-section03">
-	<div class="cell">
 		<div class="sec-main-content">		
 			<div class="inform-feed-videos">
 				<div class="inform-logo"><img src="/wp-content/uploads/2015/05/TMForumInform_logo2.png"/></div>
@@ -191,7 +203,7 @@ Template Name: Home Page at the Event
 			    	<div class="widget-heading clearfix">
 						<h2 class="tw-title">Latest on Twitter</h2>
 	            		<script>[CBC country="cn" show="n"]</script>
-	           			<a class="twitter-timeline" width"100%" height="380" href="https://twitter.com/tmforumorg" data-widget-id="365265624051617792" data-chrome="noheader transparent" data-link-color="#338ECC" data-border-color="#ffffff" data-tweet-limit="3" data-src-2x="false" data-src="false" >
+	           			<a class="twitter-timeline" width"100%" height="380" href="https://twitter.com/tmforumorg" data-widget-id="365265624051617792" data-chrome="noheader transparent" data-link-color="#338ECC" data-border-color="#ffffff" data-tweet-limit="4" data-src-2x="false" data-src="false" >
 	               		Tweets by @tmforumorg
 	            		</a> 
 				           <script>
@@ -203,15 +215,14 @@ Template Name: Home Page at the Event
 				</div>
 			</div>
 		</div>
-	</div>
 </section>
 
 <section id="hp-section" class="section04">
-	<div class="cell">
 	<div class="sec-main-content">
 	<div class="section04-header">
-		<div class="inform-logo"><img src="/wp-content/uploads/2015/05/TMForumInform_logo2.png"/> <span>// LIVE! News</span></div>
+		<div class="inform-logo"><img src="/wp-content/uploads/2015/05/TMForumInform_logo2.png"/><h1> //LIVE! News</h1><div class="clear"></div></div>
 		<div class="btn-view-more"><a class="sf-button medium orange standard" href="#" target="_blank">SEE ALL NEWS</a></div>
+		<div class="clear"></div>
 	</div>
 	<div class="section04-info">
 		<div class="inform-feed">
@@ -306,7 +317,7 @@ Template Name: Home Page at the Event
 <div class="feed-press">
 	
 		<div class="inform-feed press-releases">
-			<h1>//Press Releases</h1>
+			<h1>//TM Forum Press Releases</h1>
 			<!-- Start Feed -->
 			<div class="inner-wrap" id="home-feed-inform">
 					<?php
@@ -484,8 +495,6 @@ Template Name: Home Page at the Event
 		</div>
 	</div>
 </div>
-
-	</div>
 	</div>
 </section>
 
@@ -499,11 +508,119 @@ Template Name: Home Page at the Event
 		<div class="app-sponsor">Sponsored by<br/><img src="/wp-content/uploads/2015/05/app-solvatio.png"></div>
 	</div>
 </div>
-
+<div class="clear"></div>
 </div>
 </section>
 
+<section id="hp-section" class="section06">
+<div class="sec-main-content">
+<div class="watch-keynote-videos">
+<h1>WATCH KEYNOTES:</h1>
+<ul>
+	<li class="keynote-video">
+		<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+		<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
+	</li>
+	<li class="keynote-video">
+		<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+		<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
+	</li>
+	<li class="keynote-video">
+		<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+		<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
+	</li>
+	<li class="keynote-video">
+		<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+		<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
+	</li>
+</ul>
+<div class="keynote-video-feed">
+<!-- Start Feed -->
+	<div class="inner-wrap" id="home-feed-keynote-video">
+		<?php
+			include_once( ABSPATH . WPINC . '/feed.php' );
+			/* Recibo un item rss y limpia el formato para hacer más facil el print de los campos */
+			function limpiar_formato_video_feed($rss_item){
 
+				$item = array();
+				$item['link'] 	= $rss_item->get_link();
+				$item['title'] 	= $rss_item->get_title();
+
+				if ($author = $rss_item->get_author()){
+					$item['author'] = $author->get_name();
+				}else {$item['author'] ="";}
+
+				$item['image'] 	= null;
+				$DOM = new DOMDocument();
+				@$DOM->loadHTML($rss_item->get_description());
+
+				$imagenes = $DOM->getElementsByTagName('img');
+				$parrafos = $DOM->getElementsByTagName('p');
+				$description = "";
+				foreach($parrafos as $parrafo){
+					$description = $description ."<p>".utf8_decode($parrafo->nodeValue)."</p>";
+				}
+				$pos = 80;
+				if(strlen($description) > $pos){
+					$pos = strpos($description, ' ', $pos);
+				}
+				$item['description'] = substr($description, 0, $pos)."...";
+
+				$images=array();
+
+				foreach ($imagenes as $element) {
+					$toPush=$element->getAttribute('src');
+					array_push($images,$toPush);
+				}
+
+				$item['image']=$images[0];
+
+				return $item;
+			}
+			$cantidad_posts_feed = 4;
+			$url_feed_inform = "http://inform.tmforum.org/tag/tm-forum-live-2015/feed/";
+			$feed_inform = fetch_feed($url_feed_inform);
+
+			/** FEED INFORM **/
+			if (!is_wp_error($feed_inform)) {
+				$maxitems = $feed_inform->get_item_quantity($cantidad_posts_feed);
+									$feed_items_inform = $feed_inform->get_items(0, $maxitems);
+							}
+
+							$items_feed = array();
+							if(count($feed_items_inform) > 0) {
+									foreach($feed_items_inform as $feed_item_inform) {
+											$items_inform[] = limpiar_formato_feed($feed_item_inform);
+									}
+							}
+					?>
+					<?php if(count($items_inform) > 0) { ?>
+						<section class="feed-related-posts">
+							<!--- FEED INFORM -->
+							<?php foreach($items_inform as $item){ ?>
+								<article class="feed-item feed-event">
+								<figure class="feed-image">
+										<?php if($item['image']){ ?>
+											<a href="<?php echo $item['link']; ?>" target="_blank">
+												<img width="100%" src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>" title="<?php echo $item['title']; ?>">
+											</a>
+										<?php } ?>
+									</figure>
+									<div class="feed-content">
+										<p class="feed-author"><?php echo $item['author']; ?></p>
+										<a href="<?php echo $item['link']; ?>" target="_blank">
+											<p class="feed-title-event"><?php echo $item['title']; ?></p>
+										</a>
+									</div>
+								</article>
+								<?php } ?>
+						</section>
+					<?php } ?>
+			<div style="clear:both"></div>
+			<!-- End Feed -->
+</div>
+</div>
+</section>
 
 
 <!--// WordPress Hook //-->

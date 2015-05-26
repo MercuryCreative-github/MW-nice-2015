@@ -94,7 +94,7 @@ function speakerImgSize(speakerImg){
 
 function homepageSectionsResize(){
     var $ = jQuery;
-    if($('.page-template-homepage-php').index()>0 || $('.page-template-homepageattheevent-php').index()>0){
+    if($('.page-template-homepage-php').index()>0){
 
         var sponsorsHeight  = 135;//$('.section01-sponsors').outerHeight();
         var minHeight       = 760-sponsorsHeight;
@@ -106,6 +106,26 @@ function homepageSectionsResize(){
 
         // every section from 1 to 4 has full height or 768 (min)
         $('section:lt(4)').css('height',screenHeight);
+
+        // section01 (the woman) must be full height but taking out the menu and the sponsors height.
+        $('.section01').css('height',screenHeight-menuHeight);
+
+        var section01Margin = Math.max((screenHeight-menuHeight-sponsorsHeight-$('.section01-info').outerHeight())/2,0);
+
+        $('.section01-info').stop(true,true).animate({'margin-top': section01Margin}, 500).attr('data','screen: '+screenHeight+' menuHeight:'+menuHeight+' sponsors:'+sponsorsHeight);;
+    
+    }else if($('.page-template-homepageattheevent-php').index()>0){
+
+        var sponsorsHeight  = 135;//$('.section01-sponsors').outerHeight();
+        var minHeight       = 760-sponsorsHeight;
+        var screenHeight    = Math.max($(window).height(),minHeight);
+        var menuHeight      = $('#header-section').outerHeight();
+
+        // remove boxed layout
+        $('.boxed-layout').removeClass('boxed-layout');
+
+        // every section from 1 to 4 has full height or 768 (min)
+        $('section:lt(2)').css('height',screenHeight);
 
         // section01 (the woman) must be full height but taking out the menu and the sponsors height.
         $('.section01').css('height',screenHeight-menuHeight);
