@@ -578,7 +578,7 @@ Template Name: Home Page at the Event
 				return $item;
 			}
 			$cantidad_posts_feed = 4;
-			$url_feed_inform = "http://inform.tmforum.org/tag/tm-forum-live-2015/feed/";
+			$url_feed_inform = "http://tmforum.staging.wpengine.com/category/test-video/feed/";
 			$feed_inform = fetch_feed($url_feed_inform);
 
 			/** FEED INFORM **/
@@ -590,14 +590,14 @@ Template Name: Home Page at the Event
 							$items_feed = array();
 							if(count($feed_items_inform) > 0) {
 									foreach($feed_items_inform as $feed_item_inform) {
-											$items_inform[] = limpiar_formato_feed($feed_item_inform);
+											$items_inform_video[] = limpiar_formato_video_feed($feed_item_inform);
 									}
 							}
 					?>
-					<?php if(count($items_inform) > 0) { ?>
+					<?php if(count($items_inform_video) > 0) { ?>
 						<section class="feed-related-posts">
 							<!--- FEED INFORM -->
-							<?php foreach($items_inform as $item){ ?>
+							<?php foreach($items_inform_video as $item){ ?>
 								<article class="feed-item feed-event">
 								<figure class="feed-image">
 										<?php if($item['image']){ ?>
