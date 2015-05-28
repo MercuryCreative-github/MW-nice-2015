@@ -71,20 +71,19 @@
 				<div class="netcraker-banner"><?php echo adrotate_ad(6); ?></div>
 				<div class="social-contact row-fluid">
 				<div class="sec-main-content">
-					<div class="span12 textwidget">
+					<div class="span12 textwidget footer-newsletter">
+					<div class="footer-newsletter-01">
 						<img src="/wp-content/uploads/2015/02/contact-footer.png" alt="" />
-						<h3>Sign up to receive the latest conference announcements</h3>
-						<a id="updated" class="sf-button large green standard" href="#modal-1" data-toggle="modal">Join Mailing List</a>
-						<div id="modal-1" class="modal hide fade" tabindex="-1">
-							<div class="modal-header" style="text-align: center;"><button class="close" type="button" data-dismiss="modal">×</button>
-								<img src="/wp-content/uploads/2014/12/LogoDD14.png" alt="Keep up to date with the last event news." style="width: 50%;margin: auto;float: none;">							</div>
-							<div class="modal-body"><?php echo do_shortcode('[gravityform id=5 true=false description=false title=false ajax=true]'); ?></div>
-						</div>
-						<div id="modal-2" class="modal hide fade" tabindex="-1">
-							<div class="modal-header" style="text-align: center;"><button class="close" type="button" data-dismiss="modal">×</button>
-								<img src="/wp-content/uploads/2014/12/LogoDD14.png" style="width: 50%;margin: auto;float: none;">							</div>
-							<div class="modal-body"><?php echo do_shortcode('[contact-form-7 id="18871" title="Keep Updated 2014"]'); ?></div>
-						</div>
+					</div>
+					<div class="footer-newsletter-02">
+						<p>Stay update after the event<br/>
+						<span class="newsletter-02-ligth">SUBSCRIBE TO OUR</span><br/>
+						<span class="newsletter-02-big">NEWSLETTERS</span>
+						</p>
+					</div>
+					<div class="footer-newsletter-03">
+					<?php echo do_shortcode('[gravityform id="4" description="true"]'); ?>
+					</div>
 					</div>
 				</div>
 				</div>
