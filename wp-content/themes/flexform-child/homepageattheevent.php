@@ -166,7 +166,64 @@ Template Name: Home Page at the Event
 <div>
 <h1>FEATURE VIDEO</h1>
 </div>
-<div class="feture-video-active"><iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="100%" height="550" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+<div>
+<!-- feed for feature video -->
+			<?php
+
+			include_once( ABSPATH . WPINC . '/feed.php' );
+
+			// Get a SimplePie feed object from the specified feed source.
+			$rss = fetch_feed( 'http://tmforum.staging.wpengine.com/video-feed-6/' );
+
+			if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
+
+			    // Figure out how many total items there are, but limit it to 5. 
+			    $maxitems = $rss->get_item_quantity( 1 ); 
+
+			    // Build an array of all the items, starting with element 0 (first element).
+			    $rss_items = $rss->get_items( 0, $maxitems );
+
+			endif;
+			?>
+
+			
+			<ul>
+			    <?php if ( $maxitems == 0 ) : ?>
+			        <li><?php _e( 'No items', 'my-text-domain' ); ?></li>
+			    <?php else : ?>
+			        <?php // Loop through each feed item and display each item as a hyperlink. ?>
+			        <?php foreach ( $rss_items as $item ) : ?>
+			            <li>
+			              <?php 
+			              	$data = $item->data;
+
+			              	$video = $data['child']['']['video'][0]['data'];
+
+			              	$items_video_inform[]=array(
+			              		'link'=> $item->get_link(),
+			              		'video'=> $video,
+			              		'description' => esc_html( $item->get_description() ),
+			              		'title' => esc_html( $item->get_title() ),
+			              		) 	
+			              ?>
+			            </li>
+			        <?php endforeach; ?>
+			    <?php endif; ?>
+			</ul>
+			
+					<?php if(count($items_video_inform) > 0) { ?>
+					<div class="feture-video-active">
+						<?php foreach($items_video_inform as $item){ ?>
+									<?php if($item['video']){ ?>
+										<?php echo $item['video']; ?>
+									<?php } ?>
+						<?php } ?>
+					</div>
+					<?php } ?>
+			<div style="clear:both"></div>
+			<!-- End -->
+
+</div>
 </div>
 </div>
 </div>
@@ -178,24 +235,69 @@ Template Name: Home Page at the Event
 				<div class="inform-logo"><img src="/wp-content/uploads/2015/05/TMForumInform_logo2.png"/></div>
 				<div class="btn-view-more"><a class="sf-button medium orange standard" href="#" target="_blank">VIEW ALL VIDEOS</a></div>
 				<div class="clear"></div>
-				<div class="inform-all-videos">
-					<div class="inform-video">
-						<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-						<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
+			<!-- Feed inform videos -->
+			<?php
+
+			include_once( ABSPATH . WPINC . '/feed.php' );
+
+			// Get a SimplePie feed object from the specified feed source.
+			$rss = fetch_feed( 'http://tmforum.staging.wpengine.com/video-feed-6/' );
+
+			if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
+
+			    // Figure out how many total items there are, but limit it to 5. 
+			    $maxitems = $rss->get_item_quantity( 3 ); 
+
+			    // Build an array of all the items, starting with element 0 (first element).
+			    $rss_items = $rss->get_items( 0, $maxitems );
+
+			endif;
+			?>
+
+			<ul>
+			    <?php if ( $maxitems == 0 ) : ?>
+			        <li><?php _e( 'No items', 'my-text-domain' ); ?></li>
+			    <?php else : ?>
+			        <?php // Loop through each feed item and display each item as a hyperlink. ?>
+			        <?php foreach ( $rss_items as $item ) : ?>
+			            <li>
+			              <?php 
+			              	$data = $item->data;
+
+			              	$video = $data['child']['']['video'][0]['data'];
+
+			              	$items_video_inform[]=array(
+			              		'link'=> $item->get_link(),
+			              		'video'=> $video,
+			              		'description' => esc_html( $item->get_description() ),
+			              		'title' => esc_html( $item->get_title() ),
+			              		) 	
+			              ?>
+			            </li>
+			        <?php endforeach; ?>
+			    <?php endif; ?>
+			</ul>
+			
+					<?php if(count($items_video_inform) > 0) { ?>
+					<div class="inform-all-videos">
+						<?php foreach($items_video_inform as $item){ ?>
+							<div class="inform-video">
+								<figure class="feed-image">
+									<?php if($item['video']){ ?>
+										<?php echo $item['video']; ?>
+									<?php } ?>
+								</figure>
+								<div class="feed-content">
+										<a href="<?php echo $item['link']; ?>" target="_blank">
+											<p class="feed-title-event"><?php echo $item['title']; ?></p>
+										</a>
+								</div>
+							</div>
+						<?php } ?>
 					</div>
-					<div class="inform-video">
-						<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-						<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
-					</div>
-					<div class="inform-video">
-						<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-						<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
-					</div>
-					<div class="inform-video">
-						<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-						<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
-					</div>
-				</div>
+					<?php } ?>
+			<div style="clear:both"></div>
+			<!-- End -->
 			</div>
 			
 			<div class="twitter-feed">	
@@ -428,7 +530,7 @@ Template Name: Home Page at the Event
 									$DOM = new DOMDocument();
 									@$DOM->loadHTML($rss_item->get_description());
 
-									$imagenes = $DOM->getElementsByTagName('iframe');
+									$imagenes = $DOM->getElementsByTagName('img');
 									$parrafos = $DOM->getElementsByTagName('p');
 									$description = "";
 									foreach($parrafos as $parrafo){
@@ -447,14 +549,12 @@ Template Name: Home Page at the Event
 										array_push($images,$toPush);
 									}
 
-									var_dump($imagenes);
-
 									$item['image']=$images[0];
 
 									return $item;
 							}
 							$cantidad_posts_feed = 2;
-							$url_feed_inform = "http://tmforum.staging.wpengine.com/video-feed/";
+							$url_feed_inform = "http://inform.tmforum.org/category/research-webinar/feed/";
 							$feed_inform = fetch_feed($url_feed_inform);
 
 							/** FEED INFORM **/
@@ -483,8 +583,7 @@ Template Name: Home Page at the Event
 										<?php } ?>
 									</figure>
 									<div class="feed-content">
-										<p class="feed-author"><?php echo $item['description']; ?></p>
-										<?php echo $item['title']; ?>
+										<p class="feed-author"><?php echo $item['author']; ?></p>
 										<a href="<?php echo $item['link']; ?>" target="_blank">
 											<p class="feed-title-event"><?php echo $item['title']; ?></p>
 										</a>
@@ -516,34 +615,79 @@ Template Name: Home Page at the Event
 </section>
 
 <section id="hp-section" class="section06">
-<div class="sec-main-content">
-<div class="watch-keynote-videos">
-<h1>WATCH KEYNOTES:</h1>
-<ul>
-	<li class="keynote-video">
-		<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-		<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
-	</li>
-	<li class="keynote-video">
-		<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-		<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
-	</li>
-	<li class="keynote-video">
-		<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-		<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
-	</li>
-	<li class="keynote-video">
-		<iframe src="https://www.youtube.com/embed/W8PTSVXiCyI" width="270" height="166" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-		<p>Keynotes Perspectives: Chris Lewis - JP Rangaswami</p>
-	</li>
-</ul>
-<div class="keynote-video-feed">
-<!-- Start Feed -->
-	<div class="inner-wrap" id="home-feed-keynote-video">
-		
+	<div class="sec-main-content">
+		<div class="keynote-video-feed"><!-- Start Feed -->
+			<div class="inner-wrap" id="home-feed-keynote-video">
+			<?php
+
+			include_once( ABSPATH . WPINC . '/feed.php' );
+
+			// Get a SimplePie feed object from the specified feed source.
+			$rss = fetch_feed( 'http://tmforum.staging.wpengine.com/video-feed-6/' );
+
+			if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
+
+			    // Figure out how many total items there are, but limit it to 5. 
+			    $maxitems = $rss->get_item_quantity( 4 ); 
+
+			    // Build an array of all the items, starting with element 0 (first element).
+			    $rss_items = $rss->get_items( 0, $maxitems );
+
+			endif;
+			?>
+
+			
+			<ul>
+			    <?php if ( $maxitems == 0 ) : ?>
+			        <li><?php _e( 'No items', 'my-text-domain' ); ?></li>
+			    <?php else : ?>
+			        <?php // Loop through each feed item and display each item as a hyperlink. ?>
+			        <?php foreach ( $rss_items as $item ) : ?>
+			            <li>
+			              <?php 
+			              	$data = $item->data;
+
+			              	$video = $data['child']['']['video'][0]['data'];
+
+			              	$items_video[]=array(
+			              		'link'=> $item->get_link(),
+			              		'video'=> $video,
+			              		'description' => esc_html( $item->get_description() ),
+			              		'title' => esc_html( $item->get_title() ),
+			              		) 	
+			              ?>
+			            </li>
+			        <?php endforeach; ?>
+			    <?php endif; ?>
+			</ul>
+			
+					<?php if(count($items_video) > 0) { ?>
+					<div class="watch-keynote-videos">
+						<h1>WATCH KEYNOTES:</h1>
+						<ul>
+							<!--- FEED INFORM -->
+							<?php foreach($items_video as $item){ ?>
+								<li class="keynote-video">
+									<figure class="feed-image">
+										<?php if($item['video']){ ?>
+											<?php echo $item['video']; ?>
+										<?php } ?>
+									</figure>
+									<div class="feed-content">
+										<a href="<?php echo $item['link']; ?>" target="_blank">
+											<p class="feed-title-event"><?php echo $item['title']; ?></p>
+										</a>
+									</div>
+								</li>
+								<?php } ?>
+							</ul>
+						</div>
+					<?php } ?>
+			<div style="clear:both"></div>
 			<!-- End Feed -->
-</div>
-</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 
