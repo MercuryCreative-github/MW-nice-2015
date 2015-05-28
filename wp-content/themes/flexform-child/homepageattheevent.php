@@ -428,7 +428,7 @@ Template Name: Home Page at the Event
 									$DOM = new DOMDocument();
 									@$DOM->loadHTML($rss_item->get_description());
 
-									$imagenes = $DOM->getElementsByTagName('img');
+									$imagenes = $DOM->getElementsByTagName('iframe');
 									$parrafos = $DOM->getElementsByTagName('p');
 									$description = "";
 									foreach($parrafos as $parrafo){
@@ -447,12 +447,14 @@ Template Name: Home Page at the Event
 										array_push($images,$toPush);
 									}
 
+									var_dump($imagenes);
+
 									$item['image']=$images[0];
 
 									return $item;
 							}
 							$cantidad_posts_feed = 2;
-							$url_feed_inform = "http://inform.tmforum.org/category/research-webinar/feed/";
+							$url_feed_inform = "http://tmforum.staging.wpengine.com/video-feed/";
 							$feed_inform = fetch_feed($url_feed_inform);
 
 							/** FEED INFORM **/
@@ -481,7 +483,8 @@ Template Name: Home Page at the Event
 										<?php } ?>
 									</figure>
 									<div class="feed-content">
-										<p class="feed-author"><?php echo $item['author']; ?></p>
+										<p class="feed-author"><?php echo $item['description']; ?></p>
+										<?php echo $item['title']; ?>
 										<a href="<?php echo $item['link']; ?>" target="_blank">
 											<p class="feed-title-event"><?php echo $item['title']; ?></p>
 										</a>
@@ -537,86 +540,7 @@ Template Name: Home Page at the Event
 <div class="keynote-video-feed">
 <!-- Start Feed -->
 	<div class="inner-wrap" id="home-feed-keynote-video">
-		<?php
-			include_once( ABSPATH . WPINC . '/feed.php' );
-			/* Recibo un item rss y limpia el formato para hacer más facil el print de los campos */
-			function limpiar_formato_video_feed($rss_item){
-
-				$item = array();
-				$item['link'] 	= $rss_item->get_link();
-				$item['title'] 	= $rss_item->get_title();
-
-				if ($author = $rss_item->get_author()){
-					$item['author'] = $author->get_name();
-				}else {$item['author'] ="";}
-
-				$item['image'] 	= null;
-				$DOM = new DOMDocument();
-				@$DOM->loadHTML($rss_item->get_description());
-
-				$imagenes = $DOM->getElementsByTagName('img');
-				$parrafos = $DOM->getElementsByTagName('p');
-				$description = "";
-				foreach($parrafos as $parrafo){
-					$description = $description ."<p>".utf8_decode($parrafo->nodeValue)."</p>";
-				}
-				$pos = 80;
-				if(strlen($description) > $pos){
-					$pos = strpos($description, ' ', $pos);
-				}
-				$item['description'] = substr($description, 0, $pos)."...";
-
-				$images=array();
-
-				foreach ($imagenes as $element) {
-					$toPush=$element->getAttribute('src');
-					array_push($images,$toPush);
-				}
-
-				$item['image']=$images[0];
-
-				return $item;
-			}
-			$cantidad_posts_feed = 4;
-			$url_feed_inform = "http://tmforum.staging.wpengine.com/category/test-video/feed/";
-			$feed_inform = fetch_feed($url_feed_inform);
-
-			/** FEED INFORM **/
-			if (!is_wp_error($feed_inform)) {
-				$maxitems = $feed_inform->get_item_quantity($cantidad_posts_feed);
-									$feed_items_inform = $feed_inform->get_items(0, $maxitems);
-							}
-
-							$items_feed = array();
-							if(count($feed_items_inform) > 0) {
-									foreach($feed_items_inform as $feed_item_inform) {
-											$items_inform_video[] = limpiar_formato_video_feed($feed_item_inform);
-									}
-							}
-					?>
-					<?php if(count($items_inform_video) > 0) { ?>
-						<section class="feed-related-posts">
-							<!--- FEED INFORM -->
-							<?php foreach($items_inform_video as $item){ ?>
-								<article class="feed-item feed-event">
-								<figure class="feed-image">
-										<?php if($item['image']){ ?>
-											<a href="<?php echo $item['link']; ?>" target="_blank">
-												<img width="100%" src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>" title="<?php echo $item['title']; ?>">
-											</a>
-										<?php } ?>
-									</figure>
-									<div class="feed-content">
-										<p class="feed-author"><?php echo $item['author']; ?></p>
-										<a href="<?php echo $item['link']; ?>" target="_blank">
-											<p class="feed-title-event"><?php echo $item['title']; ?></p>
-										</a>
-									</div>
-								</article>
-								<?php } ?>
-						</section>
-					<?php } ?>
-			<div style="clear:both"></div>
+		
 			<!-- End Feed -->
 </div>
 </div>
