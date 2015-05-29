@@ -113,94 +113,219 @@ Template Name: Keynotes Streaming
 
 			<?php
 
-			function create_page_content(){
+			// var set and unset
+	$SpeakerHtmlOutput='';
+	$presentationsHtmlOutput='';
 
-				$page_content='';
+    // OutPut functions START HERE. Please read last.
+    if (!function_exists('get_presentations')) {
+    	function get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor){
 
-				  $args  = array(
-				    'order ' => 'ASC',
-				    //'orderby' => 'meta_value',
-				    'role' => 'speaker',
-				    // check for two meta_values
-					'meta_query' => array(
-							array(
-								'key'     => '_TMF_speakers_categories',
-								'value'     => 'check2',
-								'compare' => 'LIKE',
-							),
-						)
-				    );
+	    	$args = array(
+				'post_type'  => 'agenda_tracks',
+				'meta_key'	 => '_TMF_presentations_start_date',
+				'orderby'	 => 'meta_value_num',
+				'order' 		=> 'ASC',
+				'meta_query' => array(
+					array(
+						'key'     => '_TMF_presentation_session',
+						'value'   => $sessionId,
+						'compare' => 'LIKE',
+					),
+				),
+			);
 
-				$user_query = new WP_User_Query( $args );
+			// This are all the presentations that have him/her listed as spekear/moderator/etc
+			$presentationToCheck = new WP_Query( $args );
+			$presentationsHtmlOutput='';
 
-				// User Loop
-				foreach ( $user_query->results as $user ) {
-				
+			// The Loop
+			if ( $presentationToCheck->have_posts() ) {
 
-						$categorySpeakers = get_user_meta($user->ID, '_TMF_speakers_categories', true);
-						$categoryDisplay='';
+				while ( $presentationToCheck->have_posts() ) {
 
-						if(is_array($categorySpeakers)){
+					// variables unset
+					unset($arrayByRole);
+					$arrayByRole = array();
+					$speacificArray='';
 
-							foreach ($categorySpeakers as $categorySpeaker) {
-								if($categorySpeaker=='check1') {
-									$categoryDisplay.=' featured';
-								} elseif($categorySpeaker=='check2') {
-									$categoryDisplay.=' keynote';
-								} else {
-									$categoryDisplay.=' in-home-page';
-								};
+					// needed variables
+					$presentationToCheck->the_post();
+					$presentationSlug = $presentationToCheck->post_name;
+					$presentationToCheckId=get_the_ID();
+					$presentationTitle=get_the_title();
+					$presentationContent=get_the_content();
+					$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
+					$presentationStart=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
+					$presentationEnd=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
+					$role_to_update='';
+
+					$roles=array('speaker','panelist','collaborator','facilitator','moderator');
+
+					foreach ($roles as $role_to_update) {
+
+						$role_to_fetch=	$role_to_update.'s_meta';
+						$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
+
+						if(is_array($presentationSpeakers) && !empty($presentationSpeakers)){
+
+							$speacificArray=$role_to_update;
+
+							foreach ( $presentationSpeakers as $presentationSpeaker ) {
+
+								// needed variables
+								$userMeta = get_user_meta( $presentationSpeaker, $role_to_update.'_at',true);
+								$userJobRole = get_user_meta( $presentationSpeaker, 'job_role',true);
+								$userCompanies = get_user_meta( $presentationSpeaker, 'company',true);
+
+								if(!empty($userCompanies)){
+									// we are using just the first company.
+									$userCompanyId = $userCompanies[0];
+									$userCompanyName= get_the_title($userCompanyId);
+								}
+
+								$user = get_user_by( 'id', $presentationSpeaker );
+
+								// if the user has the checked role in this presentation
+								if(is_array($userMeta)){
+
+									$hasThisRole=in_array($presentationToCheckId,$userMeta);
+
+									$SpeakerHtmlOutput='';
+
+									if($hasThisRole && is_object($user)){
+										//speaker output to store
+										$SpeakerHtmlOutput.='<p>- <a href="/speaker-profile/?id='.$user->ID.'">'.$user->display_name.'</a>, ';
+										$SpeakerHtmlOutput.='<em>'.($userJobRole).'</em>, ';
+										if(!empty($userCompanies)){$SpeakerHtmlOutput.='<strong>'.$userCompanyName.'</strong>';}
+										$SpeakerHtmlOutput.='</p>';
+
+										// this array contains inside one array per role and inside each of them, the speakers data.
+										$arrayByRole[$speacificArray][]=$SpeakerHtmlOutput;
+									
+									} //close if($hasThisRole)
+
+								} //close if(is_array($userMeta)
+
+							} //close foreach ( $presentationSpeakers as $presentationSpeaker )
+						
+						} //close if(is_array($presentationSpeakers) && !empty($presentationSpeakers))
+
+					} //close foreach ($roles as $role_to_update)
+
+					$presentationSesion=$sessionId;
+					$presentationLink = get_permalink();
+
+					//Presentations output
+					$presentationsHtmlOutput.='<div class="summit-presentation">';
+					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
+					$presentationsHtmlOutput.='<div class="presentation-info" id="'.$presentationSlug.'">';
+					$presentationsHtmlOutput.='<div class="presentation-title" >';
+					$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
+					$presentationsHtmlOutput.='</div>';
+					$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
+					$presentationsHtmlOutput.='<div class="presentation-content" style="display:none">'.$presentationContent.'</div>';
+					
+					foreach ($roles as $rolesToshow) {
+
+						$roleLabel=$rolesToshow;
+						if(isset($arrayByRole[$rolesToshow]))
+								if(count($arrayByRole[$rolesToshow])>1)
+										$roleLabel=$rolesToshow.'s';
+						
+
+						if(!empty($arrayByRole[$rolesToshow])){
+							$presentationsHtmlOutput.='<div class="presentation-speaker"><strong>'.ucwords($roleLabel).'</strong>';
+
+							foreach ($arrayByRole[$rolesToshow] as $speakerData) {
+								$presentationsHtmlOutput.=$speakerData;
 							}
-						}
 
-						$page_content.= '<div class="speaker-box speaker-item'.$categoryDisplay.'">';
-						$page_content.= '<a href="/speaker-profile/?id=' . esc_html( $user->ID ) . '" title="View ' . esc_html( $user->display_name ) . ' page">';
-						
-						// Get the user id of the user and the id of the image
-						$userMetaImageId = get_user_meta($user->ID,'image_id',true);
-						// Asign a size to the image
-						$userMetaImage =  wp_get_attachment_image_src( $userMetaImageId, 'thumbnail' ); 
+							$presentationsHtmlOutput.='</div>';
+						} //close if
+					} //close foreach
 
-						// if $userMetaImage (an array) is empty/false
-						if(!($userMetaImage)){
-						$userMetaImage[] ='/wp-content/uploads/2014/09/default_speaker.png';
-						}
-						//the ferst element of the $userMetaImage array is the url of the image
-						$page_content.= '<div class="thumb"><img src="'.$userMetaImage[0].'" onload="speakerImgSize(this);"/></div>';
-						$page_content.= '<div class="speaker-data">';
-						$page_content.= '<p class="name">' . esc_html( $user->display_name ) . '</p>';
-						
-						// New mapping of user and companies with job role
-						// Get companies and job role
-						$companyIds = getUserCompanies( esc_html( $user->ID ), true );
-						
-						if( (int)$companyIds > 0 ) {
-							$jobRole = getUserJobRolesByCompanyId( $user->ID, $companyIds );
-							if( empty( $jobRole ) ) {
-								$jobRole = esc_html( $user->role );
-							}
-							$page_content.= '<p class="role">' . esc_html( $jobRole ) . '</p>';
-							$page_content.= '<p><strong class="company">' . get_the_title( $companyIds ) . '</strong></p>';
-						} 
-						
+					$presentationsHtmlOutput.='</div>'; //close presentation-info
+					$presentationsHtmlOutput.='</div>'; //close summit-presentation
+
+			    }// close while ( $presentationToCheck->have_posts()
+			} // close THE LOOP if ( $presentationToCheck->have_posts() 
+
+    		wp_reset_query();
+
+			return $presentationsHtmlOutput;
+	}} // end if get_presentations
 
 
-						$page_content.= '</div>';
-						$page_content.= '</a>';
-						$page_content.= '</div> <!-- End Speaker -->';
-				} // ends foreach $blogusers as $user
+	$summit_slug='keynotes';
 
-				return $page_content;
+	// The Vars to run the Query that gets all the Presentations with this Forum Asociated based on the $summit_slug
+	$args = array(
+	'post_type' 	=> 'tmf_sessions',
+	'order' 		=> 'ASC',
+	'meta_key'	 	=> '_TMF_session_start_date',
+	'orderby'	 	=> 'meta_value_num',
+	'tax_query'		=> array(
+			array(
+				'taxonomy' => 'tmf_summit_category',
+				'field'    => 'slug',
+				'terms'    => $summit_slug,
+			),
+		),
+	);
 
-			} // ends function create page content
+	// WP Query
+	$loop = new WP_Query( $args );
 
-			echo create_page_content();
+	// Variables set
+	$sessions='';
+	$storedDay = '';
+	$i=0;
 
-			?>
+	while ( $loop->have_posts() ) : $loop->the_post();
+
+	// needed variables
+	$i++;
+	$sessionId = get_the_ID();
+	$sessionTitle = get_the_title();
+	$prefix = '_TMF_';
+	$sessionStarts = get_post_meta( $sessionId, $prefix . 'session_start_date',true);
+	$sessionChair = get_post_meta( $sessionId, $prefix . 'chair',true);
+	$sessionSponsors = get_post_meta( $sessionId, $prefix . 'sponsors',true);
+	$sessionColor = get_post_meta ( $sessionId, $prefix . 'summit_colorpicker',true);
+	$sessionIcon = get_post_meta ( $sessionId, $prefix . 'summit_image',true);
+
+	// If a new day stars, we write the DAY
+	if($storedDay!==date('l,  F j',$sessionStarts)){
+		$storedDay=date('l,  F j',$sessionStarts);
+
+		if(isset($sessionIcon) && $sessionIcon != null){
+			$sessions.= '<div class="summit-day"><p>';
+			$sessions.= '<img src="'.$sessionIcon.'"/>';
+		}else{
+			$sessions.= '<div class="summit-day"><p style="padding: 0 0 5px 15px;">';
+		}
+		$sessions.= $storedDay.'</p></div>';
+	}
+
+	// Sessions output depends on functions
+	$sessions.= '<div class="session-name">'.$sessionTitle.'</div>';
+	$sessions.= '<div class="clear"></div>';
+	$sessions.= '<div id="session-'.$sessionId.'">'.get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor).'</div>';
+
+	
+
+	wp_reset_query();
+
+
+	$i++;
+	endwhile;
+
+	echo $sessions;
 
 
 
-
+?>
 
 
 
