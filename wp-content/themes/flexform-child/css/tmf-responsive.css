@@ -1446,6 +1446,9 @@
 }
 @media screen and (max-width: 767px) {
 
+    /*footer at the event*/
+    .footer-newsletter-02, .footer-newsletter-03 {display: block;  width: 100%;}
+
     /*hp at the event*/
     .inform-logo, .section04-header .btn-view-more {float: none;}
     .section04-header .btn-view-more, .feed-press h1, .press-coverage h1{ text-align: center; }
