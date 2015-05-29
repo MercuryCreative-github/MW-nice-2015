@@ -173,7 +173,7 @@ Template Name: Home Page at the Event
 			include_once( ABSPATH . WPINC . '/feed.php' );
 
 			// Get a SimplePie feed object from the specified feed source.
-			$rss = fetch_feed( 'http://inform.tmforum.org/featured-video-1/' );
+			$rss = fetch_feed( 'http://inform.tmforum.org/featured-video-1/feed/' );
 
 			if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
 
@@ -183,7 +183,7 @@ Template Name: Home Page at the Event
 			    // Build an array of all the items, starting with element 0 (first element).
 			    $rss_items = $rss->get_items( 0, $maxitems );
 
-			endif;
+			
 			?>
 
 			
@@ -211,7 +211,7 @@ Template Name: Home Page at the Event
 			    <?php endif; ?>
 			</ul>
 			
-					<?php if(count($items_video_inform_feature) > 0) { ?>
+					<?php if(isset($items_video_inform_feature) && count($items_video_inform_feature) > 0) { ?>
 					<div class="feture-video-active">
 						<?php foreach($items_video_inform_feature as $item){ ?>
 									<?php if($item['video']){ ?>
@@ -221,6 +221,8 @@ Template Name: Home Page at the Event
 					</div>
 					<?php } ?>
 			<div style="clear:both"></div>
+
+			<?php endif; ?>
 			<!-- End -->
 
 </div>
@@ -251,7 +253,6 @@ Template Name: Home Page at the Event
 			    // Build an array of all the items, starting with element 0 (first element).
 			    $rss_items = $rss->get_items( 0, $maxitems );
 
-			endif;
 			?>
 
 			<ul>
@@ -278,7 +279,7 @@ Template Name: Home Page at the Event
 			    <?php endif; ?>
 			</ul>
 			
-					<?php if(count($items_video_inform_live) > 0) { ?>
+					<?php if(isset($items_video_inform_live) && count($items_video_inform_live) > 0) { ?>
 					<div class="inform-all-videos">
 						<?php foreach($items_video_inform_live as $item){ ?>
 							<div class="inform-video">
@@ -297,6 +298,7 @@ Template Name: Home Page at the Event
 					</div>
 					<?php } ?>
 			<div style="clear:both"></div>
+			<?php endif; ?>
 			<!-- End -->
 			</div>
 			
@@ -367,7 +369,7 @@ Template Name: Home Page at the Event
 										$toPush=$element->getAttribute('src');
 										array_push($images,$toPush);
 									}
-
+									if(!empty($images))
 									$item['image']=$images[0];
 
 									return $item;
@@ -459,18 +461,18 @@ Template Name: Home Page at the Event
 										$toPush=$element->getAttribute('src');
 										array_push($images,$toPush);
 									}
-
+									if(!empty($images))
 									$item['image']=$images[0];
 
 									return $item;
 							}
 							$cantidad_posts_feed = 2;
-							$url_feed_inform = "http://inform.tmforum.org/category/tm-forum-press-releases/";
+							$url_feed_inform = "http://inform.tmforum.org/category/tm-forum-press-releases/feed/";
 							$feed_inform = fetch_feed($url_feed_inform);
 
 							/** FEED INFORM **/
 
-							$feed_items_inform = "";
+							$feed_items_inform = array();
 
 							if (!is_wp_error($feed_inform)) {
 									$maxitems = $feed_inform->get_item_quantity($cantidad_posts_feed);
@@ -552,16 +554,17 @@ Template Name: Home Page at the Event
 										array_push($images,$toPush);
 									}
 
+									if(!empty($images))
 									$item['image']=$images[0];
 
 									return $item;
 							}
 							$cantidad_posts_feed = 2;
-							$url_feed_inform = "http://inform.tmforum.org/category/tmforum-live-press-coverage/";
+							$url_feed_inform = "http://inform.tmforum.org/category/tmforum-live-press-coverage/feed/";
 							$feed_inform = fetch_feed($url_feed_inform);
 
 							/** FEED INFORM **/
-							$feed_items_inform = "";
+							$feed_items_inform = array();
 
 							if (!is_wp_error($feed_inform)) {
 									$maxitems = $feed_inform->get_item_quantity($cantidad_posts_feed);
