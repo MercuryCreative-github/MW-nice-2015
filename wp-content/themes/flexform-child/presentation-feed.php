@@ -34,6 +34,8 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 			$summits = get_the_terms($sessionId, 'tmf_summit_category' );
 			if(is_array($summits))
 			foreach ($summits as $summitTitle) {$session .= '<sessionTrack>' . ( $summitTitle->name ) . '</sessionTrack>';}
+			$sessionTrackName = ( $summitTitle->name );
+			$lastWord = substr(strrchr($sessionTrackName, " "), 1);
 			$args = array(
 				'role'=>'speaker',
 				'meta_query' =>array(array('value' => $presentationId ,'compare' => 'LIKE'),)
@@ -86,7 +88,9 @@ if(isset($_GET['id'])){$id=$_GET['id'];}else{
 			$sessionColor = get_post_meta ( $sessionId, $prefix . 'summit_colorpicker',true);
 			$session .= '<color>'. $sessionColor .'</color>';
 		$session .= '</item>';
-		array_push($arr,$session);
+		if (!($presentation->post_title == "Lunch" && $lastWord == "Summit")) {
+			array_push($arr,$session);	
+		}
 	};
 };
 header('Content-Type: '.feed_content_type('rss-http').'; charset='.get_option('blog_charset'), true);
