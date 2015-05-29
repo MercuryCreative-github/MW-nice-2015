@@ -173,7 +173,7 @@ Template Name: Home Page at the Event
 			include_once( ABSPATH . WPINC . '/feed.php' );
 
 			// Get a SimplePie feed object from the specified feed source.
-			$rss = fetch_feed( 'http://inform.tmforum.org/featured-video-1/feed/' );
+			$rss = fetch_feed( 'http://inform.tmforum.org/featured-video-2/feed/' );
 
 			if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
 
@@ -243,7 +243,7 @@ Template Name: Home Page at the Event
 			include_once( ABSPATH . WPINC . '/feed.php' );
 
 			// Get a SimplePie feed object from the specified feed source.
-			$rss = fetch_feed( 'http://inform.tmforum.org/tm-forum-live-videos/' );
+			$rss = fetch_feed( 'http://inform.tmforum.org/tm-forum-live-videos-1/' );
 
 			if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
 
