@@ -510,7 +510,6 @@
     }
     /*Footer at the event '15*/
     .footer-newsletter-01 {display: none;}
-    .footer-newsletter-02, .footer-newsletter-03 {display: block;width: 100%;}
     .footer-newsletter-03 .gform_wrapper.newsletter_box {margin:0 auto; width: 250px;}
     /**/
 
@@ -1959,6 +1958,10 @@
     }
 }
 @media screen and (max-width: 480px) {
+
+    /*footer at the event '15*/
+    #footer .footer-newsletter-02 p {text-align: left;}
+
     #megaMenu #megaMenuToggle {
         margin-left: -170px !important;
     }

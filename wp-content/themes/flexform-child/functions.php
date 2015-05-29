@@ -1430,13 +1430,12 @@ function add_custom_to_yoast( $content ) {
 	</ul>
 </div>';
 
-		} else {
-		}
+		} 
 
 
 	}
 
-	$content = $content . ' ' . $custom_content;
+	if(isset($custom_content)){$content = $content . ' ' . $custom_content;}
 
 	// comment this line to hide results after finishing.
 	//var_dump($content);
