@@ -138,6 +138,7 @@ Template Name: Keynotes Streaming
 			// This are all the presentations that have him/her listed as spekear/moderator/etc
 			$presentationToCheck = new WP_Query( $args );
 			$presentationsHtmlOutput='';
+			$indice = 0;
 
 			// The Loop
 			if ( $presentationToCheck->have_posts() ) {
@@ -160,9 +161,9 @@ Template Name: Keynotes Streaming
 					$presentationEnd=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
 					$role_to_update='';
 
-					$roles=array('speaker','panelist','collaborator','facilitator','moderator');
+					$role_to_update=('speaker');
 
-					foreach ($roles as $role_to_update) {
+					
 
 						$role_to_fetch=	$role_to_update.'s_meta';
 						$presentationSpeakers=get_post_meta($presentationToCheckId,$role_to_fetch,true);
@@ -171,7 +172,24 @@ Template Name: Keynotes Streaming
 
 							$speacificArray=$role_to_update;
 
+							if(count($presentationSpeakers)>1){
+								$span=4;
+							}else{$span=12;}
+
+							$indiceS=0;
+
 							foreach ( $presentationSpeakers as $presentationSpeaker ) {
+
+								$indiceS++;
+
+								// Get the user id of the user and the id of the image
+								$userMetaImageId = get_user_meta($presentationSpeaker,'image_id',true);
+								$userMetaImage =  wp_get_attachment_image_src( $userMetaImageId, 'thumbnail' );
+								// if $userMetaImage (an array) is empty/false
+
+								if(!($userMetaImage)){
+								$userMetaImage[] ='/wp-content/uploads/2014/09/default_speaker.png';
+								}
 
 								// needed variables
 								$userMeta = get_user_meta( $presentationSpeaker, $role_to_update.'_at',true);
@@ -194,11 +212,16 @@ Template Name: Keynotes Streaming
 									$SpeakerHtmlOutput='';
 
 									if($hasThisRole && is_object($user)){
+										
 										//speaker output to store
-										$SpeakerHtmlOutput.='<p>- <a href="/speaker-profile/?id='.$user->ID.'">'.$user->display_name.'</a>, ';
-										$SpeakerHtmlOutput.='<em>'.($userJobRole).'</em>, ';
-										if(!empty($userCompanies)){$SpeakerHtmlOutput.='<strong>'.$userCompanyName.'</strong>';}
-										$SpeakerHtmlOutput.='</p>';
+										if($indiceS%3==1 || $indiceS==1){$SpeakerHtmlOutput.='<div class="row-fluid">';}
+										$SpeakerHtmlOutput.='<div class="speakerTrack span'.$span.'">';
+											$SpeakerHtmlOutput.='<div class="streaming-img"><a href="/speaker-profile/?id='.$user->ID.'"><img src="'.$userMetaImage[0].'"></a></div>';
+											$SpeakerHtmlOutput.='<div class="streaming-txt"><a href="/speaker-profile/?id='.$user->ID.'" style="color:#AEACAC";>'.$user->display_name.'</a><br/>'.$indiceS;
+											$SpeakerHtmlOutput.='<em>'.($userJobRole).'</em>,';
+											if(!empty($userCompanies)){$SpeakerHtmlOutput.='<strong> '.$userCompanyName.'</strong></div>';}
+										$SpeakerHtmlOutput.='</div>';
+										if($indiceS%3==0 || $indiceS==count($presentationSpeakers)){$SpeakerHtmlOutput.='</div>';}
 
 										// this array contains inside one array per role and inside each of them, the speakers data.
 										$arrayByRole[$speacificArray][]=$SpeakerHtmlOutput;
@@ -211,41 +234,63 @@ Template Name: Keynotes Streaming
 						
 						} //close if(is_array($presentationSpeakers) && !empty($presentationSpeakers))
 
-					} //close foreach ($roles as $role_to_update)
 
 					$presentationSesion=$sessionId;
 					$presentationLink = get_permalink();
 
+					$rolesToshow = $role_to_update;	
+
+					if(!empty($arrayByRole[$rolesToshow])){
 					//Presentations output
-					$presentationsHtmlOutput.='<div class="streaming-keynotes">';
-					$presentationsHtmlOutput.='<div class="nday">';
-					$presentationsHtmlOutput.='<div class="dday">'.$storedMonth.'<span style="font-size: 25px;">'.$storedDay.'</span></div>';
-					$presentationsHtmlOutput.='<div class="fday" style="border-color:'.$sessionColor.'; >'.$presentationStart.'</div></div>';
+
+					$keynotesCount= count($arrayByRole[$rolesToshow]);
+
+					$span = min(12,4*$keynotesCount);
+					$indice++;
+
+					if($indice%3==1 || $indice==1){$presentationsHtmlOutput.='<div class="row-fluid">';}
+
+					$presentationsHtmlOutput.='<div class="streaming-keynotes span'.$span.'">';
+						$presentationsHtmlOutput.='<div class="nday">';
+							$presentationsHtmlOutput.='<div class="dday-table" style="border-color: #AEACAC">';
+								$presentationsHtmlOutput.='<p>'.$storedMonth.'<br/><span class="number-day">0'.$storedDay.'</span></p>';
+							$presentationsHtmlOutput.='</div>';
+							$presentationsHtmlOutput.='<div class="fday">'.$presentationStart.'</div>';
+						$presentationsHtmlOutput.='</div>';
 					
-					foreach ($roles as $rolesToshow) {
 
 						$roleLabel=$rolesToshow;
 						if(isset($arrayByRole[$rolesToshow]))
 								if(count($arrayByRole[$rolesToshow])>1)
-										$roleLabel=$rolesToshow.'s';					
+										$roleLabel=$rolesToshow.'s';
+						
 
 						if(!empty($arrayByRole[$rolesToshow])){
+							$presentationsHtmlOutput.='<div class="presentation-speaker">';
 
 							foreach ($arrayByRole[$rolesToshow] as $speakerData) {
 								$presentationsHtmlOutput.=$speakerData;
 							}
-						} //close if
-					} //close foreach
 
-					$presentationsHtmlOutput.='</div>'; //close presentation-info
+							$presentationsHtmlOutput.='</div>';
+						} //close if 
+						else{$presentationsHtmlOutput.='df';}
+
+
+					if($indice%3==0 || $indice ==3){$presentationsHtmlOutput.='</div>';}
+
+
 					$presentationsHtmlOutput.='</div>'; //close summit-presentation
+					}
 
 			    }// close while ( $presentationToCheck->have_posts()
 			} // close THE LOOP if ( $presentationToCheck->have_posts() 
 
     		wp_reset_query();
 
-			return $presentationsHtmlOutput;
+    		return $presentationsHtmlOutput;
+   		
+
 	}} // end if get_presentations
 
 
