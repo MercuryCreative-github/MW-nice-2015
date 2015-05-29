@@ -233,7 +233,7 @@ Template Name: Home Page at the Event
 		<div class="sec-main-content">		
 			<div class="inform-feed-videos">
 				<div class="inform-logo"><img src="/wp-content/uploads/2015/05/TMForumInform_logo2.png"/></div>
-				<div class="btn-view-more"><a class="sf-button medium orange standard" href="#" target="_blank">VIEW ALL VIDEOS</a></div>
+				<div class="btn-view-more"><a class="sf-button medium orange standard" href="http://inform.tmforum.org/?s=videos" target="_blank">VIEW ALL VIDEOS</a></div>
 				<div class="clear"></div>
 			<!-- Feed inform videos -->
 			<?php
@@ -323,7 +323,7 @@ Template Name: Home Page at the Event
 	<div class="sec-main-content">
 	<div class="section04-header">
 		<div class="inform-logo"><img src="/wp-content/uploads/2015/05/TMForumInform_logo2.png"/><h1> //LIVE! News</h1><div class="clear"></div></div>
-		<div class="btn-view-more"><a class="sf-button medium orange standard" href="#" target="_blank">SEE ALL NEWS</a></div>
+		<div class="btn-view-more"><a class="sf-button medium orange standard" href="http://inform.tmforum.org/tag/tm-forum-live-2015/" target="_blank">SEE ALL NEWS</a></div>
 		<div class="clear"></div>
 	</div>
 	<div class="section04-info">
