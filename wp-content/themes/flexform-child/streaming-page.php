@@ -118,8 +118,8 @@ Template Name: Keynotes Streaming
 	$presentationsHtmlOutput='';
 
     // OutPut functions START HERE. Please read last.
-    if (!function_exists('get_presentations')) {
-    	function get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor){
+    if (!function_exists('get_keynote_streaming')) {
+    	function get_keynote_streaming($sessionStarts,$summit_slug,$sessionId,$sessionColor,$storedDay,$storedMonth){
 
 	    	$args = array(
 				'post_type'  => 'agenda_tracks',
@@ -217,31 +217,23 @@ Template Name: Keynotes Streaming
 					$presentationLink = get_permalink();
 
 					//Presentations output
-					$presentationsHtmlOutput.='<div class="summit-presentation">';
-					$presentationsHtmlOutput.='<div class="presentation-time" style="border-color:'.$sessionColor.';">'.$presentationStart.'</div>';
-					$presentationsHtmlOutput.='<div class="presentation-info" id="'.$presentationSlug.'">';
-					$presentationsHtmlOutput.='<div class="presentation-title" >';
-					$presentationsHtmlOutput.='<a href="'.$presentationLink.'">'.$presentationTitle.'</a>';
-					$presentationsHtmlOutput.='</div>';
-					$presentationsHtmlOutput.='<div class="presentation-subtitle">'.$presentationSubtitle.'</div>';
-					$presentationsHtmlOutput.='<div class="presentation-content" style="display:none">'.$presentationContent.'</div>';
+					$presentationsHtmlOutput.='<div class="streaming-keynotes">';
+					$presentationsHtmlOutput.='<div class="nday">';
+					$presentationsHtmlOutput.='<div class="dday">'.$storedMonth.'<span style="font-size: 25px;">'.$storedDay.'</span></div>';
+					$presentationsHtmlOutput.='<div class="fday" style="border-color:'.$sessionColor.'; >'.$presentationStart.'</div></div>';
 					
 					foreach ($roles as $rolesToshow) {
 
 						$roleLabel=$rolesToshow;
 						if(isset($arrayByRole[$rolesToshow]))
 								if(count($arrayByRole[$rolesToshow])>1)
-										$roleLabel=$rolesToshow.'s';
-						
+										$roleLabel=$rolesToshow.'s';					
 
 						if(!empty($arrayByRole[$rolesToshow])){
-							$presentationsHtmlOutput.='<div class="presentation-speaker"><strong>'.ucwords($roleLabel).'</strong>';
 
 							foreach ($arrayByRole[$rolesToshow] as $speakerData) {
 								$presentationsHtmlOutput.=$speakerData;
 							}
-
-							$presentationsHtmlOutput.='</div>';
 						} //close if
 					} //close foreach
 
@@ -294,24 +286,11 @@ Template Name: Keynotes Streaming
 	$sessionSponsors = get_post_meta( $sessionId, $prefix . 'sponsors',true);
 	$sessionColor = get_post_meta ( $sessionId, $prefix . 'summit_colorpicker',true);
 	$sessionIcon = get_post_meta ( $sessionId, $prefix . 'summit_image',true);
-
 	// If a new day stars, we write the DAY
-	if($storedDay!==date('l,  F j',$sessionStarts)){
-		$storedDay=date('l,  F j',$sessionStarts);
-
-		if(isset($sessionIcon) && $sessionIcon != null){
-			$sessions.= '<div class="summit-day"><p>';
-			$sessions.= '<img src="'.$sessionIcon.'"/>';
-		}else{
-			$sessions.= '<div class="summit-day"><p style="padding: 0 0 5px 15px;">';
-		}
-		$sessions.= $storedDay.'</p></div>';
-	}
-
+	$storedMonth=date('M',$sessionStarts);
+	$storedDay=date('j',$sessionStarts);
 	// Sessions output depends on functions
-	$sessions.= '<div class="session-name">'.$sessionTitle.'</div>';
-	$sessions.= '<div class="clear"></div>';
-	$sessions.= '<div id="session-'.$sessionId.'">'.get_presentations($sessionStarts,$summit_slug,$sessionId,$sessionColor).'</div>';
+	$sessions.= '<div id="session-'.$sessionId.'">'.get_keynote_streaming($sessionStarts,$summit_slug,$sessionId,$sessionColor,$storedDay,$storedMonth).'</div>';
 
 	
 
