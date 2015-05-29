@@ -173,7 +173,7 @@ Template Name: Home Page at the Event
 			include_once( ABSPATH . WPINC . '/feed.php' );
 
 			// Get a SimplePie feed object from the specified feed source.
-			$rss = fetch_feed( 'http://tmforum.staging.wpengine.com/video-feed-6/' );
+			$rss = fetch_feed( 'http://tmforum.staging.wpengine.com/video-feed-7/' );
 
 			if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
 
