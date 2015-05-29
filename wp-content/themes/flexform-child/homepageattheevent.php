@@ -199,7 +199,7 @@ Template Name: Home Page at the Event
 
 			              	$video = $data['child']['']['video'][0]['data'];
 
-			              	$items_video_inform[]=array(
+			              	$items_video_inform_feature[]=array(
 			              		'link'=> $item->get_link(),
 			              		'video'=> $video,
 			              		'description' => esc_html( $item->get_description() ),
@@ -211,9 +211,9 @@ Template Name: Home Page at the Event
 			    <?php endif; ?>
 			</ul>
 			
-					<?php if(count($items_video_inform) > 0) { ?>
+					<?php if(count($items_video_inform_feature) > 0) { ?>
 					<div class="feture-video-active">
-						<?php foreach($items_video_inform as $item){ ?>
+						<?php foreach($items_video_inform_feature as $item){ ?>
 									<?php if($item['video']){ ?>
 										<?php echo $item['video']; ?>
 									<?php } ?>
@@ -266,7 +266,7 @@ Template Name: Home Page at the Event
 
 			              	$video = $data['child']['']['video'][0]['data'];
 
-			              	$items_video_inform[]=array(
+			              	$items_video_inform_live[]=array(
 			              		'link'=> $item->get_link(),
 			              		'video'=> $video,
 			              		'description' => esc_html( $item->get_description() ),
@@ -278,9 +278,9 @@ Template Name: Home Page at the Event
 			    <?php endif; ?>
 			</ul>
 			
-					<?php if(count($items_video_inform) > 0) { ?>
+					<?php if(count($items_video_inform_live) > 0) { ?>
 					<div class="inform-all-videos">
-						<?php foreach($items_video_inform as $item){ ?>
+						<?php foreach($items_video_inform_live as $item){ ?>
 							<div class="inform-video">
 								<figure class="feed-image">
 									<?php if($item['video']){ ?>
