@@ -560,8 +560,8 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 
 .feture-video-active iframe {width: 100%; height: 550px;}
 
-/*Hide wile there is no videos*/
-.page-template-homepageattheevent-php #main-container section.section06 {display: none;}
+/*Hide wile there is no videos
+.page-template-homepageattheevent-php #main-container section.section06 {display: none;}*/
 
 /*FOOTER AT THE EVENT*/
 
@@ -595,6 +595,35 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 #footer .footer-newsletter-03 .gform_wrapper .gform_footer {padding: 0;}
 #footer .footer-newsletter-03 .gform_wrapper .gform_footer input[type=submit] {padding:8px;}
 #footer .footer-newsletter-03 .gform_wrapper .top_label input.large {margin-bottom: 2px;}
+
+/*STREAMING PAGE*/
+.streaming-keynotes {margin-bottom: 50px;}
+
+.streaming-keynotes .fday {
+	font-size: 27px;
+  	text-transform: uppercase;
+  	margin-left: 0;
+  	padding-top: 18px;
+}
+.streaming-keynotes .dday-table p {
+	padding-top: 5px;
+}
+.streaming-keynotes .dday-table {
+	border-right: #AEACAC 1px solid;
+	border-left: none;
+  	margin-right: 15px;
+  	color: #AEACAC;
+  	height: 60px;
+}
+.streaming-keynotes .nday {
+	background-color: #FAFAFA;
+}
+.streaming-keynotes .speakerTrack {
+	margin: 20px 0;
+	display: table;
+}
+.streaming-keynotes .streaming-img {display: table-cell;width: 80px;}
+.streaming-keynotes .streaming-txt {display: table-cell;vertical-align: top;}
 
 /**************************/
 /******* HOME PAGE ********/
