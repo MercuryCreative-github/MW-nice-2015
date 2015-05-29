@@ -531,7 +531,6 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 .hp-banner-app {
 	display: table;
 	width: 100%;
-
 }
 .app-logo, .app-info {display: table-cell;}
 .app-info {vertical-align: middle;}
@@ -550,6 +549,49 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 	margin:0;
 }
 .watch-keynote-videos h1 {margin-top: 50px; margin-bottom: 30px;}
+
+.watch-keynote-videos ul li.keynote-video .feed-image iframe, .inform-video .feed-image iframe{
+	width: 100%;
+	height: 190px;
+}
+.keynote-video a p.feed-title-event, .inform-video a p.feed-title-event{color: #444;}
+
+.keynote-video .feed-content, .inform-video .feed-content{padding:0;}
+
+.feture-video-active iframe {width: 100%; height: 550px;}
+
+/*FOOTER AT THE EVENT*/
+
+.textwidget.footer-newsletter {
+	display: table;
+}
+#footer .social-contact > div {padding: 10px;}
+.footer-newsletter-02 { width: 45%; }
+.footer-newsletter-01, .footer-newsletter-02, .footer-newsletter-03 {display: table-cell;  vertical-align: middle;}
+.footer-newsletter-01, .footer-newsletter-02 {padding-right: 9%}
+.social-contact .footer-newsletter-01 img {
+	float: none;
+	margin: 0;
+    width: 285px;
+}
+#footer .footer-newsletter-02 p {
+	color: #737373;
+	font-size: 30px;
+	line-height: 42px;
+  	font-weight: 300;
+}
+#footer .footer-newsletter-02 p span.newsletter-02-ligth {  
+	font-size: 41px;
+}
+#footer .footer-newsletter-02 p span.newsletter-02-big{  
+ 	font-size: 54px;
+	font-weight: 600;
+}
+#footer .footer-newsletter-03 .gform_wrapper .gform_heading,
+#footer .footer-newsletter-03 .gform_wrapper .top_label .gfield_label {display: none;}
+#footer .footer-newsletter-03 .gform_wrapper .gform_footer {padding: 0;}
+#footer .footer-newsletter-03 .gform_wrapper .gform_footer input[type=submit] {padding:8px;}
+#footer .footer-newsletter-03 .gform_wrapper .top_label input.large {margin-bottom: 2px;}
 
 /**************************/
 /******* HOME PAGE ********/
