@@ -561,7 +561,7 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 .feture-video-active iframe {width: 100%; height: 550px;}
 
 /*Hide wile there is no videos*/
-.home-page-event .section06 {display: none;}
+.page-template-homepageattheevent-php #main-container section.section06 {display: none;}
 
 /*FOOTER AT THE EVENT*/
 

@@ -469,6 +469,9 @@ Template Name: Home Page at the Event
 							$feed_inform = fetch_feed($url_feed_inform);
 
 							/** FEED INFORM **/
+
+							$feed_items_inform = "";
+
 							if (!is_wp_error($feed_inform)) {
 									$maxitems = $feed_inform->get_item_quantity($cantidad_posts_feed);
 									$feed_items_inform = $feed_inform->get_items(0, $maxitems);
@@ -554,10 +557,12 @@ Template Name: Home Page at the Event
 									return $item;
 							}
 							$cantidad_posts_feed = 2;
-							$url_feed_inform = "http://inform.tmforum.org/category/tmforum-live-press-overage/";
+							$url_feed_inform = "http://inform.tmforum.org/category/tmforum-live-press-coverage/";
 							$feed_inform = fetch_feed($url_feed_inform);
 
 							/** FEED INFORM **/
+							$feed_items_inform = "";
+
 							if (!is_wp_error($feed_inform)) {
 									$maxitems = $feed_inform->get_item_quantity($cantidad_posts_feed);
 									$feed_items_inform = $feed_inform->get_items(0, $maxitems);
@@ -642,6 +647,7 @@ Template Name: Home Page at the Event
 			        <li><?php _e( 'No items', 'my-text-domain' ); ?></li>
 			    <?php else : ?>
 			        <?php // Loop through each feed item and display each item as a hyperlink. ?>
+			         <?php if(is_array($rss_item)) ?>
 			        <?php foreach ( $rss_items as $item ) : ?>
 			            <li>
 			              <?php 
