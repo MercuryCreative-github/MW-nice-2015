@@ -173,7 +173,7 @@ Template Name: Home Page at the Event
 			include_once( ABSPATH . WPINC . '/feed.php' );
 
 			// Get a SimplePie feed object from the specified feed source.
-			$rss = fetch_feed( 'http://tmforum.staging.wpengine.com/video-feed-7/' );
+			$rss = fetch_feed( 'http://inform.tmforum.org/featured-video/' );
 
 			if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
 
@@ -233,7 +233,7 @@ Template Name: Home Page at the Event
 		<div class="sec-main-content">		
 			<div class="inform-feed-videos">
 				<div class="inform-logo"><img src="/wp-content/uploads/2015/05/TMForumInform_logo2.png"/></div>
-				<div class="btn-view-more"><a class="sf-button medium orange standard" href="#" target="_blank">VIEW ALL VIDEOS</a></div>
+				<div class="btn-view-more"><a class="sf-button medium orange standard" href="http://inform.tmforum.org/?s=videos" target="_blank">VIEW ALL VIDEOS</a></div>
 				<div class="clear"></div>
 			<!-- Feed inform videos -->
 			<?php
@@ -241,12 +241,12 @@ Template Name: Home Page at the Event
 			include_once( ABSPATH . WPINC . '/feed.php' );
 
 			// Get a SimplePie feed object from the specified feed source.
-			$rss = fetch_feed( 'http://tmforum.staging.wpengine.com/video-feed-7/' );
+			$rss = fetch_feed( 'http://inform.tmforum.org/tm-forum-live-videos/' );
 
 			if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
 
 			    // Figure out how many total items there are, but limit it to 5. 
-			    $maxitems = $rss->get_item_quantity( 3 ); 
+			    $maxitems = $rss->get_item_quantity( 4 ); 
 
 			    // Build an array of all the items, starting with element 0 (first element).
 			    $rss_items = $rss->get_items( 0, $maxitems );
@@ -323,7 +323,7 @@ Template Name: Home Page at the Event
 	<div class="sec-main-content">
 	<div class="section04-header">
 		<div class="inform-logo"><img src="/wp-content/uploads/2015/05/TMForumInform_logo2.png"/><h1> //LIVE! News</h1><div class="clear"></div></div>
-		<div class="btn-view-more"><a class="sf-button medium orange standard" href="#" target="_blank">SEE ALL NEWS</a></div>
+		<div class="btn-view-more"><a class="sf-button medium orange standard" href="http://inform.tmforum.org/tag/tm-forum-live-2015/" target="_blank">SEE ALL NEWS</a></div>
 		<div class="clear"></div>
 	</div>
 	<div class="section04-info">
@@ -465,7 +465,7 @@ Template Name: Home Page at the Event
 									return $item;
 							}
 							$cantidad_posts_feed = 2;
-							$url_feed_inform = "http://inform.tmforum.org/category/news/feed/";
+							$url_feed_inform = "http://inform.tmforum.org/category/tm-forum-press-releases/";
 							$feed_inform = fetch_feed($url_feed_inform);
 
 							/** FEED INFORM **/
@@ -554,7 +554,7 @@ Template Name: Home Page at the Event
 									return $item;
 							}
 							$cantidad_posts_feed = 2;
-							$url_feed_inform = "http://inform.tmforum.org/category/research-webinar/feed/";
+							$url_feed_inform = "http://inform.tmforum.org/category/tmforum-live-press-overage/";
 							$feed_inform = fetch_feed($url_feed_inform);
 
 							/** FEED INFORM **/
@@ -623,7 +623,7 @@ Template Name: Home Page at the Event
 			include_once( ABSPATH . WPINC . '/feed.php' );
 
 			// Get a SimplePie feed object from the specified feed source.
-			$rss = fetch_feed( 'http://tmforum.staging.wpengine.com/video-feed-7/' );
+			$rss = fetch_feed( 'http://inform.tmforum.org/keynotes-videos/' );
 
 			if ( ! is_wp_error( $rss ) ) : // Checks that the object is created correctly
 
