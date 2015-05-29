@@ -139,9 +139,6 @@ Template Name: Speakers
 						)
 				    );
 
-				// Save user ID to pass on data to Speaker page
-				$user_id = esc_html( $user->ID );
-
 				$user_query = new WP_User_Query( $args );
 
 				// User Loop
@@ -279,6 +276,7 @@ Template Name: Speakers
 
 <!-- Reading and applying filters for the Speakers list -->
 <?php
+if(isset($_GET['filter'])){
 	$filter = $_GET['filter'];
 	if($filter == "high") {
 	    echo '<script>jQuery(document).ready(function(){jQuery("button.high").click();});</script>';
@@ -286,6 +284,7 @@ Template Name: Speakers
 	if($filter == "key") {
 	    echo '<script>jQuery(document).ready(function(){jQuery("button.key").click();});</script>';
 	}
+}
 ?>
 
 

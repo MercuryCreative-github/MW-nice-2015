@@ -60,29 +60,25 @@ if (!class_exists('sponsoredSessions')) {
 		 *
 		 * @uses update_user_meta(), get_user_meta()
 		 */
-		public function save_meta() {
+		public static function save_meta() {
+
+				if(!function_exists('update_company_sponsored_session')){
 
 
+				  function update_company_sponsored_session() {
 
-		if(!function_exists('update_company_sponsored_session')){
+					if( isset( $_POST['ss_hidden'] ) ) {
 
+						$companiesIDs = $_POST['companies_meta'];
+						$sizeCompanies = sizeof( $companiesIDs );
+						update_post_meta($_POST['post_ID'], 'sponsoredsession',	 $_POST['companies_meta']);
 
-		  function update_company_sponsored_session() {
+					}// if is set
+				}; // function
 
-			if( isset( $_POST['ss_hidden'] ) ) {
+			}; // if exists
 
-				$companiesIDs = $_POST['companies_meta'];
-				$sizeCompanies = sizeof( $companiesIDs );
-				update_post_meta($_POST['post_ID'], 'sponsoredsession',	 $_POST['companies_meta']);
-
-			}// if is set
-		}; // function
-
-	}; // if exists
-
-	update_company_sponsored_session();
-
-
+			update_company_sponsored_session();
 		}
 
 
@@ -114,12 +110,7 @@ if (!class_exists('sponsoredSessions')) {
 			$event_hours_count = count($event_hours);
 
 			$company_sponsored_sessions  =  get_post_meta($_GET['post'],'sponsoredsession',true);
-
-
-
-			//var_dump($event_hours);
-
-			$html = 	'<select style="width:100%%;height:250px;" name="' . $userType . 'companies_meta[]" multiple>';
+			$html ='<select style="width:100%%;height:250px;" name="' . $userType . 'companies_meta[]" multiple>';
 
 			foreach ( $event_hours as $row ) {
 

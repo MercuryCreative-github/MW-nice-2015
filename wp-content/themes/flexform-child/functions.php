@@ -1313,6 +1313,7 @@ function save_presentation( $post_id, $post, $update ) {
 		$roles=array('speaker','panelist','collaborator','facilitator','moderator');
 
 		foreach ($roles as $role_to_update) {
+			if(isset($_POST[$role_to_update.'s_meta']))
 			update_speakers_by_role($role_to_update);
 		}
 }

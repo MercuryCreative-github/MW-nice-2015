@@ -120,7 +120,7 @@ if (!class_exists('TMF_Summit_Post_Type')) {
             }
         }
 
-        private function is_Summit_post_type(){
+        private static function is_Summit_post_type(){
             $slug = 'tmf_sessions';
             $is_Summit= false;
             if ( (isset($_POST['post_type']) && $slug == $_POST['post_type'] ) || $slug == $GLOBALS['post_type']) {
@@ -129,7 +129,7 @@ if (!class_exists('TMF_Summit_Post_Type')) {
             return $is_Summit;
         }
         
-        public function get_custom_post_type_template($single_template){
+        public static function get_custom_post_type_template($single_template){
             
             if (!self::is_Summit_post_type())
             return $single_template;
@@ -150,7 +150,7 @@ if (!class_exists('TMF_Summit_Post_Type')) {
             return $single_template;
         }
         
-        private function is_Webinar($post){
+        private static function is_Webinar($post){
             
             if (!self::is_Summit_post_type())
             return false;

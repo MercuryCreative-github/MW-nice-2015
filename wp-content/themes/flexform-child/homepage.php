@@ -187,9 +187,6 @@ function create_page_content(){
 		)
 	);
 
-	// Save user ID to pass on data to Speaker page
-	$user_id = esc_html( $user->ID );
-	
 	$user_query = new WP_User_Query( $args );
 
 	// User Loop

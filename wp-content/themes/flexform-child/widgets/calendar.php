@@ -8,19 +8,14 @@ class calendar_widget extends WP_Widget {
     }
 
       function widget($args,$instance){
+        extract($args);
         echo $before_widget;
         ?>
         <div id='calendar_widget' class='widget calendar_widget'>
 
 <?php
-//$colors = ['','#009FE3','#0082C9','#0063A4','#013B81'];
-
-//if($instance["calendar_color"]){if($instance["calendar_color"]==1 !! $instance["calendar_color"]==2 !! $instance["calendar_color"]==3 !! $instance["calendar_color"]==4){$color=$colors[$instance["calendar_color"]];}else{$color=$instance["calendar_color"]}}else{$color=$colors[1]}
-
 if($instance["calendar_color"]){ $color=$instance["calendar_color"]; } else {$color = '#FFFFFF'; }
-
 ?>
-
 
 <div class="widget-heading clearfix"><?php if($instance["calendar_texto0"]){ ?><h4><?=$instance["calendar_texto0"]?></h4><?php } ?></div>
 
@@ -39,10 +34,7 @@ if($instance["calendar_color"]){ $color=$instance["calendar_color"]; } else {$co
 
 <div class="clear"></div>
 
-
-
-
-        </div>
+</div>
         <?php
         echo $after_widget;
     }
