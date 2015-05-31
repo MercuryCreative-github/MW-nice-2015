@@ -171,8 +171,13 @@ Template Name: Keynotes Streaming
 						if(is_array($presentationSpeakers) && !empty($presentationSpeakers)){
 
 							$speacificArray=$role_to_update;
+							/*var_dump( $presentationToCheckId);
+							echo '<pre>';
+							var_dump( $presentationSpeakers);
+							echo '</pre>';*/
 
-							if(count($presentationSpeakers)>1){
+
+							if(count($presentationSpeakers)>2){
 								$span=4;
 							}else{$span=12;}
 
@@ -217,7 +222,7 @@ Template Name: Keynotes Streaming
 										if($indiceS%3==1 || $indiceS==1){$SpeakerHtmlOutput.='<div class="row-fluid">';}
 										$SpeakerHtmlOutput.='<div class="speakerTrack span'.$span.'">';
 											$SpeakerHtmlOutput.='<div class="streaming-img"><a href="/speaker-profile/?id='.$user->ID.'"><img src="'.$userMetaImage[0].'"></a></div>';
-											$SpeakerHtmlOutput.='<div class="streaming-txt"><a href="/speaker-profile/?id='.$user->ID.'" style="color:#AEACAC";>'.$user->display_name.'</a><br/>'.$indiceS;
+											$SpeakerHtmlOutput.='<div class="streaming-txt"><a href="/speaker-profile/?id='.$user->ID.'" style="color:#AEACAC";>'.$user->display_name.'</a><br/>';
 											$SpeakerHtmlOutput.='<em>'.($userJobRole).'</em>,';
 											if(!empty($userCompanies)){$SpeakerHtmlOutput.='<strong> '.$userCompanyName.'</strong></div>';}
 										$SpeakerHtmlOutput.='</div>';
