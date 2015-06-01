@@ -1478,6 +1478,7 @@
     /*hp at the event*/
     .inform-logo, .section04-header .btn-view-more {float: none;}
     .section04-header .btn-view-more, .feed-press h1, .press-coverage h1{ text-align: center; }
+    .section04-header .btn-view-more {margin: 0;}
     .home.home-page-event .section04-info {width: 100%;}
     .home-page-event .feed-related-posts .feed-item.feed-event,
     .home-page-event .feed-press .feed-related-posts .feed-item.feed-event {width: 60%;}
@@ -1926,6 +1927,7 @@
     .home.home-page-event .section04-info {
         width: 100%;
     }
+    .home-page-event h1 {text-align: center;}
 
     /*404*/
 
@@ -4248,7 +4250,6 @@
         margin-bottom: 20px;
     }
     .container h2.tw-title:before {
-        display: block;
         margin-bottom: 25px;
     }
     .btn-register-pandp-table {
@@ -4281,7 +4282,11 @@
     .home-page-event .section01-slogan span.big-slogan {
         font-size: 40px;
     }
-
+    .inform-feed h1 a.sf-button.medium.orange.standard.right {
+        margin: 0px auto;
+        float: none;
+        width: 90px;
+    }
 
     /*footer at the event '15*/
     #footer .footer-newsletter-02 p {text-align: center;}
@@ -4594,9 +4599,6 @@
     }
     .feed-content {
         padding: 10px 5px 0 10px;
-    }
-    .container h2.tw-title:before {
-        top: 0;
     }
     .review-name img {
         display: none;
