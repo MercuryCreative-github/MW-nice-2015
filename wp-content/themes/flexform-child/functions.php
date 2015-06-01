@@ -1094,6 +1094,7 @@ if(!function_exists('update_presentation_on_user_save')){
 
 						if(($key) !== false) {
 							unset($presentationMeta[$key]);
+							$presentationMeta=array_unique($presentationMeta);
 							update_post_meta( $presentationToCheckId, $role_to_update, $presentationMeta );
 						}
 					}
@@ -1151,6 +1152,7 @@ if(!function_exists('update_presentation_on_user_save')){
 
 					if(($key) !== false) {
 								unset($presentationMeta[$key]);
+								$presentationMeta=array_unique($presentationMeta);
 								update_post_meta( $presentationToCheckId, $role_to_update, $presentationMeta );
 							}
 				}
@@ -1278,6 +1280,7 @@ function save_presentation( $post_id, $post, $update ) {
 							if(is_array ( $presentationIds ))
 							if(($key = array_search($_POST['post_ID'], $presentationIds)) !== false) {
 								unset($presentationIds[$key]);
+								$presentationIds=array_unique($presentationIds);
 								update_user_meta( $user->ID, $role_to_update.'_at', $presentationIds );
 							}
 						}
@@ -1295,12 +1298,14 @@ function save_presentation( $post_id, $post, $update ) {
 							if(is_array ( $presentationIds ))
 							if( !in_array( $_POST['post_ID'], $presentationIds )) {
 								$presentationIds[] = $_POST['post_ID'];
+								$presentationIds=array_unique($presentationIds);
 								update_user_meta( $speakerIds[$i], $role_to_update.'_at', $presentationIds );
 							}
 						}
 
 						if(!$userMeta){
 							$presentationIds[] = $_POST['post_ID'];
+							$presentationIds=array_unique($presentationIds);
 							add_user_meta( $speakerIds[$i], $role_to_update.'_at',  $presentationIds);
 
 						}
