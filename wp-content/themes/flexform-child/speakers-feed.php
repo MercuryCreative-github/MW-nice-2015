@@ -44,8 +44,6 @@ foreach ( $users as $user ) {
 			$speaker.= '</company>';
 		}
 		
-
-
 		$speaker.= '<description>' . htmlspecialchars ($user->biography) . '</description>';
 		$speaker.= '<imageurl>' . $user->image . '</imageurl>';
 		$speaker.= '<website>' . esc_html( $user->website ) . '</website>';
