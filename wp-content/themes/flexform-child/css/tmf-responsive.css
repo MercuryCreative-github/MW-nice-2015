@@ -684,6 +684,11 @@
 }
 @media screen and (max-width: 980px) {
 
+    /*hp at the event '15*/
+    .footer-newsletter-02 {
+        padding-left: 0px;
+    }
+
     /*banner hp*/
     .section01-slogan {  font-size: 14px; line-height: 20px;}
     .section01-logo {padding-bottom: 0px;width: 45%;}
@@ -1160,7 +1165,9 @@
 
     /*Home page at the event '15*/
     .watch-keynote-videos ul li.keynote-video {margin-right: 20px;}
-
+    .footer-newsletter-01, .footer-newsletter-02 {
+        padding-right: 0;
+    }
     .banner-journey h4 {
         line-height: 24px;
     }
@@ -1280,6 +1287,7 @@
 @media screen and (max-width: 840px) {
 
     /*hp at the event*/
+    .footer-newsletter-02 { width: 70%;}
     .home-page-event .feed-related-posts .feed-item.feed-event {
         width: 70%;
         max-height: 200px;
@@ -1471,6 +1479,10 @@
     }
 }
 @media screen and (max-width: 767px) {
+
+    /*streaming page*/
+    .presentation-speaker .row-fluid:last-child .speakerTrack {margin-top: -5px;}
+    .streamingSubTitle{float:none;}
 
     /*footer at the event*/
     .footer-newsletter-02, .footer-newsletter-03 {display: block;  width: 100%;}
@@ -1861,6 +1873,8 @@
           margin: 20px 2.5% 0 2.5%;
     }
     .feture-video-active iframe {height: 315px;}
+    #hp-section.section05 {padding-bottom: 20px;}
+
 
 /**/
     .section03 {

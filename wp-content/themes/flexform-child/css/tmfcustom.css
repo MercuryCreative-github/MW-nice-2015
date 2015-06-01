@@ -572,9 +572,10 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 	display: table;
 }
 #footer .social-contact > div {padding: 10px;}
-.footer-newsletter-02 { width: 45%; }
+.footer-newsletter-02 { width: 50%; }
 .footer-newsletter-01, .footer-newsletter-02, .footer-newsletter-03 {display: table-cell;  vertical-align: middle;}
-.footer-newsletter-01, .footer-newsletter-02 {padding-right: 9%}
+.footer-newsletter-01, .footer-newsletter-02 {padding-right: 3%}
+.footer-newsletter-02 {padding-left: 25px;}
 .social-contact .footer-newsletter-01 img {
 	float: none;
 	margin: 0;
@@ -2439,11 +2440,19 @@ div.wpcf7 br {display: none}
 @media screen and (max-width: 768px) {
 	.speaker-item.span6 {max-width: 100%}
 	.speakers-actions .filters {margin-bottom: 10px}
+	h1 {
+		text-align: center;
+  		font-size: 30px;
+	}
+	  text-align: center;
+  font-size: 30px;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1200px) {
 	.speakers-actions .filters {margin-left: 20px}
 	.speakers-actions {margin-bottom: 20px}
 }
+
 @media screen and (min-width: 1200px) {
 	.search-speaker .find-speaker .span6,
 	.speaker-item.span6 {max-width: 540px}
