@@ -19,28 +19,30 @@ foreach ( $users as $user ) {
 
 		// Get companies and job role
 		$companies = $user->company;
-		$companyIds = $companies[0];
+		if(is_array($user->company)){
+			$companyIds = $companies[0];
 
-		$speaker.= '<company>';
+			$speaker.= '<company>';
 
-		// Get companies and job role
-		$companyIds = getUserCompanies( esc_html( $user->ID ) );
-		$jobRole = '';
+			// Get companies and job role
+			$companyIds = getUserCompanies( esc_html( $user->ID ) );
+			$jobRole = '';
 
-		foreach( $companyIds as $companyId ) {
-			if( (int)$companyId == 0 ) continue;
-			$speaker .= '<item>';
-			$company = '';
+			foreach( $companyIds as $companyId ) {
+				if( (int)$companyId == 0 ) continue;
+				$speaker .= '<item>';
+				$company = '';
 
-			$company = get_the_title( $companyId );  // cambia , por </br> 
+				$company = get_the_title( $companyId );  // cambia , por </br> 
 
-			$speaker .= '<companyId>' . $companyId . '</companyId>';
-			$speaker .= '<companyName>' . $company . '</companyName>';
-			$speaker .= '<jobRole>' . esc_html( $user->job_role ) . '</jobRole>';
+				$speaker .= '<companyId>' . $companyId . '</companyId>';
+				$speaker .= '<companyName>' . $company . '</companyName>';
+				$speaker .= '<jobRole>' . esc_html( $user->job_role ) . '</jobRole>';
 
-			$speaker .= '</item>';
+				$speaker .= '</item>';
+			}
+			$speaker.= '</company>';
 		}
-		$speaker.= '</company>';
 		
 
 
@@ -68,6 +70,8 @@ foreach ( $users as $user ) {
 			$sessionIds = array_merge($sessionIds,$collaborator_at);
 			if(is_array($facilitator_at))
 			$sessionIds = array_merge($sessionIds,$facilitator_at);
+
+			$sessionIds = array_unique ($sessionIds);
 			
 			foreach ($sessionIds as $sesionId) {
 				$presentationStatus=get_post_status( $sesionId,true );
@@ -77,6 +81,7 @@ foreach ( $users as $user ) {
 		$speaker.= '</SessionIDs>';
 
 		$speaker.= '<id>' . esc_html( $user->ID ) . '</id>' ;
+		if(is_array($user->speaker_attribs)) 
 		$speaker.= '<specification>' . esc_html( $user->speaker_attribs[0] ) . '</specification>';
 		$speaker.= '<countNumber>' . $s . '</countNumber>';
 		$speaker.= '</item>';
