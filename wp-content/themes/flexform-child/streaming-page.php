@@ -258,7 +258,7 @@ Template Name: Keynotes Streaming
 
 					if($indice%3==1 || $indice==1){$presentationsHtmlOutput.='<div class="row-fluid">';}
 
-					$presentationsHtmlOutput.='<div class="streaming-keynotes span'.$span.'" data-start="'.$presentationStartNum.'" data-end="'.$presentationEndNum.'">';
+					$presentationsHtmlOutput.='<div class="streaming-keynotes span'.$span.'" data-start="'.$presentationStartNum.'" data-end="'.$presentationEndNum.'" data-title="'.$presentationTitle.'">';
 						$presentationsHtmlOutput.='<div class="nday">';
 							$presentationsHtmlOutput.='<div class="dday-table" style="border-color: #AEACAC">';
 								$presentationsHtmlOutput.='<p>'.$storedMonth.'<br/><span class="number-day">0'.$storedDay.'</span></p>';
@@ -402,45 +402,58 @@ Template Name: Keynotes Streaming
 
 	function countDown(){
 
-	var now = (new Date)
+	var now = (new Date).getTime()
+	var now = parseInt(now)
+	
 
 	$('.streaming-keynotes').each(function(){
 
-		max = 100000000000000000000;
-		presentationStart=$(this).data('start')*1000;
-		presentationEnd=$(this).data('end')*1000;
+		if($('.streamingNow').index()<0){
 
-		h1 = "Streaming Keynotes Live!";
-		h2 = '';
+			max = 100000000000000000000;
+			presentationStart=$(this).data('start')*1000;
+			presentationEnd=$(this).data('end')*1000;
 
-		if(now<presentationStart && presentationEnd<now){
-			h1 = "Now wathing: $presentationTitle";
-			h2 = "Streaming Keynotes Live!";
-			$(this).addClass('streamingNow');
-		}
-		else if(presentationStart>now){
 			h1 = "Streaming Keynotes Live!";
-			countNum=Math.min(max,presentationStart);
+			h2 = '';
+
+			$(this).removeClass('streamingNow');
+
+			if(now>presentationStart && presentationEnd>now){
+				h1 = $(this).data('title');
+				h2 = "Streaming Keynotes Live!";
+				$(this).addClass('streamingNow');
+
+			}
+			else if(presentationEnd>now){
+				h1 = "Streaming Keynotes Live!";
+				countNum=Math.min(max,presentationStart);
+			}
+
 		}
 		
 	})
 
 	timeZoneDiff = 4
 
-	var countNum = (new Date(countNum)) - now -timeZoneDiff*1000*60*60;
+	if((countNum)){
 
-	countNumH = Math.floor(countNum/(1000*60*60))
-	countNumM = Math.floor(countNum/(1000*60)) - countNumH*60 + timeZoneDiff+1
-	countNumS = Math.floor(countNum/(1000)) - (countNumM-timeZoneDiff-1)*60 - countNumH*60*60
-	if(countNumM>60){countNumM-=60;countNumH++}
+		var countNum = (new Date(countNum)) - now -timeZoneDiff*1000*60*60
+		console.log(countNum)
 
-	if(countNumH==0){countNumH=''}else if(countNumH==1){countNumH=countNumH+' hour '}else{countNumH=countNumH+' hours '}
-	if(countNumM==0){countNumM=''}else if(countNumM==1){countNumM=countNumM+' minute '}else{countNumM=countNumM+' minutes '}
-	
-	h2 = countNumH+countNumM+countNumS+" seconds to live!";
-	console.log(countNum)
+		countNumH = Math.floor(countNum/(1000*60*60))
+		countNumM = Math.floor(countNum/(1000*60)) - countNumH*60 + timeZoneDiff+1
+		countNumS = Math.floor(countNum/(1000)) - (countNumM-timeZoneDiff-1)*60 - countNumH*60*60
+		if(countNumM>60){countNumM-=60;countNumH++}
 
-	$('h1.light').text(h1);
+		if(countNumH==0){countNumH=''}else if(countNumH==1){countNumH=countNumH+' hour '}else{countNumH=countNumH+' hours '}
+		if(countNumM==0){countNumM=''}else if(countNumM==1){countNumM=countNumM+' minute '}else{countNumM=countNumM+' minutes '}
+		
+		h2 = countNumH+countNumM+countNumS+" seconds to live!";
+		//console.log(countNum)
+	}
+
+	$('h1.light').html(h1);
 	$('h1.light').append('<small>');
 	$('h1.light small').addClass('streamingSubTitle').text(h2);
 

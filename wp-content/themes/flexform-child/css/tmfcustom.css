@@ -609,6 +609,8 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
   	padding-top: 18px;
 }
 
+.streamingNow .nday{border-left: 5px solid #f8ae1e;}
+
 .streamingSubTitle{
 	float:right;
 	margin-top:20px
