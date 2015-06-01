@@ -460,6 +460,9 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 	width: 49%;
 	float: left;
 }
+
+.inform-feed h1 a.sf-button.medium.orange.standard.right{margin-top: 10px; margin-right: 16px}
+
 .inform-all-videos{margin-top: 30px;}
 .inform-all-videos .inform-video {
 	float: left;
