@@ -1482,7 +1482,8 @@
 
     /*streaming page*/
     .presentation-speaker .row-fluid:last-child .speakerTrack {margin-top: -5px;}
-    .streamingSubTitle{float:none;}
+    #session-26520 .presentation-speaker .row-fluid:last-child .speakerTrack {margin-top: 20px;}
+    .streamingSubTitle{display: none;}
 
     /*footer at the event*/
     .footer-newsletter-02, .footer-newsletter-03 {display: block;  width: 100%;}
