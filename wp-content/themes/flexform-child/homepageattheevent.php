@@ -235,7 +235,7 @@ Template Name: Home Page at the Event
 		<div class="sec-main-content">		
 			<div class="inform-feed-videos">
 				<div class="inform-logo"><img src="/wp-content/uploads/2015/05/TMForumInform_logo2.png"/></div>
-				<div class="btn-view-more"><a class="sf-button medium orange standard" href="http://inform.tmforum.org/?s=videos" target="_blank">VIEW ALL VIDEOS</a></div>
+				<div class="btn-view-more"><a class="sf-button medium orange standard" href="http://inform.tmforum.org/tm-forum-live-videos/" target="_blank">VIEW ALL VIDEOS</a></div>
 				<div class="clear"></div>
 			<!-- Feed inform videos -->
 			<?php
@@ -306,14 +306,14 @@ Template Name: Home Page at the Event
 				<div id='twitter_widget' class='widget twitter_widget'>
 			    	<div class="widget-heading clearfix">
 						<h2 class="tw-title">Latest on Twitter</h2>
-	            		<script>[CBC country="cn" show="n"]</script>
+	            		<!--script>[CBC country="cn" show="n"]</script-->
 	           			<a class="twitter-timeline" width"100%" height="380" href="https://twitter.com/tmforumorg" data-widget-id="365265624051617792" data-chrome="noheader transparent" data-link-color="#338ECC" data-border-color="#ffffff" data-tweet-limit="4" data-src-2x="false" data-src="false" >
 	               		Tweets by @tmforumorg
 	            		</a> 
 				           <script>
 				               !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 				           </script>
-	            		<script> [/CBC] </script>
+	            		<!--script> [/CBC] </script-->
 	            		<div class="clear"></div>    
 					</div>
 				</div>
@@ -421,7 +421,13 @@ Template Name: Home Page at the Event
 <div class="feed-press">
 	
 		<div class="inform-feed press-releases">
-			<h1>//TM Forum Press Releases</h1>
+			<h1>//Press Releases
+			<a 	class="sf-button medium orange standard right" 
+				href="http://inform.tmforum.org/category/tm-forum-press-releases/" 
+				target="_blank">VIEW ALL
+			</a>
+			</h1>
+
 			<!-- Start Feed -->
 			<div class="inner-wrap" id="home-feed-inform">
 					<?php
@@ -513,7 +519,14 @@ Template Name: Home Page at the Event
 		</div>
 	</div>
 	<div class="inform-feed press-coverage">
-			<h1>//Press Coverage</h1>
+			<h1>//Press Coverage
+				<a 	class="sf-button medium orange standard right" 
+					href="http://inform.tmforum.org/category/tmforum-live-press-coverage/" 
+					target="_blank">VIEW ALL
+				</a>
+			</h1>
+
+
 			<!-- Start Feed -->
 			<div class="inner-wrap" id="home-feed-inform">
 					<?php

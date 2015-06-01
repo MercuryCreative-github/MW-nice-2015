@@ -460,6 +460,9 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 	width: 49%;
 	float: left;
 }
+
+.inform-feed h1 a.sf-button.medium.orange.standard.right{margin-top: 10px; margin-right: 16px}
+
 .inform-all-videos{margin-top: 30px;}
 .inform-all-videos .inform-video {
 	float: left;
@@ -604,6 +607,13 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
   	text-transform: uppercase;
   	margin-left: 0;
   	padding-top: 18px;
+}
+
+.streamingNow .nday{border-left: 5px solid #f8ae1e;}
+
+.streamingSubTitle{
+	float:right;
+	margin-top:20px
 }
 .streaming-keynotes .dday-table p {
 	padding-top: 5px;

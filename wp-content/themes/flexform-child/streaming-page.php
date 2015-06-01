@@ -157,6 +157,14 @@ Template Name: Keynotes Streaming
 					$presentationTitle=get_the_title();
 					$presentationContent=get_the_content();
 					$presentationSubtitle=get_post_meta($presentationToCheckId,'_TMF_presentations_subtitle',true);
+					$presentationStartNum=get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true);
+					$presentationEndNum=get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true);
+					
+
+
+
+					//echo $presentationStart;
+
 					$presentationStart=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_start_date',true));
 					$presentationEnd=date('g:i a',get_post_meta($presentationToCheckId,'_TMF_presentations_end_date',true));
 					$role_to_update='';
@@ -172,7 +180,7 @@ Template Name: Keynotes Streaming
 
 							$speacificArray=$role_to_update;
 
-							if(count($presentationSpeakers)>1){
+							if(count($presentationSpeakers)>2){
 								$span=4;
 							}else{$span=12;}
 
@@ -217,7 +225,7 @@ Template Name: Keynotes Streaming
 										if($indiceS%3==1 || $indiceS==1){$SpeakerHtmlOutput.='<div class="row-fluid">';}
 										$SpeakerHtmlOutput.='<div class="speakerTrack span'.$span.'">';
 											$SpeakerHtmlOutput.='<div class="streaming-img"><a href="/speaker-profile/?id='.$user->ID.'"><img src="'.$userMetaImage[0].'"></a></div>';
-											$SpeakerHtmlOutput.='<div class="streaming-txt"><a href="/speaker-profile/?id='.$user->ID.'" style="color:#AEACAC";>'.$user->display_name.'</a><br/>'.$indiceS;
+											$SpeakerHtmlOutput.='<div class="streaming-txt"><a href="/speaker-profile/?id='.$user->ID.'" style="color:#AEACAC";>'.$user->display_name.'</a><br/>';
 											$SpeakerHtmlOutput.='<em>'.($userJobRole).'</em>,';
 											if(!empty($userCompanies)){$SpeakerHtmlOutput.='<strong> '.$userCompanyName.'</strong></div>';}
 										$SpeakerHtmlOutput.='</div>';
@@ -250,7 +258,7 @@ Template Name: Keynotes Streaming
 
 					if($indice%3==1 || $indice==1){$presentationsHtmlOutput.='<div class="row-fluid">';}
 
-					$presentationsHtmlOutput.='<div class="streaming-keynotes span'.$span.'">';
+					$presentationsHtmlOutput.='<div class="streaming-keynotes span'.$span.'" data-start="'.$presentationStartNum.'" data-end="'.$presentationEndNum.'" data-title="'.$presentationTitle.'">';
 						$presentationsHtmlOutput.='<div class="nday">';
 							$presentationsHtmlOutput.='<div class="dday-table" style="border-color: #AEACAC">';
 								$presentationsHtmlOutput.='<p>'.$storedMonth.'<br/><span class="number-day">0'.$storedDay.'</span></p>';
@@ -353,6 +361,7 @@ Template Name: Keynotes Streaming
 
 
 
+
 			<div class="link-pages"><?php wp_link_pages(); ?></div>
 		</div>
 		
@@ -387,3 +396,71 @@ Template Name: Keynotes Streaming
 
 <!--// WordPress Hook //-->
 <?php get_footer(); ?>
+
+<script>
+	$=jQuery;
+
+	function countDown(){
+
+	var now = (new Date).getTime()
+	var now = parseInt(now)
+	
+
+	$('.streaming-keynotes').each(function(){
+
+		if($('.streamingNow').index()<0){
+
+			max = 100000000000000000000;
+			presentationStart=$(this).data('start')*1000;
+			presentationEnd=$(this).data('end')*1000;
+
+			h1 = "Streaming Keynotes Live!";
+			h2 = '';
+
+			$(this).removeClass('streamingNow');
+
+			if(now>presentationStart && presentationEnd>now){
+				h1 = $(this).data('title');
+				h2 = "Streaming Keynotes Live!";
+				$(this).addClass('streamingNow');
+
+			}
+			else if(presentationEnd>now){
+				h1 = "Streaming Keynotes Live!";
+				countNum=Math.min(max,presentationStart);
+			}
+
+		}
+		
+	})
+
+	timeZoneDiff = 4
+
+	if((countNum)){
+
+		var countNum = (new Date(countNum)) - now -timeZoneDiff*1000*60*60
+		console.log(countNum)
+
+		countNumH = Math.floor(countNum/(1000*60*60))
+		countNumM = Math.floor(countNum/(1000*60)) - countNumH*60 + timeZoneDiff+1
+		countNumS = Math.floor(countNum/(1000)) - (countNumM-timeZoneDiff-1)*60 - countNumH*60*60
+		if(countNumM>60){countNumM-=60;countNumH++}
+
+		if(countNumH==0){countNumH=''}else if(countNumH==1){countNumH=countNumH+' hour '}else{countNumH=countNumH+' hours '}
+		if(countNumM==0){countNumM=''}else if(countNumM==1){countNumM=countNumM+' minute '}else{countNumM=countNumM+' minutes '}
+		
+		h2 = countNumH+countNumM+countNumS+" seconds to live!";
+		//console.log(countNum)
+	}
+
+	$('h1.light').html(h1);
+	$('h1.light').append('<small>');
+	$('h1.light small').addClass('streamingSubTitle').text(h2);
+
+	}
+	setInterval(countDown, 1000);
+
+
+
+
+</script>
