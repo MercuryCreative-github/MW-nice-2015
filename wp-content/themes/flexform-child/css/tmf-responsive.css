@@ -1364,6 +1364,32 @@
     }
 }
 @media screen and (max-width: 800px) {
+
+     /*HP at the event '15*/
+    #footer .footer-newsletter-02 p {
+        font-size: 1.4em;
+        text-align: center;
+        line-height: 35px;
+    }
+    #footer .footer-newsletter-02 p span.newsletter-02-ligth {
+        font-size: 1.3em;
+    }
+    #footer .footer-newsletter-02 p span.newsletter-02-big {
+        font-size: 1.9em;
+    }
+    .footer-newsletter-02{
+        width: 57%;
+    }
+    .btn-view-more {
+          float: none;
+    }
+    .inform-feed-videos .btn-view-more {
+          margin-top: 70px;
+    }
+    .home-page-event .section01-more {margin-top: 65px;}
+
+    /**/
+
     #megaMenu.megaMenuHorizontal ul.megaMenu > li.menu-item.ss-nav-menu-mega > ul.sub-menu-1 {
         width: 80% !important;
         margin-left: 8% !important;
@@ -1958,120 +1984,6 @@
     }
     .home .section04-info {
         width: 73%;
-    }
-}
-@media screen and (max-width: 480px) {
-
-    /*footer at the event '15*/
-    #footer .footer-newsletter-02 p {text-align: left;}
-
-    #megaMenu #megaMenuToggle {
-        margin-left: -170px !important;
-    }
-    #megaUber {
-        width: 171px !important;
-        margin-left: -210px !important;
-    }
-    .faqs-page .general-subtitles .back-to-top {
-        left: 10px;
-    }
-    .faqs-page .general-subtitles p {
-        padding-bottom: 28px;
-    }
-    /* Agenda Single Pages */
-
-    .container .moveDiv h2 {
-        font-size: 26px;
-        line-height: 32px;
-        margin-top: 20px;
-    }
-    .passes-prices .text-box {
-        margin: 0 auto;
-        text-align: center;
-    }
-    .passes-prices .text-box img {
-        display: none;
-    }
-    .passes-prices .text-box p {
-        display: block;
-        position: initial;
-        padding: 0;
-    }
-    .passes-prices .text-box a.btn-readmore {
-        position: initial;
-    }
-    /*hp - speakers*/
-
-    .slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image img {
-        width: 100px !important;
-        height: 100px !important;
-    }
-    .slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image .slideshow_description_box {
-        top: 110px;
-    }
-    /*'15*/
-
-    .section02-companies li {
-        margin-bottom: 30px;
-    }
-    .feed-related-posts .feed-author {
-        font-size: 12px;
-        line-height: 16px;
-        margin-bottom: 5px;
-        padding: 0;
-    }
-    .feed-related-posts h4 {
-        margin-left: 0;
-        font-size: 14px;
-        padding: 0;
-    }
-    .review-photo {
-        display: none;
-    }
-    #page-wrap {
-        padding: 0px !important;
-    }
-    .sec-main-content {
-        width: 100%;
-        margin: 0px;
-    }
-    .reviews {
-        margin-left: 10px !important;
-        padding-right: 5px;
-    }
-    .title-green, .section02-info, .section02-summites {
-        padding: 0 20px !important;
-    }
-    .speaker-data {
-        width: 70%;
-    }
-    .speaker-box {
-        padding-left: 6%;
-        box-sizing: border-box;
-    }
-    .speaker-box a {
-        padding: 15px 0;
-    }
-    .speaker-info .subtitle {
-        width: 100%;
-        padding: 2%;
-        box-sizing: border-box;
-    }
-    .home .modal-body {
-        width: 91%;
-    }
-}
-@media screen and (max-width: 320px) {
-    #megaMenu #megaMenuToggle {
-        margin-left: -100px !important;
-    }
-    #megaUber {
-        margin-left: -143px !important;
-    }
-    .passes-prices .text-box a.btn-readmore {
-        top: 130px;
-        right: 70px;
-        padding: 5px 12px;
     }
 }
 
@@ -3464,6 +3376,16 @@
     }
 }
 @media screen and (max-width: 680px) {
+
+    /*hp at the event '15*/
+    .inform-feed-videos .btn-view-more {
+        margin: 20px 0 0 0;
+        text-align: center;
+    }
+    .home-page-event .section01-more {
+        margin-top: 70px;
+    }
+
     /*HP AT THE EVENT*/
 
     .box-filter {
@@ -4337,6 +4259,149 @@
         text-align: center;
     }
 }
+@media screen and (max-width: 480px) {
+
+    /*hp at the event '15*/
+    .section01-slogan span {
+        font-size: 20px;
+    }
+    .home-page-event.home .page-content p.section01-slogan {
+        font-size: 19px;
+    }
+    .home-page-event .section01-buttons a.sf-button.red {
+        font-size: 20px;
+        float: none;
+    }
+    .home-page-event .section01-more{
+        margin-top: 20px;
+    }
+    .section01-info img {
+          width: 85%;
+    }
+    .home-page-event .section01-slogan span.big-slogan {
+        font-size: 40px;
+    }
+
+
+    /*footer at the event '15*/
+    #footer .footer-newsletter-02 p {text-align: center;}
+
+    #megaMenu #megaMenuToggle {
+        margin-left: -170px !important;
+    }
+    #megaUber {
+        width: 171px !important;
+        margin-left: -210px !important;
+    }
+    .faqs-page .general-subtitles .back-to-top {
+        left: 10px;
+    }
+    .faqs-page .general-subtitles p {
+        padding-bottom: 28px;
+    }
+    .footer-newsletter-02 {
+        width: 95%;
+    }
+
+
+    /* Agenda Single Pages */
+
+    .container .moveDiv h2 {
+        font-size: 26px;
+        line-height: 32px;
+        margin-top: 20px;
+    }
+    .passes-prices .text-box {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .passes-prices .text-box img {
+        display: none;
+    }
+    .passes-prices .text-box p {
+        display: block;
+        position: initial;
+        padding: 0;
+    }
+    .passes-prices .text-box a.btn-readmore {
+        position: initial;
+    }
+    /*hp - speakers*/
+
+    .slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    .slideshow_container .slideshow_view .slideshow_slide.slideshow_slide_image .slideshow_description_box {
+        top: 110px;
+    }
+    /*'15*/
+
+    .section02-companies li {
+        margin-bottom: 30px;
+    }
+    .feed-related-posts .feed-author {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 5px;
+        padding: 0;
+    }
+    .feed-related-posts h4 {
+        margin-left: 0;
+        font-size: 14px;
+        padding: 0;
+    }
+    .review-photo {
+        display: none;
+    }
+    #page-wrap {
+        padding: 0px !important;
+    }
+    .sec-main-content {
+        width: 100%;
+        margin: 0px;
+    }
+    .reviews {
+        margin-left: 10px !important;
+        padding-right: 5px;
+    }
+    .title-green, .section02-info, .section02-summites {
+        padding: 0 20px !important;
+    }
+    .speaker-data {
+        width: 70%;
+    }
+    .speaker-box {
+        padding-left: 6%;
+        box-sizing: border-box;
+    }
+    .speaker-box a {
+        padding: 15px 0;
+    }
+    .speaker-info .subtitle {
+        width: 100%;
+        padding: 2%;
+        box-sizing: border-box;
+    }
+    .home .modal-body {
+        width: 91%;
+    }
+}
+@media screen and (max-width: 320px) {
+    /**/
+
+    #megaMenu #megaMenuToggle {
+        margin-left: -100px !important;
+    }
+    #megaUber {
+        margin-left: -143px !important;
+    }
+    .passes-prices .text-box a.btn-readmore {
+        top: 130px;
+        right: 70px;
+        padding: 5px 12px;
+    }
+}
 @media screen and (max-width: 380px) {
 
     /*mobile app*/
@@ -4479,11 +4544,14 @@
     }
     /*'15*/
 
+    .home-page-event .section01-buttons a.sf-button.red {
+        margin-top: 0;
+    }
     .section01-info {
         width: 100%;
     }
     .section01-slogan span {
-        font-size: 28px;
+        font-size: 20px;
     }
     .section01-buttons a.orange {
         padding: 10px 60px;
@@ -4816,6 +4884,7 @@
     }
 }
 @media screen and (max-width: 768px) {
+
     #feed-related-posts a.view-all {
         float: left;
     }
