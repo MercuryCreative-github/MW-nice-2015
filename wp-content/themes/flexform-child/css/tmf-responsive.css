@@ -1484,8 +1484,8 @@
 
     @-moz-document url-prefix() {
     .page-template-homepageattheevent-php #main-container section.footer-divider,
+    .page-template-homepageattheevent-php #main-container section.section05,
     .hp-banner-app { display: block; }
-
     }
 
     /*streaming page*/
