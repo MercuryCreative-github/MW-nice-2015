@@ -685,7 +685,10 @@ Template Name: Home Page at the Event
 			
 					<?php if(count($items_video_keynotes) > 0) { ?>
 					<div class="watch-keynote-videos">
-						<h1>WATCH KEYNOTES:</h1>
+						<h1>WATCH KEYNOTES ON REPLAY</h1>
+						<a 	class="sf-button medium orange standard right" 
+				href="http://inform.tmforum.org/category/tm-forum-press-releases/" 
+				target="_blank">VIEW ALL</a>
 						<ul>
 							<!--- FEED INFORM -->
 							<?php foreach($items_video_keynotes as $item){ ?>
