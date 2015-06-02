@@ -1481,6 +1481,13 @@
 }
 @media screen and (max-width: 767px) {
 
+
+    @-moz-document url-prefix() {
+    .page-template-homepageattheevent-php #main-container section.footer-divider,
+    .hp-banner-app { display: block; }
+
+    }
+
     /*streaming page*/
     .presentation-speaker .row-fluid:last-child .speakerTrack {margin-top: -5px;}
     #session-26520 .presentation-speaker .row-fluid:last-child .speakerTrack {margin-top: 20px;}
