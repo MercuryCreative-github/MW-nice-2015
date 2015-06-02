@@ -468,7 +468,8 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 	float: left;
 	width: 45%;
 	margin-right: 5%;
-	margin-bottom: 10px;
+	/*margin-bottom: 10px;*/
+	min-height: 289px;
 }
 .home-page-event .hp-section03 .twitter-feed {
 	width: 46%;
