@@ -671,7 +671,7 @@ Template Name: Home Page at the Event
 
 			              	$video = $data['child']['']['video'][0]['data'];
 
-			              	$items_video[]=array(
+			              	$items_video_keynotes[]=array(
 			              		'link'=> $item->get_link(),
 			              		'video'=> $video,
 			              		'description' => esc_html( $item->get_description() ),
@@ -683,12 +683,12 @@ Template Name: Home Page at the Event
 			    <?php endif; ?>
 			</ul>
 			
-					<?php if(count($items_video) > 0) { ?>
+					<?php if(count($items_video_keynotes) > 0) { ?>
 					<div class="watch-keynote-videos">
 						<h1>WATCH KEYNOTES:</h1>
 						<ul>
 							<!--- FEED INFORM -->
-							<?php foreach($items_video as $item){ ?>
+							<?php foreach($items_video_keynotes as $item){ ?>
 								<li class="keynote-video">
 									<figure class="feed-image">
 										<?php if($item['video']){ ?>
