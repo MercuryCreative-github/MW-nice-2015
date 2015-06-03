@@ -114,7 +114,7 @@ function homepageSectionsResize(){
 
         $('.section01-info').stop(true,true).animate({'margin-top': section01Margin}, 500).attr('data','screen: '+screenHeight+' menuHeight:'+menuHeight+' sponsors:'+sponsorsHeight);;
     
-    }else if($('.page-template-homepageattheevent-php').index()>0){
+    }else if($('.page-template-homepageattheevent-php').index()>0 || $('.page-template-homepageposttheevent-php').index()>0){
 
         var sponsorsHeight  = 135;//$('.section01-sponsors').outerHeight();
         var minHeight       = 760-sponsorsHeight;

@@ -513,37 +513,6 @@ add_action("gform_after_submission_6", "register_your_interest", 10, 2);
 
 if(!function_exists('register_your_interest')){
 	function register_your_interest($entry, $form) {
-
-	    $drop_down = array();
-
-		if($entry['5.0'] !== ''){
-	      $drop_down[] = $entry['5.0'];
-	    }
-	    if($entry['5.1'] !== ''){
-	     $drop_down[]  = $entry['5.1'];
-	    }
-	    if($entry['5.2'] !== ''){
-	      $drop_down[]  = $entry['5.2'];
-	    }
-	    if($entry['5.3'] !== ''){
-	      $drop_down[]  = $entry['5.3'];
-	    }
-	    if($entry['5.4'] !== ''){
-	      $drop_down[]  = $entry['5.4'];
-	    }
-	    if($entry['5.5'] !== ''){
-	     $drop_down[]  = $entry['5.5'];
-	    }
-	    if($entry['5.6'] !== ''){
-	     $drop_down[]  = $entry['5.6'];
-	    }
-	    if($entry['5.7'] !== ''){
-	     $drop_down[]  = $entry['5.7'];
-	    }
-
-
-	    $drop_down =  implode(", ",$drop_down);
-
 	    //include ActonConnection class
         require_once (get_stylesheet_directory() .'/core/classes/class.Acton-WordPress-Connection.php');
         $ao_gf1 = new ActonConnection;
@@ -552,7 +521,7 @@ if(!function_exists('register_your_interest')){
         $ao_gf1 -> setPostItems('Email', $entry['2']);
         $ao_gf1 -> setPostItems('Title', $entry['3']);
         $ao_gf1 -> setPostItems('Company', $entry['4']);
-        $ao_gf1 -> setPostItems('Region', $drop_down);
+        $ao_gf1 -> setPostItems('Region', $entry['5']);
         $ao_gf1 -> processConnection('http://marketing.tmforum.org/acton/eform/1332/0104/d-ext-0001');
 	}
 }
