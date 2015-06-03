@@ -418,28 +418,41 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 }
 .home-page-event.home .page-content p.section01-slogan span.date-weight { font-weight: 500; }
 .home-page-event .section01-slogan {
-	font-size: 23px;
-    line-height: 35px;
+	font-size: 24px;
+    line-height: 38px;
 }
 .home-page-event .section01-slogan span.big-slogan {
 	font-size: 44px;
 	font-weight: 400;
 }
-.home-page-event .section01-buttons a.sf-button.red {
-	background-color: #B72122;
+.home-page-event .section01-buttons a.sf-button.red, .home-page-event .section01-buttons a.sf-button.yellow {
 	width: auto;
 	font-size: 25px;
   	font-weight: 600;
   	line-height: 30px;
 }
+.home-page-event .section01-buttons a.sf-button.red {
+	background-color: #B72122;
+}
+.home-page-event .section01-buttons a.sf-button.yellow {
+	background-color: #f8ae1e;
+}
 .home-page-event .section01-buttons a.sf-button.red:hover {
 	background-color: #9B0203;
 	box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
 }
+.home-page-event .section01-buttons a.sf-button.yellow:hover {
+	background-color: #c98b1c;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+}
 .home-page-event .section01-more {
-	margin-top: 15px;
+	margin-top: 9px;
 	border-top: #fff 1px solid;
-	padding-top: 12px;
+  	padding-top: 8px;
+  	color: #fff;
+  	font-weight: 500;
+  	font-size: 24px;
+  	line-height: 31px;
 }
 .home-page-event .section01-info .section01-more p {
 	color: #fff;
