@@ -2238,6 +2238,16 @@ div.wpcf7 br {display: none}
 body #modal-1 .gform_wrapper label.gfield_label+div.ginput_container {margin: 0;}
 #modal-1 .gform_wrapper input[type="email"], #modal-1 .gform_wrapper input[type="text"] {height: 20px;}
 
+#modal-1 .gform_wrapper div.validation_error {
+	font-size: 1.0em;
+	font-weight: 600;
+	margin-bottom: 0.9em;
+	padding: 0.3em 0;
+}
+#modal-1 .gfield_description.validation_message {
+	display: none;
+}
+
 /*******************mailing list*************************/
 
 .mailing-list-form label{font-weight: normal;}
