@@ -1801,9 +1801,6 @@
     .mailing-list-form_wrapper .gform_footer {
         width: 460px;
     }
-    .home .modal-header {
-        text-align: left !important;
-    }
     .home .modal-header img {
         margin: 20px 0 8px 180px !important;
         max-height: 110px;
@@ -1918,7 +1915,7 @@
         width: 67%;
     }
     .home .modal-body {
-        max-height: 400px;
+        max-height: 500px;
         overflow-y: auto;
         overflow-x: hidden;
         width: 94%;
@@ -1935,7 +1932,6 @@
     .home .modal-header {
         padding-bottom: 10px !important;
         padding-left: 34px;
-        text-align: left !important;
     }
     .home .modal-header img {
         margin: auto !important;
