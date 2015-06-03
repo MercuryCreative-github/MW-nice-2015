@@ -430,6 +430,7 @@ a.sf-button.standard.register-agenda.long-register {background-image: url('/wp-c
 	font-size: 25px;
   	font-weight: 600;
   	line-height: 30px;
+  	margin-right: 0;
 }
 .home-page-event .section01-buttons a.sf-button.red {
 	background-color: #B72122;
@@ -2176,12 +2177,13 @@ a.download-agenda.a-glance span.small-text-btn{font-size: 18px; font-weight:400;
 	border-bottom:0;
 	padding: 70px 0 0;
 }
-#modal-1 .modal-body{
+#modal-1 .modal-body .gform_wrapper{
 	display: block;
 	position:relative;
 	overflow-y: auto;
 	text-align: left;
-	padding: 5px 15px;
+	padding: 0px 15px;
+  	margin: 0;
 }
 /* FORM */
 div.wpcf7{padding:0;width:475px;margin:0 auto;}
@@ -2220,14 +2222,21 @@ div.wpcf7 br {display: none}
 .has_first_name.has_last_name {display: table; text-align: left; width: 98%;}
 .has_first_name .name_first, .has_last_name .name_last {display: table-cell;}
 #modal-1 .modal-body .ginput_container.has_first_name .name_first input {width: 90%;}
-#modal-1 .modal-body .ginput_container input {width: 97%;}
+#modal-1 .modal-body .ginput_container input {width: 96%;}
 #modal-1 .modal-body .ginput_container select {width: 100%;}
 #modal-1 .modal-body #gform_submit_button_6 {
-	  width: 100%;
-  padding: 7px 0;
-  font-size: 19px;
-  margin-top: 20px;
+	width: 100%;
+  	padding: 7px 0;
+  	font-size: 19px;
 }
+.gform_confirmation_message_6 {
+	text-align: center;
+	font-size: 25px;
+	line-height: 31px;
+	margin: 20px 15px;
+}
+body #modal-1 .gform_wrapper label.gfield_label+div.ginput_container {margin: 0;}
+#modal-1 .gform_wrapper input[type="email"], #modal-1 .gform_wrapper input[type="text"] {height: 20px;}
 
 /*******************mailing list*************************/
 

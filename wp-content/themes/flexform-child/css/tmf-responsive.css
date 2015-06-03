@@ -1395,7 +1395,7 @@
     .inform-feed-videos .btn-view-more {
           margin-top: 70px;
     }
-    .home-page-event .section01-more {margin-top: 65px;}
+    /*.home-page-event .section01-more {margin-top: 65px;}*/
 
     /**/
 
@@ -1916,7 +1916,7 @@
     }
     .home .modal-body {
         max-height: 500px;
-        overflow-y: auto;
+        overflow-y: hidden;
         overflow-x: hidden;
         width: 94%;
     }
@@ -3404,9 +3404,9 @@
         margin: 20px 0 0 0;
         text-align: center;
     }
-    .home-page-event .section01-more {
+    /*.home-page-event .section01-more {
         margin-top: 70px;
-    }
+    }*/
 
     /*HP AT THE EVENT*/
 
@@ -4293,9 +4293,9 @@
         font-size: 20px;
         float: none;
     }
-    .home-page-event .section01-more{
+    /*.home-page-event .section01-more{
         margin-top: 20px;
-    }
+    }*/
     .section01-info img {
           width: 85%;
     }
@@ -4857,7 +4857,7 @@
         font-size: 12px
     }
     #modal-1 .modal-body {
-        overflow-y: auto
+        overflow-y: hidden;
     }
     #modal-1 .modal-header h3 {
         font-size: 14px;
