@@ -612,7 +612,7 @@ function customSearches() {
 
 function modalListener() {
     // add modal data toggle to all the links with class .keep-updated
-    jQuery('a.keep-updated').attr('data-toggle', "modal");
+    jQuery('a.menu-register-btn.emodal').attr('data-toggle', "modal");
     jQuery('li.keep-updated a').attr('data-toggle', "modal");
     jQuery('[linkTo="#modal-2"]').attr('data-toggle', "modal").attr('href', "#modal-2");
 
