@@ -320,6 +320,13 @@
 			</div>
 			<?php } ?>
 
+			<!--MODAL FORM-->
+			<div id="modal-1" class="modal hide fade" tabindex="-1">
+				<div class="modal-header" style="text-align: center;"><button class="close" type="button" data-dismiss="modal">×</button><img src="/wp-content/uploads/2014/12/LogoDD14.png" alt="Keep up to date with the last event news." style="width: 50%;margin: auto;float: none;"></div>
+				<div class="modal-body"><?php echo do_shortcode('[gravityform id=6 true=false description=false title=false ajax=true]'); ?></div>
+			</div>
+
+
 			<!--// OPEN #header-section //-->
 			<div id="header-section" class="<?php echo $header_layout; ?> <?php echo $logo_class; ?> clearfix">
 
@@ -365,7 +372,6 @@
 								<?php } ?>
 
 							</div>
-
 														<div class="mobile-navigation">
 
 																<a class="logo-mobile" href="<?php echo home_url(); ?>">
