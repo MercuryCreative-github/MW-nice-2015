@@ -87,8 +87,8 @@ Template Name: Register
 } ?>
 
 <div id="loading-image" style="width:100%;text-align:center; left:0;position:absolute;">
-			<img src="https://5iodb2frb71179js93591jmj-wpengine.netdna-ssl.com/wp-content/plugins/yith-woocommerce-ajax-navigation/assets/images/ajax-loader.gif"/>
-			</div>
+	<img src="https://5iodb2frb71179js93591jmj-wpengine.netdna-ssl.com/wp-content/plugins/yith-woocommerce-ajax-navigation/assets/images/ajax-loader.gif"/>
+</div>
 			<script type="text/javascript">
 				alto = jQuery(window).height()-2*jQuery('#loading-image').height();
 				jQuery('#loading-image').css('top',alto/2);

@@ -4968,8 +4968,14 @@
         color: #FFF;
         background: none repeat scroll 0 0 #f8ae1e;
     }
+    #menu-event-main-menu li.orange a, #mini-navigation li.orange a {
+        background-color: #ee7630;
+    }
     #menu-event-main-menu li.menu-register-btn a:hover, #mini-navigation li.menu-register-btn a:hover {
         background-color: #D88801
+    }
+    #menu-event-main-menu li.orange a, #mini-navigation li.orange a:hover {
+        background-color: #E2740B;
     }
 }
 /***** Main Slider fix ****/
