@@ -87,15 +87,15 @@ Template Name: Download the presentation
 } ?>
 
 <div id="loading-image" style="width:100%;text-align:center; left:0;position:absolute;">
-			<img src="https://5iodb2frb71179js93591jmj-wpengine.netdna-ssl.com/wp-content/plugins/yith-woocommerce-ajax-navigation/assets/images/ajax-loader.gif"/>
-			</div>
-			<script type="text/javascript">
-				alto = jQuery(window).height()-2*jQuery('#loading-image').height();
-				jQuery('#loading-image').css('top',alto/2);
-				window.onload = function(){
-				  document.getElementById('loading-image').style.display = "none";
-				}
-			</script>
+	<img src="https://5iodb2frb71179js93591jmj-wpengine.netdna-ssl.com/wp-content/plugins/yith-woocommerce-ajax-navigation/assets/images/ajax-loader.gif"/>
+</div>
+<script type="text/javascript">
+	alto = jQuery(window).height()-2*jQuery('#loading-image').height();
+	jQuery('#loading-image').css('top',alto/2);
+	window.onload = function(){
+	  document.getElementById('loading-image').style.display = "none";
+	}
+</script>
 
 <div class="inner-page-wrap <?php echo $page_wrap_class; ?> clearfix">
 
@@ -122,7 +122,7 @@ Template Name: Download the presentation
 		
 		<div class="page-content clearfix">
 			<?php the_content(); ?>
-			<iframe src="https://www2.tmforum.org/PresentationDownloads/15880/home.html?showid=784&forceview=true" width="1200" height="auto" scrolling="no"></iframe>			
+			<iframe src="https://www2.tmforum.org/PresentationDownloads/15880/home.html?showid=784&forceview=true" width="1200" height="1600" scrolling="yes"></iframe>			
 			<div class="link-pages"><?php wp_link_pages(); ?></div>
 		</div>
 		
