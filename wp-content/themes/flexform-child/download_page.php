@@ -122,7 +122,7 @@ Template Name: Download the presentation
 		
 		<div class="page-content clearfix">
 			<?php the_content(); ?>
-			<iframe src="https://www2.tmforum.org/PresentationDownloads/15880/home.html?showid=784&forceview=true" width="1200" height="1600" scrolling="yes"></iframe>			
+			<iframe src="https://www2.tmforum.org/PresentationDownloads/15880/home.html?showid=784&forceview=true" width="1200" height="900" scrolling="yes"></iframe>			
 			<div class="link-pages"><?php wp_link_pages(); ?></div>
 		</div>
 		
