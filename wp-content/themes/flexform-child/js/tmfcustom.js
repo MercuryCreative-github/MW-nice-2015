@@ -139,6 +139,8 @@ function homepageSectionsResize(){
     showReview = Math.floor(3*Math.random());
     $('ul.reviews li:eq('+showReview+')').show();
 
+       
+
 }
 
 function getParameterByName(name) {
@@ -348,6 +350,7 @@ jQuery(window).load(function() {
     scrollListener();
     homepageSectionsResize();
     tabsControl();
+    showModal();
 });
 
 function fullAgenda(){
@@ -928,4 +931,8 @@ function registerBtnLink(){
     if (actualPage == '/passes-pricing/') {
         jQuery('.menu-register-btn a').attr('href', 'https://www.tmforumlive.org/register/');
     };
+}
+
+function showModal (){
+    setTimeout(function() { jQuery('#modal-1').modal('show'); }, 1000);
 }
