@@ -23,7 +23,6 @@ class menu_icons_widget extends WP_Widget
         $checkbox               = $instance['external'];
         if($checkbox){$external='_blank';}else{$external='_self';};
 
-        echo $before_widget;
         ?>
         <div id='list_icons_widget' class='widget list_icons_widget'>
 
@@ -43,7 +42,6 @@ class menu_icons_widget extends WP_Widget
             
         <?php
  
-        echo $after_widget;
 }
 
 function update( $new_instance, $old_instance )
