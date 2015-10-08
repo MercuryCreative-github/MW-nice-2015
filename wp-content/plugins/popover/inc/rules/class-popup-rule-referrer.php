@@ -106,10 +106,12 @@ class IncPopupRule_Referrer extends IncPopupRule {
 	 * Update and return the $settings array to save the form values.
 	 *
 	 * @since  4.6
+	 * @param  array $data The contents of $_POST['po_rule_data'].
 	 * @return mixed Data collection of this rule.
 	 */
-	protected function save_referrer() {
-		return explode( "\n", $_POST['po_rule_data']['referrer'] );
+	protected function save_referrer( $data ) {
+		lib2()->array->equip( $data, 'referrer' );
+		return explode( "\n", $data['referrer'] );
 	}
 
 
@@ -156,10 +158,12 @@ class IncPopupRule_Referrer extends IncPopupRule {
 	 * Update and return the $settings array to save the form values.
 	 *
 	 * @since  4.6
+	 * @param  array $data The contents of $_POST['po_rule_data'].
 	 * @return mixed Data collection of this rule.
 	 */
-	protected function save_no_referrer() {
-		return explode( "\n", $_POST['po_rule_data']['no_referrer'] );
+	protected function save_no_referrer( $data ) {
+		lib2()->array->equip( $data, 'no_referrer' );
+		return explode( "\n", $data['no_referrer'] );
 	}
 
 
@@ -332,7 +336,7 @@ class IncPopupRule_Referrer extends IncPopupRule {
 		$referrer = '';
 
 		$is_ajax = (defined( 'DOING_AJAX' ) && DOING_AJAX)
-			|| ( ! empty( $_POST['_po_method_'] ) && 'raw' == $_POST['_po_method_'] );
+			|| ( ! empty( $_POST['_po_method_'] ) && 'raw' == $_POST['_po_method_'] );	  	      	   	   	
 
 		if ( isset( $_REQUEST['thereferrer'] ) ) {
 			$referrer = $_REQUEST['thereferrer'];

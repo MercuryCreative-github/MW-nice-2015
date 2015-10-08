@@ -63,8 +63,6 @@ abstract class IncPopupBase {
 		if ( ! empty( $_POST['thefrom'] ) ) { $_POST['thefrom'] = strrev( $_POST['thefrom'] ); }
 		if ( ! empty( $_POST['thereferrer'] ) ) { $_POST['thereferrer'] = strrev( $_POST['thereferrer'] ); }
 
-		lib2()->translate_plugin( PO_LANG, PO_LANG_DIR );
-
 		// Register the popup post type.
 		add_action(
 			'init',
@@ -331,7 +329,7 @@ abstract class IncPopupBase {
 		$data = array(
 			// Meta: Content
 			'name' => $form['po_name'],
-			'content' => stripslashes( $form['po_content'] ),
+			'content' => $form['po_content'],
 			'title' => $form['po_heading'],
 			'subtitle' => $form['po_subheading'],
 			'cta_label' => $form['po_cta'],
@@ -573,7 +571,6 @@ abstract class IncPopupBase {
 	protected function select_popup() {
 		$data = array();
 		$items = $this->find_popups();
-		$this->popups = array();
 
 		/**
 		 * Filter the popup list so other modules can modify the popup details.
@@ -586,7 +583,9 @@ abstract class IncPopupBase {
 			return;
 		}
 
-		$this->popups = $items;
+		foreach ( $items as $item ) {
+			$this->popups[] = $item;
+		}
 	}
 
 	/**
@@ -633,6 +632,7 @@ abstract class IncPopupBase {
 			$this
 		);
 
+		$popup_ids = lib2()->array->get( $popup_ids );
 		foreach ( $popup_ids as $id ) {
 			$popup = IncPopupDatabase::get( $id );
 
@@ -799,8 +799,8 @@ abstract class IncPopupBase {
 		return;
 
 		// These functions will never be called, but poedit recognizes the text.
-		__( 'PRO Version only', PO_LANG );
-		__( 'Pro feature only. <a href="%1$s" target="_blank">Find out more &raquo;</a>', PO_LANG );
+		__( 'PRO Version', PO_LANG );
+		__( 'Pro feature. <a href="%1$s" target="_blank">Find out more &raquo;</a>', PO_LANG );
 		__( '<strong>WordPress PopUp</strong><br />Your installation was successfully updated to use the latest version of the plugin!<br /><em>Note: Some PopUp options changed or were replaced. You should have a look at your <a href="%s">PopUps</a> to see if they still look as intended.</em>', PO_LANG );
 		__( 'In the free version you can activate 1 PopUp. When you activate this PopUp then all other PopUps will be deactivated ', PO_LANG );
 		__( 'In the free version you can activate 1 PopUp. The PRO Version allows you to have unlimited active PopUps! <a href=\"%1$s\" target=\"_blank\">Find out more &raquo;</a>', PO_LANG );

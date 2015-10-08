@@ -1,4 +1,4 @@
-/*! PopUp Pro - v4.7.07
+/*! PopUp Pro - v4.7.11
  * http://premium.wpmudev.org/project/the-pop-over-plugin/
  * Copyright (c) 2015; * Licensed GPLv2+ */
 /*global window:false */
@@ -48,7 +48,7 @@
 		 * Depending on the "multi_open" flag it can be opened again.
 		 */
 		this.close_popup = function close_popup() {
-			jQuery( 'html' ).removeClass( 'has-popup' );
+			jQuery( 'html' ).removeClass( 'has-popup can-scroll no-scroll' );
 
 			function close_it() {
 				if ( me.data.display_data['click_multi'] ) {
@@ -61,18 +61,21 @@
 					me.have_popup = false;
 				}
 
-				$doc.trigger( 'popup-closed' );
+				$doc.trigger( 'popup-closed', [me, me.data] );
 				// Legacy trigger.
-				$doc.trigger( 'popover-closed' );
+				$doc.trigger( 'popover-closed', [me, me.data] );
 			}
 
 			if ( me.data.animation_out ) {
 				$po_msg.addClass( me.data.animation_out + ' animated' );
-				$po_msg.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-					$po_msg.removeClass( 'animated' );
-					$po_msg.removeClass( me.data.animation_out );
-					close_it();
-				});
+				$po_msg.one(
+					'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+					function() {
+						$po_msg.removeClass( 'animated' );
+						$po_msg.removeClass( me.data.animation_out );
+						close_it();
+					}
+				);
 			} else {
 				close_it();
 			}

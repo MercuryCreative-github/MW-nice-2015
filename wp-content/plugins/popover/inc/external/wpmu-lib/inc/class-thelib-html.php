@@ -4,13 +4,10 @@
  *
  * @since 1.1.0
  */
-class TheLib_2_0_1_Html extends TheLib_2_0_1  {
+class TheLib_2_0_3_Html extends TheLib_2_0_3  {
 
 	/* Constants for default HTML input elements. */
 	const INPUT_TYPE_HIDDEN = 'hidden';
-	const INPUT_TYPE_TEXT = 'text';
-	const INPUT_TYPE_SEARCH = 'search';
-	const INPUT_TYPE_PASSWORD = 'password';
 	const INPUT_TYPE_TEXT_AREA = 'textarea';
 	const INPUT_TYPE_SELECT = 'select';
 	const INPUT_TYPE_RADIO = 'radio';
@@ -18,6 +15,14 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	const INPUT_TYPE_BUTTON = 'button';
 	const INPUT_TYPE_CHECKBOX = 'checkbox';
 	const INPUT_TYPE_IMAGE = 'image';
+	// Different input types
+	const INPUT_TYPE_TEXT = 'text';
+	const INPUT_TYPE_PASSWORD = 'password';
+	const INPUT_TYPE_NUMBER = 'number';
+	const INPUT_TYPE_EMAIL = 'email';
+	const INPUT_TYPE_URL = 'url';
+	const INPUT_TYPE_TIME = 'time';
+	const INPUT_TYPE_SEARCH = 'search';
 	const INPUT_TYPE_FILE = 'file';
 
 	/* Constants for advanced HTML input elements. */
@@ -427,6 +432,7 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 			'label_type'     => 'label',
 			'sticky'         => false, // populate $value from $_REQUEST struct
 			'config'         => array(), // other, element-specific configurations
+			'wrapper_class'  => '', // class added to the outermost element wrapper
 			// Specific for type 'button', 'submit':
 			'button_value'   => '',
 			'button_type'    => '',  // for display [empty/'submit'/'button']
@@ -488,6 +494,9 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 		foreach ( $data as $data_key => $data_value ) {
 			$data_attr .= 'data-' . $data_key . '=' . json_encode( $data_value ) . ' ';
 		}
+		foreach ( $config as $conf_key => $conf_value ) {
+			$data_attr .= $conf_key . '=' . json_encode( $conf_value ) . ' ';
+		}
 
 		if ( ! empty( $ajax_data ) ) {
 			$class .= ' wpmui-ajax-update';
@@ -528,12 +537,17 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 				$this->element_hidden(
 					$id,
 					$name,
-					$value
+					$value,
+					$class
 				);
 				break;
 
 			case self::INPUT_TYPE_TEXT:
 			case self::INPUT_TYPE_PASSWORD:
+			case self::INPUT_TYPE_NUMBER:
+			case self::INPUT_TYPE_EMAIL:
+			case self::INPUT_TYPE_URL:
+			case self::INPUT_TYPE_TIME:
 			case self::INPUT_TYPE_SEARCH:
 			case self::INPUT_TYPE_FILE:
 				$this->element_input(
@@ -543,7 +557,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 					$id,
 					$name,
 					$value,
-					$read_only . $max_attr . $attr_placeholder . $ajax_data . $data_attr
+					$read_only . $max_attr . $attr_placeholder . $ajax_data . $data_attr,
+					$wrapper_class
 				);
 				break;
 
@@ -554,7 +569,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 					$id,
 					$name,
 					$value,
-					$max_attr . $attr_placeholder . $ajax_data . $data_attr
+					$max_attr . $attr_placeholder . $ajax_data . $data_attr,
+					$wrapper_class
 				);
 				break;
 
@@ -565,7 +581,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 					$id,
 					$name,
 					$value,
-					$read_only . $attr_placeholder . $ajax_data . $data_attr
+					$read_only . $attr_placeholder . $ajax_data . $data_attr,
+					$wrapper_class
 				);
 				break;
 
@@ -577,7 +594,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 					$name,
 					$value,
 					$multiple . $read_only . $attr_data_placeholder . $ajax_data . $data_attr,
-					$field_options
+					$field_options,
+					$wrapper_class
 				);
 				break;
 
@@ -589,7 +607,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 					$name,
 					$value,
 					$ajax_data,
-					$field_options
+					$field_options,
+					$wrapper_class
 				);
 				break;
 
@@ -659,7 +678,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 					$url,
 					$read_only,
 					$ajax_data . $data_attr,
-					$field_options
+					$field_options,
+					$wrapper_class
 				);
 				break;
 
@@ -675,7 +695,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 					$ajax_data,
 					$empty_text,
 					$button_text,
-					$title_selected
+					$title_selected,
+					$wrapper_class
 				);
 				break;
 
@@ -687,7 +708,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 					$name,
 					$value,
 					$multiple . $read_only . $attr_data_placeholder . $ajax_data . $data_attr,
-					$field_options
+					$field_options,
+					$wrapper_class
 				);
 				break;
 
@@ -715,7 +737,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 					$class,
 					$id,
 					$value,
-					'span'
+					'span',
+					$wrapper_class
 				);
 				break;
 
@@ -725,7 +748,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 					$class,
 					$id,
 					$value,
-					$field_options
+					$field_options,
+					$wrapper_class
 				);
 				break;
 		}
@@ -741,12 +765,13 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_hidden( $id, $name, $value ) {
+	private function element_hidden( $id, $name, $value, $class ) {
 		printf(
-			'<input class="wpmui-field-input wpmui-hidden" type="hidden" id="%1$s" name="%2$s" value="%3$s" />',
+			'<input class="wpmui-field-input wpmui-hidden %4$s" type="hidden" id="%1$s" name="%2$s" value="%3$s" />',
 			esc_attr( $id ),
 			esc_attr( $name ),
-			esc_attr( $value )
+			esc_attr( $value ),
+			esc_attr( $class )
 		);
 	}
 
@@ -756,8 +781,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_input( $labels, $type, $class, $id, $name, $value, $attr ) {
-		$this->wrap_open( 'input', $class );
+	private function element_input( $labels, $type, $class, $id, $name, $value, $attr, $wrapper_class ) {
+		$this->wrap_open( 'input', $class, 'span', $wrapper_class );
 		$this->element_label( $labels );
 
 		printf(
@@ -780,8 +805,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_datepicker( $labels, $class, $id, $name, $value, $attr ) {
-		$this->wrap_open( 'datepicker', $class );
+	private function element_datepicker( $labels, $class, $id, $name, $value, $attr, $wrapper_class ) {
+		$this->wrap_open( 'datepicker', $class, 'span', $wrapper_class );
 		$this->element_label( $labels );
 
 		if ( ! empty( $value ) ) {
@@ -809,8 +834,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_textarea( $labels, $class, $id, $name, $value, $attr ) {
-		$this->wrap_open( 'textarea', $class );
+	private function element_textarea( $labels, $class, $id, $name, $value, $attr, $wrapper_class ) {
+		$this->wrap_open( 'textarea', $class, 'span', $wrapper_class );
 		$this->element_label( $labels );
 
 		printf(
@@ -832,10 +857,10 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_select( $labels, $class, $id, $name, $value, $attr, $field_options ) {
+	private function element_select( $labels, $class, $id, $name, $value, $attr, $field_options, $wrapper_class ) {
 		$options = $this->select_options( $field_options, $value );
 
-		$this->wrap_open( 'select', $class );
+		$this->wrap_open( 'select', $class, 'span', $wrapper_class );
 		$this->element_label( $labels );
 
 		printf(
@@ -857,8 +882,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_radio( $labels, $class, $id, $name, $value, $attr, $field_options ) {
-		$this->wrap_open( 'radio', $class );
+	private function element_radio( $labels, $class, $id, $name, $value, $attr, $field_options, $wrapper_class ) {
+		$this->wrap_open( 'radio', $class, 'span', $wrapper_class );
 		$this->element_label( $labels );
 
 		foreach ( $field_options as $key => $option ) {
@@ -1099,7 +1124,7 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_radioslider( $labels, $class, $id, $name, $state, $url, $read_only, $attr, $options ) {
+	private function element_radioslider( $labels, $class, $id, $name, $state, $url, $read_only, $attr, $options, $wrapper_class ) {
 		$options = self::$core->array->get( $options );
 		if ( ! isset( $options['active'] ) ) { $options['active'] = true; }
 		if ( ! isset( $options['inactive'] ) ) { $options['inactive'] = false; }
@@ -1107,9 +1132,9 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 		if ( $state ) { $value = $options['active']; }
 		else { $value = $options['inactive']; }
 
-		$turned = ( $value ) ? 'on' : '';
+		$turned = ( $value ) ? 'on' : 'off';
 
-		$this->wrap_open( 'radio-slider', $class . ' ' . $turned );
+		$this->wrap_open( 'radio-slider', $class, 'span', $turned . ' ' . $wrapper_class );
 		$this->element_label( $labels );
 
 		$attr .= ' data-states="' . esc_attr( json_encode( $options ) ) . '" ';
@@ -1148,10 +1173,10 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_tagselect( $labels, $class, $id, $name, $value, $field_options, $attr, $ajax_data, $empty_text, $button_text, $title_selected ) {
+	private function element_tagselect( $labels, $class, $id, $name, $value, $field_options, $attr, $ajax_data, $empty_text, $button_text, $title_selected, $wrapper_class ) {
 		$labels->id = '_src_' . $id;
 
-		$this->wrap_open( 'tag-selector', $class );
+		$this->wrap_open( 'tag-selector', $class, 'span', $wrapper_class );
 		$this->element_label( $labels );
 
 		$options_selected = '';
@@ -1223,7 +1248,7 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_wp_pages( $labels, $class, $id, $name, $value, $attr, $field_options ) {
+	private function element_wp_pages( $labels, $class, $id, $name, $value, $attr, $field_options, $wrapper_class ) {
 		$defaults = array(
 			'hierarchical' => 1,
 			'sort_column' => 'post_title',
@@ -1273,7 +1298,8 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 			$name,
 			$value,
 			$attr,
-			$items
+			$items,
+			$wrapper_class
 		);
 	}
 
@@ -1309,7 +1335,7 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 		printf(
 			'<a id="%1$s" title="%2$s" class="wpmui-link %3$s" href="%4$s" target="%7$s" %6$s>%5$s</a>',
 			esc_attr( $id ),
-			esc_attr( $title ),
+			esc_attr( strip_tags( $title ) ),
 			esc_attr( $class ),
 			esc_url( $url ),
 			$label,
@@ -1326,10 +1352,10 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_wrapper( $labels, $class, $id, $code, $wrap ) {
+	private function element_wrapper( $labels, $class, $id, $code, $wrap, $wrapper_class ) {
 		if ( empty( $wrap ) ) { $wrap = 'span'; }
 
-		$this->wrap_open( 'html-text', $class );
+		$this->wrap_open( 'html-text', $class, 'span', $wrapper_class );
 		$this->element_label( $labels );
 
 		printf(
@@ -1349,10 +1375,10 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 * @since  1.1.0
 	 * @internal
 	 */
-	private function element_table( $labels, $class, $id, $rows, $args ) {
+	private function element_table( $labels, $class, $id, $rows, $args, $wrapper_class ) {
 		self::$core->array->equip( $args, 'head_row', 'head_col', 'col_class' );
 
-		$this->wrap_open( 'table', $class );
+		$this->wrap_open( 'table', $class, 'span', $wrapper_class );
 		$this->element_label( $labels );
 
 		$code_body = '';
@@ -1488,11 +1514,16 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 	 *
 	 * @param  string $type Wrapper type, class is set to 'wpmui-$type-wrapper'.
 	 * @param  string $classes String or array containing additional classes.
-	 *                         All classes are extended with '-wrapper'
+	 *         All classes are extended with '-wrapper'.
 	 * @param  string $tag Optional. The tag name, default 'span'
+	 * @param  string $raw_classes String or array containing additional classes.
+	 *         These classes are not modified, but output as they appear.
 	 */
-	private function wrap_open( $type, $classes = '', $tag = 'span' ) {
-		$classes = explode( ' ', $classes );
+	private function wrap_open( $type, $classes = '', $tag = 'span', $raw_classes = '' ) {
+		if ( is_string( $classes ) ) {
+			$classes = explode( ' ', $classes );
+		}
+
 		if ( count( $classes ) ) {
 			$classes = array_filter( array_map( 'trim', $classes ) );
 			$classes = array_map( 'strtolower', $classes );
@@ -1501,6 +1532,15 @@ class TheLib_2_0_1_Html extends TheLib_2_0_1  {
 		} else {
 			$extra_classes = '';
 		}
+
+		if ( ! empty( $raw_classes ) ) {
+			if ( is_array( $raw_classes ) ) {
+				$extra_classes .= implode( ' ', $raw_classes );
+			} else {
+				$extra_classes .= ' ' . $raw_classes;
+			}
+		}
+		$extra_classes = trim( $extra_classes );
 
 		printf(
 			'<%1$s class="wpmui-wrapper wpmui-%2$s-wrapper %3$s">',

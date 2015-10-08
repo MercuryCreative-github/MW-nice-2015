@@ -157,11 +157,14 @@ class IncPopupRules {
 	 * @return array The updated rule-settings collection.
 	 */
 	static public function _save( $data ) {
+		$data = isset( $_POST['po_rule_data'] ) ? $_POST['po_rule_data'] : array();
+
 		foreach ( self::$rules as $prio => $list ) {
 			foreach ( $list as $key => $rule ) {
 				$data = $rule->obj->_save( $key, $data );
 			}
 		}
+
 		return $data;
 	}
 
@@ -278,9 +281,10 @@ abstract class IncPopupRule {
 	 * }
 	 *
 	 * @since  4.6
+	 * @param  array $data The contents of $_POST['po_rule_data'].
 	 * @return mixed Data collection of this rule.
 	 */
-	protected function save_() {
+	protected function save_( $data ) {
 		return false;
 	}
 
@@ -377,8 +381,10 @@ abstract class IncPopupRule {
 	 */
 	public function _save( $key, $data ) {
 		$method = 'save_' . $key;
+		$data = lib2()->array->get( $data );
+
 		if ( method_exists( $this, $method ) ) {
-			$data[$key] = $this->$method();
+			$data[$key] = $this->$method($data);
 		}
 
 		return $data;
@@ -403,7 +409,7 @@ abstract class IncPopupRule {
 			<span class="rule-toggle dashicons"></span>
 			<div class="rule-inner">
 				<div class="rule-description">
-					<em><?php echo esc_html( $data->description ); ?></em>
+					<em><?php echo $data->description; ?></em>
 				</div>
 				<?php $this->_form( $popup, $key ); ?>
 			</div>

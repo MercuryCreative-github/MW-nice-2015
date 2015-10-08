@@ -3,7 +3,7 @@
 Plugin Name: PopUp Pro
 Plugin URI:  http://premium.wpmudev.org/project/the-pop-over-plugin/
 Description: Allows you to display a fancy PopUp to visitors sitewide or per blog. A *very* effective way of advertising a mailing list, special offer or running a plain old ad.
-Version:     4.7.0.7
+Version:     4.7.1.1
 Author:      WPMU DEV
 Author URI:  http://premium.wpmudev.org
 Textdomain:  popover
@@ -56,9 +56,9 @@ function inc_popup_pro_init() {
 		define( 'PO_IMG_URL', $plugin_url . 'img/' );
 
 		// Include function library.
-		if ( file_exists( PO_INC_DIR . 'external/wpmu-lib/core.php' ) ) {
-			require_once PO_INC_DIR . 'external/wpmu-lib/core.php';
-		}
+		require_once PO_INC_DIR . 'external/wpmu-lib/core.php';
+
+		lib2()->translate_plugin( PO_LANG, PO_LANG_DIR );
 
 		require_once( PO_INC_DIR . 'config-defaults.php');
 		if ( is_admin() ) {

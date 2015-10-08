@@ -4,6 +4,30 @@ Author: Barry (Incsub), Marko Miljus (Incsub), Philipp Stracker (Incsub)
 Change Log:
 ----------------------------------------------------------------------
 
+4.7.1.1
+----------------------------------------------------------------------
+- Fix compatibility issues caused by WordPress 4.3 changes
+- Fix a PHP notice about invalid foreach value
+- Fix bug that removed backslashs "\" from popup contents upon saving
+- Remove debug output when saving a PopUp
+
+4.7.1.0
+----------------------------------------------------------------------
+- Add new rules: Show on date, Hide on date
+- Fix incompatibility with ACF Pro plugin
+- Fix issue that made rules inaccessible (not clickable in editor)
+- Fix several PHP warnings and notices
+
+4.7.0.9
+----------------------------------------------------------------------
+- Fix bug with Display Animation field in PopUp editor
+- Small code improvements to avoid PHP notices
+
+4.7.0.8
+----------------------------------------------------------------------
+- Add integration for Membership2
+- Fix issues with WPML integration
+
 4.7.0.7
 ----------------------------------------------------------------------
 - Add a link target option for CTA Button (use _blank to open CTA in new tab)
@@ -133,4 +157,4 @@ Change Log:
 - Added show on exit rule add-on.
 
 
-295062-1430155571-au
+295062-1444322851-au
