@@ -11,7 +11,7 @@ class menu_icons_widget extends WP_Widget
             'classname' => 'menu_icons_widget',
             'description' => '-TMF Menu items with icons'
         );
-        $this->WP_Widget('menu_icons_widget', "-TMF Menu items with icons", $widget_ops);       
+        parent::__construct('menu_icons_widget', "-TMF Menu items with icons", $widget_ops);       
     }
 
     function widget( $args, $instance )

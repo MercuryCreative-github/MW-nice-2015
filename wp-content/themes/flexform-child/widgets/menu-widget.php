@@ -39,7 +39,7 @@ class tmf_list_widget extends WP_Widget {
 
 		/* Create the widget. */
 
-		$this->WP_Widget( 'tmf_list_widget', __('TMF: Menu Widget', 'tmf_list_widget'), $widget_ops, $control_ops );
+		parent::__construct( 'tmf_list_widget', __('TMF: Menu Widget', 'tmf_list_widget'), $widget_ops, $control_ops );
 
 	}
 

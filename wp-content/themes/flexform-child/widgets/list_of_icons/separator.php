@@ -7,7 +7,7 @@ if (!class_exists('separator_widget')):
         {
             $widget_ops = array('classname' => 'separator_widget', 'description' =>
                     '-TMF Separator');
-            $this->WP_Widget('separator_widget', "-TMF Separator", $widget_ops);
+            parent::__construct('separator_widget', "-TMF Separator", $widget_ops);
         }
 
         function widget($args, $instance)

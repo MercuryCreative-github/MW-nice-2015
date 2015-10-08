@@ -5,12 +5,12 @@
  * Description: Use 360 Open Fonts Service to replace Google's for Chinese users.
  * Author: 谢浩哲
  * Author URI: http://zjhzxhz.com
- * Version: 1.2.0
+ * Version: 1.2.4
  * License: GPL v2.0
  */
 
 define('PLUGIN_PATH', plugin_dir_path(__FILE__));
-require_once(PLUGIN_PATH . "geo/geoip.inc");
+require_once(PLUGIN_PATH . 'geo/geoip.inc.php');
 
 function google_apis_fix($buffer) {
     $geoData     = geoip_open(PLUGIN_PATH . 'geo/GeoIP.dat', GEOIP_STANDARD);
@@ -18,7 +18,10 @@ function google_apis_fix($buffer) {
     geoip_close($geoData);
     
     if( $countryCode === 'CN' ) {
-        return str_replace('googleapis.com', 'useso.com', $buffer);
+        return preg_replace_callback(
+            '|(https*:)*//(.*).googleapis.com/|', function($matches) {
+                return 'http://'.$matches[2].'.useso.com/';
+            }, $buffer);
     }
     else {
         return $buffer;

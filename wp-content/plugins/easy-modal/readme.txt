@@ -6,58 +6,21 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: modal,modal box,modal form,modal window,popup,popup box,popup form,popup window,ajax forms, lightbox
 Requires at least: 3.4
 Tested up to: 4.0
-Stable tag: 2.0.16
+Stable tag: 2.0.17
 The #1 WordPress Popup Plugin! Make glorious & powerful popups and market your content like never before - all in minutes!
 
 == Description ==
-Increase your site's leads generated, usability & conversion rates using Easy Modal's ultimate theme capabilities and customization options. Easy Modal gives you the ability to stream line and transform your website, plus promote and market your content like never before!
+Easy Modal 3.0 has transformed into Popup Maker! Popup Maker delivers the ultimate, most versatile, all-in-one popup plugin to WordPress.
 
-All in minutes.
+We hope you enjoy using Popup Maker to destroy your old conversion rates!
 
-Check out our [Getting Started Guide](https://easy-modal.com/documentation/easy-modal/getting-started "Getting Started Guide") to see how.
+[Continue to Popup Maker](https://wppopupmaker.com "Popup Maker Website")
 
-* If you like the plugin please rate & review it! If you love the plugin and want news & updates, follow us on [Twitter](https://twitter.com/EasyModal "Easy Modal on Twitter"), [Facebook](https://www.facebook.com/EasyModal "Easy Modal on Facebook") & [G+](https://plus.google.com/+Easy-modal/posts "Easy Modal on G+")!
-* Check out the [Easy Modal Website](https://easy-modal.com "Easy Modal Website") for everything Easy Modal.
- 
-= Core Features =
-* Unlimited Customizable Modals
-* One (1) Customizable Modal Theme
-* Disable Background Overlay Option
-* Add Modals Anywhere
-* Complete Modal Positioning Control
-* Responsive Modals
-* Visual Theme Editor
-* WYSIWIG Content Editor
-* Scrollable Content
-* Site Wide Modals
-* Page/Post Specific Modals
-* Customizable Modal Opening Animations
-* Customize close functions, click overlay, press esc key.
-* Hooks & Filters for Ultimate Customization
-* WordPress Support Forum Access
+If you're an existing Easy Modal user, transitioning from Easy Modal to Popup Maker is a snap with our custom Importer! [See How!](https://wppopupmaker.com/kb/upgrading-easy-modal-popup-maker "Upgrade from Easy Modal to Popup Maker")
 
-= Use Add Ons to Make Advanced Modals, Popups & Lightboxes - in minutes! =
-* Auto Open Modals
- * Make popups that automatically open when users visit your site or a specific page. 
-* Exit Modals
- * This add on allows you to create modals and popups that appear when a user attempts to leave or exit your site using our Soft Exit Technology.
-* Login Modals
- * This add on gives you the ability to create out-of-the-box Login Modals, Forgot Your Password & Registration in minutes - no coding, no setup.
-* Age Verification
- * This add on creates out-of-the-box popups that open automatically and prompt users to verify their age using using your choice of: birth date drop downs or click to proceed buttons. No coding, no setup.
-* Unlimited Themes
- * Create an infinite amount of themes. Choose which theme each modal uses.
-* Scroll Pops
- * Popup modals automatically when the user scrolls down the page. Set the scroll distance (in %, PX, EM, REM) to your preference.
-* Force User Action
- * Disable the close button, forcing the user to fill out your form or do another action. Great for funneling users.
-* Advanced Theme Editor
- * Add background images to the overlay, container and close button. Produce unique & professional popups with this add on.
-
-
-[Read More About our Add Ons](https://easy-modal.com/addons "Easy Modal Add Ons") - Easy Modal Add Ons
-
-[Plugin Developers Site](http://wizardinternetsolutions.com "Web & Plugin Development") - Wizard Internet Solutions
+If you own Easy Modal Addons, you can upgrade to Popup Maker for free.
+* [Yes, I want to upgrade for free!](https://wppopupmaker.com/easy-modal-customer-upgrade "Upgrade Your Easy Modal Product for Free") (recommended)
+* No thanks! I just [need support on my Easy Modal product](https://easy-modal.com/support "Get Support on Your Easy Modal Product").
 
 == Installation ==
 1. Login to WordPress and update to/install EasyModal version 2.0.13.
@@ -65,6 +28,10 @@ Check out our [Getting Started Guide](https://easy-modal.com/documentation/easy-
 4. Theme, customize, and make a popup in minutes.
 
 == Changelog ==
+
+= v2.0.17 =
+* Tweak: Updated language domain information for upcoming translation by glotpress.
+
 = v2.0.16 =
 * Bug
  * Added backward compatibiilty fix for deprecated JS function.

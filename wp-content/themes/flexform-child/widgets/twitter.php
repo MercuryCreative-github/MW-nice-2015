@@ -7,7 +7,7 @@ class twitter_widget extends WP_Widget {
  
      function twitter_widget(){
         $widget_ops = array('classname' => 'twitter_widget', 'description' => "-TMF Twitter" );
-        $this->WP_Widget('twitter_widget', "-TMF Twitter", $widget_ops);
+        parent::__construct('twitter_widget', "-TMF Twitter", $widget_ops);
     }
  
       function widget($args,$instance){

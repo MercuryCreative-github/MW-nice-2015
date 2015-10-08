@@ -31,7 +31,7 @@ class WPBakeryShortCode_search_widget extends WPBakeryShortCode {
             $width = wpb_translateColumnWidthToSpan($width);
             
             $search_form .= '<form method="get" class="search-form search-widget" action="'.get_home_url().'/">';
-            $search_form .= '<input type="text" placeholder="'.$search_input_text.'" name="sf-search" />';
+            $search_form .= '<input type="text" placeholder="'.$search_input_text.'" name="s" />';
             $search_form .= '</form>';
             
             $output .= "\n\t".'<div class="wpb_search_widget wpb_content_element '.$width.$el_class.'">';

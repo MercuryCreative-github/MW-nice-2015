@@ -22,7 +22,7 @@ class mvp_columns_widget extends WP_Widget {
 		$control_ops = array( 'width' => 250, 'height' => 350, 'id_base' => 'mvp_columns_widget' );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'mvp_columns_widget', __('Braxton: Columns Widget', 'mvp_columns_widget'), $widget_ops, $control_ops );
+		parent::__construct( 'mvp_columns_widget', __('Braxton: Columns Widget', 'mvp_columns_widget'), $widget_ops, $control_ops );
 	}
 
 	/**

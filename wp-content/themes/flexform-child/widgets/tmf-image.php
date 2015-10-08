@@ -4,7 +4,7 @@ class tmf_widget extends WP_Widget {
  
     function tmf_widget(){
          $widget_ops = array('classname' => 'tmf_widget', 'description' => "Banner Home" );
-        $this->WP_Widget('tmf_widget', "Banner Home", $widget_ops);
+        parent::__construct('tmf_widget', "Banner Home", $widget_ops);
     }
  
      function widget($args,$instance){

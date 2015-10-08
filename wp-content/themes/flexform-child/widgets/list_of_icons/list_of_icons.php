@@ -12,7 +12,7 @@ class list_icons_widget extends WP_Widget
             'classname' => 'list_icons_widget', 
             'description' => "-TMF Icons Menu"
         );
-        $this->WP_Widget('list_icons_widget', "-TMF Icons Menu", $widget_ops);
+        parent::__construct('list_icons_widget', "-TMF Icons Menu", $widget_ops);
     }
 
     function widget( $args, $instance )

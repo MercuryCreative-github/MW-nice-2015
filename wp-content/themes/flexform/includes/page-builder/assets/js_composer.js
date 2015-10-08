@@ -380,15 +380,15 @@ jQuery(document).ready(function($) {
 			if ( postdivrich.is(":visible") ) {
 
 				if (!isTinyMceActive()) {
-                    if(switchEditors!=undefined) switchEditors.switchto($('#content-tmce').get(0));
+                    if ( switchEditors != undefined )  $( '#content-tmce' ).get( 0 ).click();
                 }
-					postdivrich.hide();
-					visualcomposer.show();
-					$('#wpb_vc_js_status').val("true");
-					$(this).html('Classic editor');
+				postdivrich.hide();
+				visualcomposer.show();
+				$('#wpb_vc_js_status').val("true");
+				$(this).html('Classic editor');
 
-					wpb_shortcodesToVisualEditor();
-					wpb_navOnScroll();
+				wpb_shortcodesToVisualEditor();
+				wpb_navOnScroll();
 				// } else {
 				//	alert("Please switch default WordPress editor to 'Visual' mode first.");
 				// }

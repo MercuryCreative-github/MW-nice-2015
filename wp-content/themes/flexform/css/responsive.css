@@ -435,7 +435,7 @@
 	
 	/* SHORTCODES */
 	.one_half, .one_third, .two_third, .three_fourth, .one_fourth {
-		width: 100%;
+		width: 100%!important;
 		float: none;
 		margin-right: 0;
 		margin-bottom: 20px;

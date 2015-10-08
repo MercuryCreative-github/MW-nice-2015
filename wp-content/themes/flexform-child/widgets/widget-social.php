@@ -22,7 +22,7 @@ class mvp_social_widget extends WP_Widget {
 		$control_ops = array( 'width' => 250, 'height' => 350, 'id_base' => 'mvp_social_widget' );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'mvp_social_widget', __('Braxton: Social Widget', 'mvp_social_widget'), $widget_ops, $control_ops );
+		parent::__construct( 'mvp_social_widget', __('Braxton: Social Widget', 'mvp_social_widget'), $widget_ops, $control_ops );
 	}
 
 	/**

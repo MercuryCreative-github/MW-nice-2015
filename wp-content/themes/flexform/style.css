@@ -6,7 +6,7 @@
 	Description: A Retina Responsive Multi-Purpose WordPress Theme - Designed & Developed by Swift Ideas ( www.swiftideas.net )
 	License: GNU General Public License version 3.0
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html
-	Version: 1.65
+	Version: 1.69
 	Author: Swift Ideas
 	Author URI: www.swiftideas.net
 
@@ -2785,7 +2785,7 @@ figure.lightbox {
 /* #Footer
 ================================================== */
 
-.hide-header #footer, .hide-header #copyright {
+.hide-footer #footer, .hide-footer #copyright {
 	display: none;
 }
 #footer {

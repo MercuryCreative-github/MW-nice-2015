@@ -22,7 +22,7 @@ class mvp_tags_widget extends WP_Widget {
 		$control_ops = array( 'width' => 250, 'height' => 350, 'id_base' => 'mvp_tags_widget' );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'mvp_tags_widget', __('Braxton: Tag Cloud Widget', 'mvp_tags_widget'), $widget_ops, $control_ops );
+		parent::__construct( 'mvp_tags_widget', __('Braxton: Tag Cloud Widget', 'mvp_tags_widget'), $widget_ops, $control_ops );
 	}
 
 	/**

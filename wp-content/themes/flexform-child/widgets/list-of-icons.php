@@ -5,7 +5,7 @@ class list_icons_widget extends WP_Widget{
 
     function list_icons_widget(){
         $widget_ops = array('classname' => 'list_icons_widget', 'description' => "Icons Menu TMF" );
-        $this->WP_Widget('list_icons_widget', "Icons Menu TMF", $widget_ops);
+        parent::__construct('list_icons_widget', "Icons Menu TMF", $widget_ops);
     }
 
    

@@ -4,7 +4,7 @@ class calendar_widget extends WP_Widget {
 
      function calendar_widget(){
         $widget_ops = array('classname' => 'calendar_widget', 'description' => "-TMF Calendar" );
-        $this->WP_Widget('calendar_widget', "-TMF Calendar", $widget_ops);
+        parent::__construct('calendar_widget', "-TMF Calendar", $widget_ops);
     }
 
       function widget($args,$instance){

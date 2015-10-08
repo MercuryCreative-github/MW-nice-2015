@@ -22,7 +22,7 @@ class mvp_facebook_widget extends WP_Widget {
 		$control_ops = array( 'width' => 250, 'height' => 350, 'id_base' => 'mvp_facebook_widget' );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'mvp_facebook_widget', __('Braxton: Facebook Widget', 'mvp_facebook_widget'), $widget_ops, $control_ops );
+		parent::__construct( 'mvp_facebook_widget', __('Braxton: Facebook Widget', 'mvp_facebook_widget'), $widget_ops, $control_ops );
 	}
 
 	/**

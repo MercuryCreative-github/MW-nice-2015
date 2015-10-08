@@ -22,7 +22,7 @@ class mvp_ad_widget extends WP_Widget {
 		$control_ops = array( 'width' => 250, 'height' => 350, 'id_base' => 'mvp_ad_widget' );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'mvp_ad_widget', __('Braxton: Ad Widget', 'mvp_ad_widget'), $widget_ops, $control_ops );
+		parent::__construct( 'mvp_ad_widget', __('Braxton: Ad Widget', 'mvp_ad_widget'), $widget_ops, $control_ops );
 	}
 
 	/**

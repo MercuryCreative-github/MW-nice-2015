@@ -8,7 +8,7 @@ class menu_titles_widget extends WP_Widget
             'classname' => 'menu_titles_widget',
             'description' => '-TMF Menu titles'
         );
-        $this->WP_Widget('menu_titles_widget', "-TMF Menu titles", $widget_ops);       
+        parent::__construct('menu_titles_widget', "-TMF Menu titles", $widget_ops);       
     }
 
     function widget( $args, $instance )

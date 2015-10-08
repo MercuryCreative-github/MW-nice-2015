@@ -4,7 +4,7 @@ class mpw_widget extends WP_Widget {
  
     function mpw_widget(){
          $widget_ops = array('classname' => 'mpw_widget', 'description' => "Menu Insights" );
-        $this->WP_Widget('mpw_widget', "Menu Insights", $widget_ops);
+        parent::__construct('mpw_widget', "Menu Insights", $widget_ops);
     }
  
     function widget($args,$instance){

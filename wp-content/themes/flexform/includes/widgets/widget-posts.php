@@ -15,7 +15,7 @@
 	
 	class sf_recent_posts extends WP_Widget {
 		function sf_recent_posts() {
-			parent::WP_Widget( 'sf_recent_custom_posts', $name = 'Swift Framework Recent Posts' );
+			parent::__construct( 'sf_recent_custom_posts', $name = 'Swift Framework Recent Posts' );
 		}
 	
 		function widget( $args, $instance ) {
