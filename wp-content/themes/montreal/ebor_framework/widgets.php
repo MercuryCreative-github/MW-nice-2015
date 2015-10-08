@@ -14,7 +14,7 @@ class Newsletter_Widget extends WP_Widget {
 
 		$control_ops = array('id_base' => 'newsletter-widget');
 
-		$this->WP_Widget('newsletter-widget', 'montreal: Newsletter', $widget_ops, $control_ops);
+		parent::__construct('newsletter-widget', 'montreal: Newsletter', $widget_ops, $control_ops);
 	}
 	
 	function widget($args, $instance)
@@ -77,7 +77,7 @@ class Tabs_Widget extends WP_Widget {
 
 		$control_ops = array('id_base' => 'tabs-widget');
 
-		$this->WP_Widget('tabs-widget', 'montreal: Tabs', $widget_ops, $control_ops);
+		parent::__construct('tabs-widget', 'montreal: Tabs', $widget_ops, $control_ops);
 	}
 	
 	function widget($args, $instance)
