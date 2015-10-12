@@ -8,7 +8,7 @@
 
 require_once( ABSPATH . '/wp-includes/script-loader.php' );
 
-class WPBakeryMediaTab extends WPBakeryVisualComposerAbstract implements WPBakeryVisualComposerTemplateInterface {
+class WPBakeryMediaTab extends SwiftPageBuilderAbstract implements WPBakeryVisualComposerTemplateInterface {
 
     public function __construct() {
 
@@ -121,16 +121,16 @@ class WPBakeryImagesMediaTab extends WPBakeryMediaTab {
 
     public function formTemplate($type = 'file', $errors = null, $id = null)
     {
-        wp_register_style( 'js_composer', $this->assetURL( 'js_composer.css' ), false, WPB_VC_VERSION, false );
+        wp_register_style( 'js_composer', $this->assetURL( 'js_composer.css' ), false, SPB_VERSION, false );
         wp_enqueue_style('js_composer');
 
-        //wp_register_style( 'bootstrap', $this->assetURL( 'bootstrap/css/bootstrap.css' ), false, WPB_VC_VERSION, false );
+        //wp_register_style( 'bootstrap', $this->assetURL( 'bootstrap/css/bootstrap.css' ), false, SPB_VERSION, false );
         //wp_enqueue_style('bootstrap');
 
-        wp_register_style( 'ui-custom-theme', $this->assetURL( 'ui-custom-theme/jquery-ui-1.8.18.custom.css' ), false, WPB_VC_VERSION, false );
+        wp_register_style( 'ui-custom-theme', $this->assetURL( 'ui-custom-theme/jquery-ui-1.8.18.custom.css' ), false, SPB_VERSION, false );
         wp_enqueue_style('ui-custom-theme');
 
-        wp_register_script('wpb_js_composer_js', $this->assetURL( 'js_composer.js' ), array('jquery'), WPB_VC_VERSION, true);
+        wp_register_script('wpb_js_composer_js', $this->assetURL( 'js_composer.js' ), array('jquery'), SPB_VERSION, true);
         wp_enqueue_script('jquery-ui-tabs');
         wp_enqueue_script('jquery-ui-droppable');
         wp_enqueue_script('jquery-ui-draggable');

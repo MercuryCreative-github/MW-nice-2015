@@ -8,7 +8,7 @@
 
 /* abstract VisualComposer class to create structural object of any type */
 
-abstract class WPBakeryVisualComposerAbstract {
+abstract class SwiftPageBuilderAbstract {
 
     public static $version;
     public static $config;

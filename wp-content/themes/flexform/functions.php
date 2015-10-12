@@ -28,7 +28,7 @@
 	
 	/* Include page builder */
 	if (!class_exists('Vc_Manager')) {
-	include(SF_INCLUDES_PATH . '/page-builder/js_composer.php');
+	include(SF_INCLUDES_PATH . '/page-builder/swift-page-builder.php');
 	}
 	
 	/* Add meta boxes */

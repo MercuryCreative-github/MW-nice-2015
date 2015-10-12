@@ -9,8 +9,8 @@
 
 if (!defined('ABSPATH')) die('-1');
 
-class WPBakeryVisualComposerSetup extends WPBakeryVisualComposerAbstract {
-    public static $version = '3.0.2';
+class SwiftPageBuilderSetup extends SwiftPageBuilderAbstract {
+    public static $version = '1.0';
     protected $composer;
 
     public function __construct() {
@@ -57,8 +57,8 @@ class WPBakeryVisualComposerSetup extends WPBakeryVisualComposerAbstract {
     }
 
     public function frontCss() {
-        wp_register_style( 'ui-custom-theme', $this->assetURL( 'ui-custom-theme/jquery-ui-' . WPB_JQUERY_UI_VERSION . '.custom.css' ), false, WPB_VC_VERSION, 'screen');
-        wp_register_style( 'js_composer_front', $this->assetURL( 'js_composer_front.css' ), false, WPB_VC_VERSION, 'screen' );
+        wp_register_style( 'ui-custom-theme', $this->assetURL( 'ui-custom-theme/jquery-ui-' . SPB_JQUERY_UI_VERSION . '.custom.css' ), false, SPB_VERSION, 'screen');
+        wp_register_style( 'js_composer_front', $this->assetURL( 'js_composer_front.css' ), false, SPB_VERSION, 'screen' );
         wp_enqueue_style( 'js_composer_front' );
     }
 
@@ -85,7 +85,7 @@ class WPBakeryVisualComposerSetup extends WPBakeryVisualComposerAbstract {
 
 /* Setup for admin */
 
-class WPBakeryVisualComposerSetupAdmin extends WPBakeryVisualComposerSetup {
+class SwiftPageBuilderSetupAdmin extends SwiftPageBuilderSetup {
     public function __construct() {
         parent::__construct();
     }
@@ -123,7 +123,7 @@ class WPBakeryVisualComposerSetupAdmin extends WPBakeryVisualComposerSetup {
     }
 
     public function jsComposerBodyClass($classes) {
-        $classes[] = 'wpb-js-composer js-comp-ver-'.WPB_VC_VERSION;
+        $classes[] = 'wpb-js-composer js-comp-ver-'.SPB_VERSION;
         return $classes;
     }
 
@@ -147,15 +147,15 @@ class WPBakeryVisualComposerSetupAdmin extends WPBakeryVisualComposerSetup {
     }
 
     public function registerJavascript() {
-        wp_register_script('wpb_js_composer_js', $this->assetURL( 'js_composer.js' ), array('jquery'), WPB_VC_VERSION, true);
-        wp_register_script('bootstrap-js', $this->assetURL( 'bootstrap/js/bootstrap.min.js' ), false, WPB_VC_VERSION, true);
+        wp_register_script('wpb_js_composer_js', $this->assetURL( 'js_composer.js' ), array('jquery'), SPB_VERSION, true);
+        wp_register_script('bootstrap-js', $this->assetURL( 'bootstrap/js/bootstrap.min.js' ), false, SPB_VERSION, true);
     }
 
     public function registerCss() {
 
-        wp_register_style( 'bootstrap', $this->assetURL( 'bootstrap/css/bootstrap.css' ), false, WPB_VC_VERSION, false );
-        wp_register_style( 'ui-custom-theme', $this->assetURL( 'ui-custom-theme/jquery-ui-' . WPB_JQUERY_UI_VERSION . '.custom.css' ), false, WPB_VC_VERSION, false );
-        wp_register_style( 'js_composer', $this->assetURL( 'js_composer.css' ), false, WPB_VC_VERSION, false );
+        wp_register_style( 'bootstrap', $this->assetURL( 'bootstrap/css/bootstrap.css' ), false, SPB_VERSION, false );
+        wp_register_style( 'ui-custom-theme', $this->assetURL( 'ui-custom-theme/jquery-ui-' . SPB_JQUERY_UI_VERSION . '.custom.css' ), false, SPB_VERSION, false );
+        wp_register_style( 'js_composer', $this->assetURL( 'js_composer.css' ), false, SPB_VERSION, false );
 
     }
     /* Call to generate main template editor */

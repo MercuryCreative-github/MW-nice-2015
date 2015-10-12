@@ -14,7 +14,7 @@ display (on a website).
 This will add shortcode that will be used in frontend site
 */
 
-abstract class WPBakeryShortCode extends WPBakeryVisualComposerAbstract {
+abstract class WPBakeryShortCode extends SwiftPageBuilderAbstract {
 
     protected $shortcode;
 

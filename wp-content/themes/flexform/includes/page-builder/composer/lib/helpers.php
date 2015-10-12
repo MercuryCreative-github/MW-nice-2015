@@ -473,7 +473,7 @@ if (!function_exists( 'wpb_debug' )) {
 }
 
 function js_composer_body_class($classes) {
-    $classes[] = 'wpb-js-composer js-comp-ver-'.WPB_VC_VERSION;
+    $classes[] = 'wpb-js-composer js-comp-ver-'.SPB_VERSION;
     return $classes;
 }
 

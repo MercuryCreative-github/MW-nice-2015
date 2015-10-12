@@ -102,7 +102,7 @@ class WPBakeryVisualComposerTemplateMenu implements WPBakeryVisualComposerTempla
     }
 }
 
-class WPBakeryVisualComposerTemplate_r extends WPBakeryVisualComposerAbstract {
+class WPBakeryVisualComposerTemplate_r extends SwiftPageBuilderAbstract {
 
     protected $templates = Array();
 

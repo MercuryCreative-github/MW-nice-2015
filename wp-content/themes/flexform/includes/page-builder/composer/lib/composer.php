@@ -6,7 +6,7 @@
  *
  */
 
-class WPBakeryVisualComposer extends WPBakeryVisualComposerAbstract {
+class WPBakeryVisualComposer extends SwiftPageBuilderAbstract {
     private $is_plugin = true;
     private $is_theme = false;
     private $postTypes;
