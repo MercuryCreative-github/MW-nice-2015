@@ -62,8 +62,11 @@
 	include(SF_WIDGETS_PATH . '/widget-infocus.php');
 	
 	/* Include theme updater */
-	require_once(SF_INCLUDES_PATH . '/wp-updates-theme.php');
-	new WPUpdatesThemeUpdater( 'http://wp-updates.com/api/1/theme', 202, basename(get_template_directory()) );		
+	require_once(SF_INCLUDES_PATH . '/theme_update_check.php');
+	$FlexformUpdateChecker = new ThemeUpdateChecker(
+	    'flexform',
+	    'https://kernl.us/api/v1/theme-updates/56699e21c965b8ee77f02604/'
+	);	
 	
 	/* THEME OPTIONS FRAMEWORK
 	================================================== */  

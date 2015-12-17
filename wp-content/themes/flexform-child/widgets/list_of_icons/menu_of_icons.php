@@ -80,8 +80,9 @@ function form( $instance ){
     </p>
     <p>
         <label for="<?php echo $this->get_field_name( 'menu_image_icon' ); ?>"><?php _e( 'menu_image_icon:' ); ?></label>
-        <input name="<?php echo $this->get_field_name( 'menu_image_icon' ); ?>" id="<?php echo $this->get_field_id( 'menu_image_icon' ); ?>" class="widefat" type="text" size="36"  value="<?php echo esc_url( $menu_image_icon ); ?>" />
+       <input name="<?php echo $this->get_field_name( 'menu_image_icon' ); ?>" id="<?php echo $this->get_field_id( 'menu_image_icon' ); ?>" class="widefat" type="text" size="36"  value="<?php echo esc_url( $menu_image_icon ); ?>" />
         <input class="upload_menu_image_icon_button" type="button" value="Upload Image" />
+        <img class="showIMGphp" src="<?php echo esc_url( $menu_image_icon ); ?>" alt="">
     </p>
 
     <?php } 

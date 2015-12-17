@@ -6,10 +6,12 @@ jQuery(document).ready(function($) {
         window.send_to_editor = function(html) {
             var imgurl = jQuery('img',html).attr('src');
             var inputText = jQuery.data(document.body, 'prevElement');
+            var inputImg = inputText.parent().children("img");
 
             if(inputText !== undefined && inputText !== '')
             {
                 inputText.val(imgurl);
+                inputImg.attr("src",imgurl);
             }
 
             tb_remove();

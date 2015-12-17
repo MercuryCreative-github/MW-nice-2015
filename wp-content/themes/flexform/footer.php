@@ -34,22 +34,22 @@
 						<?php if ($footer_config == "footer-1") { ?>
 						<div class="span3">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 1'); ?>
+							<?php dynamic_sidebar('footer-column-1'); ?>
 						<?php } ?>
 						</div>
 						<div class="span3">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 2'); ?>
+							<?php dynamic_sidebar('footer-column-2'); ?>
 						<?php } ?>
 						</div>
 						<div class="span3">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 3'); ?>
+							<?php dynamic_sidebar('footer-column-3'); ?>
 						<?php } ?>
 						</div>
 						<div class="span3">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 4'); ?>
+							<?php dynamic_sidebar('footer-column-4'); ?>
 						<?php } ?>
 						</div>
 						
@@ -57,17 +57,17 @@
 						
 						<div class="span6">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 1'); ?>
+							<?php dynamic_sidebar('footer-column-1'); ?>
 						<?php } ?>
 						</div>
 						<div class="span3">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 2'); ?>
+							<?php dynamic_sidebar('footer-column-2'); ?>
 						<?php } ?>
 						</div>
 						<div class="span3">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 3'); ?>
+							<?php dynamic_sidebar('footer-column-3'); ?>
 						<?php } ?>
 						</div>
 						
@@ -75,17 +75,17 @@
 						
 						<div class="span3">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 1'); ?>
+							<?php dynamic_sidebar('footer-column-1'); ?>
 						<?php } ?>
 						</div>
 						<div class="span3">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 2'); ?>
+							<?php dynamic_sidebar('footer-column-2'); ?>
 						<?php } ?>
 						</div>
 						<div class="span6">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 3'); ?>
+							<?php dynamic_sidebar('footer-column-3'); ?>
 						<?php } ?>
 						</div>
 						
@@ -93,12 +93,12 @@
 						
 						<div class="span6">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 1'); ?>
+							<?php dynamic_sidebar('footer-column-1'); ?>
 						<?php } ?>
 						</div>
 						<div class="span6">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 2'); ?>
+							<?php dynamic_sidebar('footer-column-2'); ?>
 						<?php } ?>
 						</div>
 						
@@ -106,17 +106,17 @@
 						
 						<div class="span4">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 1'); ?>
+							<?php dynamic_sidebar('footer-column-1'); ?>
 						<?php } ?>
 						</div>
 						<div class="span4">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 2'); ?>
+							<?php dynamic_sidebar('footer-column-2'); ?>
 						<?php } ?>
 						</div>
 						<div class="span4">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 3'); ?>
+							<?php dynamic_sidebar('footer-column-3'); ?>
 						<?php } ?>
 						</div>
 						
@@ -124,12 +124,12 @@
 						
 						<div class="span8">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 1'); ?>
+							<?php dynamic_sidebar('footer-column-1'); ?>
 						<?php } ?>
 						</div>
 						<div class="span4">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 2'); ?>
+							<?php dynamic_sidebar('footer-column-2'); ?>
 						<?php } ?>
 						</div>
 						
@@ -137,12 +137,12 @@
 						
 						<div class="span4">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 1'); ?>
+							<?php dynamic_sidebar('footer-column-1'); ?>
 						<?php } ?>
 						</div>
 						<div class="span8">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 2'); ?>
+							<?php dynamic_sidebar('footer-column-2'); ?>
 						<?php } ?>
 						</div>
 						
@@ -150,7 +150,7 @@
 						
 						<div class="span12">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 1'); ?>
+							<?php dynamic_sidebar('footer-column-1'); ?>
 						<?php } ?>
 						</div>
 						
@@ -158,17 +158,17 @@
 						
 						<div class="span3">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 1'); ?>
+							<?php dynamic_sidebar('footer-column-1'); ?>
 						<?php } ?>
 						</div>
 						<div class="span6">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 2'); ?>
+							<?php dynamic_sidebar('footer-column-2'); ?>
 						<?php } ?>
 						</div>
 						<div class="span3">
 						<?php if ( function_exists('dynamic_sidebar') ) { ?>
-							<?php dynamic_sidebar('Footer Column 3'); ?>
+							<?php dynamic_sidebar('footer-column-3'); ?>
 						<?php } ?>
 						</div>
 						

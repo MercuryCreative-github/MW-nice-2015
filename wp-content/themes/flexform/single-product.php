@@ -3,8 +3,8 @@
 	$default_show_page_heading = $options['default_show_page_heading'];
 	$default_page_heading_bg_alt = $options['default_page_heading_bg_alt'];
 	$default_sidebar_config = $options['default_product_sidebar_config'];
-	$default_left_sidebar = $options['default_product_left_sidebar'];
-	$default_right_sidebar = $options['default_product_right_sidebar'];
+	$default_left_sidebar = strtolower($options['default_product_left_sidebar']);
+	$default_right_sidebar = strtolower($options['default_product_right_sidebar']);
 	
 	$show_page_title = get_post_meta($post->ID, 'sf_page_title', true);
 	$page_title_one = get_post_meta($post->ID, 'sf_page_title_one', true);
@@ -19,8 +19,8 @@
 	}
 	
 	$sidebar_config = get_post_meta($post->ID, 'sf_sidebar_config', true);
-	$left_sidebar = get_post_meta($post->ID, 'sf_left_sidebar', true);
-	$right_sidebar = get_post_meta($post->ID, 'sf_right_sidebar', true);
+	$left_sidebar = strtolower(get_post_meta($post->ID, 'sf_left_sidebar', true));
+	$right_sidebar = strtolower(get_post_meta($post->ID, 'sf_right_sidebar', true));
 	
 	if ($sidebar_config == "") {
 		$sidebar_config = $default_sidebar_config;

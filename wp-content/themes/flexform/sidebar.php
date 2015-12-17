@@ -10,6 +10,6 @@ Sidebar Template
 
 <aside class="sidebar right-sidebar span4">
 
-	<?php dynamic_sidebar('Sidebar 1'); ?>
+	<?php dynamic_sidebar('sidebar-1'); ?>
 
 </aside>

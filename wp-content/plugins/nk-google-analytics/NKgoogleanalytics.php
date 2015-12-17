@@ -3,7 +3,7 @@
 Plugin Name: NK Google Analytics
 Plugin URI: http://www.marodok.com/nk-google-analytics/
 Description: Add <a href="http://www.google.com/analytics/">Google Analytics</a> javascript code on all pages.
-Version: 1.4.12
+Version: 1.4.13
 Author: Manfred Rodríguez
 Author URI: http://www.marodok.com
 Text Domain: nk-google-analytics
@@ -364,6 +364,11 @@ function NKgoogleanalytics()
             $tk = str_replace('<script type="text/javascript"><script>', '<script>', $tk);
             $tk = str_replace('</script></script>', "</script> \n", $tk);
 
+            // Google Tag Manager support
+            $tk = str_replace('<script type="text/javascript"><!-- Google Tag Manager -->', '<!-- Google Tag Manager -->', $tk);
+            $tk = str_replace('</iframe></noscript>', "</iframe></noscript><script>", $tk);
+            $tk = str_replace('<!-- End Google Tag Manager --></script>', "</script><!-- End Google Tag Manager -->", $tk);
+
         } else {
 
             if ($nkweb_id != '' && $nkweb_id != 'UA-0000000-0') {
@@ -433,13 +438,13 @@ function NKgoogleanalytics()
                         $tk .= "ga('require', 'displayfeatures'); \n";
                     }
 
-		    if ( ! empty($nkweb_Custom_js)) {
-			$tk .= "$nkweb_Custom_js\n";
-		    }
+        		    if ( ! empty($nkweb_Custom_js)) {
+        			$tk .= "$nkweb_Custom_js\n";
+        		    }
 
-		    if ( ! empty($nkweb_Custom_Values)) {
-			$tk .= "ga('set', {" . $nkweb_Custom_Values . "}); \n";
-		    }
+        		    if ( ! empty($nkweb_Custom_Values)) {
+        			$tk .= "ga('set', {" . $nkweb_Custom_Values . "}); \n";
+        		    }
 
                     $tk .= "ga('send', 'pageview'); \n";
                     $tk .= "</script> \n";

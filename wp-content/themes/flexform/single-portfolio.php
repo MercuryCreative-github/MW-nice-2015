@@ -22,8 +22,8 @@
 	$remove_breadcrumbs = get_post_meta($post->ID, 'sf_no_breadcrumbs', true);
 	
 	$sidebar_config = get_post_meta($post->ID, 'sf_sidebar_config', true);
-	$left_sidebar = get_post_meta($post->ID, 'sf_left_sidebar', true);
-	$right_sidebar = get_post_meta($post->ID, 'sf_right_sidebar', true);
+	$left_sidebar = strtolower(get_post_meta($post->ID, 'sf_left_sidebar', true));
+	$right_sidebar = strtolower(get_post_meta($post->ID, 'sf_right_sidebar', true));
 	
 	if ($sidebar_config == "") {
 		$sidebar_config = $default_sidebar_config;

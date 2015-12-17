@@ -960,6 +960,11 @@ Custom jQuery functions.
 	
 	var navArrow = {
 		init:function() {
+			
+			if ( jQuery('body').hasClass('mobile-browser') ) {
+				return;
+			}
+			
 			var navSection = jQuery("#nav-section");
 			var mainNav = jQuery("#main-navigation");    
 			mainNav.append("<div id='nav-pointer'></div>");

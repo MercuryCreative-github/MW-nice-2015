@@ -4,8 +4,8 @@
 	$default_page_heading_bg_alt = $options['woo_page_heading_bg_alt'];
 	
 	$sidebar_config = $options['woo_sidebar_config'];
-	$left_sidebar = $options['woo_left_sidebar'];
-	$right_sidebar = $options['woo_right_sidebar'];
+	$left_sidebar = strtolower($options['woo_left_sidebar']);
+	$right_sidebar = strtolower($options['woo_right_sidebar']);
 	
 	if ($sidebar_config == "") {
 		$sidebar_config = 'right-sidebar';

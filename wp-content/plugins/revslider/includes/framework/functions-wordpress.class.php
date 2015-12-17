@@ -431,6 +431,7 @@ class RevSliderFunctionsWP{
 		
 		$query = array(
 			'post_type'=>"any",
+			'ignore_sticky_posts' => 1,
 			'post__in' => $arr
 		);
 		
@@ -486,6 +487,7 @@ class RevSliderFunctionsWP{
 		
 		$query = array(
 			'order'=>$direction,
+			'ignore_sticky_posts' => 1,
 			'posts_per_page'=>$numPosts,
 			'showposts'=>$numPosts,
 			'post_type'=>$postTypes
@@ -884,7 +886,7 @@ class RevSliderFunctionsWP{
 			$catName = $category["name"];
 			
 			if(!empty($link))
-				$thelist .= '<a href="' . esc_url( $link ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s", REVSLIDER_TEXTDOMAIN), $category["name"] ) ) . '" ' . $rel . '>' . $catName.'</a>';
+				$thelist .= '<a href="' . esc_url( $link ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s", 'revslider'), $category["name"] ) ) . '" ' . $rel . '>' . $catName.'</a>';
 			else
 				$thelist .= $catName;
 			
